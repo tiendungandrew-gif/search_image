@@ -1,0 +1,39 @@
+{
+  "model_initialization_ms": 2153.7357830002293,
+  "device": "cpu",
+  "batches": [
+    {
+      "processor_ms": 19.63699100087979,
+      "inference_ms": 178.00985099893296,
+      "normalization_transfer_ms": 0.181057001100271,
+      "batch_size": 4,
+      "preprocess_ms": 1559.7117299985257,
+      "embedding_ms": 198.07593500081566,
+      "upsert_verify_ms": 85.62502699896868,
+      "batch_ms": 1932.0137779996003
+    },
+    {
+      "processor_ms": 26.77169600065099,
+      "inference_ms": 173.7508770002023,
+      "normalization_transfer_ms": 0.1402909983880818,
+      "batch_size": 4,
+      "preprocess_ms": 1804.2090150011063,
+      "embedding_ms": 200.9450419991481,
+      "upsert_verify_ms": 83.69647400104441,
+      "batch_ms": 2178.2100159998663
+    },
+    {
+      "processor_ms": 9.428092000234756,
+      "inference_ms": 104.82561900062137,
+      "normalization_transfer_ms": 0.11861399980261922,
+      "batch_size": 2,
+      "preprocess_ms": 730.3691659999458,
+      "embedding_ms": 114.72656300065864,
+      "upsert_verify_ms": 63.993175001087366,
+      "batch_ms": 954.4246589994145
+    }
+  ],
+  "worker_ms": 5574.032498001543,
+  "images_per_second": 1.7940333149448444,
+  "peak_rss_kib": 1134676
+}

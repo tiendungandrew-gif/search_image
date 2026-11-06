@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor U as Người dùng
+    participant UI as React
+    participant API as API và router
+    participant S as Search orchestrator
+    participant PG as PostgreSQL
+    participant E as Text encoder
+    participant Q as Qdrant
+    U->>UI: Nhập text và K
+    UI->>API: POST /api/v1/search JSON
+    Note over API: Full ASGI timer bắt đầu trước body parse
+    API->>API: Auth, validate, normalize, route direct
+    API->>S: Typed SearchCommand và deadline
+    S->>PG: Capture active index và manifest
+    PG-->>S: Pinned index/model version
+    S->>E: Encode text, token-limit check
+    E-->>S: Compatible normalized vector
+    S->>Q: Query pinned collection với C/filters
+    Q-->>S: Candidate UUID, score, payload revision
+    S->>PG: Batch hydrate và authoritative eligibility
+    PG-->>S: Ready metadata và current revisions
+    S->>S: Dedup, optional rerank, stable Top-K
+    S-->>API: Results, score type, versions
+    API-->>UI: 200 SearchResponse
+    Note over API: Full timer kết thúc khi final body send hoàn tất
+    UI-->>U: Grid và empty/error state nếu áp dụng

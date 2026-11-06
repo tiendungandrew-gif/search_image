@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "build_requested": true,
+  "checks": {
+    "backend_tests": {
+      "status": "pass",
+      "return_code": 0,
+      "passed": 56
+    },
+    "real_clip_batch": "pass",
+    "cross_storage_ids_bytes_vectors": "pass",
+    "idempotent_repeat": "pass",
+    "original_orphans": "pass"
+  },
+  "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+  "worker_was_running": true
+}

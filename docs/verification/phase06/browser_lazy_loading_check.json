@@ -1,0 +1,22 @@
+{
+  "status": "resolved_test_assumption",
+  "stats": {
+    "startTime": "2026-11-03T11:30:17.369Z",
+    "duration": 25331.219999999998,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "reason": "Initial stronger mobile assertion expected every offscreen loading=lazy image decoded before scrolling. Final test scrolls each real image into view and retains naturalWidth assertion.",
+  "final_status": "pass",
+  "final_stats": {
+    "startTime": "2026-11-04T07:32:44.297Z",
+    "duration": 10271.463,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "resolved_by": "Scroll all lazy images into view, retain per-image naturalWidth and all-images assertions."
+}

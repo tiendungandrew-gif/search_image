@@ -1,0 +1,10 @@
+{
+  "purpose": "Truy vấn smoke theo nội dung fixture; không phải relevance judgments",
+  "human_verified_qrels": false,
+  "queries": [
+    {"group": "object", "text": "a cup of coffee"},
+    {"group": "color_object", "text": "a brown cat"},
+    {"group": "scene", "text": "stars and galaxies in deep space"},
+    {"group": "action", "text": "a rocket launching into the sky"}
+  ]
+}

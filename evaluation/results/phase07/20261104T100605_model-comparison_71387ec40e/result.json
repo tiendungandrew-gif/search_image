@@ -1,0 +1,1003 @@
+{
+  "status": "measured",
+  "model": "clip",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "checkpoint": "openai/clip-vit-base-patch32",
+  "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "manifest": {
+    "exif": "transpose",
+    "alpha": "white",
+    "files": {
+      "README.md": "8f0e8c678e0afe5f384f3bf8a6694c1cb53c41e52f86277967b6c5354cb0f9f4",
+      "merges.txt": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85",
+      "vocab.json": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363",
+      "config.json": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770",
+      "tokenizer.json": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842",
+      "model.safetensors": "99d28a652e6ec46629ab7047a0ac82c69b1fe11e0ce672c43af65d3a9a3fc05d",
+      "pytorch_model.bin": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+      "tokenizer_config.json": "34b7336e4bee12e0a9730eaf5189f582ef3c3eea5027f65730e5717256755aad",
+      "special_tokens_map.json": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf",
+      "preprocessor_config.json": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd"
+    },
+    "torch": "2.15.0+cpu",
+    "device": "cpu",
+    "distance": "cosine",
+    "model_id": "openai/clip-vit-base-patch32",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "attention": "eager",
+    "dimension": 512,
+    "precision": "float32",
+    "processor": {
+      "size": {
+        "shortest_edge": 224
+      },
+      "resample": 3,
+      "crop_size": {
+        "width": 224,
+        "height": 224
+      },
+      "do_resize": true,
+      "image_std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ],
+      "do_rescale": true,
+      "image_mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "do_normalize": true,
+      "do_center_crop": true,
+      "do_convert_rgb": true,
+      "rescale_factor": 0.00392156862745098,
+      "_processor_class": null,
+      "image_processor_type": "CLIPImageProcessor"
+    },
+    "transformers": "4.57.6",
+    "normalization": "l2",
+    "canonical_vector": "float32-le-l2-v1",
+    "processor_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "decoder_code_sha256": "2edfdf8f0ff24e95fa506b908c828b310abbdbc5f7da84d96e731ccb87cdb32e",
+    "encoder_code_sha256": "20d9c0b1dcb9f8d35ccf1ea38e330ff505cca9dae52a6f6324e38dcd1c8c8daf"
+  },
+  "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+  "collection": "images_clip_v1_da55a7d099fd",
+  "dimension": 512,
+  "model_initialization_fresh_process_ms": 3856.0442679990956,
+  "cold_policy": "fresh model/process; filesystem cache warm/uncontrolled; includes hash verification and warmup",
+  "process_peak_rss_kib": 1202496,
+  "device": "cpu",
+  "gpu_results": null,
+  "index_verification": {
+    "status": "pass",
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "collection": "images_clip_v1_da55a7d099fd",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "dimension": 512,
+    "verified_images": 10,
+    "exact_vector_count": 10,
+    "image_ids": [
+      "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+      "144910f0-c5f2-4981-962f-cf4136b240e0",
+      "16526aae-297c-4a8a-986e-3239731a84f5",
+      "248a1632-5020-46dc-a585-84d2cdf988b0",
+      "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+      "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "6a19fdda-6379-42bf-a96c-5559256139b6",
+      "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+      "f9dad06d-a187-4f7b-8bae-57134177bb04"
+    ],
+    "problems": [],
+    "orphan_point_ids": [],
+    "live_items": false,
+    "missing_embedding_image_ids": [],
+    "verification_ms": 172.81044999981532
+  },
+  "indexing": null,
+  "hnsw_config": {
+    "m": 16,
+    "ef_construct": 100,
+    "full_scan_threshold": 10000,
+    "max_indexing_threads": 0,
+    "on_disk": false,
+    "memory": null,
+    "payload_m": null,
+    "inline_storage": null
+  },
+  "indexed_vectors_count": 0,
+  "ann_caveat": "Small corpus may use plain scan; overlap@10 is trivial when K=N; not human relevance Recall",
+  "encoding_latency": {
+    "count": 28,
+    "median_ms": 23.796484000740747,
+    "min_ms": 12.13146700138168,
+    "mean_ms": 34.155318857236644,
+    "p50_ms": 23.733975000141072,
+    "p90_ms": 57.18414100010705,
+    "p95_ms": 76.90920699860726,
+    "p99_ms": 223.15584900024987,
+    "max_ms": 223.15584900024987,
+    "stddev_ms": 39.033718526522826
+  },
+  "semantic_quality": "not_measured_no_human_labels",
+  "active_baseline_preserved": true,
+  "queries": [
+    {
+      "query_id": "single_coffee_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 28.709029998935875,
+      "vector_retrieval_and_exact_comparison_ms": 55.94793199998094,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_coffee_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 24.82491200134973,
+      "vector_retrieval_and_exact_comparison_ms": 50.45301800055313,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_cat_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 12.368113000775338,
+      "vector_retrieval_and_exact_comparison_ms": 51.89984199932951,
+      "result_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_cat_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 21.122976999322418,
+      "vector_retrieval_and_exact_comparison_ms": 55.841692999820225,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_camera_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 21.126539000761113,
+      "vector_retrieval_and_exact_comparison_ms": 57.8216390003945,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "144910f0-c5f2-4981-962f-cf4136b240e0"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_camera_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 23.733975000141072,
+      "vector_retrieval_and_exact_comparison_ms": 50.51256899969303,
+      "result_ids": [
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_rocket_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 20.4112970004644,
+      "vector_retrieval_and_exact_comparison_ms": 55.26412700055516,
+      "result_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_rocket_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 25.975650998589117,
+      "vector_retrieval_and_exact_comparison_ms": 50.01608699967619,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_hubble_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 17.702525999993668,
+      "vector_retrieval_and_exact_comparison_ms": 55.37510499925702,
+      "result_ids": [
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_hubble_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 29.836945001079584,
+      "vector_retrieval_and_exact_comparison_ms": 51.8114839996997,
+      "result_ids": [
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_horse_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 23.858993001340423,
+      "vector_retrieval_and_exact_comparison_ms": 51.51387200021418,
+      "result_ids": [
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_horse_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 22.839688999738428,
+      "vector_retrieval_and_exact_comparison_ms": 51.03676099861332,
+      "result_ids": [
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and2_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 16.75232399975357,
+      "vector_retrieval_and_exact_comparison_ms": 49.697080999976606,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and2_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 24.412072998529766,
+      "vector_retrieval_and_exact_comparison_ms": 50.20636599874706,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and3_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 19.950539001001744,
+      "vector_retrieval_and_exact_comparison_ms": 53.05110799963586,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and3_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 25.615307000407483,
+      "vector_retrieval_and_exact_comparison_ms": 51.524194999728934,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and4_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 27.263302999926964,
+      "vector_retrieval_and_exact_comparison_ms": 50.38004699963494,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and4_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 18.51095100028033,
+      "vector_retrieval_and_exact_comparison_ms": 48.357726000176626,
+      "result_ids": [
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "or_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 12.13146700138168,
+      "vector_retrieval_and_exact_comparison_ms": 46.254904998932034,
+      "result_ids": [
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "or_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 12.90447900100844,
+      "vector_retrieval_and_exact_comparison_ms": 50.15631499918527,
+      "result_ids": [
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "optional_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 15.785992000019178,
+      "vector_retrieval_and_exact_comparison_ms": 51.24163800064707,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "optional_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 19.86217199919338,
+      "vector_retrieval_and_exact_comparison_ms": 52.17288299900247,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_coffee",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 223.15584900024987,
+      "vector_retrieval_and_exact_comparison_ms": 4.483321999941836,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_cat",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 45.37660799906007,
+      "vector_retrieval_and_exact_comparison_ms": 4.385435000585858,
+      "result_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_camera",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 44.23865100034163,
+      "vector_retrieval_and_exact_comparison_ms": 5.380520999096916,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_rocket",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 43.78521800026647,
+      "vector_retrieval_and_exact_comparison_ms": 5.453450999993947,
+      "result_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "paired_coffee_en",
+      "query_type": "multimodal",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 57.18414100010705,
+      "vector_retrieval_and_exact_comparison_ms": 56.62804699932167,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        },
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "paired_coffee_vi",
+      "query_type": "multimodal",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 76.90920699860726,
+      "vector_retrieval_and_exact_comparison_ms": 53.16498899992439,
+      "result_ids": [
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        },
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    }
+  ]
+}

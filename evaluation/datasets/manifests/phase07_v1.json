@@ -1,0 +1,225 @@
+{
+  "dataset_id": "phase07_current_index",
+  "version": "1",
+  "active": {
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+  },
+  "images": [
+    {
+      "image_id": "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+      "sha256": "c2dd0de7c538df8d111e479619b129464d0269d0ae5fd18ca91d33a7fdfea95c",
+      "byte_size": 112525,
+      "width": 640,
+      "height": 427,
+      "metadata": {
+        "title": null,
+        "width": 640,
+        "height": 427,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "public-domain"
+      },
+      "filename": "rocket.jpg",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/0278e1c7-641f-4751-b704-18d20fe2f6f1.image"
+    },
+    {
+      "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+      "sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+      "byte_size": 194247,
+      "width": 512,
+      "height": 512,
+      "metadata": {
+        "title": null,
+        "width": 512,
+        "height": 512,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "filename": "gravel.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/144910f0-c5f2-4981-962f-cf4136b240e0.image"
+    },
+    {
+      "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+      "sha256": "f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+      "byte_size": 58784,
+      "width": 400,
+      "height": 300,
+      "metadata": {
+        "title": null,
+        "width": 400,
+        "height": 300,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "public-domain"
+      },
+      "filename": "clock_motion.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/16526aae-297c-4a8a-986e-3239731a84f5.image"
+    },
+    {
+      "image_id": "248a1632-5020-46dc-a585-84d2cdf988b0",
+      "sha256": "b6b6022426b38936c43a4ac09635cd78af074e90f42ffa8227ac8b7452d39f89",
+      "byte_size": 217893,
+      "width": 512,
+      "height": 512,
+      "metadata": {
+        "title": null,
+        "width": 512,
+        "height": 512,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "filename": "grass.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/248a1632-5020-46dc-a585-84d2cdf988b0.image"
+    },
+    {
+      "image_id": "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+      "sha256": "c7fb60789fe394c485f842291ea3b21e50d140f39d6dcb5fb9917cc178225455",
+      "byte_size": 16633,
+      "width": 400,
+      "height": 328,
+      "metadata": {
+        "title": null,
+        "width": 400,
+        "height": 328,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "filename": "horse.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/3b6739b5-abb7-48f0-b8a1-0b96a5861828.image"
+    },
+    {
+      "image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "sha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+      "byte_size": 240512,
+      "width": 451,
+      "height": 300,
+      "metadata": {
+        "title": null,
+        "width": 451,
+        "height": 300,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "filename": "chelsea.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/57ac376b-090d-499e-aed8-97368b32a5d2.image"
+    },
+    {
+      "image_id": "6a19fdda-6379-42bf-a96c-5559256139b6",
+      "sha256": "b0793d2adda0fa6ae899c03989482bff9a42d3d5690fc7e3648f2795d730c23a",
+      "byte_size": 139512,
+      "width": 512,
+      "height": 512,
+      "metadata": {
+        "title": null,
+        "width": 512,
+        "height": 512,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "filename": "camera.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/6a19fdda-6379-42bf-a96c-5559256139b6.image"
+    },
+    {
+      "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+      "byte_size": 466706,
+      "width": 600,
+      "height": 400,
+      "metadata": {
+        "title": null,
+        "width": 600,
+        "height": 400,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "filename": "coffee.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142.image"
+    },
+    {
+      "image_id": "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+      "sha256": "3a19c5dd8a927a9334bb1229a6d63711b1c0c767fb27e2286e7c84a3e2c2f5f4",
+      "byte_size": 527940,
+      "width": 1000,
+      "height": 872,
+      "metadata": {
+        "title": null,
+        "width": 1000,
+        "height": 872,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "public-domain"
+      },
+      "filename": "hubble_deep_field.jpg",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/800fec28-5f0f-4b60-b66f-38deb99ae62f.image"
+    },
+    {
+      "image_id": "f9dad06d-a187-4f7b-8bae-57134177bb04",
+      "sha256": "7966caf324f6ba843118d98f7a07746d22f6a343430add0233eca5f6eaaa8fcf",
+      "byte_size": 106634,
+      "width": 512,
+      "height": 512,
+      "metadata": {
+        "title": null,
+        "width": 512,
+        "height": 512,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "filename": "brick.png",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "cache_file": ".cache/evaluation/images/f9dad06d-a187-4f7b-8bae-57134177bb04.image"
+    }
+  ],
+  "server_environment": {
+    "status": "runtime_endpoint_unavailable"
+  },
+  "coverage": {
+    "images": 10,
+    "accessible": 10,
+    "indexed_ready": 10
+  },
+  "limitations": [
+    "Small existing corpus; not representative large-scale semantic benchmark",
+    "No human semantic judgments yet"
+  ],
+  "sha256": "1c445e2d26dda73696b56b0947550fc76eb05df0e5aac9e293cabc1ce9051e37",
+  "validated_at_utc": "2026-11-04T08:37:16.813194+00:00"
+}

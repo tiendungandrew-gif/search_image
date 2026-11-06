@@ -1,0 +1,61 @@
+{
+  "status": "pass",
+  "services": [
+    {
+      "Service": "backend",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "frontend",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "indexing-worker",
+      "State": "running",
+      "Health": ""
+    },
+    {
+      "Service": "minio",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "qdrant",
+      "State": "running",
+      "Health": "healthy"
+    }
+  ],
+  "search_health_status": 200,
+  "search_health": {
+    "status": "ok",
+    "check": "search",
+    "capabilities": {
+      "text_search": true,
+      "image_search": true,
+      "multimodal": true,
+      "multi_intent": true,
+      "rerank": true,
+      "explanations": false,
+      "agent": false
+    },
+    "worker": {
+      "state": "unknown"
+    },
+    "dependencies": {
+      "metadata": "healthy",
+      "objects": "healthy",
+      "vectors": "healthy",
+      "encoder": "healthy",
+      "index": "healthy"
+    }
+  },
+  "alembic_current": "928b88dc3f68 (head)",
+  "verification_date": "2026-11-04"
+}

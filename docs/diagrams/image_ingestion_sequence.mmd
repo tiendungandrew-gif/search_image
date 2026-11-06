@@ -1,0 +1,33 @@
+sequenceDiagram
+    actor Admin as Quản trị
+    participant API as API upload
+    participant PG as PostgreSQL
+    participant M as MinIO private
+    participant W as Worker
+    participant E as Image encoder
+    participant Q as Qdrant
+    Admin->>API: File, metadata, Idempotency-Key
+    API->>API: Auth, byte/pixel/frame validation, SHA-256
+    API->>PG: Reserve UUID và job awaiting_input, dedup
+    alt Identity đã available
+        PG-->>API: Existing image ID
+        API-->>Admin: 200 duplicate, không ghi đè metadata
+    else Identity mới
+        API->>M: PUT staging theo item UUID
+        M-->>API: Durable receipt
+        API->>PG: Commit source ref và queued
+        API-->>Admin: 202 image ID, job ID
+        W->>PG: Claim item SKIP LOCKED, lease, claim token
+        PG-->>W: Item và pinned index manifest
+        W->>M: GET staging, verify digest
+        W->>W: Decode/preprocess, metadata extraction
+        W->>E: Encode ảnh theo manifest
+        E-->>W: Normalized finite vector
+        W->>M: PUT immutable original và optional preview
+        M-->>W: Verified receipts
+        W->>PG: Persist object/metadata progress với claim CAS
+        W->>Q: Upsert UUID point, wait applied
+        Q-->>W: Applied acknowledgement
+        W->>PG: Verify current claim, commit embedding ready
+        Note over W,PG: Lỗi transient retry hữu hạn<br/>Stale claim không publish ready
+    end

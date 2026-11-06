@@ -1,0 +1,92 @@
+{
+  "discovered": 10,
+  "validated": 10,
+  "duplicates": 10,
+  "accepted": 10,
+  "failed": 0,
+  "ignored": 1,
+  "results": [
+    {
+      "filename": "brick.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "f9dad06d-a187-4f7b-8bae-57134177bb04",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "camera.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "6a19fdda-6379-42bf-a96c-5559256139b6",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "chelsea.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "clock_motion.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "coffee.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "grass.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "248a1632-5020-46dc-a585-84d2cdf988b0",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "gravel.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "horse.png",
+      "job_id": null,
+      "status": "available",
+      "image_id": "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "hubble_deep_field.jpg",
+      "job_id": null,
+      "status": "available",
+      "image_id": "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+      "duplicate": true,
+      "status_url": null
+    },
+    {
+      "filename": "rocket.jpg",
+      "job_id": null,
+      "status": "available",
+      "image_id": "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+      "duplicate": true,
+      "status_url": null
+    }
+  ],
+  "ingestion_ms": 3235.0143420007953,
+  "source_id": "9d20d7e8-cf12-4ae1-8041-ca1b71c7e918"
+}

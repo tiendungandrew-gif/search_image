@@ -1,0 +1,182 @@
+{
+  "status": "pass",
+  "health_http": {
+    "/api/v1/health/live": 200,
+    "/api/v1/health/ready": 200,
+    "/api/v1/health?check=search": 200
+  },
+  "runtime": {
+    "status": "ready",
+    "pid": 1,
+    "python": "3.12.12",
+    "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+    "logical_cpus": 16,
+    "cpu_user_seconds": 10.818474,
+    "cpu_system_seconds": 1.95321,
+    "process_memory_kib": {
+      "VmHWM": 1282200,
+      "VmRSS": 1282200
+    },
+    "process_threads": 42,
+    "model_initialization_ms": 7173.152096999729,
+    "settings": {
+      "embedding_cpu_threads": 4,
+      "embedding_device": "auto",
+      "search_max_top_k": 50,
+      "search_default_candidates": 50,
+      "search_queue_capacity": 8,
+      "search_queue_wait_seconds": 0.05,
+      "search_object_check_concurrency": 1,
+      "reranking_max_candidates": 50,
+      "reranking_timeout_ms": 200
+    },
+    "gpu_measurements": null,
+    "model": {
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "name": "openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "dimension": 512,
+      "device": "cpu",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "collection": "images_clip_v1_da55a7d099fd",
+      "generation": 1
+    }
+  },
+  "rag_status": {
+    "enabled": true,
+    "configured": true,
+    "error_code": null,
+    "provider": "gemini",
+    "model_id": "gemini-3.5-flash-lite",
+    "streaming": true,
+    "generation_config": {
+      "temperature": 0.1,
+      "max_input_tokens": 4096,
+      "max_context_tokens": 2048,
+      "max_output_tokens": 128,
+      "timeout_seconds": 5.0,
+      "provider_retries": 1,
+      "reasoning_effort": "minimal",
+      "gemini_api_style": "native"
+    },
+    "grounding_policy": "validated extractive metadata facts; no visual verification"
+  },
+  "sse_openapi": "text/event-stream",
+  "missing_visual_evidence": {
+    "query_id": "976ed2ed-d677-4140-85bc-725af8204c9e",
+    "request_id": "c6c12aea-0cbc-4e6e-864f-18e55615591b",
+    "operation": "explain_existing",
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "results": [
+      {
+        "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "rank": 1,
+        "score": null,
+        "score_type": null,
+        "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+        "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 600,
+          "height": 400,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "scikit-image-v0.25.2",
+          "city": null,
+          "license": "CC0-1.0"
+        },
+        "constraint_assessments": []
+      }
+    ],
+    "rag": {
+      "answer": "Không có đủ thông tin từ các hình ảnh và metadata được truy xuất để xác nhận điều này.",
+      "grounding_status": "insufficient_evidence",
+      "citations": [],
+      "evidence": [
+        {
+          "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+          "retrieval_rank": 1,
+          "retrieval_score": null,
+          "caption": null,
+          "tags": [],
+          "metadata": {
+            "width": 600,
+            "height": 400,
+            "media_type": "image/png",
+            "source_dataset": "scikit-image-v0.25.2",
+            "license": "CC0-1.0"
+          },
+          "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+          "provenance": {
+            "metadata_revision": 1,
+            "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+            "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+            "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+            "caption": {
+              "source": null,
+              "verified": false,
+              "policy": "stored attribution; not visual verification"
+            },
+            "tags": {},
+            "metadata": {
+              "source": "stored_postgresql",
+              "verified_visual_content": false
+            }
+          },
+          "incomplete": true
+        }
+      ],
+      "language": "vi",
+      "generated": false,
+      "provider": "gemini",
+      "model_id": "gemini-3.5-flash-lite",
+      "model_revision": "provider_managed",
+      "returned_model": null,
+      "prompt_version": "extractive-facts-v1",
+      "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+      "context": {
+        "included_image_ids": [],
+        "available_images": 1,
+        "fact_count": 0,
+        "context_budget_upper_bound_tokens": 2048,
+        "input_token_upper_bound": 1613,
+        "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+        "policy": "descriptive_first",
+        "technical_question": false
+      },
+      "generation_config": {
+        "temperature": 0.1,
+        "max_input_tokens": 4096,
+        "max_context_tokens": 2048,
+        "max_output_tokens": 128,
+        "timeout_seconds": 5.0,
+        "provider_retries": 1,
+        "streaming_enabled": true,
+        "reasoning_effort": "minimal",
+        "token_parameter": "max_tokens",
+        "max_concurrency": 2,
+        "gemini_api_style": "native"
+      },
+      "usage": null,
+      "error_code": null,
+      "limitations": [
+        "Text-only metadata explanation; no direct visual verification."
+      ]
+    },
+    "latency": {
+      "retrieval_ms": 0.000776999513618648,
+      "evidence_ms": 25.721336999595223,
+      "context_ms": 0.90663199989649,
+      "generation_ms": 0.0,
+      "validation_ms": 0.0,
+      "provider_ttft_ms": null,
+      "provider_ttlast_ms": null,
+      "total_ms": 26.90943499965215,
+      "time_to_last_token_from_request_ms": null
+    },
+    "warnings": []
+  }
+}

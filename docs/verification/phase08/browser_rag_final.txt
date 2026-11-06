@@ -1,0 +1,41 @@
+  ✘  1 [desktop] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (12.5s)
+(node:155121) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [mobile] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (3.7s)
+
+
+  1) [desktop] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('rag-answer')
+    Expected substring: "Theo metadata"
+    Received string:    "Giải thích chưa khả dụngChưa tạo được giải thích lúc này. Kết quả ảnh vẫn có sẵn.Mã trạng thái: LLM_TIMEOUT. Bạn vẫn có thể xem và tìm kiếm ảnh."
+    Timeout: 12000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('rag-answer') with timeout 12000ms
+      - waiting for getByTestId('rag-answer')
+        14 × locator resolved to <div role="status" data-testid="rag-answer">…</div>
+           - unexpected value "Giải thích chưa khả dụngChưa tạo được giải thích lúc này. Kết quả ảnh vẫn có sẵn.Mã trạng thái: LLM_TIMEOUT. Bạn vẫn có thể xem và tìm kiếm ảnh."
+
+
+      17 |     .fill("Metadata ghi định dạng và kích thước như thế nào?");
+      18 |   await page.getByRole("button", { name: "Giải thích bằng AI" }).click();
+    > 19 |   await expect(page.getByTestId("rag-answer")).toContainText("Theo metadata", {
+         |                                                ^
+      20 |     timeout: 12000,
+      21 |   });
+      22 |   await expect(
+        at /home/tts/prj/frontend/e2e/rag.spec.ts:19:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/rag-optional-explanation-u-4dab1-erves-indexed-image-results-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/rag-optional-explanation-u-4dab1-erves-indexed-image-results-desktop/error-context.md
+
+  1 failed
+    [desktop] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results 
+  1 passed (17.1s)
+

@@ -1,0 +1,157 @@
+{
+  "status": "pass",
+  "health": {
+    "status": "ok",
+    "check": "search",
+    "capabilities": {
+      "text_search": true,
+      "image_search": true,
+      "multimodal": true,
+      "multi_intent": true,
+      "rerank": true,
+      "explanations": false,
+      "agent": false
+    },
+    "worker": {
+      "state": "unknown"
+    },
+    "dependencies": {
+      "metadata": "healthy",
+      "objects": "healthy",
+      "vectors": "healthy",
+      "encoder": "healthy",
+      "index": "healthy"
+    }
+  },
+  "response": {
+    "query_id": "89894331-d202-4bb3-b487-91aef7808732",
+    "request_id": "320e1f2f-2951-449a-ab60-f858a56bc7a2",
+    "requested_mode": "text",
+    "search_mode": "text",
+    "service_class": "fast",
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "results": [
+      {
+        "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "rank": 1,
+        "score": 0.28575084,
+        "score_type": "cosine",
+        "ranking_version": "cosine-v1",
+        "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+        "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 600,
+          "height": 400,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "scikit-image-v0.25.2",
+          "city": null,
+          "license": "CC0-1.0"
+        },
+        "constraint_assessments": [],
+        "constraint_evidence": [],
+        "score_components": {},
+        "contributing_branches": []
+      },
+      {
+        "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+        "rank": 2,
+        "score": 0.22746517,
+        "score_type": "cosine",
+        "ranking_version": "cosine-v1",
+        "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+        "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 400,
+          "height": 300,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "scikit-image-v0.25.2",
+          "city": null,
+          "license": "public-domain"
+        },
+        "constraint_assessments": [],
+        "constraint_evidence": [],
+        "score_components": {},
+        "contributing_branches": []
+      },
+      {
+        "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "rank": 3,
+        "score": 0.2271429,
+        "score_type": "cosine",
+        "ranking_version": "cosine-v1",
+        "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+        "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 512,
+          "height": 512,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "scikit-image-v0.25.2",
+          "city": null,
+          "license": "CC0-1.0"
+        },
+        "constraint_assessments": [],
+        "constraint_evidence": [],
+        "score_components": {},
+        "contributing_branches": []
+      }
+    ],
+    "total_results": 3,
+    "effective_settings": {
+      "top_k": 3,
+      "ranking_version": "cosine-v1",
+      "total_candidate_cap": 1000,
+      "candidate_count": 50,
+      "channels": 1,
+      "vector_calls": 1,
+      "fusion_version": null,
+      "constraints_mode": "metadata_only",
+      "truncated": false,
+      "route": "single_vector",
+      "rerank_applied": false
+    },
+    "latency": {
+      "processing_ms": 76.51104199976544,
+      "server_response_ms": null,
+      "stages": {
+        "query_analysis_ms": 0.015124000128707848,
+        "compatibility_ms": 5.694064000181243,
+        "text_preprocessing_ms": 0.2513270001145429,
+        "text_forward_ms": 7.639968000148656,
+        "text_embedding_ms": 8.172154000021692,
+        "vector_retrieval_ms": 45.412127999952645,
+        "ranking_ms": 0.04718299987871433,
+        "metadata_ms": 9.321268999883614,
+        "eligibility_objects_urls_ms": 7.58291600004668,
+        "input_validation_ms": 0.1755739995132899
+      }
+    },
+    "latency_ms": 76.51104199976544,
+    "warnings": [],
+    "query_analysis": {
+      "original_query": "a cup of coffee",
+      "query_type": "SINGLE_INTENT",
+      "language": "en",
+      "constraints": null,
+      "logical_operator": null,
+      "retrieval_strategy": "single_vector",
+      "requires_agent": false,
+      "uncertain": false,
+      "limitations": []
+    },
+    "explanation": null,
+    "agent": null
+  },
+  "cuda": false,
+  "disk_free_bytes": 437191602176
+}

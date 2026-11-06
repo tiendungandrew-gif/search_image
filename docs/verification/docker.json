@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "build_requested": true,
+  "checks": {
+    "http_smoke": "pass",
+    "backend unit": "pass",
+    "Python lint": "pass",
+    "Python format": "pass",
+    "TypeScript": "pass",
+    "ESLint": "pass",
+    "frontend unit": "pass",
+    "frontend build": "pass",
+    "integration": "pass",
+    "volume_persistence": "pass",
+    "outage_postgres": "pass",
+    "outage_qdrant": "pass",
+    "outage_minio": "pass",
+    "marker_cleanup": "pass"
+  },
+  "services": [
+    {
+      "Service": "backend",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "frontend",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "minio",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "qdrant",
+      "State": "running",
+      "Health": "healthy"
+    }
+  ],
+  "volumes": {
+    "postgres": "ai-image-search_postgres_data",
+    "qdrant": "ai-image-search_qdrant_data",
+    "minio": "ai-image-search_minio_data"
+  }
+}

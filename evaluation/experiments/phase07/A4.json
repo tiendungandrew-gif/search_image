@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "name": "A4_rerank",
+  "profile": "advanced",
+  "requests": 300,
+  "query_types": [
+    "multi_intent"
+  ],
+  "filters": {
+    "media_types": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ]
+  },
+  "rerank": true,
+  "sample_resources": true
+}

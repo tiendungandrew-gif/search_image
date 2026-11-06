@@ -1,0 +1,43 @@
+{
+  "added": [
+    "backend/app/api/v1/rag.py",
+    "backend/app/cli/rag.py",
+    "backend/app/evaluation/rag.py",
+    "backend/app/schemas/rag.py",
+    "backend/app/services/rag/__init__.py",
+    "backend/app/services/rag/citation_validator.py",
+    "backend/app/services/rag/context_builder.py",
+    "backend/app/services/rag/evidence_retriever.py",
+    "backend/app/services/rag/generator.py",
+    "backend/app/services/rag/llm_provider.py",
+    "backend/app/services/rag/prompts/answer_generation.txt",
+    "backend/app/services/rag/prompts/evidence_explanation.txt",
+    "backend/app/services/rag/prompts/insufficient_evidence.txt",
+    "backend/app/services/rag/prompts/system_prompt.txt",
+    "backend/app/services/rag/rag_service.py",
+    "backend/tests/integration/test_real_rag.py",
+    "backend/tests/unit/test_rag.py",
+    "evaluation/rag/reviews/template_phase08_native.json",
+    "frontend/e2e/rag.spec.ts",
+    "frontend/src/features/rag/ExplanationPanel.tsx",
+    "scripts/verify_rag.sh",
+    "scripts/verify_rag_fallback.py"
+  ],
+  "modified": [
+    ".env.example",
+    "Makefile",
+    "README.md",
+    "backend/app/api/router.py",
+    "backend/app/api/v1/health.py",
+    "backend/app/core/config.py",
+    "backend/app/core/middleware.py",
+    "backend/app/evaluation/reporting.py",
+    "backend/app/main.py",
+    "backend/tests/conftest.py",
+    "evaluation/README.md",
+    "frontend/src/features/search/SearchWorkspace.tsx",
+    "frontend/src/styles/index.css",
+    "scripts/verify_search.py"
+  ],
+  "removed": []
+}

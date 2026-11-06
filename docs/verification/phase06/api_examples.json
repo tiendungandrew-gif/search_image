@@ -1,0 +1,1742 @@
+[
+  {
+    "case": "coffee and a brown cat",
+    "http_status": 200,
+    "response": {
+      "query_id": "a5725977-ef56-44e5-9703-3eb65556f28d",
+      "request_id": "bbc00eb2-f2f2-4d3b-86fe-50425eeca97e",
+      "requested_mode": "multi_intent",
+      "search_mode": "multi_intent",
+      "service_class": "advanced",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "results": [
+        {
+          "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+          "rank": 1,
+          "score": 0.452176927626133,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+          "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 600,
+            "height": 400,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27497172355651855,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20403876900672913,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27497172355651855,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20403876900672913,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6195563152432442,
+            "constraint_mean": 0.6108860038220882,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.01605716687683901
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 1,
+              "cosine": 0.23911262,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            },
+            {
+              "branch": "q1",
+              "rank": 1,
+              "cosine": 0.27497172,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            },
+            {
+              "branch": "q2",
+              "rank": 5,
+              "cosine": 0.20403877,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005128205128205128
+            }
+          ]
+        },
+        {
+          "image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+          "rank": 2,
+          "score": 0.44865052610635764,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/57ac376b-090d-499e-aed8-97368b32a5d2/content?variant=original",
+          "thumbnail_url": "/api/v1/images/57ac376b-090d-499e-aed8-97368b32a5d2/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 451,
+            "height": 300,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20042458176612854,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27102798223495483,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20042458176612854,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27102798223495483,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6125885993242264,
+            "constraint_mean": 0.6090377159416676,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.015969030088543574
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 2,
+              "cosine": 0.22517717,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            },
+            {
+              "branch": "q1",
+              "rank": 5,
+              "cosine": 0.20042457,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005128205128205128
+            },
+            {
+              "branch": "q2",
+              "rank": 1,
+              "cosine": 0.27102795,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            }
+          ]
+        },
+        {
+          "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+          "rank": 3,
+          "score": 0.4439924179017544,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+          "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 512,
+            "height": 512,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.232779398560524,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.21794447302818298,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.232779398560524,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.21794447302818298,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.5991544425487518,
+            "constraint_mean": 0.6108266022056341,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.0160436934630483
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 3,
+              "cosine": 0.19830887,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005291005291005291
+            },
+            {
+              "branch": "q1",
+              "rank": 2,
+              "cosine": 0.23277934,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            },
+            {
+              "branch": "q2",
+              "rank": 2,
+              "cosine": 0.21794444,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            }
+          ]
+        }
+      ],
+      "total_results": 3,
+      "effective_settings": {
+        "top_k": 3,
+        "ranking_version": "constraint-linear-v1",
+        "total_candidate_cap": 1000,
+        "candidate_count": 50,
+        "candidate_pool_limit": 100,
+        "channels": 3,
+        "vector_calls": 3,
+        "vector_fetch_calls": 1,
+        "score_type": "reranker",
+        "fusion_version": "rrf-v1",
+        "fusion_weights": {
+          "whole": 1.0,
+          "q1": 1.0,
+          "q2": 1.0
+        },
+        "rrf_k": 60,
+        "constraints_mode": "best_effort",
+        "truncated": false,
+        "route": "multi_query",
+        "rerank_applied": true,
+        "retrieval_strategy": "fused"
+      },
+      "latency": {
+        "processing_ms": 202.90170699990995,
+        "server_response_ms": null,
+        "stages": {
+          "query_decomposition_ms": 1.175536000118882,
+          "query_analysis_ms": 1.3470399999278015,
+          "compatibility_ms": 48.690953999994235,
+          "text_preprocessing_ms": 1.1384430001726287,
+          "text_forward_ms": 35.28402799997821,
+          "text_embedding_ms": 37.362897999855704,
+          "vector_retrieval_ms": 37.008849999892846,
+          "candidate_fusion_ms": 0.4377200000362791,
+          "metadata_ms": 35.15114900005756,
+          "metadata_filtering_ms": 0.14429599991672148,
+          "reranking_ms": 8.643825000035577,
+          "eligibility_objects_urls_ms": 19.644921000008253,
+          "input_validation_ms": 2.020657000002757
+        }
+      },
+      "latency_ms": 202.90170699990995,
+      "warnings": [
+        {
+          "code": "CONSTRAINTS_NOT_VERIFIED",
+          "message": "Điều kiện chưa xác minh; similarity chỉ dùng để xếp hạng"
+        }
+      ],
+      "query_analysis": {
+        "original_query": "coffee and a brown cat",
+        "query_type": "MULTI_INTENT",
+        "language": "en",
+        "constraints": {
+          "op": "and",
+          "clauses": [
+            {
+              "id": "q1",
+              "kind": "semantic",
+              "required": true,
+              "negated": false,
+              "weight": 1.0,
+              "text": "coffee",
+              "filter": null
+            },
+            {
+              "id": "q2",
+              "kind": "semantic",
+              "required": true,
+              "negated": false,
+              "weight": 1.0,
+              "text": "a brown cat",
+              "filter": null
+            }
+          ]
+        },
+        "logical_operator": "AND",
+        "retrieval_strategy": "multi_query",
+        "requires_agent": false,
+        "uncertain": false,
+        "limitations": []
+      },
+      "explanation": null,
+      "agent": null
+    }
+  },
+  {
+    "case": "coffee or a brown cat",
+    "http_status": 200,
+    "response": {
+      "query_id": "7641a2a3-ebc7-42b6-bfc8-fd9db6cca976",
+      "request_id": "94527560-b850-484a-81f5-832da04c536b",
+      "requested_mode": "multi_intent",
+      "search_mode": "multi_intent",
+      "service_class": "advanced",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "results": [
+        {
+          "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+          "rank": 1,
+          "score": 0.46561491847038267,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+          "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 600,
+            "height": 400,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27497172355651855,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20403876900672913,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27497172355651855,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20403876900672913,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6265514343976974,
+            "constraint_mean": 0.6374858617782593,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.01605716687683901
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 1,
+              "cosine": 0.25310287,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            },
+            {
+              "branch": "q1",
+              "rank": 1,
+              "cosine": 0.27497172,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            },
+            {
+              "branch": "q2",
+              "rank": 5,
+              "cosine": 0.20403877,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005128205128205128
+            }
+          ]
+        },
+        {
+          "image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+          "rank": 2,
+          "score": 0.462667385339737,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/57ac376b-090d-499e-aed8-97368b32a5d2/content?variant=original",
+          "thumbnail_url": "/api/v1/images/57ac376b-090d-499e-aed8-97368b32a5d2/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 451,
+            "height": 300,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20042458176612854,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27102798223495483,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.20042458176612854,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.27102798223495483,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6211544722318649,
+            "constraint_mean": 0.6355139911174774,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.015883691293527357
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 3,
+              "cosine": 0.24230894,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005291005291005291
+            },
+            {
+              "branch": "q1",
+              "rank": 5,
+              "cosine": 0.20042457,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005128205128205128
+            },
+            {
+              "branch": "q2",
+              "rank": 1,
+              "cosine": 0.27102795,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            }
+          ]
+        },
+        {
+          "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+          "rank": 3,
+          "score": 0.4551540917158127,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+          "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 512,
+            "height": 512,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.232779398560524,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.21794447302818298,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.232779398560524,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.21794447302818298,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6214955300092697,
+            "constraint_mean": 0.616389699280262,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.016129032258064516
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 2,
+              "cosine": 0.24299105,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            },
+            {
+              "branch": "q1",
+              "rank": 2,
+              "cosine": 0.23277934,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            },
+            {
+              "branch": "q2",
+              "rank": 2,
+              "cosine": 0.21794444,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            }
+          ]
+        }
+      ],
+      "total_results": 3,
+      "effective_settings": {
+        "top_k": 3,
+        "ranking_version": "constraint-linear-v1",
+        "total_candidate_cap": 1000,
+        "candidate_count": 50,
+        "candidate_pool_limit": 100,
+        "channels": 3,
+        "vector_calls": 3,
+        "vector_fetch_calls": 1,
+        "score_type": "reranker",
+        "fusion_version": "rrf-v1",
+        "fusion_weights": {
+          "whole": 1.0,
+          "q1": 1.0,
+          "q2": 1.0
+        },
+        "rrf_k": 60,
+        "constraints_mode": "best_effort",
+        "truncated": false,
+        "route": "multi_query",
+        "rerank_applied": true,
+        "retrieval_strategy": "fused"
+      },
+      "latency": {
+        "processing_ms": 177.83021000013832,
+        "server_response_ms": null,
+        "stages": {
+          "query_decomposition_ms": 0.1303429999097716,
+          "query_analysis_ms": 0.037013000110164285,
+          "compatibility_ms": 49.574245000030714,
+          "text_preprocessing_ms": 1.4111709999724553,
+          "text_forward_ms": 27.982094999970286,
+          "text_embedding_ms": 30.285368000022572,
+          "vector_retrieval_ms": 55.06917699995029,
+          "candidate_fusion_ms": 0.43487299990374595,
+          "metadata_ms": 17.622924999841416,
+          "metadata_filtering_ms": 0.21762500000477303,
+          "reranking_ms": 13.46926400015036,
+          "eligibility_objects_urls_ms": 10.267188999932841,
+          "input_validation_ms": 0.40360200023314974
+        }
+      },
+      "latency_ms": 177.83021000013832,
+      "warnings": [
+        {
+          "code": "CONSTRAINTS_NOT_VERIFIED",
+          "message": "Điều kiện chưa xác minh; similarity chỉ dùng để xếp hạng"
+        }
+      ],
+      "query_analysis": {
+        "original_query": "coffee or a brown cat",
+        "query_type": "MULTI_INTENT",
+        "language": "en",
+        "constraints": {
+          "op": "or",
+          "clauses": [
+            {
+              "id": "q1",
+              "kind": "semantic",
+              "required": true,
+              "negated": false,
+              "weight": 1.0,
+              "text": "coffee",
+              "filter": null
+            },
+            {
+              "id": "q2",
+              "kind": "semantic",
+              "required": true,
+              "negated": false,
+              "weight": 1.0,
+              "text": "a brown cat",
+              "filter": null
+            }
+          ]
+        },
+        "logical_operator": "OR",
+        "retrieval_strategy": "multi_query",
+        "requires_agent": false,
+        "uncertain": false,
+        "limitations": []
+      },
+      "explanation": null,
+      "agent": null
+    }
+  },
+  {
+    "case": "cà phê và mèo màu nâu",
+    "http_status": 200,
+    "response": {
+      "query_id": "2a4f0099-d9ad-41a5-a4e5-30c93a90686d",
+      "request_id": "6aab1790-341c-42fb-aaf8-d5cc80ff5f70",
+      "requested_mode": "multi_intent",
+      "search_mode": "multi_intent",
+      "service_class": "advanced",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "results": [
+        {
+          "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+          "rank": 1,
+          "score": 0.4540947957336903,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+          "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 400,
+            "height": 300,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "public-domain"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.23579558730125427,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.24191711843013763,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.23579558730125427,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.24191711843013763,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6165740042924881,
+            "constraint_mean": 0.6186629850417376,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.01639344262295082
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 1,
+              "cosine": 0.23314798,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            },
+            {
+              "branch": "q1",
+              "rank": 1,
+              "cosine": 0.23579556,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            },
+            {
+              "branch": "q2",
+              "rank": 1,
+              "cosine": 0.24191712,
+              "weight": 0.3333333333333333,
+              "contribution": 0.00546448087431694
+            }
+          ]
+        },
+        {
+          "image_id": "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+          "rank": 2,
+          "score": 0.44816270306706435,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/3b6739b5-abb7-48f0-b8a1-0b96a5861828/content?variant=original",
+          "thumbnail_url": "/api/v1/images/3b6739b5-abb7-48f0-b8a1-0b96a5861828/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 400,
+            "height": 328,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22595886886119843,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2310619354248047,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22595886886119843,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2310619354248047,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6067894399166107,
+            "constraint_mean": 0.61361731775105,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.015958354668032085
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 3,
+              "cosine": 0.21357886,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005291005291005291
+            },
+            {
+              "branch": "q1",
+              "rank": 2,
+              "cosine": 0.22595887,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            },
+            {
+              "branch": "q2",
+              "rank": 3,
+              "cosine": 0.23106197,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005291005291005291
+            }
+          ]
+        },
+        {
+          "image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+          "rank": 3,
+          "score": 0.44811815679073336,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/57ac376b-090d-499e-aed8-97368b32a5d2/content?variant=original",
+          "thumbnail_url": "/api/v1/images/57ac376b-090d-499e-aed8-97368b32a5d2/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 451,
+            "height": 300,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2242373824119568,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.23190736770629883,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2242373824119568,
+              "required": true,
+              "negated": false
+            },
+            {
+              "clause_id": "q2",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.23190736770629883,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6072179526090622,
+            "constraint_mean": 0.6130774393677711,
+            "verified_metadata": 0,
+            "required_penalty": 0.04,
+            "fusion_score": 0.0160436934630483
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 2,
+              "cosine": 0.21443589,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            },
+            {
+              "branch": "q1",
+              "rank": 3,
+              "cosine": 0.22423737,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005291005291005291
+            },
+            {
+              "branch": "q2",
+              "rank": 2,
+              "cosine": 0.23190737,
+              "weight": 0.3333333333333333,
+              "contribution": 0.005376344086021505
+            }
+          ]
+        }
+      ],
+      "total_results": 3,
+      "effective_settings": {
+        "top_k": 3,
+        "ranking_version": "constraint-linear-v1",
+        "total_candidate_cap": 1000,
+        "candidate_count": 50,
+        "candidate_pool_limit": 100,
+        "channels": 3,
+        "vector_calls": 3,
+        "vector_fetch_calls": 1,
+        "score_type": "reranker",
+        "fusion_version": "rrf-v1",
+        "fusion_weights": {
+          "whole": 1.0,
+          "q1": 1.0,
+          "q2": 1.0
+        },
+        "rrf_k": 60,
+        "constraints_mode": "best_effort",
+        "truncated": false,
+        "route": "multi_query",
+        "rerank_applied": true,
+        "retrieval_strategy": "fused"
+      },
+      "latency": {
+        "processing_ms": 171.32897900000899,
+        "server_response_ms": null,
+        "stages": {
+          "query_decomposition_ms": 0.16488899996147666,
+          "query_analysis_ms": 0.04701700004261511,
+          "compatibility_ms": 48.701328999868565,
+          "text_preprocessing_ms": 1.4442700000927289,
+          "text_forward_ms": 56.4582080000946,
+          "text_embedding_ms": 58.7279309997939,
+          "vector_retrieval_ms": 18.745163000176035,
+          "candidate_fusion_ms": 0.32057099997473415,
+          "metadata_ms": 15.344897999966634,
+          "metadata_filtering_ms": 0.18567500001154258,
+          "reranking_ms": 15.748117999919486,
+          "eligibility_objects_urls_ms": 12.613299000122424,
+          "input_validation_ms": 0.4814750000150525
+        }
+      },
+      "latency_ms": 171.32897900000899,
+      "warnings": [
+        {
+          "code": "CONSTRAINTS_NOT_VERIFIED",
+          "message": "Điều kiện chưa xác minh; similarity chỉ dùng để xếp hạng"
+        }
+      ],
+      "query_analysis": {
+        "original_query": "cà phê và mèo màu nâu",
+        "query_type": "MULTI_INTENT",
+        "language": "vi",
+        "constraints": {
+          "op": "and",
+          "clauses": [
+            {
+              "id": "q1",
+              "kind": "semantic",
+              "required": true,
+              "negated": false,
+              "weight": 1.0,
+              "text": "cà phê",
+              "filter": null
+            },
+            {
+              "id": "q2",
+              "kind": "semantic",
+              "required": true,
+              "negated": false,
+              "weight": 1.0,
+              "text": "mèo màu nâu",
+              "filter": null
+            }
+          ]
+        },
+        "logical_operator": "AND",
+        "retrieval_strategy": "multi_query",
+        "requires_agent": false,
+        "uncertain": false,
+        "limitations": []
+      },
+      "explanation": null,
+      "agent": null
+    }
+  },
+  {
+    "case": "paired_rrf",
+    "http_status": 200,
+    "response": {
+      "query_id": "d87f31df-b0c3-4b67-ba82-66989eeca86c",
+      "request_id": "3458a212-818f-4038-944b-ee4d984d2784",
+      "requested_mode": "multimodal",
+      "search_mode": "multimodal",
+      "service_class": "advanced",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "results": [
+        {
+          "image_id": "f9dad06d-a187-4f7b-8bae-57134177bb04",
+          "rank": 1,
+          "score": 0.5107427600026131,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/f9dad06d-a187-4f7b-8bae-57134177bb04/content?variant=original",
+          "thumbnail_url": "/api/v1/images/f9dad06d-a187-4f7b-8bae-57134177bb04/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 512,
+            "height": 512,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2256481945514679,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2256481945514679,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.7140328027307987,
+            "constraint_mean": 0.612824097275734,
+            "verified_metadata": 0,
+            "required_penalty": 0.02,
+            "fusion_score": 0.016197233344245505
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 2,
+              "cosine": 0.2184349,
+              "weight": 0.25,
+              "contribution": 0.004032258064516129
+            },
+            {
+              "branch": "image",
+              "rank": 1,
+              "cosine": 0.6376964,
+              "weight": 0.5,
+              "contribution": 0.00819672131147541
+            },
+            {
+              "branch": "q1",
+              "rank": 3,
+              "cosine": 0.22564822,
+              "weight": 0.25,
+              "contribution": 0.003968253968253968
+            }
+          ]
+        },
+        {
+          "image_id": "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+          "rank": 2,
+          "score": 0.5078232514858245,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/3b6739b5-abb7-48f0-b8a1-0b96a5861828/content?variant=original",
+          "thumbnail_url": "/api/v1/images/3b6739b5-abb7-48f0-b8a1-0b96a5861828/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 400,
+            "height": 328,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22873634099960327,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22873634099960327,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.7051899582147598,
+            "constraint_mean": 0.6143681704998016,
+            "verified_metadata": 0,
+            "required_penalty": 0.02,
+            "fusion_score": 0.015889029003783105
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 1,
+              "cosine": 0.22127032,
+              "weight": 0.25,
+              "contribution": 0.004098360655737705
+            },
+            {
+              "branch": "image",
+              "rank": 5,
+              "cosine": 0.5994895,
+              "weight": 0.5,
+              "contribution": 0.007692307692307693
+            },
+            {
+              "branch": "q1",
+              "rank": 1,
+              "cosine": 0.22873637,
+              "weight": 0.25,
+              "contribution": 0.004098360655737705
+            }
+          ]
+        },
+        {
+          "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+          "rank": 3,
+          "score": 0.5044583338499069,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+          "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 400,
+            "height": 300,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "public-domain"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22644641995429993,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22644641995429993,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6979226246476173,
+            "constraint_mean": 0.61322320997715,
+            "verified_metadata": 0,
+            "required_penalty": 0.02,
+            "fusion_score": 0.015514265640273705
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 4,
+              "cosine": 0.21196711,
+              "weight": 0.25,
+              "contribution": 0.00390625
+            },
+            {
+              "branch": "image",
+              "rank": 6,
+              "cosine": 0.57972324,
+              "weight": 0.5,
+              "contribution": 0.007575757575757576
+            },
+            {
+              "branch": "q1",
+              "rank": 2,
+              "cosine": 0.22644642,
+              "weight": 0.25,
+              "contribution": 0.004032258064516129
+            }
+          ]
+        }
+      ],
+      "total_results": 3,
+      "effective_settings": {
+        "top_k": 3,
+        "ranking_version": "constraint-linear-v1",
+        "total_candidate_cap": 1000,
+        "candidate_count": 50,
+        "candidate_pool_limit": 100,
+        "channels": 3,
+        "vector_calls": 3,
+        "vector_fetch_calls": 1,
+        "score_type": "reranker",
+        "fusion_version": "rrf-v1",
+        "fusion_weights": {
+          "whole": 0.25,
+          "image": 0.5,
+          "q1": 0.25
+        },
+        "rrf_k": 60,
+        "constraints_mode": "best_effort",
+        "truncated": false,
+        "route": "paired_fusion",
+        "rerank_applied": true,
+        "retrieval_strategy": "fused"
+      },
+      "latency": {
+        "processing_ms": 325.6736710000041,
+        "server_response_ms": null,
+        "stages": {
+          "query_decomposition_ms": 0.13166199983061233,
+          "query_analysis_ms": 0.042838000126721454,
+          "compatibility_ms": 49.06040900004882,
+          "text_preprocessing_ms": 1.7423009999220085,
+          "text_forward_ms": 26.38609600012387,
+          "text_embedding_ms": 29.136853999943924,
+          "image_preprocessing_ms": 106.97733799997877,
+          "image_embedding_ms": 94.93578399997205,
+          "vector_retrieval_ms": 11.038612999982433,
+          "candidate_fusion_ms": 0.13392000005296723,
+          "metadata_ms": 8.258516000068994,
+          "metadata_filtering_ms": 0.14286700002230646,
+          "reranking_ms": 9.481266999955551,
+          "eligibility_objects_urls_ms": 7.251602999986062,
+          "input_validation_ms": 3.7277520000316144
+        }
+      },
+      "latency_ms": 325.6736710000041,
+      "warnings": [
+        {
+          "code": "CONSTRAINTS_NOT_VERIFIED",
+          "message": "Điều kiện chưa xác minh; similarity chỉ dùng để xếp hạng"
+        }
+      ],
+      "query_analysis": {
+        "original_query": "Find something similar but red",
+        "query_type": "TEXT_IMAGE",
+        "language": "en",
+        "constraints": {
+          "id": "q1",
+          "kind": "semantic",
+          "required": true,
+          "negated": false,
+          "weight": 1.0,
+          "text": "something similar but red",
+          "filter": null
+        },
+        "logical_operator": null,
+        "retrieval_strategy": "paired_fusion",
+        "requires_agent": false,
+        "uncertain": false,
+        "limitations": [
+          "phrase_relationships_not_visually_verified"
+        ]
+      },
+      "explanation": null,
+      "agent": null
+    }
+  },
+  {
+    "case": "paired_weighted_score",
+    "http_status": 200,
+    "response": {
+      "query_id": "4d1cc574-88b8-4b08-8913-f6ee68ce4bff",
+      "request_id": "9ffd6d5f-053c-4258-8895-c25b5c104677",
+      "requested_mode": "multimodal",
+      "search_mode": "multimodal",
+      "service_class": "advanced",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "results": [
+        {
+          "image_id": "f9dad06d-a187-4f7b-8bae-57134177bb04",
+          "rank": 1,
+          "score": 0.5107427600026131,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/f9dad06d-a187-4f7b-8bae-57134177bb04/content?variant=original",
+          "thumbnail_url": "/api/v1/images/f9dad06d-a187-4f7b-8bae-57134177bb04/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 512,
+            "height": 512,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2256481945514679,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.2256481945514679,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.7140328027307987,
+            "constraint_mean": 0.612824097275734,
+            "verified_metadata": 0,
+            "required_penalty": 0.02,
+            "fusion_score": 0.7149344900000001
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 2,
+              "cosine": 0.2184349,
+              "weight": 0.25,
+              "contribution": 0.1523043625
+            },
+            {
+              "branch": "image",
+              "rank": 1,
+              "cosine": 0.6376964,
+              "weight": 0.5,
+              "contribution": 0.4094241
+            },
+            {
+              "branch": "q1",
+              "rank": 3,
+              "cosine": 0.22564822,
+              "weight": 0.25,
+              "contribution": 0.1532060275
+            }
+          ]
+        },
+        {
+          "image_id": "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+          "rank": 2,
+          "score": 0.5078232514858245,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/3b6739b5-abb7-48f0-b8a1-0b96a5861828/content?variant=original",
+          "thumbnail_url": "/api/v1/images/3b6739b5-abb7-48f0-b8a1-0b96a5861828/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 400,
+            "height": 328,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "CC0-1.0"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22873634099960327,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22873634099960327,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.7051899582147598,
+            "constraint_mean": 0.6143681704998016,
+            "verified_metadata": 0,
+            "required_penalty": 0.02,
+            "fusion_score": 0.70612321125
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 1,
+              "cosine": 0.22127032,
+              "weight": 0.25,
+              "contribution": 0.15265879
+            },
+            {
+              "branch": "image",
+              "rank": 5,
+              "cosine": 0.5994895,
+              "weight": 0.5,
+              "contribution": 0.399872375
+            },
+            {
+              "branch": "q1",
+              "rank": 1,
+              "cosine": 0.22873637,
+              "weight": 0.25,
+              "contribution": 0.15359204625
+            }
+          ]
+        },
+        {
+          "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+          "rank": 3,
+          "score": 0.5044583338499069,
+          "score_type": "reranker",
+          "ranking_version": "constraint-linear-v1",
+          "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+          "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+          "metadata": {
+            "title": null,
+            "caption": null,
+            "width": 400,
+            "height": 300,
+            "media_type": "image/png",
+            "tags": [],
+            "source_dataset": "scikit-image-v0.25.2",
+            "city": null,
+            "license": "public-domain"
+          },
+          "constraint_assessments": [
+            {
+              "clause_id": "q1",
+              "status": "unknown",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22644641995429993,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "constraint_evidence": [
+            {
+              "clause_id": "q1",
+              "status": "UNKNOWN",
+              "evidence_ref": null,
+              "evidence_kind": "semantic_similarity",
+              "semantic_score": 0.22644641995429993,
+              "required": true,
+              "negated": false
+            }
+          ],
+          "score_components": {
+            "whole_query": 0.6979226246476173,
+            "constraint_mean": 0.61322320997715,
+            "verified_metadata": 0,
+            "required_penalty": 0.02,
+            "fusion_score": 0.69973250125
+          },
+          "contributing_branches": [
+            {
+              "branch": "whole",
+              "rank": 4,
+              "cosine": 0.21196711,
+              "weight": 0.25,
+              "contribution": 0.15149588875
+            },
+            {
+              "branch": "image",
+              "rank": 6,
+              "cosine": 0.57972324,
+              "weight": 0.5,
+              "contribution": 0.39493080999999997
+            },
+            {
+              "branch": "q1",
+              "rank": 2,
+              "cosine": 0.22644642,
+              "weight": 0.25,
+              "contribution": 0.1533058025
+            }
+          ]
+        }
+      ],
+      "total_results": 3,
+      "effective_settings": {
+        "top_k": 3,
+        "ranking_version": "constraint-linear-v1",
+        "total_candidate_cap": 1000,
+        "candidate_count": 50,
+        "candidate_pool_limit": 100,
+        "channels": 3,
+        "vector_calls": 3,
+        "vector_fetch_calls": 1,
+        "score_type": "reranker",
+        "fusion_version": "weighted_score-v1",
+        "fusion_weights": {
+          "whole": 0.25,
+          "image": 0.5,
+          "q1": 0.25
+        },
+        "rrf_k": 60,
+        "constraints_mode": "best_effort",
+        "truncated": false,
+        "route": "paired_fusion",
+        "rerank_applied": true,
+        "retrieval_strategy": "fused"
+      },
+      "latency": {
+        "processing_ms": 277.54257600008714,
+        "server_response_ms": null,
+        "stages": {
+          "query_decomposition_ms": 0.08399900002586946,
+          "query_analysis_ms": 0.03422499980842986,
+          "compatibility_ms": 47.83154100005049,
+          "text_preprocessing_ms": 1.1984390000634448,
+          "text_forward_ms": 31.09364000010828,
+          "text_embedding_ms": 33.339178999995056,
+          "image_preprocessing_ms": 29.314916999965135,
+          "image_embedding_ms": 128.6142829999335,
+          "vector_retrieval_ms": 9.741068000039377,
+          "candidate_fusion_ms": 0.14741599989065435,
+          "metadata_ms": 6.341825999925277,
+          "metadata_filtering_ms": 0.06323800016616588,
+          "reranking_ms": 6.548759999986942,
+          "eligibility_objects_urls_ms": 7.2699750000992935,
+          "input_validation_ms": 1.8973200001255464
+        }
+      },
+      "latency_ms": 277.54257600008714,
+      "warnings": [
+        {
+          "code": "CONSTRAINTS_NOT_VERIFIED",
+          "message": "Điều kiện chưa xác minh; similarity chỉ dùng để xếp hạng"
+        }
+      ],
+      "query_analysis": {
+        "original_query": "Find something similar but red",
+        "query_type": "TEXT_IMAGE",
+        "language": "en",
+        "constraints": {
+          "id": "q1",
+          "kind": "semantic",
+          "required": true,
+          "negated": false,
+          "weight": 1.0,
+          "text": "something similar but red",
+          "filter": null
+        },
+        "logical_operator": null,
+        "retrieval_strategy": "paired_fusion",
+        "requires_agent": false,
+        "uncertain": false,
+        "limitations": [
+          "phrase_relationships_not_visually_verified"
+        ]
+      },
+      "explanation": null,
+      "agent": null
+    }
+  },
+  {
+    "case": "strict_semantic_refusal",
+    "http_status": 409,
+    "response": {
+      "error": {
+        "code": "VERIFIER_UNAVAILABLE",
+        "message": "Chưa có verifier cho semantic conditions; CLIP không chứng minh điều kiện",
+        "request_id": "03d26a11-3f6e-4bed-8ffe-1f08b75fc3c4",
+        "retryable": false,
+        "details": []
+      }
+    }
+  }
+]

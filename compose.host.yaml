@@ -1,0 +1,13 @@
+# Opt-in loopback ports để chạy backend native với --host env, không dùng cho public.
+services:
+  postgres:
+    ports: ["127.0.0.1:5432:5432"]
+    networks: [data, host_access]
+  qdrant:
+    ports: ["127.0.0.1:6333:6333"]
+    networks: [data, host_access]
+  minio:
+    ports: ["127.0.0.1:9000:9000"]
+    networks: [data, host_access]
+networks:
+  host_access: {}

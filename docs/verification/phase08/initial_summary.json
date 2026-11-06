@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "build_requested": true,
+  "browser_requested": true,
+  "benchmark_requested": false,
+  "failure_type": "RuntimeError"
+}

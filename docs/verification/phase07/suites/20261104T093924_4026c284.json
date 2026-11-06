@@ -1,0 +1,102 @@
+{
+  "status": "complete",
+  "optimization": true,
+  "matrix": true,
+  "experiments": [
+    {
+      "experiment_id": "20261104T093937_benchmark_97b3d12a34",
+      "directory": "evaluation/results/phase07/20261104T093937_benchmark_97b3d12a34",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094027_benchmark_c337f7cf84",
+      "directory": "evaluation/results/phase07/20261104T094027_benchmark_c337f7cf84",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094121_benchmark_85202e75a0",
+      "directory": "evaluation/results/phase07/20261104T094121_benchmark_85202e75a0",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094214_benchmark_5dcd341f50",
+      "directory": "evaluation/results/phase07/20261104T094214_benchmark_5dcd341f50",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094305_benchmark_17af8a9c27",
+      "directory": "evaluation/results/phase07/20261104T094305_benchmark_17af8a9c27",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094413_benchmark_016c347034",
+      "directory": "evaluation/results/phase07/20261104T094413_benchmark_016c347034",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094452_benchmark_bb696f814c",
+      "directory": "evaluation/results/phase07/20261104T094452_benchmark_bb696f814c",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094533_benchmark_833ec7552e",
+      "directory": "evaluation/results/phase07/20261104T094533_benchmark_833ec7552e",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094620_benchmark_01151f1a21",
+      "directory": "evaluation/results/phase07/20261104T094620_benchmark_01151f1a21",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094703_benchmark_ff869c8d80",
+      "directory": "evaluation/results/phase07/20261104T094703_benchmark_ff869c8d80",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094747_benchmark_53a3137b7f",
+      "directory": "evaluation/results/phase07/20261104T094747_benchmark_53a3137b7f",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094834_benchmark_e060438714",
+      "directory": "evaluation/results/phase07/20261104T094834_benchmark_e060438714",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T094916_benchmark_eaee1c2363",
+      "directory": "evaluation/results/phase07/20261104T094916_benchmark_eaee1c2363",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T095004_benchmark_3cec04222f",
+      "directory": "evaluation/results/phase07/20261104T095004_benchmark_3cec04222f",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T095051_benchmark_09d9264c9f",
+      "directory": "evaluation/results/phase07/20261104T095051_benchmark_09d9264c9f",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T095132_benchmark_6fe8167b67",
+      "directory": "evaluation/results/phase07/20261104T095132_benchmark_6fe8167b67",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T095149_benchmark_f713978774",
+      "directory": "evaluation/results/phase07/20261104T095149_benchmark_f713978774",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T095159_benchmark_1bff5d5b0d",
+      "directory": "evaluation/results/phase07/20261104T095159_benchmark_1bff5d5b0d",
+      "status": "measured"
+    },
+    {
+      "experiment_id": "20261104T095205_benchmark_ddf52692ff",
+      "directory": "evaluation/results/phase07/20261104T095205_benchmark_ddf52692ff",
+      "status": "measured"
+    }
+  ]
+}

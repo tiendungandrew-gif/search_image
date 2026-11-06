@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "code": "LLM_TIMEOUT",
+  "model": "gemini-3.8-flash"
+}

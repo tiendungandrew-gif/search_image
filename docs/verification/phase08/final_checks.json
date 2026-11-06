@@ -1,0 +1,102 @@
+{
+  "status": "partial_acceptance",
+  "implementation": "delivered",
+  "backend_tests": {
+    "status": "pass",
+    "passed": 144
+  },
+  "source_unit_tests": {
+    "status": "pass",
+    "passed": 135
+  },
+  "real_native_rag_integration": {
+    "status": "pass",
+    "passed": 2,
+    "log": "isolated_native_tests.txt"
+  },
+  "frontend_checks": {
+    "status": "pass",
+    "passed": 10
+  },
+  "latest_full_browser": {
+    "status": "failed",
+    "passed": 15,
+    "failed": 1
+  },
+  "targeted_rag_browser": {
+    "status": "failed",
+    "passed": 1,
+    "failed": 1,
+    "scope": "RAG browser desktop/mobile targeted rerun; full-suite failures preserved separately"
+  },
+  "lint_format_type_build": "pass",
+  "readiness_and_index": {
+    "status": "pass",
+    "active_generation": 1,
+    "indexed_images": 10,
+    "vectors": 10
+  },
+  "fallbacks": {
+    "status": "pass",
+    "cases": 3,
+    "original_config_restored": true
+  },
+  "documents": {
+    "status": "pass",
+    "required_documents": 7,
+    "report_sections": "A–L",
+    "document_links": "pass",
+    "json_artifacts_checked": 41,
+    "rag_csv_cases": 40,
+    "charts": "2 PNG + 2 SVG actual data",
+    "quality_charts": "none without human labels",
+    "core_diagrams": "11 structural checks; unchanged",
+    "new_rag_diagrams": "2 inline Mermaid sources, structural/manual only; no engine-render claim"
+  },
+  "source_and_secrets": {
+    "status": "pass",
+    "source_sha256": "0636db76175c43ce4d3f265e83ee072d96a7cf406b022bc7773aa9d474969257",
+    "source_files": 216,
+    "added_files": 22,
+    "modified_files": 14,
+    "removed_files": 0,
+    "immutable_encoder_decoder": true,
+    "private_secret_matches": 0,
+    "private_env_archived": false,
+    "source_archives_checked": 4,
+    "env_mode": "0600",
+    "phase07_experiments_preserved": 32,
+    "phase07_benchmark_attempts_preserved": 7360
+  },
+  "measurements": {
+    "experiments": [
+      "20261105T042632_rag_37780e9449",
+      "20261105T043305_benchmark_38092a56a4",
+      "20261105T050046_rag_4b6c513c95"
+    ],
+    "fast_experiment": "20261105T043305_benchmark_38092a56a4",
+    "rag_experiments": [
+      "20261105T042632_rag_37780e9449",
+      "20261105T050046_rag_4b6c513c95"
+    ],
+    "fast_requests": 500,
+    "rag_matrix_api_attempts": 40,
+    "llm_requests_in_matrices": 20,
+    "llm_valid_completions": 13,
+    "generation_unavailable": 7,
+    "mechanical_citations": 63,
+    "valid_ids": 63,
+    "exact_quotes": 63,
+    "native_llm_completions": 10,
+    "native_generation_errors": 0,
+    "rag_three_second_gate": "not_met_all_cases",
+    "semantic_quality": "pending_human_review",
+    "browser_gate": "intermittent; latest full15pass1fail"
+  },
+  "open_acceptance_items": [
+    "Intermittent provider timeout causes one browser happy-path failure",
+    "RAG3s target not met for all cases; exploratory small N",
+    "Human answer relevance/faithfulness/unsupported-claim assessment not yet supplied"
+  ],
+  "phase09": "not_started"
+}

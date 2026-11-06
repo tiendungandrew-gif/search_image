@@ -1,0 +1,36 @@
+{
+  "experiment_id": "20261104T084629_benchmark_0255e8a3fd",
+  "timestamp_utc": "2026-11-04T08:46:29.799840+00:00",
+  "kind": "benchmark",
+  "config": {
+    "name": "fast_before_head1",
+    "profile": "fast",
+    "requests": 500,
+    "concurrency": 1,
+    "warmup": 12,
+    "sample_resources": true,
+    "seed": 42
+  },
+  "git_commit": null,
+  "source": {
+    "sha256": "e8beed18fdcec05c6bc53fef2464ca3a80371e7f5de7c928fe467269676c348e",
+    "files": 149,
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "client_platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+  "client_python": "3.12.3",
+  "provenance": {
+    "dataset_sha256": "1c445e2d26dda73696b56b0947550fc76eb05df0e5aac9e293cabc1ce9051e37",
+    "dataset_images": 10,
+    "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+    "label_sha256": null,
+    "active": {
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+    },
+    "server_environment": {
+      "status": "runtime_endpoint_unavailable"
+    }
+  }
+}

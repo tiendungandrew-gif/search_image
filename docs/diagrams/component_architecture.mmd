@@ -1,0 +1,20 @@
+flowchart TD
+    Routes["Routes: auth, typed validation, deadline, full ASGI timer"] --> Router["Bounded EN/VI classifier và AST parser"]
+    Router --> Fast["Single-vector fast path hoặc safe fallback"]
+    Router --> Advanced["Multi-intent / paired advanced retrieval"]
+    Fast --> Search["Shared SearchService"]
+    Advanced --> Search
+    Search --> Registry["Pinned active index/generation/manifest checks"]
+    Search --> Encoder["Preloaded paired CLIP runtime, bounded inference slot"]
+    Encoder --> Decoder["Query decoder process: same Prompt04 preprocessing"]
+    Search --> Vector["Qdrant adapter: bounded query_points"]
+    Vector --> Fusion["UUID union, RRF / weighted score"]
+    Fusion --> Metadata["Batch PG ready receipts, metadata và tags"]
+    Metadata --> Gate["Required AND/OR tri-state evidence gate"]
+    Gate --> Rerank["Optional lightweight reranker / explicit fallback"]
+    Rerank --> Delivery["Object existence checks, stable Top-K response"]
+    Delivery --> ObjectPort["Private MinIO adapter"]
+    Routes --> Content["Authenticated content proxy"]
+    Content --> ObjectPort
+    Delivery --> Metrics["Bounded full-response telemetry, không query text"]
+    Future["RAG / Agent / multi-hop: chưa triển khai, ngoài fast path"]

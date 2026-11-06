@@ -1,0 +1,144 @@
+{
+  "query_id": "0d4c7ae1-724d-4436-8f79-ec8ba236a5a7",
+  "request_id": "ee08ce19-2d13-4e3a-a83a-5664f30df4f9",
+  "operation": "search_and_explain",
+  "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "results": [
+    {
+      "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "rank": 1,
+      "score": 0.28575084,
+      "score_type": "cosine",
+      "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+      "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+      "metadata": {
+        "title": null,
+        "caption": null,
+        "width": 600,
+        "height": 400,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "constraint_assessments": []
+    }
+  ],
+  "rag": {
+    "answer": "According to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], width: “600”.\nAccording to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], height: “400”.\nAccording to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], media_type: “image/png”.",
+    "grounding_status": "supported",
+    "citations": [
+      {
+        "fact_id": "E1.width",
+        "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "evidence_field": "width",
+        "quote": "600",
+        "provenance": {
+          "source": "stored_postgresql",
+          "verified_visual_content": false
+        },
+        "support_check": "exact_metadata_value"
+      },
+      {
+        "fact_id": "E1.height",
+        "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "evidence_field": "height",
+        "quote": "400",
+        "provenance": {
+          "source": "stored_postgresql",
+          "verified_visual_content": false
+        },
+        "support_check": "exact_metadata_value"
+      },
+      {
+        "fact_id": "E1.media_type",
+        "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "evidence_field": "media_type",
+        "quote": "image/png",
+        "provenance": {
+          "source": "stored_postgresql",
+          "verified_visual_content": false
+        },
+        "support_check": "exact_metadata_value"
+      }
+    ],
+    "evidence": [
+      {
+        "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "retrieval_rank": 1,
+        "retrieval_score": 0.28575084,
+        "caption": null,
+        "tags": [],
+        "metadata": {
+          "width": 600,
+          "height": 400,
+          "media_type": "image/png",
+          "source_dataset": "scikit-image-v0.25.2",
+          "license": "CC0-1.0"
+        },
+        "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+        "provenance": {
+          "metadata_revision": 1,
+          "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+          "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+          "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+          "caption": {
+            "source": null,
+            "verified": false,
+            "policy": "stored attribution; not visual verification"
+          },
+          "tags": {},
+          "metadata": {
+            "source": "stored_postgresql",
+            "verified_visual_content": false
+          }
+        },
+        "incomplete": true
+      }
+    ],
+    "language": "en",
+    "generated": true,
+    "provider": "gemini",
+    "model_id": "gemini-3.5-flash-lite",
+    "model_revision": "provider_managed",
+    "returned_model": "gemini-3.5-flash-lite",
+    "prompt_version": "extractive-facts-v1",
+    "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+    "context": {
+      "included_image_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "available_images": 1,
+      "fact_count": 5,
+      "context_budget_upper_bound_tokens": 2048,
+      "input_token_upper_bound": 2686,
+      "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+      "policy": "descriptive_first",
+      "technical_question": true
+    },
+    "usage": {
+      "completion_tokens": 25,
+      "prompt_tokens": 773,
+      "total_tokens": 798
+    },
+    "error_code": null,
+    "limitations": [
+      "Text-only metadata explanation; no direct visual verification.",
+      "Exact metadata quotations are validated; visual truth and answer relevance are not independently verified."
+    ]
+  },
+  "latency": {
+    "retrieval_ms": 77.35972399996172,
+    "evidence_ms": 63.4132650002357,
+    "context_ms": 0.6481679997705214,
+    "generation_ms": 1865.8653829998002,
+    "validation_ms": 1.3957890000710904,
+    "provider_ttft_ms": 1702.574524999818,
+    "provider_ttlast_ms": 1816.8789619999188,
+    "total_ms": 2007.353231000252,
+    "time_to_last_token_from_request_ms": 1958.3001189998868
+  },
+  "warnings": []
+}

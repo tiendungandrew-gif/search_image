@@ -1,0 +1,4 @@
+experiment_id,name,status,profile,concurrency,attempted,successful,failed,p50_ms,p90_ms,p95_ms,requests_per_second,error_rate,artifact
+20261105T042632_rag_37780e9449,rag,measured,,,,,,,,,,,evaluation/results/phase08/20261105T042632_rag_37780e9449/result.json
+20261105T043305_benchmark_38092a56a4,fast_default_head1,measured,fast,1,500,500,0,106.02039500008686,144.58679400013352,153.16672700009804,8.639774330205965,0.0,evaluation/results/phase08/20261105T043305_benchmark_38092a56a4/result.json
+20261105T050046_rag_4b6c513c95,rag,measured,,,,,,,,,,,evaluation/results/phase08/20261105T050046_rag_4b6c513c95/result.json

@@ -1,0 +1,54 @@
+{
+  "generated_at_utc": "2026-11-05T05:15:16.308252+00:00",
+  "experiments": [
+    {
+      "experiment_id": "20261105T042632_rag_37780e9449",
+      "name": "rag",
+      "status": "measured",
+      "profile": null,
+      "concurrency": null,
+      "attempted": null,
+      "successful": null,
+      "failed": null,
+      "p50_ms": null,
+      "p90_ms": null,
+      "p95_ms": null,
+      "requests_per_second": null,
+      "error_rate": null,
+      "artifact": "evaluation/results/phase08/20261105T042632_rag_37780e9449/result.json"
+    },
+    {
+      "experiment_id": "20261105T043305_benchmark_38092a56a4",
+      "name": "fast_default_head1",
+      "status": "measured",
+      "profile": "fast",
+      "concurrency": 1,
+      "attempted": 500,
+      "successful": 500,
+      "failed": 0,
+      "p50_ms": 106.02039500008686,
+      "p90_ms": 144.58679400013352,
+      "p95_ms": 153.16672700009804,
+      "requests_per_second": 8.639774330205965,
+      "error_rate": 0.0,
+      "artifact": "evaluation/results/phase08/20261105T043305_benchmark_38092a56a4/result.json"
+    },
+    {
+      "experiment_id": "20261105T050046_rag_4b6c513c95",
+      "name": "rag",
+      "status": "measured",
+      "profile": null,
+      "concurrency": null,
+      "attempted": null,
+      "successful": null,
+      "failed": null,
+      "p50_ms": null,
+      "p90_ms": null,
+      "p95_ms": null,
+      "requests_per_second": null,
+      "error_rate": null,
+      "artifact": "evaluation/results/phase08/20261105T050046_rag_4b6c513c95/result.json"
+    }
+  ],
+  "semantic_quality": "not_measured_unless_human_verified_result_present"
+}

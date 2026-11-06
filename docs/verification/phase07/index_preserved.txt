@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+  "collection": "images_clip_v1_da55a7d099fd",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "dimension": 512,
+  "verified_images": 10,
+  "exact_vector_count": 10,
+  "image_ids": [
+    "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+    "144910f0-c5f2-4981-962f-cf4136b240e0",
+    "16526aae-297c-4a8a-986e-3239731a84f5",
+    "248a1632-5020-46dc-a585-84d2cdf988b0",
+    "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+    "57ac376b-090d-499e-aed8-97368b32a5d2",
+    "6a19fdda-6379-42bf-a96c-5559256139b6",
+    "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+    "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+    "f9dad06d-a187-4f7b-8bae-57134177bb04"
+  ],
+  "problems": [],
+  "orphan_point_ids": [],
+  "live_items": false,
+  "missing_embedding_image_ids": [],
+  "verification_ms": 224.25148999900557
+}
+
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(

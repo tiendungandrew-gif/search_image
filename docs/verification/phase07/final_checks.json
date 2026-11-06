@@ -1,0 +1,74 @@
+{
+  "status": "pass",
+  "functional_acceptance": "pass",
+  "phase07_research_acceptance": "incomplete_pending_human_semantic_labels",
+  "checks": {
+    "backend_tests": {
+      "passed": 124,
+      "unit": 117,
+      "real_integration": 7
+    },
+    "frontend_tests": {
+      "passed": 10
+    },
+    "browser_tests": {
+      "passed": 14
+    },
+    "focused_evaluator_report_tests": {
+      "passed": 22,
+      "execution": "outside sandbox; sandbox async/thread limitation recorded"
+    },
+    "lint_type_build": "passed",
+    "frontend_prettier": "passed for new evaluation browser tests",
+    "documentation": {
+      "status": "pass",
+      "json_artifacts": 105,
+      "report_sections": "A–M",
+      "relative_links": "pass",
+      "charts": "3 PNG + 3 SVG from actual measurements; no semantic-quality chart",
+      "baseline_design_checks": "IDs/JSON examples/traceability/11 structural Mermaid/24 ER/8 ADR passed",
+      "mermaid_render": "Not rerendered; diagrams unchanged in Phase07"
+    },
+    "sources_and_secrets": {
+      "status": "pass",
+      "publishable_files_scanned": 523,
+      "source_files": 194,
+      "added_source_files": 42,
+      "modified_source_files": 16,
+      "immutable_encoders_preserved": [
+        "backend/app/services/embeddings/clip_encoder.py",
+        "backend/app/services/ingestion/decoder.py"
+      ],
+      "private_secret_matches": 0,
+      "private_env_in_source_archives": 0,
+      "source_archives": 10
+    },
+    "final_runtime": {
+      "health": "all HTTP200",
+      "active_clip_generation": 1,
+      "object_check_concurrency": 1
+    },
+    "source_sha256": "4a6e7a6a12ef50f8405814e863870ee8d3a28fa2ec3b5b2c08b98921393bac80",
+    "source_archive": {
+      "sha256": "80a339daf220ba33fe954e1c89746f08b89c02a877bedbbfce06d0e9dcafbbe8",
+      "files": 184,
+      "archive": "evaluation/results/phase07/_sources/80a339daf220ba33fe954e1c89746f08b89c02a877bedbbfce06d0e9dcafbbe8.tar.gz",
+      "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+    },
+    "benchmark_summary": {
+      "experiments": 32,
+      "benchmark_runs": 21,
+      "attempted": 7360,
+      "failed": 737,
+      "fast_default_experiment_id": "20261104T101019_benchmark_c505f295d7",
+      "model_experiment_ids": {
+        "clip": "20261104T101257_model-comparison_ace1b38e21",
+        "siglip2": "20261104T101307_model-comparison_4c67e77ccf"
+      },
+      "optimization_analysis": "20261104T101633_optimization-analysis_8b0e4c6291",
+      "profile": "20261104T101319_profile_344aa63687",
+      "semantic_quality": "pending_human_labels",
+      "active_baseline_preserved": true
+    }
+  }
+}

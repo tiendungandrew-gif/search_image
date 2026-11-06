@@ -1,0 +1,70 @@
+{
+  "human_verified": false,
+  "annotator": "",
+  "label_version": "draft-v1",
+  "reviewed_at_utc": null,
+  "result_sha256": "185759643861479877b8885806f90c241339f6fe3d9afba9af3379009dd18fd0",
+  "experiment_id": "20261105T050046_rag_4b6c513c95",
+  "cases": {
+    "R3_002": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R4_003": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R3_006": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R4_007": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R3_010": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R4_011": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R3_014": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R4_015": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R3_018": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    },
+    "R4_019": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "unsupported_claims": null,
+      "claims": null
+    }
+  }
+}

@@ -1,0 +1,8 @@
+flowchart LR
+    User["Người tìm ảnh"] -->|"Text hoặc ảnh"| System["AI Multimodal Image Search System"]
+    Admin["Quản trị dataset"] -->|"Ingest, reindex, delete"| System
+    Evaluator["Developer / evaluator"] -->|"Queries, qrels, benchmark"| System
+    Dataset["Dataset có quyền sử dụng"] -->|"Nguồn đã đăng ký"| System
+    System -->|"Ảnh, metadata, score và evidence"| User
+    System -.->|"P2 tùy chọn, policy cho phép"| Generator["Generation model local hoặc external"]
+    System -->|"Metrics và artifacts có version"| Evaluator

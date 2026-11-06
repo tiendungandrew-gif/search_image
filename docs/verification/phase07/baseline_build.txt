@@ -1,0 +1,331 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.52kB done
+#1 DONE 0.0s
+
+#2 [backend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.43kB done
+#2 DONE 0.0s
+
+#3 [backend internal] load metadata for ghcr.io/astral-sh/uv:0.13.7
+#3 DONE 2.0s
+
+#4 [backend internal] load metadata for docker.io/library/python:3.12.12-slim-bookworm
+#4 DONE 2.3s
+
+#5 [indexing-worker internal] load .dockerignore
+#5 transferring context: 255B done
+#5 DONE 0.0s
+
+#6 [backend uv 1/1] FROM ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490
+#6 resolve ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490 0.0s done
+#6 DONE 0.0s
+
+#7 [backend stage-1  1/10] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#7 resolve docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c 0.0s done
+#7 DONE 0.0s
+
+#8 [backend internal] load build context
+#8 transferring context: 419.00kB 0.0s done
+#8 DONE 0.0s
+
+#9 [backend stage-1  2/10] COPY --from=uv /uv /usr/local/bin/uv
+#9 CACHED
+
+#10 [backend stage-1  3/10] WORKDIR /srv
+#10 CACHED
+
+#11 [indexing-worker stage-1  4/10] COPY backend/pyproject.toml backend/uv.lock backend/
+#11 DONE 0.0s
+
+#12 [backend stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "false" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#12 0.552 Using CPython 3.12.12 interpreter at: /usr/local/bin/python3
+#12 0.553 Creating virtual environment at: backend/.venv
+#12 0.575 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+#12 0.575          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+#12 0.575          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+#12 ...
+
+#13 [indexing-worker stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#13 0.552 Using CPython 3.12.12 interpreter at: /usr/local/bin/python3
+#13 0.553 Creating virtual environment at: backend/.venv
+#13 1.036 Downloading kiwisolver (1.4MiB)
+#13 1.037 Downloading matplotlib (9.4MiB)
+#13 1.037 Downloading fonttools (5.2MiB)
+#13 5.160  Downloaded kiwisolver
+#13 ...
+
+#12 [backend stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "false" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#12 7.027 Installed 68 packages in 6.45s
+#12 ...
+
+#13 [indexing-worker stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#13 7.864  Downloaded fonttools
+#13 8.990  Downloaded matplotlib
+#13 8.992 Prepared 8 packages in 8.42s
+#13 9.000 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+#13 9.000          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+#13 9.000          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+#13 ...
+
+#12 [backend stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "false" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#12 14.62 Bytecode compiled 10079 files in 7.59s
+#12 14.62  + alembic==1.20.1
+#12 14.62  + annotated-doc==0.0.5
+#12 14.62  + annotated-types==0.8.0
+#12 14.62  + anyio==4.16.0
+#12 14.62  + argon2-cffi==25.1.0
+#12 14.62  + argon2-cffi-bindings==26.1.0
+#12 14.62  + certifi==2026.10.23
+#12 14.62  + cffi==2.1.1
+#12 14.62  + charset-normalizer==3.5.2
+#12 14.62  + click==8.5.0
+#12 14.62  + fastapi==0.162.0
+#12 14.62  + filelock==4.2.7
+#12 14.62  + fsspec==2026.9.0
+#12 14.62  + greenlet==3.5.6
+#12 14.62  + grpcio==1.85.1
+#12 14.62  + h11==0.16.0
+#12 14.62  + h2==4.4.1
+#12 14.62  + hf-xet==1.8.0
+#12 14.62  + hpack==4.2.0
+#12 14.62  + httpcore==1.0.9
+#12 14.62  + httpx==0.28.1
+#12 14.62  + huggingface-hub==0.36.2
+#12 14.62  + hyperframe==6.1.0
+#12 14.62  + idna==3.20
+#12 14.62  + iniconfig==2.3.1
+#12 14.62  + jinja2==3.1.6
+#12 14.62  + mako==1.4.3
+#12 14.62  + markupsafe==3.0.4
+#12 14.62  + minio==7.2.20
+#12 14.62  + mpmath==1.3.0
+#12 14.62  + networkx==3.7
+#12 14.62  + numpy==2.5.4
+#12 14.62  + opentelemetry-api==1.45.2
+#12 14.62  + packaging==26.3
+#12 14.62  + pillow==12.3.0
+#12 14.62  + pluggy==1.7.0
+#12 14.62  + portalocker==4.4.2
+#12 14.62  + protobuf==7.36.2
+#12 14.62  + psycopg==3.3.6
+#12 14.62  + psycopg-binary==3.3.6
+#12 14.62  + pycparser==3.12
+#12 14.62  + pycryptodome==4.3.0
+#12 14.62  + pydantic==2.14.2
+#12 14.62  + pydantic-core==2.50.2
+#12 14.62  + pydantic-settings==2.16.2
+#12 14.62  + pygments==2.21.0
+#12 14.62  + pytest==9.2.0
+#12 14.62  + pytest-asyncio==1.4.1.post1
+#12 14.62  + python-dotenv==1.2.4
+#12 14.62  + python-multipart==0.0.33
+#12 14.62  + pyyaml==6.0.3
+#12 14.62  + qdrant-client==1.20.0
+#12 14.62  + regex==2026.9.29
+#12 14.62  + requests==2.34.2
+#12 14.62  + ruff==0.17.3
+#12 14.62  + safetensors==0.8.0
+#12 14.62  + setuptools==84.2.1
+#12 14.62  + sqlalchemy==2.0.55
+#12 14.62  + starlette==1.10.0
+#12 14.62  + sympy==1.14.0
+#12 14.62  + tokenizers==0.22.2
+#12 14.62  + torch==2.15.0+cpu
+#12 14.62  + tqdm==4.70.1
+#12 14.62  + transformers==4.57.6
+#12 14.62  + typing-extensions==4.16.0
+#12 14.62  + typing-inspection==0.4.4
+#12 14.62  + urllib3==2.8.0
+#12 14.62  + uvicorn==0.54.0
+#12 DONE 14.9s
+
+#13 [indexing-worker stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#13 ...
+
+#14 [backend stage-1  6/10] COPY backend/ backend/
+#14 DONE 0.5s
+
+#13 [indexing-worker stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#13 ...
+
+#15 [backend stage-1  7/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "false" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#15 0.247    Building ai-image-search-backend @ file:///srv/backend
+#15 2.454       Built ai-image-search-backend @ file:///srv/backend
+#15 2.464 Prepared 1 package in 2.21s
+#15 2.469 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+#15 2.471          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+#15 2.471          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+#15 2.476 Installed 1 package in 8ms
+#15 3.581 Bytecode compiled 10079 files in 1.10s
+#15 3.581  + ai-image-search-backend==0.3.0 (from file:///srv/backend)
+#15 DONE 3.8s
+
+#13 [indexing-worker stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#13 16.79 Installed 76 packages in 7.80s
+#13 ...
+
+#16 [backend stage-1  8/10] COPY scripts/ scripts/
+#16 DONE 0.1s
+
+#17 [backend stage-1  9/10] COPY .env.example .env.example
+#17 DONE 0.0s
+
+#18 [backend stage-1 10/10] COPY ruff.toml ruff.toml
+#18 DONE 0.1s
+
+#19 [backend] exporting to image
+#19 exporting layers
+#19 ...
+
+#13 [indexing-worker stage-1  5/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#13 24.02 Bytecode compiled 10800 files in 7.22s
+#13 24.02  + alembic==1.20.1
+#13 24.02  + annotated-doc==0.0.5
+#13 24.02  + annotated-types==0.8.0
+#13 24.02  + anyio==4.16.0
+#13 24.02  + argon2-cffi==25.1.0
+#13 24.02  + argon2-cffi-bindings==26.1.0
+#13 24.02  + certifi==2026.10.23
+#13 24.02  + cffi==2.1.1
+#13 24.02  + charset-normalizer==3.5.2
+#13 24.02  + click==8.5.0
+#13 24.02  + contourpy==1.4.0
+#13 24.02  + cycler==0.12.1
+#13 24.02  + fastapi==0.162.0
+#13 24.02  + filelock==4.2.7
+#13 24.02  + fonttools==4.68.0
+#13 24.02  + fsspec==2026.9.0
+#13 24.02  + greenlet==3.5.6
+#13 24.02  + grpcio==1.85.1
+#13 24.02  + h11==0.16.0
+#13 24.02  + h2==4.4.1
+#13 24.02  + hf-xet==1.8.0
+#13 24.02  + hpack==4.2.0
+#13 24.02  + httpcore==1.0.9
+#13 24.02  + httpx==0.28.1
+#13 24.02  + huggingface-hub==0.36.2
+#13 24.02  + hyperframe==6.1.0
+#13 24.02  + idna==3.20
+#13 24.02  + iniconfig==2.3.1
+#13 24.02  + jinja2==3.1.6
+#13 24.02  + kiwisolver==1.5.1
+#13 24.02  + mako==1.4.3
+#13 24.02  + markupsafe==3.0.4
+#13 24.02  + matplotlib==3.11.2
+#13 24.02  + minio==7.2.20
+#13 24.02  + mpmath==1.3.0
+#13 24.02  + networkx==3.7
+#13 24.02  + numpy==2.5.4
+#13 24.02  + opentelemetry-api==1.45.2
+#13 24.02  + packaging==26.3
+#13 24.02  + pillow==12.3.0
+#13 24.02  + pluggy==1.7.0
+#13 24.02  + portalocker==4.4.2
+#13 24.02  + protobuf==7.36.2
+#13 24.02  + psycopg==3.3.6
+#13 24.02  + psycopg-binary==3.3.6
+#13 24.02  + pycparser==3.12
+#13 24.02  + pycryptodome==4.3.0
+#13 24.02  + pydantic==2.14.2
+#13 24.02  + pydantic-core==2.50.2
+#13 24.02  + pydantic-settings==2.16.2
+#13 24.02  + pygments==2.21.0
+#13 24.02  + pyparsing==3.3.3
+#13 24.02  + pytest==9.2.0
+#13 24.02  + pytest-asyncio==1.4.1.post1
+#13 24.02  + python-dateutil==4.0.0
+#13 24.02  + python-dotenv==1.2.4
+#13 24.03  + python-multipart==0.0.33
+#13 24.03  + pyyaml==6.0.3
+#13 24.03  + qdrant-client==1.20.0
+#13 24.03  + regex==2026.9.29
+#13 24.03  + requests==2.34.2
+#13 24.03  + ruff==0.17.3
+#13 24.03  + safetensors==0.8.0
+#13 24.03  + setuptools==84.2.1
+#13 24.03  + sqlalchemy==2.0.55
+#13 24.03  + starlette==1.10.0
+#13 24.03  + sympy==1.14.0
+#13 24.03  + tokenizers==0.22.2
+#13 24.03  + torch==2.15.0+cpu
+#13 24.03  + tqdm==4.70.1
+#13 24.03  + transformers==4.57.6
+#13 24.03  + typing-extensions==4.16.0
+#13 24.03  + typing-inspection==0.4.4
+#13 24.03  + tzdata==2026.6
+#13 24.03  + urllib3==2.8.0
+#13 24.03  + uvicorn==0.54.0
+#13 DONE 24.2s
+
+#20 [indexing-worker stage-1  6/10] COPY backend/ backend/
+#20 DONE 0.5s
+
+#19 [backend] exporting to image
+#19 ...
+
+#21 [indexing-worker stage-1  7/10] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#21 0.262    Building ai-image-search-backend @ file:///srv/backend
+#21 1.369       Built ai-image-search-backend @ file:///srv/backend
+#21 1.372 Prepared 1 package in 1.11s
+#21 1.375 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+#21 1.375          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+#21 1.375          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+#21 1.377 Installed 1 package in 4ms
+#21 1.961 Bytecode compiled 10800 files in 583ms
+#21 1.961  + ai-image-search-backend==0.3.0 (from file:///srv/backend)
+#21 DONE 2.0s
+
+#22 [indexing-worker stage-1  8/10] COPY scripts/ scripts/
+#22 DONE 0.1s
+
+#19 [backend] exporting to image
+#19 ...
+
+#23 [indexing-worker stage-1  9/10] COPY .env.example .env.example
+#23 DONE 0.0s
+
+#24 [indexing-worker stage-1 10/10] COPY ruff.toml ruff.toml
+#24 DONE 0.0s
+
+#25 [indexing-worker] exporting to image
+#25 exporting layers
+#25 ...
+
+#19 [backend] exporting to image
+#19 exporting layers 66.6s done
+#19 exporting manifest sha256:2c4b3c5fd38381977cb84588c24073813493671c554fc32a022edc7a826f2a02 done
+#19 exporting config sha256:6762cec4fb54fa644b32aa29c57138be0985fd07379735a3a32109fe0c0c1a6d done
+#19 exporting attestation manifest sha256:840a972b7338f531d5563e4b7330d6518c29f95ab9baf6121576d940b1f1972c done
+#19 exporting manifest list sha256:2cfc252388c4da9dfcf429ae7b3d743f8d6c30e050b3cc8a8a87a67e0b1d46ab done
+#19 naming to docker.io/library/ai-image-search-backend:latest 0.0s done
+#19 unpacking to docker.io/library/ai-image-search-backend:latest
+#19 ...
+
+#25 [indexing-worker] exporting to image
+#25 exporting layers 70.5s done
+#25 exporting manifest sha256:343e09ec9bb6505413d4ebb9fd08084c3bda3bd16d50da0887a5fbb371a57a3c done
+#25 exporting config sha256:ba34ee172aa242db4792d5270773b1bb0e6cd25b8af3b3c15271cafe4d4b2a65 done
+#25 exporting attestation manifest sha256:8178dd1fb9b1259bb2db01136e2065deae172ebc426cd4c9e79a8bcb34ab9c6b 0.0s done
+#25 exporting manifest list sha256:417fcaf42d9af3680300a66628d02e3fdbedffe10b434e3ed27f016389816d56 done
+#25 naming to docker.io/library/ai-image-search-indexing-worker:latest done
+#25 unpacking to docker.io/library/ai-image-search-indexing-worker:latest
+#25 ...
+
+#19 [backend] exporting to image
+#19 unpacking to docker.io/library/ai-image-search-backend:latest 20.5s done
+#19 DONE 87.2s
+
+#26 [backend] resolving provenance for metadata file
+#26 DONE 0.0s
+
+#25 [indexing-worker] exporting to image
+#25 unpacking to docker.io/library/ai-image-search-indexing-worker:latest 19.7s done
+#25 DONE 90.3s
+
+#27 [indexing-worker] resolving provenance for metadata file
+#27 DONE 0.0s
+
+ Image ai-image-search-backend Building 
+ Image ai-image-search-indexing-worker Building 
+ Image ai-image-search-indexing-worker Built 
+ Image ai-image-search-backend Built 

@@ -1,0 +1,15 @@
+........................................................................ [ 97%]
+..                                                                       [100%]
+=============================== warnings summary ===============================
+tests/integration/test_indexing.py::test_real_model_batch_retry_recovery_idempotency_and_repair
+tests/integration/test_real_search.py::test_real_text_image_search_and_failure_paths
+tests/integration/test_real_services.py::test_real_dependency_connections
+tests/integration/test_real_services.py::test_real_backend_readiness
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+74 passed, 4 warnings in 27.30s
+
+ Container ai-image-search-indexing-worker-run-e56ef045ccaa Creating 
+ Container ai-image-search-indexing-worker-run-e56ef045ccaa Created 

@@ -1,0 +1,1313 @@
+{
+  "status": "measured",
+  "model": "clip",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "checkpoint": "openai/clip-vit-base-patch32",
+  "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "manifest": {
+    "exif": "transpose",
+    "alpha": "white",
+    "files": {
+      "README.md": "8f0e8c678e0afe5f384f3bf8a6694c1cb53c41e52f86277967b6c5354cb0f9f4",
+      "merges.txt": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85",
+      "vocab.json": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363",
+      "config.json": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770",
+      "tokenizer.json": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842",
+      "model.safetensors": "99d28a652e6ec46629ab7047a0ac82c69b1fe11e0ce672c43af65d3a9a3fc05d",
+      "pytorch_model.bin": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+      "tokenizer_config.json": "34b7336e4bee12e0a9730eaf5189f582ef3c3eea5027f65730e5717256755aad",
+      "special_tokens_map.json": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf",
+      "preprocessor_config.json": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd"
+    },
+    "torch": "2.15.0+cpu",
+    "device": "cpu",
+    "distance": "cosine",
+    "model_id": "openai/clip-vit-base-patch32",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "attention": "eager",
+    "dimension": 512,
+    "precision": "float32",
+    "processor": {
+      "size": {
+        "shortest_edge": 224
+      },
+      "resample": 3,
+      "crop_size": {
+        "width": 224,
+        "height": 224
+      },
+      "do_resize": true,
+      "image_std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ],
+      "do_rescale": true,
+      "image_mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "do_normalize": true,
+      "do_center_crop": true,
+      "do_convert_rgb": true,
+      "rescale_factor": 0.00392156862745098,
+      "_processor_class": null,
+      "image_processor_type": "CLIPImageProcessor"
+    },
+    "transformers": "4.57.6",
+    "normalization": "l2",
+    "canonical_vector": "float32-le-l2-v1",
+    "processor_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "decoder_code_sha256": "2edfdf8f0ff24e95fa506b908c828b310abbdbc5f7da84d96e731ccb87cdb32e",
+    "encoder_code_sha256": "20d9c0b1dcb9f8d35ccf1ea38e330ff505cca9dae52a6f6324e38dcd1c8c8daf"
+  },
+  "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+  "collection": "images_clip_v1_da55a7d099fd",
+  "dimension": 512,
+  "model_initialization_fresh_process_ms": 3859.7754310012533,
+  "cold_policy": "fresh model/process; filesystem cache warm/uncontrolled; includes hash verification and warmup",
+  "process_peak_rss_kib": 1202600,
+  "device": "cpu",
+  "gpu_results": null,
+  "index_verification": {
+    "status": "pass",
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "collection": "images_clip_v1_da55a7d099fd",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "dimension": 512,
+    "verified_images": 10,
+    "exact_vector_count": 10,
+    "image_ids": [
+      "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+      "144910f0-c5f2-4981-962f-cf4136b240e0",
+      "16526aae-297c-4a8a-986e-3239731a84f5",
+      "248a1632-5020-46dc-a585-84d2cdf988b0",
+      "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+      "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "6a19fdda-6379-42bf-a96c-5559256139b6",
+      "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+      "f9dad06d-a187-4f7b-8bae-57134177bb04"
+    ],
+    "problems": [],
+    "orphan_point_ids": [],
+    "live_items": false,
+    "missing_embedding_image_ids": [],
+    "verification_ms": 172.7009400001407
+  },
+  "indexing": null,
+  "hnsw_config": {
+    "m": 16,
+    "ef_construct": 100,
+    "full_scan_threshold": 10000,
+    "max_indexing_threads": 0,
+    "on_disk": false,
+    "memory": null,
+    "payload_m": null,
+    "inline_storage": null
+  },
+  "indexed_vectors_count": 0,
+  "ann_caveat": "Small corpus may use plain scan; overlap@10 is trivial when K=N; not human relevance Recall",
+  "encoding_latency": {
+    "count": 28,
+    "median_ms": 22.414270000808756,
+    "min_ms": 10.947196999040898,
+    "mean_ms": 34.36201307132641,
+    "p50_ms": 22.347939000610495,
+    "p90_ms": 63.8008109999646,
+    "p95_ms": 76.13690700054576,
+    "p99_ms": 226.2627970012545,
+    "max_ms": 226.2627970012545,
+    "stddev_ms": 40.07703704333785
+  },
+  "dataset_sha256": "1c445e2d26dda73696b56b0947550fc76eb05df0e5aac9e293cabc1ce9051e37",
+  "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+  "label_sha256": null,
+  "semantic_quality": "not_measured_no_human_labels",
+  "aggregates": [
+    {
+      "task": "exact_identity",
+      "query_type": "image",
+      "language": "und",
+      "search_mode": "image",
+      "query_count": 4,
+      "metrics": {
+        "recall@1": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "recall@5": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "recall@10": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "precision@1": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "precision@5": {
+          "mean": 0.2,
+          "evaluated_queries": 4
+        },
+        "precision@10": {
+          "mean": 0.1,
+          "evaluated_queries": 4
+        },
+        "hit@1": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "hit@5": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "hit@10": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "dcg@1": {
+          "mean": 3.0,
+          "evaluated_queries": 4
+        },
+        "dcg@5": {
+          "mean": 3.0,
+          "evaluated_queries": 4
+        },
+        "dcg@10": {
+          "mean": 3.0,
+          "evaluated_queries": 4
+        },
+        "idcg@1": {
+          "mean": 3.0,
+          "evaluated_queries": 4
+        },
+        "idcg@5": {
+          "mean": 3.0,
+          "evaluated_queries": 4
+        },
+        "idcg@10": {
+          "mean": 3.0,
+          "evaluated_queries": 4
+        },
+        "ndcg@1": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "ndcg@5": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "mrr@10": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        },
+        "ndcg@10": {
+          "mean": 1.0,
+          "evaluated_queries": 4
+        }
+      }
+    }
+  ],
+  "active_baseline_preserved": true,
+  "queries": [
+    {
+      "query_id": "single_coffee_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 10.947196999040898,
+      "vector_retrieval_and_exact_comparison_ms": 51.95006000030844,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_coffee_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 22.347939000610495,
+      "vector_retrieval_and_exact_comparison_ms": 51.211928999691736,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_cat_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "cat",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 14.838830000371672,
+      "vector_retrieval_and_exact_comparison_ms": 51.030085000093095,
+      "result_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_cat_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "cat",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 22.03633199860633,
+      "vector_retrieval_and_exact_comparison_ms": 50.42305099959776,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_camera_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "camera",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 19.82227499865985,
+      "vector_retrieval_and_exact_comparison_ms": 52.79491799956304,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "144910f0-c5f2-4981-962f-cf4136b240e0"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_camera_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "camera",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 21.79875599904335,
+      "vector_retrieval_and_exact_comparison_ms": 49.73165699993842,
+      "result_ids": [
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_rocket_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "rocket",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 23.082399000486475,
+      "vector_retrieval_and_exact_comparison_ms": 52.328368999951635,
+      "result_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_rocket_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "rocket",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 27.985044000160997,
+      "vector_retrieval_and_exact_comparison_ms": 50.52234200047678,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_hubble_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "hubble",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 15.974164998624474,
+      "vector_retrieval_and_exact_comparison_ms": 52.270083000621526,
+      "result_ids": [
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_hubble_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "hubble",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 22.480601001007017,
+      "vector_retrieval_and_exact_comparison_ms": 50.35454899916658,
+      "result_ids": [
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_horse_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "horse",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 13.81988100001763,
+      "vector_retrieval_and_exact_comparison_ms": 51.74972799977695,
+      "result_ids": [
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_horse_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "horse",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 24.89530800085049,
+      "vector_retrieval_and_exact_comparison_ms": 49.977045999185066,
+      "result_ids": [
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and2_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 15.157155999986571,
+      "vector_retrieval_and_exact_comparison_ms": 51.80682100035483,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and2_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 24.46185400003742,
+      "vector_retrieval_and_exact_comparison_ms": 53.86473799990199,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and3_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 18.624860000272747,
+      "vector_retrieval_and_exact_comparison_ms": 50.21119999946677,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and3_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 18.84582399907231,
+      "vector_retrieval_and_exact_comparison_ms": 50.09137399974861,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and4_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 19.998059999124962,
+      "vector_retrieval_and_exact_comparison_ms": 52.442178999626776,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and4_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 28.772568999556825,
+      "vector_retrieval_and_exact_comparison_ms": 49.24471499907668,
+      "result_ids": [
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "or_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "camera",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 15.733934000309091,
+      "vector_retrieval_and_exact_comparison_ms": 55.75560600118479,
+      "result_ids": [
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "or_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "camera",
+      "split": "test",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 23.3104649996676,
+      "vector_retrieval_and_exact_comparison_ms": 49.63427899929229,
+      "result_ids": [
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "optional_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 18.603217000418226,
+      "vector_retrieval_and_exact_comparison_ms": 55.54201999984798,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "optional_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "whole",
+      "status": "measured",
+      "encoding_ms": 24.71659799994086,
+      "vector_retrieval_and_exact_comparison_ms": 50.584321999849635,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_coffee",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "image",
+      "status": "measured",
+      "encoding_ms": 226.2627970012545,
+      "vector_retrieval_and_exact_comparison_ms": 6.649417000517133,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_cat",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "group_id": "cat",
+      "split": "dev",
+      "search_mode": "image",
+      "status": "measured",
+      "encoding_ms": 45.197113999165595,
+      "vector_retrieval_and_exact_comparison_ms": 6.245877999390359,
+      "result_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_camera",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "group_id": "camera",
+      "split": "test",
+      "search_mode": "image",
+      "status": "measured",
+      "encoding_ms": 63.8008109999646,
+      "vector_retrieval_and_exact_comparison_ms": 7.1763619998819195,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_rocket",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "group_id": "rocket",
+      "split": "test",
+      "search_mode": "image",
+      "status": "measured",
+      "encoding_ms": 44.508349001262104,
+      "vector_retrieval_and_exact_comparison_ms": 7.072164999044617,
+      "result_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "paired_coffee_en",
+      "query_type": "multimodal",
+      "language": "en",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "paired_rrf",
+      "status": "measured",
+      "encoding_ms": 57.977123999080504,
+      "vector_retrieval_and_exact_comparison_ms": 57.28395400001318,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        },
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "paired_coffee_vi",
+      "query_type": "multimodal",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "group_id": "coffee",
+      "split": "dev",
+      "search_mode": "paired_rrf",
+      "status": "measured",
+      "encoding_ms": 76.13690700054576,
+      "vector_retrieval_and_exact_comparison_ms": 54.79318399920885,
+      "result_ids": [
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "metrics": {},
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        },
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    }
+  ]
+}

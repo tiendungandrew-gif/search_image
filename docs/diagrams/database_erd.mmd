@@ -1,0 +1,176 @@
+erDiagram
+    images {
+        uuid id PK
+        string sha256 UK
+        string status
+        bigint metadata_revision
+    }
+    image_metadata {
+        uuid image_id PK,FK
+        string title
+        string city
+        jsonb extra
+    }
+    image_tags {
+        uuid image_id PK,FK
+        string tag PK
+        string source
+    }
+    entities {
+        uuid id PK
+        string canonical_name
+        string entity_type
+    }
+    entity_relationships {
+        uuid id PK
+        uuid subject_id FK
+        uuid object_id FK
+        string predicate
+        jsonb evidence
+    }
+    image_entities {
+        uuid image_id PK,FK
+        uuid entity_id PK,FK
+        string relation PK
+    }
+    embedding_models {
+        uuid id PK
+        string manifest_sha256 UK
+        int dimension
+        jsonb manifest
+    }
+    search_indexes {
+        uuid id PK
+        uuid model_id FK
+        string collection_name UK
+        string status
+    }
+    active_search_index {
+        string corpus_key PK
+        uuid index_id FK
+        bigint generation
+    }
+    image_embeddings {
+        uuid image_id PK,FK
+        uuid index_id PK,FK
+        string status
+        bigint metadata_revision
+    }
+    image_objects {
+        uuid id PK
+        uuid image_id FK
+        string role
+        string object_key
+    }
+    dataset_sources {
+        uuid id PK
+        string name UK
+        string manifest_sha256
+    }
+    indexing_jobs {
+        uuid id PK
+        uuid source_id FK
+        uuid target_index_id FK
+        uuid retry_of FK
+        string status
+    }
+    indexing_job_items {
+        uuid id PK
+        uuid job_id FK
+        uuid image_id FK
+        uuid index_id FK
+        uuid claim_token
+        string status
+    }
+    job_item_attempts {
+        uuid item_id PK,FK
+        int attempt_no PK
+        uuid claim_token UK
+    }
+    search_queries {
+        uuid id PK
+        uuid index_id FK
+        uuid reference_image_id FK
+        bool history_opt_in
+    }
+    search_results {
+        uuid query_id PK,FK
+        int rank PK
+        uuid image_id FK
+        float score
+    }
+    evaluation_datasets {
+        uuid id PK
+        string name
+        string version
+    }
+    evaluation_dataset_images {
+        uuid dataset_id PK,FK
+        uuid image_id PK,FK
+        string role PK
+        string split
+    }
+    evaluation_queries {
+        uuid id PK
+        uuid dataset_id FK
+        uuid reference_image_id FK
+        string group_code
+    }
+    evaluation_relevance_labels {
+        uuid query_id PK,FK
+        uuid image_id PK,FK
+        uuid dataset_id FK
+        string image_role FK
+        int grade
+    }
+    benchmark_runs {
+        uuid id PK
+        uuid dataset_id FK
+        uuid index_id FK
+        string experiment
+    }
+    benchmark_query_results {
+        uuid run_id PK,FK
+        uuid query_id PK,FK
+        int sample_no PK
+        float duration_ms
+    }
+    idempotency_records {
+        string principal_id PK
+        string endpoint PK
+        string key PK
+        string request_sha256
+        jsonb response_ref
+    }
+    images ||--o| image_metadata : metadata
+    images ||--o{ image_tags : tags
+    images ||--o{ image_entities : depicted_entities
+    entities ||--o{ image_entities : annotated_images
+    entities ||--o{ entity_relationships : subject
+    entities ||--o{ entity_relationships : object
+    embedding_models ||--o{ search_indexes : compatible_space
+    search_indexes ||--o| active_search_index : current_pointer
+    images ||--o{ image_embeddings : embeddings
+    search_indexes ||--o{ image_embeddings : indexed_members
+    images ||--o{ image_objects : stored_bytes
+    dataset_sources o|--o{ indexing_jobs : approved_source
+    search_indexes o|--o{ indexing_jobs : target
+    indexing_jobs o|--o{ indexing_jobs : retry_of
+    indexing_jobs ||--o{ indexing_job_items : items
+    images o|--o{ indexing_job_items : resolved_identity
+    search_indexes o|--o{ indexing_job_items : target_index
+    indexing_job_items ||--o{ job_item_attempts : attempts
+    search_indexes o|--o{ search_queries : queried_index
+    images o|--o{ search_queries : optional_reference
+    search_queries ||--o{ search_results : saved_ranks
+    images ||--o{ search_results : result_image
+    evaluation_datasets ||--o{ evaluation_dataset_images : frozen_members
+    images ||--o{ evaluation_dataset_images : member
+    evaluation_datasets ||--o{ evaluation_queries : query_set
+    images o|--o{ evaluation_queries : reference_input
+    evaluation_queries ||--o{ evaluation_relevance_labels : judged_pairs
+    evaluation_dataset_images ||--o{ evaluation_relevance_labels : eligible_corpus_image
+    evaluation_datasets ||--o{ benchmark_runs : evaluated_dataset
+    search_indexes ||--o{ benchmark_runs : measured_index
+    benchmark_runs ||--o{ benchmark_query_results : samples
+    evaluation_queries ||--o{ benchmark_query_results : measured_query

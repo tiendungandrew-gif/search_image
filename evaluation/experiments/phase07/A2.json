@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "name": "A2_rrf",
+  "profile": "advanced",
+  "requests": 300,
+  "query_types": [
+    "multi_intent"
+  ]
+}

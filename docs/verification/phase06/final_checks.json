@@ -1,0 +1,60 @@
+{
+  "status": "pass",
+  "checks": {
+    "python_lint": {
+      "status": "pass",
+      "output": "All checks passed!"
+    },
+    "python_format": {
+      "status": "pass",
+      "output": "97 files already formatted"
+    },
+    "shell_syntax": {
+      "status": "pass",
+      "output": ""
+    },
+    "documentation": {
+      "status": "pass",
+      "scope": "relative links, baseline IDs/traceability, JSON examples, 11 structural Mermaid sources/24 ER tables/8 ADRs; no new render claim"
+    },
+    "json_artifacts": {
+      "status": "pass",
+      "count_at_check": 50
+    },
+    "source_fingerprint": {
+      "status": "pass",
+      "file_count": 152,
+      "sha256": "0de247038fc4ea74902cfe1243ee95a7992d500e98f21735b4c462786f4bfedb",
+      "immutable_encoder_decoder": true
+    },
+    "secrets_and_ignores": {
+      "status": "pass",
+      "scope": "publishable files vs private dotenv values; model/browser/tools/raw browser/private env artifacts ignored"
+    },
+    "frontend_prettier": {
+      "status": "pass",
+      "scope": "frontend/src and e2e/foundation.spec.ts; actual npm check completed"
+    },
+    "final_report": {
+      "status": "pass",
+      "sections": "A\u2013M",
+      "source_sha256": "0de247038fc4ea74902cfe1243ee95a7992d500e98f21735b4c462786f4bfedb",
+      "test_counts": {
+        "backend": 101,
+        "frontend": 10,
+        "browser": 12
+      },
+      "benchmark_successful_requests": 800,
+      "quality": "not_measured",
+      "path": "docs/PHASE06_TEST_REPORT.md",
+      "evaluation_path": "docs/PHASE06_EVALUATION.md",
+      "required_prompt06_documents": 6,
+      "updated_diagrams": [
+        "component_architecture.mmd",
+        "multi_intent_sequence.mmd",
+        "multimodal_search_sequence.mmd"
+      ],
+      "diagrams_validation": "Structural checks only; no new engine render claim."
+    }
+  }
+}

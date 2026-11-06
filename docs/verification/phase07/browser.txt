@@ -1,0 +1,28 @@
+
+> ai-image-search-frontend@0.3.0 test:e2e
+> playwright test
+
+
+Running 14 tests using 1 worker
+
+  ✓   1 [desktop] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (534ms)
+  ✓   2 [desktop] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (767ms)
+  ✓   3 [desktop] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (443ms)
+  ✓   4 [desktop] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (307ms)
+  ✓   5 [desktop] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (986ms)
+  ✓   6 [desktop] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (1.9s)
+  ✓   7 [desktop] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (323ms)
+  ✓   8 [mobile] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (413ms)
+  ✓   9 [mobile] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (572ms)
+  ✓  10 [mobile] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (405ms)
+  ✓  11 [mobile] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (295ms)
+  ✓  12 [mobile] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (1.0s)
+  ✓  13 [mobile] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (1.9s)
+  ✓  14 [mobile] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (298ms)
+
+  14 passed (11.2s)
+
+(node:295577) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:295961) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

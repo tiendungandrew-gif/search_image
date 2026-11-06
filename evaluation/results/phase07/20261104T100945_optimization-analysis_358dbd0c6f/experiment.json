@@ -1,0 +1,39 @@
+{
+  "experiment_id": "20261104T100945_optimization-analysis_358dbd0c6f",
+  "timestamp_utc": "2026-11-04T10:09:45.933218+00:00",
+  "kind": "optimization-analysis",
+  "config": {},
+  "git_commit": null,
+  "git_status": "no_commit",
+  "source": {
+    "sha256": "3459f57955238fa9a31bf27d98876fdc769b154adb997d2899e7ebf309e5f0e1",
+    "files": 184,
+    "archive": "evaluation/results/phase07/_sources/3459f57955238fa9a31bf27d98876fdc769b154adb997d2899e7ebf309e5f0e1.tar.gz",
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "client_platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+  "client_python": "3.12.3",
+  "client_hardware": {
+    "cpu": "Intel(R) Core(TM) 7 240H",
+    "logical_cpus": 16,
+    "total_ram_kib": 15845068,
+    "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "torch": "2.15.0+cpu",
+      "transformers": "4.57.6",
+      "httpx": "0.28.1",
+      "qdrant-client": "1.20.0",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "provenance": {
+    "input_runs": [
+      "20261104T094121_benchmark_85202e75a0",
+      "20261104T093937_benchmark_97b3d12a34",
+      "20261104T094027_benchmark_c337f7cf84",
+      "20261104T094214_benchmark_5dcd341f50"
+    ]
+  }
+}

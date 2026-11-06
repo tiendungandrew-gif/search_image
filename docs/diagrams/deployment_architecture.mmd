@@ -1,0 +1,28 @@
+flowchart TB
+    Browser["Desktop / mobile browser"] -->|"Loopback HTTP dev; HTTPS nếu public được thiết kế sau"| UI["Vite dev server / static frontend"]
+    Browser -->|"API Bearer auth và content proxy"| API
+    subgraph Linux["Linux local profile: chưa triển khai"]
+        API["API process: model preload, bounded inference"]
+        Worker["Worker process: cùng backend source, bounded jobs"]
+        Eval["Evaluation CLI: workload và artifact manifests"]
+        subgraph DataNetwork["Private service network, không expose browser"]
+            PG[("PostgreSQL")]
+            Q[("Qdrant")]
+            M[("MinIO private")]
+        end
+        Volumes["Persisted volumes và backup theo policy"]
+        Device["CPU / GPU cấu hình sau; admission khi dùng chung"]
+    end
+    API --> PG
+    API --> Q
+    API --> M
+    Worker --> PG
+    Worker --> Q
+    Worker --> M
+    API --> Device
+    Worker --> Device
+    PG --> Volumes
+    Q --> Volumes
+    M --> Volumes
+    Eval --> API
+    API -.-> Generator["Optional generator theo egress policy"]

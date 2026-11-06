@@ -1,0 +1,82 @@
+........................................................................ [ 50%]
+.................................................................FF....  [100%]
+=================================== FAILURES ===================================
+____________ test_real_metadata_generation_and_visual_insufficiency ____________
+
+    async def test_real_metadata_generation_and_visual_insufficiency():
+        cfg = Settings()
+        async with httpx.AsyncClient(
+            base_url=os.getenv("RAG_TEST_BASE_URL", "http://backend:8000"),
+            headers={"Authorization": "Bearer " + cfg.api_token.get_secret_value()},
+            timeout=12,
+        ) as c:
+            response = await c.post(
+                "/api/v1/rag/explain",
+                json={
+                    "query": "a cup of coffee",
+                    "top_k": 1,
+                    "question": "What are the image format and dimensions in the metadata?",
+                    "language": "en",
+                },
+            )
+            assert response.status_code == 200
+            result = response.json()
+>           assert result["results"] and result["rag"]["generated"], {
+                "error_code": result["rag"]["error_code"],
+                "latency": result["latency"],
+            }
+E           AssertionError: {'error_code': 'LLM_TIMEOUT', 'latency': {'retrieval_ms': 104.06718300009743, 'evidence_ms': 62.7846270003829, 'context_ms': 1.2181279998912942, 'generation_ms': 5002.40173300017, ...}}
+E           assert ([{'image_id': '785c1ac8-6017-4c02-84d4-5d4f67ef4142', 'rank': 1, 'score': 0.28575084, 'score_type': 'cosine', ...}] and False)
+
+backend/tests/integration/test_real_rag.py:39: AssertionError
+_____________ test_real_provider_stream_and_validated_final_event ______________
+
+    async def test_real_provider_stream_and_validated_final_event():
+        cfg = Settings()
+        async with httpx.AsyncClient(
+            base_url=os.getenv("RAG_TEST_BASE_URL", "http://backend:8000"),
+            headers={"Authorization": "Bearer " + cfg.api_token.get_secret_value()},
+            timeout=12,
+        ) as c:
+            response = await c.post(
+                "/api/v1/rag/explain/stream",
+                json={
+                    "query": "a cup of coffee",
+                    "question": "Metadata ghi định dạng và kích thước như thế nào?",
+                    "language": "vi",
+                    "top_k": 1,
+                },
+            )
+            assert response.status_code == 200
+            events = []
+            for block in response.text.split("\n\n"):
+                lines = block.splitlines()
+                if len(lines) == 2:
+                    events.append(
+                        (lines[0].removeprefix("event: "), json.loads(lines[1].removeprefix("data: ")))
+                    )
+            assert events[0][0] == "retrieval_started"
+>           assert any(e == "token" and v["verified"] is False for e, v in events)
+E           assert False
+E            +  where False = any(<generator object test_real_provider_stream_and_validated_final_event.<locals>.<genexpr> at 0x72251b0e2670>)
+
+backend/tests/integration/test_real_rag.py:85: AssertionError
+=============================== warnings summary ===============================
+tests/integration/test_indexing.py::test_real_model_batch_retry_recovery_idempotency_and_repair
+tests/integration/test_real_advanced_search.py::test_real_multimodal_multi_intent_constraints_and_baseline
+tests/integration/test_real_evaluation.py::test_real_profiling_and_identity_receipts
+tests/integration/test_real_search.py::test_real_text_image_search_and_failure_paths
+tests/integration/test_real_services.py::test_real_dependency_connections
+tests/integration/test_real_services.py::test_real_backend_readiness
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_real_rag.py::test_real_metadata_generation_and_visual_insufficiency
+FAILED backend/tests/integration/test_real_rag.py::test_real_provider_stream_and_validated_final_event
+2 failed, 141 passed, 6 warnings in 34.11s
+
+ Container ai-image-search-indexing-worker-run-8ba3718e5cb9 Creating 
+ Container ai-image-search-indexing-worker-run-8ba3718e5cb9 Created 
+

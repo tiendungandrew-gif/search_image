@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "duration_ms": 1207.4589409999135,
+  "model": "gemini-3.5-flash-lite",
+  "raw_selection": "{\"fact_ids\": [\"E1.width\", \"E1.height\", \"E1.media_type\"]}",
+  "usage": [
+    {
+      "completion_tokens": 2,
+      "prompt_tokens": 773,
+      "total_tokens": 775
+    },
+    {
+      "completion_tokens": 20,
+      "prompt_tokens": 773,
+      "total_tokens": 793
+    },
+    {
+      "completion_tokens": 25,
+      "prompt_tokens": 773,
+      "total_tokens": 798
+    },
+    {
+      "completion_tokens": 25,
+      "prompt_tokens": 773,
+      "total_tokens": 798
+    }
+  ]
+}

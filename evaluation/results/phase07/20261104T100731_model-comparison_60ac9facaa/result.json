@@ -1,0 +1,1028 @@
+{
+  "status": "measured",
+  "model": "siglip2",
+  "model_id": "4a5caa23-4932-469f-a781-4b8bd7a9c756",
+  "checkpoint": "google/siglip2-base-patch16-224",
+  "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+  "manifest_sha256": "a08f77b00ff44f07baacfd60d2393c760b8f94fe8f65c5a2412e6087b3a36b06",
+  "manifest": {
+    "model_id": "google/siglip2-base-patch16-224",
+    "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+    "processor_revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+    "files": {
+      "config.json": "fe8b5fe6d5734360678fd71c11c21e1ea3364bd8598d34295d9206335973ffd7",
+      "preprocessor_config.json": "9b36b57ebaf20f09bf4c22100ccc21877ea6bfe5aead0c00c59f8af8ccefacfc",
+      "tokenizer_config.json": "14afe629fe4959b9e0d51e1852b8d9f7ad074f90a1a7125a4fcdd17f06e78fc8",
+      "special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+      "tokenizer.json": "cb9140fae3ac5122c972d37adf83e1248471a38147ad76f8215c8872c6fd8322",
+      "tokenizer.model": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+      "model.safetensors": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b",
+      "README.md": "39ac3705d62af9ffa1a14675b8ccb220a75f2d81acd530e564a3b1e3dfe418d8"
+    },
+    "dimension": 768,
+    "normalization": "l2",
+    "precision": "float32",
+    "distance": "cosine",
+    "processor": {
+      "_processor_class": "SiglipProcessor",
+      "image_processor_type": "SiglipImageProcessor",
+      "do_resize": true,
+      "size": {
+        "height": 224,
+        "width": 224
+      },
+      "resample": 2,
+      "do_rescale": true,
+      "rescale_factor": 0.00392156862745098,
+      "do_normalize": true,
+      "image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "image_std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "do_convert_rgb": null
+    },
+    "text_max_positions": 64,
+    "text_padding": "max_length",
+    "truncation": false,
+    "device": "cpu",
+    "attention": "eager",
+    "torch": "2.15.0+cpu",
+    "transformers": "4.57.6",
+    "encoder_code_sha256": "537a114a77f60aa670be8ed13c14de568ad8c04b99eaf658a844385bbdd01a4f",
+    "decoder_code_sha256": "2edfdf8f0ff24e95fa506b908c828b310abbdbc5f7da84d96e731ccb87cdb32e",
+    "license_ref": "https://huggingface.co/google/siglip2-base-patch16-224"
+  },
+  "index_id": "3c7b23e3-4c73-4082-aa09-34df3bc70208",
+  "collection": "images_siglip2_phase07_v1_7c8f7207b4d1",
+  "dimension": 768,
+  "model_initialization_fresh_process_ms": 6632.727321000857,
+  "cold_policy": "fresh model/process; filesystem cache warm/uncontrolled; includes hash verification and warmup",
+  "process_peak_rss_kib": 1899456,
+  "device": "cpu",
+  "gpu_results": null,
+  "index_verification": {
+    "status": "pass",
+    "index_id": "3c7b23e3-4c73-4082-aa09-34df3bc70208",
+    "collection": "images_siglip2_phase07_v1_7c8f7207b4d1",
+    "manifest_sha256": "a08f77b00ff44f07baacfd60d2393c760b8f94fe8f65c5a2412e6087b3a36b06",
+    "dimension": 768,
+    "verified_images": 10,
+    "exact_vector_count": 10,
+    "image_ids": [
+      "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+      "144910f0-c5f2-4981-962f-cf4136b240e0",
+      "16526aae-297c-4a8a-986e-3239731a84f5",
+      "248a1632-5020-46dc-a585-84d2cdf988b0",
+      "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+      "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "6a19fdda-6379-42bf-a96c-5559256139b6",
+      "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+      "f9dad06d-a187-4f7b-8bae-57134177bb04"
+    ],
+    "problems": [],
+    "orphan_point_ids": [],
+    "live_items": false,
+    "missing_embedding_image_ids": [],
+    "verification_ms": 132.74078099857434,
+    "index_status": "ready"
+  },
+  "indexing": {
+    "job_id": "191e8a20-1cb0-4b94-b28f-465ee5be475e",
+    "indexing_ms": 4030.610442001489,
+    "batches": [
+      {
+        "processor_inference_ms": 412.84269700008736,
+        "batch_size": 4,
+        "preprocess_ms": 865.488961997471,
+        "embedding_ms": 413.15157399913005,
+        "upsert_verify_ms": 88.85949499926937,
+        "batch_ms": 1428.3678779993352
+      },
+      {
+        "processor_inference_ms": 417.46469999998226,
+        "batch_size": 4,
+        "preprocess_ms": 876.0826050020114,
+        "embedding_ms": 417.6325499993254,
+        "upsert_verify_ms": 78.87438900070265,
+        "batch_ms": 1421.438303999821
+      },
+      {
+        "processor_inference_ms": 212.84207200005767,
+        "batch_size": 2,
+        "preprocess_ms": 623.8817789999302,
+        "embedding_ms": 213.00609600075404,
+        "upsert_verify_ms": 70.37505799962673,
+        "batch_ms": 931.0992650007393
+      }
+    ]
+  },
+  "hnsw_config": {
+    "m": 16,
+    "ef_construct": 100,
+    "full_scan_threshold": 10000,
+    "max_indexing_threads": 0,
+    "on_disk": false,
+    "memory": null,
+    "payload_m": null,
+    "inline_storage": null
+  },
+  "indexed_vectors_count": 0,
+  "ann_caveat": "Small corpus may use plain scan; overlap@10 is trivial when K=N; not human relevance Recall",
+  "encoding_latency": {
+    "count": 28,
+    "median_ms": 42.762033000144584,
+    "min_ms": 40.884808000555495,
+    "mean_ms": 69.37765325015529,
+    "p50_ms": 42.708410999694024,
+    "p90_ms": 163.28450400033034,
+    "p95_ms": 184.27227600113838,
+    "p99_ms": 283.75605199835263,
+    "max_ms": 283.75605199835263,
+    "stddev_ms": 56.705074455192694
+  },
+  "semantic_quality": "not_measured_no_human_labels",
+  "active_baseline_preserved": true,
+  "queries": [
+    {
+      "query_id": "single_coffee_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 52.518414000587654,
+      "vector_retrieval_and_exact_comparison_ms": 6.955269000172848,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_coffee_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 43.026904999351245,
+      "vector_retrieval_and_exact_comparison_ms": 6.572436999704223,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_cat_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.389406999063795,
+      "vector_retrieval_and_exact_comparison_ms": 5.180518999623018,
+      "result_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_cat_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.61029600093025,
+      "vector_retrieval_and_exact_comparison_ms": 4.958465999152395,
+      "result_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_camera_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 46.31566500029294,
+      "vector_retrieval_and_exact_comparison_ms": 4.198272001303849,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_camera_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 40.884808000555495,
+      "vector_retrieval_and_exact_comparison_ms": 4.55936399885104,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_rocket_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 43.42581300079473,
+      "vector_retrieval_and_exact_comparison_ms": 6.247124998481013,
+      "result_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_rocket_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 43.04606000005151,
+      "vector_retrieval_and_exact_comparison_ms": 4.84569900072529,
+      "result_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "57ac376b-090d-499e-aed8-97368b32a5d2"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_hubble_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.37880300024699,
+      "vector_retrieval_and_exact_comparison_ms": 4.590123999150819,
+      "result_ids": [
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_hubble_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 56.30231299983279,
+      "vector_retrieval_and_exact_comparison_ms": 4.945894001139095,
+      "result_ids": [
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_horse_en",
+      "query_type": "single_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 40.9663440004806,
+      "vector_retrieval_and_exact_comparison_ms": 4.574012999000843,
+      "result_ids": [
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "single_horse_vi",
+      "query_type": "single_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.65292499985662,
+      "vector_retrieval_and_exact_comparison_ms": 4.820916001335718,
+      "result_ids": [
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and2_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 40.985468000144465,
+      "vector_retrieval_and_exact_comparison_ms": 5.0014320004265755,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and2_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 43.23630500039144,
+      "vector_retrieval_and_exact_comparison_ms": 4.7992130002967315,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and3_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 41.89431499980856,
+      "vector_retrieval_and_exact_comparison_ms": 4.621010999471764,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and3_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 41.29017500054033,
+      "vector_retrieval_and_exact_comparison_ms": 5.01034199987771,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and4_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.56757800067135,
+      "vector_retrieval_and_exact_comparison_ms": 4.2963759988197125,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "6a19fdda-6379-42bf-a96c-5559256139b6"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "and4_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.26284099968325,
+      "vector_retrieval_and_exact_comparison_ms": 4.492329999266076,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "or_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 40.89701200064155,
+      "vector_retrieval_and_exact_comparison_ms": 4.494026999964262,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "144910f0-c5f2-4981-962f-cf4136b240e0"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "or_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.81565500059514,
+      "vector_retrieval_and_exact_comparison_ms": 4.774498000188032,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "optional_en",
+      "query_type": "multi_intent",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.708410999694024,
+      "vector_retrieval_and_exact_comparison_ms": 4.692079999585985,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "optional_vi",
+      "query_type": "multi_intent",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 42.45187199921929,
+      "vector_retrieval_and_exact_comparison_ms": 4.918593000184046,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_coffee",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 283.75605199835263,
+      "vector_retrieval_and_exact_comparison_ms": 4.953276000378537,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "6a19fdda-6379-42bf-a96c-5559256139b6"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_cat",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 119.20638999981747,
+      "vector_retrieval_and_exact_comparison_ms": 4.181037998932879,
+      "result_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "6a19fdda-6379-42bf-a96c-5559256139b6"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_camera",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 117.52180400071666,
+      "vector_retrieval_and_exact_comparison_ms": 4.8345220002374845,
+      "result_ids": [
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "identity_rocket",
+      "query_type": "image",
+      "language": "und",
+      "task": "exact_identity",
+      "encoding_ms": 116.90588000055868,
+      "vector_retrieval_and_exact_comparison_ms": 5.061276999185793,
+      "result_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "144910f0-c5f2-4981-962f-cf4136b240e0"
+      ],
+      "identity_metrics": {
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@1": 1.0,
+        "precision@5": 0.2,
+        "precision@10": 0.1,
+        "hit@1": 1,
+        "hit@5": 1,
+        "hit@10": 1,
+        "dcg@1": 3.0,
+        "dcg@5": 3.0,
+        "dcg@10": 3.0,
+        "idcg@1": 3.0,
+        "idcg@5": 3.0,
+        "idcg@10": 3.0,
+        "ndcg@1": 1.0,
+        "ndcg@5": 1.0,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ann_vs_exact": {
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "paired_coffee_en",
+      "query_type": "multimodal",
+      "language": "en",
+      "task": "semantic_relevance",
+      "encoding_ms": 163.28450400033034,
+      "vector_retrieval_and_exact_comparison_ms": 52.45097599981818,
+      "result_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "6a19fdda-6379-42bf-a96c-5559256139b6",
+        "144910f0-c5f2-4981-962f-cf4136b240e0"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        },
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "paired_coffee_vi",
+      "query_type": "multimodal",
+      "language": "vi",
+      "task": "semantic_relevance",
+      "encoding_ms": 184.27227600113838,
+      "vector_retrieval_and_exact_comparison_ms": 52.7731380007026,
+      "result_ids": [
+        "f9dad06d-a187-4f7b-8bae-57134177bb04",
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "16526aae-297c-4a8a-986e-3239731a84f5",
+        "248a1632-5020-46dc-a585-84d2cdf988b0",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+        "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "6a19fdda-6379-42bf-a96c-5559256139b6"
+      ],
+      "identity_metrics": null,
+      "ann_vs_exact": {
+        "whole": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        },
+        "image": {
+          "ann_vs_exact_overlap@1": 1.0,
+          "ann_vs_exact_overlap@5": 1.0,
+          "ann_vs_exact_overlap@10": 1.0
+        }
+      }
+    }
+  ]
+}

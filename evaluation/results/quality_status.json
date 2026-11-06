@@ -1,0 +1,6 @@
+{
+  "status": "not_measured",
+  "reason": "Chưa có human-verified exhaustive relevance labels cho corpus thực",
+  "implemented_metrics": ["Recall@1", "Recall@5", "Recall@10", "Precision@10", "MRR@10", "nDCG@10"],
+  "unit_fixture_results_are_real_accuracy": false
+}

@@ -1,0 +1,93 @@
+{
+  "discovered": 10,
+  "validated": 10,
+  "duplicates": 0,
+  "accepted": 10,
+  "failed": 0,
+  "ignored": 1,
+  "results": [
+    {
+      "filename": "brick.png",
+      "image_id": "f9dad06d-a187-4f7b-8bae-57134177bb04",
+      "duplicate": false,
+      "job_id": "7bced404-f74b-430e-88f3-68fdeaac74e8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7bced404-f74b-430e-88f3-68fdeaac74e8"
+    },
+    {
+      "filename": "camera.png",
+      "image_id": "6a19fdda-6379-42bf-a96c-5559256139b6",
+      "duplicate": false,
+      "job_id": "7170da00-5d42-4b0b-bc96-5a3cf3e3a0e7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7170da00-5d42-4b0b-bc96-5a3cf3e3a0e7"
+    },
+    {
+      "filename": "chelsea.png",
+      "image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "duplicate": false,
+      "job_id": "ea450149-b6cf-4110-aca4-703702174ad0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ea450149-b6cf-4110-aca4-703702174ad0"
+    },
+    {
+      "filename": "clock_motion.png",
+      "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+      "duplicate": false,
+      "job_id": "4b33f457-ca27-4912-932c-04a8ee7f9099",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4b33f457-ca27-4912-932c-04a8ee7f9099"
+    },
+    {
+      "filename": "coffee.png",
+      "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "duplicate": false,
+      "job_id": "8cdd0d57-110d-46d6-ad6f-838d15e311bd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8cdd0d57-110d-46d6-ad6f-838d15e311bd"
+    },
+    {
+      "filename": "grass.png",
+      "image_id": "248a1632-5020-46dc-a585-84d2cdf988b0",
+      "duplicate": false,
+      "job_id": "ac590a21-4c6f-4b95-960e-adf93ac605dd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ac590a21-4c6f-4b95-960e-adf93ac605dd"
+    },
+    {
+      "filename": "gravel.png",
+      "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+      "duplicate": false,
+      "job_id": "b9cd8bdb-45c4-4041-9130-ab363d3ebb77",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b9cd8bdb-45c4-4041-9130-ab363d3ebb77"
+    },
+    {
+      "filename": "horse.png",
+      "image_id": "3b6739b5-abb7-48f0-b8a1-0b96a5861828",
+      "duplicate": false,
+      "job_id": "3b8662bd-ecb0-491c-bfb5-71433fa7c383",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3b8662bd-ecb0-491c-bfb5-71433fa7c383"
+    },
+    {
+      "filename": "hubble_deep_field.jpg",
+      "image_id": "800fec28-5f0f-4b60-b66f-38deb99ae62f",
+      "duplicate": false,
+      "job_id": "ad54440b-6af3-4364-85ce-5ce52efa06cf",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ad54440b-6af3-4364-85ce-5ce52efa06cf"
+    },
+    {
+      "filename": "rocket.jpg",
+      "image_id": "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+      "duplicate": false,
+      "job_id": "d6db02ca-c169-42db-a62d-243a088744ad",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d6db02ca-c169-42db-a62d-243a088744ad"
+    }
+  ],
+  "ingestion_ms": 1799.6977860002517,
+  "source_id": "9d20d7e8-cf12-4ae1-8041-ca1b71c7e918",
+  "execution": "native CLI against Docker PostgreSQL/MinIO/Qdrant; initial ingestion"
+}

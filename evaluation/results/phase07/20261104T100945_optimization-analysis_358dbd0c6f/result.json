@@ -1,0 +1,159 @@
+{
+  "status": "measured",
+  "input_runs": [
+    "20261104T093937_benchmark_97b3d12a34",
+    "20261104T094027_benchmark_c337f7cf84",
+    "20261104T094121_benchmark_85202e75a0",
+    "20261104T094214_benchmark_5dcd341f50"
+  ],
+  "pooled": {
+    "1": {
+      "server_latency": {
+        "count": 600,
+        "median_ms": 112.4210910002148,
+        "min_ms": 71.26536400028272,
+        "mean_ms": 117.24631472835426,
+        "p50_ms": 112.32534600094368,
+        "p90_ms": 148.01954299946374,
+        "p95_ms": 153.56352200069523,
+        "p99_ms": 161.124607999227,
+        "max_ms": 163.11606700037373,
+        "stddev_ms": 20.936685244610857
+      },
+      "p90_uncertainty": {
+        "status": "measured",
+        "p90_ci95_low_ms": 144.4719430000987,
+        "p90_ci95_high_ms": 150.24750900010986,
+        "method": "consecutive-block bootstrap, descriptive successful-request p90",
+        "block_size": 10,
+        "repetitions": 500,
+        "seed": 42
+      },
+      "object_window_mean_ms": 19.31303339996096
+    },
+    "2": {
+      "server_latency": {
+        "count": 600,
+        "median_ms": 127.99980549971224,
+        "min_ms": 72.70356200024253,
+        "mean_ms": 123.49701396663174,
+        "p50_ms": 127.90614000005007,
+        "p90_ms": 148.9025329992728,
+        "p95_ms": 151.2801879998733,
+        "p99_ms": 155.04736900038552,
+        "max_ms": 166.39468300127191,
+        "stddev_ms": 21.174405114116034
+      },
+      "p90_uncertainty": {
+        "status": "measured",
+        "p90_ci95_low_ms": 146.96283499870333,
+        "p90_ci95_high_ms": 149.54485300040687,
+        "method": "consecutive-block bootstrap, descriptive successful-request p90",
+        "block_size": 10,
+        "repetitions": 500,
+        "seed": 42
+      },
+      "object_window_mean_ms": 14.837916808355658
+    }
+  },
+  "query_comparisons": [
+    {
+      "query_id": "single_camera_en",
+      "group_id": "camera",
+      "head1_mean_ms": 116.66969644000346,
+      "head2_mean_ms": 128.74597901995003,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_camera_vi",
+      "group_id": "camera",
+      "head1_mean_ms": 112.51212900013343,
+      "head2_mean_ms": 118.76185396002256,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_cat_en",
+      "group_id": "cat",
+      "head1_mean_ms": 116.23213432008924,
+      "head2_mean_ms": 122.66479652011185,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_cat_vi",
+      "group_id": "cat",
+      "head1_mean_ms": 116.04060668010789,
+      "head2_mean_ms": 113.06898737995652,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_coffee_en",
+      "group_id": "coffee",
+      "head1_mean_ms": 120.62198991989135,
+      "head2_mean_ms": 130.19875057994795,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_coffee_vi",
+      "group_id": "coffee",
+      "head1_mean_ms": 119.16607303985074,
+      "head2_mean_ms": 121.52494809990458,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_horse_en",
+      "group_id": "horse",
+      "head1_mean_ms": 119.20529133996752,
+      "head2_mean_ms": 132.5438359799955,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_horse_vi",
+      "group_id": "horse",
+      "head1_mean_ms": 114.04558948001068,
+      "head2_mean_ms": 115.69051912025316,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_hubble_en",
+      "group_id": "hubble",
+      "head1_mean_ms": 121.0283417001483,
+      "head2_mean_ms": 128.03752763968077,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_hubble_vi",
+      "group_id": "hubble",
+      "head1_mean_ms": 116.63071850005508,
+      "head2_mean_ms": 122.79135401986423,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_rocket_en",
+      "group_id": "rocket",
+      "head1_mean_ms": 118.83847395994962,
+      "head2_mean_ms": 129.65005521997227,
+      "all_ranks_identical": true
+    },
+    {
+      "query_id": "single_rocket_vi",
+      "group_id": "rocket",
+      "head1_mean_ms": 115.96473236004385,
+      "head2_mean_ms": 118.28556005992141,
+      "all_ranks_identical": true
+    }
+  ],
+  "all_ranks_identical": true,
+  "latency_mean_delta_cluster_bootstrap": {
+    "status": "measured",
+    "mean_paired_delta": 6.250699238277472,
+    "ci95_low": 4.206005013278021,
+    "ci95_high": 7.819397361666536,
+    "query_count": 12,
+    "group_count": 6,
+    "repetitions": 2000,
+    "seed": 42,
+    "method": "paired cluster bootstrap, percentile 95% CI; shared group resampling"
+  },
+  "semantic_quality": "unavailable_no_human_labels; rank parity only",
+  "decision": "retain_head1_default; no demonstrated end-to-end improvement"
+}

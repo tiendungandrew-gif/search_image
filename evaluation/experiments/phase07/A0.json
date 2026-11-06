@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "name": "A0_whole",
+  "profile": "advanced",
+  "requests": 300,
+  "strategy": "whole_query",
+  "query_types": [
+    "multi_intent"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "checks": {
+    "ruff_lint_expanded": {
+      "status": "pass",
+      "output": "All checks passed!"
+    },
+    "ruff_format_expanded": {
+      "status": "pass",
+      "output": "82 files already formatted"
+    },
+    "shell_syntax": {
+      "status": "pass",
+      "output": ""
+    },
+    "source_snapshot": {
+      "status": "pass",
+      "files": 133,
+      "sha256": "445b380787b01cbc1af01b041b448bdac5b0b816e50cc29785301d68af5fbc7f"
+    },
+    "documentation_validation": {
+      "status": "pass",
+      "json_examples": 14,
+      "relative_links": true,
+      "baseline_requirement_ids": true,
+      "structural_mermaid_sources": 11,
+      "note": "Structural validation only; Mermaid renderer not rerun in Phase05. Historical render evidence is preserved from Phase03."
+    },
+    "secret_scan": {
+      "status": "pass",
+      "scope": "git ls-files --cached --others --exclude-standard; actual private dotenv secret values; private/model cache/raw browser artifacts ignored"
+    },
+    "immutable_phase04_encoder_decoder": {
+      "status": "pass"
+    },
+    "json_artifacts": {
+      "status": "pass",
+      "count_before_this_artifact": 25
+    }
+  }
+}

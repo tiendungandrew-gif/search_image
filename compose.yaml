@@ -1,0 +1,120 @@
+name: ai-image-search
+services:
+  indexing-worker:
+    profiles: [indexing]
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      args:
+        INSTALL_ML: "true"
+        INSTALL_EVALUATION: "true"
+    env_file: .env
+    environment:
+      DEBUG: "false"
+      EMBEDDING_CACHE_DIR: /models/clip
+      DATASET_ROOT: /datasets
+    command: [python, -m, app.cli.indexing, worker, --index, "${INGESTION_INDEX_ID:-00000000-0000-0000-0000-000000000000}"]
+    networks: [data]
+    volumes:
+      - ./.cache/clip:/models/clip:ro
+      - ./datasets:/datasets:ro
+    depends_on:
+      backend: {condition: service_healthy}
+    restart: unless-stopped
+  postgres:
+    image: postgres:16.15-bookworm
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-image_search}
+      POSTGRES_USER: ${POSTGRES_USER:-image_search}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Chạy python3 scripts/init_env.py}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    networks: [data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  qdrant:
+    image: qdrant/qdrant:v1.20.0
+    environment:
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:?Chạy python3 scripts/init_env.py}
+      QDRANT__TELEMETRY_DISABLED: "true"
+    volumes: [qdrant_data:/qdrant/storage]
+    networks: [data]
+    healthcheck:
+      test: [CMD, /bin/bash, -ec, 'exec 3<>/dev/tcp/127.0.0.1/6333; printf "GET /healthz HTTP/1.0\r\n\r\n" >&3; IFS= read -r line <&3; [[ "$$line" == *"200"* ]]']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  minio:
+    image: ai-image-search/minio:2025-09-07
+    build:
+      context: .
+      dockerfile: infra/docker/minio.Dockerfile
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:?Chạy python3 scripts/init_env.py}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:?Chạy python3 scripts/init_env.py}
+      MINIO_BROWSER: "off"
+    volumes: [minio_data:/data]
+    networks: [data]
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1:9000/minio/health/live]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 15s
+    restart: unless-stopped
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      args:
+        INSTALL_ML: "true"
+    env_file: .env
+    environment:
+      DEBUG: "false"
+    ports: ["127.0.0.1:8000:8000"]
+    networks: [web, data]
+    depends_on:
+      postgres: {condition: service_healthy}
+      qdrant: {condition: service_healthy}
+      minio: {condition: service_healthy}
+    volumes:
+      - ./.cache/clip:/models/clip:ro
+      - ./backend/app:/srv/backend/app:ro
+      - ./backend/alembic:/srv/backend/alembic:ro
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/live', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    environment:
+      VITE_API_BASE_URL: /api/v1
+      VITE_PROXY_TARGET: http://backend:8000
+    ports: ["127.0.0.1:5173:5173"]
+    networks: [web]
+    depends_on:
+      backend: {condition: service_healthy}
+    volumes:
+      - ./frontend/src:/srv/frontend/src:ro
+      - ./frontend/index.html:/srv/frontend/index.html:ro
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:5173').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+networks:
+  web: {}
+  data: {internal: true}
+volumes:
+  postgres_data: {}
+  qdrant_data: {}
+  minio_data: {}

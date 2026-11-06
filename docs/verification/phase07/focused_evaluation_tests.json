@@ -1,0 +1,5 @@
+{
+  "status": "pass",
+  "passed": 22,
+  "scope": "metrics/config/quality/ABBA/report tests after final fast-only SLO classification fix"
+}

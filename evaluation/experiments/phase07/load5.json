@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "name": "load_fast_c5",
+  "profile": "fast",
+  "requests": 500,
+  "concurrency": 5,
+  "sample_resources": true
+}

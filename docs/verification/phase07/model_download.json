@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "model_id": "google/siglip2-base-patch16-224",
+  "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+  "download_bytes": 1539456768,
+  "license": "Apache-2.0",
+  "initial_attempt": "timeout/DNS/certificate error",
+  "retry": "system CA, TLS verification maintained; resumed pinned files"
+}

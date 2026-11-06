@@ -1,0 +1,14 @@
+flowchart TB
+    Browser["Browser: React / TypeScript"] -->|"HTTP v1 và Bearer scope"| API["FastAPI API process"]
+    Eval["Evaluation runner / admin CLI"] -->|"API và manifest đã pin"| API
+    API --> PG[("PostgreSQL: identity, jobs, metadata, registry")]
+    API --> Q[("Qdrant: collections theo index version")]
+    API --> M[("MinIO private: staging, originals, previews")]
+    API --> OnlineEncoder["Online paired encoder: preload trong API"]
+    Worker["Worker process: cùng backend codebase"] -->|"Claim / lease / progress"| PG
+    Worker --> OfflineEncoder["Offline image encoder: tài nguyên có giới hạn"]
+    Worker --> M
+    Worker --> Q
+    API -.-> Optional["Optional agent / RAG module trong API"]
+    Optional -.-> Generator["Generator / planner tùy chọn"]
+    Eval --> Artifacts["Run artifacts và raw samples"]

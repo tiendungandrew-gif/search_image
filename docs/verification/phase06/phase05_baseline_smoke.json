@@ -1,0 +1,131 @@
+{
+  "status": "pass",
+  "response": {
+    "query_id": "d12a3f88-6c69-47c6-8d34-85c7e540f92b",
+    "request_id": "678b701e-2e33-4afb-bb58-46bbc30f4f6d",
+    "requested_mode": "text",
+    "search_mode": "text",
+    "service_class": "fast",
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "results": [
+      {
+        "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "rank": 1,
+        "score": 0.28575084,
+        "score_type": "cosine",
+        "ranking_version": "cosine-v1",
+        "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+        "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 600,
+          "height": 400,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "scikit-image-v0.25.2",
+          "city": null,
+          "license": "CC0-1.0"
+        },
+        "constraint_assessments": []
+      },
+      {
+        "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+        "rank": 2,
+        "score": 0.22746517,
+        "score_type": "cosine",
+        "ranking_version": "cosine-v1",
+        "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+        "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 400,
+          "height": 300,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "scikit-image-v0.25.2",
+          "city": null,
+          "license": "public-domain"
+        },
+        "constraint_assessments": []
+      },
+      {
+        "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+        "rank": 3,
+        "score": 0.2271429,
+        "score_type": "cosine",
+        "ranking_version": "cosine-v1",
+        "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+        "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 512,
+          "height": 512,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "scikit-image-v0.25.2",
+          "city": null,
+          "license": "CC0-1.0"
+        },
+        "constraint_assessments": []
+      }
+    ],
+    "total_results": 3,
+    "effective_settings": {
+      "top_k": 3,
+      "candidate_count": 50,
+      "channels": 1,
+      "total_candidate_cap": 1000,
+      "ranking_version": "cosine-v1",
+      "fusion_version": null,
+      "constraints_mode": "metadata_only",
+      "truncated": false
+    },
+    "latency": {
+      "processing_ms": 127.00327600032324,
+      "server_response_ms": null,
+      "stages": {
+        "compatibility_ms": 13.801637000142364,
+        "text_preprocessing_ms": 0.71489300171379,
+        "text_forward_ms": 30.619666998973116,
+        "text_embedding_ms": 32.37730600085342,
+        "vector_retrieval_ms": 53.29511799936881,
+        "ranking_ms": 0.09184499867842533,
+        "metadata_ms": 13.583652998931939,
+        "eligibility_objects_urls_ms": 13.460990001476603,
+        "input_validation_ms": 0.3459710023889784
+      }
+    },
+    "latency_ms": 127.00327600032324,
+    "warnings": [],
+    "explanation": null,
+    "agent": null
+  },
+  "health": {
+    "status": "ok",
+    "check": "search",
+    "capabilities": {
+      "text_search": true,
+      "image_search": true,
+      "multimodal": false,
+      "multi_intent": false,
+      "rerank": false,
+      "explanations": false,
+      "agent": false
+    },
+    "worker": {
+      "state": "unknown"
+    },
+    "dependencies": {
+      "metadata": "healthy",
+      "objects": "healthy",
+      "vectors": "healthy",
+      "encoder": "healthy",
+      "index": "healthy"
+    }
+  }
+}

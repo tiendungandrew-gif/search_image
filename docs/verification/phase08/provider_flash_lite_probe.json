@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "code": "LLM_MODEL_UNAVAILABLE",
+  "model": "gemini-2.5-flash-lite",
+  "duration_ms": 538.5693929999888
+}

@@ -1,0 +1,6 @@
+{"experiment_id": "20261104T100817_profile_d086c7b75d", "directory": "evaluation/results/phase07/20261104T100817_profile_d086c7b75d", "status": "measured"}
+
+ Container ai-image-search-indexing-worker-run-282504d8ee40 Creating 
+ Container ai-image-search-indexing-worker-run-282504d8ee40 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(

@@ -1,0 +1,50 @@
+{
+  "cli": "11.17.1",
+  "browser": "Chromium 156.0.8078.4",
+  "results": [
+    {
+      "file": "component_architecture.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "container_architecture.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "database_erd.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "deployment_architecture.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "image_ingestion_sequence.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "image_search_sequence.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "multi_hop_agent_sequence.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "multi_intent_sequence.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "multimodal_search_sequence.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "system_context.mmd",
+      "exit_code": 0
+    },
+    {
+      "file": "text_search_sequence.mmd",
+      "exit_code": 0
+    }
+  ]
+}

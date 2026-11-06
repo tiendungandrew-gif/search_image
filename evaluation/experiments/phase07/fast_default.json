@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "name": "fast_default_head1",
+  "profile": "fast",
+  "requests": 500,
+  "warmup": 12,
+  "sample_resources": true
+}

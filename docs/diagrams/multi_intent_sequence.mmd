@@ -1,0 +1,33 @@
+sequenceDiagram
+    actor U as Người dùng
+    participant API as API và lightweight router
+    participant C as Query classifier/decomposer
+    participant S as Shared SearchService
+    participant E as Paired CLIP runtime
+    participant Q as Qdrant
+    participant PG as PostgreSQL metadata
+    U->>API: Text hoặc explicit bounded constraint AST
+    API->>C: NFC query, supported patterns, AND/OR grouping
+    C-->>API: Original query, AST, uncertainty/limitations
+    alt Unsupported relational pattern
+        API-->>U: 409 UNSUPPORTED_RELATIONAL_QUERY
+    else Strict required semantic leaf
+        API-->>U: 409 VERIFIER_UNAVAILABLE
+    else Supported retrieval hoặc safe fallback
+        API->>S: Strategy, original query, filters và AST
+        S->>E: Whole query và selected semantic phrases theo batch
+        E-->>S: Same-space normalized vectors
+        S->>Q: Single vector hoặc bounded multi-query fan-out
+        Q-->>S: Actual candidates/ranks/cosines
+        S->>S: UUID union/fusion và candidate cap
+        S->>PG: Batch eligibility/metadata/tags
+        PG-->>S: Metadata evidence, missing fields UNKNOWN
+        S->>S: Required tri-state AND/OR, optional projection
+        opt Rerank enabled
+            S->>Q: Batch candidate vectors, digest checks
+            S->>S: Whole/clause scores và evidence-aware ranking
+        end
+        S-->>API: Stable Top-K và constraint assessments
+        API-->>U: Results, UNKNOWN warnings và route/version
+    end
+    Note over API,S: Ambiguous simple query giữ nguyên fast path, không LLM

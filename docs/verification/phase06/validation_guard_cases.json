@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "cases": [
+    {
+      "case": "reserved_constraint_id",
+      "status": 422,
+      "response": {
+        "error": {
+          "code": "INVALID_INPUT",
+          "message": "Search input không hợp lệ",
+          "request_id": "c95b227a-b69d-4cf4-ad3a-fd70043f0e81",
+          "retryable": false,
+          "details": []
+        }
+      }
+    },
+    {
+      "case": "oversized_metadata_expression",
+      "status": 422,
+      "response": {
+        "error": {
+          "code": "INVALID_INPUT",
+          "message": "Metadata expression vượt giới hạn",
+          "request_id": "c53bc8bd-cab6-4db0-8b75-b7a4e12a0e56",
+          "retryable": false,
+          "details": []
+        }
+      }
+    }
+  ]
+}

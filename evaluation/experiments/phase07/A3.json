@@ -1,0 +1,16 @@
+{
+  "seed": 42,
+  "name": "A3_nonsel_filter",
+  "profile": "advanced",
+  "requests": 300,
+  "query_types": [
+    "multi_intent"
+  ],
+  "filters": {
+    "media_types": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ]
+  }
+}

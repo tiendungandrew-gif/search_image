@@ -1,0 +1,8 @@
+{
+  "human_verified": false,
+  "exhaustive_judgments": false,
+  "corpus_image_ids": [],
+  "queries": [],
+  "required_groups": ["en", "vi", "two_conditions", "three_conditions", "four_plus_conditions", "AND", "OR", "required_optional", "multimodal_color", "multimodal_object", "multimodal_scene", "multimodal_appearance", "multimodal_background"],
+  "note": "Chưa có human qrels. Mỗi query cần request, grades đầy đủ corpus, constraint_judgments và overall_satisfied_image_ids; không sinh nhãn từ CLIP hoặc filename."
+}

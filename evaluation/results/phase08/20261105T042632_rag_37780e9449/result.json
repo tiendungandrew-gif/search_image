@@ -1,0 +1,3767 @@
+{
+  "status": "measured",
+  "runtime": {
+    "enabled": true,
+    "configured": true,
+    "error_code": null,
+    "provider": "gemini",
+    "model_id": "gemini-3.5-flash-lite",
+    "streaming": true,
+    "grounding_policy": "validated extractive metadata facts; no visual verification"
+  },
+  "cases": [
+    {
+      "case_id": "R1_000",
+      "configuration": "R1",
+      "language": "vi",
+      "status": "search_only",
+      "result": {
+        "query_id": "e1f4f6a9-c149-40e4-a9ea-7e6b9416d652",
+        "request_id": "53640bec-ff19-4647-a11b-e57273aa9824",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 75.00864300027388,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.014382999779627426,
+            "compatibility_ms": 4.597809999722813,
+            "text_preprocessing_ms": 0.315691999730916,
+            "text_forward_ms": 7.898403000126564,
+            "text_embedding_ms": 8.48871300013343,
+            "vector_retrieval_ms": 45.350446999691485,
+            "ranking_ms": 0.05308700019668322,
+            "metadata_ms": 8.60335400011536,
+            "object_head_windows_ms": 7.305485000415501,
+            "eligibility_objects_urls_ms": 7.6707990001523285,
+            "input_validation_ms": 0.14991099988037604
+          }
+        },
+        "latency_ms": 75.00864300027388,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 77.06294700028593
+    },
+    {
+      "case_id": "R2_001",
+      "configuration": "R2",
+      "language": "vi",
+      "status": "metadata_baseline",
+      "result": {
+        "query_id": "cb99ba52-4019-493c-ac17-0b6f6937a60e",
+        "request_id": "cbb5035d-926c-47c8-a383-be04128ad6fb",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 132.70915600014632,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.022668999918096233,
+            "compatibility_ms": 45.769733999804885,
+            "text_preprocessing_ms": 0.6492139996225887,
+            "text_forward_ms": 15.669926000100531,
+            "text_embedding_ms": 17.251723999834212,
+            "vector_retrieval_ms": 48.83887300002243,
+            "ranking_ms": 0.08712699991519912,
+            "metadata_ms": 11.668546999771934,
+            "object_head_windows_ms": 8.289376000448101,
+            "eligibility_objects_urls_ms": 8.715783999832638,
+            "input_validation_ms": 0.22926000019651838
+          }
+        },
+        "latency_ms": 132.70915600014632,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 135.88142800017522
+    },
+    {
+      "case_id": "R3_002",
+      "configuration": "R3",
+      "language": "vi",
+      "status": "supported",
+      "result": {
+        "query_id": "d920f21d-3b1c-4aea-bc67-989357439991",
+        "request_id": "3b6747e5-a8ce-4398-bea3-e545e221c3b7",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Theo metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], width: “600”.\nTheo metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], height: “400”.\nTheo metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], media_type: “image/png”.\nTheo metadata [16526aae-297c-4a8a-986e-3239731a84f5], width: “400”.\nTheo metadata [16526aae-297c-4a8a-986e-3239731a84f5], height: “300”.\nTheo metadata [16526aae-297c-4a8a-986e-3239731a84f5], media_type: “image/png”.",
+          "grounding_status": "supported",
+          "citations": [
+            {
+              "fact_id": "E1.width",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "width",
+              "quote": "600",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E1.height",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "height",
+              "quote": "400",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E1.media_type",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "media_type",
+              "quote": "image/png",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.width",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "width",
+              "quote": "400",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.height",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "height",
+              "quote": "300",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.media_type",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "media_type",
+              "quote": "image/png",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            }
+          ],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "retrieval_rank": 2,
+              "retrieval_score": 0.22746517,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 400,
+                "height": 300,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "public-domain"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+              "retrieval_rank": 3,
+              "retrieval_score": 0.2271429,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 512,
+                "height": 512,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "vi",
+          "generated": true,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": "gemini-3.5-flash-lite",
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "16526aae-297c-4a8a-986e-3239731a84f5",
+              "144910f0-c5f2-4981-962f-cf4136b240e0"
+            ],
+            "available_images": 3,
+            "fact_count": 9,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 3501,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": {
+            "completion_tokens": 45,
+            "prompt_tokens": 1129,
+            "total_tokens": 1174
+          },
+          "error_code": null,
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification.",
+            "Exact metadata quotations are validated; visual truth and answer relevance are not independently verified."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 121.02990299990779,
+          "evidence_ms": 106.70316300002014,
+          "context_ms": 1.6586639999331965,
+          "generation_ms": 3902.7794239996183,
+          "validation_ms": 0.2416460001768428,
+          "provider_ttft_ms": 3729.7637729998314,
+          "provider_ttlast_ms": 3849.5095349999247,
+          "total_ms": 4132.29521600033,
+          "time_to_last_token_from_request_ms": 4078.901264999786
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 6,
+        "valid_image_citations": 6,
+        "exact_evidence_citations": 6,
+        "citation_id_validity": 1.0,
+        "exact_quote_support": 1.0,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 4136.673277000227
+    },
+    {
+      "case_id": "R4_003",
+      "configuration": "R4",
+      "language": "vi",
+      "status": "generation_unavailable",
+      "result": {
+        "query_id": "16713740-16f6-4e36-806c-5db7c56ce4c5",
+        "request_id": "2679a578-d95e-4d78-8613-bb37313fa01d",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Không có đủ thông tin từ các hình ảnh và metadata được truy xuất để xác nhận điều này.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "vi",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 3,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2259,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 85.25425299967537,
+          "evidence_ms": 109.0427929998441,
+          "context_ms": 0.7581160002700926,
+          "generation_ms": 5002.324920999854,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 5197.463395000341,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 0,
+        "valid_image_citations": 0,
+        "exact_evidence_citations": 0,
+        "citation_id_validity": null,
+        "exact_quote_support": null,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 5201.682270999754
+    },
+    {
+      "case_id": "R1_004",
+      "configuration": "R1",
+      "language": "en",
+      "status": "search_only",
+      "result": {
+        "query_id": "cc794ed3-e507-424b-a1b4-e4cdddc78816",
+        "request_id": "f649b892-16e4-4e1c-b4d5-762b40dfb612",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 99.75332800013348,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.02523300008760998,
+            "compatibility_ms": 9.915658999943844,
+            "text_preprocessing_ms": 0.6293739998000092,
+            "text_forward_ms": 16.344923000360723,
+            "text_embedding_ms": 17.52144000010958,
+            "vector_retrieval_ms": 48.926462000054016,
+            "ranking_ms": 0.07925199997771415,
+            "metadata_ms": 12.693351000052644,
+            "object_head_windows_ms": 9.774486999958754,
+            "eligibility_objects_urls_ms": 10.225472999991325,
+            "input_validation_ms": 0.25164499993479694
+          }
+        },
+        "latency_ms": 99.75332800013348,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 103.41723400006231
+    },
+    {
+      "case_id": "R2_005",
+      "configuration": "R2",
+      "language": "en",
+      "status": "metadata_baseline",
+      "result": {
+        "query_id": "fc42c63b-c87c-42e1-ada4-9f6e3800173d",
+        "request_id": "a203ac5a-d91e-4963-8d2b-2384e24921a0",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 122.78330699973594,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.028043999918736517,
+            "compatibility_ms": 47.85366799978874,
+            "text_preprocessing_ms": 0.6844009999440459,
+            "text_forward_ms": 11.462600999948336,
+            "text_embedding_ms": 12.75243700001738,
+            "vector_retrieval_ms": 45.55097399997976,
+            "ranking_ms": 0.05485400015459163,
+            "metadata_ms": 9.103927000069234,
+            "object_head_windows_ms": 6.757152999853133,
+            "eligibility_objects_urls_ms": 7.1167070000228705,
+            "input_validation_ms": 0.2226479996352282
+          }
+        },
+        "latency_ms": 122.78330699973594,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 126.18661199985581
+    },
+    {
+      "case_id": "R3_006",
+      "configuration": "R3",
+      "language": "en",
+      "status": "supported",
+      "result": {
+        "query_id": "28ab224f-b626-4a8f-8da1-b560453a966f",
+        "request_id": "70a2fdba-a62b-4bce-9e32-f272e8bd4916",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "According to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], width: “600”.\nAccording to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], height: “400”.\nAccording to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], media_type: “image/png”.\nAccording to the stored metadata [16526aae-297c-4a8a-986e-3239731a84f5], width: “400”.\nAccording to the stored metadata [16526aae-297c-4a8a-986e-3239731a84f5], height: “300”.\nAccording to the stored metadata [16526aae-297c-4a8a-986e-3239731a84f5], media_type: “image/png”.",
+          "grounding_status": "supported",
+          "citations": [
+            {
+              "fact_id": "E1.width",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "width",
+              "quote": "600",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E1.height",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "height",
+              "quote": "400",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E1.media_type",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "media_type",
+              "quote": "image/png",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.width",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "width",
+              "quote": "400",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.height",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "height",
+              "quote": "300",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.media_type",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "media_type",
+              "quote": "image/png",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            }
+          ],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "retrieval_rank": 2,
+              "retrieval_score": 0.22746517,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 400,
+                "height": 300,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "public-domain"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+              "retrieval_rank": 3,
+              "retrieval_score": 0.2271429,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 512,
+                "height": 512,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "en",
+          "generated": true,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": "gemini-3.5-flash-lite",
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "16526aae-297c-4a8a-986e-3239731a84f5",
+              "144910f0-c5f2-4981-962f-cf4136b240e0"
+            ],
+            "available_images": 3,
+            "fact_count": 9,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 3483,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": {
+            "completion_tokens": 45,
+            "prompt_tokens": 1127,
+            "total_tokens": 1172
+          },
+          "error_code": null,
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification.",
+            "Exact metadata quotations are validated; visual truth and answer relevance are not independently verified."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 128.95438899977307,
+          "evidence_ms": 108.38173799993456,
+          "context_ms": 0.9823989998949401,
+          "generation_ms": 4515.928308000184,
+          "validation_ms": 0.1785979998203402,
+          "provider_ttft_ms": 4353.802204000203,
+          "provider_ttlast_ms": 4461.2848589999885,
+          "total_ms": 4754.337088000284,
+          "time_to_last_token_from_request_ms": 4699.603384999591
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 6,
+        "valid_image_citations": 6,
+        "exact_evidence_citations": 6,
+        "citation_id_validity": 1.0,
+        "exact_quote_support": 1.0,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 4758.422177000284
+    },
+    {
+      "case_id": "R4_007",
+      "configuration": "R4",
+      "language": "en",
+      "status": "generation_unavailable",
+      "result": {
+        "query_id": "7094eb5e-79f4-433b-a20e-db3955b00437",
+        "request_id": "19422f34-7896-407c-90e0-6df7a1e54926",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "The retrieved images and metadata do not provide enough evidence to confirm this.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "en",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 3,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2241,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 91.24290899990228,
+          "evidence_ms": 110.3086460002487,
+          "context_ms": 0.7390539999505563,
+          "generation_ms": 5001.959316000011,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 5204.333087000123,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 0,
+        "valid_image_citations": 0,
+        "exact_evidence_citations": 0,
+        "citation_id_validity": null,
+        "exact_quote_support": null,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 5207.80937399968
+    },
+    {
+      "case_id": "R1_008",
+      "configuration": "R1",
+      "language": "vi",
+      "status": "search_only",
+      "result": {
+        "query_id": "e19e2174-8641-461e-afc0-9c091905c1f5",
+        "request_id": "f5f12aea-aa6d-441e-8410-db3903100002",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 89.74448499975551,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.02607300029922044,
+            "compatibility_ms": 9.873416000118596,
+            "text_preprocessing_ms": 0.43736199995692004,
+            "text_forward_ms": 13.606217999949877,
+            "text_embedding_ms": 14.457442000093579,
+            "vector_retrieval_ms": 45.003966000422224,
+            "ranking_ms": 0.05518199986909167,
+            "metadata_ms": 11.059594999551337,
+            "object_head_windows_ms": 8.469009999771515,
+            "eligibility_objects_urls_ms": 8.913632999792753,
+            "input_validation_ms": 0.24779499972282792
+          }
+        },
+        "latency_ms": 89.74448499975551,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 92.81961400029104
+    },
+    {
+      "case_id": "R2_009",
+      "configuration": "R2",
+      "language": "vi",
+      "status": "metadata_baseline",
+      "result": {
+        "query_id": "8a87d061-f99d-4545-bb5b-200f65f0f7e1",
+        "request_id": "3001963e-c966-4e5e-a40b-d10df701ed7d",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 129.03910800014273,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.02538900025683688,
+            "compatibility_ms": 48.27528500027256,
+            "text_preprocessing_ms": 0.6287380001595011,
+            "text_forward_ms": 14.428744999804621,
+            "text_embedding_ms": 15.679356999953598,
+            "vector_retrieval_ms": 44.62738200027161,
+            "ranking_ms": 0.060939999912079656,
+            "metadata_ms": 10.949561999950674,
+            "object_head_windows_ms": 8.675378000134515,
+            "eligibility_objects_urls_ms": 9.069045999694936,
+            "input_validation_ms": 0.23552599986942369
+          }
+        },
+        "latency_ms": 129.03910800014273,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 132.42755500004932
+    },
+    {
+      "case_id": "R3_010",
+      "configuration": "R3",
+      "language": "vi",
+      "status": "generation_unavailable",
+      "result": {
+        "query_id": "35799dda-9bc9-467a-871d-375d7d0f73bc",
+        "request_id": "abb0e523-7a29-45b4-8f33-a0d2355f38ca",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Không có đủ thông tin từ các hình ảnh và metadata được truy xuất để xác nhận điều này.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "retrieval_rank": 2,
+              "retrieval_score": 0.22746517,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 400,
+                "height": 300,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "public-domain"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+              "retrieval_rank": 3,
+              "retrieval_score": 0.2271429,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 512,
+                "height": 512,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "vi",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "16526aae-297c-4a8a-986e-3239731a84f5",
+              "144910f0-c5f2-4981-962f-cf4136b240e0"
+            ],
+            "available_images": 3,
+            "fact_count": 9,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 3501,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 142.80601700011175,
+          "evidence_ms": 110.66293800013227,
+          "context_ms": 1.1832309996862023,
+          "generation_ms": 5001.940092000041,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 5256.678085000203,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 0,
+        "valid_image_citations": 0,
+        "exact_evidence_citations": 0,
+        "citation_id_validity": null,
+        "exact_quote_support": null,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 5261.018416999832
+    },
+    {
+      "case_id": "R4_011",
+      "configuration": "R4",
+      "language": "vi",
+      "status": "generation_unavailable",
+      "result": {
+        "query_id": "5c51d54a-8645-4fef-acf4-135eb32f1583",
+        "request_id": "2624dccd-2c2d-4425-b202-cdaf779c3bad",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Không có đủ thông tin từ các hình ảnh và metadata được truy xuất để xác nhận điều này.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "vi",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 3,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2259,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 86.1850150004102,
+          "evidence_ms": 109.49920899975041,
+          "context_ms": 0.77981100002944,
+          "generation_ms": 5003.0764749999435,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 5199.639317999754,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 0,
+        "valid_image_citations": 0,
+        "exact_evidence_citations": 0,
+        "citation_id_validity": null,
+        "exact_quote_support": null,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 5204.275627000243
+    },
+    {
+      "case_id": "R1_012",
+      "configuration": "R1",
+      "language": "en",
+      "status": "search_only",
+      "result": {
+        "query_id": "364541ad-b4bf-425a-9ae9-b896345a42bf",
+        "request_id": "36c02cc9-e5f7-409b-a14d-75d04e27b2cf",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 92.72459300018454,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.02735599991865456,
+            "compatibility_ms": 8.701595999809797,
+            "text_preprocessing_ms": 0.44813700014856295,
+            "text_forward_ms": 13.608469999780937,
+            "text_embedding_ms": 14.705168000091362,
+            "vector_retrieval_ms": 48.29660299992611,
+            "ranking_ms": 0.08404700020037126,
+            "metadata_ms": 10.71467300016593,
+            "object_head_windows_ms": 9.338432000276953,
+            "eligibility_objects_urls_ms": 9.805864000099973,
+            "input_validation_ms": 0.25263599991376395
+          }
+        },
+        "latency_ms": 92.72459300018454,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 96.53107499980251
+    },
+    {
+      "case_id": "R2_013",
+      "configuration": "R2",
+      "language": "en",
+      "status": "metadata_baseline",
+      "result": {
+        "query_id": "f9e245f7-4da6-4ec5-b57f-97e9b08d9800",
+        "request_id": "cc55d53f-6347-4ac7-8646-757292537d38",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 126.2011970002277,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.02873700032068882,
+            "compatibility_ms": 47.32072199976756,
+            "text_preprocessing_ms": 0.5811730002278637,
+            "text_forward_ms": 10.041758999705053,
+            "text_embedding_ms": 11.184294000031514,
+            "vector_retrieval_ms": 46.528828000191425,
+            "ranking_ms": 0.07738799968137755,
+            "metadata_ms": 11.88272599983975,
+            "object_head_windows_ms": 8.391810999910376,
+            "eligibility_objects_urls_ms": 8.81251800001337,
+            "input_validation_ms": 0.2525390000300831
+          }
+        },
+        "latency_ms": 126.2011970002277,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 130.39557399997648
+    },
+    {
+      "case_id": "R3_014",
+      "configuration": "R3",
+      "language": "en",
+      "status": "supported",
+      "result": {
+        "query_id": "f1747790-982a-40b6-8ce9-5edbe7d85960",
+        "request_id": "2b3a9831-1a34-46fd-9a75-345dfb769acb",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "According to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], width: “600”.\nAccording to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], height: “400”.\nAccording to the stored metadata [785c1ac8-6017-4c02-84d4-5d4f67ef4142], media_type: “image/png”.\nAccording to the stored metadata [16526aae-297c-4a8a-986e-3239731a84f5], width: “400”.\nAccording to the stored metadata [16526aae-297c-4a8a-986e-3239731a84f5], height: “300”.\nAccording to the stored metadata [16526aae-297c-4a8a-986e-3239731a84f5], media_type: “image/png”.",
+          "grounding_status": "supported",
+          "citations": [
+            {
+              "fact_id": "E1.width",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "width",
+              "quote": "600",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E1.height",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "height",
+              "quote": "400",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E1.media_type",
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "evidence_field": "media_type",
+              "quote": "image/png",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.width",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "width",
+              "quote": "400",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.height",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "height",
+              "quote": "300",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            },
+            {
+              "fact_id": "E2.media_type",
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "evidence_field": "media_type",
+              "quote": "image/png",
+              "provenance": {
+                "source": "stored_postgresql",
+                "verified_visual_content": false
+              },
+              "support_check": "exact_metadata_value"
+            }
+          ],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "retrieval_rank": 2,
+              "retrieval_score": 0.22746517,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 400,
+                "height": 300,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "public-domain"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+              "retrieval_rank": 3,
+              "retrieval_score": 0.2271429,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 512,
+                "height": 512,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "en",
+          "generated": true,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": "gemini-3.5-flash-lite",
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "16526aae-297c-4a8a-986e-3239731a84f5",
+              "144910f0-c5f2-4981-962f-cf4136b240e0"
+            ],
+            "available_images": 3,
+            "fact_count": 9,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 3483,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": {
+            "completion_tokens": 45,
+            "prompt_tokens": 1127,
+            "total_tokens": 1172
+          },
+          "error_code": null,
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification.",
+            "Exact metadata quotations are validated; visual truth and answer relevance are not independently verified."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 123.11794400011422,
+          "evidence_ms": 103.46356700028991,
+          "context_ms": 0.6043929997758823,
+          "generation_ms": 1251.026780000302,
+          "validation_ms": 0.16902800007301266,
+          "provider_ttft_ms": 1117.835987000035,
+          "provider_ttlast_ms": 1184.575397000117,
+          "total_ms": 1478.2694929999707,
+          "time_to_last_token_from_request_ms": 1411.761301000297
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 6,
+        "valid_image_citations": 6,
+        "exact_evidence_citations": 6,
+        "citation_id_validity": 1.0,
+        "exact_quote_support": 1.0,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 1482.329918999767
+    },
+    {
+      "case_id": "R4_015",
+      "configuration": "R4",
+      "language": "en",
+      "status": "generation_unavailable",
+      "result": {
+        "query_id": "d3beb80b-cfae-48a8-b37c-7b364b6ba825",
+        "request_id": "d874c6ab-025b-4fda-bdbb-5b273c7678fc",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "The retrieved images and metadata do not provide enough evidence to confirm this.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "en",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 3,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2241,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 88.57938000028298,
+          "evidence_ms": 109.37755999975707,
+          "context_ms": 0.6973310000830679,
+          "generation_ms": 5002.013015000102,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 5200.769173000026,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 0,
+        "valid_image_citations": 0,
+        "exact_evidence_citations": 0,
+        "citation_id_validity": null,
+        "exact_quote_support": null,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 5204.846147000353
+    },
+    {
+      "case_id": "R1_016",
+      "configuration": "R1",
+      "language": "vi",
+      "status": "search_only",
+      "result": {
+        "query_id": "5ecf12ae-a62d-4797-88bf-c5877eab317d",
+        "request_id": "d0232cd5-3434-46ae-b34e-006017c6e196",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 89.25863200011008,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.027025000235880725,
+            "compatibility_ms": 9.285208999699535,
+            "text_preprocessing_ms": 0.4384280000522267,
+            "text_forward_ms": 11.001038999893353,
+            "text_embedding_ms": 11.921842999981891,
+            "vector_retrieval_ms": 47.59037200028615,
+            "ranking_ms": 0.07959100003063213,
+            "metadata_ms": 10.913370000253053,
+            "object_head_windows_ms": 8.684709000590374,
+            "eligibility_objects_urls_ms": 9.073829000044498,
+            "input_validation_ms": 0.24681100012458046
+          }
+        },
+        "latency_ms": 89.25863200011008,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 92.8980749999937
+    },
+    {
+      "case_id": "R2_017",
+      "configuration": "R2",
+      "language": "vi",
+      "status": "metadata_baseline",
+      "result": {
+        "query_id": "d9e40b5e-51b9-4679-87ce-1e01c1abf0b5",
+        "request_id": "af38abbf-d5dd-4db0-8bf8-a3ae3cc348f5",
+        "requested_mode": "text",
+        "search_mode": "text",
+        "service_class": "fast",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "ranking_version": "cosine-v1",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": [],
+            "constraint_evidence": [],
+            "score_components": {},
+            "contributing_branches": []
+          }
+        ],
+        "total_results": 3,
+        "effective_settings": {
+          "top_k": 3,
+          "ranking_version": "cosine-v1",
+          "total_candidate_cap": 1000,
+          "object_check_concurrency": 1,
+          "candidate_count": 50,
+          "channels": 1,
+          "vector_calls": 1,
+          "fusion_version": null,
+          "constraints_mode": "metadata_only",
+          "truncated": false,
+          "route": "single_vector",
+          "rerank_applied": false
+        },
+        "latency": {
+          "processing_ms": 122.17584099971646,
+          "server_response_ms": null,
+          "stages": {
+            "query_analysis_ms": 0.027629000214801636,
+            "compatibility_ms": 47.406367999883514,
+            "text_preprocessing_ms": 0.782163000167202,
+            "text_forward_ms": 10.153391000130796,
+            "text_embedding_ms": 11.481826999897748,
+            "vector_retrieval_ms": 44.57996900009675,
+            "ranking_ms": 0.06119799991211039,
+            "metadata_ms": 9.955240999715897,
+            "object_head_windows_ms": 7.94959699987885,
+            "eligibility_objects_urls_ms": 8.29807600030108,
+            "input_validation_ms": 0.24998399976539076
+          }
+        },
+        "latency_ms": 122.17584099971646,
+        "warnings": [],
+        "query_analysis": {
+          "original_query": "a cup of coffee",
+          "query_type": "SINGLE_INTENT",
+          "language": "en",
+          "constraints": null,
+          "logical_operator": null,
+          "retrieval_strategy": "single_vector",
+          "requires_agent": false,
+          "uncertain": false,
+          "limitations": []
+        },
+        "explanation": null,
+        "agent": null
+      },
+      "http_status": 200,
+      "client_total_ms": 125.8279680000669
+    },
+    {
+      "case_id": "R3_018",
+      "configuration": "R3",
+      "language": "vi",
+      "status": "generation_unavailable",
+      "result": {
+        "query_id": "82ba9eee-9916-403e-942a-2ff56ee16ca7",
+        "request_id": "e7a02f34-1eb1-4390-8048-dfd1be555eb1",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Không có đủ thông tin từ các hình ảnh và metadata được truy xuất để xác nhận điều này.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+              "retrieval_rank": 2,
+              "retrieval_score": 0.22746517,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 400,
+                "height": 300,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "public-domain"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            },
+            {
+              "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+              "retrieval_rank": 3,
+              "retrieval_score": 0.2271429,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 512,
+                "height": 512,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "vi",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "16526aae-297c-4a8a-986e-3239731a84f5",
+              "144910f0-c5f2-4981-962f-cf4136b240e0"
+            ],
+            "available_images": 3,
+            "fact_count": 9,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 3501,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 131.9912009998916,
+          "evidence_ms": 106.46064299999125,
+          "context_ms": 1.1788719998548913,
+          "generation_ms": 5003.367275000073,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 5243.101121000109,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 0,
+        "valid_image_citations": 0,
+        "exact_evidence_citations": 0,
+        "citation_id_validity": null,
+        "exact_quote_support": null,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 5247.707325000192
+    },
+    {
+      "case_id": "R4_019",
+      "configuration": "R4",
+      "language": "vi",
+      "status": "generation_unavailable",
+      "result": {
+        "query_id": "8868689e-fa2a-434b-bd6e-069f2e1a7c17",
+        "request_id": "cd7efe88-669f-4e6c-adf7-d37b0cf872f5",
+        "operation": "search_and_explain",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": 0.28575084,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "16526aae-297c-4a8a-986e-3239731a84f5",
+            "rank": 2,
+            "score": 0.22746517,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=original",
+            "thumbnail_url": "/api/v1/images/16526aae-297c-4a8a-986e-3239731a84f5/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 400,
+              "height": 300,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "public-domain"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "144910f0-c5f2-4981-962f-cf4136b240e0",
+            "rank": 3,
+            "score": 0.2271429,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/144910f0-c5f2-4981-962f-cf4136b240e0/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 512,
+              "height": 512,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Không có đủ thông tin từ các hình ảnh và metadata được truy xuất để xác nhận điều này.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": 0.28575084,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "vi",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 3,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2259,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 82.30191900020145,
+          "evidence_ms": 109.84956599986617,
+          "context_ms": 0.8833029996822006,
+          "generation_ms": 5001.618933999907,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 5194.741933000387,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "citation_audit": {
+        "citations": 0,
+        "valid_image_citations": 0,
+        "exact_evidence_citations": 0,
+        "citation_id_validity": null,
+        "exact_quote_support": null,
+        "faithfulness_to_visual_content": null,
+        "answer_relevance": null,
+        "human_review_status": "pending",
+        "unsupported_claim_rate": null
+      },
+      "http_status": 200,
+      "client_total_ms": 5199.731004000114
+    }
+  ],
+  "groups": {
+    "R1": {
+      "attempted": 5,
+      "http_failures": 0,
+      "generated": 0,
+      "generation_unavailable": 0,
+      "client_latency": {
+        "count": 5,
+        "median_ms": 92.8980749999937,
+        "min_ms": 77.06294700028593,
+        "mean_ms": 92.5457890000871,
+        "p50_ms": 92.8980749999937,
+        "p90_ms": 103.41723400006231,
+        "p95_ms": 103.41723400006231,
+        "p99_ms": 103.41723400006231,
+        "max_ms": 103.41723400006231,
+        "stddev_ms": 8.648564075432263
+      },
+      "provider_ttft": {
+        "count": 0,
+        "median_ms": null,
+        "min_ms": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p90_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "max_ms": null,
+        "stddev_ms": null
+      },
+      "time_to_last_token_from_request": {
+        "count": 0,
+        "median_ms": null,
+        "min_ms": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p90_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "max_ms": null,
+        "stddev_ms": null
+      },
+      "semantic_answer_quality": "pending_human_review"
+    },
+    "R2": {
+      "attempted": 5,
+      "http_failures": 0,
+      "generated": 0,
+      "generation_unavailable": 0,
+      "client_latency": {
+        "count": 5,
+        "median_ms": 130.39557399997648,
+        "min_ms": 125.8279680000669,
+        "mean_ms": 130.14382740002475,
+        "p50_ms": 130.39557399997648,
+        "p90_ms": 135.88142800017522,
+        "p95_ms": 135.88142800017522,
+        "p99_ms": 135.88142800017522,
+        "max_ms": 135.88142800017522,
+        "stddev_ms": 3.8074937907260464
+      },
+      "provider_ttft": {
+        "count": 0,
+        "median_ms": null,
+        "min_ms": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p90_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "max_ms": null,
+        "stddev_ms": null
+      },
+      "time_to_last_token_from_request": {
+        "count": 0,
+        "median_ms": null,
+        "min_ms": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p90_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "max_ms": null,
+        "stddev_ms": null
+      },
+      "semantic_answer_quality": "pending_human_review"
+    },
+    "R3": {
+      "attempted": 5,
+      "http_failures": 0,
+      "generated": 3,
+      "generation_unavailable": 2,
+      "client_latency": {
+        "count": 5,
+        "median_ms": 4758.422177000284,
+        "min_ms": 1482.329918999767,
+        "mean_ms": 4177.2302230000605,
+        "p50_ms": 4758.422177000284,
+        "p90_ms": 5261.018416999832,
+        "p95_ms": 5261.018416999832,
+        "p99_ms": 5261.018416999832,
+        "max_ms": 5261.018416999832,
+        "stddev_ms": 1408.7181887889567
+      },
+      "provider_ttft": {
+        "count": 3,
+        "median_ms": 3729.7637729998314,
+        "min_ms": 1117.835987000035,
+        "mean_ms": 3067.1339880000232,
+        "p50_ms": 3729.7637729998314,
+        "p90_ms": 4353.802204000203,
+        "p95_ms": 4353.802204000203,
+        "p99_ms": 4353.802204000203,
+        "max_ms": 4353.802204000203,
+        "stddev_ms": 1401.7080089110962
+      },
+      "time_to_last_token_from_request": {
+        "count": 3,
+        "median_ms": 4078.901264999786,
+        "min_ms": 1411.761301000297,
+        "mean_ms": 3396.7553169998914,
+        "p50_ms": 4078.901264999786,
+        "p90_ms": 4699.603384999591,
+        "p95_ms": 4699.603384999591,
+        "p99_ms": 4699.603384999591,
+        "max_ms": 4699.603384999591,
+        "stddev_ms": 1426.2932641661769
+      },
+      "semantic_answer_quality": "pending_human_review"
+    },
+    "R4": {
+      "attempted": 5,
+      "http_failures": 0,
+      "generated": 0,
+      "generation_unavailable": 5,
+      "client_latency": {
+        "count": 5,
+        "median_ms": 5204.275627000243,
+        "min_ms": 5199.731004000114,
+        "mean_ms": 5203.668884600029,
+        "p50_ms": 5204.275627000243,
+        "p90_ms": 5207.80937399968,
+        "p95_ms": 5207.80937399968,
+        "p99_ms": 5207.80937399968,
+        "max_ms": 5207.80937399968,
+        "stddev_ms": 2.7695224420120983
+      },
+      "provider_ttft": {
+        "count": 0,
+        "median_ms": null,
+        "min_ms": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p90_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "max_ms": null,
+        "stddev_ms": null
+      },
+      "time_to_last_token_from_request": {
+        "count": 0,
+        "median_ms": null,
+        "min_ms": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p90_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "max_ms": null,
+        "stddev_ms": null
+      },
+      "semantic_answer_quality": "pending_human_review"
+    }
+  },
+  "sample_size_note": "exploratory small-N RAG trial; not a production percentile/SLA proof",
+  "R2_policy": "actual metadata displayed without LLM; no generated prose claimed",
+  "R5": "unavailable_no_vision_grounding"
+}

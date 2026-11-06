@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "name": "A5_text_only",
+  "profile": "advanced",
+  "requests": 300,
+  "query_types": [
+    "multimodal"
+  ],
+  "paired_text_only": true
+}

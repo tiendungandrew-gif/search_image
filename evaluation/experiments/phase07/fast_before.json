@@ -1,0 +1,1 @@
+{"name":"fast_before_head1","profile":"fast","requests":500,"concurrency":1,"warmup":12,"sample_resources":true,"seed":42}

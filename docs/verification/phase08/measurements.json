@@ -1,0 +1,25 @@
+{
+  "experiments": [
+    "20261105T042632_rag_37780e9449",
+    "20261105T043305_benchmark_38092a56a4",
+    "20261105T050046_rag_4b6c513c95"
+  ],
+  "fast_experiment": "20261105T043305_benchmark_38092a56a4",
+  "rag_experiments": [
+    "20261105T042632_rag_37780e9449",
+    "20261105T050046_rag_4b6c513c95"
+  ],
+  "fast_requests": 500,
+  "rag_matrix_api_attempts": 40,
+  "llm_requests_in_matrices": 20,
+  "llm_valid_completions": 13,
+  "generation_unavailable": 7,
+  "mechanical_citations": 63,
+  "valid_ids": 63,
+  "exact_quotes": 63,
+  "native_llm_completions": 10,
+  "native_generation_errors": 0,
+  "rag_three_second_gate": "not_met_all_cases",
+  "semantic_quality": "pending_human_review",
+  "browser_gate": "intermittent; latest full15pass1fail"
+}

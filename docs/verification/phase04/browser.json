@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "browser": "Chromium 156.0.8078.4",
+  "base_url": "http://127.0.0.1:5173",
+  "stats": {
+    "startTime": "2026-11-03T09:23:11.418Z",
+    "duration": 4324.04,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

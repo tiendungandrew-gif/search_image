@@ -1,0 +1,18 @@
+{
+  "status": "not_measured",
+  "reason": "Chưa có exhaustive human-verified relevance/per-constraint/overall-satisfaction judgments trên actual corpus",
+  "metrics_implemented": [
+    "Recall@1",
+    "Recall@5",
+    "Recall@10",
+    "Precision@10",
+    "MRR@10",
+    "nDCG@10",
+    "constraint_accuracy_verified",
+    "constraint_verification_coverage",
+    "multi_intent_success@10",
+    "constraint_satisfaction@10"
+  ],
+  "quality_improvement_claimed": false,
+  "unit_fixtures_are_not_qrels": true
+}

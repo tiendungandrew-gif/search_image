@@ -1,0 +1,5 @@
+..                                                                       [100%]
+2 passed in 5.04s
+
+ Container ai-image-search-indexing-worker-run-171acc16942c Creating 
+ Container ai-image-search-indexing-worker-run-171acc16942c Created 

@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "name": "A5_paired_score",
+  "profile": "advanced",
+  "requests": 300,
+  "query_types": [
+    "multimodal"
+  ],
+  "rerank": true,
+  "fusion": "weighted_score"
+}

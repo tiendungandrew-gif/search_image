@@ -1,0 +1,64 @@
+
+> ai-image-search-frontend@0.3.0 test:e2e
+> playwright test
+
+
+Running 16 tests using 1 worker
+
+  ✓   1 [desktop] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (515ms)
+  ✓   2 [desktop] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (712ms)
+  ✓   3 [desktop] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (452ms)
+  ✓   4 [desktop] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (344ms)
+  ✓   5 [desktop] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (1.0s)
+  ✓   6 [desktop] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (1.7s)
+  ✓   7 [desktop] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (313ms)
+  ✓   8 [desktop] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (2.6s)
+  ✓   9 [mobile] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (440ms)
+  ✓  10 [mobile] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (746ms)
+  ✓  11 [mobile] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (428ms)
+  ✓  12 [mobile] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (314ms)
+  ✓  13 [mobile] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (1.0s)
+  ✓  14 [mobile] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (1.9s)
+  ✓  15 [mobile] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (339ms)
+  ✘  16 [mobile] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (12.6s)
+
+
+  1) [mobile] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('rag-answer')
+    Expected substring: "Theo metadata"
+    Received string:    "Giải thích chưa khả dụngChưa tạo được giải thích lúc này. Kết quả ảnh vẫn có sẵn.Mã trạng thái: LLM_TIMEOUT. Bạn vẫn có thể xem và tìm kiếm ảnh."
+    Timeout: 12000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('rag-answer') with timeout 12000ms
+      - waiting for getByTestId('rag-answer')
+        14 × locator resolved to <div role="status" data-testid="rag-answer">…</div>
+           - unexpected value "Giải thích chưa khả dụngChưa tạo được giải thích lúc này. Kết quả ảnh vẫn có sẵn.Mã trạng thái: LLM_TIMEOUT. Bạn vẫn có thể xem và tìm kiếm ảnh."
+
+
+      17 |     .fill("Metadata ghi định dạng và kích thước như thế nào?");
+      18 |   await page.getByRole("button", { name: "Giải thích bằng AI" }).click();
+    > 19 |   await expect(page.getByTestId("rag-answer")).toContainText("Theo metadata", {
+         |                                                ^
+      20 |     timeout: 12000,
+      21 |   });
+      22 |   await expect(
+        at /home/tts/prj/frontend/e2e/rag.spec.ts:19:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/rag-optional-explanation-u-4dab1-erves-indexed-image-results-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/rag-optional-explanation-u-4dab1-erves-indexed-image-results-mobile/error-context.md
+
+  1 failed
+    [mobile] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results 
+  15 passed (26.4s)
+
+(node:144154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:144636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

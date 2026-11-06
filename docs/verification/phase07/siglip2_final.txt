@@ -1,0 +1,7 @@
+{"experiment_id": "20261104T101307_model-comparison_4c67e77ccf", "directory": "evaluation/results/phase07/20261104T101307_model-comparison_4c67e77ccf", "status": "measured"}
+
+ Container ai-image-search-indexing-worker-run-b96683d93597 Creating 
+ Container ai-image-search-indexing-worker-run-b96683d93597 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.

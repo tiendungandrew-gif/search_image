@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "name": "A1_multiquery",
+  "profile": "advanced",
+  "requests": 300,
+  "strategy": "multi_query",
+  "query_types": [
+    "multi_intent"
+  ]
+}

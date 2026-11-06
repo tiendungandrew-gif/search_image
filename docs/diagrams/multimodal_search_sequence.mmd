@@ -1,0 +1,36 @@
+sequenceDiagram
+    actor U as Người dùng
+    participant API as Search API
+    participant S as SearchService
+    participant PG as PostgreSQL registry và metadata
+    participant E as Shared CLIP runtime
+    participant Q as Qdrant
+    participant M as Private MinIO
+    U->>API: Text và image, fusion, weights, K, rerank
+    API->>API: Auth, validate multipart/JSON và input bounds
+    API->>S: Validated SearchRequest
+    S->>PG: Check pinned active generation/model/index
+    S->>E: Batch whole-query và supported clauses
+    E-->>S: Compatible text vectors
+    S->>E: Resource-limited decode và same image tower
+    E-->>S: Compatible image vector
+    par Text branches trong channel cap
+        S->>Q: query_points theo text vectors
+        Q-->>S: Native ranks/cosines
+    and Image branch
+        S->>Q: query_points theo image vector
+        Q-->>S: Native ranks/cosines
+    end
+    S->>S: UUID union, RRF hoặc weighted score, pool cap
+    S->>PG: Batch ready receipts, metadata và tags
+    PG-->>S: Eligible records và metadata evidence
+    S->>S: Required AND/OR gate, UNKNOWN policy
+    opt Rerank enabled
+        S->>Q: Batch stored vectors, verify digest
+        S->>S: Bounded transparent scoring hoặc explicit fallback
+    end
+    S->>M: HEAD originals cho final candidates
+    M-->>S: Object existence/size
+    S-->>API: Top-K, score type, contributions và evidence
+    API-->>U: Typed response, relative private content URLs
+    Note over API,S: Full ASGI duration ghi sau final response send

@@ -1,0 +1,374 @@
+{
+  "cases": [
+    {
+      "scenario": "rag_disabled",
+      "status": "pass",
+      "response": {
+        "query_id": "6b8bec24-8d6b-4bf2-96f3-bb8c20999b1f",
+        "request_id": "89e952d1-9a33-40fe-8bfd-82e1bac01f73",
+        "operation": "explain_existing",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": null,
+            "score_type": null,
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Explanation generation is unavailable. Image results remain available.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": null,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "en",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 1,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2231,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "generation_config": {
+            "temperature": 0.1,
+            "max_input_tokens": 4096,
+            "max_context_tokens": 2048,
+            "max_output_tokens": 128,
+            "timeout_seconds": 5.0,
+            "provider_retries": 1,
+            "streaming_enabled": true,
+            "reasoning_effort": "minimal",
+            "token_parameter": "max_tokens",
+            "max_concurrency": 2,
+            "gemini_api_style": "native"
+          },
+          "usage": null,
+          "error_code": "RAG_DISABLED",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 0.0005380006768973544,
+          "evidence_ms": 19.751482000174292,
+          "context_ms": 0.9107099995162571,
+          "generation_ms": 0.0,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 20.75571399927867,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "search_http_status": 200
+    },
+    {
+      "scenario": "provider_connection_failure",
+      "status": "pass",
+      "response": {
+        "query_id": "a418342a-7cdc-4734-8abd-387804a10943",
+        "request_id": "c8b22748-63d1-41fd-b3ac-e4df38438752",
+        "operation": "explain_existing",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": null,
+            "score_type": null,
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Explanation generation is unavailable. Image results remain available.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": null,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "en",
+          "generated": false,
+          "provider": "openai_compatible",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 1,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2231,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "generation_config": {
+            "temperature": 0.1,
+            "max_input_tokens": 4096,
+            "max_context_tokens": 2048,
+            "max_output_tokens": 128,
+            "timeout_seconds": 5.0,
+            "provider_retries": 1,
+            "streaming_enabled": true,
+            "reasoning_effort": "minimal",
+            "token_parameter": "max_tokens",
+            "max_concurrency": 2,
+            "gemini_api_style": "native"
+          },
+          "usage": null,
+          "error_code": "LLM_CONNECTION_FAILED",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 0.00044699936552206054,
+          "evidence_ms": 61.04143999982625,
+          "context_ms": 1.1977799995293026,
+          "generation_ms": 1.537424000161991,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 63.936974000171176,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "search_http_status": 200
+    },
+    {
+      "scenario": "real_provider_timeout",
+      "status": "pass",
+      "response": {
+        "query_id": "f5080817-2d5a-452b-863c-d27902790d1f",
+        "request_id": "5a564a59-05cb-4dba-b73a-488d6f3383d0",
+        "operation": "explain_existing",
+        "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "results": [
+          {
+            "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+            "rank": 1,
+            "score": null,
+            "score_type": null,
+            "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+            "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail",
+            "metadata": {
+              "title": null,
+              "caption": null,
+              "width": 600,
+              "height": 400,
+              "media_type": "image/png",
+              "tags": [],
+              "source_dataset": "scikit-image-v0.25.2",
+              "city": null,
+              "license": "CC0-1.0"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "rag": {
+          "answer": "Explanation generation is unavailable. Image results remain available.",
+          "grounding_status": "generation_unavailable",
+          "citations": [],
+          "evidence": [
+            {
+              "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+              "retrieval_rank": 1,
+              "retrieval_score": null,
+              "caption": null,
+              "tags": [],
+              "metadata": {
+                "width": 600,
+                "height": 400,
+                "media_type": "image/png",
+                "source_dataset": "scikit-image-v0.25.2",
+                "license": "CC0-1.0"
+              },
+              "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+              "provenance": {
+                "metadata_revision": 1,
+                "source_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+                "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+                "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+                "caption": {
+                  "source": null,
+                  "verified": false,
+                  "policy": "stored attribution; not visual verification"
+                },
+                "tags": {},
+                "metadata": {
+                  "source": "stored_postgresql",
+                  "verified_visual_content": false
+                }
+              },
+              "incomplete": true
+            }
+          ],
+          "language": "en",
+          "generated": false,
+          "provider": "gemini",
+          "model_id": "gemini-3.5-flash-lite",
+          "model_revision": "provider_managed",
+          "returned_model": null,
+          "prompt_version": "extractive-facts-v1",
+          "prompt_sha256": "4ac5003021c705ffae770e52ba07e7a18c2464c526ab188fe2cef4a0e6b50331",
+          "context": {
+            "included_image_ids": [
+              "785c1ac8-6017-4c02-84d4-5d4f67ef4142"
+            ],
+            "available_images": 1,
+            "fact_count": 3,
+            "context_budget_upper_bound_tokens": 2048,
+            "input_token_upper_bound": 2231,
+            "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+            "policy": "descriptive_first",
+            "technical_question": true
+          },
+          "generation_config": {
+            "temperature": 0.1,
+            "max_input_tokens": 4096,
+            "max_context_tokens": 2048,
+            "max_output_tokens": 128,
+            "timeout_seconds": 0.1,
+            "provider_retries": 1,
+            "streaming_enabled": true,
+            "reasoning_effort": "minimal",
+            "token_parameter": "max_tokens",
+            "max_concurrency": 2,
+            "gemini_api_style": "native"
+          },
+          "usage": null,
+          "error_code": "LLM_TIMEOUT",
+          "limitations": [
+            "Text-only metadata explanation; no direct visual verification."
+          ]
+        },
+        "latency": {
+          "retrieval_ms": 0.00037399968277895823,
+          "evidence_ms": 64.17332100045314,
+          "context_ms": 1.358938000521448,
+          "generation_ms": 101.77073399972869,
+          "validation_ms": 0.0,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "total_ms": 167.47073799979262,
+          "time_to_last_token_from_request_ms": null
+        },
+        "warnings": []
+      },
+      "search_http_status": 200
+    }
+  ],
+  "original_config_restored": true
+}

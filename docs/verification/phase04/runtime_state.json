@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "recorded_at": "2026-11-03T09:35:38.843277+00:00",
+  "services": [
+    {
+      "Service": "backend",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ai-image-search-backend"
+    },
+    {
+      "Service": "frontend",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ai-image-search-frontend"
+    },
+    {
+      "Service": "indexing-worker",
+      "State": "running",
+      "Health": "",
+      "Image": "ai-image-search-indexing-worker"
+    },
+    {
+      "Service": "minio",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ai-image-search/minio:2025-09-07"
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "postgres:16.15-bookworm"
+    },
+    {
+      "Service": "qdrant",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "qdrant/qdrant:v1.20.0"
+    }
+  ],
+  "alembic_head": "928b88dc3f68 (head)",
+  "docker_engine": "29.8.0",
+  "compose": "5.5.1",
+  "worker_healthcheck": "not_configured; process running; queue leases have heartbeat"
+}

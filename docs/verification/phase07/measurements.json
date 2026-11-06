@@ -1,0 +1,15 @@
+{
+  "experiments": 32,
+  "benchmark_runs": 21,
+  "attempted": 7360,
+  "failed": 737,
+  "fast_default_experiment_id": "20261104T101019_benchmark_c505f295d7",
+  "model_experiment_ids": {
+    "clip": "20261104T101257_model-comparison_ace1b38e21",
+    "siglip2": "20261104T101307_model-comparison_4c67e77ccf"
+  },
+  "optimization_analysis": "20261104T101633_optimization-analysis_8b0e4c6291",
+  "profile": "20261104T101319_profile_344aa63687",
+  "semantic_quality": "pending_human_labels",
+  "active_baseline_preserved": true
+}

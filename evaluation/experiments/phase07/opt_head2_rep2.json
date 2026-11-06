@@ -1,0 +1,9 @@
+{
+  "name": "opt_head2_rep2",
+  "profile": "fast",
+  "requests": 300,
+  "concurrency": 1,
+  "warmup": 12,
+  "seed": 42,
+  "sample_resources": true
+}

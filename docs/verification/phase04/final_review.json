@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "source_snapshot": "36d3e93042b7c0ed31bfcfb0daa0ed9f3b41df1732c98dcd2cd35566a2bd15c1",
+  "source_file_count": 109,
+  "relative_links_and_design_consistency": "pass",
+  "generated_credentials_scan": "pass",
+  "ignored_secrets_models_images_raw_browser_outputs": "pass",
+  "verification_json": "pass"
+}

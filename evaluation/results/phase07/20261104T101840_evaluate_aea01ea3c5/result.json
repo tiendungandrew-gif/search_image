@@ -1,0 +1,22 @@
+{
+  "status": "partial_semantic_labels_unavailable",
+  "dataset_sha256": "1c445e2d26dda73696b56b0947550fc76eb05df0e5aac9e293cabc1ce9051e37",
+  "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+  "label_sha256": null,
+  "queries": [],
+  "unavailable_semantic_query_ids": [
+    "and2_en",
+    "and2_vi",
+    "and3_en",
+    "and3_vi",
+    "and4_en",
+    "and4_vi",
+    "or_en",
+    "or_vi",
+    "optional_en",
+    "optional_vi"
+  ],
+  "failed_queries": 0,
+  "aggregates": [],
+  "semantic_quality_measured": false
+}

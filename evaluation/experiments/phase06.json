@@ -1,0 +1,9 @@
+{
+  "E1": {"mode": "text", "rerank": false},
+  "E2": {"mode": "multi_intent", "retrieval_strategy": "multi_query", "rerank": false},
+  "E3_rrf": {"mode": "multi_intent", "fusion_strategy": "rrf", "rerank": false},
+  "E3_score": {"mode": "multi_intent", "fusion_strategy": "weighted_score", "rerank": false},
+  "E4": {"mode": "multi_intent", "fusion_strategy": "rrf", "rerank": true},
+  "E5_rrf": {"mode": "multimodal", "fusion_strategy": "rrf", "rerank": true},
+  "E5_score": {"mode": "multimodal", "fusion_strategy": "weighted_score", "rerank": true}
+}

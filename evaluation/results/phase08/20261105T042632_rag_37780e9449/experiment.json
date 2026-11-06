@@ -1,0 +1,41 @@
+{
+  "experiment_id": "20261105T042632_rag_37780e9449",
+  "timestamp_utc": "2026-11-05T04:26:32.404542+00:00",
+  "kind": "rag",
+  "config": {
+    "requests": 20,
+    "modes": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ],
+    "seed": 42
+  },
+  "git_commit": null,
+  "git_status": "no_commit",
+  "source": {
+    "sha256": "3309254637d8bfbf2c3967fb3ac4feb25dc78a54a75adc9062eff5b0661017d3",
+    "files": 205,
+    "archive": "evaluation/results/phase08/_sources/3309254637d8bfbf2c3967fb3ac4feb25dc78a54a75adc9062eff5b0661017d3.tar.gz",
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "client_platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+  "client_python": "3.12.3",
+  "client_hardware": {
+    "cpu": "Intel(R) Core(TM) 7 240H",
+    "logical_cpus": 16,
+    "total_ram_kib": 15845064,
+    "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "torch": "2.15.0+cpu",
+      "transformers": "4.57.6",
+      "httpx": "0.28.1",
+      "qdrant-client": "1.20.0",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "provenance": {}
+}

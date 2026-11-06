@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "compared_requests": 100,
+  "identical_ranked_result_ids": 100,
+  "before_server_latency": {
+    "p50_ms": 131.36657300128718,
+    "p90_ms": 143.8475710019702,
+    "p95_ms": 145.16141900094226
+  },
+  "after_server_latency": {
+    "p50_ms": 104.13620999997875,
+    "p90_ms": 145.2963300000647,
+    "p95_ms": 148.12379699992562
+  },
+  "before_requests_per_second": 7.460735757363087,
+  "after_requests_per_second": 8.669934477911736,
+  "p90_delta_ms": 1.4487589980944904,
+  "note": "Same four queries/model/index/corpus/hardware, warmup5/concurrency1. Separate runs; not statistical non-inferiority or human quality evidence."
+}

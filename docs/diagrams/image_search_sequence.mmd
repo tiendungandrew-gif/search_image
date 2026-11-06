@@ -1,0 +1,25 @@
+sequenceDiagram
+    actor U as Người dùng
+    participant UI as React
+    participant API as API
+    participant S as Search orchestrator
+    participant PG as PostgreSQL
+    participant E as Image encoder
+    participant Q as Qdrant
+    U->>UI: Chọn ảnh, xem preview
+    UI->>API: POST /search multipart options và image
+    Note over API: Timer đã bao gồm body parse và decode
+    API->>API: Auth, validate actual bytes và resource limits
+    API->>S: Validated query image, không corpus ingestion
+    S->>PG: Capture active index/manifest
+    PG-->>S: Pinned compatible version
+    S->>E: Preprocess và encode ảnh
+    E-->>S: Normalized vector
+    S->>Q: Bounded cosine retrieval
+    Q-->>S: Candidates
+    S->>PG: Batch readiness/revision checks, metadata
+    PG-->>S: Eligible records
+    S-->>API: Deduplicated Top-K
+    API-->>UI: SearchResponse
+    API->>API: Cleanup temp input kể cả lỗi/cancel
+    Note over API,PG: JSON image_id dùng authorized original thay upload, cùng retrieval path

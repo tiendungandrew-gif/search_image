@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "passed": 1,
+  "failed": 1,
+  "scope": "RAG browser desktop/mobile targeted rerun; full-suite failures preserved separately"
+}

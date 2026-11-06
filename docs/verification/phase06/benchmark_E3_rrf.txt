@@ -1,0 +1,67 @@
+{
+  "status": "measured",
+  "modality": "multi_intent",
+  "experiment": {
+    "fusion": "rrf",
+    "rerank": false,
+    "retrieval_strategy": "fused"
+  },
+  "requests": 100,
+  "concurrency": 1,
+  "warmup": 5,
+  "cache_state": "model preloaded; pools warmup=5; no query-result cache",
+  "model": {
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+  },
+  "duration_seconds": 13.011888999000348,
+  "successful": 100,
+  "failed": 0,
+  "error_rate": 0.0,
+  "requests_per_second": 7.685279209473936,
+  "successful_per_second": 7.685279209473936,
+  "client_success_latency": {
+    "p50_ms": 122.08108200002243,
+    "p90_ms": 158.6371500002315,
+    "p95_ms": 160.50186600023153
+  },
+  "server_success_latency": {
+    "p50_ms": 119.3027629997232,
+    "p90_ms": 156.15469100021073,
+    "p95_ms": 157.76024199976746
+  },
+  "server_sample_count": 100,
+  "percentile_method": "nearest rank ceil(p*n); successful samples; errors retained separately",
+  "p90_300ms_observed": true,
+  "p95_500ms_observed": true,
+  "subgroups": {
+    "en_AND": {
+      "p50_ms": 143.77522899985706,
+      "p90_ms": 154.9289320000753,
+      "p95_ms": 155.5480459996943
+    },
+    "en_OR": {
+      "p50_ms": 109.38425399990592,
+      "p90_ms": 152.76663800023016,
+      "p95_ms": 154.85792399977072
+    },
+    "vi_AND": {
+      "p50_ms": 112.24102899996069,
+      "p90_ms": 155.8792440000616,
+      "p95_ms": 157.3424690000138
+    },
+    "vi_OR": {
+      "p50_ms": 129.03633099995204,
+      "p90_ms": 158.2523370002491,
+      "p95_ms": 159.4746710002255
+    }
+  },
+  "dataset": {
+    "verified_images": 10,
+    "exact_vector_count": 10,
+    "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+    "collection": "images_clip_v1_da55a7d099fd"
+  }
+}
+

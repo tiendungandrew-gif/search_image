@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "name": "A5_paired_rrf",
+  "profile": "advanced",
+  "requests": 300,
+  "query_types": [
+    "multimodal"
+  ],
+  "rerank": true
+}

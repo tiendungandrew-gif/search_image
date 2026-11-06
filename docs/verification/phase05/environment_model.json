@@ -1,0 +1,33 @@
+{
+  "cpu": "Intel(R) Core(TM) 7 240H",
+  "logical_cpus": 16,
+  "ram_kib": 15845068,
+  "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+  "python": "3.12.12",
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "transformers": "4.57.6",
+    "Pillow": "12.3.0",
+    "numpy": "2.5.4",
+    "qdrant-client": "1.20.0",
+    "fastapi": "0.162.0"
+  },
+  "active_index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+  "active_generation": 1,
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "model_name": "openai/clip-vit-base-patch32",
+  "model_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "dimension": 512,
+  "normalization": "l2",
+  "distance": "cosine",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "collection": "images_clip_v1_da55a7d099fd",
+  "index_status": "ready",
+  "device": "cpu",
+  "cpu_threads": 4,
+  "candidate_default": 50,
+  "request_timeout_seconds": 2.0,
+  "image_encoder_sha256": "20d9c0b1dcb9f8d35ccf1ea38e330ff505cca9dae52a6f6324e38dcd1c8c8daf",
+  "query_encoder_sha256": "0a4f06a9c08bcf618c28007b0f1477bf16aba8d5d4e1a241cd50423e65066342",
+  "exact_points": 10
+}

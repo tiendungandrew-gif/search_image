@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "name": "load_mixed_open8",
+  "profile": "mixed",
+  "requests": 2000,
+  "concurrency": 5,
+  "rate": 8.0,
+  "duration": 20.0,
+  "warmup": 10,
+  "sample_resources": true
+}

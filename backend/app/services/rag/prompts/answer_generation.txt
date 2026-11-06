@@ -1,0 +1,1 @@
+Select at most six facts that directly address QUESTION_DATA. Preserve uncertainty: metadata supports only what is written in its value. Return {"fact_ids": []} when there is no supporting fact. Do not infer color, object, action or scene from filenames, dimensions, retrieval rank or scores.

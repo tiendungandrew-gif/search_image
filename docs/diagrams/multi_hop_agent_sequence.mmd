@@ -1,0 +1,25 @@
+sequenceDiagram
+    actor U as Người dùng
+    participant API as Agent API
+    participant A as Bounded workflow
+    participant PG as Entity repository
+    participant S as Core retrieval
+    participant G as Optional RAG
+    U->>API: Explicit agent query, budgets, fallback consent
+    API->>A: Authenticated context và shared deadline
+    A->>PG: entity_lookup seed với provenance
+    PG-->>A: Entity candidates và evidence
+    A->>PG: get_related_entities từ seed binding
+    PG-->>A: City binding và relation evidence
+    A->>PG: get_related_entities từ city binding
+    PG-->>A: Landmark bindings và evidence
+    A->>S: semantic_image_search từ landmark outputs
+    S-->>A: Pinned-index results và metadata
+    A->>A: Validate relations, image IDs và remaining budget
+    opt explain enabled và evidence đủ
+        A->>G: Evidence và retrieved image IDs
+        G-->>A: Grounded explanation với citations đã validate
+    end
+    A-->>API: Results, safe tool trace, resolution
+    API-->>U: Synchronous JSON, không SSE
+    Note over A,S: Unknown/budget/tool failure: unresolved hoặc explicit direct fallback trong cùng deadline

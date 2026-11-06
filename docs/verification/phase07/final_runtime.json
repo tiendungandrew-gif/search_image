@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "health_http": {
+    "/api/v1/health/live": 200,
+    "/api/v1/health/ready": 200,
+    "/api/v1/health?check=search": 200
+  },
+  "runtime": {
+    "status": "ready",
+    "pid": 1,
+    "python": "3.12.12",
+    "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+    "logical_cpus": 16,
+    "cpu_user_seconds": 11.836431,
+    "cpu_system_seconds": 1.614379,
+    "process_memory_kib": {
+      "VmHWM": 1209708,
+      "VmRSS": 1209708
+    },
+    "process_threads": 49,
+    "model_initialization_ms": 4277.668144000927,
+    "settings": {
+      "embedding_cpu_threads": 4,
+      "embedding_device": "auto",
+      "search_max_top_k": 50,
+      "search_default_candidates": 50,
+      "search_queue_capacity": 8,
+      "search_queue_wait_seconds": 0.05,
+      "search_object_check_concurrency": 1,
+      "reranking_max_candidates": 50,
+      "reranking_timeout_ms": 200
+    },
+    "gpu_measurements": null,
+    "model": {
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "name": "openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "dimension": 512,
+      "device": "cpu",
+      "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "collection": "images_clip_v1_da55a7d099fd",
+      "generation": 1
+    }
+  },
+  "active_clip_baseline_preserved": true
+}

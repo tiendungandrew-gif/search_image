@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "real_http_base_url": "http://127.0.0.1:8000",
+  "read_token_mutation_status": 403,
+  "duplicate_upload_status": 200,
+  "image_id": "6a19fdda-6379-42bf-a96c-5559256139b6",
+  "content_sha256": "b0793d2adda0fa6ae899c03989482bff9a42d3d5690fc7e3648f2795d730c23a",
+  "content_matches_original": true,
+  "job_status": "succeeded",
+  "search_enabled": false,
+  "write_token_in_report": false
+}

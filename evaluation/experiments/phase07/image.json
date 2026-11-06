@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "name": "image_after",
+  "profile": "image",
+  "requests": 300,
+  "warmup": 8,
+  "sample_resources": true
+}
