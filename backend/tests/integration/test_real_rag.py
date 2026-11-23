@@ -23,7 +23,7 @@ async def test_real_metadata_generation_and_visual_insufficiency():
     async with httpx.AsyncClient(
         base_url=os.getenv("RAG_TEST_BASE_URL", "http://backend:8000"),
         headers={"Authorization": "Bearer " + cfg.api_token.get_secret_value()},
-        timeout=12,
+        timeout=65,
     ) as c:
         response = await c.post(
             "/api/v1/rag/explain",
@@ -43,7 +43,18 @@ async def test_real_metadata_generation_and_visual_insufficiency():
         assert result["rag"]["citations"] and audit_citations(result)["exact_quote_support"] == 1
         assert result["latency"]["provider_ttft_ms"] > 0
         assert result["latency"]["provider_ttlast_ms"] >= result["latency"]["provider_ttft_ms"]
-        identities = [r["image_id"] for r in result["results"]]
+        fixtures = await c.post(
+            "/api/v1/search",
+            json={
+                "text": "a cup of coffee",
+                "mode": "text",
+                "top_k": 1,
+                "filters": {"source_dataset": "scikit-image-v0.25.2"},
+            },
+        )
+        assert fixtures.status_code == 200 and fixtures.json()["results"]
+        identities = [r["image_id"] for r in fixtures.json()["results"]]
+        assert all(r["metadata"]["caption"] is None for r in fixtures.json()["results"])
         missing = await c.post(
             "/api/v1/rag/explain",
             json={
@@ -62,7 +73,7 @@ async def test_real_provider_stream_and_validated_final_event():
     async with httpx.AsyncClient(
         base_url=os.getenv("RAG_TEST_BASE_URL", "http://backend:8000"),
         headers={"Authorization": "Bearer " + cfg.api_token.get_secret_value()},
-        timeout=12,
+        timeout=65,
     ) as c:
         response = await c.post(
             "/api/v1/rag/explain/stream",
@@ -86,3 +97,44 @@ async def test_real_provider_stream_and_validated_final_event():
         assert events[-1][0] == "generation_completed"
         assert events[-1][1]["rag"]["generated"]
         assert audit_citations(events[-1][1])["citation_id_validity"] == 1
+
+
+@pytest.mark.skipif(
+    os.getenv("RUN_RAG_CORPUS_E2E") != "1", reason="Requires indexed COCO caption corpus"
+)
+async def test_real_imported_caption_generation_and_attribution():
+    cfg = Settings()
+    async with httpx.AsyncClient(
+        base_url=os.getenv("RAG_TEST_BASE_URL", "http://backend:8000"),
+        headers={"Authorization": "Bearer " + cfg.api_token.get_secret_value()},
+        timeout=65,
+    ) as client:
+        response = await client.post(
+            "/api/v1/rag/explain",
+            json={
+                "search": {
+                    "text": "a dog outdoors",
+                    "mode": "text",
+                    "top_k": 1,
+                    "filters": {"source_dataset": "coco2017-val-subset-v1"},
+                },
+                "question": "Tóm tắt caption đã lưu của ảnh này.",
+                "language": "vi",
+            },
+        )
+        assert response.status_code == 200
+        result = response.json()
+        assert result["rag"]["generated"], result["rag"]["error_code"]
+        assert result["rag"]["grounding_status"] == "partially_supported"
+        assert result["rag"]["citations"]
+        assert all(c["evidence_field"] == "caption" for c in result["rag"]["citations"])
+        assert audit_citations(result)["exact_quote_support"] == 1
+        assert all(
+            e["caption"]
+            and e["provenance"]["caption"]["source"].startswith("coco2017:")
+            and e["provenance"]["caption"]["verified"] is False
+            for e in result["rag"]["evidence"]
+        )
+        detail = await client.get("/api/v1/images/" + result["results"][0]["image_id"])
+        assert detail.status_code == 200
+        assert detail.json()["metadata"]["caption"] == result["rag"]["evidence"][0]["caption"]

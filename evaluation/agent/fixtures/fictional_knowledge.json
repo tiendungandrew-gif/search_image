@@ -1,0 +1,13 @@
+{
+  "fixture": true,
+  "entities": [
+    {"id":"10000000-0000-4000-8000-000000000001","canonical_name":"Fixture Lake Alpha","entity_type":"landmark","aliases":["Fixture Lake A"],"provenance":{"source_ref":"fixture://phase09/lake","fixture":true}},
+    {"id":"10000000-0000-4000-8000-000000000002","canonical_name":"Fixture City Beta","entity_type":"city","provenance":{"source_ref":"fixture://phase09/city","fixture":true}},
+    {"id":"10000000-0000-4000-8000-000000000003","canonical_name":"Fixture Landmark Gamma","entity_type":"landmark","provenance":{"source_ref":"fixture://phase09/landmark","fixture":true}}
+  ],
+  "relationships": [
+    {"id":"20000000-0000-4000-8000-000000000001","subject_id":"10000000-0000-4000-8000-000000000001","predicate":"located_in","object_id":"10000000-0000-4000-8000-000000000002","source_ref":"fixture://phase09/relation1","evidence":{"fixture":true,"note":"Fictional workflow data; not a geographic fact."},"verified_at":"2026-11-06T00:00:00Z"},
+    {"id":"20000000-0000-4000-8000-000000000002","subject_id":"10000000-0000-4000-8000-000000000003","predicate":"located_in","object_id":"10000000-0000-4000-8000-000000000002","source_ref":"fixture://phase09/relation2","evidence":{"fixture":true,"note":"Fictional workflow data; not a geographic fact."},"verified_at":"2026-11-06T00:00:00Z"}
+  ],
+  "image_entities": []
+}

@@ -1,0 +1,18 @@
+{
+  "profile": "down",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file .env.qa -f compose.qa.yaml -p phase11-qa-2c8ad1b9345d down --volumes --timeout 30"
+      ],
+      "started_utc": "2026-11-08T10:29:55.155897+00:00",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed"
+}

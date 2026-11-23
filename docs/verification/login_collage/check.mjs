@@ -1,0 +1,51 @@
+import { chromium, firefox } from '../../../frontend/node_modules/@playwright/test/index.mjs';
+import AxeBuilder from '../../../frontend/node_modules/@axe-core/playwright/dist/index.mjs';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const results=[];
+for (const [name, engine, width, height] of [['desktop',chromium,1440,1000],['mobile',chromium,390,844],['narrow',chromium,320,780],['firefox',firefox,1280,900]]) {
+ const browser=await engine.launch();
+ const context=await browser.newContext({viewport:{width,height},reducedMotion:'no-preference'});
+ const page=await context.newPage();
+ await page.goto('http://localhost:5173');
+ await page.getByRole('heading',{name:'Đăng nhập vào Lens'}).waitFor();
+ const card=page.locator('.collage-track').first();
+ {
+  const before=await card.evaluate(el=>getComputedStyle(el).transform);
+  await page.waitForTimeout(250);
+  assert.notEqual(await card.evaluate(el=>getComputedStyle(el).transform),before);
+ }
+ await page.locator('.collage-group img').evaluateAll(async imgs => { await Promise.all(imgs.map(img => img.decode())); });
+ const pause=page.getByRole('button',{name:'Tạm dừng chuyển động'});
+ await pause.click();
+ assert.equal(await page.locator('main').getAttribute('data-motion'),'paused');
+ await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+ const paused=await card.evaluate(el=>getComputedStyle(el).transform);
+ await page.waitForTimeout(200);
+ assert.equal(await card.evaluate(el=>getComputedStyle(el).transform),paused);
+ assert.equal(await page.getByRole('button',{name:'Bật chuyển động'}).getAttribute('aria-pressed'),'true');
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+ await page.locator('#login-password').fill('example-only');
+ await page.getByRole('button',{name:'Hiện mật khẩu'}).click();
+ assert.equal(await page.locator('#login-password').getAttribute('type'),'text');
+ await page.locator('#login-password').fill('');
+ await page.getByRole('link',{name:'Lens trang chủ'}).focus();
+ await page.keyboard.press('Tab');
+ assert.equal(await page.locator('#login-username').evaluate(el=>el===document.activeElement),true);
+ const violations=(await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations;
+ assert.deepEqual(violations,[]);
+ await page.screenshot({path:`docs/verification/login_collage/${name}.png`,fullPage:true});
+ await page.getByRole('button',{name:'Bật chuyển động'}).click();
+ assert.equal(await page.locator('main').getAttribute('data-motion'),'playing');
+ await page.emulateMedia({reducedMotion:'reduce'});
+ assert.equal(await card.evaluate(el=>getComputedStyle(el).animationName),'none');
+ assert.equal(await page.getByRole('button',{name:'Tạm dừng chuyển động'}).isVisible(),false);
+ await page.getByRole('button',{name:/Vào nhanh User/}).click();
+ await page.getByRole('heading',{name:'Một ý tưởng, nhiều góc nhìn.'}).waitFor();
+ await page.getByRole('button',{name:'Đăng xuất',exact:true}).click();
+ await page.getByRole('heading',{name:'Đăng nhập vào Lens'}).waitFor();
+ results.push({name,motion: true,pauseResume:true,reducedMotion:true,layout:true,axeViolations:0,quickLoginLogout:true});
+ console.log(name,'PASS');
+ await browser.close();
+}
+fs.writeFileSync('docs/verification/login_collage/browser.json',JSON.stringify(results,null,2)+'\n');

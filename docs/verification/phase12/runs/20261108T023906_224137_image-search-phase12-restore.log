@@ -1,0 +1,144 @@
+ Volume image-search-phase12-restore_postgres_data Creating 
+ Network image-search-phase12-restore_data Creating 
+ Volume image-search-phase12-restore_postgres_data Creating 
+ Network image-search-phase12-restore_data Creating 
+ Volume image-search-phase12-restore_qdrant_data Creating 
+ Volume image-search-phase12-restore_minio_data Creating 
+ Volume image-search-phase12-restore_minio_data Creating 
+ Volume image-search-phase12-restore_qdrant_data Creating 
+ Volume image-search-phase12-restore_postgres_data Created 
+ Volume image-search-phase12-restore_postgres_data Created 
+ Volume image-search-phase12-restore_qdrant_data Created 
+ Volume image-search-phase12-restore_qdrant_data Created 
+ Volume image-search-phase12-restore_minio_data Created 
+ Volume image-search-phase12-restore_minio_data Created 
+ Network image-search-phase12-restore_data Created 
+ Network image-search-phase12-restore_data Created 
+ Container image-search-phase12-restore-minio-1 Creating 
+ Container image-search-phase12-restore-qdrant-1 Creating 
+ Container image-search-phase12-restore-postgres-1 Creating 
+ Container image-search-phase12-restore-minio-1 Created 
+ Container image-search-phase12-restore-qdrant-1 Created 
+ Container image-search-phase12-restore-postgres-1 Created 
+ Container image-search-phase12-restore-qdrant-1 Starting 
+ Container image-search-phase12-restore-minio-1 Starting 
+ Container image-search-phase12-restore-postgres-1 Starting 
+ Container image-search-phase12-restore-qdrant-1 Started 
+ Container image-search-phase12-restore-minio-1 Started 
+ Container image-search-phase12-restore-postgres-1 Started 
+ Container image-search-phase12-restore-qdrant-1 Waiting 
+ Container image-search-phase12-restore-minio-1 Waiting 
+ Container image-search-phase12-restore-postgres-1 Waiting 
+ Container image-search-phase12-restore-qdrant-1 Healthy 
+ Container image-search-phase12-restore-minio-1 Healthy 
+ Container image-search-phase12-restore-postgres-1 Healthy 
+
+{"empty": true}
+ Volume image-search-phase12-restore_evaluation_artifacts Creating 
+ Volume image-search-phase12-restore_evaluation_artifacts Creating 
+ Network image-search-phase12-restore_egress Creating 
+ Network image-search-phase12-restore_egress Creating 
+ Volume image-search-phase12-restore_evaluation_artifacts Created 
+ Volume image-search-phase12-restore_evaluation_artifacts Created 
+ Network image-search-phase12-restore_egress Created 
+ Network image-search-phase12-restore_egress Created 
+ Container image-search-phase12-restore-backend-run-d92efb54f0fe Creating 
+ Container image-search-phase12-restore-backend-run-d92efb54f0fe Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+ Container image-search-phase12-restore-minio-1 Stopping 
+ Container image-search-phase12-restore-qdrant-1 Stopping 
+ Container image-search-phase12-restore-qdrant-1 Stopped 
+ Container image-search-phase12-restore-minio-1 Stopped 
+
+[
+    {
+        "CreatedAt": "2026-11-08T09:39:07+07:00",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "466cc9dfcc9c86c157f33013fad1c4f7e68cfab57106a9cd9a267360c72d0ac9",
+            "com.docker.compose.project": "image-search-phase12-restore",
+            "com.docker.compose.version": "5.5.1",
+            "com.docker.compose.volume": "qdrant_data"
+        },
+        "Mountpoint": "/var/snap/docker/common/var-lib-docker/volumes/image-search-phase12-restore_qdrant_data/_data",
+        "Name": "image-search-phase12-restore_qdrant_data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+
+[
+    {
+        "CreatedAt": "2026-11-08T09:39:07+07:00",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "e454311f9269000e9308d6589f86c2023b2c937e14456632709100834abadd24",
+            "com.docker.compose.project": "image-search-phase12-restore",
+            "com.docker.compose.version": "5.5.1",
+            "com.docker.compose.volume": "minio_data"
+        },
+        "Mountpoint": "/var/snap/docker/common/var-lib-docker/volumes/image-search-phase12-restore_minio_data/_data",
+        "Name": "image-search-phase12-restore_minio_data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+
+
+
+ Container image-search-phase12-restore-postgres-1 Running 
+ Network image-search-phase12-restore_ingress Creating 
+ Network image-search-phase12-restore_ingress Creating 
+ Container image-search-phase12-restore-bootstrap-1 Creating 
+ Container image-search-phase12-restore-bootstrap-1 Created 
+ Container image-search-phase12-restore-worker-1 Creating 
+ Container image-search-phase12-restore-backend-1 Creating 
+ Container image-search-phase12-restore-worker-1 Created 
+ Container image-search-phase12-restore-backend-1 Created 
+ Network image-search-phase12-restore_ingress Created 
+ Network image-search-phase12-restore_ingress Created 
+ Container image-search-phase12-restore-frontend-1 Creating 
+ Container image-search-phase12-restore-frontend-1 Created 
+ Container image-search-phase12-restore-qdrant-1 Starting 
+ Container image-search-phase12-restore-minio-1 Starting 
+ Container image-search-phase12-restore-qdrant-1 Started 
+ Container image-search-phase12-restore-minio-1 Started 
+ Container image-search-phase12-restore-qdrant-1 Waiting 
+ Container image-search-phase12-restore-minio-1 Waiting 
+ Container image-search-phase12-restore-postgres-1 Waiting 
+ Container image-search-phase12-restore-postgres-1 Healthy 
+ Container image-search-phase12-restore-qdrant-1 Healthy 
+ Container image-search-phase12-restore-minio-1 Healthy 
+ Container image-search-phase12-restore-bootstrap-1 Starting 
+ Container image-search-phase12-restore-bootstrap-1 Started 
+ Container image-search-phase12-restore-bootstrap-1 Waiting 
+ Container image-search-phase12-restore-bootstrap-1 Waiting 
+ Container image-search-phase12-restore-bootstrap-1 Exited 
+ Container image-search-phase12-restore-bootstrap-1 Exited 
+ Container image-search-phase12-restore-worker-1 Starting 
+ Container image-search-phase12-restore-backend-1 Starting 
+ Container image-search-phase12-restore-worker-1 Started 
+ Container image-search-phase12-restore-backend-1 Started 
+ Container image-search-phase12-restore-backend-1 Waiting 
+ Container image-search-phase12-restore-backend-1 Healthy 
+ Container image-search-phase12-restore-frontend-1 Starting 
+ Container image-search-phase12-restore-frontend-1 Started 
+ Container image-search-phase12-restore-bootstrap-1 Waiting 
+ Container image-search-phase12-restore-worker-1 Waiting 
+ Container image-search-phase12-restore-frontend-1 Waiting 
+ Container image-search-phase12-restore-minio-1 Waiting 
+ Container image-search-phase12-restore-backend-1 Waiting 
+ Container image-search-phase12-restore-postgres-1 Waiting 
+ Container image-search-phase12-restore-qdrant-1 Waiting 
+ Container image-search-phase12-restore-minio-1 Healthy 
+ Container image-search-phase12-restore-postgres-1 Healthy 
+ Container image-search-phase12-restore-qdrant-1 Healthy 
+ Container image-search-phase12-restore-bootstrap-1 Exited 
+ Container image-search-phase12-restore-backend-1 Healthy 
+ Container image-search-phase12-restore-frontend-1 Healthy 
+container image-search-phase12-restore-worker-1 is unhealthy
+

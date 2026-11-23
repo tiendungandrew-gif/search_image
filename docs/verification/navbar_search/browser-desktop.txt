@@ -1,0 +1,58 @@
+
+Running 1 test using 1 worker
+
+search-start auto
+search-done
+search-start image
+search-done
+search-start multimodal
+search-done
+  ✘  1 [desktop] › navbar-e2e/search.spec.ts:59:1 › navbar search · autocomplete, keyboard, photos, filters and roles (18.9s)
+
+
+  1) [desktop] › navbar-e2e/search.spec.ts:59:1 › navbar search · autocomplete, keyboard, photos, filters and roles 
+
+    TimeoutError: locator.click: Timeout 8000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Tùy chọn tìm kiếm', exact: true })
+        - locator resolved to <button type="button" aria-expanded="false" class="navbar-options-button" aria-label="Tùy chọn tìm kiếm" id="navbar-search-options-toggle" aria-controls="navbar-search-panel">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <span class="search-button-label">Tìm kiếm ảnh</span> from <button type="submit" class="search-button" aria-label="Tìm kiếm ảnh" aria-describedby="search-unavailable">…</button> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <span class="search-button-label">Tìm kiếm ảnh</span> from <button type="submit" class="search-button" aria-label="Tìm kiếm ảnh" aria-describedby="search-unavailable">…</button> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        15 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <span class="search-button-label">Tìm kiếm ảnh</span> from <button type="submit" class="search-button" aria-label="Tìm kiếm ảnh" aria-describedby="search-unavailable">…</button> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+
+
+      23 |   });
+      24 |   if ((await toggle.getAttribute("aria-expanded")) !== "true")
+    > 25 |     await toggle.click();
+         |                  ^
+      26 | }
+      27 | async function search(page: Page) {
+      28 |   console.log("search-start", await page.locator(".consumer-search-form").getAttribute("data-input-mode"));
+        at openSettings (/home/tts/prj/frontend/navbar-e2e/search.spec.ts:25:18)
+        at /home/tts/prj/frontend/navbar-e2e/search.spec.ts:237:3
+
+    Error Context: test-results/search-navbar-search-·-aut-d9ce6-rd-photos-filters-and-roles-desktop/error-context.md
+
+  1 failed
+    [desktop] › navbar-e2e/search.spec.ts:59:1 › navbar search · autocomplete, keyboard, photos, filters and roles 
+(node:235583) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,0 +1,2 @@
+{"status": "prepared", "snapshot": "evaluation/datasets/manifests/phase09_public_v1.json", "queries": 28, "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe", "images": 513}
+

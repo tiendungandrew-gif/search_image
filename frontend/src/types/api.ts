@@ -37,6 +37,7 @@ export type Constraint =
   | { op: "and" | "or"; clauses: Constraint[] };
 export interface SearchOptions {
   top_k?: number;
+  page?: number;
   candidate_count?: number;
   filters?: MetadataFilters;
   constraints?: Constraint;
@@ -67,7 +68,7 @@ export type SearchRequest = SearchOptions &
         text: string;
         image_id: string;
         fusion?: {
-          method: "weighted_rrf";
+          method: "rrf" | "weighted_rrf" | "weighted_score";
           text_weight: number;
           image_weight: number;
         };
@@ -124,6 +125,13 @@ export interface SearchResponse {
   manifest_sha256: string;
   results: SearchResult[];
   total_results: number;
+  pagination?: {
+    page: number;
+    page_size: number;
+    total_results: number;
+    total_pages: number;
+    result_limit: number;
+  } | null;
   query_analysis?: {
     query_type: string;
     language: string;
@@ -143,4 +151,74 @@ export interface SearchResponse {
     stages: Record<string, number>;
   };
   warnings: { code: string; message: string }[];
+}
+
+export type DatasetState =
+  | "empty_dataset"
+  | "index_building"
+  | "index_not_ready"
+  | "ready"
+  | "unavailable";
+export interface WorkspaceStatus {
+  public_datasets?: { id: string; key: string; name: string }[];
+  dataset: {
+    state: DatasetState;
+    images: number | null;
+    available_images: number | null;
+    indexed_images: number | null;
+    vectors: number | null;
+    index_id: string | null;
+    index_status: string | null;
+    generation: number | null;
+  };
+  dependencies: Record<string, string>;
+  capabilities: HealthSummary["capabilities"];
+  rag: { enabled: boolean; configured: boolean; streaming: boolean };
+  agent: { enabled: boolean; llm_planning: boolean };
+  limits: { top_k: number; image_bytes: number };
+}
+export interface ImageDetail {
+  image_id: string;
+  status: string;
+  metadata: ImageMetadata;
+  created_at: string;
+  indexing: { index_id: string; status: string }[];
+  image_url: string | null;
+  thumbnail_url: string | null;
+}
+export interface EvaluationSummary {
+  state: "available" | "empty" | "not_available";
+  skipped: number;
+  experiments: {
+    id: string;
+    phase: string;
+    kind: string;
+    status: string;
+    attempted: number | null;
+    successful: number | null;
+    failed: number | null;
+    p90_ms: number | null;
+    p95_ms: number | null;
+    recall_at_10: number | null;
+    quality_status: string;
+  }[];
+}
+export interface RagAnswer {
+  answer: string;
+  grounding_status:
+    | "supported"
+    | "partially_supported"
+    | "insufficient_evidence"
+    | "generation_unavailable";
+  generated: boolean;
+  error_code: string | null;
+  citations: { image_id: string; evidence_field: string; quote: string }[];
+}
+
+export interface DiscoveryResponse {
+  seed?: string;
+  has_more?: boolean;
+  next_cursor?: string | null;
+  results: SearchResult[];
+  total_results: number;
 }

@@ -1,0 +1,89 @@
+{
+  "source_verified": true,
+  "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+  "source_urls": [
+    "https://www.nps.gov/linc/planyourvisit/directions.htm",
+    "https://www.nps.gov/thje/planyourvisit/directions.htm",
+    "https://www.nps.gov/wamo/index.htm"
+  ],
+  "cases": {
+    "english": {
+      "search_mode": "agent",
+      "status": "completed",
+      "image_ids": [
+        "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+        "c2aa6031-da93-4287-aeaa-89360acd41b0",
+        "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f"
+      ],
+      "entity_ids": [
+        "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "e6a72379-6adf-5998-851b-f94984316a1e",
+        "f979880e-1be1-5402-89c4-f24f85aec143"
+      ],
+      "relationship_ids": [
+        "1835978d-4dd4-584c-a159-7e2f8820e471",
+        "8c5899e1-c980-5743-a5b3-9e200654cda8",
+        "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+      ],
+      "tools": [
+        "entity_lookup",
+        "relationship_lookup",
+        "get_related_entities",
+        "semantic_image_search"
+      ]
+    },
+    "vietnamese": {
+      "search_mode": "agent",
+      "status": "completed",
+      "image_ids": [
+        "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+        "c2aa6031-da93-4287-aeaa-89360acd41b0",
+        "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f"
+      ],
+      "entity_ids": [
+        "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "e6a72379-6adf-5998-851b-f94984316a1e",
+        "f979880e-1be1-5402-89c4-f24f85aec143"
+      ],
+      "relationship_ids": [
+        "1835978d-4dd4-584c-a159-7e2f8820e471",
+        "8c5899e1-c980-5743-a5b3-9e200654cda8",
+        "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+      ],
+      "tools": [
+        "entity_lookup",
+        "relationship_lookup",
+        "get_related_entities",
+        "semantic_image_search"
+      ]
+    },
+    "alias": {
+      "search_mode": "agent",
+      "status": "completed",
+      "image_ids": [
+        "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+        "c2aa6031-da93-4287-aeaa-89360acd41b0",
+        "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f"
+      ],
+      "entity_ids": [
+        "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "e6a72379-6adf-5998-851b-f94984316a1e",
+        "f979880e-1be1-5402-89c4-f24f85aec143"
+      ],
+      "relationship_ids": [
+        "1835978d-4dd4-584c-a159-7e2f8820e471",
+        "8c5899e1-c980-5743-a5b3-9e200654cda8",
+        "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+      ],
+      "tools": [
+        "entity_lookup",
+        "relationship_lookup",
+        "get_related_entities",
+        "semantic_image_search"
+      ]
+    }
+  }
+}

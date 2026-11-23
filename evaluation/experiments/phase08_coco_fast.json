@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "name": "phase08_coco_fast",
+  "profile": "fast",
+  "requests": 500,
+  "warmup": 12,
+  "sample_resources": true
+}

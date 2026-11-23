@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="vi">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đánh giá câu trả lời RAG · Prompt08</title>
+  <style>
+    body {
+      font: 16px system-ui;
+      margin: 24px;
+      background: #f5f6f3;
+      color: #17221d;
+    }
+    header,
+    article {
+      background: white;
+      padding: 20px;
+      border: 1px solid #ccd5cc;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    button,
+    input,
+    select {
+      font: inherit;
+      padding: 8px;
+      margin: 6px;
+      max-width: 95%;
+    }
+    label {
+      display: inline-block;
+      margin: 6px 0;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font: inherit;
+    }
+    small {
+      overflow-wrap: anywhere;
+    }
+    #message {
+      color: #a22;
+    }
+    .full {
+      display: block;
+    }
+  </style>
+  <header>
+    <h1>Đánh giá câu trả lời RAG trên dữ liệu thực</h1>
+    <p>
+      Đối chiếu câu hỏi, câu trả lời, bằng chứng và ảnh. Các ô ban đầu chưa có
+      nhãn. 0: không đạt · 1: một phần · 2: đạt rõ · Không xác định: chưa đủ căn
+      cứ. Faithfulness đánh giá nội dung được evidence/ảnh hỗ trợ; relevance
+      đánh giá mức trả lời đúng câu hỏi. Đếm claims và claims không có bằng
+      chứng, không tính một citation hợp lệ là bảo đảm đúng nội dung.
+    </p>
+    <p>
+      Trang chạy offline, không tự lưu. Xuất bản nháp để giữ tiến độ. Không có
+      API key/token trong trang.
+    </p>
+    <label>Người đánh giá <input id="annotator" autocomplete="off" /></label>
+    <label>Phiên bản nhãn <input id="version" value="human-v1" /></label>
+    <label
+      >Nạp bản nháp <input id="import" type="file" accept="application/json"
+    /></label>
+    <div>
+      <button id="previous">← Trước</button
+      ><select id="case" aria-label="Ca đánh giá"></select
+      ><button id="next">Sau →</button>
+    </div>
+    <button id="draft">Xuất bản nháp</button>
+    <label
+      ><input id="confirm" type="checkbox" />Tôi đã tự đánh giá và xác nhận các
+      nhãn</label
+    >
+    <button id="verified">Xuất nhãn đã xác nhận</button>
+    <p id="progress"></p>
+    <p id="message" role="alert"></p>
+  </header>
+  <main>
+    <article>
+      <h2 id="question"></h2>
+      <p id="task"></p>
+      <h3>Câu trả lời đã đóng băng</h3>
+      <pre id="answer"></pre>
+      <pre id="citations"></pre>
+    </article>
+    <article id="grading"><h3>Đánh giá của bạn</h3></article>
+    <section id="images" class="grid" aria-label="Ảnh và evidence"></section>
+  </main>
+  <script>
+    const DATA = /*__DATA__*/;
+    const $ = id => document.getElementById(id);
+    let current = 0, labels = structuredClone(DATA.labels), reviewed = new Set();
+    const gradeChoices = [['', 'Không xác định / chưa gán'], ['0', '0 · Không đạt'], ['1', '1 · Một phần'], ['2', '2 · Đạt rõ']];
+    function progress() {
+      $('progress').textContent = `${reviewed.size}/${DATA.cases.length} ca đã xem · ${labels.experiment_id} · không tự lưu`;
+    }
+    function labelControl(title, control) {
+      const label = document.createElement('label'); label.append(title, control); $('grading').append(label);
+    }
+    function render() {
+      const row = DATA.cases[current], value = labels.cases[row.case_id], rag = row.result?.rag;
+      $('case').value = String(current);
+      $('question').textContent = row.question ?? 'Câu hỏi metadata trong workload gốc';
+      $('task').textContent = `${row.case_id} · ${row.language} · Query: ${row.query ?? 'a cup of coffee'} · trạng thái: ${row.status}`;
+      $('answer').textContent = rag?.answer ?? 'Không có câu trả lời do request lỗi.';
+      $('citations').textContent = JSON.stringify(rag?.citations ?? [], null, 2);
+      $('grading').replaceChildren();
+      for (const [field, title] of [['answer_relevance', 'Answer relevance'], ['faithfulness', 'Faithfulness']]) {
+        const select = document.createElement('select');
+        for (const [key, text] of gradeChoices) {
+          const option = document.createElement('option'); option.value = key; option.textContent = text; select.append(option);
+        }
+        select.value = value[field] === null ? '' : String(value[field]);
+        select.onchange = () => {value[field] = select.value === '' ? null : Number(select.value); reviewed.delete(row.case_id); progress();};
+        labelControl(title, select);
+      }
+      for (const [field, title] of [['claims', 'Tổng claims'], ['unsupported_claims', 'Claims thiếu bằng chứng']]) {
+        const input = document.createElement('input'); input.type = 'number'; input.min = '0'; input.max = '1000'; input.step = '1';
+        input.value = value[field] === null ? '' : String(value[field]);
+        input.oninput = () => {value[field] = input.value === '' ? null : Number(input.value); reviewed.delete(row.case_id); progress();};
+        labelControl(title, input);
+      }
+      const checked = document.createElement('input'); checked.type = 'checkbox'; checked.checked = reviewed.has(row.case_id);
+      checked.onchange = () => {checked.checked ? reviewed.add(row.case_id) : reviewed.delete(row.case_id); progress();};
+      labelControl('Tôi đã xem ca này; để trống grade nếu chưa đủ căn cứ', checked);
+      $('images').replaceChildren();
+      for (const item of row.result?.results ?? []) {
+        const card = document.createElement('article'), image = document.createElement('img');
+        image.src = DATA.images[item.image_id]; image.alt = `Ảnh ${item.image_id}`; card.append(image);
+        const text = document.createElement('pre');
+        text.textContent = JSON.stringify({image_id:item.image_id, metadata:item.metadata, evidence:rag?.evidence?.find(e => e.image_id === item.image_id)}, null, 2);
+        card.append(text); $('images').append(card);
+      }
+      progress();
+    }
+    function exportLabels(verified) {
+      try {
+        labels.annotator = $('annotator').value.trim(); labels.label_version = $('version').value.trim();
+        if (verified) {
+          if (!labels.annotator || !labels.label_version || !$('confirm').checked || reviewed.size !== DATA.cases.length)
+            throw Error('Cần tên, phiên bản, xem đủ ca và xác nhận của người đánh giá.');
+          for (const value of Object.values(labels.cases))
+            if (![value.claims, value.unsupported_claims].every(n => Number.isInteger(n) && n >= 0 && n <= 1000) || value.unsupported_claims > value.claims)
+              throw Error('Cần điền đúng tổng claims và số claims thiếu bằng chứng cho từng ca.');
+        }
+        labels.human_verified = verified; labels.reviewed_at_utc = verified ? new Date().toISOString() : null;
+        labels.reviewed_case_ids = [...reviewed];
+        const url = URL.createObjectURL(new Blob([JSON.stringify(labels, null, 2)], {type:'application/json'}));
+        const link = document.createElement('a'); link.href = url; link.download = `rag_${verified ? 'verified' : 'draft'}_${Date.now()}.json`; link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        $('message').textContent = verified ? 'Đã xuất nhãn bạn xác nhận; CLI vẫn kiểm tra hash/coverage/schema.' : 'Đã xuất nháp, chưa được dùng chấm quality.';
+      } catch (error) {$('message').textContent = error.message;}
+    }
+    DATA.cases.forEach((row, index) => {const option = document.createElement('option'); option.value = String(index); option.textContent = row.case_id; $('case').append(option);});
+    $('case').onchange = () => {current = Number($('case').value); render();};
+    $('previous').onclick = () => {current = Math.max(0, current - 1); render();};
+    $('next').onclick = () => {current = Math.min(DATA.cases.length - 1, current + 1); render();};
+    $('draft').onclick = () => exportLabels(false); $('verified').onclick = () => exportLabels(true);
+    $('import').onchange = async event => {
+      try {
+        const value = JSON.parse(await event.target.files[0].text());
+        if (value.result_sha256 !== DATA.labels.result_sha256 || Object.keys(value.cases).sort().join() !== Object.keys(DATA.labels.cases).sort().join())
+          throw Error('Bản nháp không khớp frozen experiment.');
+        for (const item of Object.values(value.cases)) {
+          if (['answer_relevance', 'faithfulness'].some(k => item[k] !== null && ![0,1,2].includes(item[k])) ||
+              ['claims', 'unsupported_claims'].some(k => item[k] !== null && (!Number.isInteger(item[k]) || item[k] < 0 || item[k] > 1000)))
+            throw Error('Bản nháp có nhãn không hợp lệ.');
+        }
+        labels = value; labels.human_verified = false; reviewed = new Set((value.reviewed_case_ids ?? []).filter(k => k in DATA.labels.cases));
+        $('annotator').value = value.annotator ?? ''; $('version').value = value.label_version ?? 'human-v1'; $('confirm').checked = false; render();
+      } catch (error) {$('message').textContent = error.message;}
+    };
+    render();
+  </script>
+</html>

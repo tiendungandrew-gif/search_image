@@ -1,0 +1,6 @@
+{
+  "sha256": "1aff5be1c8ac65bdc122e4775f88df8d3c20087496c5be4c1f72f9966441a27b",
+  "files": 280,
+  "archive": "evaluation/results/phase11/_sources/1aff5be1c8ac65bdc122e4775f88df8d3c20087496c5be4c1f72f9966441a27b.tar.gz",
+  "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+}

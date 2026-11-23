@@ -11,6 +11,7 @@ import numpy as np
 from qdrant_client import models as qm
 
 from app.core.config import Settings
+from app.core.container import Services
 from app.db.models import EmbeddingModel, SearchIndex
 from app.db.models.indexing import ActiveSearchIndex
 from app.evaluation.dataset import query_digest, validate_labels
@@ -21,7 +22,6 @@ from app.evaluation.tracking import digest
 from app.schemas.ingestion import JobInput
 from app.services.embeddings.query_encoder import ClipQueryEncoder
 from app.services.embeddings.siglip_encoder import SiglipEncoder
-from app.services.health import Services
 from app.services.indexing.collection_manager import CollectionManager
 from app.services.indexing.consistency import verify_index
 from app.services.indexing.submission import submit_job

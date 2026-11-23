@@ -15,3 +15,10 @@ frontend/playwright-report
 *.log
 .cache
 datasets/sample
+datasets/coco_phase08_*
+datasets/landmarks_phase09_*
+
+backups
+config/environments
+docs/verification
+evaluation/results

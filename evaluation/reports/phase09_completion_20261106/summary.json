@@ -1,0 +1,38 @@
+{
+  "generated_at_utc": "2026-11-06T15:19:27.393940+00:00",
+  "experiments": [
+    {
+      "experiment_id": "20261106T151742_agent_081d6bdb0d",
+      "name": "agent",
+      "status": "measured",
+      "profile": null,
+      "concurrency": 1,
+      "attempted": 40,
+      "successful": 40,
+      "failed": 0,
+      "p50_ms": null,
+      "p90_ms": null,
+      "p95_ms": null,
+      "requests_per_second": null,
+      "error_rate": null,
+      "artifact": "evaluation/results/phase09_completion/20261106T151742_agent_081d6bdb0d/result.json"
+    },
+    {
+      "experiment_id": "20261106T151820_benchmark_5b73a0ef43",
+      "name": "phase08_coco_fast",
+      "status": "measured",
+      "profile": "fast",
+      "concurrency": 1,
+      "attempted": 500,
+      "successful": 500,
+      "failed": 0,
+      "p50_ms": 118.33040600049571,
+      "p90_ms": 132.0122450006238,
+      "p95_ms": 137.40654299999733,
+      "requests_per_second": 8.003446551976662,
+      "error_rate": 0.0,
+      "artifact": "evaluation/results/phase09_completion/20261106T151820_benchmark_5b73a0ef43/result.json"
+    }
+  ],
+  "semantic_quality": "not_measured_unless_human_verified_result_present"
+}

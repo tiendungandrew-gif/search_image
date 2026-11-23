@@ -97,6 +97,14 @@ class CollectionManager:
         return index, model
 
     async def write(self, index, model, records, vectors):
+        vectors = np.asarray(vectors, dtype=np.float32)
+        if (
+            not records
+            or vectors.shape != (len(records), model.dimension)
+            or not np.isfinite(vectors).all()
+            or not np.allclose(np.linalg.norm(vectors, axis=1), 1, atol=1e-5, rtol=0)
+        ):
+            raise ValueError("INVALID_EMBEDDING")
         await self.ensure(index, model)
         points = [
             qm.PointStruct(id=str(record["image_id"]), vector=vector.tolist(), payload=record)

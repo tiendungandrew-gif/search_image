@@ -1,0 +1,1994 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-73fbdba15581 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-73fbdba15581 Created 
+FFFEEEEEEEEEEEEEEEEEEEEEEEE                                              [100%]
+==================================== ERRORS ====================================
+__ ERROR at setup of test_empty_real_services_api_contract_and_private_access __
+
+self = <Coroutine test_empty_real_services_api_contract_and_private_access>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+__ ERROR at setup of test_ingestion_three_formats_duplicates_and_real_vectors __
+
+self = <Coroutine test_ingestion_three_formats_duplicates_and_real_vectors>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+___ ERROR at setup of test_zero_encoder_cannot_publish_a_successful_receipt ____
+
+self = <Coroutine test_zero_encoder_cannot_publish_a_successful_receipt>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+___ ERROR at setup of test_worker_lease_fencing_retry_and_consistency_repair ___
+
+self = <Coroutine test_worker_lease_fencing_retry_and_consistency_repair>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_orphan_storage_detection_private_bucket_and_missing_object _
+
+self = <Coroutine test_orphan_storage_detection_private_bucket_and_missing_object>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+____ ERROR at setup of test_database_constraints_and_sql_injection_is_data _____
+
+self = <Coroutine test_database_constraints_and_sql_injection_is_data>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_worker_cancellation_keeps_images_alive_until_encoder_finishes _
+
+self = <Coroutine test_worker_cancellation_keeps_images_alive_until_encoder_finishes>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+___ ERROR at setup of test_actual_worker_process_death_reclaims_durable_job ____
+
+self = <Coroutine test_actual_worker_process_death_reclaims_durable_job>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+____ ERROR at setup of test_account_sessions_csrf_last_admin_and_revocation ____
+
+self = <Coroutine test_account_sessions_csrf_last_admin_and_revocation>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_dataset_scope_search_media_rag_grants_hide_and_metadata _
+
+self = <Coroutine test_dataset_scope_search_media_rag_grants_hide_and_metadata>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_______ ERROR at setup of test_expiry_disabled_login_throttle_and_quota ________
+
+self = <Coroutine test_expiry_disabled_login_throttle_and_quota>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+___ ERROR at setup of test_admin_upload_index_activation_and_knowledge_scope ___
+
+self = <Coroutine test_admin_upload_index_activation_and_knowledge_scope>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+__ ERROR at setup of test_worker_scheduler_skips_incompatible_and_leased_work __
+
+self = <Coroutine test_worker_scheduler_skips_incompatible_and_leased_work>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+___ ERROR at setup of test_quick_roles_sessions_privileges_csrf_and_disable ____
+
+self = <Coroutine test_quick_roles_sessions_privileges_csrf_and_disable>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_quick_accounts_missing_locked_revoked_and_grants_preserved _
+
+self = <Coroutine test_quick_accounts_missing_locked_revoked_and_grants_preserved>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_setup_does_not_take_over_regular_username_and_rate_limit _
+
+self = <Coroutine test_setup_does_not_take_over_regular_username_and_rate_limit>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+________ ERROR at setup of test_signup_login_logout_and_least_privilege ________
+
+self = <Coroutine test_signup_login_logout_and_least_privilege>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+________ ERROR at setup of test_signup_duplicate_race_and_normalization ________
+
+self = <Coroutine test_signup_duplicate_race_and_normalization>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_signup_validation_origin_reserved_names_and_throttle __
+
+self = <Coroutine test_signup_validation_origin_reserved_names_and_throttle>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_new_signup_reads_only_shared_images_search_and_evidence _
+
+self = <Coroutine test_new_signup_reads_only_shared_images_search_and_evidence>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_shared_access_changes_without_relogin_and_preserves_explicit_grants _
+
+self = <Coroutine test_shared_access_changes_without_relogin_and_preserves_explicit_grants>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_ ERROR at setup of test_admin_revokes_all_user_sessions_without_changing_password _
+
+self = <Coroutine test_admin_revokes_all_user_sessions_without_changing_password>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+___ ERROR at setup of test_guest_public_scope_never_inherits_member_sharing ____
+
+self = <Coroutine test_guest_public_scope_never_inherits_member_sharing>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+_________ ERROR at setup of test_guest_throttle_origin_and_login_gates _________
+
+self = <Coroutine test_guest_throttle_origin_and_login_gates>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:559: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:945: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:408: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:404: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/conftest.py:42: in qa_resources
+    admin = await psycopg.AsyncConnection.connect(
+backend/.venv/lib/python3.12/site-packages/psycopg/connection_async.py:116: in connect
+    attempts = await conninfo_attempts_async(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    async def conninfo_attempts_async(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := get_param(params, "target_session_attrs") == "prefer-standby":
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(await _resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts_async.py:53: OperationalError
+=================================== FAILURES ===================================
+_______________________ test_real_dependency_connections _______________________
+
+    async def test_real_dependency_connections():
+        settings = Settings()
+        services = Services(settings)
+        try:
+            await services.initialize()
+>           assert await services.readiness() == {
+                "postgresql": "healthy",
+                "qdrant": "healthy",
+                "minio": "healthy",
+            }
+E           AssertionError: assert {'postgresql'...: 'unhealthy'} == {'postgresql'...o': 'healthy'}
+E             
+E             Differing items:
+E             {'minio': 'unhealthy'} != {'minio': 'healthy'}
+E             {'postgresql': 'unhealthy'} != {'postgresql': 'healthy'}
+E             {'qdrant': 'unhealthy'} != {'qdrant': 'healthy'}
+E             Use -v to get more diff
+
+backend/tests/integration/test_real_services.py:43: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  app.dependencies:container.py:56 bucket_initialization_pending
+WARNING  app.dependencies:container.py:38 dependency_unavailable
+WARNING  app.dependencies:container.py:38 dependency_unavailable
+WARNING  app.dependencies:container.py:38 dependency_unavailable
+_________________________ test_real_backend_readiness __________________________
+
+    async def test_real_backend_readiness():
+        settings = Settings()
+        async with async_client(create_app(settings)) as client:
+            response = await client.get(
+                "/api/v1/health/ready",
+                headers={"Authorization": f"Bearer {settings.api_token.get_secret_value()}"},
+            )
+>           assert response.status_code == 200, response.json()
+E           AssertionError: {'status': 'not_ready', 'dependencies': {'postgresql': 'unhealthy', 'qdrant': 'unhealthy', 'minio': 'unhealthy'}}
+E           assert 503 == 200
+E            +  where 503 = <Response [503 Service Unavailable]>.status_code
+
+backend/tests/integration/test_real_services.py:60: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"timestamp": "2026-11-20T08:02:54.137056+00:00", "level": "WARNING", "logger": "app.dependencies", "request_id": "1b5c7455-a223-460f-9f6e-417d9d06871c", "event": "dependency_unavailable", "dependency": "postgresql"}
+{"timestamp": "2026-11-20T08:02:54.143196+00:00", "level": "WARNING", "logger": "app.dependencies", "request_id": "1b5c7455-a223-460f-9f6e-417d9d06871c", "event": "dependency_unavailable", "dependency": "minio"}
+{"timestamp": "2026-11-20T08:02:54.144461+00:00", "level": "WARNING", "logger": "app.dependencies", "request_id": "1b5c7455-a223-460f-9f6e-417d9d06871c", "event": "dependency_unavailable", "dependency": "qdrant"}
+____________ test_real_migration_upgrade_schema_match_and_rollback _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7af90fecbad0>
+
+    def test_real_migration_upgrade_schema_match_and_rollback(monkeypatch):
+        settings = Settings()
+        from sqlalchemy.engine import make_url
+    
+        app_url = make_url(settings.database_url.get_secret_value())
+        database_name = "foundation_test_" + uuid4().hex
+        admin_url = app_url.set(database="postgres", drivername="postgresql")
+>       admin = psycopg.connect(admin_url.render_as_string(hide_password=False), autocommit=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/integration/test_real_services.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/psycopg/connection.py:100: in connect
+    attempts = conninfo_attempts(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+params = {'user': 'image_search_qa', 'password': '[REDACTED_QA_SECRET]', 'dbname': 'postgres', 'host': 'qa-postgres', ...}
+
+    def conninfo_attempts(params: ConnMapping) -> list[ConnDict]:
+        """Split a set of connection params on the single attempts to perform.
+    
+        A connection param can perform more than one attempt more than one ``host``
+        is provided.
+    
+        Also perform async resolution of the hostname into hostaddr. Because a host
+        can resolve to more than one address, this can lead to yield more attempts
+        too. Raise `OperationalError` if no host could be resolved.
+    
+        Because the libpq async function doesn't honour the timeout, we need to
+        reimplement the repeated attempts.
+        """
+        last_exc = None
+        attempts = []
+        if prefer_standby := (
+            get_param(params, "target_session_attrs") == "prefer-standby"
+        ):
+            params = {k: v for k, v in params.items() if k != "target_session_attrs"}
+    
+        for attempt in split_attempts(params):
+            try:
+                attempts.extend(_resolve_hostnames(attempt))
+            except OSError as ex:
+                last_exc = e.OperationalError(
+                    f"failed to resolve host {attempt.get('host')!r}: {ex}"
+                )
+                logger.debug("%s", last_exc)
+    
+        if not attempts:
+            assert last_exc
+            # We couldn't resolve anything
+>           raise last_exc
+E           psycopg.OperationalError: failed to resolve host 'qa-postgres': [Errno -3] Temporary failure in name resolution
+
+backend/.venv/lib/python3.12/site-packages/psycopg/_conninfo_attempts.py:55: OperationalError
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py::test_real_dependency_connections
+tests/integration/test_real_services.py::test_real_backend_readiness
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_real_services.py::test_real_dependency_connections
+FAILED backend/tests/integration/test_real_services.py::test_real_backend_readiness
+FAILED backend/tests/integration/test_real_services.py::test_real_migration_upgrade_schema_match_and_rollback
+ERROR backend/tests/integration/test_qa_services.py::test_empty_real_services_api_contract_and_private_access
+ERROR backend/tests/integration/test_qa_services.py::test_ingestion_three_formats_duplicates_and_real_vectors
+ERROR backend/tests/integration/test_qa_services.py::test_zero_encoder_cannot_publish_a_successful_receipt
+ERROR backend/tests/integration/test_qa_services.py::test_worker_lease_fencing_retry_and_consistency_repair
+ERROR backend/tests/integration/test_qa_services.py::test_orphan_storage_detection_private_bucket_and_missing_object
+ERROR backend/tests/integration/test_qa_services.py::test_database_constraints_and_sql_injection_is_data
+ERROR backend/tests/integration/test_qa_services.py::test_worker_cancellation_keeps_images_alive_until_encoder_finishes
+ERROR backend/tests/integration/test_qa_worker_process.py::test_actual_worker_process_death_reclaims_durable_job
+ERROR backend/tests/integration/test_access_control.py::test_account_sessions_csrf_last_admin_and_revocation
+ERROR backend/tests/integration/test_access_control.py::test_dataset_scope_search_media_rag_grants_hide_and_metadata
+ERROR backend/tests/integration/test_access_control.py::test_expiry_disabled_login_throttle_and_quota
+ERROR backend/tests/integration/test_access_control.py::test_admin_upload_index_activation_and_knowledge_scope
+ERROR backend/tests/integration/test_access_control.py::test_worker_scheduler_skips_incompatible_and_leased_work
+ERROR backend/tests/integration/test_quick_login.py::test_quick_roles_sessions_privileges_csrf_and_disable
+ERROR backend/tests/integration/test_quick_login.py::test_quick_accounts_missing_locked_revoked_and_grants_preserved
+ERROR backend/tests/integration/test_quick_login.py::test_setup_does_not_take_over_regular_username_and_rate_limit
+ERROR backend/tests/integration/test_registration.py::test_signup_login_logout_and_least_privilege
+ERROR backend/tests/integration/test_registration.py::test_signup_duplicate_race_and_normalization
+ERROR backend/tests/integration/test_registration.py::test_signup_validation_origin_reserved_names_and_throttle
+ERROR backend/tests/integration/test_shared_datasets.py::test_new_signup_reads_only_shared_images_search_and_evidence
+ERROR backend/tests/integration/test_shared_datasets.py::test_shared_access_changes_without_relogin_and_preserves_explicit_grants
+ERROR backend/tests/integration/test_shared_datasets.py::test_admin_revokes_all_user_sessions_without_changing_password
+ERROR backend/tests/integration/test_guest_search.py::test_guest_public_scope_never_inherits_member_sharing
+ERROR backend/tests/integration/test_guest_search.py::test_guest_throttle_origin_and_login_gates
+3 failed, 2 warnings, 24 errors in 5.72s
+

@@ -24,6 +24,23 @@ def test_foundation_schema_has_required_relations_and_no_arbitrary_dimension():
         "job_item_attempts",
         "idempotency_records",
         "active_search_index",
+        "entities",
+        "entity_relationships",
+        "image_entities",
+        "users",
+        "auth_sessions",
+        "access_datasets",
+        "dataset_grants",
+        "entity_datasets",
+        "relation_datasets",
+        "image_moderation",
+        "auth_usage",
+        "login_throttles",
+        "audit_events",
+        "chat_conversations",
+        "chat_messages",
+        "image_favorites",
+        "image_comments",
     }
     jobs = Base.metadata.tables["indexing_jobs"]
     assert {fk.target_fullname for fk in jobs.foreign_keys} == {

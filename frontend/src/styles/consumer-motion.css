@@ -1,0 +1,182 @@
+/* Short, finite reveals; transforms and opacity keep layout and ranking intact. */
+.consumer-site {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.consumer-site .commercial-workspace {
+  animation: lens-page-in 420ms var(--motion-ease) both;
+}
+.consumer-site .shop-hero {
+  position: relative;
+  isolation: isolate;
+}
+.consumer-site .shop-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: -35px;
+  right: 0;
+  width: min(42vw, 360px);
+  height: 180px;
+  background: radial-gradient(ellipse, #6bb9ac20, transparent 70%);
+  animation: lens-glow-in 2400ms var(--motion-ease) both;
+}
+.consumer-site .travel-themes {
+  animation: lens-page-in 420ms 55ms var(--motion-ease) both;
+}
+.consumer-site .result-card:not(.skeleton) {
+  animation: lens-card-in 380ms var(--motion-ease) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+.consumer-site .result-media img {
+  opacity: 0;
+  transform: scale(1.018);
+  transition:
+    opacity 240ms ease-out,
+    transform 420ms var(--motion-ease);
+}
+.consumer-site .result-media[data-ready="true"] img {
+  opacity: 1;
+  transform: scale(1);
+}
+.consumer-site .travel-topic,
+.consumer-site .gallery-view button,
+.consumer-site .primary-button,
+.consumer-site .secondary-button {
+  transition:
+    transform 180ms var(--motion-ease),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.consumer-site .travel-topic:active,
+.consumer-site .gallery-view button:active,
+.consumer-site .primary-button:active,
+.consumer-site .secondary-button:active {
+  transform: scale(0.97);
+}
+.consumer-site .availability-note,
+.consumer-site .results-summary {
+  animation: lens-page-in 260ms var(--motion-ease) both;
+}
+.consumer-site .image-dialog {
+  margin: auto;
+}
+.consumer-site .image-dialog[open] {
+  animation: lens-dialog-in 260ms var(--motion-ease) both;
+}
+.consumer-site .image-dialog[open]::backdrop {
+  animation: lens-backdrop-in 220ms ease-out both;
+}
+.consumer-site .image-dialog.is-closing {
+  animation: lens-dialog-out 170ms ease-in both;
+}
+.consumer-site .image-dialog.is-closing::backdrop {
+  animation: lens-backdrop-in 170ms ease-in reverse both;
+}
+.consumer-site .image-dialog .detail-image {
+  animation: lens-page-in 240ms var(--motion-ease) both;
+}
+@media (hover: hover) and (pointer: fine) {
+  .consumer-site .travel-topic:hover:not(:active) {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px #16666b12;
+  }
+  .consumer-site .card-image-wrap:hover .result-media[data-ready="true"] img,
+  .consumer-site
+    .card-image-wrap:focus-within
+    .result-media[data-ready="true"]
+    img {
+    transform: scale(1.035);
+  }
+  .consumer-site .primary-button:hover:not(:active) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px #16666b26;
+  }
+}
+@keyframes lens-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes lens-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes lens-glow-in {
+  from {
+    opacity: 0;
+    transform: translateX(-22px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes lens-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.975);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes lens-dialog-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+}
+@keyframes lens-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .consumer-site *,
+  .consumer-site *::before,
+  .consumer-site *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .consumer-site .result-media img {
+    opacity: 1;
+    transform: none !important;
+  }
+  .consumer-site .travel-topic,
+  .consumer-site .gallery-view button,
+  .consumer-site .primary-button,
+  .consumer-site .secondary-button {
+    transform: none !important;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

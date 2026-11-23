@@ -1,0 +1,16 @@
+{
+  "profile": "faults",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "/home/tts/prj/backend/.venv/bin/python",
+        "scripts/qa_faults.py"
+      ],
+      "started_utc": "2026-11-07T15:04:20.108717+00:00",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed"
+}

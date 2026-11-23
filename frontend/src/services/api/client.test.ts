@@ -1,5 +1,5 @@
 import { vi } from "vitest";
-import { APIClientError, createAPIClient } from "./client";
+import { APIClientError, createAPIClient, decodeDiscovery } from "./client";
 
 test("maps a structured authentication error without losing request ID", async () => {
   vi.stubGlobal(
@@ -140,4 +140,60 @@ test("advanced client preserves text and image with normalized UI options withou
     fusion: { text_weight: 0.3, image_weight: 0.7 },
     rerank: { enabled: true },
   });
+});
+
+test.each([400, 401, 403, 404, 408, 422, 429, 500, 503])(
+  "HTTP %s keeps its status even when a proxy returns HTML",
+  async (status) => {
+    const fetch = vi
+      .fn()
+      .mockResolvedValue(
+        new Response("<html>Proxy failure</html>", { status }),
+      );
+    vi.stubGlobal("fetch", fetch);
+    await expect(
+      createAPIClient().workspace("unit-token"),
+    ).rejects.toMatchObject({ code: "HTTP_ERROR", status });
+    expect(fetch).toHaveBeenCalledTimes(1);
+  },
+);
+
+test("discovery validates gallery payloads and rejects duplicate or unsafe images", () => {
+  const id = "12345678-1234-4234-8234-123456789abc";
+  const item = {
+    image_id: id,
+    rank: 1,
+    score: 0,
+    score_type: "cosine",
+    image_url: `/api/v1/images/${id}/content?variant=original`,
+    thumbnail_url: `/api/v1/images/${id}/content?variant=thumbnail`,
+    metadata: {
+      title: "Đà Nẵng",
+      width: 600,
+      height: 400,
+      media_type: "image/jpeg",
+      tags: [],
+      source_dataset: "public",
+      city: null,
+      license: "CC0",
+    },
+  };
+  expect(
+    decodeDiscovery({ results: [item], total_results: 1 }).results[0].image_id,
+  ).toBe(id);
+  expect(decodeDiscovery({ results: [], total_results: 0 }).results).toEqual(
+    [],
+  );
+  expect(() =>
+    decodeDiscovery({ results: [item, item], total_results: 2 }),
+  ).toThrow();
+  expect(() =>
+    decodeDiscovery({
+      results: [{ ...item, thumbnail_url: "https://external.test/a.jpg" }],
+      total_results: 1,
+    }),
+  ).toThrow();
+  expect(() =>
+    decodeDiscovery({ results: [item], total_results: 2 }),
+  ).toThrow();
 });

@@ -1,0 +1,14 @@
+{
+  "index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "collection": "images_clip_coco_phase08_v1_1ea0b3304d04",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "dimension": 512,
+  "device": "cpu",
+  "model_initialization_ms": 2965.204652000466
+}
+
+ Container ai-image-search-indexing-worker-run-b88ebb72699a Creating 
+ Container ai-image-search-indexing-worker-run-b88ebb72699a Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(

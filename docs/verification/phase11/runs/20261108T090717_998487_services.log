@@ -1,0 +1,124 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-482034b6611a Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-482034b6611a Created 
+..............F                                                          [100%]
+=================================== FAILURES ===================================
+____________ test_admin_upload_index_activation_and_knowledge_scope ____________
+
+accounts = (<fastapi.applications.FastAPI object at 0x75e67442deb0>, <httpx.AsyncClient object at 0x75e6743e4140>, <httpx.AsyncClient object at 0x75e674412390>, 'eff89d19-98fa-4733-a5d7-7568b851d4b8', '1bedd4a2-dc89-4df8-b181-d5fa237ec323')
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...ject at 0x75e6743e4aa0>, token='a53f61550f0048f59b3bc265792dd6b7', collections={'images_qa_a53f61550f00_de48d0f1634e'})
+
+    async def test_admin_upload_index_activation_and_knowledge_scope(accounts, qa_resources):
+        import json
+        from uuid import uuid4
+    
+        from app.repositories.knowledge_repository import KnowledgeRepository
+    
+        app, admin, _, _, uid = accounts
+        runtime, ids = await seed_search(qa_resources, app)
+        try:
+            datasets = (await admin.get("/api/v1/admin/datasets")).json()["datasets"]
+            dataset = next(d for d in datasets if d["key"] == "private_a")
+            for _ in range(2):
+                uploaded = await admin.post(
+                    "/api/v1/admin/images/upload",
+                    files={"image": ("test.png", image_bytes(2), "image/png")},
+                    data={
+                        "dataset_id": dataset["id"],
+                        "metadata": json.dumps(
+                            {
+                                "title": "Uploaded test image",
+                                "license": "generated",
+                                "rights_ref": "fixture://access",
+                            }
+                        ),
+                    },
+                    headers={"Idempotency-Key": "qa-admin-upload"},
+                )
+                assert uploaded.status_code == 202, uploaded.text
+            await Worker(qa_resources.services, runtime.encoder, runtime.registry.index.id).run(
+                once=True
+            )
+            created = await admin.post(
+                "/api/v1/admin/indexes",
+                json={
+                    "model_id": str(runtime.registry.model.id),
+                    "version": "qa_access_" + uuid4().hex[:12],
+                },
+            )
+            assert created.status_code == 201, created.text
+            index_id = UUID(created.json()["id"])
+            queued = await admin.post(
+                "/api/v1/admin/indexes/reindex", json={"target_index_id": str(index_id)}
+            )
+            assert queued.status_code == 202, queued.text
+            await Worker(qa_resources.services, runtime.encoder, index_id).run(once=True)
+            verified = await admin.post(
+                "/api/v1/admin/indexes/verify", json={"index_id": str(index_id)}
+            )
+            assert verified.status_code == 200 and verified.json()["status"] == "pass", verified.text
+            activated = await admin.post(
+                "/api/v1/admin/indexes/activate", json={"index_id": str(index_id)}
+            )
+            assert activated.status_code == 200 and activated.json()["generation"] == 2, activated.text
+            assert str(app.state.search_runtime.registry.index.id) == str(index_id)
+            city, landmark, relationship = uuid4(), uuid4(), uuid4()
+            payload = {
+                "fixture": True,
+                "entities": [
+                    {
+                        "id": str(city),
+                        "canonical_name": "QA Secret City",
+                        "entity_type": "city",
+                        "provenance": {"source_ref": "fixture://access"},
+                    },
+                    {
+                        "id": str(landmark),
+                        "canonical_name": "QA Secret Place",
+                        "entity_type": "landmark",
+                        "provenance": {"source_ref": "fixture://access"},
+                    },
+                ],
+                "relationships": [
+                    {
+                        "id": str(relationship),
+                        "subject_id": str(landmark),
+                        "predicate": "located_in",
+                        "object_id": str(city),
+                        "source_ref": "fixture://access",
+                        "evidence": {"fixture": True},
+                        "verified_at": now().isoformat(),
+                    }
+                ],
+                "image_entities": [
+                    {
+                        "image_id": str(ids[0]),
+                        "entity_id": str(landmark),
+                        "source_ref": "fixture://access",
+                        "verified": True,
+                    }
+                ],
+            }
+            for apply in [False, True]:
+                imported = await admin.post(
+                    "/api/v1/admin/knowledge",
+                    json={"dataset_id": dataset["id"], "knowledge": payload, "apply": apply},
+                )
+>               assert imported.status_code == 200, imported.text
+E               AssertionError: {"error":{"code":"KNOWLEDGE_REJECTED","message":"Kiểm tra nguồn, IDs và liên kết ảnh của gói tri thức","request_id":"a01991aa-a149-4c03-9634-002258fc1e4c","retryable":false,"details":[]}}
+E               assert 422 == 200
+E                +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+backend/tests/integration/test_access_control.py:383: AssertionError
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py: 2 warnings
+tests/integration/test_qa_services.py: 7 warnings
+tests/integration/test_qa_worker_process.py: 1 warning
+tests/integration/test_access_control.py: 4 warnings
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_access_control.py::test_admin_upload_index_activation_and_knowledge_scope
+1 failed, 14 passed, 14 warnings in 40.24s
+

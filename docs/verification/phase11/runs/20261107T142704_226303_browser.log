@@ -1,0 +1,281 @@
+
+Running 12 tests using 1 worker
+
+  ✘   1 [qa-desktop] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (1ms)
+  ✘   2 [qa-desktop] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (2ms)
+  ✘   3 [qa-desktop] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (2ms)
+  ✘   4 [qa-mobile] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (1ms)
+  ✘   5 [qa-mobile] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (2ms)
+  ✘   6 [qa-mobile] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (2ms)
+  ✘   7 [qa-firefox] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (905ms)
+  ✘   8 [qa-firefox] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (893ms)
+  ✘   9 [qa-firefox] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (919ms)
+  ✘  10 [qa-webkit] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (136ms)
+  ✘  11 [qa-webkit] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (139ms)
+  ✘  12 [qa-webkit] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (132ms)
+
+
+  1) [qa-desktop] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-qKKruW --remote-debugging-pipe --no-startup-window
+    <launched> pid=41
+    [pid=41][err] [1107/212705.341794:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+    Call log:
+      - <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-qKKruW --remote-debugging-pipe --no-startup-window
+      - <launched> pid=41
+      - [pid=41][err] [1107/212705.341794:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+      - [pid=41] <gracefully close start>
+      - [pid=41] <kill>
+      - [pid=41] <will force kill>
+      - [pid=41] <process did exit: exitCode=null, signal=SIGTRAP>
+      - [pid=41] starting temporary directories cleanup
+      - [pid=41] finished temporary directories cleanup
+      - [pid=41] <gracefully close end>
+
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-EMPTY-·-2d712-ata-state-and-accessibility-qa-desktop/error-context.md
+
+  2) [qa-desktop] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-CyYWbD --remote-debugging-pipe --no-startup-window
+    <launched> pid=54
+    [pid=54][err] [1107/212705.853263:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+    Call log:
+      - <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-CyYWbD --remote-debugging-pipe --no-startup-window
+      - <launched> pid=54
+      - [pid=54][err] [1107/212705.853263:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+      - [pid=54] <gracefully close start>
+      - [pid=54] <kill>
+      - [pid=54] <will force kill>
+      - [pid=54] <process did exit: exitCode=null, signal=SIGTRAP>
+      - [pid=54] starting temporary directories cleanup
+      - [pid=54] finished temporary directories cleanup
+      - [pid=54] <gracefully close end>
+
+
+    Error Context: frontend/test-results/real-REAL-CLIP-SYNTHETIC-·-93a14-ed-multi-intent-and-details-qa-desktop/error-context.md
+
+  3) [qa-desktop] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-bYx8ce --remote-debugging-pipe --no-startup-window
+    <launched> pid=67
+    [pid=67][err] [1107/212706.349641:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+    Call log:
+      - <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-bYx8ce --remote-debugging-pipe --no-startup-window
+      - <launched> pid=67
+      - [pid=67][err] [1107/212706.349641:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+      - [pid=67] <gracefully close start>
+      - [pid=67] <kill>
+      - [pid=67] <will force kill>
+      - [pid=67] <process did exit: exitCode=null, signal=SIGTRAP>
+      - [pid=67] starting temporary directories cleanup
+      - [pid=67] finished temporary directories cleanup
+      - [pid=67] <gracefully close end>
+
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-FICTION-66590-nded-Agent-and-disabled-RAG-qa-desktop/error-context.md
+
+  4) [qa-mobile] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-MqkJEW --remote-debugging-pipe --no-startup-window
+    <launched> pid=80
+    [pid=80][err] [1107/212706.855609:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+    Call log:
+      - <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-MqkJEW --remote-debugging-pipe --no-startup-window
+      - <launched> pid=80
+      - [pid=80][err] [1107/212706.855609:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+      - [pid=80] <gracefully close start>
+      - [pid=80] <kill>
+      - [pid=80] <will force kill>
+      - [pid=80] <process did exit: exitCode=null, signal=SIGTRAP>
+      - [pid=80] starting temporary directories cleanup
+      - [pid=80] finished temporary directories cleanup
+      - [pid=80] <gracefully close end>
+
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-EMPTY-·-2d712-ata-state-and-accessibility-qa-mobile/error-context.md
+
+  5) [qa-mobile] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-jlI9qV --remote-debugging-pipe --no-startup-window
+    <launched> pid=93
+    [pid=93][err] [1107/212707.368329:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+    Call log:
+      - <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-jlI9qV --remote-debugging-pipe --no-startup-window
+      - <launched> pid=93
+      - [pid=93][err] [1107/212707.368329:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+      - [pid=93] <gracefully close start>
+      - [pid=93] <kill>
+      - [pid=93] <will force kill>
+      - [pid=93] <process did exit: exitCode=null, signal=SIGTRAP>
+      - [pid=93] starting temporary directories cleanup
+      - [pid=93] finished temporary directories cleanup
+      - [pid=93] <gracefully close end>
+
+
+    Error Context: frontend/test-results/real-REAL-CLIP-SYNTHETIC-·-93a14-ed-multi-intent-and-details-qa-mobile/error-context.md
+
+  6) [qa-mobile] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-BhKKEG --remote-debugging-pipe --no-startup-window
+    <launched> pid=106
+    [pid=106][err] [1107/212707.877985:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+    Call log:
+      - <launching> /home/tts/prj/.cache/playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-BhKKEG --remote-debugging-pipe --no-startup-window
+      - <launched> pid=106
+      - [pid=106][err] [1107/212707.877985:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+      - [pid=106] <gracefully close start>
+      - [pid=106] <kill>
+      - [pid=106] <will force kill>
+      - [pid=106] <process did exit: exitCode=null, signal=SIGTRAP>
+      - [pid=106] starting temporary directories cleanup
+      - [pid=106] finished temporary directories cleanup
+      - [pid=106] <gracefully close end>
+
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-FICTION-66590-nded-Agent-and-disabled-RAG-qa-mobile/error-context.md
+
+  7) [qa-firefox] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+
+    Error: page.goto: NS_ERROR_OUT_OF_MEMORY
+    Call log:
+      - navigating to "http://127.0.0.1:5175/", waiting until "load"
+
+
+       6 | test.beforeEach(async ({ page }) => {
+       7 |   expect(process.env.QA_API_TOKEN, "QA-only token required").toBeTruthy();
+    >  8 |   await page.goto("/");
+         |              ^
+       9 |   await page.locator("#search-token").fill(process.env.QA_API_TOKEN!);
+      10 | });
+      11 |
+        at /home/tts/prj/frontend/qa-e2e/real.spec.ts:8:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    frontend/test-results/real-REAL-SERVICES-EMPTY-·-2d712-ata-state-and-accessibility-qa-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-EMPTY-·-2d712-ata-state-and-accessibility-qa-firefox/error-context.md
+
+  8) [qa-firefox] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+
+    Error: page.goto: NS_ERROR_OUT_OF_MEMORY
+    Call log:
+      - navigating to "http://127.0.0.1:5175/", waiting until "load"
+
+
+       6 | test.beforeEach(async ({ page }) => {
+       7 |   expect(process.env.QA_API_TOKEN, "QA-only token required").toBeTruthy();
+    >  8 |   await page.goto("/");
+         |              ^
+       9 |   await page.locator("#search-token").fill(process.env.QA_API_TOKEN!);
+      10 | });
+      11 |
+        at /home/tts/prj/frontend/qa-e2e/real.spec.ts:8:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    frontend/test-results/real-REAL-CLIP-SYNTHETIC-·-93a14-ed-multi-intent-and-details-qa-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: frontend/test-results/real-REAL-CLIP-SYNTHETIC-·-93a14-ed-multi-intent-and-details-qa-firefox/error-context.md
+
+  9) [qa-firefox] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 
+
+    Error: page.goto: NS_ERROR_OUT_OF_MEMORY
+    Call log:
+      - navigating to "http://127.0.0.1:5175/", waiting until "load"
+
+
+       6 | test.beforeEach(async ({ page }) => {
+       7 |   expect(process.env.QA_API_TOKEN, "QA-only token required").toBeTruthy();
+    >  8 |   await page.goto("/");
+         |              ^
+       9 |   await page.locator("#search-token").fill(process.env.QA_API_TOKEN!);
+      10 | });
+      11 |
+        at /home/tts/prj/frontend/qa-e2e/real.spec.ts:8:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    frontend/test-results/real-REAL-SERVICES-FICTION-66590-nded-Agent-and-disabled-RAG-qa-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-FICTION-66590-nded-Agent-and-disabled-RAG-qa-firefox/error-context.md
+
+  10) [qa-webkit] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+
+    Error: browser.newContext: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=739
+    [pid=739][err] 
+    [pid=739][err] ** (MiniBrowser:745): ERROR **: 21:28:43.317: Failed to adopt IPC::Connection socket: creating GSocket from fd: Operation not permitted
+    [pid=739][err] 
+    [pid=739][err] ** (process:757): ERROR **: 21:28:43.351: Failed to adopt IPC::Connection socket: creating GSocket from fd: Operation not permitted
+    [pid=739][err] /home/tts/prj/.cache/playwright/webkit-2370/pw_run.sh: line 24:   745 Trace/breakpoint trap   (core dumped) WEBKIT_FORCE_COMPLEX_TEXT="1" "$MINIBROWSER" "$@"
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-EMPTY-·-2d712-ata-state-and-accessibility-qa-webkit/error-context.md
+
+  11) [qa-webkit] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+
+    Error: browser.newContext: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=773
+    [pid=773][err] 
+    [pid=773][err] ** (MiniBrowser:779): ERROR **: 21:28:43.923: Failed to adopt IPC::Connection socket: creating GSocket from fd: Operation not permitted
+    [pid=773][err] 
+    [pid=773][err] ** (process:791): ERROR **: 21:28:43.960: Failed to adopt IPC::Connection socket: creating GSocket from fd: Operation not permitted
+    [pid=773][err] /home/tts/prj/.cache/playwright/webkit-2370/pw_run.sh: line 24:   779 Trace/breakpoint trap   (core dumped) WEBKIT_FORCE_COMPLEX_TEXT="1" "$MINIBROWSER" "$@"
+    [pid=773] <process did exit: exitCode=133, signal=null>
+    [pid=773] starting temporary directories cleanup
+
+    Error Context: frontend/test-results/real-REAL-CLIP-SYNTHETIC-·-93a14-ed-multi-intent-and-details-qa-webkit/error-context.md
+
+  12) [qa-webkit] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 
+
+    Error: browser.newContext: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/tts/prj/.cache/playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=807
+    [pid=807][err] 
+    [pid=807][err] ** (MiniBrowser:813): ERROR **: 21:28:44.539: Failed to adopt IPC::Connection socket: creating GSocket from fd: Operation not permitted
+    [pid=807][err] 
+    [pid=807][err] ** (process:825): ERROR **: 21:28:44.571: Failed to adopt IPC::Connection socket: creating GSocket from fd: Operation not permitted
+    [pid=807][err] /home/tts/prj/.cache/playwright/webkit-2370/pw_run.sh: line 24:   813 Trace/breakpoint trap   (core dumped) WEBKIT_FORCE_COMPLEX_TEXT="1" "$MINIBROWSER" "$@"
+
+    Error Context: frontend/test-results/real-REAL-SERVICES-FICTION-66590-nded-Agent-and-disabled-RAG-qa-webkit/error-context.md
+
+  12 failed
+    [qa-desktop] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+    [qa-desktop] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+    [qa-desktop] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 
+    [qa-mobile] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+    [qa-mobile] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+    [qa-mobile] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 
+    [qa-firefox] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+    [qa-firefox] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+    [qa-firefox] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 
+    [qa-webkit] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility 
+    [qa-webkit] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+    [qa-webkit] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG 

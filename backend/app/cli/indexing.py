@@ -13,16 +13,17 @@ from uuid import UUID, uuid4
 from sqlalchemy import select
 
 from app.core.config import Settings
+from app.core.container import Services
 from app.core.logging import configure_logging
 from app.db.models import DatasetSource
 from app.schemas.ingestion import ImageMetadataInput, JobInput
 from app.services.embeddings.clip_encoder import ClipEncoder
-from app.services.health import Services
 from app.services.indexing.collection_manager import CollectionManager
 from app.services.indexing.consistency import object_orphans, verify_index
 from app.services.indexing.jobs import ingest, job_response
 from app.services.indexing.submission import submit_job
 from app.services.indexing.worker import Worker
+from app.services.ingestion.validator import validate_image
 
 
 def output(value):
@@ -32,9 +33,13 @@ def output(value):
 async def execute(args):
     settings = Settings()
     configure_logging(settings.log_level)
-    services = Services(settings)
+    dry_run = getattr(args, "dry_run", False)
+    if args.command in {"image", "dataset"} and not dry_run and args.index is None:
+        raise ValueError("TARGET_INDEX_REQUIRED")
+    services = None if dry_run else Services(settings)
     try:
-        await services.initialize()
+        if services is not None:
+            await services.initialize()
         if args.command == "register":
             encoder = await asyncio.to_thread(ClipEncoder, settings)
             index, model = await CollectionManager(services).register(encoder, args.version)
@@ -76,10 +81,11 @@ async def execute(args):
                 {
                     "model_initialization_ms": encoder.initialization_ms,
                     "device": encoder.device,
-                    "batches": worker.batch_metrics,
+                    "batches": list(worker.batch_metrics),
+                    "total_batches": worker.total_batches,
+                    "batch_metrics_capacity": worker.batch_metrics.maxlen,
                     "worker_ms": worker_ms,
-                    "images_per_second": sum(b["batch_size"] for b in worker.batch_metrics)
-                    / (worker_ms / 1000),
+                    "images_per_second": worker.total_batch_images / (worker_ms / 1000),
                     "peak_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
                 }
             )
@@ -98,6 +104,14 @@ async def execute(args):
                 for line in raw.decode().splitlines():
                     row = json.loads(line)
                     name = row.pop("filename")
+                    relative_name = Path(name)
+                    if (
+                        name in metadata_by_file
+                        or relative_name.is_absolute()
+                        or ".." in relative_name.parts
+                        or not (path / relative_name).is_file()
+                    ):
+                        raise ValueError("INVALID_OR_DUPLICATE_MANIFEST_FILENAME")
                     metadata_by_file[name] = row
             candidates = sorted(path.rglob("*")) if path.is_dir() else [path]
             files = [
@@ -108,6 +122,7 @@ async def execute(args):
             if not 1 <= len(files) <= 1000:
                 raise ValueError("DATASET_COUNT_LIMIT")
             report = {
+                "dry_run": dry_run,
                 "discovered": len(files),
                 "validated": 0,
                 "duplicates": 0,
@@ -127,12 +142,20 @@ async def execute(args):
                         data = handle.read(settings.image_max_upload_mb * 1024**2 + 1)
                     relative = file.relative_to(path).as_posix() if path.is_dir() else file.name
                     values = {
-                        "source_dataset": args.name,
+                        "source_dataset": args.name
+                        + ("@" + args.version if getattr(args, "version", None) else ""),
                         "license": args.license,
                         "rights_ref": args.rights_ref,
                         **metadata_by_file.get(relative, {}),
                     }
                     metadata = ImageMetadataInput.model_validate(values)
+                    if dry_run:
+                        decoded = await validate_image(data, settings)
+                        report["validated"] += 1
+                        report["results"].append(
+                            {"filename": relative, "sha256": decoded.sha256, "status": "valid"}
+                        )
+                        continue
                     key = (
                         "cli-"
                         + hashlib.sha256(
@@ -188,6 +211,8 @@ async def execute(args):
                         session.add(source)
                     report["source_id"] = str(source.id)
             output(report)
+            if report["failed"]:
+                return 1
         elif args.command == "job":
             output(await job_response(services, args.job, limit=100))
         elif args.command in {"retry", "reindex", "source"}:
@@ -209,7 +234,8 @@ async def execute(args):
                 return 1
         return 0
     finally:
-        await services.close()
+        if services is not None:
+            await services.close()
 
 
 def main():
@@ -225,10 +251,12 @@ def main():
     for name in ["image", "dataset"]:
         p = sub.add_parser(name)
         p.add_argument("--input", required=True)
-        p.add_argument("--index", type=UUID, required=True)
+        p.add_argument("--index", type=UUID)
         p.add_argument("--name", required=True)
         p.add_argument("--license", required=True)
         p.add_argument("--rights-ref", required=True)
+        p.add_argument("--version")
+        p.add_argument("--dry-run", action="store_true")
     p = sub.add_parser("job")
     p.add_argument("--job", type=UUID, required=True)
     p = sub.add_parser("retry")

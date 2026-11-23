@@ -7,10 +7,10 @@ from sqlalchemy import func, select, text
 from sqlalchemy.dialects import postgresql
 
 from app.core.config import Settings
+from app.core.container import Services
 from app.db.models import ImageMetadata, SearchIndex
 from app.db.models.indexing import ImageTag
 from app.repositories.image_repository import ImageRepository
-from app.services.health import Services
 
 
 async def profile_services(snapshot):

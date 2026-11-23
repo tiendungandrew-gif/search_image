@@ -1,0 +1,60 @@
+{
+  "query_id": "fd85fb23-70af-4e10-8241-f3eb5f9becfb",
+  "request_id": "df1cde3c-029d-442b-8842-9f7dcef1ea74",
+  "execution_id": "dcf5cc16-6a9f-4aac-b747-07ab1d24389b",
+  "index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "service_class": "augmented",
+  "requested_mode": "agent",
+  "search_mode": "agent",
+  "status": "insufficient_evidence",
+  "query_success": false,
+  "dataset_status": "available",
+  "results": [],
+  "resolved_entities": [],
+  "steps": [
+    {
+      "step_id": "anchor",
+      "tool": "entity_lookup",
+      "status": "insufficient_evidence",
+      "duration_ms": 4.276278000133971,
+      "logical_hop": 0,
+      "result_count": 0,
+      "error_code": "INSUFFICIENT_EVIDENCE",
+      "evidence_ids": []
+    }
+  ],
+  "evidence": [],
+  "image_associations": [],
+  "image_sources": {},
+  "answer": null,
+  "rag": null,
+  "relationship_summary": null,
+  "planner_mode": "deterministic",
+  "planner_attempts": 0,
+  "plan_validated": true,
+  "planner_version": "agent-template-plan-v1",
+  "planner_usage": [],
+  "planner_model_id": null,
+  "planner_prompt_sha256": null,
+  "plan_id": "0b7fa82f-d8a2-4470-ae95-3274861da39e",
+  "logical_hops": 0,
+  "tool_calls": 1,
+  "latency_ms": 14.11697000003187,
+  "latency": {
+    "routing_ms": 0.04070499994668353,
+    "planning_ms": 0.33667000002424174,
+    "aggregation_ms": 0.0,
+    "provider_ttft_ms": null,
+    "provider_ttlast_ms": null,
+    "request_ttlast_ms": null,
+    "total_ms": 14.11697000003187,
+    "tools_ms": 4.276278000133971
+  },
+  "warnings": [
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "error_code": "INSUFFICIENT_EVIDENCE",
+  "verification_state": "NOT_VERIFIED"
+}

@@ -1,0 +1,42 @@
+
+> ai-image-search-frontend@0.3.0 typecheck
+> tsc -b
+
+
+> ai-image-search-frontend@0.3.0 lint
+> eslint . --max-warnings 0
+
+
+> ai-image-search-frontend@0.3.0 test
+> vitest run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90m/srv/frontend[39m
+
+ [32m✓[39m src/features/agent/api.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m src/services/api/client.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 54[2mms[22m[39m
+ [32m✓[39m src/features/agent/AgentResults.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 199[2mms[22m[39m
+ [32m✓[39m src/features/rag/ExplanationPanel.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 375[2mms[22m[39m
+ [32m✓[39m src/app/App.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1027[2mms[22m[39m
+   [33m[2m✓[22m[39m renders real health, editable query and explicitly disabled search without retrieval calls [33m 510[2mms[22m[39m
+   [33m[2m✓[22m[39m checks actual readiness with session token and renders degraded dependencies [33m 351[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m5 passed[39m[22m[90m (5)[39m
+[2m      Tests [22m [1m[32m18 passed[39m[22m[90m (18)[39m
+[2m   Start at [22m 15:15:48
+[2m   Duration [22m 3.08s[2m (transform 1.05s, setup 2.01s, import 1.27s, tests 1.71s, environment 4.73s)[22m
+
+
+> ai-image-search-frontend@0.3.0 build
+> tsc -b && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 38 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.60 kB │ gzip:  0.38 kB
+dist/assets/index-DFaqx88H.css   15.55 kB │ gzip:  4.50 kB
+dist/assets/index-DnjLwB4e.js   253.34 kB │ gzip: 79.28 kB
+✓ built in 1.51s
+

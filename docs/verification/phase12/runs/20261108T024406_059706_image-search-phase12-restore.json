@@ -1,0 +1,15 @@
+{
+  "project": "image-search-phase12-restore",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker inspect --format '{{json .State.Health}}' image-search-phase12-restore-worker-1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3358538010002121
+    }
+  ]
+}

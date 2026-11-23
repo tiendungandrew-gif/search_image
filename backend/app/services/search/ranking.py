@@ -9,9 +9,14 @@ def rank_unique(candidates):
 
 
 def matches_metadata(filters, image, metadata, tags):
+    if filters.image_ids is not None and image.id not in filters.image_ids:
+        return False
     for field in ["source_dataset", "city"]:
         expected = getattr(filters, field)
-        if expected is not None and (metadata is None or getattr(metadata, field) != expected):
+        actual = getattr(metadata, field) if metadata else None
+        if field == "source_dataset" and expected == "__unassigned__":
+            actual = actual if actual is not None else "__unassigned__"
+        if expected is not None and actual != expected:
             return False
     if filters.media_types and image.media_type not in filters.media_types:
         return False

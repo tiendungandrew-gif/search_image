@@ -1,0 +1,10 @@
+{
+  "name": "phase12_proxy_fast",
+  "seed": 42,
+  "profile": "fast",
+  "requests": 300,
+  "warmup": 10,
+  "concurrency": 1,
+  "top_k": 7,
+  "sample_resources": true
+}

@@ -335,6 +335,9 @@ def generate_report(results, output):
             f"- `{run['experiment']['experiment_id']}` → "
             f"[raw artifact]({os.path.relpath(run['artifact'], target)})"
         )
+    from app.evaluation.agent import report_agent_runs
+
+    text.extend(report_agent_runs(runs, target))
     (target / "REPORT.md").write_text("\n".join(text) + "\n")
     return {
         "status": "generated",

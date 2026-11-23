@@ -1,0 +1,62 @@
+{
+  "MASTER_SPEC.md": {
+    "exists": true,
+    "bytes": 26132
+  },
+  "PRD.md": {
+    "exists": true,
+    "bytes": 20373
+  },
+  "SAD.md": {
+    "exists": true,
+    "bytes": 20005
+  },
+  "SYSTEM_ARCHITECTURE.md": {
+    "exists": true,
+    "bytes": 17308
+  },
+  "DATABASE_DESIGN.md": {
+    "exists": true,
+    "bytes": 32679
+  },
+  "API_SPECIFICATION.md": {
+    "exists": true,
+    "bytes": 36255
+  },
+  "ENGINEERING_STANDARDS.md": {
+    "exists": true,
+    "bytes": 11302
+  },
+  "SEMANTIC_SEARCH.md": {
+    "exists": true,
+    "bytes": 7809
+  },
+  "MULTIMODAL_SEARCH.md": {
+    "exists": true,
+    "bytes": 4892
+  },
+  "MULTI_INTENT_SEARCH.md": {
+    "exists": true,
+    "bytes": 6000
+  },
+  "RAG_ARCHITECTURE.md": {
+    "exists": true,
+    "bytes": 3096
+  },
+  "AGENT_ARCHITECTURE.md": {
+    "exists": true,
+    "bytes": 5133
+  },
+  "FRONTEND_ARCHITECTURE.md": {
+    "exists": true,
+    "bytes": 4699
+  },
+  "EVALUATION_METHODOLOGY.md": {
+    "exists": true,
+    "bytes": 4750
+  },
+  "PHASE10_TEST_REPORT.md": {
+    "exists": true,
+    "bytes": 13640
+  }
+}

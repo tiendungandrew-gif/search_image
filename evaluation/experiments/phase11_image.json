@@ -1,0 +1,8 @@
+{
+  "name": "phase11_image",
+  "seed": 42,
+  "profile": "image",
+  "requests": 24,
+  "warmup": 4,
+  "sample_resources": true
+}

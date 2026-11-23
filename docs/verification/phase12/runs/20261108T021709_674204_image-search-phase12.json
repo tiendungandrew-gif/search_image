@@ -1,0 +1,35 @@
+{
+  "project": "image-search-phase12",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-deps --no-build --wait --wait-timeout 120 backend worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 20.63416118600003
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.operations inventory"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.299823951999997
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-deps --no-build --wait --wait-timeout 120 backend worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 11.176813817000038
+    }
+  ]
+}

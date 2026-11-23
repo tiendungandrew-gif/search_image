@@ -1,0 +1,12 @@
+{
+  "sha256": {
+    "frontend/src/app/App.tsx": "41ce0e24ece52747f21719ae326080cf2ed158f1e5950be52067e495ebe2ee78",
+    "frontend/src/features/search/SearchWorkspace.tsx": "46c29c20b9945c13e4f8ed8d705db3187ce4f22338262eea69ac7de362deb171",
+    "frontend/src/features/search/SearchForm.tsx": "3d80b971a369642fdac21642a736d75b6ef57212ac8eb6c22474039939a8d754",
+    "frontend/src/styles/discovery.css": "45956657c1ba46b534c03b39118920d4f59feb7ad31daabb6dabbc5ee798d65b",
+    "backend/app/core/auth.py": "0aa07f52637dd8876cf8a9ab1f0f657abcb22015438c2c711aa991aa413dd00e",
+    "backend/app/core/access.py": "ef182ea4c06c2e8d78f297edaed005f97dfee77cbdf4be0fbaf54db97c386fcd",
+    ".env": "dd1c8b4828db2fdded7f7cd62e198274dedc8c2e4bc2fff40c23dcceff0b35c5",
+    "config/environments/deployment.env": "d17584b3f9e5a070a54d563ef75f92aa71f7b8938516d38471f4832a51f349dc"
+  }
+}

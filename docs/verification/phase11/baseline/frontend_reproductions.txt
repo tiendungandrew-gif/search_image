@@ -1,0 +1,145 @@
+
+> ai-image-search-frontend@0.3.0 test
+> vitest run src/hooks/useHealth.test.tsx src/features/rag/ExplanationPanel.test.tsx
+
+
+ RUN  v4.1.12 /home/tts/prj/frontend
+
+ ❯ src/hooks/useHealth.test.tsx (1 test | 1 failed) 46ms
+   × unmount cancels the current manual refresh, including a superseded initial request 39ms
+ ❯ src/features/rag/ExplanationPanel.test.tsx (6 tests | 1 failed) 1409ms
+   × recoverable RAG stream errors wait for the validated terminal unavailable result 1016ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/hooks/useHealth.test.tsx > unmount cancels the current manual refresh, including a superseded initial request
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/hooks/useHealth.test.tsx:17:28
+     15|   expect(calls[1].aborted).toBe(false);
+     16|   unmount();
+     17|   expect(calls[1].aborted).toBe(true);
+       |                            ^
+     18| });
+     19|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/features/rag/ExplanationPanel.test.tsx > recoverable RAG stream errors wait for the validated terminal unavailable result
+TestingLibraryElementError: Unable to find an element by: [data-testid="rag-answer"]
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-labelledby[39m=[32m"explanation-heading"[39m
+      [33mclass[39m=[32m"explanation-panel"[39m
+    [36m>[39m
+      [36m<h3[39m
+        [33mid[39m=[32m"explanation-heading"[39m
+      [36m>[39m
+        [0mGiải thích kết quả[0m
+      [36m</h3>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"muted"[39m
+      [36m>[39m
+        [0mDùng thông tin đã lưu của các ảnh. Nội dung ảnh chỉ được xác nhận khi có bằng chứng phù hợp.[0m
+      [36m</p>[39m
+      [36m<label[39m
+        [33mclass[39m=[32m"field-label"[39m
+        [33mfor[39m=[32m"rag-question"[39m
+      [36m>[39m
+        [0mBạn muốn biết điều gì?[0m
+      [36m</label>[39m
+      [36m<textarea[39m
+        [33mid[39m=[32m"rag-question"[39m
+        [33mmaxlength[39m=[32m"2000"[39m
+        [33mrows[39m=[32m"2"[39m
+      [36m>[39m
+        [0mcoffee[0m
+      [36m</textarea>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"diagnostic-button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mThử lại giải thích[0m
+      [36m</button>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"error-message"[39m
+        [33mrole[39m=[32m"alert"[39m
+      [36m>[39m
+        [0mRAG dừng: LLM_TIMEOUT[0m
+      [36m</p>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-labelledby[39m=[32m"explanation-heading"[39m
+      [33mclass[39m=[32m"explanation-panel"[39m
+    [36m>[39m
+      [36m<h3[39m
+        [33mid[39m=[32m"explanation-heading"[39m
+      [36m>[39m
+        [0mGiải thích kết quả[0m
+      [36m</h3>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"muted"[39m
+      [36m>[39m
+        [0mDùng thông tin đã lưu của các ảnh. Nội dung ảnh chỉ được xác nhận khi có bằng chứng phù hợp.[0m
+      [36m</p>[39m
+      [36m<label[39m
+        [33mclass[39m=[32m"field-label"[39m
+        [33mfor[39m=[32m"rag-question"[39m
+      [36m>[39m
+        [0mBạn muốn biết điều gì?[0m
+      [36m</label>[39m
+      [36m<textarea[39m
+        [33mid[39m=[32m"rag-question"[39m
+        [33mmaxlength[39m=[32m"2000"[39m
+        [33mrows[39m=[32m"2"[39m
+      [36m>[39m
+        [0mcoffee[0m
+      [36m</textarea>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"diagnostic-button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mThử lại giải thích[0m
+      [36m</button>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"error-message"[39m
+        [33mrole[39m=[32m"alert"[39m
+      [36m>[39m
+        [0mRAG dừng: LLM_TIMEOUT[0m
+      [36m</p>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/rag/ExplanationPanel.test.tsx:179:23
+    177|   render(<ExplanationPanel results={results} token="unit" query="coffe…
+    178|   fireEvent.click(screen.getByRole("button", { name: "Giải thích bằng …
+    179|   expect(await screen.findByTestId("rag-answer")).toHaveTextContent("K…
+       |                       ^
+    180|   expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    181|   expect(screen.getByRole("button", { name: "Thử lại giải thích" })).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 5 passed (7)
+   Start at  20:30:23
+   Duration  3.09s (transform 325ms, setup 631ms, import 379ms, tests 1.45s, environment 1.86s)
+

@@ -1,0 +1,11 @@
+{
+  "name": "phase11_multimodal",
+  "seed": 42,
+  "profile": "advanced",
+  "query_types": [
+    "multimodal"
+  ],
+  "requests": 24,
+  "warmup": 4,
+  "sample_resources": true
+}

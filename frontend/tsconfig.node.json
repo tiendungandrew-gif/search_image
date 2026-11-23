@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
@@ -14,5 +14,18 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "types": ["node"]
   },
-  "include": ["vite.config.ts", "vitest.config.ts", "playwright.config.ts"]
+  "include": [
+    "vite.config.ts",
+    "vitest.config.ts",
+    "playwright*.config.ts",
+    "e2e/**/*.ts",
+    "qa-e2e/**/*.ts",
+    "deploy-e2e/**/*.ts",
+    "quick-login-e2e/**/*.ts",
+    "usability-e2e/**/*.ts",
+    "commercial-e2e/**/*.ts",
+    "navbar-e2e/**/*.ts",
+    "travel-e2e/**/*.ts",
+    "access-e2e/**/*.ts"
+  ]
 }

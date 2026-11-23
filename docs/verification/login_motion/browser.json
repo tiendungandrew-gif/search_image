@@ -1,0 +1,38 @@
+[
+  {
+    "name": "desktop",
+    "motion": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "layout": true,
+    "axeViolations": 0,
+    "quickLoginLogout": true
+  },
+  {
+    "name": "mobile",
+    "motion": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "layout": true,
+    "axeViolations": 0,
+    "quickLoginLogout": true
+  },
+  {
+    "name": "narrow",
+    "motion": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "layout": true,
+    "axeViolations": 0,
+    "quickLoginLogout": true
+  },
+  {
+    "name": "firefox",
+    "motion": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "layout": true,
+    "axeViolations": 0,
+    "quickLoginLogout": true
+  }
+]

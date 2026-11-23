@@ -1,0 +1,17 @@
+
+Running 4 tests using 1 worker
+
+  ✓  1 [desktop] › usability-e2e/search.spec.ts:40:1 › real library · approachable search, keyboard, photos, filters, dark theme and Admin (13.4s)
+  ✓  2 [mobile] › usability-e2e/search.spec.ts:40:1 › real library · approachable search, keyboard, photos, filters, dark theme and Admin (11.2s)
+  ✓  3 [narrow] › usability-e2e/search.spec.ts:40:1 › real library · approachable search, keyboard, photos, filters, dark theme and Admin (11.6s)
+  ✓  4 [firefox] › usability-e2e/search.spec.ts:40:1 › real library · approachable search, keyboard, photos, filters, dark theme and Admin (17.8s)
+
+  4 passed (1.0m)
+(node:404504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:405414) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:406243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:407052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

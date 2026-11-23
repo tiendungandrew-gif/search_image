@@ -59,5 +59,10 @@ def main():
     )
 
 
+    from app.cli.download_multilingual import download
+
+    download(root / "multilingual-text")
+
+
 if __name__ == "__main__":
     main()

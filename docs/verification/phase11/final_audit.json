@@ -1,0 +1,179 @@
+{
+  "timestamp_utc": "2026-11-07T15:09:46.746429+00:00",
+  "final_status": "READY_WITH_DOCUMENTED_LIMITATIONS",
+  "phase12_implemented": false,
+  "required_documents": [
+    "SYSTEM_AUDIT",
+    "TEST_STRATEGY",
+    "TEST_COVERAGE",
+    "INTEGRATION_TEST_REPORT",
+    "END_TO_END_TEST_REPORT",
+    "RELIABILITY_TEST_REPORT",
+    "SECURITY_AUDIT",
+    "PERFORMANCE_REGRESSION",
+    "BUG_FIX_REPORT",
+    "EMPTY_DATASET_TEST_REPORT",
+    "PHASE11_TEST_REPORT"
+  ],
+  "static_checks": [
+    {
+      "command": [
+        "backend/.venv/bin/ruff",
+        "check",
+        "backend",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "backend/.venv/bin/ruff",
+        "format",
+        "--check",
+        "backend",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "stdout": "179 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "backend/app",
+        "backend/tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker run --rm --network none -v /home/tts/prj:/repo:ro -w /repo rhysd/actionlint:1.7.9 -color .github/workflows/quality.yml"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker run --rm --network none -v /home/tts/prj:/repo:ro -w /repo golang:1.25.3-bookworm make -n test-integration test-containers test-e2e test-unit"
+      ],
+      "exit_code": 0,
+      "stdout": "python3 scripts/qa.py up\npython3 scripts/qa.py services\npython3 scripts/qa.py fast\npython3 scripts/qa.py services\npython3 scripts/qa.py frontend\npython3 scripts/qa.py browser\nuv run --project backend --extra dev --extra evaluation --frozen pytest backend/tests/unit backend/tests/security backend/tests/reliability\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout": " M .dockerignore\n M .env.example\n M .gitignore\n M Makefile\n M README.md\n M backend/Dockerfile\n M backend/app/api/router.py\n M backend/app/api/v1/health.py\n M backend/app/api/v1/images.py\n M backend/app/api/v1/rag.py\n M backend/app/api/v1/system.py\n M backend/app/cli/evaluation.py\n M backend/app/cli/indexing.py\n M backend/app/cli/rag.py\n M backend/app/core/config.py\n M backend/app/core/logging.py\n M backend/app/core/middleware.py\n M backend/app/db/models/__init__.py\n M backend/app/evaluation/benchmark.py\n M backend/app/evaluation/dataset.py\n M backend/app/evaluation/rag.py\n M backend/app/evaluation/reporting.py\n M backend/app/evaluation/tracking.py\n M backend/app/main.py\n M backend/app/schemas/filters.py\n M backend/app/schemas/ingestion.py\n M backend/app/schemas/rag.py\n M backend/app/services/indexing/collection_manager.py\n M backend/app/services/indexing/jobs.py\n M backend/app/services/indexing/worker.py\n M backend/app/services/rag/context_builder.py\n M backend/app/services/rag/generator.py\n M backend/app/services/rag/llm_provider.py\n M backend/app/services/search/ranking.py\n M backend/app/services/search/vector_retriever.py\n M backend/tests/conftest.py\n M backend/tests/integration/test_real_advanced_search.py\n M backend/tests/integration/test_real_rag.py\n M backend/tests/unit/test_rag.py\n M backend/tests/unit/test_schema.py\n M compose.yaml\n M datasets/README.md\n M docs/API_SPECIFICATION.md\n M docs/DATABASE_DESIGN.md\n M docs/DATASET_AND_GROUND_TRUTH.md\n M docs/DECISIONS.md\n M docs/DEVELOPMENT.md\n M docs/IMAGE_INDEXING.md\n M docs/MASTER_SPEC.md\n M docs/PHASE08_TEST_REPORT.md\n M docs/RAG_API.md\n M docs/RAG_ARCHITECTURE.md\n M docs/RAG_EVALUATION.md\n M docs/RAG_IMPLEMENTATION.md\n M docs/RAG_PERFORMANCE.md\n M docs/RAG_PROMPT_DESIGN.md\n M docs/ROADMAP.md\n M docs/SAD.md\n M docs/SETUP.md\n M docs/SYSTEM_ARCHITECTURE.md\n M evaluation/README.md\n M frontend/e2e/foundation.spec.ts\n M frontend/e2e/rag.spec.ts\n M frontend/package-lock.json\n M frontend/package.json\n M frontend/playwright.config.ts\n M frontend/src/app/App.tsx\n M frontend/src/features/rag/ExplanationPanel.tsx\n M frontend/src/features/search/ResultImage.tsx\n M frontend/src/features/search/SearchWorkspace.tsx\n M frontend/src/hooks/useHealth.ts\n M frontend/src/main.tsx\n M frontend/src/services/api/client.test.ts\n M frontend/src/services/api/client.ts\n M frontend/src/styles/index.css\n M frontend/src/types/api.ts\n M frontend/tsconfig.node.json\n M scripts/verify_rag_fallback.py\n M scripts/verify_search.py\n?? .github/\n?? backend/alembic/versions/20261106_agent_knowledge.py\n?? backend/app/api/v1/agent.py\n?? backend/app/cli/agent.py\n?? backend/app/cli/download_coco.py\n?? backend/app/cli/download_landmarks.py\n?? backend/app/cli/knowledge.py\n?? backend/app/cli/prepare_landmark_knowledge.py\n?? backend/app/db/models/knowledge.py\n?? backend/app/evaluation/agent.py\n?? backend/app/repositories/knowledge_import.py\n?? backend/app/repositories/knowledge_repository.py\n?? backend/app/schemas/agent.py\n?? backend/app/schemas/workspace.py\n?? backend/app/services/agent/\n?? backend/app/services/workspace.py\n?? backend/tests/__init__.py\n?? backend/tests/fixtures/\n?? backend/tests/integration/conftest.py\n?? backend/tests/integration/test_qa_ai.py\n?? backend/tests/integration/test_qa_services.py\n?? backend/tests/integration/test_qa_worker_process.py\n?? backend/tests/integration/test_real_agent.py\n?? backend/tests/reliability/\n?? backend/tests/security/\n?? backend/tests/unit/test_agent.py\n?? backend/tests/unit/test_agent_evaluation.py\n?? backend/tests/unit/test_coco.py\n?? backend/tests/unit/test_landmark_download.py\n?? backend/tests/unit/test_workspace.py\n?? compose.qa.yaml\n?? docs/AGENT_API.md\n?? docs/AGENT_ARCHITECTURE.md\n?? docs/AGENT_EVALUATION.md\n?? docs/AGENT_PERFORMANCE.md\n?? docs/AGENT_STATE_MANAGEMENT.md\n?? docs/AGENT_TOOL_DESIGN.md\n?? docs/BUG_FIX_REPORT.md\n?? docs/EMPTY_DATASET_TEST_REPORT.md\n?? docs/END_TO_END_TEST_REPORT.md\n?? docs/FRONTEND_API_INTEGRATION.md\n?? docs/FRONTEND_ARCHITECTURE.md\n?? docs/FRONTEND_EMPTY_DATASET_MODE.md\n?? docs/FRONTEND_PERFORMANCE.md\n?? docs/FRONTEND_TESTING.md\n?? docs/INTEGRATION_TEST_REPORT.md\n?? docs/KNOWLEDGE_BASE_DESIGN.md\n?? docs/MULTI_HOP_SEARCH.md\n?? docs/PERFORMANCE_REGRESSION.md\n?? docs/PHASE08_COMPLETION_REPORT.md\n?? docs/PHASE09_TEST_REPORT.md\n?? docs/PHASE10_TEST_REPORT.md\n?? docs/PHASE11_TEST_REPORT.md\n?? docs/PUBLIC_LANDMARK_DATASET.md\n?? docs/RAG_DATASET.md\n?? docs/RELIABILITY_TEST_REPORT.md\n?? docs/SECURITY_AUDIT.md\n?? docs/SYSTEM_AUDIT.md\n?? docs/TEST_COVERAGE.md\n?? docs/TEST_STRATEGY.md\n?? docs/UI_UX_DESIGN.md\n?? docs/verification/phase08_completion_20261106/\n?? docs/verification/phase09/\n?? docs/verification/phase09_completion_20261106/\n?? docs/verification/phase10/\n?? docs/verification/phase11/\n?? \"emantic image search\\\"\"\n?? evaluation/agent/\n?? evaluation/annotation/rag_review.html\n?? evaluation/datasets/manifests/phase08_coco_v1.json\n?? evaluation/datasets/manifests/phase08_coco_v2.json\n?? evaluation/datasets/manifests/phase09_public_v1.json\n?? evaluation/experiments/phase08_coco_fast.json\n?? evaluation/experiments/phase11_fast_c4.json\n?? evaluation/experiments/phase11_image.json\n?? evaluation/experiments/phase11_multi_intent.json\n?? evaluation/experiments/phase11_multimodal.json\n?? evaluation/queries/phase08_coco_v1.jsonl\n?? evaluation/queries/phase08_coco_v2.jsonl\n?? evaluation/queries/phase09_public_v1.jsonl\n?? evaluation/rag/test_cases/\n?? evaluation/reports/phase08_20261106/\n?? evaluation/reports/phase09_20261106/\n?? evaluation/reports/phase09_completion_20261106/\n?? evaluation/reports/phase09_completion_20261106_final/\n?? evaluation/results/phase08_completion/\n?? evaluation/results/phase09/\n?? evaluation/results/phase09_completion/\n?? evaluation/results/phase10/\n?? evaluation/results/phase11/\n?? frontend/e2e/agent.spec.ts\n?? frontend/e2e/phase10-empty.spec.ts\n?? frontend/e2e/phase10-performance.spec.ts\n?? frontend/e2e/phase10.spec.ts\n?? frontend/playwright.mock.config.ts\n?? frontend/playwright.qa.config.ts\n?? frontend/qa-e2e/\n?? frontend/src/components/ErrorBoundary.test.tsx\n?? frontend/src/components/ErrorBoundary.tsx\n?? frontend/src/features/agent/\n?? frontend/src/features/evaluation/\n?? frontend/src/features/rag/ExplanationPanel.test.tsx\n?? frontend/src/features/search/AdvancedControls.tsx\n?? frontend/src/features/search/ImageDetailDialog.tsx\n?? frontend/src/features/search/ImageUpload.test.tsx\n?? frontend/src/features/search/ImageUpload.tsx\n?? frontend/src/features/search/QueryAnalysis.tsx\n?? frontend/src/features/search/ResultGallery.tsx\n?? frontend/src/features/search/ResultImage.test.tsx\n?? frontend/src/features/search/SearchForm.tsx\n?? frontend/src/features/search/SearchSkeleton.tsx\n?? frontend/src/features/search/useSearchSession.test.tsx\n?? frontend/src/features/search/useSearchSession.ts\n?? frontend/src/features/search/validation.test.ts\n?? frontend/src/features/search/validation.ts\n?? frontend/src/features/system/\n?? frontend/src/hooks/useHealth.test.tsx\n?? frontend/src/hooks/useWorkspaceStatus.ts\n?? frontend/src/services/api/decoders.ts\n?? frontend/src/services/api/media.ts\n?? frontend/src/services/api/stream.ts\n?? scripts/browser_environment.py\n?? scripts/capture_phase10_evidence.py\n?? scripts/check_frontend.py\n?? scripts/check_rag_review.mjs\n?? scripts/init_qa_env.py\n?? scripts/phase10_empty_server.py\n?? scripts/prepare_rag_corpus.py\n?? scripts/qa.py\n?? scripts/qa_faults.py\n?? scripts/seed_qa.py\n?? scripts/verify_agent.sh\n?? scripts/verify_agent_fixtures.py\n?? scripts/verify_public_agent.py\n",
+      "stderr": ""
+    }
+  ],
+  "latest_profiles": {
+    "fast": {
+      "result": "docs/verification/phase11/runs/20261107T150530_529921_fast.json",
+      "log": "docs/verification/phase11/runs/20261107T150530_529921_fast.log"
+    },
+    "frontend": {
+      "result": "docs/verification/phase11/runs/20261107T144421_811987_frontend.json",
+      "log": "docs/verification/phase11/runs/20261107T144421_811987_frontend.log"
+    },
+    "services": {
+      "result": "docs/verification/phase11/runs/20261107T144831_617439_services.json",
+      "log": "docs/verification/phase11/runs/20261107T144831_617439_services.log"
+    },
+    "ai": {
+      "result": "docs/verification/phase11/runs/20261107T145103_957340_ai.json",
+      "log": "docs/verification/phase11/runs/20261107T145103_957340_ai.log"
+    },
+    "browser": {
+      "result": "docs/verification/phase11/runs/20261107T150201_252130_browser.json",
+      "log": "docs/verification/phase11/runs/20261107T150201_252130_browser.log"
+    },
+    "mock-browser": {
+      "result": "docs/verification/phase11/runs/20261107T141522_737876_mock-browser.json",
+      "log": "docs/verification/phase11/runs/20261107T141522_737876_mock-browser.log"
+    },
+    "up": {
+      "result": "docs/verification/phase11/runs/20261107T145810_127855_up.json",
+      "log": "docs/verification/phase11/runs/20261107T145810_127855_up.log"
+    },
+    "down": {
+      "result": "docs/verification/phase11/runs/20261107T150620_857618_down.json",
+      "log": "docs/verification/phase11/runs/20261107T150620_857618_down.log"
+    },
+    "faults": {
+      "result": "docs/verification/phase11/runs/20261107T150420_108644_faults.json",
+      "log": "docs/verification/phase11/runs/20261107T150420_108644_faults.log"
+    }
+  },
+  "test_counts": {
+    "backend_unit": 200,
+    "backend_security": 28,
+    "backend_reliability": 4,
+    "backend_services": 11,
+    "backend_real_model": 1,
+    "frontend_unit_component": 44,
+    "browser_mock_new": 4,
+    "browser_empty": 4,
+    "browser_indexed": 8,
+    "browser_serving_regression": 50,
+    "browser_mock_total": 12,
+    "browser_without_mock_total": 54,
+    "fault_scenario_types": 4,
+    "fault_executions_indexed_and_empty": 8,
+    "browser_profile_skips_empty": 8,
+    "browser_profile_skips_indexed": 4
+  },
+  "limitations": [
+    "Human relevance and faithfulness labels pending by user choice",
+    "Production-scale retrieval performance NOT_VERIFIED",
+    "Fast C4: 3/100 INFERENCE_BUSY",
+    "Gemini RAG 3s target missed; browser live fallback on LLM_TIMEOUT",
+    "Remote GitHub Actions NOT_VERIFIED",
+    "Physical devices, long soak, TLS, backup/restore NOT_VERIFIED",
+    "Backend separate static type checker NOT_CONFIGURED"
+  ],
+  "source": {
+    "sha256": "a29a5a6bc19289c8e2106e50dc2bdbf9ac31c7d5bd902f3b8a6473c5e997ad9d",
+    "files": 314,
+    "archive": "evaluation/results/phase11/_sources/a29a5a6bc19289c8e2106e50dc2bdbf9ac31c7d5bd902f3b8a6473c5e997ad9d.tar.gz",
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "secret_scan": {
+    "files_and_archive_members_checked": 1926,
+    "hits": [],
+    "private_env_permissions": {
+      ".env": "0o600",
+      ".env.qa": "0o600"
+    }
+  },
+  "required_document_links": "passed"
+}

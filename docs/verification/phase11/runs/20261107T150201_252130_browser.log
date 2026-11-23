@@ -1,0 +1,26 @@
+
+Running 12 tests using 1 worker
+
+(node:635721) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [qa-desktop] › frontend/qa-e2e/real.spec.ts:24:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (4.4s)
+  -   2 [qa-desktop] › frontend/qa-e2e/real.spec.ts:59:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details
+  -   3 [qa-desktop] › frontend/qa-e2e/real.spec.ts:113:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG
+(node:636240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [qa-mobile] › frontend/qa-e2e/real.spec.ts:24:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (4.1s)
+  -   5 [qa-mobile] › frontend/qa-e2e/real.spec.ts:59:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details
+  -   6 [qa-mobile] › frontend/qa-e2e/real.spec.ts:113:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG
+(node:636736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [qa-firefox] › frontend/qa-e2e/real.spec.ts:24:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (5.0s)
+  -   8 [qa-firefox] › frontend/qa-e2e/real.spec.ts:59:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details
+  -   9 [qa-firefox] › frontend/qa-e2e/real.spec.ts:113:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG
+(node:637593) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [qa-webkit] › frontend/qa-e2e/real.spec.ts:24:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility (5.3s)
+  -  11 [qa-webkit] › frontend/qa-e2e/real.spec.ts:59:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details
+  -  12 [qa-webkit] › frontend/qa-e2e/real.spec.ts:113:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG
+
+  8 skipped
+  4 passed (29.2s)

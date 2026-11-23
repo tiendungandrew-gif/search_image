@@ -1,0 +1,849 @@
+{
+  "config": {
+    "argv": [
+      "/home/tts/prj/.tools/node/bin/node",
+      "/home/tts/prj/frontend/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "frontend/playwright.qa.config.ts"
+    ],
+    "configFile": "/home/tts/prj/frontend/playwright.qa.config.ts",
+    "rootDir": "/home/tts/prj/frontend/qa-e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 240000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "qa-desktop",
+        "name": "qa-desktop",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "real.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "qa-mobile",
+        "name": "qa-mobile",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "real.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "qa-firefox",
+        "name": "qa-firefox",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "real.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "qa-webkit",
+        "name": "qa-webkit",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "real.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "qa-desktop",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "snapshotDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": "real.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "qa-desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "qa-mobile",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "snapshotDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": "real.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "qa-mobile"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "qa-firefox",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "snapshotDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": "real.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "qa-firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "qa-webkit",
+        "testDir": "/home/tts/prj/frontend/qa-e2e",
+        "snapshotDir": "/home/tts/prj/frontend/qa-e2e",
+        "testIgnore": [],
+        "testMatch": "real.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "qa-webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/phase11-real.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "real.spec.ts",
+      "file": "real.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL SERVICES / EMPTY · startup, navigation, data state and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qa-desktop",
+              "projectName": "qa-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4442,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:03.026Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "classification",
+                      "contentType": "text/plain",
+                      "body": "VkVSSUZJRURfV0lUSF9SRUFMX1NFUlZJQ0VTOyBlbXB0eSBkYXRhYmFzZSwgbm8gQUkgYWNjdXJhY3kgZXZpZGVuY2U="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-e391052106d9fe55e71d",
+          "file": "real.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional cached real-model seed",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 62,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-desktop",
+              "projectName": "qa-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 459,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:07.585Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional cached real-model seed",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 62,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-33d82204774b5293f707",
+          "file": "real.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional model seed and isolated fictional knowledge",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 116,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-desktop",
+              "projectName": "qa-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 460,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:08.064Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional model seed and isolated fictional knowledge",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 116,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-23dc8e2ae36b7a83b9f7",
+          "file": "real.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "REAL SERVICES / EMPTY · startup, navigation, data state and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qa-mobile",
+              "projectName": "qa-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4075,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:09.219Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "classification",
+                      "contentType": "text/plain",
+                      "body": "VkVSSUZJRURfV0lUSF9SRUFMX1NFUlZJQ0VTOyBlbXB0eSBkYXRhYmFzZSwgbm8gQUkgYWNjdXJhY3kgZXZpZGVuY2U="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-df4bf99f853d4ac7a0be",
+          "file": "real.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional cached real-model seed",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 62,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-mobile",
+              "projectName": "qa-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:13.445Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional cached real-model seed",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 62,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-acae40d5284b49b91c4a",
+          "file": "real.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional model seed and isolated fictional knowledge",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 116,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-mobile",
+              "projectName": "qa-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 380,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:13.906Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional model seed and isolated fictional knowledge",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 116,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-a91cf75851532bdfd60e",
+          "file": "real.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "REAL SERVICES / EMPTY · startup, navigation, data state and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qa-firefox",
+              "projectName": "qa-firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5014,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:15.016Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "classification",
+                      "contentType": "text/plain",
+                      "body": "VkVSSUZJRURfV0lUSF9SRUFMX1NFUlZJQ0VTOyBlbXB0eSBkYXRhYmFzZSwgbm8gQUkgYWNjdXJhY3kgZXZpZGVuY2U="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-91d4682fdd00c3823fb2",
+          "file": "real.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional cached real-model seed",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 62,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-firefox",
+              "projectName": "qa-firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 728,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:20.833Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional cached real-model seed",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 62,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-7fa56a04a10ec5e6b653",
+          "file": "real.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional model seed and isolated fictional knowledge",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 116,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-firefox",
+              "projectName": "qa-firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 646,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:21.603Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional model seed and isolated fictional knowledge",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 116,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-134b212392b2edb6310d",
+          "file": "real.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "REAL SERVICES / EMPTY · startup, navigation, data state and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qa-webkit",
+              "projectName": "qa-webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5297,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:23.316Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "classification",
+                      "contentType": "text/plain",
+                      "body": "VkVSSUZJRURfV0lUSF9SRUFMX1NFUlZJQ0VTOyBlbXB0eSBkYXRhYmFzZSwgbm8gQUkgYWNjdXJhY3kgZXZpZGVuY2U="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-0c23f4cc23fb27efa724",
+          "file": "real.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional cached real-model seed",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 62,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-webkit",
+              "projectName": "qa-webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:28.760Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional cached real-model seed",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 62,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-f4bb2ddadaeaf0ea4f46",
+          "file": "real.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Requires optional model seed and isolated fictional knowledge",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                    "line": 116,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "qa-webkit",
+              "projectName": "qa-webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1318,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T15:02:30.074Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Requires optional model seed and isolated fictional knowledge",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/qa-e2e/real.spec.ts",
+                        "line": 116,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ddb2a7cae9f096cb7e62-15c4a8fbce2a913f324e",
+          "file": "real.spec.ts",
+          "line": 113,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T15:02:02.233Z",
+    "duration": 29247.920000000002,
+    "expected": 4,
+    "skipped": 8,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

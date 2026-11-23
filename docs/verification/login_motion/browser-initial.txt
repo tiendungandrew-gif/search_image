@@ -1,0 +1,16 @@
+file:///home/tts/prj/frontend/node_modules/@axe-core/playwright/dist/index.mjs:219
+      throw new Error(
+            ^
+
+Error: Please use browser.newContext()
+ Please check out https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/error-handling.md
+    at AxeBuilder.analyze (file:///home/tts/prj/frontend/node_modules/@axe-core/playwright/dist/index.mjs:219:13)
+    at async file:///home/tts/prj/frontend/test-results/login-motion-check.mjs:29:20 {
+  [cause]: Error: Please use browser.newContext()
+      at _BrowserContext.newPage (/home/tts/prj/frontend/node_modules/playwright-core/lib/coreBundle.js:63972:17)
+      at AxeBuilder.finishRun (file:///home/tts/prj/frontend/node_modules/@axe-core/playwright/dist/index.mjs:315:37)
+      at AxeBuilder.analyze (file:///home/tts/prj/frontend/node_modules/@axe-core/playwright/dist/index.mjs:217:25)
+      at async file:///home/tts/prj/frontend/test-results/login-motion-check.mjs:29:20
+}
+
+Node.js v22.23.4

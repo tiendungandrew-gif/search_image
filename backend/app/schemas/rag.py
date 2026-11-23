@@ -19,6 +19,7 @@ class RagRequest(BaseModel):
     max_evidence_items: int | None = Field(default=None, ge=1, le=10)
     max_context_tokens: int | None = Field(default=None, ge=128, le=8192)
     context_policy: Literal["rank", "descriptive_first"] = "descriptive_first"
+    context_format: Literal["full", "compact"] = "full"
 
     @field_validator("query", "question")
     @classmethod

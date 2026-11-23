@@ -1,0 +1,15 @@
+{
+  "project": "image-search-phase12",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.knowledge --input /datasets/knowledge_review.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.8994513839998035
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"status": "validated_not_applied", "entities": 4, "relationships": 3, "image_entities": 0, "fixture": false}
+ Container image-search-phase12-backend-run-45735a6d9fc6 Creating 
+ Container image-search-phase12-backend-run-45735a6d9fc6 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+

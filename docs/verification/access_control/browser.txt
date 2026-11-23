@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+  ✓  1 [access-desktop] › access-e2e/accounts.spec.ts:37:1 › REAL SERVICES · account creation, grants, scoped search and admin separation (9.9s)
+  ✓  2 [access-mobile] › access-e2e/accounts.spec.ts:37:1 › REAL SERVICES · account creation, grants, scoped search and admin separation (10.3s)
+
+  2 passed (22.2s)
+(node:1861531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1862624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,0 +1,19 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-55a6e0d93c7d Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-55a6e0d93c7d Created 
+
+==================================== ERRORS ====================================
+_______________ ERROR collecting tests/integration/test_qa_ai.py _______________
+ImportError while importing test module '/srv/backend/tests/integration/test_qa_ai.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/test_qa_ai.py:10: in <module>
+    from seed_qa import seed
+E   ModuleNotFoundError: No module named 'seed_qa'
+=========================== short test summary info ============================
+ERROR backend/tests/integration/test_qa_ai.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.11s
+

@@ -4,6 +4,7 @@ from uuid import UUID
 import numpy as np
 from qdrant_client import models as qm
 
+from app.core.access import UNASSIGNED, current_principal
 from app.core.exceptions import AppError
 from app.services.embeddings.clip_encoder import normalized_vectors
 
@@ -17,10 +18,25 @@ class Candidate:
 
 def payload_filter(filters, exclude_id=None):
     must = []
+    principal = current_principal.get()
+    if principal is not None and not principal.unrestricted:
+        keys = [key for key in principal.dataset_keys if key != UNASSIGNED]
+        allowed = []
+        if keys:
+            allowed.append(qm.FieldCondition(key="source_dataset", match=qm.MatchAny(any=keys)))
+        if UNASSIGNED in principal.dataset_keys:
+            allowed.append(qm.IsNullCondition(is_null=qm.PayloadField(key="source_dataset")))
+        must.append(qm.Filter(should=allowed) if allowed else qm.HasIdCondition(has_id=[]))
+    if filters.image_ids is not None:
+        must.append(qm.HasIdCondition(has_id=[str(i) for i in filters.image_ids]))
     for field in ["source_dataset", "city"]:
         if getattr(filters, field) is not None:
             must.append(
-                qm.FieldCondition(key=field, match=qm.MatchValue(value=getattr(filters, field)))
+                qm.IsNullCondition(is_null=qm.PayloadField(key=field))
+                if field == "source_dataset" and filters.source_dataset == UNASSIGNED
+                else qm.FieldCondition(
+                    key=field, match=qm.MatchValue(value=getattr(filters, field))
+                )
             )
     if filters.media_types:
         must.append(qm.FieldCondition(key="media_type", match=qm.MatchAny(any=filters.media_types)))

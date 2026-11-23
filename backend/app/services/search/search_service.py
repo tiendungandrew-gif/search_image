@@ -12,10 +12,12 @@ from app.repositories.image_repository import ImageRepository
 from app.schemas.constraints import leaves
 from app.schemas.search import ResultMetadata, SearchResponse, SearchResult
 from app.services.embeddings.clip_encoder import normalized_vectors
-from app.services.indexing.worker import vector_hash
+from app.services.embeddings.vector_utils import vector_hash
+from app.services.query.language import search_subject
 from app.services.query.query_classifier import analyze_query
 from app.services.search.ranking import matches_metadata, rank_unique
-from app.services.search.vector_retriever import VectorRetriever
+from app.services.search.text_matching import hybrid_rank, requires_food_phrase
+from app.services.search.vector_retriever import Candidate, VectorRetriever
 
 
 class SearchService:
@@ -101,6 +103,26 @@ class SearchService:
                 503, "DEPENDENCY_UNAVAILABLE", "Object service không khả dụng", retryable=True
             ) from None
 
+    async def metadata_candidates(self, hits):
+        if not hits:
+            return []
+        try:
+            points = await self.services.qdrant.client.retrieve(
+                self.registry.index.collection_name,
+                ids=[str(hit.image_id) for hit in hits],
+                with_payload=True,
+                with_vectors=False,
+            )
+        except Exception:
+            raise AppError(
+                503, "DEPENDENCY_UNAVAILABLE", "Không lấy được ứng viên tìm kiếm", retryable=True
+            ) from None
+        payloads = {str(point.id): point.payload or {} for point in points}
+        return [
+            Candidate(hit.image_id, hit.score, payloads[str(hit.image_id)])
+            for hit in hits if str(hit.image_id) in payloads
+        ]
+
     async def format_results(
         self,
         ranked,
@@ -139,6 +161,19 @@ class SearchService:
             if not matches_metadata(options.filters, image, metadata, tags[image.id]):
                 continue
             eligible.append((candidate, row))
+        rank_offset = 0
+        if options.page is not None:
+            page_size = stages.pop("pagination_page_size")
+            total = len(eligible)
+            total_pages = (total + page_size - 1) // page_size
+            page = min(options.page, max(1, total_pages))
+            rank_offset = (page - 1) * page_size
+            stages["pagination"] = {
+                "page": page, "page_size": page_size, "total_results": total,
+                "total_pages": total_pages, "result_limit": 500,
+            }
+            # Check objects only for this page; never scan hundreds of originals per click.
+            eligible = eligible[rank_offset:rank_offset + page_size]
         cursor = 0
         io_ms = 0.0
         while cursor < len(eligible) and len(results) < options.top_k:
@@ -159,7 +194,7 @@ class SearchService:
                 results.append(
                     SearchResult(
                         image_id=image.id,
-                        rank=len(results) + 1,
+                        rank=rank_offset + len(results) + 1,
                         score=candidate.score,
                         score_type=score_type,
                         ranking_version=ranking_version,
@@ -231,14 +266,59 @@ class SearchService:
             exclude_defaults=True
         ):
             raise AppError(409, "FEATURE_DISABLED", "Metadata filters đang tắt")
+        page_size = options.top_k
+        if options.page is not None:
+            # A fixed retrieval window keeps rankings independent of the requested page.
+            options = options.model_copy(update={"top_k": 500, "candidate_count": 500})
+        original_text = options.text
+        if original_text and options.constraints is None and options.mode in {"auto", "text"}:
+            options = options.model_copy(update={"text": search_subject(original_text)})
+        text_hits = []
+        name_hits = []
+        phrase_hits = []
+        food_phrase = False
+        metadata_limit = min(
+            500,
+            options.candidate_count or max(options.top_k, self.settings.search_default_candidates),
+        )
+        if (
+            options.text and not has_image and options.mode in {"auto", "text"}
+            and options.constraints is None and not options.rerank.enabled
+            and not options.require_verified and options.retrieval_strategy == "fused"
+        ):
+            mark = perf_counter()
+            text_hits = await self.repository.text_candidates(
+                options.text, self.registry.index.id, options.filters, metadata_limit
+            )
+            name_hits = [hit for hit in text_hits if hit.name_match]
+            phrase_hits = [hit for hit in text_hits if hit.phrase_match]
+            food_phrase = requires_food_phrase(options.text)
+            stages["metadata_text_lookup_ms"] = (perf_counter() - mark) * 1000
+        if (options.text and not (name_hits or phrase_hits or food_phrase)
+                and hasattr(self.runtime.encoder, "normalize_texts")):
+            mark = perf_counter()
+            normalized = await self.runtime.compute(
+                lambda: self.runtime.encoder.normalize_texts([options.text])[0]
+            )
+            stages["query_normalization_ms"] = (perf_counter() - mark) * 1000
+            if normalized != options.text:
+                options = options.model_copy(update={"text": normalized})
+                warnings.append(
+                    {
+                        "code": "QUERY_ACCENTS_RESTORED",
+                        "message": f"Đã tìm theo “{normalized}” (thêm dấu từ “{original_text}”).",
+                    }
+                )
         mark = perf_counter()
         parse = bool(
             options.mode in {"auto", "multi_intent", "multimodal"}
             and self.settings.query_decomposition_enabled
+            and not (name_hits or phrase_hits or food_phrase)
         )
         analysis = analyze_query(
             options.text, has_image, parse=parse, explicit=options.constraints, timings=stages
         )
+        analysis.original_query = original_text or ""
         if options.constraints is not None:
             analysis.constraints = options.constraints
         stages["query_analysis_ms"] = (perf_counter() - mark) * 1000 - stages.get(
@@ -329,7 +409,35 @@ class SearchService:
             if has_image
             else "text"
         )
-        if advanced:
+        if (name_hits or phrase_hits or food_phrase) and not advanced:
+            mark = perf_counter()
+            ranked = await self.metadata_candidates(name_hits or phrase_hits)
+            stages["metadata_candidate_payload_ms"] = (perf_counter() - mark) * 1000
+            rows = tags = None
+            score_type = "weighted_score"
+            ranking_version = "metadata-name-v1" if name_hits else "metadata-phrase-v1"
+            settings = {
+                "candidate_count": metadata_limit,
+                "channels": 1, "vector_calls": 0, "vector_fetch_calls": 1,
+                "fusion_version": None, "constraints_mode": "metadata_only",
+                "truncated": len(text_hits) == metadata_limit,
+                "route": "metadata_name" if name_hits else "metadata_phrase",
+                "rerank_applied": False,
+                "phrase_matched": bool(phrase_hits and not name_hits),
+                "metadata_candidates": len(ranked),
+            }
+            if food_phrase:
+                settings["food_phrase_required"] = True
+            if food_phrase and not (name_hits or phrase_hits):
+                settings["route"] = "metadata_food_phrase"
+                warnings.append({
+                    "code": "FOOD_PHRASE_NOT_FOUND",
+                    "message": (
+                        f"Chưa tìm thấy ảnh có mô tả khớp món “{options.text}”. "
+                        "Hãy thử tên món cụ thể hơn hoặc một món khác."
+                    ),
+                })
+        elif advanced:
             from app.services.search.multi_intent import AdvancedRetriever
 
             ranked, rows, tags, settings = await AdvancedRetriever(self).retrieve(
@@ -358,8 +466,20 @@ class SearchService:
                 "route": "single_vector",
                 "rerank_applied": False,
             }
+            if text_hits:
+                metadata = await self.metadata_candidates(text_hits)
+                if metadata:
+                    ranked = hybrid_rank(metadata, ranked)
+                    score_type, ranking_version = "rrf", "metadata-visual-rrf-v1"
+                    settings.update(
+                        channels=2, vector_fetch_calls=1, fusion_version="metadata-visual-rrf-v1",
+                        route="metadata_visual", metadata_candidates=len(metadata),
+                    )
+        if options.page is not None:
+            stages["pagination_page_size"] = page_size
         results, missing = await self.format_results(
-            ranked, options, stages, rows, tags, score_type, ranking_version
+            ranked[:500] if options.page is not None else ranked,
+            options, stages, rows, tags, score_type, ranking_version
         )
         if missing:
             warnings.append(
@@ -368,13 +488,14 @@ class SearchService:
                     "message": "Một số originals không khả dụng đã được loại",
                 }
             )
-        if settings["truncated"] and len(results) < options.top_k:
+        if settings["truncated"] and len(results) < page_size:
             warnings.append(
                 {
                     "code": "CANDIDATE_LIMIT",
                     "message": "Kết quả eligible bị giới hạn bởi candidate pool",
                 }
             )
+        pagination = stages.pop("pagination", None)
         elapsed = (perf_counter() - start) * 1000
         return SearchResponse(
             query_id=uuid4(),
@@ -387,8 +508,14 @@ class SearchService:
             manifest_sha256=self.registry.model.manifest_sha256,
             results=results,
             total_results=len(results),
+            pagination=pagination,
             effective_settings={
-                "top_k": options.top_k,
+                "text_encoder_manifest_sha256": getattr(
+                    self.runtime.encoder, "text_manifest_sha256", None
+                )
+                if options.text
+                else None,
+                "top_k": page_size,
                 "ranking_version": ranking_version,
                 "total_candidate_cap": 1000,
                 "object_check_concurrency": self.settings.search_object_check_concurrency,

@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "account_role": "admin",
+  "legacy_enabled": false,
+  "dataset": {
+    "state": "ready",
+    "images": 513,
+    "available_images": 513,
+    "indexed_images": 513,
+    "vectors": 513,
+    "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+    "index_status": "ready",
+    "generation": 3
+  },
+  "libraries": [
+    {
+      "key": "coco2017-val-subset-v1",
+      "images": 500
+    },
+    {
+      "key": "nps-landmarks-phase09-v1",
+      "images": 3
+    },
+    {
+      "key": "scikit-image-v0.25.2",
+      "images": 10
+    }
+  ],
+  "retrieved": 3,
+  "private_image": true
+}

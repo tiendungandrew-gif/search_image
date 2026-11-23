@@ -1,144 +1,84 @@
-# AI Multimodal Image Search System
+# Synlens
 
-Nền tảng tìm kiếm ảnh bằng văn bản, ảnh tham chiếu và kết hợp hai modality. Đã triển khai indexing, CLIP search, multimodal/multi-intent và framework đánh giá Prompt07 và **RAG tùy chọn Prompt08**. Có công cụ gán nhãn, benchmark/load/profiling, so sánh CLIP/SigLIP 2 và báo cáo thực nghiệm. **Chất lượng tìm kiếm ngữ nghĩa chưa được nghiệm thu vì chưa có nhãn người đánh giá.** RAG đã có API/streaming/giải thích metadata qua Gemini; Agent và multi-hop chưa triển khai.
+Cập nhật 08/11/2026: [Tài khoản và giao diện](docs/operations/ACCOUNTS.md) — Admin/User, quyền theo thư viện và khu quản trị riêng.
+Đăng ký tài khoản User: chọn **Đăng ký** trên trang đăng nhập, dùng ngay các thư viện chung cho thành viên; thư viện riêng do Admin cấp thêm. [Hướng dẫn tài khoản](docs/operations/ACCOUNTS.md).
+Đăng nhập nhanh local: xem [hai vai trò trải nghiệm](docs/operations/QUICK_LOGIN.md).
+Giao diện đa chủ đề 19/11/2026: [gallery nhiều kích thước, gợi ý chủ đề và ba cách tìm](docs/features/USER_INTERFACE.md). [Kiểm chứng UI người dùng](docs/verification/consumer_ui/REPORT.md).
+Tìm kiếm Việt–Anh mặc định trong cùng ô nhập, tự xử lý tiếng Việt không dấu như `con meo`, không chọn ngôn ngữ: [cấu hình và kiểm chứng](docs/features/BILINGUAL_SEARCH.md).
+Khách tìm ảnh công khai ngay tại trang đầu; đăng nhập ở `/login`. Admin chọn
+thư viện công khai riêng với chia sẻ thành viên. [Hướng dẫn](docs/operations/ACCOUNTS.md)
+· [Kiểm chứng guest](docs/verification/guest_search/REPORT.md).
 
-## Kiến trúc
+Tìm kiếm ảnh bằng văn bản, ảnh tham chiếu hoặc kết hợp cả hai. Backend FastAPI dùng CLIP/Qdrant, PostgreSQL lưu metadata/jobs/knowledge, MinIO lưu ảnh private; React hiển thị kết quả và hỗ trợ RAG/Agent tùy cấu hình.
 
-Modular monolith: React → FastAPI → application services/adapters → PostgreSQL, Qdrant, MinIO private. Worker cùng codebase đã triển khai ở Prompt 04, semantic search đã triển khai ở Prompt05. CLIP weights tải có chủ đích và dimension được xác minh từ model thật; không dùng placeholder vectors.
+Trạng thái bàn giao Phase12: **READY_WITH_LIMITATIONS**. Functional deployment đã kiểm chứng local; human relevance/faithfulness, public hosting/security và capacity đại diện vẫn còn điều kiện chưa xác nhận. [Báo cáo A–T](docs/FINAL_PROJECT_REPORT.md) · [Checklist bàn giao](docs/FINAL_HANDOVER.md).
 
-- [Thiết kế hệ thống](docs/SYSTEM_ARCHITECTURE.md), [database](docs/DATABASE_DESIGN.md), [API](docs/API_SPECIFICATION.md).
-- [Hướng dẫn Linux và cài prerequisites](docs/SETUP.md).
-- [Commands, kiểm thử và quy ước phát triển](docs/DEVELOPMENT.md).
-- [Kết quả kiểm chứng Prompt 03 và giới hạn](docs/PHASE03_REPORT.md).
-- [Nghiệm thu Prompt 07 và báo cáo A–M](docs/PHASE07_TEST_REPORT.md), [số liệu thực nghiệm](docs/EXPERIMENT_RESULTS.md).
+## Chạy hệ thống hiện có
 
-## Chạy nhanh với Docker
-
-Cần Python3, Git, Docker Engine/Compose v2; Node/npm/uv/Make cần cho workflow native. Phiên bản dùng phát triển: Python3.12, Node22.23.4, npm11.21.1, uv0.13.7. Không giả định chúng đã được cài:
+Từ repository root, cần Docker Engine/Compose và quyền truy cập Docker:
 
 ```bash
-bash scripts/check_environment.sh
-python3 scripts/init_env.py
-docker compose config --quiet
-docker compose up -d --build
-bash scripts/verify_services.sh
+docker compose up -d --wait --wait-timeout 180 backend frontend
 ```
 
-`init_env.py` sinh secrets ngẫu nhiên vào `.env` mode0600, không in hoặc ghi đè file đã có. Không commit `.env`, không đưa backend secrets vào `VITE_*`. Build MinIO lần đầu cần tải Go modules vì upstream image/archive không khả dụng trong lượt kiểm chứng; Dockerfile pin official source commit và tar SHA-256.
+Docker Snap trên máy kiểm chứng dùng:
 
-| Địa chỉ local | Chức năng |
+```bash
+sg docker -c 'docker compose up -d --wait --wait-timeout 180 backend frontend'
+```
+
+| Địa chỉ | Chức năng |
 | --- | --- |
-| http://localhost:5173 | Frontend, preview ảnh local và health API thật |
-| http://localhost:8000/api/v1/health/live | Process liveness công khai, không query dependencies |
-| http://localhost:8000/api/v1/health/ready | Infrastructure readiness, cần Bearer token |
-| http://localhost:8000/docs | Swagger/OpenAPI của endpoints đã triển khai |
-| http://localhost:8000/openapi.json | OpenAPI JSON |
+| http://localhost:5173 | Frontend development |
+| http://localhost:8000/docs | Backend API/OpenAPI |
+| http://localhost:8000/api/v1/health/live | Liveness |
 
-Không publish ports PostgreSQL/Qdrant/MinIO mặc định. Browser gọi `/api/v1` qua Vite proxy; hostname `backend`/`postgres` chỉ dùng giữa containers. `/health/ready` chưa kiểm tra search model/index. `/health?check=search` chỉ trả200 khi paired encoder/active index và required stores thực sự ready; offline index riêng chưa đủ.
-
-## Kiểm thử
+Đăng nhập bằng tài khoản Admin/User. Thông tin Admin ban đầu nằm trong `.cache/auth/admin-login.json`; xem [quản lý tài khoản](docs/operations/ACCOUNTS.md). `.env` hiện có giữ credentials và dữ liệu của development. Khi setup development mới, chạy `python3 scripts/init_env.py` trước và thêm `--build` vào lệnh Compose; script không overwrite env đã có. [SETUP](docs/operations/SETUP.md) ghi prerequisites/model/data và cách chạy native.
 
 ```bash
-uv sync --project backend --extra dev --frozen
-npm --prefix frontend ci
-make test
-make lint
-make migrate
-make test-integration
-make health
+docker compose logs -f --tail=100 backend frontend
+docker compose down
 ```
 
-Không có Make thì dùng từng command tại DEVELOPMENT. Unit tests dùng doubles được ghi rõ; integration tests chỉ chạy với services thật và `RUN_INTEGRATION=1`. Migration rollback test tạo database riêng, không downgrade database ứng dụng. Source/package locks nằm `backend/uv.lock` và `frontend/package-lock.json`.
+`down` giữ named volumes. Có thể dùng `sg docker -c 'COMMAND'` cho các lệnh Docker còn lại trên máy Snap.
 
-## Dừng và troubleshooting
+## Bản triển khai production-like
 
-`docker compose down` dừng services nhưng giữ named volumes. `make clean` không xóa dữ liệu. Xem SETUP cho native development, lỗi Docker socket, auth401, readiness503, `.env` sai hostnames, private bucket và password của volume đã tồn tại.
-
-Compose profile này dành cho local development, không phải deployment đã harden cho public. Kết quả build/start, tests và giới hạn hiện tại nằm tại PHASE03_REPORT. Git đã được khởi tạo nhánh `main` trên host; chưa tạo commit.
-
-## Nghiệm thu Docker và trình duyệt
+Môi trường nghiệm thu hiện có ở8088 dùng config riêng:
 
 ```bash
-# Build/start, test, recreate giữ volumes và stop/restore từng dependency của project.
-python3 scripts/verify_containers.py
-
-# Browser tests trên stack đã khởi động; API_TOKEN được lấy từ .env cho child process.
-cd frontend
-npm exec -- playwright install chromium
-cd ..
-make test-e2e
+DEPLOY_USE_SG=1 python3 scripts/deploy.py --env-file config/environments/deployment.env up
 ```
 
-Report máy đọc được: `docs/verification/docker.json`. Browser tests có desktop1440px/mobile390px, preview local, readiness thật và không gửi search chưa triển khai. `make test-containers` chạy riêng tests/static/build trong images hiện tại. Bộ outage/recreate dành cho local development: test markers có namespace UUID riêng và được dọn sau lượt kiểm tra; không thêm image/vector giả.
+Mở http://127.0.0.1:8088; tài khoản Admin dùng `.cache/auth/deployment-admin-login.json`. Bản nghiệm thu có7 ảnh tổng hợp, tách khỏi corpus513 ảnh của development. Alias `--env-file .env.phase12` vẫn được deployment CLI hỗ trợ. [Danh mục env](config/environments/README.md) giải thích các môi trường.
 
-## Nhập ảnh và lập chỉ mục — Prompt 04
-
-Xem [IMAGE_INDEXING](docs/IMAGE_INDEXING.md) cho toàn bộ lệnh tải model/sample dataset, register index, chạy worker, upload API, inspect/retry/reindex/verify. [EMBEDDING_MODELS](docs/EMBEDDING_MODELS.md) ghi pinned CLIP revision và preprocessing; [VECTOR_INDEX_DESIGN](docs/VECTOR_INDEX_DESIGN.md) ghi compatibility/consistency; [INDEXING_TEST_REPORT](docs/INDEXING_TEST_REPORT.md) ghi kết quả thực tế.
-
-Profile Compose `indexing` thêm worker process dùng cùng backend package. Mutation APIs yêu cầu WRITE_API_TOKEN riêng và Idempotency-Key; read token không cấp quyền ghi. API không nạp Torch/model và không thực hiện embedding trong request. Model/sample downloads có chủ đích; tests không tự download. Không dùng dữ liệu chưa có quyền/privacy approval.
-
-## Semantic Search — Prompt 05
-
-Sau khi có index ready, thực hiện activation/model preload theo [SEMANTIC_SEARCH](docs/SEMANTIC_SEARCH.md), đặt SEARCH_ENABLED=true và khởi động lại backend. Mở http://localhost:5173, nhập read token trong Token truy cập rồi tìm bằng text hoặc reference image. Query uploads không vào dataset; kết quả/ảnh đọc từ PG/Qdrant/MinIO thật. Không đưa token vào VITE_* hoặc image URLs.
-
-[SEARCH_API](docs/SEARCH_API.md) ghi JSON/multipart canonical + aliases; [SEARCH_PERFORMANCE](docs/SEARCH_PERFORMANCE.md) ghi full-server/client latency boundaries và benchmark commands; [SEARCH_TEST_REPORT](docs/SEARCH_TEST_REPORT.md) ghi actual tests/quality/performance limits. `bash scripts/verify_search.sh` chạy full acceptance, `bash scripts/benchmark_search.sh text` hoặc `image` chạy baseline. Chưa có human-verified qrels; không suy ra Recall@10 từ smoke queries.
-
-## Multimodal và multi-intent — Prompt 06
-
-Trong UI chọn Tự động, Văn bản + Hình ảnh hoặc Nhiều điều kiện; mở Tùy chọn tìm kiếm nâng cao để chọn RRF/weighted score, trọng số văn bản/ảnh và reranking. Điểm không là xác suất; điều kiện thị giác chưa được xác minh sẽ ghi rõ. Không tự ingest ảnh query.
+Cài production-like mới trên môi trường khác:
 
 ```bash
-bash scripts/verify_advanced_search.sh --requests 100
-bash scripts/benchmark_search.sh multi_intent --requests 100 --rerank
-bash scripts/benchmark_search.sh multimodal --requests 100 --fusion weighted_score --rerank
+python3 scripts/deploy.py init
+python3 scripts/deploy.py validate
+python3 scripts/deploy.py build
+python3 scripts/deploy.py up
+python3 scripts/deploy.py check
 ```
 
-Verifier cần host backend venv, Docker access, Node/npm/Playwright Chromium theo SETUP; script đọc token từ .env vào child environment, không yêu cầu dán token vào CLI. Core đã active từ Prompt05 thì không cần reindex/migration. Các flags MULTIMODAL_ENABLED/MULTI_INTENT_ENABLED/RERANKING_ENABLED mặc địnhtrue khi SEARCH_ENABLED bật; request rerank vẫn off mặc định. [Multimodal](docs/MULTIMODAL_SEARCH.md), [Multi-intent](docs/MULTI_INTENT_SEARCH.md), [Reranking](docs/RERANKING_DESIGN.md), [API](docs/ADVANCED_SEARCH_API.md), [Test report](docs/ADVANCED_SEARCH_TEST_REPORT.md).
+Mặc định dùng `.env.deploy` và8080. App khởi động chưa có dataset/model/provider; tải model và import có chủ đích. [DEPLOYMENT_GUIDE](docs/operations/DEPLOYMENT_GUIDE.md) ghi Docker Snap compatibility, TLS và các giới hạn public deployment.
 
-## Đánh giá và benchmark Prompt 07
-
-Cần stack/index CLIP đã sẵn sàng theo Prompt04–06; dùng cùng snapshot10 ảnh và28 query. Kết quả được ghi vào thư mục experiment mới, không ghi đè các phase trước.
+## Kiểm thử và dữ liệu
 
 ```bash
-uv sync --project backend --extra dev --extra ml --extra evaluation --frozen
-backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/bin/python -m app.cli.evaluation validate-dataset
-make annotate-evaluation
-make benchmark-evaluation
-bash scripts/run_evaluation_container.sh clip
-bash scripts/run_evaluation_container.sh siglip2
-bash scripts/run_evaluation_container.sh profile
-make verify-evaluation
-MPLCONFIGDIR=.cache/matplotlib backend/.venv/bin/python -m app.cli.evaluation report --output evaluation/reports/new_run
+python3 scripts/qa.py up
+python3 scripts/qa.py fast
+python3 scripts/qa.py services
+python3 scripts/qa.py frontend
+python3 scripts/qa.py down
 ```
 
-Tải SigLIP một lần bằng `backend/.venv/bin/python -m app.cli.download_evaluation_model --output .cache/siglip2` trước model comparison; không đổi active index. Các lệnh container cần quyền Docker. Nếu shell chưa nhận nhóm, dùng `sg docker -c 'LỆNH'`. Trang `.cache/evaluation/annotation.html` mở offline để gán nhãn24 query; xuất bản nháp trước khi đóng. Không có nhãn thì chỉ chấm4 ca exact identity, giữ các điểm relevance ở trạng thái chưa đo.
+QA dùng `.env.qa` và namespace riêng. Docker Snap dùng `QA_USE_SG=1`; real-model profile cần cache đã chuẩn bị. [TESTING_AND_VERIFICATION](docs/operations/TESTING_AND_VERIFICATION.md) có browser/AI/lint commands và phân loại tests. Dataset/weights/backups/env thực bị loại khỏi Git/build context theo quy định tương ứng.
 
-Xem [hướng dẫn CLI](evaluation/README.md), [protocol gán nhãn](docs/DATASET_AND_GROUND_TRUTH.md), [report tự sinh](evaluation/reports/phase07/REPORT.md). Mục tiêu P90≤300ms đã quan sát ở tải một client/corpus10; lỗi quá tải ở5–20 clients vẫn được báo. Chưa tự chuyển Prompt08.
+- [Nhập dataset](docs/operations/DATASET_IMPORT_GUIDE.md), [model](docs/operations/MODEL_MANAGEMENT.md).
+- [Vận hành](docs/operations/OPERATIONS_RUNBOOK.md), [backup/restore](docs/operations/BACKUP_AND_RECOVERY.md), [bảo mật](docs/operations/SECURITY_DEPLOYMENT.md).
+- [Cấu trúc repository](docs/REPOSITORY_STRUCTURE.md), [tài liệu theo chủ đề](docs/README.md), [danh mục scripts](scripts/README.md).
+- [Kiến trúc](docs/architecture/FINAL_SYSTEM_ARCHITECTURE.md), [API](docs/architecture/API_SPECIFICATION.md), [database](docs/architecture/DATABASE_DESIGN.md).
 
-## RAG tùy chọn — Prompt08
-
-Sau khi tìm ảnh, nút **Giải thích bằng AI** gọi backend để đọc lại evidence thật; không tự gọi LLM mỗi lần search. Corpus10 ảnh chưa có caption/tags nên câu hỏi về đối tượng/màu/cảnh sẽ báo thiếu bằng chứng. Có thể hỏi về định dạng/kích thước/source metadata đã lưu.
-
-```env
-RAG_ENABLED=true
-RAG_MODEL_PROVIDER=gemini
-RAG_MODEL_ID=gemini-3.5-flash-lite
-RAG_MODEL_ENDPOINT=https://generativelanguage.googleapis.com/v1beta
-RAG_GEMINI_API_STYLE=native
-RAG_REASONING_EFFORT=minimal
-RAG_API_KEY=
-```
-
-Điền key trong .env, hoặc dùng GEMINI_API_KEY đã có. Không đặt key vào frontend/URL/chat. OpenAI và self-hosted compatible endpoint có adapter cấu hình riêng tại [RAG_IMPLEMENTATION](docs/RAG_IMPLEMENTATION.md); nghiệm thu thật hiện dùng Gemini. RAG_ENABLED=false giữ Semantic Search hoạt động.
-
-```bash
-docker compose build backend indexing-worker frontend
-docker compose up -d --wait backend frontend
-bash scripts/verify_rag.sh
-backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/bin/python -m app.cli.rag --requests 20
-backend/.venv/bin/python scripts/verify_rag_fallback.py
-```
-
-Lệnh fallback recreate API ngắn để thử RAG disabled/connection failure/timeout, rồi khôi phục cấu hình RAG ban đầu. Báo cáo A–L: [PHASE08_TEST_REPORT](docs/PHASE08_TEST_REPORT.md); [API](docs/RAG_API.md), [phương pháp](docs/RAG_EVALUATION.md), [hiệu năng](docs/RAG_PERFORMANCE.md). Không tự bắt đầu Prompt09.
-
-[Báo cáo RAG tự sinh và CSV/biểu đồ](evaluation/reports/phase08_20261105/REPORT.md). Trạng thái nghiệm thu hiện chưa toàn bộ pass: provider có timeout/intermittent browser failure và một nhóm RAG vượt target3s; xem PHASE08_TEST_REPORT trước khi suy production readiness.
+README theo phase trước được giữ tại [archive](docs/archive/README_PHASE12.md). Raw benchmark/verification artifacts giữ kết quả gốc; đường dẫn lệnh đang dùng xem các hướng dẫn hiện hành.

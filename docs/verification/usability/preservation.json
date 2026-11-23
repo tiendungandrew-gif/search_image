@@ -1,0 +1,21 @@
+{
+  "unchanged_files": {
+    "frontend/src/styles/index.css": true,
+    "backend/app/core/auth.py": true,
+    "backend/app/core/access.py": true,
+    ".env": true,
+    "config/environments/deployment.env": true
+  },
+  "corpus_matches_previous_verified_snapshot": {
+    "counts": true,
+    "jobs": true,
+    "indexes": true,
+    "active": true,
+    "collections": true,
+    "stored_objects": true
+  },
+  "secret_scan": {
+    "checked_files": 1717,
+    "matched_files": []
+  }
+}

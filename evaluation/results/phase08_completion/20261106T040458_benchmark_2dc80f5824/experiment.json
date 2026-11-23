@@ -1,0 +1,87 @@
+{
+  "experiment_id": "20261106T040458_benchmark_2dc80f5824",
+  "timestamp_utc": "2026-11-06T04:04:58.182037+00:00",
+  "kind": "benchmark",
+  "config": {
+    "seed": 42,
+    "name": "phase08_coco_fast",
+    "profile": "fast",
+    "requests": 500,
+    "warmup": 12,
+    "sample_resources": true
+  },
+  "git_commit": "5629bce93c2828d2c1ca790ecd07bea288d3f267",
+  "git_status": "available",
+  "source": {
+    "sha256": "d96f983090b509b83c31a6e3bc9bc57043467418e1a6bff3016f8313e405dfda",
+    "files": 212,
+    "archive": "evaluation/results/phase08_completion/_sources/d96f983090b509b83c31a6e3bc9bc57043467418e1a6bff3016f8313e405dfda.tar.gz",
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "client_platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+  "client_python": "3.12.3",
+  "client_hardware": {
+    "cpu": "Intel(R) Core(TM) 7 240H",
+    "logical_cpus": 16,
+    "total_ram_kib": 15845068,
+    "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "torch": "2.15.0+cpu",
+      "transformers": "4.57.6",
+      "httpx": "0.28.1",
+      "qdrant-client": "1.20.0",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "provenance": {
+    "dataset_sha256": "0541481f9b954508f7a54ff6b3c09fa04ced643e4bb755348343ed06687e6aba",
+    "dataset_images": 510,
+    "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+    "label_sha256": null,
+    "active": {
+      "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+      "index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+      "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+    },
+    "server_environment": {
+      "status": "ready",
+      "pid": 1,
+      "python": "3.12.12",
+      "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+      "logical_cpus": 16,
+      "cpu_user_seconds": 37.79318,
+      "cpu_system_seconds": 5.320093,
+      "process_memory_kib": {
+        "VmHWM": 1279496,
+        "VmRSS": 1235516
+      },
+      "process_threads": 48,
+      "model_initialization_ms": 9753.850637999676,
+      "settings": {
+        "embedding_cpu_threads": 4,
+        "embedding_device": "auto",
+        "search_max_top_k": 50,
+        "search_default_candidates": 50,
+        "search_queue_capacity": 8,
+        "search_queue_wait_seconds": 0.05,
+        "search_object_check_concurrency": 1,
+        "reranking_max_candidates": 50,
+        "reranking_timeout_ms": 200
+      },
+      "gpu_measurements": null,
+      "model": {
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "name": "openai/clip-vit-base-patch32",
+        "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "dimension": 512,
+        "device": "cpu",
+        "index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+        "collection": "images_clip_coco_phase08_v1_1ea0b3304d04",
+        "generation": 2
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 import asyncio
 import hashlib
+import json
 import os
 from pathlib import Path
 
@@ -106,9 +107,46 @@ async def test_real_multimodal_multi_intent_constraints_and_baseline(monkeypatch
                     value["search_mode"] == "multimodal"
                     and value["effective_settings"]["fusion_version"] == method + "-v1"
                 )
+                assert value["effective_settings"]["channels"] == 2
+                # Fusion is a union: with >50 images, an image can occur in only one branch.
+                for row in value["results"]:
+                    parts = row["contributing_branches"]
+                    assert parts and {c["branch"] for c in parts} <= {"whole", "image"}
+                    for part in parts:
+                        weight = 0.6 if part["branch"] == "image" else 0.4
+                        assert part["weight"] == pytest.approx(weight)
+                        assert 1 <= part["rank"] <= 50
+                        expected = weight * (
+                            (part["cosine"] + 1) / 2
+                            if method == "weighted_score"
+                            else 1 / (60 + part["rank"])
+                        )
+                        assert part["contribution"] == pytest.approx(expected)
+                fixture = await client.post(
+                    "/api/v1/search/multimodal",
+                    files={"image": ("fixture.png", data, "image/png")},
+                    data={
+                        "options": json.dumps(
+                            {
+                                "text": "a cup of coffee",
+                                "mode": "multimodal",
+                                "top_k": 5,
+                                "filters": {"source_dataset": "scikit-image-v0.25.2"},
+                                "fusion": {
+                                    "method": method,
+                                    "text_weight": 0.4,
+                                    "image_weight": 0.6,
+                                },
+                                "rerank": {"enabled": True},
+                            }
+                        )
+                    },
+                )
+                assert fixture.status_code == 200, fixture.json()
+                assert fixture.json()["results"]
                 assert all(
-                    {c["branch"] for c in row["contributing_branches"]} >= {"whole", "image"}
-                    for row in value["results"]
+                    {c["branch"] for c in row["contributing_branches"]} == {"whole", "image"}
+                    for row in fixture.json()["results"]
                 )
                 content = await client.get(value["results"][0]["image_url"])
                 assert content.status_code == 200 and len(content.content) > 0

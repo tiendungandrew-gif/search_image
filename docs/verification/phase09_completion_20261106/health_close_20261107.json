@@ -1,0 +1,11 @@
+{
+  "live": 200,
+  "ready": 200,
+  "search": 200,
+  "agent": 200,
+  "status": "pass",
+  "public_query_status": "completed",
+  "public_images": 3,
+  "tool_calls": 4,
+  "logical_hops": 3
+}

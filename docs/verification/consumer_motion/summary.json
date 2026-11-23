@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-20",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "status": "passed",
+  "environment": "development localhost:5173",
+  "checks": {
+    "frontend_build": "passed",
+    "eslint": "passed",
+    "unit_tests": 76,
+    "unit_files": 19,
+    "browser_tests": 8,
+    "browser_failures": 0,
+    "browser_skipped": 0,
+    "browser_flaky": 0,
+    "diff_check": "passed"
+  },
+  "browser_projects": [
+    "desktop 1440px",
+    "mobile 390px",
+    "narrow 320px",
+    "Firefox 1280px"
+  ],
+  "physical_device_or_fps_measurement": false,
+  "committed": false
+}

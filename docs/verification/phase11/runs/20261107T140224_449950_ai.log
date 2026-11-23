@@ -1,0 +1,57 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-01b11f3e65f9 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-01b11f3e65f9 Created 
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_real_clip_empty_to_indexed_search_agent_and_rag_fixture _________
+
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...s=<app.services.health.Services object at 0x76ba63d9b470>, token='f41b952d903548bab015ffa0c42caf19', collections=set())
+
+    async def test_real_clip_empty_to_indexed_search_agent_and_rag_fixture(qa_resources):
+        cfg = qa_resources.settings
+>       result = await seed(qa_resources.services)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/integration/test_qa_ai.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/seed_qa.py:66: in seed
+    await import_knowledge(services, payload, apply=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+services = <app.services.health.Services object at 0x76ba63d9b470>
+data = {'fixture': True, 'entities': [{'id': '10000000-0000-4000-8000-000000000001', 'canonical_name': 'Fixture Lake Alpha', ...': '10000000-0000-4000-8000-000000000003', 'relation': 'depicts', 'source_ref': 'fixture://phase11/association', ...}]}
+apply = True
+
+    async def import_knowledge(services, data, apply=False):
+        payload = KnowledgeImport.model_validate(data)
+        cfg = services.settings
+        fixture = (
+            payload.fixture
+            or any(
+                e.provenance.get("fixture") or e.provenance["source_ref"].startswith("fixture:")
+                for e in payload.entities
+            )
+            or any(
+                r.evidence.get("fixture") or r.source_ref.startswith("fixture:")
+                for r in payload.relationships
+            )
+            or any(r.source_ref.startswith("fixture:") for r in payload.image_entities)
+        )
+        if fixture and (
+            cfg.app_env != "test"
+            or not cfg.agent_allow_fixture_knowledge
+            or not make_url(cfg.database_url.get_secret_value()).database.startswith("agent_test_")
+        ):
+>           raise ValueError("FIXTURES_REQUIRE_ISOLATED_AGENT_TEST_DATABASE")
+E           ValueError: FIXTURES_REQUIRE_ISOLATED_AGENT_TEST_DATABASE
+
+backend/app/repositories/knowledge_import.py:80: ValueError
+=============================== warnings summary ===============================
+tests/integration/test_qa_ai.py::test_real_clip_empty_to_indexed_search_agent_and_rag_fixture
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_qa_ai.py::test_real_clip_empty_to_indexed_search_agent_and_rag_fixture
+1 failed, 1 warning in 8.32s
+

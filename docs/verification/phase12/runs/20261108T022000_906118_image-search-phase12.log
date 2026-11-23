@@ -1,0 +1,3 @@
+worker-1  | /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+worker-1  |   self.client = AsyncQdrantClient(
+

@@ -1,0 +1,80 @@
+{
+  "dependencies": {
+    "postgresql": "healthy",
+    "qdrant": "healthy",
+    "minio": "healthy"
+  },
+  "dataset_state": "DATA_PRESENT",
+  "counts": {
+    "images": 513,
+    "objects_receipts": 513,
+    "ready_embeddings": 1054
+  },
+  "jobs": {
+    "succeeded": 1074
+  },
+  "indexes": [
+    {
+      "id": "1552493b-1f80-4dac-9f75-41a8e9896d1d",
+      "status": "building",
+      "collection": "images_test_3e1ae2e5b864_2da3efb764c0"
+    },
+    {
+      "id": "3c7b23e3-4c73-4082-aa09-34df3bc70208",
+      "status": "ready",
+      "collection": "images_siglip2_phase07_v1_7c8f7207b4d1"
+    },
+    {
+      "id": "4cbeea7f-8111-43bc-bc38-4b7c373e1a7b",
+      "status": "ready",
+      "collection": "images_clip_v1_64b85964aaf3"
+    },
+    {
+      "id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+      "status": "ready",
+      "collection": "images_clip_coco_phase08_v1_1ea0b3304d04"
+    },
+    {
+      "id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "status": "ready",
+      "collection": "images_clip_v1_da55a7d099fd"
+    },
+    {
+      "id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "status": "ready",
+      "collection": "images_clip_landmarks_phase09_v1_142374e60d29"
+    }
+  ],
+  "active": {
+    "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+    "generation": 3
+  },
+  "collections": [
+    {
+      "name": "images_clip_coco_phase08_v1_1ea0b3304d04",
+      "points": 510
+    },
+    {
+      "name": "images_clip_landmarks_phase09_v1_142374e60d29",
+      "points": 513
+    },
+    {
+      "name": "images_clip_v1_64b85964aaf3",
+      "points": 10
+    },
+    {
+      "name": "images_clip_v1_da55a7d099fd",
+      "points": 10
+    },
+    {
+      "name": "images_siglip2_phase07_v1_7c8f7207b4d1",
+      "points": 10
+    },
+    {
+      "name": "images_test_3e1ae2e5b864_2da3efb764c0",
+      "points": 1
+    }
+  ],
+  "stored_objects": 516,
+  "model_artifacts": "present_unverified"
+}

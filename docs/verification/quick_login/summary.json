@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "url": "http://localhost:5173",
+  "roles": [
+    "admin",
+    "user"
+  ],
+  "main_quick_login_enabled": true,
+  "production_quick_login_enabled": false,
+  "tests": {
+    "backend_fast": 257,
+    "backend_services": 19,
+    "frontend_unit": 54,
+    "browser_desktop_mobile": 2,
+    "lint_type_build": "passed"
+  },
+  "main_images": 513,
+  "credentials_embedded_in_frontend": false
+}

@@ -1,0 +1,238 @@
+{
+  "project": "image-search-phase12",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect semantic-image-search/backend:phase12-verify-v3"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.30554093999990073
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect semantic-image-search/frontend:phase12-verify-v3"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.20212747799996578
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 stop backend worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.313457395000114
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.operations inventory"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.397835918000055
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        "/home/tts/prj/.env.phase12",
+        "-f",
+        "/home/tts/prj/compose.prod.yaml",
+        "-p",
+        "image-search-phase12",
+        "exec",
+        "-T",
+        "postgres",
+        "pg_dump",
+        "-U",
+        "image_search",
+        "-d",
+        "image_search",
+        "--format=custom",
+        "--no-owner",
+        "--no-privileges"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4512888340000245
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 stop qdrant minio"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5632385349999822
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect alpine:3.22.2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.22385655200014298
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker pull alpine:3.22.2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.390918786000384
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker volume inspect image-search-phase12_qdrant_data"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.15569560800031468
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--read-only",
+        "--user",
+        "0:0",
+        "--cap-drop",
+        "ALL",
+        "--cap-add",
+        "DAC_OVERRIDE",
+        "--security-opt",
+        "no-new-privileges:false",
+        "--mount",
+        "type=volume,src=image-search-phase12_qdrant_data,dst=/data,readonly",
+        "alpine:3.22.2",
+        "tar",
+        "-czf",
+        "-",
+        "-C",
+        "/data",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.2847018209999987
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker volume inspect image-search-phase12_minio_data"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.15340510399983032
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--read-only",
+        "--user",
+        "0:0",
+        "--cap-drop",
+        "ALL",
+        "--cap-add",
+        "DAC_OVERRIDE",
+        "--security-opt",
+        "no-new-privileges:false",
+        "--mount",
+        "type=volume,src=image-search-phase12_minio_data,dst=/data,readonly",
+        "alpine:3.22.2",
+        "tar",
+        "-czf",
+        "-",
+        "-C",
+        "/data",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.6209253549995992
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-build --wait --wait-timeout 60 qdrant minio"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.867239421000249
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 start backend worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.690953558999809
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 exec -T worker python -m app.cli.worker --health"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.697777736000262
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 config --quiet"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.24543200700009038
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-build --wait --wait-timeout 180 postgres qdrant minio backend worker frontend"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 32.84343873099988
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 exec -T worker python -m app.cli.worker --health"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.659758179000164
+    }
+  ]
+}

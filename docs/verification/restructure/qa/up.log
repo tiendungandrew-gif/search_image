@@ -1,0 +1,281 @@
+ Image phase11-qa-2c8ad1b9345d-qa-frontend Building 
+ Image ai-image-search/minio:2025-09-07 Building 
+ Image image-search-qa/backend:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.51kB done
+#1 DONE 0.0s
+
+#2 [qa-api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.53kB 0.0s done
+#2 DONE 0.0s
+
+#3 [qa-minio internal] load build definition from minio.Dockerfile
+#3 transferring dockerfile: 1.32kB 0.0s done
+#3 DONE 0.1s
+
+#4 [qa-frontend internal] load build definition from Dockerfile
+#4 transferring dockerfile: 301B 0.0s done
+#4 DONE 0.1s
+
+#5 [qa-frontend internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#5 ...
+
+#6 [qa-api internal] load metadata for ghcr.io/astral-sh/uv:0.13.7
+#6 DONE 1.3s
+
+#7 [qa-minio] resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#7 DONE 1.7s
+
+#8 [qa-api internal] load metadata for docker.io/library/python:3.12.12-slim-bookworm
+#8 DONE 1.7s
+
+#5 [qa-frontend internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#5 DONE 1.7s
+
+#9 [qa-frontend internal] load .dockerignore
+#9 transferring context: 374B done
+#9 DONE 0.0s
+
+#10 [qa-minio] docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#10 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.0s done
+#10 CACHED
+
+#11 [qa-frontend internal] load build context
+#11 DONE 0.0s
+
+#12 [qa-api internal] load build context
+#12 transferring context: 527.43kB 0.1s done
+#12 DONE 0.1s
+
+#13 [qa-frontend 1/7] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+#13 resolve docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d 0.1s done
+#13 DONE 0.1s
+
+#14 [qa-api uv 1/1] FROM ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490
+#14 resolve ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490 0.1s done
+#14 DONE 0.1s
+
+#15 [qa-api stage-1  1/12] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#15 resolve docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c 0.1s done
+#15 DONE 0.1s
+
+#11 [qa-frontend internal] load build context
+#11 transferring context: 59.14kB done
+#11 DONE 0.0s
+
+#16 [qa-api stage-1  2/12] COPY --from=uv /uv /usr/local/bin/uv
+#16 CACHED
+
+#17 [qa-api stage-1  3/12] WORKDIR /srv
+#17 CACHED
+
+#18 [qa-api stage-1  4/12] COPY backend/pyproject.toml backend/uv.lock backend/
+#18 CACHED
+
+#19 [qa-api stage-1  5/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#19 CACHED
+
+#20 [qa-frontend 4/7] COPY frontend/package.json frontend/package-lock.json ./
+#20 CACHED
+
+#21 [qa-frontend 3/7] RUN npm install --global npm@11.21.1
+#21 CACHED
+
+#22 [qa-frontend 6/7] COPY frontend/ ./
+#22 CACHED
+
+#23 [qa-frontend 5/7] RUN npm ci
+#23 CACHED
+
+#24 [qa-frontend 2/7] WORKDIR /srv/frontend
+#24 CACHED
+
+#25 [qa-frontend 7/7] RUN chown -R node:node /srv/frontend
+#25 CACHED
+
+#26 [qa-frontend] exporting to image
+#26 exporting layers done
+#26 exporting manifest sha256:e98d95a7ca45b885df3af2c984fe3c30627ad6d45c41880a256ed74520b2229c 0.0s done
+#26 exporting config sha256:b09d20449a36ade7ce989349a31f189fab41083240f74f41f15883fbf65055cd done
+#26 exporting attestation manifest sha256:6b5a112d8f580f40da746c78f1b961568ba304887fffa38c1dd4ddab17b96ef3
+#26 exporting attestation manifest sha256:6b5a112d8f580f40da746c78f1b961568ba304887fffa38c1dd4ddab17b96ef3 0.0s done
+#26 exporting manifest list sha256:0ac690894eb050dafbd82a9cdd90d9390f7014568d6e214cd8c465b2e3289862 0.0s done
+#26 naming to docker.io/library/phase11-qa-2c8ad1b9345d-qa-frontend:latest done
+#26 unpacking to docker.io/library/phase11-qa-2c8ad1b9345d-qa-frontend:latest 0.0s done
+#26 DONE 0.2s
+
+#27 [qa-minio internal] load metadata for docker.io/library/golang:1.25.3-bookworm
+#27 ...
+
+#28 [qa-api stage-1  6/12] COPY backend/ backend/
+#28 DONE 0.3s
+
+#29 [qa-frontend] resolving provenance for metadata file
+#29 DONE 0.0s
+
+#30 [qa-api stage-1  7/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#30 0.422    Building ai-image-search-backend @ file:///srv/backend
+#30 ...
+
+#31 [qa-minio internal] load metadata for docker.io/library/alpine:3.22.2
+#31 DONE 1.5s
+
+#27 [qa-minio internal] load metadata for docker.io/library/golang:1.25.3-bookworm
+#27 DONE 1.6s
+
+#32 [qa-minio internal] load .dockerignore
+#32 transferring context: 374B done
+#32 DONE 0.0s
+
+#33 [qa-minio build 2/5] ADD --checksum=sha256:8819e3e7817e46b7b3798f8f200ead208562e571563c2e040352378031abe9f2 https://codeload.github.com/minio/minio/tar.gz/07c3a429bfed433e49018cb0f78a52145d4bedeb /tmp/minio.tar.gz
+#33 DONE 0.0s
+
+#34 [qa-minio stage-1 1/5] FROM docker.io/library/alpine:3.22.2@sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412
+#34 resolve docker.io/library/alpine:3.22.2@sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412 0.0s done
+#34 DONE 0.0s
+
+#35 [qa-minio build 1/5] FROM docker.io/library/golang:1.25.3-bookworm@sha256:4f43b271f9673eb7bd0cb3a49cc17b08d8d6ee110277e26dbacc93c43a5a7793
+#35 resolve docker.io/library/golang:1.25.3-bookworm@sha256:4f43b271f9673eb7bd0cb3a49cc17b08d8d6ee110277e26dbacc93c43a5a7793 0.0s done
+#35 DONE 0.0s
+
+#36 [qa-minio build 5/5] RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build     CGO_ENABLED=0 go build -buildvcs=false -trimpath -ldflags='-s -w' -o /minio .
+#36 CACHED
+
+#37 [qa-minio stage-1 3/5] COPY --from=build /src/LICENSE /licenses/LICENSE
+#37 CACHED
+
+#38 [qa-minio build 3/5] WORKDIR /src
+#38 CACHED
+
+#39 [qa-minio stage-1 4/5] COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+#39 CACHED
+
+#40 [qa-minio build 2/5] ADD --checksum=sha256:8819e3e7817e46b7b3798f8f200ead208562e571563c2e040352378031abe9f2 https://codeload.github.com/minio/minio/tar.gz/07c3a429bfed433e49018cb0f78a52145d4bedeb /tmp/minio.tar.gz
+#40 CACHED
+
+#41 [qa-minio build 4/5] RUN tar -xzf /tmp/minio.tar.gz --strip-components=1
+#41 CACHED
+
+#42 [qa-minio stage-1 2/5] COPY --from=build /minio /usr/local/bin/minio
+#42 CACHED
+
+#43 [qa-minio stage-1 5/5] RUN addgroup -g 10001 minio && adduser -D -u 10001 -G minio minio && mkdir /data && chown minio:minio /data
+#43 CACHED
+
+#44 [qa-minio] exporting to image
+#44 exporting layers done
+#44 exporting manifest sha256:b62b3f7d7326131d0b317df18d4de8856c2c83a95188c6813c3cb2efe57fc0e3 done
+#44 exporting config sha256:cc11adedbdbe7ef77dd4e73ff9e435966465f3ee7e803068c40849e77a410cbd done
+#44 exporting attestation manifest sha256:94504915fd60b51fad7a8cd214b323003276fd90b9adaa06e7dd14faac7ac21c 0.0s done
+#44 exporting manifest list sha256:56046d5d0111823a35476835f98292f4b8bfddaca44be76d69b91c6597f62878 0.0s done
+#44 naming to docker.io/ai-image-search/minio:2025-09-07 done
+#44 unpacking to docker.io/ai-image-search/minio:2025-09-07 done
+#44 DONE 0.1s
+
+#30 [qa-api stage-1  7/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#30 ...
+
+#45 [qa-minio] resolving provenance for metadata file
+#45 DONE 0.0s
+
+#30 [qa-api stage-1  7/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#30 1.596       Built ai-image-search-backend @ file:///srv/backend
+#30 1.598 Prepared 1 package in 1.17s
+#30 1.621 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+#30 1.621          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+#30 1.621          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+#30 1.623 Installed 1 package in 24ms
+#30 2.144 Bytecode compiled 10800 files in 520ms
+#30 2.144  + ai-image-search-backend==0.3.0 (from file:///srv/backend)
+#30 DONE 2.2s
+
+#46 [qa-api stage-1  8/12] COPY scripts/ scripts/
+#46 DONE 0.1s
+
+#47 [qa-api stage-1  9/12] COPY evaluation/annotation/ evaluation/annotation/
+#47 DONE 0.1s
+
+#48 [qa-api stage-1 10/12] COPY evaluation/agent/ evaluation/agent/
+#48 DONE 0.1s
+
+#49 [qa-api stage-1 11/12] COPY .env.example .env.example
+#49 DONE 0.1s
+
+#50 [qa-api stage-1 12/12] COPY ruff.toml ruff.toml
+#50 DONE 0.1s
+
+#51 [qa-api] exporting to image
+#51 exporting layers 0.4s done
+#51 exporting manifest sha256:046dd17f50467b9534a6e759a6cd68caf710ba3713b7f90e8806069063efdea5 0.0s done
+#51 exporting config sha256:e3efd6907eb1306cbd0fc74190a459b861e29569a85fddc659f46e06f2ec344a 0.0s done
+#51 exporting attestation manifest sha256:25e02b4d66881cd73fc5092264baaea86321e5a2600488399c480b3b52606f4f 0.0s done
+#51 exporting manifest list sha256:c45caea5076e21b83cd12b66df4c27e1e44edad40772a4912137e4cdb47c642f
+#51 exporting manifest list sha256:c45caea5076e21b83cd12b66df4c27e1e44edad40772a4912137e4cdb47c642f 0.0s done
+#51 naming to docker.io/image-search-qa/backend:local done
+#51 unpacking to docker.io/image-search-qa/backend:local
+#51 unpacking to docker.io/image-search-qa/backend:local 0.3s done
+#51 DONE 0.9s
+
+#52 [qa-api] resolving provenance for metadata file
+#52 DONE 0.0s
+ Image phase11-qa-2c8ad1b9345d-qa-frontend Built 
+ Image ai-image-search/minio:2025-09-07 Built 
+ Image image-search-qa/backend:local Built 
+ Network phase11-qa-2c8ad1b9345d_qa-data Creating 
+ Volume phase11-qa-2c8ad1b9345d_qa_pg Creating 
+ Volume phase11-qa-2c8ad1b9345d_qa_vectors Creating 
+ Volume phase11-qa-2c8ad1b9345d_qa_pg Creating 
+ Network phase11-qa-2c8ad1b9345d_qa-data Creating 
+ Volume phase11-qa-2c8ad1b9345d_qa_vectors Creating 
+ Network phase11-qa-2c8ad1b9345d_qa-web Creating 
+ Volume phase11-qa-2c8ad1b9345d_qa_objects Creating 
+ Volume phase11-qa-2c8ad1b9345d_qa_objects Creating 
+ Network phase11-qa-2c8ad1b9345d_qa-web Creating 
+ Volume phase11-qa-2c8ad1b9345d_qa_pg Created 
+ Volume phase11-qa-2c8ad1b9345d_qa_pg Created 
+ Volume phase11-qa-2c8ad1b9345d_qa_vectors Created 
+ Volume phase11-qa-2c8ad1b9345d_qa_vectors Created 
+ Volume phase11-qa-2c8ad1b9345d_qa_objects Created 
+ Volume phase11-qa-2c8ad1b9345d_qa_objects Created 
+ Network phase11-qa-2c8ad1b9345d_qa-data Created 
+ Network phase11-qa-2c8ad1b9345d_qa-data Created 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Created 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Created 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Created 
+ Network phase11-qa-2c8ad1b9345d_qa-web Created 
+ Network phase11-qa-2c8ad1b9345d_qa-web Created 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Created 
+ Container phase11-qa-2c8ad1b9345d-qa-frontend-1 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-frontend-1 Created 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Starting 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Starting 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Starting 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Started 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Started 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Started 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Starting 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Started 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-frontend-1 Starting 
+ Container phase11-qa-2c8ad1b9345d-qa-frontend-1 Started 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-frontend-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-frontend-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-minio-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-qdrant-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-postgres-1 Healthy 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Healthy 

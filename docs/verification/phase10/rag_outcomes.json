@@ -1,0 +1,16 @@
+[
+  {
+    "project": "desktop",
+    "generated": true,
+    "grounding_status": "supported",
+    "error_code": null,
+    "citation_count": 6
+  },
+  {
+    "project": "mobile",
+    "generated": true,
+    "grounding_status": "supported",
+    "error_code": null,
+    "citation_count": 6
+  }
+]

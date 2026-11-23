@@ -1,0 +1,42 @@
+
+> ai-image-search-frontend@0.3.0 typecheck
+> tsc -b
+
+
+> ai-image-search-frontend@0.3.0 lint
+> eslint . --max-warnings 0
+
+
+> ai-image-search-frontend@0.3.0 test
+> vitest run
+
+
+ RUN  v4.1.12 /home/tts/prj/frontend
+
+
+ Test Files  13 passed (13)
+      Tests  54 passed (54)
+   Start at  17:17:09
+   Duration  3.48s (transform 3.56s, setup 6.39s, import 4.57s, tests 3.19s, environment 13.98s)
+
+
+> ai-image-search-frontend@0.3.0 build
+> tsc -b && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 71 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.60 kB │ gzip:  0.38 kB
+dist/assets/index-CpANpkD_.css              33.76 kB │ gzip:  8.11 kB
+dist/assets/AccountPage-Bxfx6-6f.js          2.02 kB │ gzip:  0.95 kB
+dist/assets/DatasetStatus-BjPCrZgC.js        2.73 kB │ gzip:  1.13 kB
+dist/assets/ImageDetailDialog-D-KYhJAk.js    3.01 kB │ gzip:  1.43 kB
+dist/assets/EvaluationPage-CU6C2ICL.js       3.22 kB │ gzip:  1.59 kB
+dist/assets/AgentResults-mCLPOhHM.js         3.50 kB │ gzip:  1.69 kB
+dist/assets/ExplanationPanel-c075Fs3r.js     3.65 kB │ gzip:  1.83 kB
+dist/assets/OperatorWorkspace-BFVlMHVg.js    6.55 kB │ gzip:  2.73 kB
+dist/assets/AdminWorkspace-CK00qBH7.js      27.31 kB │ gzip:  7.56 kB
+dist/assets/index-C2KoQZr6.js              279.18 kB │ gzip: 87.32 kB
+✓ built in 1.62s

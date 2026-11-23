@@ -1,0 +1,35 @@
+{
+  "project": "image-search-phase12",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 config --quiet"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.23448627600009786
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-build --wait --wait-timeout 180 postgres qdrant minio backend worker frontend"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 32.91134139099995
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 exec -T worker python -m app.cli.worker --health"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.9043984449999698
+    }
+  ]
+}

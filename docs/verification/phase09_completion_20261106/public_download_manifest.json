@@ -1,0 +1,70 @@
+{
+  "dataset_id": "nps-landmarks-phase09-v1",
+  "source_dataset": "nps-landmarks-phase09-v1",
+  "rights_ref": "https://www.nps.gov/aboutus/disclaimer.htm",
+  "count": 3,
+  "fixture": false,
+  "downloaded_at": "2026-11-06T14:25:17.008093+00:00",
+  "catalog_sha256": "b50c37d95288d54cb2fd9f4543bfa3544f9ec38a862d683fadfcb1c2e59bfbfa",
+  "metadata_sha256": "8ed95b37813c5a27538be014216dfb796de30621e5168074fd863ae75a3104ff",
+  "images": [
+    {
+      "slug": "washington-monument",
+      "canonical_name": "Washington Monument",
+      "aliases": [
+        "Washington monument"
+      ],
+      "source_page": "https://www.nps.gov/wamo/index.htm",
+      "relation_source": "https://www.nps.gov/wamo/index.htm",
+      "download_url": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "credit": "NPS Photo",
+      "license": "Public domain (NPS U.S. Government work)",
+      "caption": "Washington Monument at dusk.",
+      "modifications": "NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits",
+      "filename": "washington-monument.jpg",
+      "width": 1200,
+      "height": 794,
+      "byte_size": 118507,
+      "sha256": "8bb408a5732032884aa1ecd079e095a39022b5f4c9bbfad363da4e9537e414ef",
+      "source_page_sha256": "4be524663812e3ec366d9df0b133ca4782788efe534c391feac698bec257550b"
+    },
+    {
+      "slug": "lincoln-memorial",
+      "canonical_name": "Lincoln Memorial",
+      "aliases": [],
+      "source_page": "https://www.nps.gov/linc/index.htm",
+      "relation_source": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+      "download_url": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "credit": "NPS Photo",
+      "license": "Public domain (NPS U.S. Government work)",
+      "caption": "Lincoln Memorial at dusk.",
+      "modifications": "NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits",
+      "filename": "lincoln-memorial.jpg",
+      "width": 1200,
+      "height": 800,
+      "byte_size": 93075,
+      "sha256": "26a8d69cb62bb78903c9b41d09af87406e91f782dc0808b3f2d1b4429d40e343",
+      "source_page_sha256": "7ac64e5a96ac26838d6a08a27f4a4dbe546af810237bea35164bde42214b52ed"
+    },
+    {
+      "slug": "jefferson-memorial",
+      "canonical_name": "Thomas Jefferson Memorial",
+      "aliases": [
+        "Jefferson Memorial"
+      ],
+      "source_page": "https://www.nps.gov/thje/index.htm",
+      "relation_source": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+      "download_url": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "credit": "NPS/ Mike Litterst",
+      "license": "Public domain (NPS U.S. Government work)",
+      "caption": "Thomas Jefferson Memorial with flowering trees.",
+      "modifications": "NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits",
+      "filename": "jefferson-memorial.jpg",
+      "width": 500,
+      "height": 375,
+      "byte_size": 56742,
+      "sha256": "2c674f52234fa6f8a4ecf558517c5bf5e58b51216490dadde770251f8845478b",
+      "source_page_sha256": "22a3d15ec2678e45e90d2fb2c3a52015e614bf955c2aaf894092051f8b2e32fb"
+    }
+  ]
+}

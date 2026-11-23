@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "name": "desktop",
+      "signup": 201,
+      "duplicate": 409,
+      "passwordConfirmation": true,
+      "login": 200,
+      "role": "user",
+      "datasets": 0,
+      "adminDenied": 403,
+      "logout": true,
+      "axeViolations": 0
+    },
+    {
+      "name": "mobile",
+      "signup": 201,
+      "duplicate": 409,
+      "passwordConfirmation": true,
+      "login": 200,
+      "role": "user",
+      "datasets": 0,
+      "adminDenied": 403,
+      "logout": true,
+      "axeViolations": 0
+    },
+    {
+      "name": "narrow",
+      "signup": 201,
+      "duplicate": 409,
+      "passwordConfirmation": true,
+      "login": 200,
+      "role": "user",
+      "datasets": 0,
+      "adminDenied": 403,
+      "logout": true,
+      "axeViolations": 0
+    },
+    {
+      "name": "firefox",
+      "signup": 201,
+      "duplicate": 409,
+      "passwordConfirmation": true,
+      "login": 200,
+      "role": "user",
+      "datasets": 0,
+      "adminDenied": 403,
+      "logout": true,
+      "axeViolations": 0
+    }
+  ],
+  "qaUsers": [
+    "qa_signup_872f11737fc046d0",
+    "qa_signup_2538cc5974ec45bd",
+    "qa_signup_5cde5d013f56413e",
+    "qa_signup_946302cbce5a4c12"
+  ]
+}

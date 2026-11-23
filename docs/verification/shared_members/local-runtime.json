@@ -1,0 +1,6 @@
+{
+  "liveness": 200,
+  "shared_flag_in_schema": true,
+  "revoke_sessions_route": true,
+  "production_updated": false
+}

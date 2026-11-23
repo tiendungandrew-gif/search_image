@@ -1,0 +1,200 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.94kB done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 301B 0.0s done
+#2 DONE 0.0s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.52kB 0.0s done
+#3 DONE 0.0s
+
+#4 [backend internal] load metadata for ghcr.io/astral-sh/uv:0.13.7
+#4 DONE 1.4s
+
+#5 [backend internal] load metadata for docker.io/library/python:3.12.12-slim-bookworm
+#5 ...
+
+#6 [frontend internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#6 DONE 1.8s
+
+#5 [backend internal] load metadata for docker.io/library/python:3.12.12-slim-bookworm
+#5 DONE 1.8s
+
+#7 [indexing-worker internal] load .dockerignore
+#7 transferring context: 279B done
+#7 DONE 0.0s
+
+#8 [frontend 1/7] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+#8 resolve docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d 0.0s done
+#8 DONE 0.0s
+
+#9 [backend internal] load build context
+#9 transferring context: 107.15kB 0.0s done
+#9 DONE 0.0s
+
+#10 [indexing-worker uv 1/1] FROM ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490
+#10 resolve ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490 0.0s done
+#10 DONE 0.0s
+
+#11 [backend stage-1  1/12] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#11 resolve docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c 0.0s done
+#11 DONE 0.0s
+
+#12 [indexing-worker stage-1  5/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#12 CACHED
+
+#13 [backend stage-1  3/12] WORKDIR /srv
+#13 CACHED
+
+#14 [backend stage-1  4/12] COPY backend/pyproject.toml backend/uv.lock backend/
+#14 CACHED
+
+#15 [backend stage-1  2/12] COPY --from=uv /uv /usr/local/bin/uv
+#15 CACHED
+
+#16 [backend stage-1  5/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "false" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-install-project --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-install-project --no-managed-python; fi     && useradd --uid 10001 --create-home appuser
+#16 CACHED
+
+#17 [frontend internal] load build context
+#17 transferring context: 9.01kB 0.0s done
+#17 DONE 0.0s
+
+#18 [frontend 3/7] RUN npm install --global npm@11.21.1
+#18 CACHED
+
+#19 [frontend 4/7] COPY frontend/package.json frontend/package-lock.json ./
+#19 CACHED
+
+#20 [frontend 2/7] WORKDIR /srv/frontend
+#20 CACHED
+
+#21 [frontend 5/7] RUN npm ci
+#21 CACHED
+
+#22 [indexing-worker stage-1  6/12] COPY backend/ backend/
+#22 ...
+
+#23 [frontend 6/7] COPY frontend/ ./
+#23 DONE 0.1s
+
+#24 [backend stage-1  6/12] COPY backend/ backend/
+#24 DONE 0.1s
+
+#22 [indexing-worker stage-1  6/12] COPY backend/ backend/
+#22 DONE 0.1s
+
+#25 [indexing-worker stage-1  7/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#25 2.727    Building ai-image-search-backend @ file:///srv/backend
+#25 ...
+
+#26 [backend stage-1  7/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "false" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#26 0.535    Building ai-image-search-backend @ file:///srv/backend
+#26 2.732       Built ai-image-search-backend @ file:///srv/backend
+#26 2.736 Prepared 1 package in 2.20s
+#26 2.739 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+#26 2.739          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+#26 2.739          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+#26 2.743 Installed 1 package in 7ms
+#26 4.258 Bytecode compiled 10079 files in 1.51s
+#26 4.258  + ai-image-search-backend==0.3.0 (from file:///srv/backend)
+#26 DONE 4.3s
+
+#27 [backend stage-1  8/12] COPY scripts/ scripts/
+#27 DONE 0.1s
+
+#28 [backend stage-1  9/12] COPY evaluation/annotation/ evaluation/annotation/
+#28 DONE 0.0s
+
+#29 [backend stage-1 10/12] COPY evaluation/agent/ evaluation/agent/
+#29 DONE 0.0s
+
+#30 [backend stage-1 11/12] COPY .env.example .env.example
+#30 DONE 0.0s
+
+#31 [backend stage-1 12/12] COPY ruff.toml ruff.toml
+#31 DONE 0.1s
+
+#32 [frontend 7/7] RUN chown -R node:node /srv/frontend
+#32 ...
+
+#33 [backend] exporting to image
+#33 exporting layers 0.2s done
+#33 exporting manifest sha256:6bbb474834139186a8bc6dbab97bf144fc6da5424450f58c8a2004be6904b856 done
+#33 exporting config sha256:c829b3461d5a8c3b8d5e00427050c7d045136b5d86013e7a6f2010f8441239d0 done
+#33 exporting attestation manifest sha256:6ad65e5d876793b810e226668ba469462ff26ad33bbddf7d3c4ad43b02804dd7 done
+#33 exporting manifest list sha256:b14db751926b05b07d21b16089c53a26405ff5726a3f35a3cf4234a91274e1f4 done
+#33 naming to docker.io/library/ai-image-search-backend:latest done
+#33 unpacking to docker.io/library/ai-image-search-backend:latest 0.2s done
+#33 DONE 0.5s
+
+#34 [backend] resolving provenance for metadata file
+#34 DONE 0.0s
+
+#25 [indexing-worker stage-1  7/12] RUN --mount=type=cache,target=/root/.cache/uv     research_extra=""; if [ "true" = true ]; then research_extra="--extra evaluation"; fi;     if [ "true" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
+#25 5.331       Built ai-image-search-backend @ file:///srv/backend
+#25 5.335 Prepared 1 package in 4.77s
+#25 5.337 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+#25 5.337          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+#25 5.337          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+#25 5.340 Installed 1 package in 4ms
+#25 6.700 Bytecode compiled 10800 files in 1.35s
+#25 6.700  + ai-image-search-backend==0.3.0 (from file:///srv/backend)
+#25 DONE 6.8s
+
+#35 [indexing-worker stage-1  8/12] COPY scripts/ scripts/
+#35 DONE 0.1s
+
+#32 [frontend 7/7] RUN chown -R node:node /srv/frontend
+#32 ...
+
+#36 [indexing-worker stage-1  9/12] COPY evaluation/annotation/ evaluation/annotation/
+#36 DONE 0.0s
+
+#37 [indexing-worker stage-1 10/12] COPY evaluation/agent/ evaluation/agent/
+#37 DONE 0.0s
+
+#38 [indexing-worker stage-1 11/12] COPY .env.example .env.example
+#38 DONE 0.0s
+
+#39 [indexing-worker stage-1 12/12] COPY ruff.toml ruff.toml
+#39 DONE 0.0s
+
+#40 [indexing-worker] exporting to image
+#40 exporting layers 0.2s done
+#40 exporting manifest sha256:81be950e1224d5e5ec77d672b58b6f431189383ee3f4beec3692da939053ca54 done
+#40 exporting config sha256:abdf0c1a29abf8a643691030e9ae7e52b01ee552873f34e13aa4c68c9be29e22 done
+#40 exporting attestation manifest sha256:2896a03f011dd6c51344191d6678ec409d926716b8cbdf5a46ba95e6649f109b done
+#40 exporting manifest list sha256:6c976baac1f183734e5c810c9fbd5740d40811ad71c4e9614656cf9b3705ac7f done
+#40 naming to docker.io/library/ai-image-search-indexing-worker:latest done
+#40 unpacking to docker.io/library/ai-image-search-indexing-worker:latest
+#40 unpacking to docker.io/library/ai-image-search-indexing-worker:latest 0.2s done
+#40 DONE 0.4s
+
+#41 [indexing-worker] resolving provenance for metadata file
+#41 DONE 0.0s
+
+#32 [frontend 7/7] RUN chown -R node:node /srv/frontend
+#32 DONE 10.2s
+
+#42 [frontend] exporting to image
+#42 exporting layers 10.6s done
+#42 exporting manifest sha256:3486e2b090ff03f28f7f8db816305c21d2975ce784dc8e3586a59d3099ea8be2 done
+#42 exporting config sha256:682f9ad579ec838d05536bda3d425cf3fd54ad5d39d8f37bf0f8895bbdfaef9d done
+#42 exporting attestation manifest sha256:8d7e70944f7c3673816e35dfd24540ed0b35f2bafbce759a6fd77dd9b947a53d done
+#42 exporting manifest list sha256:4b870a52642b7902c0e96af1cb8c80481cf3226201a9681292bc0d64755c6269 done
+#42 naming to docker.io/library/ai-image-search-frontend:latest done
+#42 unpacking to docker.io/library/ai-image-search-frontend:latest
+#42 unpacking to docker.io/library/ai-image-search-frontend:latest 5.5s done
+#42 DONE 16.2s
+
+#43 [frontend] resolving provenance for metadata file
+#43 DONE 0.0s
+
+ Image ai-image-search-indexing-worker Building 
+ Image ai-image-search-backend Building 
+ Image ai-image-search-frontend Building 
+ Image ai-image-search-backend Built 
+ Image ai-image-search-indexing-worker Built 
+ Image ai-image-search-frontend Built 

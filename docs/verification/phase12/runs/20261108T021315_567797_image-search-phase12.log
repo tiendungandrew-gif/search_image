@@ -1,0 +1,6 @@
+{"dependencies": {"postgresql": "healthy", "qdrant": "healthy", "minio": "healthy"}, "dataset_state": "EMPTY_DATASET", "counts": {"images": 0, "objects_receipts": 0, "ready_embeddings": 0}, "jobs": {}, "indexes": [], "active": null, "collections": [], "stored_objects": 0, "model_artifacts": "present_unverified"}
+ Container image-search-phase12-backend-run-d9c653ec8675 Creating 
+ Container image-search-phase12-backend-run-d9c653ec8675 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+

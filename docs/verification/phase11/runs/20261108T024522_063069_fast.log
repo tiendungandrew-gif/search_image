@@ -1,0 +1,57 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-a7be8c4c50bf Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-a7be8c4c50bf Created 
+........................................................................ [ 29%]
+..................................F..................................... [ 58%]
+........................................................................ [ 87%]
+..............................                                           [100%]
+=================================== FAILURES ===================================
+___________ test_worker_health_command_does_not_import_data_services ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7259bf24fa70>
+
+    def test_worker_health_command_does_not_import_data_services(monkeypatch):
+        import builtins
+        import runpy
+        import sys
+    
+        original = builtins.__import__
+    
+        def guarded(name, *args, **kwargs):
+            if name.startswith(("sqlalchemy", "numpy", "qdrant_client", "minio", "torch")):
+                raise AssertionError("A heartbeat check must not import the data or ML stack")
+            return original(name, *args, **kwargs)
+    
+        monkeypatch.setattr(builtins, "__import__", guarded)
+        monkeypatch.setattr(sys, "argv", ["worker", "--health"])
+        with pytest.raises(SystemExit) as result:
+>           runpy.run_module("app.cli.worker", run_name="__main__")
+
+backend/tests/unit/test_deployment.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+<frozen runpy>:229: in run_module
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend/app/cli/worker.py:11: in <module>
+    from sqlalchemy import select
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'sqlalchemy'
+args = ({'__name__': '__main__', '__file__': '/srv/backend/app/cli/worker.py', '__cached__': '/srv/backend/app/cli/__pycache_..., '__doc__': 'Worker thường trực: idle khi chưa có dataset, lazy-load model, heartbeat an toàn.', ...}, ('select',), 0)
+kwargs = {}
+
+    def guarded(name, *args, **kwargs):
+        if name.startswith(("sqlalchemy", "numpy", "qdrant_client", "minio", "torch")):
+>           raise AssertionError("A heartbeat check must not import the data or ML stack")
+E           AssertionError: A heartbeat check must not import the data or ML stack
+
+backend/tests/unit/test_deployment.py:173: AssertionError
+=============================== warnings summary ===============================
+tests/unit/test_deployment.py::test_worker_health_command_does_not_import_data_services
+  <frozen runpy>:128: RuntimeWarning: 'app.cli.worker' found in sys.modules after import of package 'app.cli', but prior to execution of 'app.cli.worker'; this may result in unpredictable behaviour
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/unit/test_deployment.py::test_worker_health_command_does_not_import_data_services
+1 failed, 245 passed, 1 warning in 16.76s
+

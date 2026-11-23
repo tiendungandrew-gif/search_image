@@ -1,0 +1,38 @@
+[
+  {
+    "name": "desktop",
+    "groupedFields": true,
+    "responsive": true,
+    "axeViolations": 0,
+    "confirmationFeedback": true,
+    "cancel": true,
+    "registrationRequests": 0
+  },
+  {
+    "name": "mobile",
+    "groupedFields": true,
+    "responsive": true,
+    "axeViolations": 0,
+    "confirmationFeedback": true,
+    "cancel": true,
+    "registrationRequests": 0
+  },
+  {
+    "name": "narrow",
+    "groupedFields": true,
+    "responsive": true,
+    "axeViolations": 0,
+    "confirmationFeedback": true,
+    "cancel": true,
+    "registrationRequests": 0
+  },
+  {
+    "name": "firefox",
+    "groupedFields": true,
+    "responsive": true,
+    "axeViolations": 0,
+    "confirmationFeedback": true,
+    "cancel": true,
+    "registrationRequests": 0
+  }
+]

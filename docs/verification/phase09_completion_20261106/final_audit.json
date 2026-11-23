@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "time_utc": "2026-11-06T16:47:58.307160+00:00",
+  "counts": {
+    "images": 513,
+    "entities": 4,
+    "entity_relationships": 3,
+    "image_entities": 3,
+    "captions": 503
+  },
+  "active_index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+  "generation": 3,
+  "ready_receipts": {
+    "active": 513,
+    "previous510": 510,
+    "baseline10": 10
+  },
+  "vector_counts": {
+    "active": 513,
+    "previous510": 510
+  },
+  "migration": "20261106_agent_knowledge",
+  "fixture_entities": 0,
+  "remaining_test_databases": 0,
+  "remaining_test_collections": [],
+  "protected_source_identical": {
+    "backend/app/services/embeddings/clip_encoder.py": true,
+    "backend/app/services/ingestion/decoder.py": true,
+    "backend/app/services/search/query_decoder.py": true,
+    "backend/app/services/search/decoder_process.py": true,
+    "backend/uv.lock": true,
+    "frontend/package-lock.json": true
+  },
+  "source": {
+    "sha256": "66ffd026326c79dc9c2c82018df37bb5aca9d671a0797d582761e05f0ddf187e",
+    "files": 253,
+    "archive": "evaluation/results/phase09_completion/_sources/66ffd026326c79dc9c2c82018df37bb5aca9d671a0797d582761e05f0ddf187e.tar.gz",
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "private_env_mode": "0600",
+  "secret_scan": {
+    "files": 124,
+    "archives": 4,
+    "leaks": []
+  },
+  "human_quality": "PENDING_BY_USER_CHOICE",
+  "measurement_backend_source_identical": true
+}

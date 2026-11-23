@@ -1,0 +1,9 @@
+{
+  "name": "phase11_fast_c4",
+  "seed": 42,
+  "profile": "fast",
+  "requests": 100,
+  "warmup": 8,
+  "concurrency": 4,
+  "sample_resources": true
+}

@@ -63,6 +63,13 @@ class Context:
 
 
 def build_context(evidence, question, language, settings, request):
+    def provider_fact(fact):
+        return (
+            fact.model_dump(mode="json", include={"fact_id", "evidence_field", "quote"})
+            if request.context_format == "compact"
+            else fact.model_dump(mode="json")
+        )
+
     technical = technical_question(question)
     limit = min(
         request.max_context_tokens or settings.rag_max_context_tokens,
@@ -87,11 +94,11 @@ def build_context(evidence, question, language, settings, request):
         if len(included) >= item_limit:
             break
         values = {}
-        if record.caption:
+        if record.caption and not technical:
             values["caption"] = record.caption
-        if record.tags:
+        if record.tags and not technical:
             values["tags"] = ", ".join(record.tags)
-        if record.metadata.get("description"):
+        if record.metadata.get("description") and not technical:
             values["description"] = record.metadata["description"]
         if technical:
             values.update(
@@ -111,7 +118,7 @@ def build_context(evidence, question, language, settings, request):
         if not batch:
             continue
         proposed = list(facts.values()) + list(batch.values())
-        encoded = json.dumps([f.model_dump(mode="json") for f in proposed], ensure_ascii=False)
+        encoded = json.dumps([provider_fact(f) for f in proposed], ensure_ascii=False)
         if len(encoded.encode()) > limit:
             continue
         facts.update(batch)
@@ -125,7 +132,11 @@ def build_context(evidence, question, language, settings, request):
             "insufficient_evidence.txt",
         ]
     }
-    sha = hashlib.sha256(json.dumps(templates, sort_keys=True).encode()).hexdigest()
+    sha = hashlib.sha256(
+        json.dumps(
+            {"templates": templates, "context_format": request.context_format}, sort_keys=True
+        ).encode()
+    ).hexdigest()
     messages = [
         {"role": "system", "content": templates["system_prompt.txt"]},
         {
@@ -138,7 +149,7 @@ def build_context(evidence, question, language, settings, request):
                 {
                     "QUESTION_DATA": question,
                     "LANGUAGE": language,
-                    "EVIDENCE_DATA": [f.model_dump(mode="json") for f in facts.values()],
+                    "EVIDENCE_DATA": [provider_fact(f) for f in facts.values()],
                 },
                 ensure_ascii=False,
             ),
@@ -158,6 +169,7 @@ def build_context(evidence, question, language, settings, request):
             "input_token_upper_bound": upper,
             "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
             "policy": request.context_policy,
+            "format": request.context_format,
             "technical_question": technical,
         },
         sha,

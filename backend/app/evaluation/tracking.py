@@ -69,9 +69,11 @@ def source_snapshot(root=None, archive_root=None):
             "frontend",
             "workers",
             "infra",
+            ".github",
             "evaluation/scripts",
             "evaluation/experiments",
             "evaluation/annotation",
+            "evaluation/agent",
         ]
         for p in (root / name).rglob("*")
         if p.is_file()
@@ -84,6 +86,11 @@ def source_snapshot(root=None, archive_root=None):
         for name in [
             "compose.yaml",
             "compose.host.yaml",
+            "compose.qa.yaml",
+            "compose.prod.yaml",
+            "compose.tls.yaml",
+            ".env.deploy.example",
+            "Makefile",
             ".env.example",
             ".gitignore",
             ".dockerignore",

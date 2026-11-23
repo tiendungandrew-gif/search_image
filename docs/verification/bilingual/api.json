@@ -1,0 +1,524 @@
+{
+  "scope": "API smoke: User ACL, private media, cache and image index",
+  "queries": [
+    {
+      "query": "một tách cà phê",
+      "http_status": 200,
+      "wall_ms": 362.2871050001777,
+      "processing_ms": 184.43817800016404,
+      "stages": {
+        "query_normalization_ms": 0.5977649998385459,
+        "query_decomposition_ms": 1.6131499996845378,
+        "query_analysis_ms": 1.7224800003532437,
+        "compatibility_ms": 16.373684000427602,
+        "text_preprocessing_ms": 0.8266280001407722,
+        "text_forward_ms": 42.526266999630025,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 44.71294599989051,
+        "vector_retrieval_ms": 25.286796000727918,
+        "ranking_ms": 0.22406100015359698,
+        "metadata_ms": 44.72109500056831,
+        "object_head_windows_ms": 37.056020000818535,
+        "eligibility_objects_urls_ms": 38.57140000036452,
+        "input_validation_ms": 10.072138999930758
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "4d0bdd5c-5e72-4892-9161-6efc8e51a5cc",
+        "cba51ba8-e2c6-415c-a5c3-4d142a44d9ea"
+      ],
+      "top1_metadata": {
+        "title": null,
+        "caption": null,
+        "width": 600,
+        "height": 400,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "warnings": []
+    },
+    {
+      "query": "a cup of coffee",
+      "http_status": 200,
+      "wall_ms": 128.86313800026983,
+      "processing_ms": 107.95909100033896,
+      "stages": {
+        "query_normalization_ms": 1.0344819993406418,
+        "query_decomposition_ms": 0.14645900046161842,
+        "query_analysis_ms": 0.07934699988254579,
+        "compatibility_ms": 10.128210999937437,
+        "text_preprocessing_ms": 0.5775230001745513,
+        "text_forward_ms": 32.77321800032951,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 34.301765999771305,
+        "vector_retrieval_ms": 12.817111000003933,
+        "ranking_ms": 0.195939000150247,
+        "metadata_ms": 24.20516999973188,
+        "object_head_windows_ms": 13.880473999961396,
+        "eligibility_objects_urls_ms": 15.966411000590597,
+        "input_validation_ms": 8.326017000399588
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "4d0bdd5c-5e72-4892-9161-6efc8e51a5cc",
+        "0cab254b-1b3a-456a-886b-3c36d19e29bb"
+      ],
+      "top1_metadata": {
+        "title": null,
+        "caption": null,
+        "width": 600,
+        "height": 400,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "warnings": []
+    },
+    {
+      "query": "một con mèo màu nâu",
+      "http_status": 200,
+      "wall_ms": 126.2391119998938,
+      "processing_ms": 104.88167500079726,
+      "stages": {
+        "query_normalization_ms": 0.3948939993279055,
+        "query_decomposition_ms": 0.11187200016138377,
+        "query_analysis_ms": 0.06003599992254749,
+        "compatibility_ms": 10.831005000000005,
+        "text_preprocessing_ms": 0.6287659998633899,
+        "text_forward_ms": 24.091107000458578,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 25.74393400027475,
+        "vector_retrieval_ms": 13.379320000240114,
+        "ranking_ms": 0.2202890000262414,
+        "metadata_ms": 26.22055800020462,
+        "object_head_windows_ms": 15.754500999719312,
+        "eligibility_objects_urls_ms": 17.28598099998635,
+        "input_validation_ms": 10.111428001437162
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "678820a5-823e-4e96-9bd4-a5605dab3dd4",
+        "3dff919c-00f5-4083-8b0c-dd46eedaf13c"
+      ],
+      "top1_metadata": {
+        "title": null,
+        "caption": null,
+        "width": 451,
+        "height": 300,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "warnings": []
+    },
+    {
+      "query": "a brown cat",
+      "http_status": 200,
+      "wall_ms": 127.35738100036542,
+      "processing_ms": 105.3134459998546,
+      "stages": {
+        "query_normalization_ms": 0.8555020003768732,
+        "query_decomposition_ms": 0.1164679997600615,
+        "query_analysis_ms": 0.057844000366458204,
+        "compatibility_ms": 9.082108999791672,
+        "text_preprocessing_ms": 0.5080390001239721,
+        "text_forward_ms": 27.00530299989623,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 28.37114100020699,
+        "vector_retrieval_ms": 12.704926999504096,
+        "ranking_ms": 0.2641440005390905,
+        "metadata_ms": 25.32837700073287,
+        "object_head_windows_ms": 17.51757199963322,
+        "eligibility_objects_urls_ms": 19.202761000087776,
+        "input_validation_ms": 8.439579999503621
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "3dff919c-00f5-4083-8b0c-dd46eedaf13c",
+        "678820a5-823e-4e96-9bd4-a5605dab3dd4",
+        "57ac376b-090d-499e-aed8-97368b32a5d2"
+      ],
+      "top1_metadata": {
+        "title": "COCO val2017 000000153217",
+        "caption": "a black cat standing in front of a motorcycle",
+        "width": 375,
+        "height": 500,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "coco2017-val-subset-v1",
+        "city": null,
+        "license": "http://creativecommons.org/licenses/by/2.0/"
+      },
+      "warnings": []
+    },
+    {
+      "query": "tên lửa phóng lên bầu trời",
+      "http_status": 200,
+      "wall_ms": 143.98729099957563,
+      "processing_ms": 120.35164999997505,
+      "stages": {
+        "query_normalization_ms": 0.7550720001745503,
+        "query_decomposition_ms": 0.15333700048358878,
+        "query_analysis_ms": 0.07957499929034384,
+        "compatibility_ms": 10.335129999475612,
+        "text_preprocessing_ms": 0.5977999999231542,
+        "text_forward_ms": 33.372899999449146,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 35.05671000039001,
+        "vector_retrieval_ms": 15.398730000015348,
+        "ranking_ms": 0.24195300011342624,
+        "metadata_ms": 30.056986999625224,
+        "object_head_windows_ms": 16.10618000086106,
+        "eligibility_objects_urls_ms": 17.7534119993652,
+        "input_validation_ms": 9.942314999534574
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "b5d2d38c-e778-4f15-8d99-46bb9e83d606",
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "16526aae-297c-4a8a-986e-3239731a84f5"
+      ],
+      "top1_metadata": {
+        "title": "COCO val2017 000000014439",
+        "caption": "Some people in a grass field flying a kite in the sky.",
+        "width": 640,
+        "height": 404,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "coco2017-val-subset-v1",
+        "city": null,
+        "license": "http://creativecommons.org/licenses/by/2.0/"
+      },
+      "warnings": []
+    },
+    {
+      "query": "a rocket launching into the sky",
+      "http_status": 200,
+      "wall_ms": 138.41317199967307,
+      "processing_ms": 115.93268199976592,
+      "stages": {
+        "query_normalization_ms": 1.1039279997930862,
+        "query_decomposition_ms": 0.15154599986999528,
+        "query_analysis_ms": 0.0855389998832834,
+        "compatibility_ms": 12.502380999649176,
+        "text_preprocessing_ms": 0.6576699997822288,
+        "text_forward_ms": 25.268565000260423,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 27.239345000452886,
+        "vector_retrieval_ms": 17.509735000203364,
+        "ranking_ms": 0.28311400001257425,
+        "metadata_ms": 27.756657000281848,
+        "object_head_windows_ms": 18.35923199996614,
+        "eligibility_objects_urls_ms": 20.283142999687698,
+        "input_validation_ms": 8.437704000243684
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "0278e1c7-641f-4751-b704-18d20fe2f6f1",
+        "92664455-383e-498d-ac9f-9e9b15eb425c",
+        "16526aae-297c-4a8a-986e-3239731a84f5"
+      ],
+      "top1_metadata": {
+        "title": null,
+        "caption": null,
+        "width": 640,
+        "height": 427,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "public-domain"
+      },
+      "warnings": []
+    },
+    {
+      "query": "con meo",
+      "http_status": 200,
+      "wall_ms": 191.20288799967966,
+      "processing_ms": 164.94455100018968,
+      "stages": {
+        "query_normalization_ms": 45.19202200026484,
+        "query_decomposition_ms": 0.16542999946977943,
+        "query_analysis_ms": 0.07768600062263431,
+        "compatibility_ms": 14.828365000539634,
+        "text_preprocessing_ms": 1.0340919998270692,
+        "text_forward_ms": 29.55199400003039,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 31.86276100041141,
+        "vector_retrieval_ms": 14.081090000217955,
+        "ranking_ms": 0.2195999995819875,
+        "metadata_ms": 29.19291600028373,
+        "object_head_windows_ms": 15.90651400056231,
+        "eligibility_objects_urls_ms": 19.30134799931693,
+        "input_validation_ms": 9.186639000290597
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "de7ace85-18ba-4455-8e40-d823b198444e",
+        "678820a5-823e-4e96-9bd4-a5605dab3dd4",
+        "01232aaa-14d4-418d-8d3e-7525ddedc3cd"
+      ],
+      "top1_metadata": {
+        "title": "COCO val2017 000000117374",
+        "caption": "Two cats sitting in the dirt under a tree.",
+        "width": 640,
+        "height": 428,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "coco2017-val-subset-v1",
+        "city": null,
+        "license": "http://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "warnings": [
+        {
+          "code": "QUERY_ACCENTS_RESTORED",
+          "message": "Đã tìm theo “con mèo” (thêm dấu từ “con meo”)."
+        }
+      ]
+    },
+    {
+      "query": "con  meo",
+      "http_status": 200,
+      "wall_ms": 106.70474200014723,
+      "processing_ms": 78.47472299999936,
+      "stages": {
+        "query_normalization_ms": 0.6356060002872255,
+        "query_decomposition_ms": 0.16132200016727438,
+        "query_analysis_ms": 0.08438199984084349,
+        "compatibility_ms": 12.548083999718074,
+        "text_preprocessing_ms": 0.023053000404615887,
+        "text_forward_ms": 0.0,
+        "text_cache_hits": 1,
+        "text_embedding_ms": 0.9166059999188292,
+        "vector_retrieval_ms": 12.449248999473639,
+        "ranking_ms": 0.21654600004694657,
+        "metadata_ms": 22.53205099987099,
+        "object_head_windows_ms": 13.878316998670925,
+        "eligibility_objects_urls_ms": 15.412491999995837,
+        "input_validation_ms": 12.967055000444816
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "de7ace85-18ba-4455-8e40-d823b198444e",
+        "678820a5-823e-4e96-9bd4-a5605dab3dd4",
+        "01232aaa-14d4-418d-8d3e-7525ddedc3cd"
+      ],
+      "top1_metadata": {
+        "title": "COCO val2017 000000117374",
+        "caption": "Two cats sitting in the dirt under a tree.",
+        "width": 640,
+        "height": 428,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "coco2017-val-subset-v1",
+        "city": null,
+        "license": "http://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "warnings": [
+        {
+          "code": "QUERY_ACCENTS_RESTORED",
+          "message": "Đã tìm theo “con mèo” (thêm dấu từ “con meo”)."
+        }
+      ]
+    },
+    {
+      "query": "meo",
+      "http_status": 200,
+      "wall_ms": 171.04461199960497,
+      "processing_ms": 147.8477880000355,
+      "stages": {
+        "query_normalization_ms": 30.677715999445354,
+        "query_decomposition_ms": 0.17737300004228018,
+        "query_analysis_ms": 0.09586799933458678,
+        "compatibility_ms": 14.748641000551288,
+        "text_preprocessing_ms": 0.8917280001696781,
+        "text_forward_ms": 27.697730999534542,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 29.982699999891338,
+        "vector_retrieval_ms": 15.903980000075535,
+        "ranking_ms": 0.217272000554658,
+        "metadata_ms": 26.561231999949086,
+        "object_head_windows_ms": 18.024137000793417,
+        "eligibility_objects_urls_ms": 19.96127999973396,
+        "input_validation_ms": 8.939192000070761
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "de7ace85-18ba-4455-8e40-d823b198444e",
+        "6679647a-71ba-41f2-8d87-fd0d8e36f8b7",
+        "678820a5-823e-4e96-9bd4-a5605dab3dd4"
+      ],
+      "top1_metadata": {
+        "title": "COCO val2017 000000117374",
+        "caption": "Two cats sitting in the dirt under a tree.",
+        "width": 640,
+        "height": 428,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "coco2017-val-subset-v1",
+        "city": null,
+        "license": "http://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "warnings": [
+        {
+          "code": "QUERY_ACCENTS_RESTORED",
+          "message": "Đã tìm theo “mèo” (thêm dấu từ “meo”)."
+        }
+      ]
+    },
+    {
+      "query": "con mèo",
+      "http_status": 200,
+      "wall_ms": 98.87724600048386,
+      "processing_ms": 76.65994799936016,
+      "stages": {
+        "query_normalization_ms": 0.5461569999170024,
+        "query_decomposition_ms": 0.16090400004031835,
+        "query_analysis_ms": 0.07417800043185707,
+        "compatibility_ms": 12.170707000223047,
+        "text_preprocessing_ms": 0.0215580002986826,
+        "text_forward_ms": 0.0,
+        "text_cache_hits": 1,
+        "text_embedding_ms": 0.7384890004686895,
+        "vector_retrieval_ms": 13.22609500039107,
+        "ranking_ms": 0.28529600058391225,
+        "metadata_ms": 23.81157699983305,
+        "object_head_windows_ms": 14.422954001020116,
+        "eligibility_objects_urls_ms": 16.28876999984641,
+        "input_validation_ms": 8.627845999399142
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "de7ace85-18ba-4455-8e40-d823b198444e",
+        "678820a5-823e-4e96-9bd4-a5605dab3dd4",
+        "01232aaa-14d4-418d-8d3e-7525ddedc3cd"
+      ],
+      "top1_metadata": {
+        "title": "COCO val2017 000000117374",
+        "caption": "Two cats sitting in the dirt under a tree.",
+        "width": 640,
+        "height": 428,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "coco2017-val-subset-v1",
+        "city": null,
+        "license": "http://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "warnings": []
+    },
+    {
+      "query": "a cat",
+      "http_status": 200,
+      "wall_ms": 139.5623409998734,
+      "processing_ms": 116.31359199964209,
+      "stages": {
+        "query_normalization_ms": 1.0541949995968025,
+        "query_decomposition_ms": 0.1283249994230573,
+        "query_analysis_ms": 0.0655170006211847,
+        "compatibility_ms": 11.781969999901776,
+        "text_preprocessing_ms": 0.6347700000333134,
+        "text_forward_ms": 29.657197000233282,
+        "text_cache_hits": 0,
+        "text_embedding_ms": 31.743685999572335,
+        "vector_retrieval_ms": 13.261237000733672,
+        "ranking_ms": 0.2220249998572399,
+        "metadata_ms": 28.800782999496732,
+        "object_head_windows_ms": 14.853448000394565,
+        "eligibility_objects_urls_ms": 17.673405000095954,
+        "input_validation_ms": 11.006981999344134
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "678820a5-823e-4e96-9bd4-a5605dab3dd4",
+        "57ac376b-090d-499e-aed8-97368b32a5d2",
+        "de7ace85-18ba-4455-8e40-d823b198444e"
+      ],
+      "top1_metadata": {
+        "title": "COCO val2017 000000181859",
+        "caption": "A cute cat laying down in a sink.",
+        "width": 426,
+        "height": 640,
+        "media_type": "image/jpeg",
+        "tags": [],
+        "source_dataset": "coco2017-val-subset-v1",
+        "city": null,
+        "license": "http://creativecommons.org/licenses/by/2.0/"
+      },
+      "warnings": []
+    },
+    {
+      "query": "một tách cà phê",
+      "http_status": 200,
+      "wall_ms": 102.23054000016418,
+      "processing_ms": 75.17452000047342,
+      "stages": {
+        "query_normalization_ms": 0.7866380001360085,
+        "query_decomposition_ms": 0.19113399957859656,
+        "query_analysis_ms": 0.10012599977926584,
+        "compatibility_ms": 11.833276000288606,
+        "text_preprocessing_ms": 0.023646999579796102,
+        "text_forward_ms": 0.0,
+        "text_cache_hits": 1,
+        "text_embedding_ms": 0.7464219997928012,
+        "vector_retrieval_ms": 13.736638999944262,
+        "ranking_ms": 0.31474200022785226,
+        "metadata_ms": 21.432208999613067,
+        "object_head_windows_ms": 12.556685999697947,
+        "eligibility_objects_urls_ms": 13.923776999945403,
+        "input_validation_ms": 11.59626600019692
+      },
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+      "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+      "image_ids": [
+        "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+        "4d0bdd5c-5e72-4892-9161-6efc8e51a5cc",
+        "cba51ba8-e2c6-415c-a5c3-4d142a44d9ea"
+      ],
+      "top1_metadata": {
+        "title": null,
+        "caption": null,
+        "width": 600,
+        "height": 400,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "warnings": []
+    }
+  ]
+}

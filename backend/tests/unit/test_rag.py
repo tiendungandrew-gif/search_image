@@ -9,7 +9,7 @@ import httpx
 import pytest
 from pydantic import SecretStr, ValidationError
 
-from app.evaluation.rag import validate_review
+from app.evaluation.rag import build_review_pack, validate_review
 from app.schemas.rag import ImageEvidence, RagAnswer, RagRequest
 from app.services.rag.citation_validator import render_answer, validate_selection
 from app.services.rag.context_builder import build_context, select_language
@@ -67,6 +67,8 @@ def test_context_limits_and_missing_metadata_not_visual_evidence(settings):
     smaller = settings.model_copy(update={"rag_max_context_tokens": 256})
     assert not context(smaller, [evidence("A caption " * 40)]).facts
     assert context(settings, [evidence("x" * 3000)]).summary["fact_count"] == 0
+    technical_with_caption = context(settings, [evidence()], "What are the image dimensions?")
+    assert {f.evidence_field for f in technical_with_caption.facts.values()} == {"width", "height"}
 
 
 def test_real_citation_identity_mapping_and_extractive_no_paraphrase(settings):
@@ -84,6 +86,23 @@ def test_real_citation_identity_mapping_and_extractive_no_paraphrase(settings):
     ]:
         with pytest.raises(ProviderError):
             validate_selection(text, ctx)
+
+
+def test_compact_context_keeps_full_citation_provenance_on_server(settings):
+    record = evidence()
+    request = RagRequest(query="a cup", context_format="compact")
+    compact = build_context([record], "Describe the image.", "en", settings, request)
+    full = context(settings, [record])
+    assert compact.facts == full.facts
+    assert compact.summary["input_token_upper_bound"] < full.summary["input_token_upper_bound"]
+    assert compact.prompt_sha256 != full.prompt_sha256
+    assert str(record.image_id) not in compact.messages[1]["content"]
+    citation = validate_selection('{"fact_ids":["E1.caption"]}', compact)[0]
+    assert (
+        citation.image_id == record.image_id and citation.provenance == record.provenance["caption"]
+    )
+    with pytest.raises(ProviderError, match="UNSUPPORTED_CITATION"):
+        validate_selection('{"fact_ids":["E100.caption"]}', compact)
 
 
 def test_prompt_injection_and_oversize_fields_are_excluded(settings):
@@ -244,6 +263,28 @@ async def test_provider_errors_redacted(settings, http_status, code):
         await provider.close()
 
 
+@pytest.mark.parametrize("provider_type", [ChatProvider, NativeGeminiProvider])
+async def test_rate_limit_does_not_trigger_immediate_provider_retry(settings, provider_type):
+    calls = []
+
+    def reply(request):
+        calls.append(request)
+        return httpx.Response(429, headers={"Retry-After": "60"}, text="quota")
+
+    cfg = enabled(
+        settings,
+        rag_provider_retries=1,
+        rag_model_endpoint="https://generativelanguage.googleapis.com/v1beta",
+    )
+    provider = provider_type(cfg, transport=httpx.MockTransport(reply))
+    try:
+        with pytest.raises(ProviderError, match="LLM_RATE_LIMITED"):
+            await provider.generate([])
+        assert len(calls) == 1
+    finally:
+        await provider.close()
+
+
 @pytest.mark.parametrize(
     "scenario", ["success", "invalid_citation", "timeout", "disabled", "insufficient"]
 )
@@ -319,3 +360,85 @@ async def test_cancel_closes_upstream_generator_and_releases_admission(settings)
     with pytest.raises(asyncio.CancelledError):
         await task
     assert closed and generator.inflight == 0
+
+
+async def test_native_stop_event_finishes_without_waiting_for_connection_eof(settings):
+    closed = False
+
+    class SlowConnection(httpx.AsyncByteStream):
+        async def __aiter__(self):
+            payload = {
+                "candidates": [
+                    {"content": {"parts": [{"text": '{"fact_ids":[]}'}]}, "finishReason": "STOP"}
+                ]
+            }
+            yield ("data: " + json.dumps(payload) + "\n\n").encode()
+            await asyncio.sleep(30)
+
+        async def aclose(self):
+            nonlocal closed
+            closed = True
+
+    provider = NativeGeminiProvider(
+        enabled(settings, rag_model_endpoint="https://generativelanguage.googleapis.com/v1beta"),
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, stream=SlowConnection())),
+    )
+    try:
+        async with asyncio.timeout(1):
+            chunks = [chunk async for chunk in provider.stream([])]
+        assert chunks[0].text == '{"fact_ids":[]}' and closed
+    finally:
+        await provider.close()
+
+
+def test_review_pack_escapes_untrusted_evidence_and_never_embeds_credentials(tmp_path):
+    identity = str(uuid4())
+    result = {
+        "cases": [
+            {
+                "case_id": "R3_unit",
+                "configuration": "R3",
+                "language": "vi",
+                "question": "Unit fixture?",
+                "result": {
+                    "results": [{"image_id": identity}],
+                    "rag": {"answer": "</script><script>malicious()</script>"},
+                },
+            }
+        ]
+    }
+    source, output = tmp_path / "result.json", tmp_path / "review.html"
+    source.write_text(json.dumps(result))
+    seen = []
+
+    def respond(request):
+        seen.append(request)
+        return httpx.Response(
+            200, content=b"unit-image-bytes", headers={"content-type": "image/png"}
+        )
+
+    report = build_review_pack(
+        "http://fixture",
+        "private-review-token",
+        source,
+        output,
+        transport=httpx.MockTransport(respond),
+    )
+    html = output.read_text()
+    assert report["cases"] == 1 and report["human_verified"] is False
+    assert "private-review-token" not in html and "</script><script>" not in html
+    assert "\\u003c/script>" in html and "/*__DATA__*/" not in html
+    assert output.stat().st_mode & 0o777 == 0o600
+    assert seen[0].headers["authorization"] == "Bearer private-review-token"
+    assert str(seen[0].url).startswith(f"http://fixture/api/v1/images/{identity}/content")
+    with pytest.raises(FileExistsError):
+        build_review_pack(
+            "http://fixture", "unit", source, output, transport=httpx.MockTransport(respond)
+        )
+
+
+def test_request_deadline_reserves_time_after_generation(settings):
+    values = settings.model_dump()
+    values.update(rag_enabled=True, rag_timeout_seconds=8, rag_request_timeout_seconds=8)
+    with pytest.raises(ValidationError, match="timeout"):
+        type(settings).model_validate(values)

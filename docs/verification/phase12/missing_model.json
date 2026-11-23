@@ -1,0 +1,32 @@
+{
+  "ready": {
+    "status": "ready",
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    }
+  },
+  "search_status": 503,
+  "search_error": "NOT_READY",
+  "frontend_status": 200,
+  "inventory": {
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "dataset_state": "EMPTY_DATASET",
+    "counts": {
+      "images": 0,
+      "objects_receipts": 0,
+      "ready_embeddings": 0
+    },
+    "jobs": {},
+    "indexes": [],
+    "active": null,
+    "collections": [],
+    "stored_objects": 0,
+    "model_artifacts": "not_installed"
+  }
+}

@@ -1,0 +1,8 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [desktop] › commercial-e2e/search.spec.ts:40:1 › commercial discovery · real scoped photos, layout, search, keyboard and Admin (9.1s)
+
+  1 passed (10.0s)
+(node:105912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

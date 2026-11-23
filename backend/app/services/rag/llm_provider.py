@@ -84,7 +84,7 @@ class ChatProvider:
             try:
                 async with self.client.stream("POST", "chat/completions", json=body) as response:
                     if (
-                        response.status_code in {429, 500, 502, 503}
+                        response.status_code in {500, 502, 503}
                         and attempt < settings.rag_provider_retries
                     ):
                         await response.aclose()
@@ -194,7 +194,7 @@ class NativeGeminiProvider(ChatProvider):
                     json=body,
                 ) as response:
                     if (
-                        response.status_code in {429, 500, 502, 503}
+                        response.status_code in {500, 502, 503}
                         and attempt < cfg.rag_provider_retries
                     ):
                         await response.aclose()
@@ -226,6 +226,8 @@ class NativeGeminiProvider(ChatProvider):
                             chunk, done = self.decode(json.loads(line[5:].strip()))
                             finished = finished or done
                             yield chunk
+                            if done:
+                                return
                     if not finished:
                         raise ProviderError("LLM_INCOMPLETE_STREAM")
                     return

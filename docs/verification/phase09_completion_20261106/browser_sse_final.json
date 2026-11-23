@@ -1,0 +1,5 @@
+{
+  "status": "pass",
+  "expected_cases": 6,
+  "classification": "real NPS workflow plus explicit empty/quota SSE mocks"
+}

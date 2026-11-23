@@ -5,7 +5,7 @@ import json
 import os
 from pathlib import Path
 
-from app.evaluation.rag import run_experiments, validate_review
+from app.evaluation.rag import build_review_pack, run_experiments, validate_review
 from app.evaluation.tracking import digest
 
 
@@ -16,7 +16,19 @@ def main():
     parser.add_argument("--requests", type=int, default=20, choices=range(4, 101))
     parser.add_argument("--review")
     parser.add_argument("--experiment")
+    parser.add_argument("--workload", help="JSONL gồm query/question/language; không phải qrels")
+    parser.add_argument("--review-pack", help="Frozen result.json để tạo trang review offline")
+    parser.add_argument("--output", default=".cache/evaluation/rag_review.html")
     args = parser.parse_args()
+    if args.review_pack:
+        print(
+            json.dumps(
+                build_review_pack(
+                    args.base_url, os.environ.get("API_TOKEN", ""), args.review_pack, args.output
+                )
+            )
+        )
+        return
     if args.review:
         if not args.experiment:
             parser.error("--review requires --experiment result.json")
@@ -29,7 +41,13 @@ def main():
     print(
         json.dumps(
             run_experiments(
-                args.base_url, os.environ.get("API_TOKEN", ""), args.results, args.requests
+                args.base_url,
+                os.environ.get("API_TOKEN", ""),
+                args.results,
+                args.requests,
+                [json.loads(line) for line in Path(args.workload).read_text().splitlines() if line]
+                if args.workload
+                else None,
             )
         )
     )

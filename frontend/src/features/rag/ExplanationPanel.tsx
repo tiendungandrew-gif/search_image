@@ -1,31 +1,54 @@
 import { useEffect, useRef, useState } from "react";
-import type { SearchResponse } from "../../types/api";
+import type { SearchResponse, RagAnswer } from "../../types/api";
+import { api } from "../../services/api/client";
+import { decodeRag, record } from "../../services/api/decoders";
+import { postStream } from "../../services/api/stream";
 
-type Answer = {
-  answer: string;
-  grounding_status: string;
-  generated: boolean;
-  error_code: string | null;
-  citations: { image_id: string; evidence_field: string; quote: string }[];
-};
+// Backend bounds the whole RAG request to at most 60 seconds.
+const CLIENT_TIMEOUT_MS = 65_000;
+const RETRYABLE_CODES = new Set([
+  "LLM_TIMEOUT",
+  "LLM_CONNECTION_FAILED",
+  "LLM_RATE_LIMITED",
+  "LLM_PROVIDER_ERROR",
+  "LLM_INCOMPLETE_STREAM",
+  "RAG_BUSY",
+]);
 
 export function ExplanationPanel({
   results,
   token,
   query,
+  streaming = false,
 }: {
   results: SearchResponse;
   token: string;
   query: string;
+  streaming?: boolean;
 }) {
   const [question, setQuestion] = useState(
     query || "Tóm tắt bằng chứng hiện có.",
   );
-  const [answer, setAnswer] = useState<Answer | null>(null);
+  const [answer, setAnswer] = useState<RagAnswer | null>(null);
+  const [progress, setProgress] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const controller = useRef<AbortController | null>(null);
-  useEffect(() => () => controller.current?.abort(), []);
+  function cancel() {
+    const pending = controller.current;
+    controller.current = null;
+    pending?.abort();
+    setLoading(false);
+    setError("Đã dừng yêu cầu giải thích.");
+  }
+  useEffect(
+    () => () => {
+      const pending = controller.current;
+      controller.current = null;
+      pending?.abort();
+    },
+    [],
+  );
   async function explain() {
     controller.current?.abort();
     const request = new AbortController();
@@ -33,44 +56,61 @@ export function ExplanationPanel({
     setLoading(true);
     setError(null);
     setAnswer(null);
-    const timer = setTimeout(() => request.abort(), 10000);
+    setProgress("");
+    let timedOut = false;
+    const timer = setTimeout(() => {
+      timedOut = true;
+      request.abort();
+    }, CLIENT_TIMEOUT_MS);
     try {
-      const base = import.meta.env.VITE_API_BASE_URL ?? "/api/v1";
-      const response = await fetch(`${base.replace(/\/$/, "")}/rag/explain`, {
-        method: "POST",
-        signal: request.signal,
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          question,
-          language: "vi",
-          image_ids: results.results.map((r) => r.image_id),
-          expected_index_id: results.index_id,
-        }),
-      });
-      const value = await response.json();
-      if (!response.ok)
-        throw new Error(value?.error?.message ?? "Không tạo được giải thích.");
-      const rag = value.rag;
-      const ids = new Set(results.results.map((r) => r.image_id));
-      if (
-        !rag ||
-        typeof rag.answer !== "string" ||
-        !Array.isArray(rag.citations) ||
-        !rag.citations.every(
-          (c: { image_id: string; quote: string }) =>
-            ids.has(c.image_id) && typeof c.quote === "string",
-        )
-      )
-        throw new Error("Phản hồi giải thích không đúng định dạng.");
-      if (!request.signal.aborted) setAnswer(rag);
+      const ids = results.results.map((r) => r.image_id);
+      const body = {
+        question,
+        language: "vi",
+        image_ids: ids,
+        expected_index_id: results.index_id,
+      };
+      const rag = streaming
+        ? await postStream(
+            "/rag/explain/stream",
+            body,
+            token,
+            request.signal,
+            (event, value) => {
+              if (event === "generation_completed")
+                return decodeRag(value, new Set(ids));
+              if (
+                event === "error" &&
+                record(value) &&
+                value.retrieval_preserved === true
+              )
+                return undefined;
+              if (event === "error")
+                throw new Error(
+                  `RAG dừng: ${record(value) && typeof value.code === "string" ? value.code : "RAG_FAILED"}`,
+                );
+              if (controller.current === request && !request.signal.aborted) {
+                const messages: Record<string, string> = {
+                  retrieval_started: "Đang kiểm tra các ảnh đã chọn…",
+                  retrieval_completed: "Đã kiểm tra ảnh.",
+                  context_built: "Đã chuẩn bị bằng chứng.",
+                  generation_started: "Đang tạo câu trả lời…",
+                };
+                if (messages[event]) setProgress(messages[event]);
+              }
+              return undefined;
+            },
+          )
+        : await api.explain(body, ids, token, request.signal);
+      if (controller.current === request && !request.signal.aborted)
+        setAnswer(rag);
     } catch (err) {
       if (controller.current === request)
         setError(
           request.signal.aborted
-            ? "Đã dừng yêu cầu giải thích."
+            ? timedOut
+              ? "Yêu cầu giải thích quá thời gian chờ. Bạn có thể thử lại."
+              : "Đã dừng yêu cầu giải thích."
             : err instanceof Error
               ? err.message
               : "Giải thích không khả dụng.",
@@ -80,6 +120,9 @@ export function ExplanationPanel({
       if (controller.current === request) setLoading(false);
     }
   }
+  const retryable = Boolean(
+    error || (answer?.error_code && RETRYABLE_CODES.has(answer.error_code)),
+  );
   return (
     <section
       className="explanation-panel"
@@ -106,14 +149,17 @@ export function ExplanationPanel({
         disabled={loading || !question.trim()}
         onClick={() => void explain()}
       >
-        {loading ? "Đang tạo giải thích…" : "Giải thích bằng AI"}
+        {loading
+          ? "Đang tạo giải thích…"
+          : retryable
+            ? "Thử lại giải thích"
+            : "Giải thích bằng AI"}
       </button>
       {loading && (
-        <button
-          className="text-button"
-          type="button"
-          onClick={() => controller.current?.abort()}
-        >
+        <p role="status">{progress || "Đang kiểm tra bằng chứng…"}</p>
+      )}
+      {loading && (
+        <button className="text-button" type="button" onClick={cancel}>
           Dừng giải thích
         </button>
       )}

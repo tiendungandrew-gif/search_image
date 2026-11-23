@@ -1,0 +1,61 @@
+{
+  "purpose": "Public decorative sign-in collage; separate from private library content",
+  "images": [
+    {
+      "filename": "coffee.png",
+      "source_dataset": "scikit-image-v0.25.2",
+      "source_uri": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/coffee.png",
+      "license": "CC0-1.0",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7"
+    },
+    {
+      "filename": "chelsea.png",
+      "source_dataset": "scikit-image-v0.25.2",
+      "source_uri": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/chelsea.png",
+      "license": "CC0-1.0",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "sha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb"
+    },
+    {
+      "filename": "rocket.jpg",
+      "source_dataset": "scikit-image-v0.25.2",
+      "source_uri": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/rocket.jpg",
+      "license": "public-domain",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "sha256": "c2dd0de7c538df8d111e479619b129464d0269d0ae5fd18ca91d33a7fdfea95c"
+    },
+    {
+      "filename": "hubble_deep_field.jpg",
+      "source_dataset": "scikit-image-v0.25.2",
+      "source_uri": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/hubble_deep_field.jpg",
+      "license": "public-domain",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "sha256": "3a19c5dd8a927a9334bb1229a6d63711b1c0c767fb27e2286e7c84a3e2c2f5f4"
+    },
+    {
+      "filename": "camera.png",
+      "source_dataset": "scikit-image-v0.25.2",
+      "source_uri": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/camera.png",
+      "license": "CC0-1.0",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "sha256": "b0793d2adda0fa6ae899c03989482bff9a42d3d5690fc7e3648f2795d730c23a"
+    },
+    {
+      "filename": "grass.png",
+      "source_dataset": "scikit-image-v0.25.2",
+      "source_uri": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/grass.png",
+      "license": "CC0-1.0",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "sha256": "b6b6022426b38936c43a4ac09635cd78af074e90f42ffa8227ac8b7452d39f89"
+    },
+    {
+      "filename": "brick.png",
+      "source_dataset": "scikit-image-v0.25.2",
+      "source_uri": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/brick.png",
+      "license": "CC0-1.0",
+      "rights_ref": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/_fetchers.py",
+      "sha256": "7966caf324f6ba843118d98f7a07746d22f6a343430add0233eca5f6eaaa8fcf"
+    }
+  ]
+}

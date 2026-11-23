@@ -1,0 +1,30 @@
+
+> ai-image-search-frontend@0.3.0 test:e2e
+> playwright test
+
+
+Running 16 tests using 1 worker
+
+  ✓   1 [desktop] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (970ms)
+  ✓   2 [desktop] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (1.5s)
+  ✓   3 [desktop] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (1.3s)
+  ✓   4 [desktop] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (653ms)
+  ✓   5 [desktop] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (2.0s)
+  ✓   6 [desktop] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (3.6s)
+  ✓   7 [desktop] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (678ms)
+  ✓   8 [desktop] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (3.3s)
+  ✓   9 [mobile] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (930ms)
+  ✓  10 [mobile] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (1.4s)
+  ✓  11 [mobile] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (899ms)
+  ✓  12 [mobile] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (656ms)
+  ✓  13 [mobile] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (1.7s)
+  ✓  14 [mobile] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (3.3s)
+  ✓  15 [mobile] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (721ms)
+  ✓  16 [mobile] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (3.2s)
+
+  16 passed (29.2s)
+
+(node:205130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:205768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

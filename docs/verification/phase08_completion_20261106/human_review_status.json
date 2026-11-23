@@ -1,0 +1,10 @@
+{
+  "status": "pending_human_review",
+  "user_decision_date": "2026-11-06",
+  "user_decision": "Chưa đánh giá được; giữ mục chất lượng chờ xác nhận",
+  "human_verified": false,
+  "answer_relevance": null,
+  "faithfulness": null,
+  "unsupported_claim_rate": null,
+  "review_pack": ".cache/evaluation/rag_phase08_coco_review.html"
+}

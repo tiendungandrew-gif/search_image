@@ -1,0 +1,23 @@
+{
+  "profile": "browser",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "exec",
+        "--",
+        "playwright",
+        "test",
+        "--config",
+        "frontend/playwright.qa.config.ts"
+      ],
+      "started_utc": "2026-11-07T14:31:15.742475+00:00",
+      "exit_code": 1
+    }
+  ],
+  "status": "failed"
+}

@@ -1,0 +1,36 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-6c31eb5913da Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-6c31eb5913da Created 
+........................................................................ [ 31%]
+........................................................................ [ 62%]
+........................................................................ [ 93%]
+............F...                                                         [100%]
+=================================== FAILURES ===================================
+______________ test_benchmark_failure_stops_its_resource_monitor _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f4f5034c350>
+
+    async def test_benchmark_failure_stops_its_resource_monitor(monkeypatch):
+        original=httpx.AsyncClient
+    
+        async def respond(request):
+            if request.url.path.endswith("/health"):
+                await asyncio.sleep(0)
+                return httpx.Response(503,json={"error":{"code":"NOT_READY"}})
+            await asyncio.Event().wait()
+    
+        monkeypatch.setattr(httpx,"AsyncClient",lambda **kwargs:original(**kwargs,transport=httpx.MockTransport(respond)))
+        config=BenchmarkConfig(requests=1,warmup=0,concurrency=1,sample_resources=True)
+        case=SimpleNamespace(query_type="single_intent",query_id="fixture",request={"text":"fixture"})
+        try:
+            with pytest.raises(httpx.HTTPStatusError):
+                await run_benchmark(config,[case],{"images":[]},"http://mock","mock-only-token")
+            await asyncio.sleep(0)
+            pending=[task for task in asyncio.all_tasks() if not task.done() and task.get_coro().__qualname__.endswith("run_benchmark.<locals>.monitor")]
+>           assert not pending
+E           AssertionError: assert not [<Task pending name='Task-282' coro=<run_benchmark.<locals>.monitor() running at /srv/backend/app/evaluation/benchmark.py:84> wait_for=<Future pending cb=[Task.task_wakeup()]>>]
+
+backend/tests/reliability/test_benchmark_cleanup.py:28: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/reliability/test_benchmark_cleanup.py::test_benchmark_failure_stops_its_resource_monitor
+1 failed, 231 passed in 6.01s
+

@@ -1,0 +1,133 @@
+{
+  "scope": "5 curated pairs over 10 local sample images; smoke, not a quality benchmark",
+  "image_manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "text_manifest": {
+    "model_id": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+    "revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+    "files": {
+      "config.json": "edc12f518bfc445dedfe8a7c58374ea659525e0b6e67814686bd6cd57f90f8b3",
+      "config_sentence_transformers.json": "b8c64b5cece00d8424b4896ea75b512b6008576088497609dfeb6bd63e6d36b8",
+      "model.safetensors": "7b968c09938603158413ea2c91af82e82158ebb6db901a6cf97c28ce7d7ebc6d",
+      "modules.json": "f83ea5d68ac85ec15f650b350f0dc37b03d63abd60442f518e14c06f479beee6",
+      "sentence_bert_config.json": "70f4448f31320443fe3557cacea5abf2dcc4915dda8c80646bec9f3bb0aa5a1f",
+      "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "tokenizer.json": "5b4e1a8171c81dfd666ae40265b9530c6e0b3d53923fe8ac493dcc84229adf81",
+      "tokenizer_config.json": "8f66d0ad85be46afc77e0bbf48312cff326ddb9e7290926df96a8228d69a814e",
+      "vocab.txt": "fe0fda7c425b48c516fc8f160d594c8022a0808447475c1a7c6d6479763f310c",
+      "1_Pooling/config.json": "a37f83ada23e7887be6b88f4998927dbeac0038af301553c7cd5461413bf1a56",
+      "2_Dense/config.json": "48f4dfaf605a6c2869cd200970e54911c6c15053781d2bdcf3e81e89e77662ed",
+      "2_Dense/model.safetensors": "d12568dc7300970a4d3dbb49068ad16cd89b99840b74b026f8e48071e9414f74"
+    },
+    "image_space": "openai/clip-vit-base-patch32",
+    "pooling": "attention-mask-mean",
+    "dimension": 512,
+    "normalization": "l2",
+    "max_tokens": 128,
+    "encoder_code_sha256": "071a85dfbe247f1d1320e48d664ae1a4c3f1a45b61ece7b2782f3cd4477c549c",
+    "accent_restoration": {
+      "model_id": "ai4irl/clavi-accent-restoration",
+      "revision": "940c6d81842f88c0ca70b166a3031e0dd54e5dec",
+      "files": {
+        "config.json": "a9a981238294e1539b2b1b7dbe77f99dd271f9554580ac2bd530329b3597c60c",
+        "vocab.json": "6cb82c63ef2f7e8c79c5d684d4390c49283d29ba0cb4dc4e3121cbf8eb5606a4",
+        "model.safetensors": "7b12c43f0184054d61397e1dff1e0ede3e0afad80f85218d6b083fe55d2d8c14"
+      },
+      "language_id": "py3langid-0.4.0-en-vi",
+      "policy": "ascii-short-contextual-conservative-v1",
+      "code_sha256": "c3196fa5cded47e2b1d13202c712a79703609039f137c64a2e8ac883b5aa91c7"
+    }
+  },
+  "text_manifest_sha256": "01b5a387b056a50ad6d20913f90ae9a8a30c8244460708de0b2216983f223e74",
+  "unaccented_pairs": {
+    "con meo": "con mèo",
+    "con  meo": "con mèo",
+    "meo": "mèo",
+    "mot con meo mau nau": "một con mèo màu nâu",
+    "con cho": "con chó",
+    "2 con meo": "2 con mèo",
+    "con ngua": "con ngựa",
+    "bai bien": "bãi biển",
+    "hoa hong": "hoa hồng",
+    "ngoi nha": "ngôi nhà",
+    "xe hoi": "xe hơi"
+  },
+  "pairs": [
+    {
+      "en": "a cup of coffee",
+      "vi": "một tách cà phê",
+      "expected": "coffee.png",
+      "top1_en_vi": [
+        "coffee.png",
+        "coffee.png"
+      ],
+      "native_english_top1": "coffee.png",
+      "en_vi_cosine": 0.9914283156394958,
+      "uncached_ms_en_vi": [
+        18.165544999646954,
+        23.2013840000036
+      ]
+    },
+    {
+      "en": "a brown cat",
+      "vi": "một con mèo màu nâu",
+      "expected": "chelsea.png",
+      "top1_en_vi": [
+        "chelsea.png",
+        "chelsea.png"
+      ],
+      "native_english_top1": "chelsea.png",
+      "en_vi_cosine": 0.9042258262634277,
+      "uncached_ms_en_vi": [
+        26.406603999930667,
+        0.09232399997927132
+      ]
+    },
+    {
+      "en": "a rocket launching into the sky",
+      "vi": "tên lửa phóng lên bầu trời",
+      "expected": "rocket.jpg",
+      "top1_en_vi": [
+        "rocket.jpg",
+        "rocket.jpg"
+      ],
+      "native_english_top1": "clock_motion.png",
+      "en_vi_cosine": 0.9637286067008972,
+      "uncached_ms_en_vi": [
+        37.97091400019781,
+        30.200951999631798
+      ]
+    },
+    {
+      "en": "stars and galaxies in deep space",
+      "vi": "các ngôi sao và thiên hà trong vũ trụ",
+      "expected": "hubble_deep_field.jpg",
+      "top1_en_vi": [
+        "hubble_deep_field.jpg",
+        "hubble_deep_field.jpg"
+      ],
+      "native_english_top1": "hubble_deep_field.jpg",
+      "en_vi_cosine": 0.9623720049858093,
+      "uncached_ms_en_vi": [
+        29.947753000215016,
+        42.3940840000796
+      ]
+    },
+    {
+      "en": "a horse",
+      "vi": "một con ngựa",
+      "expected": "horse.png",
+      "top1_en_vi": [
+        "horse.png",
+        "horse.png"
+      ],
+      "native_english_top1": "horse.png",
+      "en_vi_cosine": 0.9955793023109436,
+      "uncached_ms_en_vi": [
+        25.33066600017264,
+        27.116700999613386
+      ]
+    }
+  ],
+  "cached_text_ms": 0.12174799985587015,
+  "padding_cache_eviction_copy_unicode_token_limit": "passed"
+}

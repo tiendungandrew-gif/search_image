@@ -1,0 +1,140 @@
+{
+  "fixture": false,
+  "entities": [
+    {
+      "id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+      "canonical_name": "Washington, D.C.",
+      "entity_type": "city",
+      "aliases": [
+        "Washington DC",
+        "Washington, DC",
+        "Washington D.C."
+      ],
+      "locale": "en",
+      "external_key": "phase09:nps:city:washington-dc",
+      "provenance": {
+        "dataset_id": "nps-landmarks-phase09-v1",
+        "verification": "official_source_metadata",
+        "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+        "human_relevance_verified": false,
+        "source_ref": "https://www.nps.gov/wamo/index.htm"
+      }
+    },
+    {
+      "id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+      "canonical_name": "Washington Monument",
+      "entity_type": "landmark",
+      "aliases": [
+        "Washington monument"
+      ],
+      "locale": "en",
+      "external_key": "nps:washington-monument",
+      "provenance": {
+        "dataset_id": "nps-landmarks-phase09-v1",
+        "verification": "official_source_metadata",
+        "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+        "human_relevance_verified": false,
+        "source_ref": "https://www.nps.gov/wamo/index.htm"
+      }
+    },
+    {
+      "id": "e6a72379-6adf-5998-851b-f94984316a1e",
+      "canonical_name": "Lincoln Memorial",
+      "entity_type": "landmark",
+      "aliases": [],
+      "locale": "en",
+      "external_key": "nps:lincoln-memorial",
+      "provenance": {
+        "dataset_id": "nps-landmarks-phase09-v1",
+        "verification": "official_source_metadata",
+        "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+        "human_relevance_verified": false,
+        "source_ref": "https://www.nps.gov/linc/index.htm"
+      }
+    },
+    {
+      "id": "f979880e-1be1-5402-89c4-f24f85aec143",
+      "canonical_name": "Thomas Jefferson Memorial",
+      "entity_type": "landmark",
+      "aliases": [
+        "Jefferson Memorial"
+      ],
+      "locale": "en",
+      "external_key": "nps:jefferson-memorial",
+      "provenance": {
+        "dataset_id": "nps-landmarks-phase09-v1",
+        "verification": "official_source_metadata",
+        "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+        "human_relevance_verified": false,
+        "source_ref": "https://www.nps.gov/thje/index.htm"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "b9a69833-4fdc-54f4-8188-0003cfd3aa0d",
+      "subject_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+      "predicate": "located_in",
+      "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+      "source_ref": "https://www.nps.gov/wamo/index.htm",
+      "evidence": {
+        "dataset_id": "nps-landmarks-phase09-v1",
+        "verification": "official_source_metadata",
+        "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+        "human_relevance_verified": false
+      },
+      "verified_at": "2026-11-06T14:25:17.008093+00:00"
+    },
+    {
+      "id": "8c5899e1-c980-5743-a5b3-9e200654cda8",
+      "subject_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+      "predicate": "located_in",
+      "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+      "source_ref": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+      "evidence": {
+        "dataset_id": "nps-landmarks-phase09-v1",
+        "verification": "official_source_metadata",
+        "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+        "human_relevance_verified": false
+      },
+      "verified_at": "2026-11-06T14:25:17.008093+00:00"
+    },
+    {
+      "id": "1835978d-4dd4-584c-a159-7e2f8820e471",
+      "subject_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+      "predicate": "located_in",
+      "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+      "source_ref": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+      "evidence": {
+        "dataset_id": "nps-landmarks-phase09-v1",
+        "verification": "official_source_metadata",
+        "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+        "human_relevance_verified": false
+      },
+      "verified_at": "2026-11-06T14:25:17.008093+00:00"
+    }
+  ],
+  "image_entities": [
+    {
+      "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+      "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+      "relation": "depicts",
+      "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "verified": true
+    },
+    {
+      "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+      "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+      "relation": "depicts",
+      "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "verified": true
+    },
+    {
+      "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+      "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+      "relation": "depicts",
+      "source_ref": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "verified": true
+    }
+  ]
+}

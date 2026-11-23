@@ -1,0 +1,28 @@
+{
+  "profile": "seed",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file .env.qa -f compose.qa.yaml -p phase11-qa-2c8ad1b9345d --profile tools run --rm --no-deps -T qa-tests python scripts/seed_qa.py"
+      ],
+      "started_utc": "2026-11-07T14:21:18.996611+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file .env.qa -f compose.qa.yaml -p phase11-qa-2c8ad1b9345d up -d --no-deps --wait --wait-timeout 180 qa-api"
+      ],
+      "started_utc": "2026-11-07T14:21:30.270880+00:00",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed"
+}

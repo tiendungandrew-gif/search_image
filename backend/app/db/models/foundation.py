@@ -6,6 +6,7 @@ from sqlalchemy import (
     BigInteger,
     Boolean,
     CheckConstraint,
+    Computed,
     DateTime,
     ForeignKey,
     Index,
@@ -15,10 +16,11 @@ from sqlalchemy import (
     func,
     text,
 )
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.dialects.postgresql import JSONB, TSVECTOR
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
+from app.db.search_text import SEARCH_DOCUMENT_V1
 
 
 class Timestamps:
@@ -71,6 +73,7 @@ class ImageMetadata(Base):
         Index("ix_image_metadata_city", "city"),
         Index("ix_image_metadata_source_dataset", "source_dataset"),
         Index("ix_image_metadata_captured_at", "captured_at"),
+        Index("ix_image_metadata_search_document", "search_document", postgresql_using="gin"),
     )
     image_id: Mapped[UUID] = mapped_column(
         ForeignKey("images.id", ondelete="RESTRICT"), primary_key=True
@@ -87,6 +90,9 @@ class ImageMetadata(Base):
     country_code: Mapped[str | None] = mapped_column(CHAR(2))
     city: Mapped[str | None] = mapped_column(Text)
     extra: Mapped[dict] = mapped_column(JSONB, server_default=text("'{}'::jsonb"))
+    search_document: Mapped[str] = mapped_column(
+        TSVECTOR, Computed(SEARCH_DOCUMENT_V1, persisted=True)
+    )
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
     )

@@ -1,0 +1,659 @@
+{
+  "checked_at_utc": "2026-11-08T03:34:51.459404+00:00",
+  "production_like": {
+    "image-search-phase12": {
+      "backend": {
+        "image_id": "sha256:6173f7fb25a1b4f72ffa06005000398dc4e03891c3b654aaca2fd63d427f884b",
+        "user": "10001:10001",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 452.62,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 642.91,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 682.58,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 662.15,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 618.85,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": true,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 3221225472,
+        "nano_cpus": 4000000000,
+        "ports": {
+          "8000/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/datasets",
+            "read_write": false
+          },
+          {
+            "type": "volume",
+            "destination": "/evaluation/results",
+            "read_write": false
+          },
+          {
+            "type": "bind",
+            "destination": "/models/clip",
+            "read_write": false
+          }
+        ]
+      },
+      "worker": {
+        "image_id": "sha256:6173f7fb25a1b4f72ffa06005000398dc4e03891c3b654aaca2fd63d427f884b",
+        "user": "10001:10001",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 735.89,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 884.16,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 756.48,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 799.15,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 760.3,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": true,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 3221225472,
+        "nano_cpus": 4000000000,
+        "ports": {
+          "8000/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/datasets",
+            "read_write": false
+          },
+          {
+            "type": "volume",
+            "destination": "/evaluation/results",
+            "read_write": false
+          },
+          {
+            "type": "bind",
+            "destination": "/models/clip",
+            "read_write": false
+          }
+        ]
+      },
+      "frontend": {
+        "image_id": "sha256:a8ecb724149a9d60a2c90e41eb5f526198391babe05b0aae107c3ef242ea6549",
+        "user": "101:101",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 59.05,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 72.51,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 76.85,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 76.49,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 74.55,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": true,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 268435456,
+        "nano_cpus": 1000000000,
+        "ports": {
+          "80/tcp": null,
+          "8080/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "8088"
+            }
+          ],
+          "8443/tcp": null
+        },
+        "mounts": []
+      },
+      "postgres": {
+        "image_id": "sha256:e8a07d2c7579b038938cdba6c539e580e5001caf9ea203d397b5cc83e76bd938",
+        "user": "",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 145.77,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 126.67,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 151.14,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 114.3,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 121.68,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": false,
+        "cap_drop": null,
+        "security_opt": null,
+        "memory_bytes": 805306368,
+        "nano_cpus": 2000000000,
+        "ports": {
+          "5432/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/var/lib/postgresql/data",
+            "read_write": true
+          }
+        ]
+      },
+      "qdrant": {
+        "image_id": "sha256:9bfc89f9914fc14876a88c05270685921a55b8877b254a98bcc1cc2f0a424cd2",
+        "user": "0:0",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 70.72,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 96.33,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 101.8,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 67.17,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 62.14,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": false,
+        "cap_drop": null,
+        "security_opt": null,
+        "memory_bytes": 1073741824,
+        "nano_cpus": 2000000000,
+        "ports": {
+          "6333/tcp": null,
+          "6334/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/qdrant/storage",
+            "read_write": true
+          }
+        ]
+      },
+      "minio": {
+        "image_id": "sha256:ee52ba8b4875e48396787bb50b514920e18158fd19e07faca4a0c3cbbefc1dbb",
+        "user": "minio",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 77.77,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 83.46,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 71.44,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 90.2,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 72.24,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": false,
+        "cap_drop": null,
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 805306368,
+        "nano_cpus": 2000000000,
+        "ports": {
+          "9000/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/data",
+            "read_write": true
+          }
+        ]
+      }
+    },
+    "image-search-phase12-restore": {
+      "backend": {
+        "image_id": "sha256:a289571cceb066d2767d4e2fc92b0f37639f464afbba680aeee63c03a00cab1a",
+        "user": "10001:10001",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 670.42,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 665.0,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 651.85,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 604.04,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 686.71,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": true,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 3221225472,
+        "nano_cpus": 4000000000,
+        "ports": {
+          "8000/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/datasets",
+            "read_write": false
+          },
+          {
+            "type": "volume",
+            "destination": "/evaluation/results",
+            "read_write": false
+          },
+          {
+            "type": "bind",
+            "destination": "/models/clip",
+            "read_write": false
+          }
+        ]
+      },
+      "worker": {
+        "image_id": "sha256:a289571cceb066d2767d4e2fc92b0f37639f464afbba680aeee63c03a00cab1a",
+        "user": "10001:10001",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 722.46,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 683.97,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 852.46,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 831.79,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 917.71,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": true,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 3221225472,
+        "nano_cpus": 4000000000,
+        "ports": {
+          "8000/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/datasets",
+            "read_write": false
+          },
+          {
+            "type": "volume",
+            "destination": "/evaluation/results",
+            "read_write": false
+          },
+          {
+            "type": "bind",
+            "destination": "/models/clip",
+            "read_write": false
+          }
+        ]
+      },
+      "frontend": {
+        "image_id": "sha256:05539eee33850fc1a782ea7321851c6b4db9a2ca6856868ddbe9849abcc98853",
+        "user": "101:101",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 70.02,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 66.19,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 77.77,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 64.4,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 78.39,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": true,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 268435456,
+        "nano_cpus": 1000000000,
+        "ports": {
+          "80/tcp": null,
+          "8080/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "8089"
+            }
+          ],
+          "8443/tcp": null
+        },
+        "mounts": []
+      },
+      "postgres": {
+        "image_id": "sha256:e8a07d2c7579b038938cdba6c539e580e5001caf9ea203d397b5cc83e76bd938",
+        "user": "",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 137.2,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 149.88,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 131.28,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 127.86,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 109.96,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": false,
+        "cap_drop": null,
+        "security_opt": null,
+        "memory_bytes": 805306368,
+        "nano_cpus": 2000000000,
+        "ports": {
+          "5432/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/var/lib/postgresql/data",
+            "read_write": true
+          }
+        ]
+      },
+      "qdrant": {
+        "image_id": "sha256:9bfc89f9914fc14876a88c05270685921a55b8877b254a98bcc1cc2f0a424cd2",
+        "user": "0:0",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 59.23,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 70.59,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 114.22,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 65.15,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 94.0,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": false,
+        "cap_drop": null,
+        "security_opt": null,
+        "memory_bytes": 1073741824,
+        "nano_cpus": 2000000000,
+        "ports": {
+          "6333/tcp": null,
+          "6334/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/qdrant/storage",
+            "read_write": true
+          }
+        ]
+      },
+      "minio": {
+        "image_id": "sha256:ee52ba8b4875e48396787bb50b514920e18158fd19e07faca4a0c3cbbefc1dbb",
+        "user": "minio",
+        "state": "running",
+        "health": "healthy",
+        "health_checks": [
+          {
+            "elapsed_ms": 83.03,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 79.33,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 80.23,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 90.0,
+            "exit_code": 0
+          },
+          {
+            "elapsed_ms": 122.35,
+            "exit_code": 0
+          }
+        ],
+        "read_only_rootfs": false,
+        "cap_drop": null,
+        "security_opt": [
+          "no-new-privileges:false"
+        ],
+        "memory_bytes": 805306368,
+        "nano_cpus": 2000000000,
+        "ports": {
+          "9000/tcp": null
+        },
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/data",
+            "read_write": true
+          }
+        ]
+      }
+    }
+  },
+  "backend_image": {
+    "pytest_present": false,
+    "ruff_present": false,
+    "test_source_present": false,
+    "private_env_present": false
+  },
+  "frontend_image": {
+    "static_assets_present": true,
+    "node_runtime_absent": true,
+    "application_source_absent": true
+  },
+  "serving_preservation": {
+    "live": {
+      "status": "alive",
+      "service": "image-search-api"
+    },
+    "workspace": {
+      "dataset": {
+        "state": "ready",
+        "images": 513,
+        "available_images": 513,
+        "indexed_images": 513,
+        "vectors": 513,
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "index_status": "ready",
+        "generation": 3
+      },
+      "dependencies": {
+        "postgresql": "healthy",
+        "qdrant": "healthy",
+        "minio": "healthy"
+      },
+      "capabilities": {
+        "text_search": true,
+        "image_search": true,
+        "multimodal": true,
+        "multi_intent": true,
+        "rerank": true,
+        "explanations": true,
+        "agent": true
+      },
+      "rag": {
+        "enabled": true,
+        "configured": true,
+        "streaming": true
+      },
+      "agent": {
+        "enabled": true,
+        "llm_planning": true
+      },
+      "limits": {
+        "top_k": 50,
+        "image_bytes": 20971520
+      }
+    },
+    "knowledge_counts": "4|3|3"
+  },
+  "env_permissions": {
+    ".env": "0o600",
+    ".env.phase12": "0o600",
+    ".env.phase12-restore": "0o600"
+  }
+}

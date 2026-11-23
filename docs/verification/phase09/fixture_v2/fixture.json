@@ -1,0 +1,412 @@
+{
+  "classification": "FICTIONAL_FIXTURE_ON_REAL_INFRASTRUCTURE",
+  "real_world_accuracy": null,
+  "empty_dataset": {
+    "query_id": "76e3107a-a7df-442e-b037-124243647a5d",
+    "request_id": "9fe18879-34e5-4a54-bed7-802c5e9d0b63",
+    "execution_id": "b2a90c55-6657-4314-bf12-362453f124c9",
+    "index_id": null,
+    "model_id": null,
+    "manifest_sha256": null,
+    "service_class": "augmented",
+    "requested_mode": "agent",
+    "search_mode": "agent",
+    "status": "insufficient_evidence",
+    "query_success": false,
+    "dataset_status": "empty_dataset",
+    "results": [],
+    "resolved_entities": [],
+    "steps": [],
+    "evidence": [],
+    "image_associations": [],
+    "image_sources": {},
+    "answer": null,
+    "rag": null,
+    "relationship_summary": null,
+    "planner_mode": "deterministic",
+    "planner_attempts": 0,
+    "plan_id": "dd918b74-1fa4-447f-ada7-8488d8192790",
+    "logical_hops": 0,
+    "tool_calls": 0,
+    "latency_ms": 4.11677400006738,
+    "latency": {
+      "routing_ms": 0.42517799920460675,
+      "planning_ms": 0.4554600000119535,
+      "aggregation_ms": 0.0,
+      "provider_ttft_ms": null,
+      "provider_ttlast_ms": null,
+      "request_ttlast_ms": null,
+      "total_ms": 4.11677400006738,
+      "tools_ms": 0
+    },
+    "warnings": [
+      "EMPTY_DATASET"
+    ],
+    "error_code": "EMPTY_DATASET",
+    "verification_state": "NOT_VERIFIED"
+  },
+  "deterministic_multihop": {
+    "query_id": "1ce933bb-6baa-4a5e-b55f-fc4a36389f52",
+    "request_id": "a8919d22-3699-451d-ab51-db9a7356da1d",
+    "execution_id": "630978ad-6f30-4ec1-a457-5f18eb3c751d",
+    "index_id": "7cbfa82c-8896-4b6f-8f01-afda99ca0a58",
+    "model_id": "a8185457-fc48-4808-b6d2-b15308f34ddd",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "service_class": "augmented",
+    "requested_mode": "agent",
+    "search_mode": "agent",
+    "status": "completed",
+    "query_success": true,
+    "dataset_status": "available",
+    "results": [
+      {
+        "image_id": "f80dd839-4b10-498b-b931-c13832345ded",
+        "rank": 1,
+        "score": 0.18218438,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/f80dd839-4b10-498b-b931-c13832345ded/content?variant=original",
+        "thumbnail_url": "/api/v1/images/f80dd839-4b10-498b-b931-c13832345ded/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 600,
+          "height": 400,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "phase09-fixture",
+          "city": null,
+          "license": "CC0-1.0"
+        },
+        "constraint_assessments": []
+      }
+    ],
+    "resolved_entities": [
+      {
+        "entity_id": "10000000-0000-4000-8000-000000000001",
+        "canonical_name": "Fixture Lake Alpha",
+        "entity_type": "landmark",
+        "source_ref": "fixture://phase09/lake",
+        "provenance": {
+          "fixture": true,
+          "source_ref": "fixture://phase09/lake"
+        },
+        "fixture": true
+      },
+      {
+        "entity_id": "10000000-0000-4000-8000-000000000002",
+        "canonical_name": "Fixture City Beta",
+        "entity_type": "city",
+        "source_ref": "fixture://phase09/city",
+        "provenance": {
+          "fixture": true,
+          "source_ref": "fixture://phase09/city"
+        },
+        "fixture": true
+      },
+      {
+        "entity_id": "10000000-0000-4000-8000-000000000003",
+        "canonical_name": "Fixture Landmark Gamma",
+        "entity_type": "landmark",
+        "source_ref": "fixture://phase09/landmark",
+        "provenance": {
+          "fixture": true,
+          "source_ref": "fixture://phase09/landmark"
+        },
+        "fixture": true
+      }
+    ],
+    "steps": [
+      {
+        "step_id": "anchor",
+        "tool": "entity_lookup",
+        "status": "completed",
+        "duration_ms": 5.84442200124613,
+        "logical_hop": 0,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": []
+      },
+      {
+        "step_id": "city",
+        "tool": "relationship_lookup",
+        "status": "completed",
+        "duration_ms": 5.035025000324822,
+        "logical_hop": 1,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": [
+          "20000000-0000-4000-8000-000000000001"
+        ]
+      },
+      {
+        "step_id": "targets",
+        "tool": "get_related_entities",
+        "status": "completed",
+        "duration_ms": 4.299191999962204,
+        "logical_hop": 2,
+        "result_count": 2,
+        "error_code": null,
+        "evidence_ids": [
+          "20000000-0000-4000-8000-000000000001",
+          "20000000-0000-4000-8000-000000000002"
+        ]
+      },
+      {
+        "step_id": "images",
+        "tool": "semantic_image_search",
+        "status": "completed",
+        "duration_ms": 68.14624500111677,
+        "logical_hop": 3,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "20000000-0000-4000-8000-000000000001",
+        "subject_id": "10000000-0000-4000-8000-000000000001",
+        "predicate": "located_in",
+        "object_id": "10000000-0000-4000-8000-000000000002",
+        "source_ref": "fixture://phase09/relation1",
+        "verified": true,
+        "provenance": {
+          "note": "Fictional workflow data; not a geographic fact.",
+          "fixture": true,
+          "verified_at": "2026-11-06T00:00:00+00:00"
+        }
+      },
+      {
+        "evidence_id": "20000000-0000-4000-8000-000000000002",
+        "subject_id": "10000000-0000-4000-8000-000000000003",
+        "predicate": "located_in",
+        "object_id": "10000000-0000-4000-8000-000000000002",
+        "source_ref": "fixture://phase09/relation2",
+        "verified": true,
+        "provenance": {
+          "note": "Fictional workflow data; not a geographic fact.",
+          "fixture": true,
+          "verified_at": "2026-11-06T00:00:00+00:00"
+        }
+      }
+    ],
+    "image_associations": [
+      {
+        "image_id": "f80dd839-4b10-498b-b931-c13832345ded",
+        "entity_id": "10000000-0000-4000-8000-000000000003",
+        "relation": "depicts",
+        "source_ref": "fixture://phase09/image-association",
+        "verified": true
+      }
+    ],
+    "image_sources": {
+      "f80dd839-4b10-498b-b931-c13832345ded": [
+        "images:semantic_image_search"
+      ]
+    },
+    "answer": null,
+    "rag": null,
+    "relationship_summary": "Fixture Lake Alpha — located_in → Fixture City Beta; Fixture Landmark Gamma — located_in → Fixture City Beta",
+    "planner_mode": "deterministic",
+    "planner_attempts": 0,
+    "plan_id": "3679bfbf-d677-46d1-a5e5-8a51b36bedc2",
+    "logical_hops": 3,
+    "tool_calls": 4,
+    "latency_ms": 137.67605999964871,
+    "latency": {
+      "routing_ms": 0.023968001187313348,
+      "planning_ms": 0.30776200037507806,
+      "aggregation_ms": 46.848579000652535,
+      "provider_ttft_ms": null,
+      "provider_ttlast_ms": null,
+      "request_ttlast_ms": null,
+      "total_ms": 137.67605999964871,
+      "tools_ms": 83.32488400264992
+    },
+    "warnings": [],
+    "error_code": null,
+    "verification_state": "TESTED_WITH_MOCKS"
+  },
+  "real_llm_fixture_plan": {
+    "query_id": "d8d2877c-58df-4882-914b-c18c0aa20048",
+    "request_id": "95246536-67a3-4af0-a12b-b352d08ad13d",
+    "execution_id": "5e1e058e-714a-4dd2-aeb8-909da46125c9",
+    "index_id": "7cbfa82c-8896-4b6f-8f01-afda99ca0a58",
+    "model_id": "a8185457-fc48-4808-b6d2-b15308f34ddd",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "service_class": "augmented",
+    "requested_mode": "agent",
+    "search_mode": "agent",
+    "status": "completed",
+    "query_success": true,
+    "dataset_status": "available",
+    "results": [
+      {
+        "image_id": "f80dd839-4b10-498b-b931-c13832345ded",
+        "rank": 1,
+        "score": 0.18218438,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/f80dd839-4b10-498b-b931-c13832345ded/content?variant=original",
+        "thumbnail_url": "/api/v1/images/f80dd839-4b10-498b-b931-c13832345ded/content?variant=thumbnail",
+        "metadata": {
+          "title": null,
+          "caption": null,
+          "width": 600,
+          "height": 400,
+          "media_type": "image/png",
+          "tags": [],
+          "source_dataset": "phase09-fixture",
+          "city": null,
+          "license": "CC0-1.0"
+        },
+        "constraint_assessments": []
+      }
+    ],
+    "resolved_entities": [
+      {
+        "entity_id": "10000000-0000-4000-8000-000000000001",
+        "canonical_name": "Fixture Lake Alpha",
+        "entity_type": "landmark",
+        "source_ref": "fixture://phase09/lake",
+        "provenance": {
+          "fixture": true,
+          "source_ref": "fixture://phase09/lake"
+        },
+        "fixture": true
+      },
+      {
+        "entity_id": "10000000-0000-4000-8000-000000000002",
+        "canonical_name": "Fixture City Beta",
+        "entity_type": "city",
+        "source_ref": "fixture://phase09/city",
+        "provenance": {
+          "fixture": true,
+          "source_ref": "fixture://phase09/city"
+        },
+        "fixture": true
+      },
+      {
+        "entity_id": "10000000-0000-4000-8000-000000000003",
+        "canonical_name": "Fixture Landmark Gamma",
+        "entity_type": "landmark",
+        "source_ref": "fixture://phase09/landmark",
+        "provenance": {
+          "fixture": true,
+          "source_ref": "fixture://phase09/landmark"
+        },
+        "fixture": true
+      }
+    ],
+    "steps": [
+      {
+        "step_id": "anchor",
+        "tool": "entity_lookup",
+        "status": "completed",
+        "duration_ms": 4.3999330009683035,
+        "logical_hop": 0,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": []
+      },
+      {
+        "step_id": "city",
+        "tool": "relationship_lookup",
+        "status": "completed",
+        "duration_ms": 3.8866529994265875,
+        "logical_hop": 1,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": [
+          "20000000-0000-4000-8000-000000000001"
+        ]
+      },
+      {
+        "step_id": "targets",
+        "tool": "get_related_entities",
+        "status": "completed",
+        "duration_ms": 3.945476000808412,
+        "logical_hop": 2,
+        "result_count": 2,
+        "error_code": null,
+        "evidence_ids": [
+          "20000000-0000-4000-8000-000000000001",
+          "20000000-0000-4000-8000-000000000002"
+        ]
+      },
+      {
+        "step_id": "images",
+        "tool": "semantic_image_search",
+        "status": "completed",
+        "duration_ms": 54.622831999949994,
+        "logical_hop": 3,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "20000000-0000-4000-8000-000000000001",
+        "subject_id": "10000000-0000-4000-8000-000000000001",
+        "predicate": "located_in",
+        "object_id": "10000000-0000-4000-8000-000000000002",
+        "source_ref": "fixture://phase09/relation1",
+        "verified": true,
+        "provenance": {
+          "note": "Fictional workflow data; not a geographic fact.",
+          "fixture": true,
+          "verified_at": "2026-11-06T00:00:00+00:00"
+        }
+      },
+      {
+        "evidence_id": "20000000-0000-4000-8000-000000000002",
+        "subject_id": "10000000-0000-4000-8000-000000000003",
+        "predicate": "located_in",
+        "object_id": "10000000-0000-4000-8000-000000000002",
+        "source_ref": "fixture://phase09/relation2",
+        "verified": true,
+        "provenance": {
+          "note": "Fictional workflow data; not a geographic fact.",
+          "fixture": true,
+          "verified_at": "2026-11-06T00:00:00+00:00"
+        }
+      }
+    ],
+    "image_associations": [
+      {
+        "image_id": "f80dd839-4b10-498b-b931-c13832345ded",
+        "entity_id": "10000000-0000-4000-8000-000000000003",
+        "relation": "depicts",
+        "source_ref": "fixture://phase09/image-association",
+        "verified": true
+      }
+    ],
+    "image_sources": {
+      "f80dd839-4b10-498b-b931-c13832345ded": [
+        "images:semantic_image_search"
+      ]
+    },
+    "answer": null,
+    "rag": null,
+    "relationship_summary": "Fixture Lake Alpha — located_in → Fixture City Beta; Fixture Landmark Gamma — located_in → Fixture City Beta",
+    "planner_mode": "llm",
+    "planner_attempts": 1,
+    "plan_id": "ba646362-686d-43ed-85aa-f86efb98b09f",
+    "logical_hops": 3,
+    "tool_calls": 4,
+    "latency_ms": 2617.26985399946,
+    "latency": {
+      "routing_ms": 0.026215000616502948,
+      "planning_ms": 2465.2673000000505,
+      "aggregation_ms": 78.55090900011419,
+      "provider_ttft_ms": null,
+      "provider_ttlast_ms": null,
+      "request_ttlast_ms": null,
+      "total_ms": 2617.26985399946,
+      "tools_ms": 66.8548940011533
+    },
+    "warnings": [],
+    "error_code": null,
+    "verification_state": "TESTED_WITH_MOCKS"
+  }
+}

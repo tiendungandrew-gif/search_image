@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "generation": 2,
+  "model_initialization_ms": 10171.272413999759,
+  "verified_images": 510
+}

@@ -1,0 +1,15 @@
+{
+  "verified_date": "2026-11-17",
+  "image": "ai-image-search/frontend:travel-ui-check",
+  "image_id": "sha256:8e35324e8bc4403963839e77781bd0d34f408a5966e07c0c3a9005d6ee330a88",
+  "build_exit_code": 0,
+  "container_asset_check_exit_code": 0,
+  "asset": "frontend/public/images/travel-resort-hero-v1.png",
+  "sha256": "0264b5970d6b60274b120f8498d3ffc65222cd3448fe3c344980b584343ba372",
+  "matches": [
+    "frontend/dist/images/travel-resort-hero-v1.png",
+    "/usr/share/nginx/html/images/travel-resort-hero-v1.png"
+  ],
+  "image_command": "docker run --rm --network none --read-only --entrypoint /bin/sh ai-image-search/frontend:travel-ui-check -c 'test -s /usr/share/nginx/html/index.html && test -s /usr/share/nginx/html/images/travel-resort-hero-v1.png && sha256sum /usr/share/nginx/html/images/travel-resort-hero-v1.png'",
+  "deployment_updated": false
+}

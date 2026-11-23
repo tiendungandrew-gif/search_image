@@ -1,0 +1,12 @@
+{
+  "status": 503,
+  "body": {
+    "error": {
+      "code": "NOT_READY",
+      "message": "Search model/index ch\u01b0a s\u1eb5n s\u00e0ng",
+      "request_id": "3e426739-9d3f-4c5b-8716-18031b021095",
+      "retryable": true,
+      "details": []
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "classification": "REAL_SERVICE_TERMINATION_ON_ISOLATED_QA",
+  "production_data_modified": false,
+  "scenarios": [
+    {
+      "service": "qa-postgres",
+      "fault": "SIGKILL",
+      "readiness_status": 503,
+      "readiness_ms": 21.969261000776896,
+      "recovery_ms": 1240.9446490000846,
+      "status": "passed"
+    },
+    {
+      "service": "qa-qdrant",
+      "fault": "SIGKILL",
+      "readiness_status": 503,
+      "readiness_ms": 12.501479999627918,
+      "recovery_ms": 987.0142349991511,
+      "status": "passed"
+    },
+    {
+      "service": "qa-minio",
+      "fault": "SIGKILL",
+      "readiness_status": 503,
+      "readiness_ms": 14.854515000479296,
+      "recovery_ms": 1255.7892969998647,
+      "status": "passed"
+    },
+    {
+      "service": "qa-api",
+      "fault": "SIGKILL",
+      "frontend_shell_available": true,
+      "status": "passed"
+    }
+  ],
+  "initial_dataset": {
+    "state": "empty_dataset",
+    "images": 0,
+    "available_images": 0,
+    "indexed_images": 0,
+    "vectors": null,
+    "index_id": null,
+    "index_status": "absent",
+    "generation": null
+  },
+  "final_dataset": {
+    "state": "empty_dataset",
+    "images": 0,
+    "available_images": 0,
+    "indexed_images": 0,
+    "vectors": null,
+    "index_id": null,
+    "index_status": "absent",
+    "generation": null
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "classification": "REAL_DEPLOYMENT_SYNTHETIC_DATA",
+  "project": "image-search-phase12",
+  "expected_images": 7,
+  "tls": false,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "static_spa": true
+    },
+    {
+      "path": "/evaluation",
+      "status": 200,
+      "static_spa": true
+    }
+  ],
+  "workspace": {
+    "dataset": {
+      "state": "ready",
+      "images": 7,
+      "available_images": 7,
+      "indexed_images": 7,
+      "vectors": 7,
+      "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+      "index_status": "ready",
+      "generation": 2
+    },
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "capabilities": {
+      "text_search": true,
+      "image_search": true,
+      "multimodal": true,
+      "multi_intent": true,
+      "rerank": true,
+      "explanations": false,
+      "agent": true
+    },
+    "rag": {
+      "enabled": false,
+      "configured": false,
+      "streaming": true
+    },
+    "agent": {
+      "enabled": true,
+      "llm_planning": false
+    },
+    "limits": {
+      "top_k": 50,
+      "image_bytes": 20971520
+    }
+  },
+  "retrieved_ids": [
+    "98d5c68d-e965-4d0f-a692-73cb51ab228d",
+    "8c34a36f-4a34-4eab-b8e8-3bc6d79bf642",
+    "79be5590-2667-4916-8d05-db683b465bcf"
+  ],
+  "rag": "disabled_verified; live LLM NOT_CONFIGURED",
+  "agent": {
+    "proxy_sse": true,
+    "status": "insufficient_evidence"
+  },
+  "inventory": {
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "dataset_state": "DATA_PRESENT",
+    "counts": {
+      "images": 7,
+      "objects_receipts": 7,
+      "ready_embeddings": 13
+    },
+    "jobs": {
+      "succeeded": 13
+    },
+    "indexes": [
+      {
+        "id": "7fac2290-1410-4843-a5fb-0a966ca0f1f7",
+        "status": "ready",
+        "collection": "images_phase12_shapes_v1_865d29f7f68b"
+      },
+      {
+        "id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+        "status": "ready",
+        "collection": "images_phase12_incremental_v1_0d9cdb44a9fb"
+      }
+    ],
+    "active": {
+      "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+      "generation": 2
+    },
+    "collections": [
+      {
+        "name": "images_phase12_incremental_v1_0d9cdb44a9fb",
+        "points": 7
+      },
+      {
+        "name": "images_phase12_shapes_v1_865d29f7f68b",
+        "points": 6
+      }
+    ],
+    "stored_objects": 9,
+    "model_artifacts": "present_unverified"
+  }
+}

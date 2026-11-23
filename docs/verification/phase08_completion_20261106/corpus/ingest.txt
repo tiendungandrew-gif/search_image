@@ -1,0 +1,4017 @@
+{
+  "discovered": 500,
+  "validated": 500,
+  "duplicates": 0,
+  "accepted": 500,
+  "failed": 0,
+  "ignored": 4,
+  "results": [
+    {
+      "filename": "images/000000000785.jpg",
+      "image_id": "566d5c91-c02e-4cef-af02-cf8ee3f48ff8",
+      "duplicate": false,
+      "job_id": "a2c1bae1-0f06-4c21-8c13-ba7c3a63078b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a2c1bae1-0f06-4c21-8c13-ba7c3a63078b"
+    },
+    {
+      "filename": "images/000000000885.jpg",
+      "image_id": "83755a2c-9150-417a-a6fb-755baeb2d131",
+      "duplicate": false,
+      "job_id": "1715ef03-f819-4a02-a83d-dc364f97b96f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1715ef03-f819-4a02-a83d-dc364f97b96f"
+    },
+    {
+      "filename": "images/000000001000.jpg",
+      "image_id": "bdb28abc-b415-4247-a8a3-1e32f8d4dbc3",
+      "duplicate": false,
+      "job_id": "96a48ef9-bc04-4177-8f28-2ccb69cf87cd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/96a48ef9-bc04-4177-8f28-2ccb69cf87cd"
+    },
+    {
+      "filename": "images/000000001296.jpg",
+      "image_id": "109707bf-52bd-415b-91ad-f76f83648fd8",
+      "duplicate": false,
+      "job_id": "994893e9-5ca3-4bde-a74b-1354b8c567b3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/994893e9-5ca3-4bde-a74b-1354b8c567b3"
+    },
+    {
+      "filename": "images/000000002149.jpg",
+      "image_id": "72b7dbaf-d8e6-4d0e-9fbb-e03185815322",
+      "duplicate": false,
+      "job_id": "4978a311-0363-4894-8d34-8f624c878e6c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4978a311-0363-4894-8d34-8f624c878e6c"
+    },
+    {
+      "filename": "images/000000002153.jpg",
+      "image_id": "015c7b98-ef17-448f-a3b3-77e988f712b2",
+      "duplicate": false,
+      "job_id": "ea2ad043-2c27-47d6-ab3e-568834b3214f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ea2ad043-2c27-47d6-ab3e-568834b3214f"
+    },
+    {
+      "filename": "images/000000003553.jpg",
+      "image_id": "54ab3927-5f44-422f-9e32-19bb92e4b761",
+      "duplicate": false,
+      "job_id": "20a64147-55a3-43d0-bab3-d8059b4132b2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/20a64147-55a3-43d0-bab3-d8059b4132b2"
+    },
+    {
+      "filename": "images/000000005001.jpg",
+      "image_id": "8e909ed6-41f7-4dd1-b667-7d6f86954ce1",
+      "duplicate": false,
+      "job_id": "c7ea2d0b-20d2-4cff-9bb4-3f2a7a705d07",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c7ea2d0b-20d2-4cff-9bb4-3f2a7a705d07"
+    },
+    {
+      "filename": "images/000000008690.jpg",
+      "image_id": "b94e8001-fce0-4888-ad64-660968cd0c25",
+      "duplicate": false,
+      "job_id": "0cdee1cc-dcba-4e04-bfe9-428f7c3070c9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0cdee1cc-dcba-4e04-bfe9-428f7c3070c9"
+    },
+    {
+      "filename": "images/000000008762.jpg",
+      "image_id": "8d5936c1-2545-4b72-a3b8-3bee09c886b7",
+      "duplicate": false,
+      "job_id": "930adfe7-b439-4ebd-a56b-c229f1e809df",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/930adfe7-b439-4ebd-a56b-c229f1e809df"
+    },
+    {
+      "filename": "images/000000008844.jpg",
+      "image_id": "ccd0be95-e12c-4605-8466-749fd8c8b02a",
+      "duplicate": false,
+      "job_id": "41db5c30-ccd5-496e-9af7-bf0e5245a2ff",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/41db5c30-ccd5-496e-9af7-bf0e5245a2ff"
+    },
+    {
+      "filename": "images/000000010707.jpg",
+      "image_id": "16b3a71c-acb5-4ea6-b269-0a45626c7340",
+      "duplicate": false,
+      "job_id": "9fd0b714-6119-42bd-a97b-42e0ebecf22c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9fd0b714-6119-42bd-a97b-42e0ebecf22c"
+    },
+    {
+      "filename": "images/000000011511.jpg",
+      "image_id": "c284de6e-207c-4a99-94e7-ed81f9542e7e",
+      "duplicate": false,
+      "job_id": "5f5a51e1-be90-44bb-a2c1-d87db61f96aa",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5f5a51e1-be90-44bb-a2c1-d87db61f96aa"
+    },
+    {
+      "filename": "images/000000013291.jpg",
+      "image_id": "1456ea14-8ee9-4458-8baf-ccad8f8326b8",
+      "duplicate": false,
+      "job_id": "8c852769-7f74-49d4-b9bb-ccaf21a8cbb4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8c852769-7f74-49d4-b9bb-ccaf21a8cbb4"
+    },
+    {
+      "filename": "images/000000013774.jpg",
+      "image_id": "430e6ae7-9872-4844-8a3e-af80564536fd",
+      "duplicate": false,
+      "job_id": "01f28ca7-8cbd-462c-a686-0b87d551af96",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/01f28ca7-8cbd-462c-a686-0b87d551af96"
+    },
+    {
+      "filename": "images/000000014439.jpg",
+      "image_id": "b5d2d38c-e778-4f15-8d99-46bb9e83d606",
+      "duplicate": false,
+      "job_id": "85366c55-318a-420d-bd07-6f48d48bdb43",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/85366c55-318a-420d-bd07-6f48d48bdb43"
+    },
+    {
+      "filename": "images/000000015272.jpg",
+      "image_id": "b06e62ae-0275-4a43-886c-e9c5b706b693",
+      "duplicate": false,
+      "job_id": "451645a4-7aad-4053-9e1f-86e794d81a4a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/451645a4-7aad-4053-9e1f-86e794d81a4a"
+    },
+    {
+      "filename": "images/000000015517.jpg",
+      "image_id": "220b1d16-450b-4523-9d4f-294b593a6d94",
+      "duplicate": false,
+      "job_id": "a68f5cdd-553c-41d8-a950-8ab4da3170bd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a68f5cdd-553c-41d8-a950-8ab4da3170bd"
+    },
+    {
+      "filename": "images/000000017029.jpg",
+      "image_id": "fc58d7ca-2760-481d-998d-3f1a75dc2ba7",
+      "duplicate": false,
+      "job_id": "b784c0e6-3cb3-4d32-b307-62b690e592e5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b784c0e6-3cb3-4d32-b307-62b690e592e5"
+    },
+    {
+      "filename": "images/000000019924.jpg",
+      "image_id": "93b56413-97af-4fec-a5d3-a19d2fbc2360",
+      "duplicate": false,
+      "job_id": "9de7e2af-429d-48e8-adfb-dcef018482f0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9de7e2af-429d-48e8-adfb-dcef018482f0"
+    },
+    {
+      "filename": "images/000000020247.jpg",
+      "image_id": "8f45cb4a-55d7-42b9-a801-9983ffbb87f2",
+      "duplicate": false,
+      "job_id": "8e55183f-93e4-4175-b67e-76b56ff81832",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8e55183f-93e4-4175-b67e-76b56ff81832"
+    },
+    {
+      "filename": "images/000000021167.jpg",
+      "image_id": "d9dba466-8091-411b-9f56-0e68ea300e61",
+      "duplicate": false,
+      "job_id": "f5da9fff-6090-4984-9788-7500988b2365",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f5da9fff-6090-4984-9788-7500988b2365"
+    },
+    {
+      "filename": "images/000000022705.jpg",
+      "image_id": "b5dac37b-7900-4c10-a9f5-247d0af7d353",
+      "duplicate": false,
+      "job_id": "4a15ada0-adec-4fb7-b03a-f093fd18725b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4a15ada0-adec-4fb7-b03a-f093fd18725b"
+    },
+    {
+      "filename": "images/000000023781.jpg",
+      "image_id": "36dbc2d9-f132-49b4-9ed3-e4d711022eee",
+      "duplicate": false,
+      "job_id": "e034ceb0-d75e-442e-bb52-2c7609881bd9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e034ceb0-d75e-442e-bb52-2c7609881bd9"
+    },
+    {
+      "filename": "images/000000025181.jpg",
+      "image_id": "db0a6623-c8c2-424b-95cc-190aa6f102e5",
+      "duplicate": false,
+      "job_id": "d26d0e93-8327-4031-a9c1-1e0e8025dc00",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d26d0e93-8327-4031-a9c1-1e0e8025dc00"
+    },
+    {
+      "filename": "images/000000025394.jpg",
+      "image_id": "ca33820c-6647-46c5-b161-53f39da3ba2a",
+      "duplicate": false,
+      "job_id": "65877e5d-33f3-498a-ac63-c9b763661018",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/65877e5d-33f3-498a-ac63-c9b763661018"
+    },
+    {
+      "filename": "images/000000028993.jpg",
+      "image_id": "9a11d7d2-094d-46fa-963f-4369c9c7fc5b",
+      "duplicate": false,
+      "job_id": "94baae9c-c4b5-44cf-a92e-2fe87b34e054",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/94baae9c-c4b5-44cf-a92e-2fe87b34e054"
+    },
+    {
+      "filename": "images/000000029393.jpg",
+      "image_id": "1a8d51d0-5e2b-4456-8897-c97618f29e5e",
+      "duplicate": false,
+      "job_id": "f5f18d04-b95b-4906-90e3-2562e8440001",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f5f18d04-b95b-4906-90e3-2562e8440001"
+    },
+    {
+      "filename": "images/000000029596.jpg",
+      "image_id": "4ea7cc00-cc0b-47d7-bf51-78cf7379428d",
+      "duplicate": false,
+      "job_id": "77684480-c750-45c5-81e1-45be470132d8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/77684480-c750-45c5-81e1-45be470132d8"
+    },
+    {
+      "filename": "images/000000030675.jpg",
+      "image_id": "d5842d6a-fcbb-40d4-bd4e-d74e3ba04bc9",
+      "duplicate": false,
+      "job_id": "5b9f8755-a772-4423-90d8-68a6333125f7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5b9f8755-a772-4423-90d8-68a6333125f7"
+    },
+    {
+      "filename": "images/000000031322.jpg",
+      "image_id": "391b4c5a-5576-4de5-8723-b45a78acc2cd",
+      "duplicate": false,
+      "job_id": "d9f6b334-9501-453d-830b-c13742572581",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d9f6b334-9501-453d-830b-c13742572581"
+    },
+    {
+      "filename": "images/000000032038.jpg",
+      "image_id": "5c571ea8-f061-4937-8715-08f0bae5133a",
+      "duplicate": false,
+      "job_id": "1b949a48-6533-4f26-bf5a-3dca31b8fc39",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1b949a48-6533-4f26-bf5a-3dca31b8fc39"
+    },
+    {
+      "filename": "images/000000034205.jpg",
+      "image_id": "111495b3-c3ac-438e-9541-5ae49f8486e8",
+      "duplicate": false,
+      "job_id": "24c1a847-579f-4426-afcb-32d5e5720d6c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/24c1a847-579f-4426-afcb-32d5e5720d6c"
+    },
+    {
+      "filename": "images/000000034873.jpg",
+      "image_id": "2ad74fdc-e67c-45c0-82d6-0d3961e15c48",
+      "duplicate": false,
+      "job_id": "d326bb4a-0881-48ba-a094-feaa452fb591",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d326bb4a-0881-48ba-a094-feaa452fb591"
+    },
+    {
+      "filename": "images/000000038070.jpg",
+      "image_id": "5b09953e-7720-4497-bdd0-25f7940d9684",
+      "duplicate": false,
+      "job_id": "09dd5309-e12e-41a2-853e-15dc4082a5da",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/09dd5309-e12e-41a2-853e-15dc4082a5da"
+    },
+    {
+      "filename": "images/000000040036.jpg",
+      "image_id": "7de13e38-4371-46ac-ad2b-4da7e33375f0",
+      "duplicate": false,
+      "job_id": "f590a3e4-bd9e-41cb-bf77-fb36b36e200b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f590a3e4-bd9e-41cb-bf77-fb36b36e200b"
+    },
+    {
+      "filename": "images/000000040757.jpg",
+      "image_id": "f7d30c0b-6cc5-4371-b6f2-8f7034e0cbfa",
+      "duplicate": false,
+      "job_id": "65bc397e-b974-41fb-baf3-7752cc14e4ee",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/65bc397e-b974-41fb-baf3-7752cc14e4ee"
+    },
+    {
+      "filename": "images/000000042102.jpg",
+      "image_id": "cd9d1ce1-32da-4b60-bd34-792ef4dbe544",
+      "duplicate": false,
+      "job_id": "6e0f4706-564b-4e5a-9472-9561a6146d9a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6e0f4706-564b-4e5a-9472-9561a6146d9a"
+    },
+    {
+      "filename": "images/000000045070.jpg",
+      "image_id": "851df1f3-8016-4e9c-b543-d260eabb438c",
+      "duplicate": false,
+      "job_id": "05bd0cb6-9745-4c7e-92c4-391c7f0aa27c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/05bd0cb6-9745-4c7e-92c4-391c7f0aa27c"
+    },
+    {
+      "filename": "images/000000046378.jpg",
+      "image_id": "720a6d8e-e557-4ce2-ba97-e0f80688d44d",
+      "duplicate": false,
+      "job_id": "9a14b0b4-3de2-4fa1-a19a-2de9bb4ac2f0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9a14b0b4-3de2-4fa1-a19a-2de9bb4ac2f0"
+    },
+    {
+      "filename": "images/000000049259.jpg",
+      "image_id": "3b95cf4d-9d41-482a-8dfa-63750cd88092",
+      "duplicate": false,
+      "job_id": "c77915e2-4428-49c0-ad8e-4d1e0c8768ce",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c77915e2-4428-49c0-ad8e-4d1e0c8768ce"
+    },
+    {
+      "filename": "images/000000049759.jpg",
+      "image_id": "8432bf15-0d77-46d5-af60-24c16443ad4b",
+      "duplicate": false,
+      "job_id": "602a3d22-6794-4339-881c-1c955b9008db",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/602a3d22-6794-4339-881c-1c955b9008db"
+    },
+    {
+      "filename": "images/000000050811.jpg",
+      "image_id": "108cb109-c5d4-4327-83f8-d794bf01510c",
+      "duplicate": false,
+      "job_id": "48c9f609-fb97-46ea-ab66-69a3ce4be0ef",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/48c9f609-fb97-46ea-ab66-69a3ce4be0ef"
+    },
+    {
+      "filename": "images/000000050844.jpg",
+      "image_id": "902dac85-09bf-48b2-8fbf-e6f8940d867a",
+      "duplicate": false,
+      "job_id": "16fc6552-0bd7-4601-8aa4-72a0eb8fade0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/16fc6552-0bd7-4601-8aa4-72a0eb8fade0"
+    },
+    {
+      "filename": "images/000000051309.jpg",
+      "image_id": "3a7e5f33-11cd-4bac-8318-275af142f3e0",
+      "duplicate": false,
+      "job_id": "4111885c-31d7-49e8-a2bc-fb80b2e00007",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4111885c-31d7-49e8-a2bc-fb80b2e00007"
+    },
+    {
+      "filename": "images/000000053909.jpg",
+      "image_id": "fb4e6791-054f-4656-89f7-e365ecbd8c5c",
+      "duplicate": false,
+      "job_id": "b1f50476-9827-4f22-9ea5-f751fdba566a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b1f50476-9827-4f22-9ea5-f751fdba566a"
+    },
+    {
+      "filename": "images/000000054931.jpg",
+      "image_id": "88522488-101c-41f9-b61e-a95a66b63093",
+      "duplicate": false,
+      "job_id": "e4d2b001-17f0-47f7-ab58-2986e08690e2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e4d2b001-17f0-47f7-ab58-2986e08690e2"
+    },
+    {
+      "filename": "images/000000055002.jpg",
+      "image_id": "a7d8779c-a705-433b-9fca-786328581829",
+      "duplicate": false,
+      "job_id": "4fdce3ff-6394-4b35-9801-c6e8b16acad5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4fdce3ff-6394-4b35-9801-c6e8b16acad5"
+    },
+    {
+      "filename": "images/000000055299.jpg",
+      "image_id": "40720d33-3cd1-4d74-b050-ee5280bd5b3f",
+      "duplicate": false,
+      "job_id": "a334d0c2-35d6-48f9-b56b-ba1c1acfd4d8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a334d0c2-35d6-48f9-b56b-ba1c1acfd4d8"
+    },
+    {
+      "filename": "images/000000056545.jpg",
+      "image_id": "25ce2ad8-0edd-4a41-aff8-9b170a1bb176",
+      "duplicate": false,
+      "job_id": "30a74042-3e59-4fd2-b465-71d3e7bf4a5d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/30a74042-3e59-4fd2-b465-71d3e7bf4a5d"
+    },
+    {
+      "filename": "images/000000057232.jpg",
+      "image_id": "c103989b-2f18-4707-9936-7372cf293e23",
+      "duplicate": false,
+      "job_id": "0cee7bc4-57a5-4ec2-a194-7b0a2949812d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0cee7bc4-57a5-4ec2-a194-7b0a2949812d"
+    },
+    {
+      "filename": "images/000000059920.jpg",
+      "image_id": "0adefd30-869d-4d14-96a3-ebf29013a041",
+      "duplicate": false,
+      "job_id": "cce7a373-f6b4-45c6-8330-25b84b3834de",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cce7a373-f6b4-45c6-8330-25b84b3834de"
+    },
+    {
+      "filename": "images/000000060899.jpg",
+      "image_id": "8e3f9f7b-41ef-4d07-9454-2a64e9594f27",
+      "duplicate": false,
+      "job_id": "532e173d-2410-440c-8b43-c89985dc1741",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/532e173d-2410-440c-8b43-c89985dc1741"
+    },
+    {
+      "filename": "images/000000062554.jpg",
+      "image_id": "2bc63b94-4141-4707-9fb2-975ec0d0a15e",
+      "duplicate": false,
+      "job_id": "fba62344-4c93-469c-b1cd-40bb49dbd9d3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fba62344-4c93-469c-b1cd-40bb49dbd9d3"
+    },
+    {
+      "filename": "images/000000063047.jpg",
+      "image_id": "da63ab3d-5ae3-4bd3-9204-02a43af26ff3",
+      "duplicate": false,
+      "job_id": "da8864d3-1ef6-43a1-ba44-4998acc4071b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/da8864d3-1ef6-43a1-ba44-4998acc4071b"
+    },
+    {
+      "filename": "images/000000064084.jpg",
+      "image_id": "5f5947ce-f6b8-4458-95b2-4044208933e5",
+      "duplicate": false,
+      "job_id": "924f9d2b-54c9-497c-9467-2e8c1fe7a01a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/924f9d2b-54c9-497c-9467-2e8c1fe7a01a"
+    },
+    {
+      "filename": "images/000000064499.jpg",
+      "image_id": "36bbede6-347c-4d61-81a3-203ce2a9ebbc",
+      "duplicate": false,
+      "job_id": "b4329f60-a4d2-46be-a262-896f4401b40f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b4329f60-a4d2-46be-a262-896f4401b40f"
+    },
+    {
+      "filename": "images/000000064898.jpg",
+      "image_id": "8c9eca65-85b1-4798-81f3-8eb6b195bb73",
+      "duplicate": false,
+      "job_id": "edf55a3f-bbdb-41c4-a3da-cb588010ac51",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/edf55a3f-bbdb-41c4-a3da-cb588010ac51"
+    },
+    {
+      "filename": "images/000000066038.jpg",
+      "image_id": "64873496-d497-483f-b316-035aa1215b78",
+      "duplicate": false,
+      "job_id": "bf1eb2b4-1aec-4a3a-ade8-5be4d75ed54b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bf1eb2b4-1aec-4a3a-ade8-5be4d75ed54b"
+    },
+    {
+      "filename": "images/000000066231.jpg",
+      "image_id": "cf7c1ab1-3095-40bf-948b-b1447e428dff",
+      "duplicate": false,
+      "job_id": "784604d3-3bbf-4019-b837-88bbaf0bf3b6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/784604d3-3bbf-4019-b837-88bbaf0bf3b6"
+    },
+    {
+      "filename": "images/000000067534.jpg",
+      "image_id": "1a100064-9400-405f-8ce4-52a28b94a55d",
+      "duplicate": false,
+      "job_id": "f4cba2bd-6889-4c49-910f-df5ab881588c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f4cba2bd-6889-4c49-910f-df5ab881588c"
+    },
+    {
+      "filename": "images/000000067896.jpg",
+      "image_id": "24ed5a7a-ce44-49ce-9f6b-0d57916d100a",
+      "duplicate": false,
+      "job_id": "10157040-7728-4c07-adea-c85260f23aa0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/10157040-7728-4c07-adea-c85260f23aa0"
+    },
+    {
+      "filename": "images/000000073118.jpg",
+      "image_id": "cc665ae4-e053-45fa-b399-537994062635",
+      "duplicate": false,
+      "job_id": "810c52f1-c7d3-45fe-b84c-8813e7d46b40",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/810c52f1-c7d3-45fe-b84c-8813e7d46b40"
+    },
+    {
+      "filename": "images/000000073946.jpg",
+      "image_id": "4fcee262-96ee-40f8-b8ab-1ba2804e0dc2",
+      "duplicate": false,
+      "job_id": "9dcb56ed-5975-4c9d-b2d1-c1debcd0e5e1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9dcb56ed-5975-4c9d-b2d1-c1debcd0e5e1"
+    },
+    {
+      "filename": "images/000000074733.jpg",
+      "image_id": "d4629522-f2e3-47b8-abb0-bbe3fad4068a",
+      "duplicate": false,
+      "job_id": "34121a38-ed72-4b78-bf1c-a67ffbf34ead",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/34121a38-ed72-4b78-bf1c-a67ffbf34ead"
+    },
+    {
+      "filename": "images/000000076547.jpg",
+      "image_id": "e3a4c159-571a-4715-8753-f4690c100ac8",
+      "duplicate": false,
+      "job_id": "043c63e7-47af-4e99-a964-d17071505a87",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/043c63e7-47af-4e99-a964-d17071505a87"
+    },
+    {
+      "filename": "images/000000077460.jpg",
+      "image_id": "6536ae97-a692-4455-8c8a-020f82767159",
+      "duplicate": false,
+      "job_id": "44b35956-2b87-46f7-8eae-6a10467333d0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/44b35956-2b87-46f7-8eae-6a10467333d0"
+    },
+    {
+      "filename": "images/000000078266.jpg",
+      "image_id": "39092e55-2755-43a1-ac78-34138091ae15",
+      "duplicate": false,
+      "job_id": "6de02173-e137-4d6a-9ff3-3a3e46ea16db",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6de02173-e137-4d6a-9ff3-3a3e46ea16db"
+    },
+    {
+      "filename": "images/000000078823.jpg",
+      "image_id": "404dac7f-1d22-4988-8030-50bc8eb9d012",
+      "duplicate": false,
+      "job_id": "2fbbcb21-a8c7-4679-b5db-c0e7e3b635bd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2fbbcb21-a8c7-4679-b5db-c0e7e3b635bd"
+    },
+    {
+      "filename": "images/000000079014.jpg",
+      "image_id": "f976617e-a4e1-420c-9473-fabc2cf4a5ec",
+      "duplicate": false,
+      "job_id": "bb391eed-f735-4750-b25d-0464be3a61cb",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bb391eed-f735-4750-b25d-0464be3a61cb"
+    },
+    {
+      "filename": "images/000000079031.jpg",
+      "image_id": "aa053de7-42d7-4c18-b273-700b9251744a",
+      "duplicate": false,
+      "job_id": "b41a160a-9018-4583-8173-8118cb73ab31",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b41a160a-9018-4583-8173-8118cb73ab31"
+    },
+    {
+      "filename": "images/000000081061.jpg",
+      "image_id": "a1c6960a-1c19-4a36-a1a0-865c47968537",
+      "duplicate": false,
+      "job_id": "ed63f75b-71a2-4374-b39f-7dd5446b5ab8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ed63f75b-71a2-4374-b39f-7dd5446b5ab8"
+    },
+    {
+      "filename": "images/000000083540.jpg",
+      "image_id": "2837d2e8-148e-4241-8b1c-95da628c0fe6",
+      "duplicate": false,
+      "job_id": "3e158d3f-e67f-4390-b52e-5915681c0f4e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3e158d3f-e67f-4390-b52e-5915681c0f4e"
+    },
+    {
+      "filename": "images/000000084752.jpg",
+      "image_id": "6cd1c213-ae32-4d13-bc35-e256a5e2fb58",
+      "duplicate": false,
+      "job_id": "54e08d4e-fbee-454b-aa79-4b7d05e924ce",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/54e08d4e-fbee-454b-aa79-4b7d05e924ce"
+    },
+    {
+      "filename": "images/000000085157.jpg",
+      "image_id": "df30076e-f6c0-4d12-add3-d0e6971418b7",
+      "duplicate": false,
+      "job_id": "334406ab-9029-4c4b-bf7e-f242f36728a1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/334406ab-9029-4c4b-bf7e-f242f36728a1"
+    },
+    {
+      "filename": "images/000000085376.jpg",
+      "image_id": "cd0f4111-a521-4643-ae74-311e3ed75284",
+      "duplicate": false,
+      "job_id": "f59adc96-ecc8-4a4f-82fc-750e630e02cd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f59adc96-ecc8-4a4f-82fc-750e630e02cd"
+    },
+    {
+      "filename": "images/000000086755.jpg",
+      "image_id": "7cf89d61-e7bb-4a75-8b22-d1d2619031b0",
+      "duplicate": false,
+      "job_id": "a248dba7-883a-448e-ab84-b1389775e71a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a248dba7-883a-448e-ab84-b1389775e71a"
+    },
+    {
+      "filename": "images/000000087875.jpg",
+      "image_id": "0694e14a-0c51-474f-8871-4d868a6e6a6e",
+      "duplicate": false,
+      "job_id": "99cac3bd-d891-42c1-bdc6-f1ea74e91d9c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/99cac3bd-d891-42c1-bdc6-f1ea74e91d9c"
+    },
+    {
+      "filename": "images/000000088265.jpg",
+      "image_id": "c49020ef-9e04-4307-805a-0694dc538ce8",
+      "duplicate": false,
+      "job_id": "704d5c7c-50d2-41ac-9ba0-3963a49ccc42",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/704d5c7c-50d2-41ac-9ba0-3963a49ccc42"
+    },
+    {
+      "filename": "images/000000088432.jpg",
+      "image_id": "987b0c07-12f7-41ee-ac3d-bd8b889a3c6f",
+      "duplicate": false,
+      "job_id": "584a2671-4d20-4857-bb67-d93deab9afba",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/584a2671-4d20-4857-bb67-d93deab9afba"
+    },
+    {
+      "filename": "images/000000089078.jpg",
+      "image_id": "216cdc44-2b22-48a7-a3d1-9cd4f3b8ae98",
+      "duplicate": false,
+      "job_id": "e0734bc7-3402-451b-929c-38b49c0cda35",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e0734bc7-3402-451b-929c-38b49c0cda35"
+    },
+    {
+      "filename": "images/000000089556.jpg",
+      "image_id": "51a9f7fc-18b8-4536-9a98-54cd35ed91ad",
+      "duplicate": false,
+      "job_id": "697b8ff1-e6a7-4d55-9d88-566f50522c89",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/697b8ff1-e6a7-4d55-9d88-566f50522c89"
+    },
+    {
+      "filename": "images/000000090284.jpg",
+      "image_id": "3fefaf29-47f9-4583-8dab-c904a42cde9a",
+      "duplicate": false,
+      "job_id": "e081ee30-a642-4e76-b3d1-d17a52cdb620",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e081ee30-a642-4e76-b3d1-d17a52cdb620"
+    },
+    {
+      "filename": "images/000000090891.jpg",
+      "image_id": "753f1912-1070-4632-a9f4-d2cb465a0541",
+      "duplicate": false,
+      "job_id": "ba8a330e-0a64-4dbf-8d50-97d91190923a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ba8a330e-0a64-4dbf-8d50-97d91190923a"
+    },
+    {
+      "filename": "images/000000091406.jpg",
+      "image_id": "3ce9405c-89f7-447b-961e-48c385286c58",
+      "duplicate": false,
+      "job_id": "31a34d6b-bec9-4830-8b0f-4d47a9a36262",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/31a34d6b-bec9-4830-8b0f-4d47a9a36262"
+    },
+    {
+      "filename": "images/000000091654.jpg",
+      "image_id": "da5bc9e5-bff1-45d0-bf48-958e114a723f",
+      "duplicate": false,
+      "job_id": "fc77c4a7-69fa-4c69-98dd-74bb41f7afc8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fc77c4a7-69fa-4c69-98dd-74bb41f7afc8"
+    },
+    {
+      "filename": "images/000000092053.jpg",
+      "image_id": "831b5b32-baa1-4281-999a-7aa4f93b1434",
+      "duplicate": false,
+      "job_id": "6184db88-99ec-4826-afca-6c5fd6e1d4ff",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6184db88-99ec-4826-afca-6c5fd6e1d4ff"
+    },
+    {
+      "filename": "images/000000094326.jpg",
+      "image_id": "ec226085-e72b-4736-8595-210c44872a8c",
+      "duplicate": false,
+      "job_id": "778e6add-390a-453a-9051-1aff5a53f6e5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/778e6add-390a-453a-9051-1aff5a53f6e5"
+    },
+    {
+      "filename": "images/000000094751.jpg",
+      "image_id": "f60d7296-d937-41fb-b6db-8856e3b0928d",
+      "duplicate": false,
+      "job_id": "0950144a-3d59-4d9a-b678-f9c0587e2acc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0950144a-3d59-4d9a-b678-f9c0587e2acc"
+    },
+    {
+      "filename": "images/000000094871.jpg",
+      "image_id": "d8bd106f-4426-4566-b64e-bcf40bfc9940",
+      "duplicate": false,
+      "job_id": "260d6e63-9511-4ca5-8298-3b5886971f5a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/260d6e63-9511-4ca5-8298-3b5886971f5a"
+    },
+    {
+      "filename": "images/000000097679.jpg",
+      "image_id": "9a812327-f454-4779-b08d-2ddb1603a681",
+      "duplicate": false,
+      "job_id": "57569e45-343c-40d2-9b6f-c05f39bce400",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/57569e45-343c-40d2-9b6f-c05f39bce400"
+    },
+    {
+      "filename": "images/000000098261.jpg",
+      "image_id": "42cfaf69-6efb-4681-a60c-ffd5c1f9da91",
+      "duplicate": false,
+      "job_id": "704e0730-05ec-41d1-ac28-7b48a47cb0c0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/704e0730-05ec-41d1-ac28-7b48a47cb0c0"
+    },
+    {
+      "filename": "images/000000098392.jpg",
+      "image_id": "b0adaed7-4267-4756-a9ea-06d79ebc22d1",
+      "duplicate": false,
+      "job_id": "b77c28b5-c4f8-4a3c-ae83-29a117864934",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b77c28b5-c4f8-4a3c-ae83-29a117864934"
+    },
+    {
+      "filename": "images/000000100274.jpg",
+      "image_id": "27c3a68d-c849-4e96-8b44-1adf8c654553",
+      "duplicate": false,
+      "job_id": "690a6803-c3d0-4c01-a8ce-4eeeb25d4b1e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/690a6803-c3d0-4c01-a8ce-4eeeb25d4b1e"
+    },
+    {
+      "filename": "images/000000100428.jpg",
+      "image_id": "d6932b1a-c9ab-4741-865a-06d37bc37503",
+      "duplicate": false,
+      "job_id": "70d9f39f-6ad6-426c-a182-278eb05013f9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/70d9f39f-6ad6-426c-a182-278eb05013f9"
+    },
+    {
+      "filename": "images/000000100624.jpg",
+      "image_id": "42e54e28-1786-4957-b4af-4ad58e3f2d74",
+      "duplicate": false,
+      "job_id": "45f4e599-cba9-496c-ae20-4ec3b11954b3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/45f4e599-cba9-496c-ae20-4ec3b11954b3"
+    },
+    {
+      "filename": "images/000000101022.jpg",
+      "image_id": "cd64c377-d6b7-423f-9843-b32eeead3fa0",
+      "duplicate": false,
+      "job_id": "b87f33de-7fbe-4a7b-8b06-5ecaab7910a2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b87f33de-7fbe-4a7b-8b06-5ecaab7910a2"
+    },
+    {
+      "filename": "images/000000102805.jpg",
+      "image_id": "a76afff6-df66-4430-a5b6-e3bf119ebafe",
+      "duplicate": false,
+      "job_id": "ed1f6db6-2042-4b8a-ad7f-96983e505852",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ed1f6db6-2042-4b8a-ad7f-96983e505852"
+    },
+    {
+      "filename": "images/000000105335.jpg",
+      "image_id": "1d81b6ad-171a-441e-a734-61e23f30e7bf",
+      "duplicate": false,
+      "job_id": "6e34e8f7-8377-4122-970a-696a15b5ca77",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6e34e8f7-8377-4122-970a-696a15b5ca77"
+    },
+    {
+      "filename": "images/000000106281.jpg",
+      "image_id": "62fa75b5-b0b3-44e6-b909-f8990dc034b1",
+      "duplicate": false,
+      "job_id": "338b9191-3537-4a32-80ee-824d7b3cc7b3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/338b9191-3537-4a32-80ee-824d7b3cc7b3"
+    },
+    {
+      "filename": "images/000000109441.jpg",
+      "image_id": "16babb51-010c-402a-a0db-fa57aea9cfed",
+      "duplicate": false,
+      "job_id": "ef4c91b4-e4c2-4549-b53b-fe12b1e74139",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ef4c91b4-e4c2-4549-b53b-fe12b1e74139"
+    },
+    {
+      "filename": "images/000000109916.jpg",
+      "image_id": "24484e22-dee2-491e-b444-dd3a139ea6bd",
+      "duplicate": false,
+      "job_id": "fc32e947-dce0-4662-91c9-a0805a1bc833",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fc32e947-dce0-4662-91c9-a0805a1bc833"
+    },
+    {
+      "filename": "images/000000110449.jpg",
+      "image_id": "71366813-50db-414d-a54d-233714684c31",
+      "duplicate": false,
+      "job_id": "f1c67be5-4f5a-4572-ab0c-4af11ef9c3f3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f1c67be5-4f5a-4572-ab0c-4af11ef9c3f3"
+    },
+    {
+      "filename": "images/000000111036.jpg",
+      "image_id": "4067c5a9-b678-4517-8220-3a365f4380e3",
+      "duplicate": false,
+      "job_id": "46a07e62-8c99-409c-a00a-2ac9def9e4c6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/46a07e62-8c99-409c-a00a-2ac9def9e4c6"
+    },
+    {
+      "filename": "images/000000113051.jpg",
+      "image_id": "920e90f2-9b86-4fd3-9575-d51124b1404c",
+      "duplicate": false,
+      "job_id": "92bd7490-535d-47d7-926f-a9969956464e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/92bd7490-535d-47d7-926f-a9969956464e"
+    },
+    {
+      "filename": "images/000000114907.jpg",
+      "image_id": "2cee2959-174f-4ef6-b6a6-6773d23ae5a4",
+      "duplicate": false,
+      "job_id": "8aa62f7b-d851-4369-88c0-dd3b15c753c3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8aa62f7b-d851-4369-88c0-dd3b15c753c3"
+    },
+    {
+      "filename": "images/000000117374.jpg",
+      "image_id": "de7ace85-18ba-4455-8e40-d823b198444e",
+      "duplicate": false,
+      "job_id": "fe44a3d2-6d7a-4716-8a9b-3d0a1b4a05cb",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fe44a3d2-6d7a-4716-8a9b-3d0a1b4a05cb"
+    },
+    {
+      "filename": "images/000000117425.jpg",
+      "image_id": "5bbd1eba-e94e-47c3-bd8c-6cc883e28d13",
+      "duplicate": false,
+      "job_id": "5b642797-5bf8-4ee2-8162-88089b7eda71",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5b642797-5bf8-4ee2-8162-88089b7eda71"
+    },
+    {
+      "filename": "images/000000118209.jpg",
+      "image_id": "c51fe5b3-5ca2-4ba5-af1f-0e3824bb02c0",
+      "duplicate": false,
+      "job_id": "2374dd4d-af1e-425c-b7d6-9fcea0271032",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2374dd4d-af1e-425c-b7d6-9fcea0271032"
+    },
+    {
+      "filename": "images/000000119445.jpg",
+      "image_id": "b935014d-9b68-41a4-a4ab-6f9055e23942",
+      "duplicate": false,
+      "job_id": "4f1844f0-745c-4212-9e61-1a0ebfef4853",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4f1844f0-745c-4212-9e61-1a0ebfef4853"
+    },
+    {
+      "filename": "images/000000119828.jpg",
+      "image_id": "19d4fcc2-7099-48c4-a149-6d2009df3ed4",
+      "duplicate": false,
+      "job_id": "9313ca16-2442-4846-8925-cb03670051cf",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9313ca16-2442-4846-8925-cb03670051cf"
+    },
+    {
+      "filename": "images/000000122217.jpg",
+      "image_id": "c1c0341f-f3d9-4236-ac07-26015c1739dc",
+      "duplicate": false,
+      "job_id": "5f295c58-8f9a-45af-8ae0-68fd7230c8a0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5f295c58-8f9a-45af-8ae0-68fd7230c8a0"
+    },
+    {
+      "filename": "images/000000122745.jpg",
+      "image_id": "e056e6fd-c520-45a5-8444-4a8eb576fab8",
+      "duplicate": false,
+      "job_id": "8c3b3f0b-194a-48a4-854d-a96e39e11488",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8c3b3f0b-194a-48a4-854d-a96e39e11488"
+    },
+    {
+      "filename": "images/000000124636.jpg",
+      "image_id": "bd81ee2b-76b3-477f-ba31-bfca940d0b03",
+      "duplicate": false,
+      "job_id": "a0d33f54-4021-4f3b-9d5a-1a9a05789b96",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a0d33f54-4021-4f3b-9d5a-1a9a05789b96"
+    },
+    {
+      "filename": "images/000000124659.jpg",
+      "image_id": "f4b28f1e-10f2-48c9-9728-d1779438c0bf",
+      "duplicate": false,
+      "job_id": "38fa2685-f1e4-4d9b-b785-15d3b719ae12",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/38fa2685-f1e4-4d9b-b785-15d3b719ae12"
+    },
+    {
+      "filename": "images/000000125778.jpg",
+      "image_id": "73200eb4-bdde-4074-9533-8366f16e1fff",
+      "duplicate": false,
+      "job_id": "17208c79-75ca-4e6c-957e-9457f5beacac",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/17208c79-75ca-4e6c-957e-9457f5beacac"
+    },
+    {
+      "filename": "images/000000127182.jpg",
+      "image_id": "cb475512-0fb7-4c26-b373-95f1b21584e9",
+      "duplicate": false,
+      "job_id": "355c7fc9-9579-492c-af7d-b2ca6f9d21f5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/355c7fc9-9579-492c-af7d-b2ca6f9d21f5"
+    },
+    {
+      "filename": "images/000000128654.jpg",
+      "image_id": "ac31655a-01fe-4009-8aab-d2ce20b531a4",
+      "duplicate": false,
+      "job_id": "4eb2c934-90e2-4854-94bf-2963b8abe5c9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4eb2c934-90e2-4854-94bf-2963b8abe5c9"
+    },
+    {
+      "filename": "images/000000129113.jpg",
+      "image_id": "d4898b7b-3b70-4d4b-a350-98a6dd27855d",
+      "duplicate": false,
+      "job_id": "a0e9b151-b42e-405d-9eea-07040767d84e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a0e9b151-b42e-405d-9eea-07040767d84e"
+    },
+    {
+      "filename": "images/000000129322.jpg",
+      "image_id": "b057bfcf-dd3f-4339-94be-04a61413b50f",
+      "duplicate": false,
+      "job_id": "7ff50ab5-fa77-47db-8d84-322b0f12ffc3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7ff50ab5-fa77-47db-8d84-322b0f12ffc3"
+    },
+    {
+      "filename": "images/000000129416.jpg",
+      "image_id": "10de2397-3f8d-49ef-a585-935783194995",
+      "duplicate": false,
+      "job_id": "dedfb287-0615-4739-af83-5a4587b8c3e6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/dedfb287-0615-4739-af83-5a4587b8c3e6"
+    },
+    {
+      "filename": "images/000000132116.jpg",
+      "image_id": "19aa96db-0fb0-4acd-bd4f-f00df5b0824e",
+      "duplicate": false,
+      "job_id": "2973bc13-f663-4f64-92c7-a2302c0a3f63",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2973bc13-f663-4f64-92c7-a2302c0a3f63"
+    },
+    {
+      "filename": "images/000000132329.jpg",
+      "image_id": "c4863d29-5b28-4d0f-8532-134c95b454e9",
+      "duplicate": false,
+      "job_id": "ae6776ca-2d66-440d-b915-478641522a30",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ae6776ca-2d66-440d-b915-478641522a30"
+    },
+    {
+      "filename": "images/000000138856.jpg",
+      "image_id": "7f890690-c362-4652-8cae-5f6e7ed6dd95",
+      "duplicate": false,
+      "job_id": "5b086fcc-e402-485d-8ae2-15d28d6b03d8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5b086fcc-e402-485d-8ae2-15d28d6b03d8"
+    },
+    {
+      "filename": "images/000000138979.jpg",
+      "image_id": "00ccc4ae-7302-463a-9205-76432cc2998c",
+      "duplicate": false,
+      "job_id": "96e11918-3d16-413d-999e-03c53999fcfc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/96e11918-3d16-413d-999e-03c53999fcfc"
+    },
+    {
+      "filename": "images/000000140203.jpg",
+      "image_id": "dc1c0890-742e-4049-b43a-37314c5c5fd3",
+      "duplicate": false,
+      "job_id": "034104af-fdb7-43e3-950e-a18ac8d130a2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/034104af-fdb7-43e3-950e-a18ac8d130a2"
+    },
+    {
+      "filename": "images/000000140583.jpg",
+      "image_id": "9937bbdf-919c-4449-a3c3-eca685962c39",
+      "duplicate": false,
+      "job_id": "5540b647-d1be-4523-8abd-60098a5b910c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5540b647-d1be-4523-8abd-60098a5b910c"
+    },
+    {
+      "filename": "images/000000140658.jpg",
+      "image_id": "c0ca254d-b93a-43d7-b955-1ea3ae3b7a4f",
+      "duplicate": false,
+      "job_id": "04053f53-4625-4a8f-b35f-e982a3fcba95",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/04053f53-4625-4a8f-b35f-e982a3fcba95"
+    },
+    {
+      "filename": "images/000000142620.jpg",
+      "image_id": "968cb045-7748-481b-ba3a-b057f0ec8b8c",
+      "duplicate": false,
+      "job_id": "bbec4615-9768-4703-977b-c1f01630de2d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bbec4615-9768-4703-977b-c1f01630de2d"
+    },
+    {
+      "filename": "images/000000143572.jpg",
+      "image_id": "defaf796-22b8-4784-81c8-3903244474c4",
+      "duplicate": false,
+      "job_id": "4ba87d72-975d-46ba-92d7-ef20280d3eac",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4ba87d72-975d-46ba-92d7-ef20280d3eac"
+    },
+    {
+      "filename": "images/000000143998.jpg",
+      "image_id": "024b7d89-b597-4e0d-bc9b-cc30f0a5d998",
+      "duplicate": false,
+      "job_id": "2b431dd2-6075-4eef-a90d-15f480fd254b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2b431dd2-6075-4eef-a90d-15f480fd254b"
+    },
+    {
+      "filename": "images/000000147498.jpg",
+      "image_id": "4bc12cf8-04d0-40de-a594-5f7f5b673103",
+      "duplicate": false,
+      "job_id": "85674b55-42e2-48a1-a0de-23bca9346597",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/85674b55-42e2-48a1-a0de-23bca9346597"
+    },
+    {
+      "filename": "images/000000147729.jpg",
+      "image_id": "122c6d88-e00c-449d-b6af-a8fa93698b14",
+      "duplicate": false,
+      "job_id": "57c5aaca-de0e-4c4b-bc34-115f9bd8f83d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/57c5aaca-de0e-4c4b-bc34-115f9bd8f83d"
+    },
+    {
+      "filename": "images/000000148620.jpg",
+      "image_id": "d7e26d67-4b6a-48b5-a59d-319ebd9c4bcd",
+      "duplicate": false,
+      "job_id": "4fee4461-c60e-4d8d-9fb2-6ddaea9decc3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4fee4461-c60e-4d8d-9fb2-6ddaea9decc3"
+    },
+    {
+      "filename": "images/000000148707.jpg",
+      "image_id": "138e8b3a-6c1e-49c2-8826-5dbc859ca3ec",
+      "duplicate": false,
+      "job_id": "c9998632-7660-4822-b6df-450e31e73d98",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c9998632-7660-4822-b6df-450e31e73d98"
+    },
+    {
+      "filename": "images/000000150224.jpg",
+      "image_id": "2da2fefa-3168-4002-8880-44d204ade73d",
+      "duplicate": false,
+      "job_id": "d7eccb33-f563-4082-8cad-bee927a3883b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d7eccb33-f563-4082-8cad-bee927a3883b"
+    },
+    {
+      "filename": "images/000000153217.jpg",
+      "image_id": "3dff919c-00f5-4083-8b0c-dd46eedaf13c",
+      "duplicate": false,
+      "job_id": "c1fd2466-e1c9-4b92-948c-121c1053b089",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c1fd2466-e1c9-4b92-948c-121c1053b089"
+    },
+    {
+      "filename": "images/000000153229.jpg",
+      "image_id": "b625e1a0-45e3-441d-9f42-f4b3579588e9",
+      "duplicate": false,
+      "job_id": "31e5451d-948f-415f-ade7-bb77168e00d0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/31e5451d-948f-415f-ade7-bb77168e00d0"
+    },
+    {
+      "filename": "images/000000154000.jpg",
+      "image_id": "b5302572-9601-4719-906d-6a9cf437bd71",
+      "duplicate": false,
+      "job_id": "566b9ff5-bd3f-403c-8998-c3152cbd12a9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/566b9ff5-bd3f-403c-8998-c3152cbd12a9"
+    },
+    {
+      "filename": "images/000000154213.jpg",
+      "image_id": "9351b44d-51af-4f48-8223-b4e0503cb870",
+      "duplicate": false,
+      "job_id": "3bac6d7d-2daa-4d5e-b494-6d7d8c2f2f89",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3bac6d7d-2daa-4d5e-b494-6d7d8c2f2f89"
+    },
+    {
+      "filename": "images/000000156278.jpg",
+      "image_id": "8c5ee497-54e8-4570-9206-760caa2a4d10",
+      "duplicate": false,
+      "job_id": "8001df1f-ab9c-4c41-a255-6c3d7e277957",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8001df1f-ab9c-4c41-a255-6c3d7e277957"
+    },
+    {
+      "filename": "images/000000157046.jpg",
+      "image_id": "1bf47645-21ca-45ad-80f4-f4f217290f81",
+      "duplicate": false,
+      "job_id": "eeb3c3dd-f4bc-4ed7-846d-2a6b807aca83",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/eeb3c3dd-f4bc-4ed7-846d-2a6b807aca83"
+    },
+    {
+      "filename": "images/000000157098.jpg",
+      "image_id": "d4f6c16d-0521-436f-a5ed-9c6f471efbd3",
+      "duplicate": false,
+      "job_id": "e51294c2-de45-47c9-9048-a72130d42ff0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e51294c2-de45-47c9-9048-a72130d42ff0"
+    },
+    {
+      "filename": "images/000000157601.jpg",
+      "image_id": "0c52b8ea-b605-475f-a0e0-ae099cf493b6",
+      "duplicate": false,
+      "job_id": "bc89c3b5-d504-4c50-8212-a4da58cd566e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bc89c3b5-d504-4c50-8212-a4da58cd566e"
+    },
+    {
+      "filename": "images/000000161879.jpg",
+      "image_id": "f0ac92fb-1d00-485e-b097-b7a7bc64fb83",
+      "duplicate": false,
+      "job_id": "b7e6c9d7-6fe9-4c81-8fa4-affb57775238",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b7e6c9d7-6fe9-4c81-8fa4-affb57775238"
+    },
+    {
+      "filename": "images/000000161925.jpg",
+      "image_id": "ea746e18-d31c-40bb-be56-038f7f33bbe0",
+      "duplicate": false,
+      "job_id": "e8fd5026-076c-47c9-9da9-4ffed78bbf66",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e8fd5026-076c-47c9-9da9-4ffed78bbf66"
+    },
+    {
+      "filename": "images/000000163117.jpg",
+      "image_id": "9c725426-68ed-49be-bf95-a8013c936292",
+      "duplicate": false,
+      "job_id": "01750413-eace-4f20-b310-97dc59d56f9d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/01750413-eace-4f20-b310-97dc59d56f9d"
+    },
+    {
+      "filename": "images/000000166165.jpg",
+      "image_id": "a41f93ac-ceab-42b0-a194-c8ad89a2f7ca",
+      "duplicate": false,
+      "job_id": "3b3f3403-7bef-4bff-be4e-34a64f706d0d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3b3f3403-7bef-4bff-be4e-34a64f706d0d"
+    },
+    {
+      "filename": "images/000000166277.jpg",
+      "image_id": "cba51ba8-e2c6-415c-a5c3-4d142a44d9ea",
+      "duplicate": false,
+      "job_id": "8fc5af24-f026-441a-bcd3-4319912e2f95",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8fc5af24-f026-441a-bcd3-4319912e2f95"
+    },
+    {
+      "filename": "images/000000166287.jpg",
+      "image_id": "93a7cae5-2657-46c6-8501-afa9eb140930",
+      "duplicate": false,
+      "job_id": "0df31983-24e0-4938-aac6-3aa6e3666b0a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0df31983-24e0-4938-aac6-3aa6e3666b0a"
+    },
+    {
+      "filename": "images/000000166918.jpg",
+      "image_id": "32a25ba1-b2b0-4db8-88eb-753e006faebb",
+      "duplicate": false,
+      "job_id": "7b8247c6-cc0d-4161-a7ed-d1c4097ba804",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7b8247c6-cc0d-4161-a7ed-d1c4097ba804"
+    },
+    {
+      "filename": "images/000000167902.jpg",
+      "image_id": "ff61428c-6d63-4614-8756-2744af5a6dc2",
+      "duplicate": false,
+      "job_id": "f65aa8e6-7640-4a9c-9a1c-34311c2c9df1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f65aa8e6-7640-4a9c-9a1c-34311c2c9df1"
+    },
+    {
+      "filename": "images/000000168593.jpg",
+      "image_id": "be9ea80e-3554-4fa5-a01a-f422bc9e6d82",
+      "duplicate": false,
+      "job_id": "e3f3df5c-78f3-43de-9bdc-dbe6f31823de",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e3f3df5c-78f3-43de-9bdc-dbe6f31823de"
+    },
+    {
+      "filename": "images/000000170955.jpg",
+      "image_id": "148a7797-45ec-473e-b469-6eae3725c7f9",
+      "duplicate": false,
+      "job_id": "1530d792-dd77-4374-90a1-723e36a3ab21",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1530d792-dd77-4374-90a1-723e36a3ab21"
+    },
+    {
+      "filename": "images/000000172877.jpg",
+      "image_id": "5fe89dd5-f7bf-4e1f-9b80-f65a677aee07",
+      "duplicate": false,
+      "job_id": "3de08e26-d426-4c7a-aad8-1fb4b7ed2bba",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3de08e26-d426-4c7a-aad8-1fb4b7ed2bba"
+    },
+    {
+      "filename": "images/000000173830.jpg",
+      "image_id": "a76f6b9a-0ab0-409f-8022-0611dea1370c",
+      "duplicate": false,
+      "job_id": "9edd37cc-ca08-4c26-bdfa-589e4ba40c1c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9edd37cc-ca08-4c26-bdfa-589e4ba40c1c"
+    },
+    {
+      "filename": "images/000000179174.jpg",
+      "image_id": "2a4951e1-dfa7-4061-8aa6-94f2ca41cbff",
+      "duplicate": false,
+      "job_id": "4ff0292c-4a51-4e53-86e8-617cd8a64e01",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4ff0292c-4a51-4e53-86e8-617cd8a64e01"
+    },
+    {
+      "filename": "images/000000180296.jpg",
+      "image_id": "584eeb73-13b9-4907-8ff7-a55af15b455c",
+      "duplicate": false,
+      "job_id": "769376fa-9e91-4309-975d-89b5ce5a15a0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/769376fa-9e91-4309-975d-89b5ce5a15a0"
+    },
+    {
+      "filename": "images/000000181816.jpg",
+      "image_id": "5cd849be-fdf5-4b20-a2ec-f1b0983d87fb",
+      "duplicate": false,
+      "job_id": "b70627e2-091d-4977-8bf5-962e8dffac84",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b70627e2-091d-4977-8bf5-962e8dffac84"
+    },
+    {
+      "filename": "images/000000181859.jpg",
+      "image_id": "678820a5-823e-4e96-9bd4-a5605dab3dd4",
+      "duplicate": false,
+      "job_id": "c9fd6864-d655-42a9-96a5-ba1695e3afdf",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c9fd6864-d655-42a9-96a5-ba1695e3afdf"
+    },
+    {
+      "filename": "images/000000182021.jpg",
+      "image_id": "009de4ad-cd1e-4692-b5d6-cd71c25494a7",
+      "duplicate": false,
+      "job_id": "62498033-a857-4636-8430-718f81825064",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/62498033-a857-4636-8430-718f81825064"
+    },
+    {
+      "filename": "images/000000182417.jpg",
+      "image_id": "3fe61c42-ae1b-48c1-a87c-ba464278196d",
+      "duplicate": false,
+      "job_id": "cdf24ca1-3b6c-4dff-a016-65389dfee4d4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cdf24ca1-3b6c-4dff-a016-65389dfee4d4"
+    },
+    {
+      "filename": "images/000000185409.jpg",
+      "image_id": "e5b1ae52-1e73-4e47-b7dc-72682b5a12e3",
+      "duplicate": false,
+      "job_id": "8d2d1fb1-c1b0-4edd-9149-717aef71047a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8d2d1fb1-c1b0-4edd-9149-717aef71047a"
+    },
+    {
+      "filename": "images/000000186282.jpg",
+      "image_id": "774e45b6-37ba-4ad4-a51b-7c8d5417f196",
+      "duplicate": false,
+      "job_id": "934e5e15-96a6-4f12-b291-16a38ae7349a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/934e5e15-96a6-4f12-b291-16a38ae7349a"
+    },
+    {
+      "filename": "images/000000186624.jpg",
+      "image_id": "4698d4d3-1d8a-4d11-8540-868e1df4baf4",
+      "duplicate": false,
+      "job_id": "751e1402-ee68-44d8-b980-1e6a6f1460bf",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/751e1402-ee68-44d8-b980-1e6a6f1460bf"
+    },
+    {
+      "filename": "images/000000186632.jpg",
+      "image_id": "a5bbdc74-3677-4b42-9f77-ef80cdeef5eb",
+      "duplicate": false,
+      "job_id": "2e971a4c-8938-456a-ab3d-c04fd5e2f369",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2e971a4c-8938-456a-ab3d-c04fd5e2f369"
+    },
+    {
+      "filename": "images/000000187362.jpg",
+      "image_id": "7fa090ae-eb54-4036-848a-d1e523279371",
+      "duplicate": false,
+      "job_id": "1e295e28-f8f9-4f78-9c84-1c96374bdf80",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1e295e28-f8f9-4f78-9c84-1c96374bdf80"
+    },
+    {
+      "filename": "images/000000188465.jpg",
+      "image_id": "10e996b2-10f7-4493-aa39-0665157453db",
+      "duplicate": false,
+      "job_id": "79311074-a682-4a72-a40e-bec282fb11f8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/79311074-a682-4a72-a40e-bec282fb11f8"
+    },
+    {
+      "filename": "images/000000189310.jpg",
+      "image_id": "3ed0672b-0e68-46ac-bb25-f568280ef922",
+      "duplicate": false,
+      "job_id": "847f32d3-b853-47dd-8d9e-e2574c9cd184",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/847f32d3-b853-47dd-8d9e-e2574c9cd184"
+    },
+    {
+      "filename": "images/000000190007.jpg",
+      "image_id": "2fa7d4df-f19c-440b-bf24-d7e70d56c8dd",
+      "duplicate": false,
+      "job_id": "ffbcc29d-16b1-40d1-9635-ba2c9a0669a6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ffbcc29d-16b1-40d1-9635-ba2c9a0669a6"
+    },
+    {
+      "filename": "images/000000190140.jpg",
+      "image_id": "2a04a75a-67ee-47d9-be2f-10f4915db2ca",
+      "duplicate": false,
+      "job_id": "fefc85ec-39a8-414c-954e-387b018bad55",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fefc85ec-39a8-414c-954e-387b018bad55"
+    },
+    {
+      "filename": "images/000000191761.jpg",
+      "image_id": "db09b754-ae04-4bc3-a19c-6c0285f636e9",
+      "duplicate": false,
+      "job_id": "ae1f1c46-f27c-408a-be47-94afc4605742",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ae1f1c46-f27c-408a-be47-94afc4605742"
+    },
+    {
+      "filename": "images/000000192670.jpg",
+      "image_id": "e7abd572-3274-4ad3-82bf-8328a5bca51d",
+      "duplicate": false,
+      "job_id": "8af1e41d-b966-4871-a57b-99d91fee498f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8af1e41d-b966-4871-a57b-99d91fee498f"
+    },
+    {
+      "filename": "images/000000192871.jpg",
+      "image_id": "9490b367-ea4e-426f-9d99-aa3496e7e685",
+      "duplicate": false,
+      "job_id": "89f773af-915d-42d4-91de-0e461dffbf32",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/89f773af-915d-42d4-91de-0e461dffbf32"
+    },
+    {
+      "filename": "images/000000193494.jpg",
+      "image_id": "c54f8f51-da4c-4972-a607-d49f5c20310e",
+      "duplicate": false,
+      "job_id": "ac6fe3f3-9e13-4ae3-9cec-434ae4a1bee9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ac6fe3f3-9e13-4ae3-9cec-434ae4a1bee9"
+    },
+    {
+      "filename": "images/000000194724.jpg",
+      "image_id": "87f564c1-29c6-48ce-b07b-a0269df1a1ca",
+      "duplicate": false,
+      "job_id": "684cf963-9f5c-45de-89ef-13d4a2f03057",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/684cf963-9f5c-45de-89ef-13d4a2f03057"
+    },
+    {
+      "filename": "images/000000194746.jpg",
+      "image_id": "dc70dee5-799d-4327-94bb-538348940ce1",
+      "duplicate": false,
+      "job_id": "1949e21b-3520-47f5-9f44-1b93e6bf8bb4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1949e21b-3520-47f5-9f44-1b93e6bf8bb4"
+    },
+    {
+      "filename": "images/000000198641.jpg",
+      "image_id": "6679647a-71ba-41f2-8d87-fd0d8e36f8b7",
+      "duplicate": false,
+      "job_id": "e0a528b6-6ac8-43b2-9206-bb086aaa8cda",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e0a528b6-6ac8-43b2-9206-bb086aaa8cda"
+    },
+    {
+      "filename": "images/000000201025.jpg",
+      "image_id": "a0e79f47-c697-4027-a890-93ad8251a828",
+      "duplicate": false,
+      "job_id": "f904a0ad-54d6-4507-860a-84ce9cded771",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f904a0ad-54d6-4507-860a-84ce9cded771"
+    },
+    {
+      "filename": "images/000000201072.jpg",
+      "image_id": "4d3e68fc-51f4-46e8-8d90-a9f4706d4865",
+      "duplicate": false,
+      "job_id": "5198d0a6-a68d-40ec-bc1c-09968557a567",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5198d0a6-a68d-40ec-bc1c-09968557a567"
+    },
+    {
+      "filename": "images/000000201676.jpg",
+      "image_id": "1ab7d717-5579-46f7-b58c-5cfb7601d2a6",
+      "duplicate": false,
+      "job_id": "1ebe635c-a439-45a6-a9f9-9d48d1f1e42e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1ebe635c-a439-45a6-a9f9-9d48d1f1e42e"
+    },
+    {
+      "filename": "images/000000202339.jpg",
+      "image_id": "42bc0e52-bccf-4ea8-a82a-93af264269ea",
+      "duplicate": false,
+      "job_id": "e2cd2254-372c-4fd2-9a20-c72fa896045b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e2cd2254-372c-4fd2-9a20-c72fa896045b"
+    },
+    {
+      "filename": "images/000000203389.jpg",
+      "image_id": "3afbed8c-c983-42ca-9e0d-57bd27064a96",
+      "duplicate": false,
+      "job_id": "92d7152b-981e-43e4-858a-52f5c832818e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/92d7152b-981e-43e4-858a-52f5c832818e"
+    },
+    {
+      "filename": "images/000000203639.jpg",
+      "image_id": "e4fe72ff-38f9-4f22-9c3f-bfc6e3af6358",
+      "duplicate": false,
+      "job_id": "3ebcb4a3-1ef4-45f2-ad53-716bdce1fa5b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3ebcb4a3-1ef4-45f2-ad53-716bdce1fa5b"
+    },
+    {
+      "filename": "images/000000203931.jpg",
+      "image_id": "6cc1d026-3880-47c0-bbbd-49fb9bc2ca2e",
+      "duplicate": false,
+      "job_id": "394990f9-d13c-4c41-a729-a4473c3e1527",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/394990f9-d13c-4c41-a729-a4473c3e1527"
+    },
+    {
+      "filename": "images/000000204329.jpg",
+      "image_id": "933043c7-b33e-4a20-a9fc-e31fc49ceb8c",
+      "duplicate": false,
+      "job_id": "19a64437-89ad-4362-bdfe-9a06c7c6049a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/19a64437-89ad-4362-bdfe-9a06c7c6049a"
+    },
+    {
+      "filename": "images/000000206025.jpg",
+      "image_id": "ea26c5af-74ce-432d-80fe-946701c32a23",
+      "duplicate": false,
+      "job_id": "90ffd7bd-ea77-4630-a6d3-0566e391f7e7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/90ffd7bd-ea77-4630-a6d3-0566e391f7e7"
+    },
+    {
+      "filename": "images/000000207844.jpg",
+      "image_id": "25ab1a87-6d91-40b5-b745-9db24cbfcf8f",
+      "duplicate": false,
+      "job_id": "8eeb97bf-421d-4a66-8de5-8175cf5b78f5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8eeb97bf-421d-4a66-8de5-8175cf5b78f5"
+    },
+    {
+      "filename": "images/000000210273.jpg",
+      "image_id": "4956ab03-2c80-4042-a82c-3f553d89a400",
+      "duplicate": false,
+      "job_id": "ead60002-274d-40be-a166-e7c037565eaa",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ead60002-274d-40be-a166-e7c037565eaa"
+    },
+    {
+      "filename": "images/000000211069.jpg",
+      "image_id": "dc9c7116-9520-4426-b8ae-0298b31f9c1a",
+      "duplicate": false,
+      "job_id": "488a2180-c505-40a5-960d-c134438f0b03",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/488a2180-c505-40a5-960d-c134438f0b03"
+    },
+    {
+      "filename": "images/000000211825.jpg",
+      "image_id": "68b4e27c-dede-49ea-afbc-f93bafed8a0b",
+      "duplicate": false,
+      "job_id": "054a4644-e024-440c-9a9c-a5cf8b058d17",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/054a4644-e024-440c-9a9c-a5cf8b058d17"
+    },
+    {
+      "filename": "images/000000213033.jpg",
+      "image_id": "1a35bcc0-fc88-4e84-934e-b042fc59f79c",
+      "duplicate": false,
+      "job_id": "6cbe773d-7c45-4c86-87c7-7cfc468308f2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6cbe773d-7c45-4c86-87c7-7cfc468308f2"
+    },
+    {
+      "filename": "images/000000213605.jpg",
+      "image_id": "30dd31b3-59c2-4a53-8a49-0b08d16f2296",
+      "duplicate": false,
+      "job_id": "644a270f-db36-4946-a025-cf09a53d116d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/644a270f-db36-4946-a025-cf09a53d116d"
+    },
+    {
+      "filename": "images/000000217400.jpg",
+      "image_id": "e0da0837-6e63-47e0-96fe-d6c95c555ba3",
+      "duplicate": false,
+      "job_id": "b86baea2-76ad-4d8f-a10b-fe02989006d6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b86baea2-76ad-4d8f-a10b-fe02989006d6"
+    },
+    {
+      "filename": "images/000000218424.jpg",
+      "image_id": "ccc3cbfe-3dfd-4bad-b33c-381b883c413c",
+      "duplicate": false,
+      "job_id": "25cf298c-0dbf-46b7-9d55-f8c33eb9519b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/25cf298c-0dbf-46b7-9d55-f8c33eb9519b"
+    },
+    {
+      "filename": "images/000000221754.jpg",
+      "image_id": "44406b62-ca40-4588-9076-990671dabbbb",
+      "duplicate": false,
+      "job_id": "10c7f4ee-b7a4-436b-8eeb-17d6d11eacfe",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/10c7f4ee-b7a4-436b-8eeb-17d6d11eacfe"
+    },
+    {
+      "filename": "images/000000222299.jpg",
+      "image_id": "edc78b8e-5586-4510-ace6-c9f9c2a58256",
+      "duplicate": false,
+      "job_id": "c34084be-d12d-4b01-9f87-6741f7e4a543",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c34084be-d12d-4b01-9f87-6741f7e4a543"
+    },
+    {
+      "filename": "images/000000222735.jpg",
+      "image_id": "37d7e52b-1089-41b8-9cbf-6bdb7891cf6a",
+      "duplicate": false,
+      "job_id": "0f2e66a5-1c3e-44b2-90d6-44c4f9f3700c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0f2e66a5-1c3e-44b2-90d6-44c4f9f3700c"
+    },
+    {
+      "filename": "images/000000225405.jpg",
+      "image_id": "b65f87fd-b5ab-4f73-9c47-9101d4f73c26",
+      "duplicate": false,
+      "job_id": "22b92781-40f7-40e6-8061-4d22768deadc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/22b92781-40f7-40e6-8061-4d22768deadc"
+    },
+    {
+      "filename": "images/000000226130.jpg",
+      "image_id": "a0fda745-c01e-4f7c-aa14-44675f513d95",
+      "duplicate": false,
+      "job_id": "ce3eeb4a-2cd1-46aa-b6e7-1dca7d2d3203",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ce3eeb4a-2cd1-46aa-b6e7-1dca7d2d3203"
+    },
+    {
+      "filename": "images/000000227686.jpg",
+      "image_id": "e4916048-f990-46e0-95bc-9ad15f745dc8",
+      "duplicate": false,
+      "job_id": "8d227af2-92b4-4702-b7ad-7f5b0cb51b10",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8d227af2-92b4-4702-b7ad-7f5b0cb51b10"
+    },
+    {
+      "filename": "images/000000228144.jpg",
+      "image_id": "6a0d7300-6524-4c52-9896-b2ba47e5068c",
+      "duplicate": false,
+      "job_id": "4505cfb7-c40c-4437-ab6c-1ae6351e4bb5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4505cfb7-c40c-4437-ab6c-1ae6351e4bb5"
+    },
+    {
+      "filename": "images/000000229753.jpg",
+      "image_id": "44ac57d0-6527-4864-9400-f0e86f8ef843",
+      "duplicate": false,
+      "job_id": "b73e7e0e-a7b0-4420-b500-990091d28767",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b73e7e0e-a7b0-4420-b500-990091d28767"
+    },
+    {
+      "filename": "images/000000229997.jpg",
+      "image_id": "c6059a25-0d6f-4716-8eb4-6388ee8452f2",
+      "duplicate": false,
+      "job_id": "f5d6c0e2-4bb3-4c12-b01c-a771702120c3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f5d6c0e2-4bb3-4c12-b01c-a771702120c3"
+    },
+    {
+      "filename": "images/000000230819.jpg",
+      "image_id": "0e08b69e-230e-4c88-b299-4db56bf6d2ab",
+      "duplicate": false,
+      "job_id": "82f68fc8-2ff1-44e6-92ce-341aaecf9827",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/82f68fc8-2ff1-44e6-92ce-341aaecf9827"
+    },
+    {
+      "filename": "images/000000231508.jpg",
+      "image_id": "e6151aa2-154e-4bbb-a84c-4c1fbde335d7",
+      "duplicate": false,
+      "job_id": "f0abd664-8e96-4765-934e-485f240416e3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f0abd664-8e96-4765-934e-485f240416e3"
+    },
+    {
+      "filename": "images/000000231831.jpg",
+      "image_id": "01232aaa-14d4-418d-8d3e-7525ddedc3cd",
+      "duplicate": false,
+      "job_id": "1507dc79-94e4-4a1e-87e3-6df72d2c5887",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1507dc79-94e4-4a1e-87e3-6df72d2c5887"
+    },
+    {
+      "filename": "images/000000232348.jpg",
+      "image_id": "4d0bdd5c-5e72-4892-9161-6efc8e51a5cc",
+      "duplicate": false,
+      "job_id": "85bcf3ee-338e-47e9-ad58-c0c161ff1bd5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/85bcf3ee-338e-47e9-ad58-c0c161ff1bd5"
+    },
+    {
+      "filename": "images/000000232489.jpg",
+      "image_id": "5a0e061d-51e9-44a0-84e6-31b478b62887",
+      "duplicate": false,
+      "job_id": "5b436ebc-7bfb-437f-a13c-fc646a7a95d3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5b436ebc-7bfb-437f-a13c-fc646a7a95d3"
+    },
+    {
+      "filename": "images/000000232563.jpg",
+      "image_id": "bd6b1c55-048b-4250-95f6-f36ef2e22a75",
+      "duplicate": false,
+      "job_id": "f558a969-e3db-4de6-9be0-f2916f537e30",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f558a969-e3db-4de6-9be0-f2916f537e30"
+    },
+    {
+      "filename": "images/000000233139.jpg",
+      "image_id": "90dee58c-5d97-44dd-98a3-c1cb92a8b4f7",
+      "duplicate": false,
+      "job_id": "5ac0b294-fa9e-42ba-8ec2-9691eb3ffb12",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5ac0b294-fa9e-42ba-8ec2-9691eb3ffb12"
+    },
+    {
+      "filename": "images/000000233727.jpg",
+      "image_id": "b73f0311-73bf-417f-92c4-e76aea6c5253",
+      "duplicate": false,
+      "job_id": "47c129b5-ea43-431f-b95d-986718565e9d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/47c129b5-ea43-431f-b95d-986718565e9d"
+    },
+    {
+      "filename": "images/000000239347.jpg",
+      "image_id": "cfc87850-c37e-42fe-aeca-a5ca6e53c4a3",
+      "duplicate": false,
+      "job_id": "30f227d3-8ea1-414b-a050-00fa25fd2e89",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/30f227d3-8ea1-414b-a050-00fa25fd2e89"
+    },
+    {
+      "filename": "images/000000239857.jpg",
+      "image_id": "bfa47974-0029-45b7-9143-2ef04cec57c8",
+      "duplicate": false,
+      "job_id": "0ded751e-a4ce-4f36-9c89-a8c8bb9a0cbc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0ded751e-a4ce-4f36-9c89-a8c8bb9a0cbc"
+    },
+    {
+      "filename": "images/000000240250.jpg",
+      "image_id": "3f9546cc-1ddc-46aa-bf8f-5c46fe6ed6a1",
+      "duplicate": false,
+      "job_id": "2aa88e3e-9391-4594-a991-b72ea83b6ef8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2aa88e3e-9391-4594-a991-b72ea83b6ef8"
+    },
+    {
+      "filename": "images/000000241319.jpg",
+      "image_id": "90ebcaae-402c-4e1a-a67a-c041c87133f0",
+      "duplicate": false,
+      "job_id": "aa5d2ef1-1a7f-484b-a64e-30576e66c4f7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/aa5d2ef1-1a7f-484b-a64e-30576e66c4f7"
+    },
+    {
+      "filename": "images/000000241326.jpg",
+      "image_id": "7461307b-446c-4e14-8250-ff7058121579",
+      "duplicate": false,
+      "job_id": "0207defe-ca43-46a0-8978-eb30c8543550",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0207defe-ca43-46a0-8978-eb30c8543550"
+    },
+    {
+      "filename": "images/000000242287.jpg",
+      "image_id": "4979c380-f44e-4e7c-ac0f-25cf37df020c",
+      "duplicate": false,
+      "job_id": "a03a5e45-59b3-4584-8dc5-d31e46f9e718",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a03a5e45-59b3-4584-8dc5-d31e46f9e718"
+    },
+    {
+      "filename": "images/000000244411.jpg",
+      "image_id": "55211d3d-5a12-4c52-920d-bdbe710fdf40",
+      "duplicate": false,
+      "job_id": "1422ca09-0268-450a-9bfe-ed5e04a37f51",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1422ca09-0268-450a-9bfe-ed5e04a37f51"
+    },
+    {
+      "filename": "images/000000245651.jpg",
+      "image_id": "161a1f68-6975-433c-8530-53da9dc7e913",
+      "duplicate": false,
+      "job_id": "4910e22b-9386-4e81-90ab-f71fce72b598",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4910e22b-9386-4e81-90ab-f71fce72b598"
+    },
+    {
+      "filename": "images/000000245915.jpg",
+      "image_id": "4f065415-f5b6-4947-82a4-dc2c139aa1ac",
+      "duplicate": false,
+      "job_id": "fcee28ec-42dd-4e92-b64b-4c8c77c88e2a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fcee28ec-42dd-4e92-b64b-4c8c77c88e2a"
+    },
+    {
+      "filename": "images/000000246454.jpg",
+      "image_id": "364dec59-67e9-42d3-b1c5-a9fe0301769c",
+      "duplicate": false,
+      "job_id": "cf6cec59-abb9-41f2-9475-19da277203d1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cf6cec59-abb9-41f2-9475-19da277203d1"
+    },
+    {
+      "filename": "images/000000247806.jpg",
+      "image_id": "83602dab-c46e-428e-bac9-2e3b8909a376",
+      "duplicate": false,
+      "job_id": "57fc7f5f-a734-40c6-a0bb-0aaaab7ebbc3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/57fc7f5f-a734-40c6-a0bb-0aaaab7ebbc3"
+    },
+    {
+      "filename": "images/000000248631.jpg",
+      "image_id": "c6eea13a-d916-42d3-814d-f4d3657e9c5e",
+      "duplicate": false,
+      "job_id": "e2fe007d-9d24-4b7c-b53d-f1380918a7b9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e2fe007d-9d24-4b7c-b53d-f1380918a7b9"
+    },
+    {
+      "filename": "images/000000248810.jpg",
+      "image_id": "c20bfec9-82ff-49ef-8869-215057b56932",
+      "duplicate": false,
+      "job_id": "b8e76ad9-5af9-4f50-93d7-c29e6e791a00",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b8e76ad9-5af9-4f50-93d7-c29e6e791a00"
+    },
+    {
+      "filename": "images/000000250137.jpg",
+      "image_id": "82689330-e757-4416-93e3-eed44d02a7f5",
+      "duplicate": false,
+      "job_id": "4ae0f761-860b-4b5e-abdd-57cf6a8f1892",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4ae0f761-860b-4b5e-abdd-57cf6a8f1892"
+    },
+    {
+      "filename": "images/000000250619.jpg",
+      "image_id": "f904ff57-5098-4a5c-8a1a-89e66308f8af",
+      "duplicate": false,
+      "job_id": "e72bf573-94bb-4059-8c2e-aa9258a563ce",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e72bf573-94bb-4059-8c2e-aa9258a563ce"
+    },
+    {
+      "filename": "images/000000250766.jpg",
+      "image_id": "9ea0687b-4edb-4df5-bafe-2eb6c9d60ef2",
+      "duplicate": false,
+      "job_id": "75b982ff-21e0-4395-97ba-2e2654e11c66",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/75b982ff-21e0-4395-97ba-2e2654e11c66"
+    },
+    {
+      "filename": "images/000000250901.jpg",
+      "image_id": "fdea0791-cf40-4719-9385-d563e486e144",
+      "duplicate": false,
+      "job_id": "6f2f0fe7-f4fc-4ee2-aa36-63cb068dd6cb",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6f2f0fe7-f4fc-4ee2-aa36-63cb068dd6cb"
+    },
+    {
+      "filename": "images/000000251119.jpg",
+      "image_id": "2af9954d-e206-4513-b812-2164bbe79198",
+      "duplicate": false,
+      "job_id": "08168e3a-bd74-4edf-bd34-0ce9f091ded8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/08168e3a-bd74-4edf-bd34-0ce9f091ded8"
+    },
+    {
+      "filename": "images/000000252294.jpg",
+      "image_id": "71c2aa1a-a251-44d0-ac8f-b16d35d2c310",
+      "duplicate": false,
+      "job_id": "b1e58ce6-3a76-4041-858c-3b0f24117c87",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b1e58ce6-3a76-4041-858c-3b0f24117c87"
+    },
+    {
+      "filename": "images/000000252332.jpg",
+      "image_id": "0efedc79-1f85-46f4-9935-ccbdec04dee2",
+      "duplicate": false,
+      "job_id": "32de2c0f-4c35-4402-b5b6-5267c517d66e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/32de2c0f-4c35-4402-b5b6-5267c517d66e"
+    },
+    {
+      "filename": "images/000000253386.jpg",
+      "image_id": "63ba72c4-a085-4ba0-825b-2eb563967a58",
+      "duplicate": false,
+      "job_id": "da0f0632-e3ab-4cb4-9ca5-c4f2ef612fc3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/da0f0632-e3ab-4cb4-9ca5-c4f2ef612fc3"
+    },
+    {
+      "filename": "images/000000253819.jpg",
+      "image_id": "c677e2b1-134a-4004-9b50-d624eeddf629",
+      "duplicate": false,
+      "job_id": "788a0304-9a18-4fa0-81f0-386ff8a5c74b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/788a0304-9a18-4fa0-81f0-386ff8a5c74b"
+    },
+    {
+      "filename": "images/000000255165.jpg",
+      "image_id": "df96ea14-40a4-46ca-bf01-f5f7da6e2ae9",
+      "duplicate": false,
+      "job_id": "ab526c9d-9d60-4189-b4ac-b27f59233bfc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ab526c9d-9d60-4189-b4ac-b27f59233bfc"
+    },
+    {
+      "filename": "images/000000256916.jpg",
+      "image_id": "8f88cf73-dc12-47ba-b7d1-acb928ef81aa",
+      "duplicate": false,
+      "job_id": "de6c6ce3-b52a-4b8c-8989-a7984cfce4a0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/de6c6ce3-b52a-4b8c-8989-a7984cfce4a0"
+    },
+    {
+      "filename": "images/000000261061.jpg",
+      "image_id": "6aebef0e-f7b4-4541-b14a-20252bbfee4f",
+      "duplicate": false,
+      "job_id": "de8c2e74-dcb6-40f6-a830-de25c85156ff",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/de8c2e74-dcb6-40f6-a830-de25c85156ff"
+    },
+    {
+      "filename": "images/000000261161.jpg",
+      "image_id": "39de3bfd-402e-48df-891a-b284342bc849",
+      "duplicate": false,
+      "job_id": "cd969a54-df44-4b26-9a75-7e6c3e6d6a1e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cd969a54-df44-4b26-9a75-7e6c3e6d6a1e"
+    },
+    {
+      "filename": "images/000000263644.jpg",
+      "image_id": "65cf4e2f-b7bd-4e92-971a-7849e5770c6a",
+      "duplicate": false,
+      "job_id": "b1323c37-40a5-4df5-8085-eb6d3cf8febb",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b1323c37-40a5-4df5-8085-eb6d3cf8febb"
+    },
+    {
+      "filename": "images/000000265108.jpg",
+      "image_id": "c4d619fe-a508-4fd1-9458-13d4d93c81e7",
+      "duplicate": false,
+      "job_id": "29c1a758-fb23-4a6a-b259-ff82b304002a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/29c1a758-fb23-4a6a-b259-ff82b304002a"
+    },
+    {
+      "filename": "images/000000266892.jpg",
+      "image_id": "ea977b09-58d2-4751-a2aa-d46c7a599a6a",
+      "duplicate": false,
+      "job_id": "7aa44a52-32d4-4fae-bbea-7c94a59da2ba",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7aa44a52-32d4-4fae-bbea-7c94a59da2ba"
+    },
+    {
+      "filename": "images/000000269314.jpg",
+      "image_id": "430d83a9-a4e8-4fd3-b8ee-8228016623b2",
+      "duplicate": false,
+      "job_id": "c8a89e15-4939-48a0-9b8a-30b7f8acd601",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c8a89e15-4939-48a0-9b8a-30b7f8acd601"
+    },
+    {
+      "filename": "images/000000269632.jpg",
+      "image_id": "2075b2e1-204f-41b9-b469-fa631e348e8f",
+      "duplicate": false,
+      "job_id": "aa3aca87-9ca6-4048-babb-d3220c55df8d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/aa3aca87-9ca6-4048-babb-d3220c55df8d"
+    },
+    {
+      "filename": "images/000000269682.jpg",
+      "image_id": "ea4d2729-1826-4396-b7a3-c3e73c43b085",
+      "duplicate": false,
+      "job_id": "cbbd446f-fba6-4a44-b246-e6c897fcb7c0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cbbd446f-fba6-4a44-b246-e6c897fcb7c0"
+    },
+    {
+      "filename": "images/000000270705.jpg",
+      "image_id": "5ea66961-3fa9-4543-abe9-fc8fd55d6273",
+      "duplicate": false,
+      "job_id": "6dd7cc94-e6c0-446c-b045-2e9cc8bfeb22",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6dd7cc94-e6c0-446c-b045-2e9cc8bfeb22"
+    },
+    {
+      "filename": "images/000000270908.jpg",
+      "image_id": "92255dc2-857f-4c0f-95a5-8f8c38729b46",
+      "duplicate": false,
+      "job_id": "a8c480a7-fa51-4ecc-9f6b-1d99c0d12a4c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a8c480a7-fa51-4ecc-9f6b-1d99c0d12a4c"
+    },
+    {
+      "filename": "images/000000274219.jpg",
+      "image_id": "2190829f-b8fd-497f-8665-5957b2d5c460",
+      "duplicate": false,
+      "job_id": "6296f5ff-1fa3-4d38-aa5c-158e3d219a2f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6296f5ff-1fa3-4d38-aa5c-158e3d219a2f"
+    },
+    {
+      "filename": "images/000000274272.jpg",
+      "image_id": "4c987b15-b565-4a2e-9e0b-b84182a8c50b",
+      "duplicate": false,
+      "job_id": "a23a03fe-118d-40a1-be15-2b225580eaf2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a23a03fe-118d-40a1-be15-2b225580eaf2"
+    },
+    {
+      "filename": "images/000000274460.jpg",
+      "image_id": "a27f09ac-7dec-4939-bba0-133d5da328a2",
+      "duplicate": false,
+      "job_id": "350036a1-6fd3-4f70-b4f8-4a392c16d634",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/350036a1-6fd3-4f70-b4f8-4a392c16d634"
+    },
+    {
+      "filename": "images/000000274687.jpg",
+      "image_id": "6a268b9f-f794-4960-8883-73880834b12e",
+      "duplicate": false,
+      "job_id": "ecf92b48-6977-475f-8d8d-7961dbc856dd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ecf92b48-6977-475f-8d8d-7961dbc856dd"
+    },
+    {
+      "filename": "images/000000274708.jpg",
+      "image_id": "ab524ae8-6883-431c-aad7-1f64b010c1cc",
+      "duplicate": false,
+      "job_id": "43c83d4e-1d7a-46ce-8698-4065137e7447",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/43c83d4e-1d7a-46ce-8698-4065137e7447"
+    },
+    {
+      "filename": "images/000000279927.jpg",
+      "image_id": "b8f8a357-052a-4d1b-bed2-4c6fe10b34b6",
+      "duplicate": false,
+      "job_id": "904b0301-9727-467c-b404-511f38106224",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/904b0301-9727-467c-b404-511f38106224"
+    },
+    {
+      "filename": "images/000000280710.jpg",
+      "image_id": "a470c199-0ff8-4ab6-9493-2482cec0af80",
+      "duplicate": false,
+      "job_id": "6adda012-95d9-4dd5-b044-9372fbbb95d9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6adda012-95d9-4dd5-b044-9372fbbb95d9"
+    },
+    {
+      "filename": "images/000000283412.jpg",
+      "image_id": "ad6fe60e-74e5-4d25-913d-9b5af829e020",
+      "duplicate": false,
+      "job_id": "39fc2a5c-443b-47eb-a007-97259676bf1e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/39fc2a5c-443b-47eb-a007-97259676bf1e"
+    },
+    {
+      "filename": "images/000000284725.jpg",
+      "image_id": "49012438-eed9-4112-bf52-c598a3fe6154",
+      "duplicate": false,
+      "job_id": "3805d168-d529-498b-a8f1-98c48e132c9b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3805d168-d529-498b-a8f1-98c48e132c9b"
+    },
+    {
+      "filename": "images/000000286553.jpg",
+      "image_id": "462a947f-0f47-4318-b6bf-8b027b748a28",
+      "duplicate": false,
+      "job_id": "15c8b6aa-9355-4113-8e5b-c5c8d0683657",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/15c8b6aa-9355-4113-8e5b-c5c8d0683657"
+    },
+    {
+      "filename": "images/000000286994.jpg",
+      "image_id": "a2fed266-1a41-49de-8fe7-a1f036632bf6",
+      "duplicate": false,
+      "job_id": "930be455-0bbc-4055-a420-4910ddd81884",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/930be455-0bbc-4055-a420-4910ddd81884"
+    },
+    {
+      "filename": "images/000000287347.jpg",
+      "image_id": "784e03a4-e33c-4340-8ae4-f3c490cf9021",
+      "duplicate": false,
+      "job_id": "be2df918-9a86-4f55-8200-bcfa35b6b406",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/be2df918-9a86-4f55-8200-bcfa35b6b406"
+    },
+    {
+      "filename": "images/000000287667.jpg",
+      "image_id": "d746da80-2ccd-4604-a9d8-7ce8c2cd27f3",
+      "duplicate": false,
+      "job_id": "90c64774-9679-4d38-ab72-17154263a7a4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/90c64774-9679-4d38-ab72-17154263a7a4"
+    },
+    {
+      "filename": "images/000000289417.jpg",
+      "image_id": "1976fc7a-8356-4279-9799-e1435c3f9f49",
+      "duplicate": false,
+      "job_id": "6dcc3ab4-1165-48e0-b0d8-eb12d4b2294c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6dcc3ab4-1165-48e0-b0d8-eb12d4b2294c"
+    },
+    {
+      "filename": "images/000000290293.jpg",
+      "image_id": "e7853725-bc34-4fbf-aab4-65c7e4e58a07",
+      "duplicate": false,
+      "job_id": "23935565-9ca4-4a5f-bff9-8e3164dcd7ae",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/23935565-9ca4-4a5f-bff9-8e3164dcd7ae"
+    },
+    {
+      "filename": "images/000000291791.jpg",
+      "image_id": "1c62e71f-2377-4c24-9123-09e03cb1ae9b",
+      "duplicate": false,
+      "job_id": "4519b140-3380-455f-b1eb-0fdca8f07793",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4519b140-3380-455f-b1eb-0fdca8f07793"
+    },
+    {
+      "filename": "images/000000292908.jpg",
+      "image_id": "7d3cc7df-f564-4d6a-9672-612f118c7d7f",
+      "duplicate": false,
+      "job_id": "28d5c0d7-35e0-4b22-95d1-8d49f59ae0c5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/28d5c0d7-35e0-4b22-95d1-8d49f59ae0c5"
+    },
+    {
+      "filename": "images/000000293390.jpg",
+      "image_id": "7cc873ae-78ff-4507-87e5-7002efb0dd6a",
+      "duplicate": false,
+      "job_id": "604e6a3b-8891-46e5-9b15-4c72933d851d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/604e6a3b-8891-46e5-9b15-4c72933d851d"
+    },
+    {
+      "filename": "images/000000295316.jpg",
+      "image_id": "b92f9f33-6e1e-457a-a31f-3e1697d0e1c2",
+      "duplicate": false,
+      "job_id": "1cffac23-0c4a-4a65-98f3-453a88af0e1d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1cffac23-0c4a-4a65-98f3-453a88af0e1d"
+    },
+    {
+      "filename": "images/000000297084.jpg",
+      "image_id": "fbba3816-5b3c-4e63-838f-7e91700d3bfb",
+      "duplicate": false,
+      "job_id": "b6bd374c-083b-4e82-87a7-72569b9fae00",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b6bd374c-083b-4e82-87a7-72569b9fae00"
+    },
+    {
+      "filename": "images/000000297147.jpg",
+      "image_id": "491b17c9-3ed1-416a-a5e7-0b1b4ee7a65c",
+      "duplicate": false,
+      "job_id": "2b0e1d02-671b-4e71-b31a-141fbca8507a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2b0e1d02-671b-4e71-b31a-141fbca8507a"
+    },
+    {
+      "filename": "images/000000301135.jpg",
+      "image_id": "4847b7f1-780c-4adf-90c1-cb0ab0f2f6d7",
+      "duplicate": false,
+      "job_id": "c3339d6a-8fc8-4086-9c14-d0932bfbfcb9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c3339d6a-8fc8-4086-9c14-d0932bfbfcb9"
+    },
+    {
+      "filename": "images/000000303713.jpg",
+      "image_id": "77f9b59d-9666-4b3a-a670-2183d8d001f4",
+      "duplicate": false,
+      "job_id": "f8fb388b-e30b-41fa-9c0c-523192c01853",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f8fb388b-e30b-41fa-9c0c-523192c01853"
+    },
+    {
+      "filename": "images/000000303893.jpg",
+      "image_id": "9ce5963e-0ac8-4a64-b622-fa92b59bae7c",
+      "duplicate": false,
+      "job_id": "19f4cfa4-84ae-4b1b-9223-07223f834650",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/19f4cfa4-84ae-4b1b-9223-07223f834650"
+    },
+    {
+      "filename": "images/000000304545.jpg",
+      "image_id": "f0cd6115-05b0-44cf-939c-ecefd9ebb07a",
+      "duplicate": false,
+      "job_id": "06b858fd-b14d-4ec6-84df-3be9db28560a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/06b858fd-b14d-4ec6-84df-3be9db28560a"
+    },
+    {
+      "filename": "images/000000306893.jpg",
+      "image_id": "a99b76cc-d8b5-4efa-bacc-526a4ca7c8aa",
+      "duplicate": false,
+      "job_id": "56ed8f53-1241-47f7-bbae-47099189201c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/56ed8f53-1241-47f7-bbae-47099189201c"
+    },
+    {
+      "filename": "images/000000309391.jpg",
+      "image_id": "6261ba90-2d75-4f25-b561-9d0bfab40a6b",
+      "duplicate": false,
+      "job_id": "f4c59a78-b853-4b7e-a372-1abba0b16e32",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f4c59a78-b853-4b7e-a372-1abba0b16e32"
+    },
+    {
+      "filename": "images/000000309452.jpg",
+      "image_id": "91f6cae0-b15c-4cae-978c-faa417253af2",
+      "duplicate": false,
+      "job_id": "5ec9c47a-3812-41a5-9368-484154bffa82",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5ec9c47a-3812-41a5-9368-484154bffa82"
+    },
+    {
+      "filename": "images/000000309678.jpg",
+      "image_id": "5efa84f5-d202-4043-a24f-037d4ed76c97",
+      "duplicate": false,
+      "job_id": "68d67f37-deec-4aa9-ac06-2734ef187d58",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/68d67f37-deec-4aa9-ac06-2734ef187d58"
+    },
+    {
+      "filename": "images/000000310622.jpg",
+      "image_id": "4477899d-fc25-4bf2-b15b-7666ab19c467",
+      "duplicate": false,
+      "job_id": "67ba6f8b-582f-4f97-b0c2-98a95df6cec4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/67ba6f8b-582f-4f97-b0c2-98a95df6cec4"
+    },
+    {
+      "filename": "images/000000311518.jpg",
+      "image_id": "4fdd0082-1974-45ef-a515-a7118e3fc430",
+      "duplicate": false,
+      "job_id": "375ef1fc-11f8-4c62-9797-f6097a5f9267",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/375ef1fc-11f8-4c62-9797-f6097a5f9267"
+    },
+    {
+      "filename": "images/000000312720.jpg",
+      "image_id": "75eeb73a-1774-4777-9264-1b28cace8cbe",
+      "duplicate": false,
+      "job_id": "82b3445f-6d7d-4b1c-baa0-4fe139da0070",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/82b3445f-6d7d-4b1c-baa0-4fe139da0070"
+    },
+    {
+      "filename": "images/000000313130.jpg",
+      "image_id": "9bba55ea-de24-4ce2-8557-589bef45a46a",
+      "duplicate": false,
+      "job_id": "fa5d402b-237a-477f-930f-2515602eefdf",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fa5d402b-237a-477f-930f-2515602eefdf"
+    },
+    {
+      "filename": "images/000000314182.jpg",
+      "image_id": "e61b1692-ee01-459e-931b-c9da8cf701f3",
+      "duplicate": false,
+      "job_id": "12367a8d-31f4-4a9c-8288-d6431ea6b1d0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/12367a8d-31f4-4a9c-8288-d6431ea6b1d0"
+    },
+    {
+      "filename": "images/000000314251.jpg",
+      "image_id": "469ae30d-8a44-4357-8cd2-39d79b3fd6d6",
+      "duplicate": false,
+      "job_id": "8c67ccb3-74fb-4cff-a6d8-2661f33cc11e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8c67ccb3-74fb-4cff-a6d8-2661f33cc11e"
+    },
+    {
+      "filename": "images/000000314541.jpg",
+      "image_id": "6a3abd4d-1abc-4e11-af70-5edc1000c58c",
+      "duplicate": false,
+      "job_id": "b50f38fb-ae3d-4c29-b8bc-a15ede5f98bf",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b50f38fb-ae3d-4c29-b8bc-a15ede5f98bf"
+    },
+    {
+      "filename": "images/000000318114.jpg",
+      "image_id": "7031f28d-0e09-453c-b174-901da4b34b7a",
+      "duplicate": false,
+      "job_id": "daa5b9e7-88c9-4c20-93b5-2136a495d19a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/daa5b9e7-88c9-4c20-93b5-2136a495d19a"
+    },
+    {
+      "filename": "images/000000321214.jpg",
+      "image_id": "9a2a0be4-85bd-4f57-b344-891e2706fd88",
+      "duplicate": false,
+      "job_id": "67659583-d151-4d85-bc4a-b0abb7d71ca6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/67659583-d151-4d85-bc4a-b0abb7d71ca6"
+    },
+    {
+      "filename": "images/000000322211.jpg",
+      "image_id": "363eda64-6a5a-4fd3-b069-058155794e9a",
+      "duplicate": false,
+      "job_id": "fb5b5e0d-0b78-4cc9-8367-cfdaf51dd201",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fb5b5e0d-0b78-4cc9-8367-cfdaf51dd201"
+    },
+    {
+      "filename": "images/000000322968.jpg",
+      "image_id": "7e8fe042-02b9-4133-a5af-cca97366c0cc",
+      "duplicate": false,
+      "job_id": "af7ca90d-99df-4e0e-a93b-32cd79e438af",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/af7ca90d-99df-4e0e-a93b-32cd79e438af"
+    },
+    {
+      "filename": "images/000000329041.jpg",
+      "image_id": "ef1f27d1-dd7c-4086-a2bc-f763b14164b5",
+      "duplicate": false,
+      "job_id": "2c7b3775-52ba-4311-9921-81e1eda74be5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2c7b3775-52ba-4311-9921-81e1eda74be5"
+    },
+    {
+      "filename": "images/000000329323.jpg",
+      "image_id": "7226726b-2e98-4cf8-b7f8-6efc66c4798c",
+      "duplicate": false,
+      "job_id": "53b96ace-c971-4c7a-8b2e-023700bcc4fd",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/53b96ace-c971-4c7a-8b2e-023700bcc4fd"
+    },
+    {
+      "filename": "images/000000329827.jpg",
+      "image_id": "d87eee20-82d9-497e-aada-d544846ff372",
+      "duplicate": false,
+      "job_id": "94fea548-622f-4bb5-b8bb-2e8363d51a60",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/94fea548-622f-4bb5-b8bb-2e8363d51a60"
+    },
+    {
+      "filename": "images/000000331352.jpg",
+      "image_id": "0693f2e4-5df0-4781-bb5e-8e96d128014e",
+      "duplicate": false,
+      "job_id": "2e771a06-31ec-4146-9990-14fc9dfba080",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2e771a06-31ec-4146-9990-14fc9dfba080"
+    },
+    {
+      "filename": "images/000000332455.jpg",
+      "image_id": "715bba68-c03a-4e4a-8b3f-330d77c43767",
+      "duplicate": false,
+      "job_id": "c790ea35-1afa-4f64-8205-73c1fcefbab1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c790ea35-1afa-4f64-8205-73c1fcefbab1"
+    },
+    {
+      "filename": "images/000000335800.jpg",
+      "image_id": "8bb53832-1275-49a5-8b76-f27348beab28",
+      "duplicate": false,
+      "job_id": "8d7d9c3e-f5bc-462c-90b3-b6d394fa2e73",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8d7d9c3e-f5bc-462c-90b3-b6d394fa2e73"
+    },
+    {
+      "filename": "images/000000336356.jpg",
+      "image_id": "d28e0174-3ca5-4d37-98c5-1c13255cc5c4",
+      "duplicate": false,
+      "job_id": "3b52ae12-c8f1-4da9-8d5a-8c48cdffbe4b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3b52ae12-c8f1-4da9-8d5a-8c48cdffbe4b"
+    },
+    {
+      "filename": "images/000000338191.jpg",
+      "image_id": "b670e2d6-a8b7-4db4-b71b-1be2a28908f6",
+      "duplicate": false,
+      "job_id": "87d59985-6fe2-47f3-bf65-e7e5b3f8ba4f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/87d59985-6fe2-47f3-bf65-e7e5b3f8ba4f"
+    },
+    {
+      "filename": "images/000000339823.jpg",
+      "image_id": "21a4fcba-60c0-4eaa-a12c-018f4f7307c7",
+      "duplicate": false,
+      "job_id": "4baeb4c4-ba18-4806-bac1-c3047887e3ef",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4baeb4c4-ba18-4806-bac1-c3047887e3ef"
+    },
+    {
+      "filename": "images/000000340272.jpg",
+      "image_id": "c0a17743-6f7c-4c21-9f61-0fc91d82d326",
+      "duplicate": false,
+      "job_id": "9f434817-d3ee-4090-b98c-297f02bd659c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9f434817-d3ee-4090-b98c-297f02bd659c"
+    },
+    {
+      "filename": "images/000000340894.jpg",
+      "image_id": "a72d5a81-1ba7-4bfd-87dc-91a77ff2cb87",
+      "duplicate": false,
+      "job_id": "0f601cd4-d426-4f03-87c0-c8f2d370b438",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0f601cd4-d426-4f03-87c0-c8f2d370b438"
+    },
+    {
+      "filename": "images/000000341973.jpg",
+      "image_id": "1e576ad9-6a02-441f-a35f-d29a7e7d84d7",
+      "duplicate": false,
+      "job_id": "41835fa3-c593-497d-b0d1-a7f1cff2b829",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/41835fa3-c593-497d-b0d1-a7f1cff2b829"
+    },
+    {
+      "filename": "images/000000342128.jpg",
+      "image_id": "4a8a2934-adba-4bd3-9e21-b7c210adbac5",
+      "duplicate": false,
+      "job_id": "95bcb5da-2ab6-4611-bc8d-3ccb99429b79",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/95bcb5da-2ab6-4611-bc8d-3ccb99429b79"
+    },
+    {
+      "filename": "images/000000343315.jpg",
+      "image_id": "7b885ba7-b18b-4ac9-89e2-20cc536fe3fa",
+      "duplicate": false,
+      "job_id": "9bfa57e9-7c62-4366-b807-f534e26fe3a0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9bfa57e9-7c62-4366-b807-f534e26fe3a0"
+    },
+    {
+      "filename": "images/000000343706.jpg",
+      "image_id": "15715376-46c9-43f2-b12c-1f9a1d4aa064",
+      "duplicate": false,
+      "job_id": "ec98ef8c-d6e6-43e1-a87f-2dd38839ff47",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ec98ef8c-d6e6-43e1-a87f-2dd38839ff47"
+    },
+    {
+      "filename": "images/000000345252.jpg",
+      "image_id": "3cf6fcfd-ea21-4477-88f1-fb621e5b624e",
+      "duplicate": false,
+      "job_id": "bce6f392-12ad-446d-a727-b400ba7e5263",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bce6f392-12ad-446d-a727-b400ba7e5263"
+    },
+    {
+      "filename": "images/000000345261.jpg",
+      "image_id": "7648d451-17e6-4fff-822a-d2fcf7ae8087",
+      "duplicate": false,
+      "job_id": "1aef5789-697a-46c3-ba39-476b504a68c3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1aef5789-697a-46c3-ba39-476b504a68c3"
+    },
+    {
+      "filename": "images/000000345356.jpg",
+      "image_id": "1c9eb737-dd09-4689-aa22-dc134d90c78c",
+      "duplicate": false,
+      "job_id": "277261b0-04d0-4ddb-973e-6608eda7b0e6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/277261b0-04d0-4ddb-973e-6608eda7b0e6"
+    },
+    {
+      "filename": "images/000000346968.jpg",
+      "image_id": "ab086302-320f-4ace-a020-498e14c2d1b1",
+      "duplicate": false,
+      "job_id": "32abe56e-d253-48d4-92cb-381d916d2223",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/32abe56e-d253-48d4-92cb-381d916d2223"
+    },
+    {
+      "filename": "images/000000347254.jpg",
+      "image_id": "859d11b6-52c6-405c-bede-928c49849a05",
+      "duplicate": false,
+      "job_id": "c9034ab4-1415-44ef-b83a-46c89e638f6d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c9034ab4-1415-44ef-b83a-46c89e638f6d"
+    },
+    {
+      "filename": "images/000000347456.jpg",
+      "image_id": "32e08706-f454-4d3d-ae5a-df4174fe45c4",
+      "duplicate": false,
+      "job_id": "e4e3651d-0f4f-4462-ac8a-52f036bef0b4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e4e3651d-0f4f-4462-ac8a-52f036bef0b4"
+    },
+    {
+      "filename": "images/000000348488.jpg",
+      "image_id": "4f2c1457-e741-4ce9-808f-4efd277f1fed",
+      "duplicate": false,
+      "job_id": "dee756f1-b677-48d9-bb38-4930d5fe6192",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/dee756f1-b677-48d9-bb38-4930d5fe6192"
+    },
+    {
+      "filename": "images/000000350405.jpg",
+      "image_id": "feac76fc-51d8-4e3d-b3f7-3ad909341ff4",
+      "duplicate": false,
+      "job_id": "5a868727-fc3b-46e2-8281-ada73675d4e6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5a868727-fc3b-46e2-8281-ada73675d4e6"
+    },
+    {
+      "filename": "images/000000351530.jpg",
+      "image_id": "68aed614-0f71-4a2b-89d8-519d7233c140",
+      "duplicate": false,
+      "job_id": "377b117b-f5dc-4539-a52f-4c026361ef26",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/377b117b-f5dc-4539-a52f-4c026361ef26"
+    },
+    {
+      "filename": "images/000000352491.jpg",
+      "image_id": "ab072695-da14-4d1b-818e-968b8a47fcb3",
+      "duplicate": false,
+      "job_id": "e8f08c3b-7de8-4429-94dd-06889c062d77",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e8f08c3b-7de8-4429-94dd-06889c062d77"
+    },
+    {
+      "filename": "images/000000352618.jpg",
+      "image_id": "ef007ba6-3e89-446a-9519-5f9ee03ca90d",
+      "duplicate": false,
+      "job_id": "75fd33cd-5af6-4e39-8b20-70657ca8833b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/75fd33cd-5af6-4e39-8b20-70657ca8833b"
+    },
+    {
+      "filename": "images/000000352900.jpg",
+      "image_id": "f32d0fd4-3bfe-43f0-b655-8d7a27151994",
+      "duplicate": false,
+      "job_id": "33c4dad4-efb1-458e-86b7-6ce4879da1b5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/33c4dad4-efb1-458e-86b7-6ce4879da1b5"
+    },
+    {
+      "filename": "images/000000356169.jpg",
+      "image_id": "3d1cbcdf-80ae-4833-b73f-86b7dedd6e49",
+      "duplicate": false,
+      "job_id": "bdd99ddb-ecd7-427a-9d35-c4e289a8f993",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bdd99ddb-ecd7-427a-9d35-c4e289a8f993"
+    },
+    {
+      "filename": "images/000000356248.jpg",
+      "image_id": "7c33b5e1-253f-42a5-b17a-808ca2abc93d",
+      "duplicate": false,
+      "job_id": "7145a65b-190e-457c-82b6-e8b6ad95558a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7145a65b-190e-457c-82b6-e8b6ad95558a"
+    },
+    {
+      "filename": "images/000000356387.jpg",
+      "image_id": "1546f0ae-9396-42e8-af1c-aec8eb5988c6",
+      "duplicate": false,
+      "job_id": "46a8d96d-992e-477a-a16d-2a28fe5ddbf1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/46a8d96d-992e-477a-a16d-2a28fe5ddbf1"
+    },
+    {
+      "filename": "images/000000356424.jpg",
+      "image_id": "05dea1aa-1e20-43dd-aec0-29e9966d8ce3",
+      "duplicate": false,
+      "job_id": "6434b94a-0c25-4973-b9fa-bce27fefc442",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6434b94a-0c25-4973-b9fa-bce27fefc442"
+    },
+    {
+      "filename": "images/000000358195.jpg",
+      "image_id": "9932ce7b-e720-4e58-a5ed-a0d973bf5de4",
+      "duplicate": false,
+      "job_id": "ba733642-9818-486c-bb9b-12d3741c8221",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ba733642-9818-486c-bb9b-12d3741c8221"
+    },
+    {
+      "filename": "images/000000359219.jpg",
+      "image_id": "fbb34655-9c12-4667-ac82-489f6c507974",
+      "duplicate": false,
+      "job_id": "beab02d1-e057-4a99-ae75-c7231f3aafbe",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/beab02d1-e057-4a99-ae75-c7231f3aafbe"
+    },
+    {
+      "filename": "images/000000359855.jpg",
+      "image_id": "fc225adb-8d56-495d-b26f-55deb49778d5",
+      "duplicate": false,
+      "job_id": "93efb936-35ee-46dc-9d1a-2ef2a9155022",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/93efb936-35ee-46dc-9d1a-2ef2a9155022"
+    },
+    {
+      "filename": "images/000000360137.jpg",
+      "image_id": "acd5cd93-8ee3-4f50-8042-698ccf6cf756",
+      "duplicate": false,
+      "job_id": "3f3ad31f-baf0-474c-bc77-7697bbc8df6b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3f3ad31f-baf0-474c-bc77-7697bbc8df6b"
+    },
+    {
+      "filename": "images/000000362682.jpg",
+      "image_id": "a278d064-c190-4402-9f80-3c67a43adfb6",
+      "duplicate": false,
+      "job_id": "0ff76fcb-7869-4117-aaa7-0d44d1dbeb37",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0ff76fcb-7869-4117-aaa7-0d44d1dbeb37"
+    },
+    {
+      "filename": "images/000000364884.jpg",
+      "image_id": "5bf1b40a-4d48-45cf-99c0-4645b44c55e2",
+      "duplicate": false,
+      "job_id": "b0dd85bb-7501-4542-a053-e140dfd43803",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b0dd85bb-7501-4542-a053-e140dfd43803"
+    },
+    {
+      "filename": "images/000000365655.jpg",
+      "image_id": "e4a5b627-2d67-4860-93ab-4093af20278f",
+      "duplicate": false,
+      "job_id": "c2fd7a06-4030-4685-998e-d741c2d24364",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c2fd7a06-4030-4685-998e-d741c2d24364"
+    },
+    {
+      "filename": "images/000000365766.jpg",
+      "image_id": "ddc0196e-08c3-4f24-a7fa-eac5aa2b79e9",
+      "duplicate": false,
+      "job_id": "67353df6-9de3-4d42-b6bc-632200ffc205",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/67353df6-9de3-4d42-b6bc-632200ffc205"
+    },
+    {
+      "filename": "images/000000366711.jpg",
+      "image_id": "b866354c-480d-40f3-ab79-c4df8d7e7982",
+      "duplicate": false,
+      "job_id": "b98f5277-7633-403f-b155-5f70631ae338",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b98f5277-7633-403f-b155-5f70631ae338"
+    },
+    {
+      "filename": "images/000000367569.jpg",
+      "image_id": "7d2e4c88-e373-4b2d-9bc6-ef64ee63b62f",
+      "duplicate": false,
+      "job_id": "10a8acc4-6611-4b49-b1ef-68e062b729af",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/10a8acc4-6611-4b49-b1ef-68e062b729af"
+    },
+    {
+      "filename": "images/000000369323.jpg",
+      "image_id": "f0a9b096-fb09-418f-9213-064293013331",
+      "duplicate": false,
+      "job_id": "898ab434-eb9e-4f9d-a989-c1f22d78490e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/898ab434-eb9e-4f9d-a989-c1f22d78490e"
+    },
+    {
+      "filename": "images/000000369751.jpg",
+      "image_id": "e46b03dd-3c41-451f-b020-92f30cc0b6fe",
+      "duplicate": false,
+      "job_id": "e0990964-a583-4fc2-843f-841f44169d09",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e0990964-a583-4fc2-843f-841f44169d09"
+    },
+    {
+      "filename": "images/000000369812.jpg",
+      "image_id": "ce8c0c5c-7d8b-4afb-8e7e-e0eeae5912df",
+      "duplicate": false,
+      "job_id": "57fe0a73-7311-4991-a05e-bed4d3e85c69",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/57fe0a73-7311-4991-a05e-bed4d3e85c69"
+    },
+    {
+      "filename": "images/000000370486.jpg",
+      "image_id": "b42a671c-a528-45cb-ad6e-897b8791396f",
+      "duplicate": false,
+      "job_id": "e204ac7e-c8b9-404a-a28b-4b4e96ff7ddc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e204ac7e-c8b9-404a-a28b-4b4e96ff7ddc"
+    },
+    {
+      "filename": "images/000000371677.jpg",
+      "image_id": "00bfb590-35cf-424f-9417-cf3d8303387c",
+      "duplicate": false,
+      "job_id": "8ca8346d-a558-4d02-8099-869edafdf044",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8ca8346d-a558-4d02-8099-869edafdf044"
+    },
+    {
+      "filename": "images/000000372260.jpg",
+      "image_id": "e7eac8fa-bd4e-43d6-8686-fa78ac4bd154",
+      "duplicate": false,
+      "job_id": "7239a712-e4fb-498d-8bf9-c2a95e0163c3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7239a712-e4fb-498d-8bf9-c2a95e0163c3"
+    },
+    {
+      "filename": "images/000000372819.jpg",
+      "image_id": "b2e768f1-f255-44c9-b0ce-695c91b5662d",
+      "duplicate": false,
+      "job_id": "722cb687-3151-41f6-a858-dafae582f981",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/722cb687-3151-41f6-a858-dafae582f981"
+    },
+    {
+      "filename": "images/000000374083.jpg",
+      "image_id": "22f18e5c-50fe-40a7-b98c-30e09201eab2",
+      "duplicate": false,
+      "job_id": "3fb54b04-8615-4f43-8110-e11439b62f3a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3fb54b04-8615-4f43-8110-e11439b62f3a"
+    },
+    {
+      "filename": "images/000000375015.jpg",
+      "image_id": "35d8acd5-f5e9-4a64-ad03-a18b11da19c4",
+      "duplicate": false,
+      "job_id": "7f1dc1e2-03c3-49af-9f3d-8801a947a4f4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7f1dc1e2-03c3-49af-9f3d-8801a947a4f4"
+    },
+    {
+      "filename": "images/000000377575.jpg",
+      "image_id": "0b4d6063-1091-4aae-a07c-b10f7cf0a81d",
+      "duplicate": false,
+      "job_id": "3c3d1197-871d-466d-a648-5e0b3df8199d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3c3d1197-871d-466d-a648-5e0b3df8199d"
+    },
+    {
+      "filename": "images/000000380203.jpg",
+      "image_id": "9e690b57-2659-4818-adb0-3ee4fc93f906",
+      "duplicate": false,
+      "job_id": "42f11340-002f-481f-b5dd-a49dc1b0b383",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/42f11340-002f-481f-b5dd-a49dc1b0b383"
+    },
+    {
+      "filename": "images/000000383842.jpg",
+      "image_id": "7a7dc1ad-e78f-4319-ae47-444613811452",
+      "duplicate": false,
+      "job_id": "96568917-f337-44fa-adea-278363db1537",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/96568917-f337-44fa-adea-278363db1537"
+    },
+    {
+      "filename": "images/000000384136.jpg",
+      "image_id": "bd2400b6-cb13-406b-be3b-80b5b87e8285",
+      "duplicate": false,
+      "job_id": "4f747a0d-9430-4549-ba73-f907a4ec0f59",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/4f747a0d-9430-4549-ba73-f907a4ec0f59"
+    },
+    {
+      "filename": "images/000000386457.jpg",
+      "image_id": "e578e61d-d90e-4f84-b1ec-f92ab671843b",
+      "duplicate": false,
+      "job_id": "990002c1-2cf4-4a15-a51f-368794bc4646",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/990002c1-2cf4-4a15-a51f-368794bc4646"
+    },
+    {
+      "filename": "images/000000389532.jpg",
+      "image_id": "900b2a0e-f638-444b-a402-3ff2e252a73b",
+      "duplicate": false,
+      "job_id": "6a551e96-975f-4040-b389-15363aaca408",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6a551e96-975f-4040-b389-15363aaca408"
+    },
+    {
+      "filename": "images/000000389812.jpg",
+      "image_id": "905a723a-d966-4bc7-b77d-0c22a00856f8",
+      "duplicate": false,
+      "job_id": "9c3f1a26-598c-4a4c-8e2f-7d96bc4b3b95",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9c3f1a26-598c-4a4c-8e2f-7d96bc4b3b95"
+    },
+    {
+      "filename": "images/000000389933.jpg",
+      "image_id": "2d3758d2-ffbc-4f05-8bf2-91d3ce82a424",
+      "duplicate": false,
+      "job_id": "fcb14757-3b77-4203-8eec-e48caa705880",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fcb14757-3b77-4203-8eec-e48caa705880"
+    },
+    {
+      "filename": "images/000000392722.jpg",
+      "image_id": "a65aa187-10cb-49fa-a76d-a0e9f4c9596c",
+      "duplicate": false,
+      "job_id": "b1f180c0-3237-4b1e-8897-6cebe636dbcf",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b1f180c0-3237-4b1e-8897-6cebe636dbcf"
+    },
+    {
+      "filename": "images/000000393569.jpg",
+      "image_id": "be0a1fe4-7504-4b8f-af47-ed8066845a83",
+      "duplicate": false,
+      "job_id": "3539878c-a28e-4a41-b36d-c8bf7606d761",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3539878c-a28e-4a41-b36d-c8bf7606d761"
+    },
+    {
+      "filename": "images/000000397133.jpg",
+      "image_id": "8a5a08ea-5d4d-48ce-b7b0-bf3b7bda0058",
+      "duplicate": false,
+      "job_id": "2767a913-c0e8-492f-9648-6f5de2cc8bb2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2767a913-c0e8-492f-9648-6f5de2cc8bb2"
+    },
+    {
+      "filename": "images/000000398652.jpg",
+      "image_id": "79eda32d-e33a-4dd9-b539-d60fbe4286bd",
+      "duplicate": false,
+      "job_id": "d781a920-5d43-4b10-801d-83f0d3e8275d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d781a920-5d43-4b10-801d-83f0d3e8275d"
+    },
+    {
+      "filename": "images/000000399560.jpg",
+      "image_id": "3ab285da-22c0-47e4-935d-697c47835359",
+      "duplicate": false,
+      "job_id": "5b6342ab-a455-4d82-bf45-bb2882efe8d4",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5b6342ab-a455-4d82-bf45-bb2882efe8d4"
+    },
+    {
+      "filename": "images/000000402992.jpg",
+      "image_id": "2566fbc9-64cc-4208-a6ce-df0efcfec0e9",
+      "duplicate": false,
+      "job_id": "24e2b2a3-ba57-435a-a29b-d86944855392",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/24e2b2a3-ba57-435a-a29b-d86944855392"
+    },
+    {
+      "filename": "images/000000407002.jpg",
+      "image_id": "e158f6b3-3da8-4d2c-ab6b-a7839eb94a3e",
+      "duplicate": false,
+      "job_id": "38fe5339-b6de-41b6-868d-8401242ebc15",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/38fe5339-b6de-41b6-868d-8401242ebc15"
+    },
+    {
+      "filename": "images/000000407518.jpg",
+      "image_id": "846a4ed6-57ee-4f66-ab24-97316777856a",
+      "duplicate": false,
+      "job_id": "f7137b8b-8825-44e2-bc62-24d6a9b5bfbe",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f7137b8b-8825-44e2-bc62-24d6a9b5bfbe"
+    },
+    {
+      "filename": "images/000000407524.jpg",
+      "image_id": "7c7f5ea5-9b51-4ca7-825e-9b096a87b4b7",
+      "duplicate": false,
+      "job_id": "3175c368-b2b2-4de5-be28-f397d3b187e1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3175c368-b2b2-4de5-be28-f397d3b187e1"
+    },
+    {
+      "filename": "images/000000408696.jpg",
+      "image_id": "afe85a2f-d0a3-47e9-8860-896f8015ca34",
+      "duplicate": false,
+      "job_id": "b7aed1c6-6f3c-4a6d-9faa-a69a1504e3d2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b7aed1c6-6f3c-4a6d-9faa-a69a1504e3d2"
+    },
+    {
+      "filename": "images/000000409630.jpg",
+      "image_id": "9d0955c2-eaa7-4102-99c1-7d69c2c9ffdb",
+      "duplicate": false,
+      "job_id": "873ac360-398c-403a-8a88-b10f0c330562",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/873ac360-398c-403a-8a88-b10f0c330562"
+    },
+    {
+      "filename": "images/000000410880.jpg",
+      "image_id": "743c9144-f33a-499d-b5c3-dd4f04845444",
+      "duplicate": false,
+      "job_id": "d439bd21-05bd-41af-92e2-4e18a480c3b5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d439bd21-05bd-41af-92e2-4e18a480c3b5"
+    },
+    {
+      "filename": "images/000000412362.jpg",
+      "image_id": "d66b397f-f8be-4e78-9799-286672980fdd",
+      "duplicate": false,
+      "job_id": "11ead016-b0d9-43cc-a582-e30e20a06ef5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/11ead016-b0d9-43cc-a582-e30e20a06ef5"
+    },
+    {
+      "filename": "images/000000415536.jpg",
+      "image_id": "7180e504-e184-41c6-b159-b1b11a019189",
+      "duplicate": false,
+      "job_id": "fbfd5a4e-06ef-4d98-b862-465569ed7d11",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fbfd5a4e-06ef-4d98-b862-465569ed7d11"
+    },
+    {
+      "filename": "images/000000415748.jpg",
+      "image_id": "a938b5cd-814d-4776-937f-7d43c6665ea4",
+      "duplicate": false,
+      "job_id": "5f278cb5-7bc4-4ba4-acf0-0023eb39490a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5f278cb5-7bc4-4ba4-acf0-0023eb39490a"
+    },
+    {
+      "filename": "images/000000415882.jpg",
+      "image_id": "8d16ee8d-1b4c-4859-8392-507b81e9b7df",
+      "duplicate": false,
+      "job_id": "e24a59b4-1268-478b-bd6c-8944e10bfdce",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e24a59b4-1268-478b-bd6c-8944e10bfdce"
+    },
+    {
+      "filename": "images/000000416991.jpg",
+      "image_id": "3c1b3ba9-2723-4d10-82f1-6cdf216256ef",
+      "duplicate": false,
+      "job_id": "c8bed873-5dec-4ced-ad4d-b7b38a34a6bc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c8bed873-5dec-4ced-ad4d-b7b38a34a6bc"
+    },
+    {
+      "filename": "images/000000417249.jpg",
+      "image_id": "0c018a87-40f4-498b-a36c-7d6824ad7e4d",
+      "duplicate": false,
+      "job_id": "52775699-4c41-443e-9e94-b7f33417490b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/52775699-4c41-443e-9e94-b7f33417490b"
+    },
+    {
+      "filename": "images/000000418062.jpg",
+      "image_id": "ea97a5b4-f272-4788-8492-4ee44c36941e",
+      "duplicate": false,
+      "job_id": "d97fd866-1e6a-4932-9209-43f60cd46b8d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d97fd866-1e6a-4932-9209-43f60cd46b8d"
+    },
+    {
+      "filename": "images/000000418959.jpg",
+      "image_id": "693433db-bf8a-435e-8c08-d5931e5af50d",
+      "duplicate": false,
+      "job_id": "e100bd7d-b963-483a-b268-14b3c6fb5540",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e100bd7d-b963-483a-b268-14b3c6fb5540"
+    },
+    {
+      "filename": "images/000000418961.jpg",
+      "image_id": "b0fc8371-ad3b-42bf-aa69-279d4f4cf9bf",
+      "duplicate": false,
+      "job_id": "1255c364-a0e2-4a95-a1c6-223988214bca",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1255c364-a0e2-4a95-a1c6-223988214bca"
+    },
+    {
+      "filename": "images/000000419201.jpg",
+      "image_id": "fa8861dd-4123-406a-9150-f06bf74d3d21",
+      "duplicate": false,
+      "job_id": "954f3633-1b78-4da5-8034-30ebab49564d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/954f3633-1b78-4da5-8034-30ebab49564d"
+    },
+    {
+      "filename": "images/000000423617.jpg",
+      "image_id": "080d17cd-aacb-419f-acce-7ad449e04598",
+      "duplicate": false,
+      "job_id": "e611fd15-5a0b-461d-9433-7a7c7eb5267b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e611fd15-5a0b-461d-9433-7a7c7eb5267b"
+    },
+    {
+      "filename": "images/000000423798.jpg",
+      "image_id": "bde2c00b-9288-40da-b9a8-9b31ef94d302",
+      "duplicate": false,
+      "job_id": "a398d13c-d636-49d7-99b6-defd03553d96",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a398d13c-d636-49d7-99b6-defd03553d96"
+    },
+    {
+      "filename": "images/000000424349.jpg",
+      "image_id": "dce71ba5-b87f-4b99-8611-5470221cd250",
+      "duplicate": false,
+      "job_id": "71d610b3-b34a-400a-bc5d-25cb5bbdaef5",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/71d610b3-b34a-400a-bc5d-25cb5bbdaef5"
+    },
+    {
+      "filename": "images/000000427034.jpg",
+      "image_id": "1af5a34f-8730-4234-9e74-1196a2c0308a",
+      "duplicate": false,
+      "job_id": "0e3f365d-3df6-4b97-89aa-0ce4a8dd4af3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0e3f365d-3df6-4b97-89aa-0ce4a8dd4af3"
+    },
+    {
+      "filename": "images/000000427077.jpg",
+      "image_id": "e823c5a9-317d-42a5-a139-c2ddd1d86743",
+      "duplicate": false,
+      "job_id": "5fcfd44e-e8e1-4c56-b91a-db80ee48c29c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5fcfd44e-e8e1-4c56-b91a-db80ee48c29c"
+    },
+    {
+      "filename": "images/000000429598.jpg",
+      "image_id": "ad256cea-81d8-4e00-bb18-12fc540c34ee",
+      "duplicate": false,
+      "job_id": "be5e3799-1154-454c-8e65-5af941b43673",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/be5e3799-1154-454c-8e65-5af941b43673"
+    },
+    {
+      "filename": "images/000000430286.jpg",
+      "image_id": "5e2f1dd4-05dc-4d74-b642-e397398b55d9",
+      "duplicate": false,
+      "job_id": "cb27c5e8-debf-45cb-b737-611dd5b33d1f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cb27c5e8-debf-45cb-b737-611dd5b33d1f"
+    },
+    {
+      "filename": "images/000000431848.jpg",
+      "image_id": "73357b71-9680-4749-bbcb-07e43a747228",
+      "duplicate": false,
+      "job_id": "7f142b0b-4b27-461a-8308-73de57a2a746",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7f142b0b-4b27-461a-8308-73de57a2a746"
+    },
+    {
+      "filename": "images/000000433515.jpg",
+      "image_id": "92664455-383e-498d-ac9f-9e9b15eb425c",
+      "duplicate": false,
+      "job_id": "64f5ab2b-9b11-4e55-9113-f017d13d26e7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/64f5ab2b-9b11-4e55-9113-f017d13d26e7"
+    },
+    {
+      "filename": "images/000000434204.jpg",
+      "image_id": "4e51498b-cfdf-4fb1-aae5-11dac4532de7",
+      "duplicate": false,
+      "job_id": "abbdaf28-d78f-4c97-99e7-e08ecfef266f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/abbdaf28-d78f-4c97-99e7-e08ecfef266f"
+    },
+    {
+      "filename": "images/000000434297.jpg",
+      "image_id": "c5e17543-38e0-4b93-8b58-ee6d9b502b23",
+      "duplicate": false,
+      "job_id": "b644a127-eaba-4973-8cfa-98740b15747e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b644a127-eaba-4973-8cfa-98740b15747e"
+    },
+    {
+      "filename": "images/000000437351.jpg",
+      "image_id": "2fbf722e-3c59-4e2e-940c-de8330d718d6",
+      "duplicate": false,
+      "job_id": "5c967518-b27f-4612-a0e7-dd597da34fdb",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5c967518-b27f-4612-a0e7-dd597da34fdb"
+    },
+    {
+      "filename": "images/000000437514.jpg",
+      "image_id": "604aab5b-585e-413d-b9a9-90b11953ffaf",
+      "duplicate": false,
+      "job_id": "c8759d69-6e4d-46f5-9363-e476ce506d3a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c8759d69-6e4d-46f5-9363-e476ce506d3a"
+    },
+    {
+      "filename": "images/000000439593.jpg",
+      "image_id": "2e47a0c9-5372-44cf-ad35-339ce61aa7bf",
+      "duplicate": false,
+      "job_id": "e1b4b0e9-c3e0-4b56-a540-0cb95ad751b1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e1b4b0e9-c3e0-4b56-a540-0cb95ad751b1"
+    },
+    {
+      "filename": "images/000000441543.jpg",
+      "image_id": "1b81b981-6af7-4212-bca5-b5e07b6f3fbd",
+      "duplicate": false,
+      "job_id": "cbf203b3-279d-4ce8-a683-3f40a052115d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cbf203b3-279d-4ce8-a683-3f40a052115d"
+    },
+    {
+      "filename": "images/000000445248.jpg",
+      "image_id": "06eef8d8-a09c-4b97-aa49-700e54c967d2",
+      "duplicate": false,
+      "job_id": "b4ecb013-7a2d-4549-846c-e775103d6517",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b4ecb013-7a2d-4549-846c-e775103d6517"
+    },
+    {
+      "filename": "images/000000446207.jpg",
+      "image_id": "75e422a3-5fbe-42fd-befb-2855eba68d1c",
+      "duplicate": false,
+      "job_id": "a1e4b01c-cc72-4270-b959-057a0a7829a0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a1e4b01c-cc72-4270-b959-057a0a7829a0"
+    },
+    {
+      "filename": "images/000000446703.jpg",
+      "image_id": "770b6be6-33b3-43b9-8739-43e44a944117",
+      "duplicate": false,
+      "job_id": "637d6474-8797-4e5f-83df-34e48207cc49",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/637d6474-8797-4e5f-83df-34e48207cc49"
+    },
+    {
+      "filename": "images/000000447313.jpg",
+      "image_id": "d1abf2e2-3e01-4fc6-a7a4-b29915a5df14",
+      "duplicate": false,
+      "job_id": "d0b14e8b-5966-49a9-b0d2-ce59a49c187e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d0b14e8b-5966-49a9-b0d2-ce59a49c187e"
+    },
+    {
+      "filename": "images/000000447522.jpg",
+      "image_id": "f6bad58f-2b00-4e75-8e65-ae42e26cecdb",
+      "duplicate": false,
+      "job_id": "b1cac1b0-5695-4515-a89a-0e0d3dde9b01",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b1cac1b0-5695-4515-a89a-0e0d3dde9b01"
+    },
+    {
+      "filename": "images/000000448076.jpg",
+      "image_id": "273f615f-e015-441f-aa3c-43d468c80862",
+      "duplicate": false,
+      "job_id": "8bb408b9-79d4-4213-9068-d0e7fff692e0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8bb408b9-79d4-4213-9068-d0e7fff692e0"
+    },
+    {
+      "filename": "images/000000452084.jpg",
+      "image_id": "2186bd7b-e842-47da-b766-3b7295c1518e",
+      "duplicate": false,
+      "job_id": "3c2239d2-dec6-46d7-a5ca-5b7fb4aa62d0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3c2239d2-dec6-46d7-a5ca-5b7fb4aa62d0"
+    },
+    {
+      "filename": "images/000000452784.jpg",
+      "image_id": "29957479-7c29-4ddf-9379-3a8ae0f53183",
+      "duplicate": false,
+      "job_id": "fa414d92-e15d-46dd-98a7-6bbd41d4f8c9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fa414d92-e15d-46dd-98a7-6bbd41d4f8c9"
+    },
+    {
+      "filename": "images/000000453040.jpg",
+      "image_id": "afb6c142-ab00-414b-9ff4-7f62daaadc11",
+      "duplicate": false,
+      "job_id": "8525fb3a-dbe1-4ae5-bcf1-2011c8fe6d4b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8525fb3a-dbe1-4ae5-bcf1-2011c8fe6d4b"
+    },
+    {
+      "filename": "images/000000453860.jpg",
+      "image_id": "c3621e2d-dd04-428f-bf2e-7cfaf83e8b1e",
+      "duplicate": false,
+      "job_id": "39eb665d-9d67-4a10-b246-4cf230772581",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/39eb665d-9d67-4a10-b246-4cf230772581"
+    },
+    {
+      "filename": "images/000000456143.jpg",
+      "image_id": "38d4121b-ec83-4b68-ba4b-9d034a7f437f",
+      "duplicate": false,
+      "job_id": "56b1bfea-5a06-461a-acbe-83f29a3e837b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/56b1bfea-5a06-461a-acbe-83f29a3e837b"
+    },
+    {
+      "filename": "images/000000458054.jpg",
+      "image_id": "58c2ae72-19d5-4925-aee1-5a95c639d579",
+      "duplicate": false,
+      "job_id": "d1815353-9f42-43ac-a8e7-e06cf894829b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d1815353-9f42-43ac-a8e7-e06cf894829b"
+    },
+    {
+      "filename": "images/000000459272.jpg",
+      "image_id": "ce52b665-dbd5-4771-9f5a-cecb2577e4d3",
+      "duplicate": false,
+      "job_id": "f168ee16-c97d-498c-a802-b399c70ff5b8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f168ee16-c97d-498c-a802-b399c70ff5b8"
+    },
+    {
+      "filename": "images/000000459757.jpg",
+      "image_id": "86de16e3-d8a5-4b10-88d4-132cd0a0f983",
+      "duplicate": false,
+      "job_id": "344cc8ac-f6a8-42c2-8447-1bdd139f1307",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/344cc8ac-f6a8-42c2-8447-1bdd139f1307"
+    },
+    {
+      "filename": "images/000000460229.jpg",
+      "image_id": "abbb5cd1-2b91-4950-9310-512e28a3c693",
+      "duplicate": false,
+      "job_id": "9b418934-d3b3-4db4-a8d3-b031602a3d2b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9b418934-d3b3-4db4-a8d3-b031602a3d2b"
+    },
+    {
+      "filename": "images/000000463037.jpg",
+      "image_id": "3710c1f9-0db8-4785-9d66-ef0e418def67",
+      "duplicate": false,
+      "job_id": "597a2eb2-2206-406c-abad-9899e7942b67",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/597a2eb2-2206-406c-abad-9899e7942b67"
+    },
+    {
+      "filename": "images/000000463199.jpg",
+      "image_id": "0a51c739-2608-4c0c-8a59-01830a713dfc",
+      "duplicate": false,
+      "job_id": "0ca49703-8965-4977-8566-5deca387b7f8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0ca49703-8965-4977-8566-5deca387b7f8"
+    },
+    {
+      "filename": "images/000000463618.jpg",
+      "image_id": "4b994a05-3a86-4b5f-8cb4-c7129d083a23",
+      "duplicate": false,
+      "job_id": "62022b35-db81-4190-9f5b-f127a8823a88",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/62022b35-db81-4190-9f5b-f127a8823a88"
+    },
+    {
+      "filename": "images/000000464786.jpg",
+      "image_id": "d4a84131-d6f9-431a-a752-bfbbc619a400",
+      "duplicate": false,
+      "job_id": "9458cf08-eb8a-42be-a77e-01c980df7509",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9458cf08-eb8a-42be-a77e-01c980df7509"
+    },
+    {
+      "filename": "images/000000465675.jpg",
+      "image_id": "a3affb45-5527-4654-b4fd-462659d0faac",
+      "duplicate": false,
+      "job_id": "6a981c68-ec12-4547-8c91-aca45084ec84",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6a981c68-ec12-4547-8c91-aca45084ec84"
+    },
+    {
+      "filename": "images/000000465718.jpg",
+      "image_id": "d63218f8-9b6c-433e-8f69-180e3afe3039",
+      "duplicate": false,
+      "job_id": "a188c8d8-d0b9-4b6b-906e-a05a64146da3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a188c8d8-d0b9-4b6b-906e-a05a64146da3"
+    },
+    {
+      "filename": "images/000000469192.jpg",
+      "image_id": "391ebc85-219a-418b-a2c9-2f3c93497a11",
+      "duplicate": false,
+      "job_id": "69bc11d3-283c-42df-ac22-8c0a23163a5d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/69bc11d3-283c-42df-ac22-8c0a23163a5d"
+    },
+    {
+      "filename": "images/000000469246.jpg",
+      "image_id": "f41ae1ff-4aa6-43a0-9c5e-4211febe470d",
+      "duplicate": false,
+      "job_id": "deb037b3-64a6-4399-9c3e-8a59b66bc28c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/deb037b3-64a6-4399-9c3e-8a59b66bc28c"
+    },
+    {
+      "filename": "images/000000473406.jpg",
+      "image_id": "5e9f8189-7204-4792-9ac0-c58c403f14ea",
+      "duplicate": false,
+      "job_id": "8062d97d-a735-42d7-9063-66767ae29408",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8062d97d-a735-42d7-9063-66767ae29408"
+    },
+    {
+      "filename": "images/000000473869.jpg",
+      "image_id": "f4d61c26-a790-4445-89b8-69941fb1567e",
+      "duplicate": false,
+      "job_id": "ccc89fe1-9af1-4985-96ba-17d756eb44d9",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/ccc89fe1-9af1-4985-96ba-17d756eb44d9"
+    },
+    {
+      "filename": "images/000000475678.jpg",
+      "image_id": "8e0be5c0-fb91-46ce-b82d-c49b84bae9bb",
+      "duplicate": false,
+      "job_id": "19215f8b-73ed-4efc-b1a6-d4cc37dc3268",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/19215f8b-73ed-4efc-b1a6-d4cc37dc3268"
+    },
+    {
+      "filename": "images/000000475732.jpg",
+      "image_id": "021ba237-1d71-489c-90d6-f3070f6d7dd9",
+      "duplicate": false,
+      "job_id": "0dcde3fa-f613-4a00-a5ef-b1499f049ba2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0dcde3fa-f613-4a00-a5ef-b1499f049ba2"
+    },
+    {
+      "filename": "images/000000479248.jpg",
+      "image_id": "0de00cad-6cff-4824-affc-42fc56f7f062",
+      "duplicate": false,
+      "job_id": "34eb23a9-5f75-4f1a-be50-6220e8ca6bae",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/34eb23a9-5f75-4f1a-be50-6220e8ca6bae"
+    },
+    {
+      "filename": "images/000000479912.jpg",
+      "image_id": "8ec06f06-d588-45a0-8c40-61e024bf8ba7",
+      "duplicate": false,
+      "job_id": "66eb5fff-3a67-4fea-868d-29bb7e4dd943",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/66eb5fff-3a67-4fea-868d-29bb7e4dd943"
+    },
+    {
+      "filename": "images/000000482800.jpg",
+      "image_id": "b331b729-2d27-4905-8461-6bde756bd256",
+      "duplicate": false,
+      "job_id": "40b8c89e-8d6f-43c7-a25b-6591c8094588",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/40b8c89e-8d6f-43c7-a25b-6591c8094588"
+    },
+    {
+      "filename": "images/000000485237.jpg",
+      "image_id": "bc0fafb0-063c-4abb-80a9-e9162f0b2521",
+      "duplicate": false,
+      "job_id": "868f7a34-f4ce-4ff2-b8d7-70735c71c164",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/868f7a34-f4ce-4ff2-b8d7-70735c71c164"
+    },
+    {
+      "filename": "images/000000486479.jpg",
+      "image_id": "eb039677-f3d8-4690-9086-c900b1afd356",
+      "duplicate": false,
+      "job_id": "2b05ef31-cbc7-44a6-bdbe-f1211e342398",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2b05ef31-cbc7-44a6-bdbe-f1211e342398"
+    },
+    {
+      "filename": "images/000000489339.jpg",
+      "image_id": "f950a176-9d68-42ad-a580-387bf4e34c08",
+      "duplicate": false,
+      "job_id": "007f57c1-9bc4-4bce-ac4c-8a1f43c9fad7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/007f57c1-9bc4-4bce-ac4c-8a1f43c9fad7"
+    },
+    {
+      "filename": "images/000000490171.jpg",
+      "image_id": "ca675fa0-9665-4499-bc16-688a9609daa2",
+      "duplicate": false,
+      "job_id": "477b7c83-49d2-4462-a2ec-c805a7ba64bc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/477b7c83-49d2-4462-a2ec-c805a7ba64bc"
+    },
+    {
+      "filename": "images/000000490515.jpg",
+      "image_id": "8e4b3cba-3aa3-4324-a21f-18a75f99d498",
+      "duplicate": false,
+      "job_id": "0b469a82-9b20-4911-92ac-ce61b06fa4f3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0b469a82-9b20-4911-92ac-ce61b06fa4f3"
+    },
+    {
+      "filename": "images/000000492362.jpg",
+      "image_id": "86e181a0-51a4-4bea-9fd8-3c717d189ab6",
+      "duplicate": false,
+      "job_id": "01eebf1d-bdc7-4cd1-af87-8177ec9c4e65",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/01eebf1d-bdc7-4cd1-af87-8177ec9c4e65"
+    },
+    {
+      "filename": "images/000000493864.jpg",
+      "image_id": "73cf5b70-7f7e-4260-b8ef-003ef98a5967",
+      "duplicate": false,
+      "job_id": "b18c7c0d-4e00-4a5c-9a97-ba37ec0f6957",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b18c7c0d-4e00-4a5c-9a97-ba37ec0f6957"
+    },
+    {
+      "filename": "images/000000495146.jpg",
+      "image_id": "34d38f1b-58c2-4ff8-9529-ac7219ef6d9c",
+      "duplicate": false,
+      "job_id": "2f0c9d5e-6e6c-4680-845a-26345bb6b5c6",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2f0c9d5e-6e6c-4680-845a-26345bb6b5c6"
+    },
+    {
+      "filename": "images/000000495448.jpg",
+      "image_id": "72e5dbe5-7403-4671-9d8a-cad8c021f682",
+      "duplicate": false,
+      "job_id": "adab6c7e-068f-47be-8563-fe5aa791978d",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/adab6c7e-068f-47be-8563-fe5aa791978d"
+    },
+    {
+      "filename": "images/000000498286.jpg",
+      "image_id": "dd07eca6-3e9b-416e-ab52-f49855f96366",
+      "duplicate": false,
+      "job_id": "69fcb813-20e3-4c8a-bbd9-445e7fe48f90",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/69fcb813-20e3-4c8a-bbd9-445e7fe48f90"
+    },
+    {
+      "filename": "images/000000499768.jpg",
+      "image_id": "9edb272d-36e7-4aec-b8ce-47acedfa3f28",
+      "duplicate": false,
+      "job_id": "e9649008-21b9-4733-b04a-e8f9e3efdbeb",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e9649008-21b9-4733-b04a-e8f9e3efdbeb"
+    },
+    {
+      "filename": "images/000000500211.jpg",
+      "image_id": "a0262410-f7c0-4823-a088-ac421eeb589f",
+      "duplicate": false,
+      "job_id": "a96fdf39-3c80-4118-9631-1a2dbd9aa940",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a96fdf39-3c80-4118-9631-1a2dbd9aa940"
+    },
+    {
+      "filename": "images/000000500257.jpg",
+      "image_id": "754a0bb6-eb30-4dad-af02-05b952fcdacf",
+      "duplicate": false,
+      "job_id": "2b54ea76-c8dd-4aa7-b49d-8488c03327e8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/2b54ea76-c8dd-4aa7-b49d-8488c03327e8"
+    },
+    {
+      "filename": "images/000000500270.jpg",
+      "image_id": "18ef0817-b758-4edf-b299-a98f7ee3e283",
+      "duplicate": false,
+      "job_id": "1005cc6b-9693-40b1-ac65-0c908a56abd3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/1005cc6b-9693-40b1-ac65-0c908a56abd3"
+    },
+    {
+      "filename": "images/000000500663.jpg",
+      "image_id": "c2b60353-ea68-4b24-bd43-fe072e7d36bd",
+      "duplicate": false,
+      "job_id": "95cd0999-a9dc-4dff-a474-ddbe00f4d993",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/95cd0999-a9dc-4dff-a474-ddbe00f4d993"
+    },
+    {
+      "filename": "images/000000502737.jpg",
+      "image_id": "5414824c-9284-44bd-bb1d-6465583845f8",
+      "duplicate": false,
+      "job_id": "0c0d2c49-f9cc-4f73-afa7-6f10611b5050",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0c0d2c49-f9cc-4f73-afa7-6f10611b5050"
+    },
+    {
+      "filename": "images/000000503755.jpg",
+      "image_id": "959a140b-082f-4100-a1b2-dd74e431c32e",
+      "duplicate": false,
+      "job_id": "c20afd3b-a404-4b41-8868-03ede67a9adc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c20afd3b-a404-4b41-8868-03ede67a9adc"
+    },
+    {
+      "filename": "images/000000506178.jpg",
+      "image_id": "a4ea3da1-e1a7-4275-b92f-d06ec774a133",
+      "duplicate": false,
+      "job_id": "3b6cbb80-e897-4686-b4ed-13dc866ff614",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3b6cbb80-e897-4686-b4ed-13dc866ff614"
+    },
+    {
+      "filename": "images/000000507015.jpg",
+      "image_id": "4abfeed8-26b9-4cae-8332-ef67aea85d9f",
+      "duplicate": false,
+      "job_id": "c80409c3-0cd5-4107-8b67-2392b1c21559",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c80409c3-0cd5-4107-8b67-2392b1c21559"
+    },
+    {
+      "filename": "images/000000507081.jpg",
+      "image_id": "0cab254b-1b3a-456a-886b-3c36d19e29bb",
+      "duplicate": false,
+      "job_id": "19f3562f-a049-49fe-8a1e-7803cadff0d0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/19f3562f-a049-49fe-8a1e-7803cadff0d0"
+    },
+    {
+      "filename": "images/000000510329.jpg",
+      "image_id": "160e0c92-2d7e-4aed-be94-405ee4eb29d8",
+      "duplicate": false,
+      "job_id": "0dd405a7-c09d-4bc1-88b9-23bc1f2d5c27",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0dd405a7-c09d-4bc1-88b9-23bc1f2d5c27"
+    },
+    {
+      "filename": "images/000000511076.jpg",
+      "image_id": "2b992894-da4e-4ba0-aad5-fd5517af62ba",
+      "duplicate": false,
+      "job_id": "95e1674e-4f73-4555-95a3-5f62a49569de",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/95e1674e-4f73-4555-95a3-5f62a49569de"
+    },
+    {
+      "filename": "images/000000511321.jpg",
+      "image_id": "ae134341-556a-4a64-bbfd-81e16a927058",
+      "duplicate": false,
+      "job_id": "e836dbe4-0ceb-4337-ae5f-9b01c8a27f81",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e836dbe4-0ceb-4337-ae5f-9b01c8a27f81"
+    },
+    {
+      "filename": "images/000000513283.jpg",
+      "image_id": "9ded6be1-12f1-47d4-85d0-e1c07253e498",
+      "duplicate": false,
+      "job_id": "86a3abfa-b54d-4a08-9c90-3f5d29ec32da",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/86a3abfa-b54d-4a08-9c90-3f5d29ec32da"
+    },
+    {
+      "filename": "images/000000513688.jpg",
+      "image_id": "2f5764b1-820f-4a04-a4e9-e636bee946d6",
+      "duplicate": false,
+      "job_id": "6ec44703-104a-4b3b-8ab6-5fb4708722d2",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6ec44703-104a-4b3b-8ab6-5fb4708722d2"
+    },
+    {
+      "filename": "images/000000514376.jpg",
+      "image_id": "3c3d9224-0572-4800-9447-56f3f2e78478",
+      "duplicate": false,
+      "job_id": "243256cb-3bbb-42c3-a836-2dcdc742e757",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/243256cb-3bbb-42c3-a836-2dcdc742e757"
+    },
+    {
+      "filename": "images/000000516677.jpg",
+      "image_id": "99d2d56d-c7ed-4a90-9a26-337125e4d7ac",
+      "duplicate": false,
+      "job_id": "53b0194e-00b7-408c-8191-53c2f508bf3c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/53b0194e-00b7-408c-8191-53c2f508bf3c"
+    },
+    {
+      "filename": "images/000000519522.jpg",
+      "image_id": "76dbae89-c1c7-4773-a589-d7803c97c99c",
+      "duplicate": false,
+      "job_id": "76dc1628-10ed-4239-a2d4-3c82b8dcf293",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/76dc1628-10ed-4239-a2d4-3c82b8dcf293"
+    },
+    {
+      "filename": "images/000000520707.jpg",
+      "image_id": "1b0e65c2-c065-44ef-bef1-b06880749f2f",
+      "duplicate": false,
+      "job_id": "9655ce92-a61c-45f8-b168-6d17d267f209",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9655ce92-a61c-45f8-b168-6d17d267f209"
+    },
+    {
+      "filename": "images/000000520871.jpg",
+      "image_id": "42b5b07d-b5c4-4eb3-9fdf-5ba07d4a5852",
+      "duplicate": false,
+      "job_id": "82fbf225-ec51-45b7-9758-8175d2c6981f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/82fbf225-ec51-45b7-9758-8175d2c6981f"
+    },
+    {
+      "filename": "images/000000521141.jpg",
+      "image_id": "dfc2a0ff-d094-4e5d-ba12-7b9c223aefb9",
+      "duplicate": false,
+      "job_id": "03fba914-85d6-45b0-b527-c36d048a0b66",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/03fba914-85d6-45b0-b527-c36d048a0b66"
+    },
+    {
+      "filename": "images/000000521259.jpg",
+      "image_id": "af449493-3957-4f84-a77f-c2bcefcb5217",
+      "duplicate": false,
+      "job_id": "5102ce3f-fdfe-48b4-b773-cff0885a132b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5102ce3f-fdfe-48b4-b773-cff0885a132b"
+    },
+    {
+      "filename": "images/000000522889.jpg",
+      "image_id": "e8b28877-d26a-4a80-a6f6-5e2748181794",
+      "duplicate": false,
+      "job_id": "7a20cc45-713c-4ea7-b141-58ddcc66bdba",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7a20cc45-713c-4ea7-b141-58ddcc66bdba"
+    },
+    {
+      "filename": "images/000000523175.jpg",
+      "image_id": "ce7b0fdf-2f70-4ad3-9564-5baf0be393e1",
+      "duplicate": false,
+      "job_id": "bca5ec88-3710-4a13-af25-dcb0ea9dbfe8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bca5ec88-3710-4a13-af25-dcb0ea9dbfe8"
+    },
+    {
+      "filename": "images/000000525286.jpg",
+      "image_id": "95e0fd8b-4da8-4ce0-b29b-85105c0b5596",
+      "duplicate": false,
+      "job_id": "fb37df03-e534-48d0-89eb-2b665748f24f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/fb37df03-e534-48d0-89eb-2b665748f24f"
+    },
+    {
+      "filename": "images/000000525322.jpg",
+      "image_id": "38c3cba4-7c04-453c-b026-4f6cb091debe",
+      "duplicate": false,
+      "job_id": "8af04728-06a3-4e97-8dbd-2bd216f3855c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/8af04728-06a3-4e97-8dbd-2bd216f3855c"
+    },
+    {
+      "filename": "images/000000526256.jpg",
+      "image_id": "bd3eda6d-5ebb-4588-bd5a-de5a454d1b97",
+      "duplicate": false,
+      "job_id": "6c26f8a4-cc67-41de-afb4-2d0cc61e3ed8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/6c26f8a4-cc67-41de-afb4-2d0cc61e3ed8"
+    },
+    {
+      "filename": "images/000000528524.jpg",
+      "image_id": "9ba91dc5-d4b6-4a22-abcf-f59abb72958c",
+      "duplicate": false,
+      "job_id": "b5331d49-3518-4600-abde-5aa878dae6b0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b5331d49-3518-4600-abde-5aa878dae6b0"
+    },
+    {
+      "filename": "images/000000528980.jpg",
+      "image_id": "3cdb4192-eacf-4884-8e95-6b2cce3c2776",
+      "duplicate": false,
+      "job_id": "0eb5d41b-b735-4431-bae5-e9ab97ff2ae3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0eb5d41b-b735-4431-bae5-e9ab97ff2ae3"
+    },
+    {
+      "filename": "images/000000529568.jpg",
+      "image_id": "a43dccce-77a0-4ed5-b125-7901ced2dd19",
+      "duplicate": false,
+      "job_id": "376f8f0a-d437-42d4-a13c-1b08b23dd477",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/376f8f0a-d437-42d4-a13c-1b08b23dd477"
+    },
+    {
+      "filename": "images/000000531495.jpg",
+      "image_id": "efa66a50-c54d-43cd-9014-ed021f302937",
+      "duplicate": false,
+      "job_id": "9b2585f0-2b98-4073-b2bd-29700770d440",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9b2585f0-2b98-4073-b2bd-29700770d440"
+    },
+    {
+      "filename": "images/000000532690.jpg",
+      "image_id": "f5ec54d2-e89d-44b5-b433-b184784d4dbd",
+      "duplicate": false,
+      "job_id": "a0fac64b-fc7f-42c0-8d2d-4268ca59fe95",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a0fac64b-fc7f-42c0-8d2d-4268ca59fe95"
+    },
+    {
+      "filename": "images/000000532901.jpg",
+      "image_id": "886e9988-7fbd-4367-8419-59fceb459093",
+      "duplicate": false,
+      "job_id": "cc1448d3-4499-4d47-9f60-9ca6073fac0b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/cc1448d3-4499-4d47-9f60-9ca6073fac0b"
+    },
+    {
+      "filename": "images/000000533206.jpg",
+      "image_id": "b1f77eaa-58d5-4760-b4b9-d683db8c08a3",
+      "duplicate": false,
+      "job_id": "5213c4a3-e8b2-43a9-898a-56bea0a6d460",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5213c4a3-e8b2-43a9-898a-56bea0a6d460"
+    },
+    {
+      "filename": "images/000000534639.jpg",
+      "image_id": "21743f49-bd51-43e5-a42b-f31f05d48f5f",
+      "duplicate": false,
+      "job_id": "62f6f795-4c1c-42cc-a660-0c8722b8455c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/62f6f795-4c1c-42cc-a660-0c8722b8455c"
+    },
+    {
+      "filename": "images/000000534673.jpg",
+      "image_id": "efc50cd8-9b1c-44a9-ba66-e134f1b7fd32",
+      "duplicate": false,
+      "job_id": "493ee7e2-8b59-4d3a-9fa1-80c3e5f5b9ca",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/493ee7e2-8b59-4d3a-9fa1-80c3e5f5b9ca"
+    },
+    {
+      "filename": "images/000000535306.jpg",
+      "image_id": "0563c67a-dc80-49f0-8932-8dbe1cf65583",
+      "duplicate": false,
+      "job_id": "b85377f3-cf17-4372-acac-7977da5612ee",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b85377f3-cf17-4372-acac-7977da5612ee"
+    },
+    {
+      "filename": "images/000000537991.jpg",
+      "image_id": "b1a2befe-1043-47c9-898d-ac070e08e15b",
+      "duplicate": false,
+      "job_id": "9592add7-094d-457a-9c6e-33356df9f355",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/9592add7-094d-457a-9c6e-33356df9f355"
+    },
+    {
+      "filename": "images/000000539883.jpg",
+      "image_id": "10f37285-ce70-4078-aa8c-568503d85f10",
+      "duplicate": false,
+      "job_id": "f29087b0-9a36-4cf4-a515-b38771a14365",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f29087b0-9a36-4cf4-a515-b38771a14365"
+    },
+    {
+      "filename": "images/000000540928.jpg",
+      "image_id": "24728fca-fab3-4f0d-9f33-b2a47ecb5798",
+      "duplicate": false,
+      "job_id": "7cce88a4-1e2b-4b3c-9307-1a564e971b23",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7cce88a4-1e2b-4b3c-9307-1a564e971b23"
+    },
+    {
+      "filename": "images/000000542625.jpg",
+      "image_id": "46c1315c-3215-4bf9-9c6e-25cfde2f4a44",
+      "duplicate": false,
+      "job_id": "aa0d14e2-fc02-48ca-b338-2616c42186cc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/aa0d14e2-fc02-48ca-b338-2616c42186cc"
+    },
+    {
+      "filename": "images/000000542856.jpg",
+      "image_id": "48b20a1f-366c-4a2c-8dda-1b6933ce8c68",
+      "duplicate": false,
+      "job_id": "c011b323-770c-49aa-aae9-82ad6bed01a7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c011b323-770c-49aa-aae9-82ad6bed01a7"
+    },
+    {
+      "filename": "images/000000547144.jpg",
+      "image_id": "cf3d3ddc-10c3-425b-8aac-1a9c6bff550d",
+      "duplicate": false,
+      "job_id": "84e7c6c3-2ed9-483f-b2b0-a0562e3dc658",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/84e7c6c3-2ed9-483f-b2b0-a0562e3dc658"
+    },
+    {
+      "filename": "images/000000548267.jpg",
+      "image_id": "682ac50e-06e6-460a-a753-3273bc4ee46a",
+      "duplicate": false,
+      "job_id": "366fc602-0a82-4f9e-89a6-8b52e3e81717",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/366fc602-0a82-4f9e-89a6-8b52e3e81717"
+    },
+    {
+      "filename": "images/000000549167.jpg",
+      "image_id": "dce92f60-1a54-42cd-94af-b5faaa9a18a3",
+      "duplicate": false,
+      "job_id": "df3ae6b2-4df5-4ae6-a24e-2e896552faa0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/df3ae6b2-4df5-4ae6-a24e-2e896552faa0"
+    },
+    {
+      "filename": "images/000000549674.jpg",
+      "image_id": "b4acabd9-f915-4ec3-a7d6-83ab387c686f",
+      "duplicate": false,
+      "job_id": "3fec6857-94ab-47e6-ac08-c48d6e8d36d8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3fec6857-94ab-47e6-ac08-c48d6e8d36d8"
+    },
+    {
+      "filename": "images/000000550084.jpg",
+      "image_id": "6c4f0913-348b-4f0b-9d27-c5c0d8e7218d",
+      "duplicate": false,
+      "job_id": "e6356884-c6b6-4e51-b89f-f721ca095458",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e6356884-c6b6-4e51-b89f-f721ca095458"
+    },
+    {
+      "filename": "images/000000552902.jpg",
+      "image_id": "6bf1597f-b62a-4761-b8ba-a858ca093c8b",
+      "duplicate": false,
+      "job_id": "0a3be361-6512-442d-96fe-8ac2798684aa",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0a3be361-6512-442d-96fe-8ac2798684aa"
+    },
+    {
+      "filename": "images/000000553664.jpg",
+      "image_id": "51be365f-799f-4ad5-8d76-17d00460b120",
+      "duplicate": false,
+      "job_id": "f7d273a3-9058-4fa4-91c3-c827469c0daa",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f7d273a3-9058-4fa4-91c3-c827469c0daa"
+    },
+    {
+      "filename": "images/000000553776.jpg",
+      "image_id": "81745f8e-d427-47cf-9824-c357c39b9c64",
+      "duplicate": false,
+      "job_id": "a10bacf4-10b7-4361-acdd-8d4b2bb71a78",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a10bacf4-10b7-4361-acdd-8d4b2bb71a78"
+    },
+    {
+      "filename": "images/000000558073.jpg",
+      "image_id": "22b402b6-f88f-4804-a0cb-d71f01ae2e04",
+      "duplicate": false,
+      "job_id": "21a91dc8-6b5d-485e-ae8a-3e8c611f7988",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/21a91dc8-6b5d-485e-ae8a-3e8c611f7988"
+    },
+    {
+      "filename": "images/000000558421.jpg",
+      "image_id": "98c74ea1-5016-451a-807d-d188e56ba644",
+      "duplicate": false,
+      "job_id": "a5220cbb-3524-4057-b1e8-9d70e5b391fa",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a5220cbb-3524-4057-b1e8-9d70e5b391fa"
+    },
+    {
+      "filename": "images/000000560312.jpg",
+      "image_id": "23c3ff90-ad34-43c8-8066-f3d51e6936de",
+      "duplicate": false,
+      "job_id": "86318ba9-05fb-496d-9abc-0653659c2cfc",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/86318ba9-05fb-496d-9abc-0653659c2cfc"
+    },
+    {
+      "filename": "images/000000562059.jpg",
+      "image_id": "0220b1ad-4998-4658-a157-4db64b3b59a7",
+      "duplicate": false,
+      "job_id": "7a068b30-54c9-477f-b4c7-5276c64ad183",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7a068b30-54c9-477f-b4c7-5276c64ad183"
+    },
+    {
+      "filename": "images/000000563603.jpg",
+      "image_id": "4bff0f8e-451a-4271-a38f-6434937cf79b",
+      "duplicate": false,
+      "job_id": "b43c3db0-ad06-48c9-a888-1f90fff2beb7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b43c3db0-ad06-48c9-a888-1f90fff2beb7"
+    },
+    {
+      "filename": "images/000000565563.jpg",
+      "image_id": "5115e871-7d0c-466f-aa21-dd099f622e21",
+      "duplicate": false,
+      "job_id": "661939cb-d4c3-4d48-bc63-8dc442a0fb88",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/661939cb-d4c3-4d48-bc63-8dc442a0fb88"
+    },
+    {
+      "filename": "images/000000565776.jpg",
+      "image_id": "d50ffc4d-636f-4dd3-aa04-bc1b05c359d5",
+      "duplicate": false,
+      "job_id": "3354e7ad-9d96-4f1f-88a8-10a1f3f142f0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/3354e7ad-9d96-4f1f-88a8-10a1f3f142f0"
+    },
+    {
+      "filename": "images/000000566524.jpg",
+      "image_id": "0db99a53-b09c-4325-a3ee-b2cff7acab40",
+      "duplicate": false,
+      "job_id": "94b6b178-5431-47e4-bd4b-2c11591450d0",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/94b6b178-5431-47e4-bd4b-2c11591450d0"
+    },
+    {
+      "filename": "images/000000566758.jpg",
+      "image_id": "a469698f-984f-45f5-8b74-9d8f409e0a9d",
+      "duplicate": false,
+      "job_id": "d478dab7-999d-4dc5-9aac-f69371e51264",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d478dab7-999d-4dc5-9aac-f69371e51264"
+    },
+    {
+      "filename": "images/000000567197.jpg",
+      "image_id": "4fd5ba55-cd83-4a0d-aca9-ad769e0f8327",
+      "duplicate": false,
+      "job_id": "876bbaee-cd68-433e-aff2-67f91ba8daea",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/876bbaee-cd68-433e-aff2-67f91ba8daea"
+    },
+    {
+      "filename": "images/000000568147.jpg",
+      "image_id": "a35ed9fa-a2fc-49ed-9626-44339db17bdf",
+      "duplicate": false,
+      "job_id": "d54d7e7a-08f5-4b7c-8e77-193519d0ce6f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/d54d7e7a-08f5-4b7c-8e77-193519d0ce6f"
+    },
+    {
+      "filename": "images/000000569700.jpg",
+      "image_id": "089b2e5e-0822-479c-9c8a-a70a088a2919",
+      "duplicate": false,
+      "job_id": "c95232c0-39b3-4e94-a17b-93f972bf181e",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c95232c0-39b3-4e94-a17b-93f972bf181e"
+    },
+    {
+      "filename": "images/000000569917.jpg",
+      "image_id": "db89a55e-e11c-47f6-8e86-915b23086292",
+      "duplicate": false,
+      "job_id": "518084d4-7b1d-436f-91a9-ecc53df272e7",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/518084d4-7b1d-436f-91a9-ecc53df272e7"
+    },
+    {
+      "filename": "images/000000570756.jpg",
+      "image_id": "0377a663-9ad0-4b3a-b62e-ab34ff9af4ea",
+      "duplicate": false,
+      "job_id": "f6c82883-3466-41a8-928f-3b11d072633b",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f6c82883-3466-41a8-928f-3b11d072633b"
+    },
+    {
+      "filename": "images/000000571804.jpg",
+      "image_id": "f9f9a4ab-2d10-4916-a27a-7d2fe1fe0f01",
+      "duplicate": false,
+      "job_id": "0f83064d-c327-4599-96a0-974687e21f84",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/0f83064d-c327-4599-96a0-974687e21f84"
+    },
+    {
+      "filename": "images/000000572620.jpg",
+      "image_id": "57af8044-3305-4609-b260-23e3f79d963b",
+      "duplicate": false,
+      "job_id": "7eb50499-98a2-4f78-8137-8bd2ecd74273",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7eb50499-98a2-4f78-8137-8bd2ecd74273"
+    },
+    {
+      "filename": "images/000000573943.jpg",
+      "image_id": "896e800f-749c-4c8a-baf9-2453094ecdbe",
+      "duplicate": false,
+      "job_id": "b45950f4-5c62-489d-821f-bc43e5a890ac",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/b45950f4-5c62-489d-821f-bc43e5a890ac"
+    },
+    {
+      "filename": "images/000000574702.jpg",
+      "image_id": "6214ad85-115e-4a0b-90ed-2f364f1563f7",
+      "duplicate": false,
+      "job_id": "c2481dce-729d-4215-927c-db1f203fef65",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/c2481dce-729d-4215-927c-db1f203fef65"
+    },
+    {
+      "filename": "images/000000576566.jpg",
+      "image_id": "c62bfc69-2314-4a91-b4bb-3e9793c5bf94",
+      "duplicate": false,
+      "job_id": "68c0ece6-beae-4b07-9133-6a4cdab7bcde",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/68c0ece6-beae-4b07-9133-6a4cdab7bcde"
+    },
+    {
+      "filename": "images/000000577584.jpg",
+      "image_id": "900872d7-eb6a-4dae-8156-a7b4d85598bc",
+      "duplicate": false,
+      "job_id": "dac3f36b-c177-494e-aee5-2835fe872993",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/dac3f36b-c177-494e-aee5-2835fe872993"
+    },
+    {
+      "filename": "images/000000577976.jpg",
+      "image_id": "e58cc368-4ea7-46e1-ba1f-05e24cef3544",
+      "duplicate": false,
+      "job_id": "7508779a-4ac5-4a82-944e-165ff73b7a0c",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/7508779a-4ac5-4a82-944e-165ff73b7a0c"
+    },
+    {
+      "filename": "images/000000578500.jpg",
+      "image_id": "42c8b62b-685e-462f-b073-5166bf23fb88",
+      "duplicate": false,
+      "job_id": "16f49bd1-8e6f-4903-96f3-660f2c413c77",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/16f49bd1-8e6f-4903-96f3-660f2c413c77"
+    },
+    {
+      "filename": "images/000000578922.jpg",
+      "image_id": "54944b5a-5358-4bee-b578-63a936b190d7",
+      "duplicate": false,
+      "job_id": "5534c99e-3e3a-4358-9bee-16fef6be93ee",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/5534c99e-3e3a-4358-9bee-16fef6be93ee"
+    },
+    {
+      "filename": "images/000000579307.jpg",
+      "image_id": "f664fadf-6dd5-4b80-a89a-ed9e6d2e2c61",
+      "duplicate": false,
+      "job_id": "477636e6-01bd-4274-a647-17d6e56e24d3",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/477636e6-01bd-4274-a647-17d6e56e24d3"
+    },
+    {
+      "filename": "images/000000579321.jpg",
+      "image_id": "59f4090d-b2a4-49c1-9f2b-fe47ee799bc4",
+      "duplicate": false,
+      "job_id": "f65c0faf-87fc-4a56-805c-4c9f0324aa4f",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/f65c0faf-87fc-4a56-805c-4c9f0324aa4f"
+    },
+    {
+      "filename": "images/000000579635.jpg",
+      "image_id": "8beddc06-6a59-4cb5-b29c-78ed8ac76d17",
+      "duplicate": false,
+      "job_id": "e32921b6-ed00-4ed9-9b6b-004412ce9014",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/e32921b6-ed00-4ed9-9b6b-004412ce9014"
+    },
+    {
+      "filename": "images/000000581206.jpg",
+      "image_id": "87bbd539-2f87-4ddd-88ed-9d37f1576349",
+      "duplicate": false,
+      "job_id": "dc6b092a-2348-4e9d-8af8-7cd0a63282a1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/dc6b092a-2348-4e9d-8af8-7cd0a63282a1"
+    },
+    {
+      "filename": "images/000000581482.jpg",
+      "image_id": "2367fe3a-443f-4d9a-bbdc-8f9fa33a2483",
+      "duplicate": false,
+      "job_id": "46e520bf-39e5-459d-8fd6-30992d42f406",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/46e520bf-39e5-459d-8fd6-30992d42f406"
+    },
+    {
+      "filename": "images/000000581615.jpg",
+      "image_id": "93e4502d-8640-45ea-9d0d-ee182278f69c",
+      "duplicate": false,
+      "job_id": "83511bb1-02fb-426c-addc-586befdf0385",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/83511bb1-02fb-426c-addc-586befdf0385"
+    }
+  ],
+  "ingestion_ms": 220787.30147399983,
+  "source_id": "abe27dcb-02fa-4ac7-8c60-3f70e336f9b7"
+}
+
+ Container ai-image-search-indexing-worker-run-d85c84a8b31b Creating 
+ Container ai-image-search-indexing-worker-run-d85c84a8b31b Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(

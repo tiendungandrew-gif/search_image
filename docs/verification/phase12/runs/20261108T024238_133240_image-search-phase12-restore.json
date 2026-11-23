@@ -1,0 +1,25 @@
+{
+  "project": "image-search-phase12-restore",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12-restore -f /home/tts/prj/compose.prod.yaml -p image-search-phase12-restore exec -T worker cat /run/app/worker.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3918664699999681
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12-restore -f /home/tts/prj/compose.prod.yaml -p image-search-phase12-restore run --rm --no-deps -T backend python -m app.cli.operations inventory"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.575103077000222
+    }
+  ]
+}

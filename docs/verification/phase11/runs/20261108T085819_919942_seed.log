@@ -1,0 +1,11 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-3ee7d61b3659 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-3ee7d61b3659 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+{"classification": "REAL_CLIP_SYNTHETIC_IMAGES_FICTIONAL_KNOWLEDGE", "images_before": 0, "image_ids": ["b0e4dde6-5e5c-45d8-bbae-2a57a0624fdc", "5ee0ecb6-8936-448f-a00c-709f149bf80d", "0ab15209-2a71-47bf-bc72-5ff30b0e20d8", "40908c7d-b184-4915-b7f0-f3ec7dc76771", "8843615e-6dda-4ef4-8a8f-d138ff2139ca", "3aa2bfc4-03d4-42b8-b505-62d543498bc9"], "index_id": "73b0e57e-7aa1-452b-ad6b-80fc0a98a83e", "model_id": "bffb3f3f-0441-4edb-ab06-68fe90525cf5", "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc", "dimension": 512, "real_world_relevance": null}
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Recreate 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Recreated 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Starting 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Started 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Waiting 
+ Container phase11-qa-2c8ad1b9345d-qa-api-1 Healthy 

@@ -2,6 +2,7 @@ import re
 from time import perf_counter
 
 from app.schemas.constraints import ConstraintGroup
+from app.services.query.language import detect_language
 from app.services.query.query_decomposer import decompose
 from app.services.query.query_models import QueryAnalysis
 
@@ -16,7 +17,7 @@ def analyze_query(
     text: str | None, has_image: bool, parse: bool = True, explicit=None, timings=None
 ) -> QueryAnalysis:
     original = text or ""
-    language = "vi" if re.search(r"[ăâđêôơưà-ỹ]", original.lower()) else "en" if original else "und"
+    language = detect_language(original)
     result = QueryAnalysis(
         original_query=original,
         query_type="TEXT_IMAGE"

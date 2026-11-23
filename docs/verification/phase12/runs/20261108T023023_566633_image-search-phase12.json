@@ -1,0 +1,105 @@
+{
+  "project": "image-search-phase12",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.indexing register --version phase12_incremental_v1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 15.597725319000347
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.operations carry-forward --index bb8bd6b1-efff-4910-b99a-97ab1938d63a"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.919005197000388
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-deps --no-build --wait worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.9279478389998985
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.indexing dataset --input /datasets/additional_v1 --name phase12_synthetic --version v1 --license generated-test-fixture --rights-ref fixture://phase12/generated --index bb8bd6b1-efff-4910-b99a-97ab1938d63a"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.636964212999828
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.operations index-status --index bb8bd6b1-efff-4910-b99a-97ab1938d63a"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.826070045999586
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.operations index-status --index bb8bd6b1-efff-4910-b99a-97ab1938d63a"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.446936843000003
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.indexing verify --index bb8bd6b1-efff-4910-b99a-97ab1938d63a --mark-ready"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.749587919000078
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.search --activate bb8bd6b1-efff-4910-b99a-97ab1938d63a"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 17.58830008899986
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-deps --no-build --wait --wait-timeout 180 backend worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 49.670606486
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 exec -T worker python -m app.cli.worker --health"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.8975353999999243
+    }
+  ]
+}

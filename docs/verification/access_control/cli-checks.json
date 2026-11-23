@@ -1,0 +1,14 @@
+[
+  {
+    "path": "scripts/administration/accounts.py",
+    "exit_code": 0
+  },
+  {
+    "path": "scripts/checks/verify_access.py",
+    "exit_code": 0
+  },
+  {
+    "path": "scripts/checks/check_access_browser.py",
+    "exit_code": 0
+  }
+]

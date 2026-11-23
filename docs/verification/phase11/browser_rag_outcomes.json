@@ -1,0 +1,16 @@
+[
+  {
+    "project": "desktop",
+    "generated": false,
+    "grounding_status": "generation_unavailable",
+    "error_code": "LLM_TIMEOUT",
+    "citation_count": 0
+  },
+  {
+    "project": "mobile",
+    "generated": false,
+    "grounding_status": "generation_unavailable",
+    "error_code": "LLM_TIMEOUT",
+    "citation_count": 0
+  }
+]

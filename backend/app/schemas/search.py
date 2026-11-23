@@ -55,6 +55,7 @@ class SearchRequest(BaseModel):
     ) = None
     image_id: UUID | None = None
     top_k: int = Field(default=10, ge=1, le=100)
+    page: int | None = Field(default=None, ge=1, le=500)
     candidate_count: int | None = Field(default=None, ge=1, le=1000)
     filters: Filters = Field(default_factory=Filters)
     exclude_self: bool = True
@@ -139,6 +140,14 @@ class SearchResult(BaseModel):
     contributing_branches: list = Field(default_factory=list)
 
 
+class SearchPagination(BaseModel):
+    page: int
+    page_size: int
+    total_results: int
+    total_pages: int
+    result_limit: int = 500
+
+
 class SearchResponse(BaseModel):
     query_id: UUID
     request_id: UUID
@@ -150,6 +159,7 @@ class SearchResponse(BaseModel):
     manifest_sha256: str
     results: list[SearchResult]
     total_results: int
+    pagination: SearchPagination | None = None
     effective_settings: dict
     latency: dict
     latency_ms: float
@@ -157,3 +167,11 @@ class SearchResponse(BaseModel):
     query_analysis: dict | None = None
     explanation: None = None
     agent: None = None
+
+
+class DiscoveryResponse(BaseModel):
+    seed: UUID
+    has_more: bool
+    next_cursor: str | None
+    results: list[SearchResult]
+    total_results: int

@@ -1,0 +1,160 @@
+name: ${DEPLOY_PROJECT_NAME:?Use scripts/deploy.py init}
+x-logging: &logging
+  driver: json-file
+  options: {max-size: "10m", max-file: "3"}
+x-app: &app
+  image: semantic-image-search/backend:${DEPLOY_RELEASE:?Set release}
+  pull_policy: never
+  env_file: ${DEPLOY_ENV_FILE:?Use scripts/deploy.py}
+  networks: [data, egress]
+  init: true
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:${DEPLOY_NO_NEW_PRIVILEGES:-true}"]
+  tmpfs: ["/tmp:uid=10001,gid=10001,mode=1777", "/run/app:uid=10001,gid=10001,mode=0700"]
+  volumes:
+    - ${DEPLOY_MODEL_PATH:?Set model path}:/models/clip:ro
+    - ${DEPLOY_DATASET_PATH:?Set dataset path}:/datasets:ro
+    - evaluation_artifacts:/evaluation/results:ro
+  stop_grace_period: 45s
+  logging: *logging
+services:
+  postgres:
+    image: postgres:16.15-bookworm
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Missing secret}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    networks: [data]
+    restart: unless-stopped
+    shm_size: 128m
+    mem_limit: ${DEPLOY_POSTGRES_MEMORY:-768m}
+    cpus: ${DEPLOY_POSTGRES_CPUS:-2}
+    logging: *logging
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  qdrant:
+    image: qdrant/qdrant:v1.20.0
+    environment:
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:?Missing secret}
+      QDRANT__TELEMETRY_DISABLED: "true"
+    volumes: [qdrant_data:/qdrant/storage]
+    networks: [data]
+    restart: unless-stopped
+    mem_limit: ${DEPLOY_QDRANT_MEMORY:-1g}
+    cpus: ${DEPLOY_QDRANT_CPUS:-2}
+    logging: *logging
+    healthcheck:
+      test: [CMD, /bin/bash, -ec, 'exec 3<>/dev/tcp/127.0.0.1/6333; printf "GET /healthz HTTP/1.0\r\n\r\n" >&3; IFS= read -r line <&3; [[ "$$line" == *"200"* ]]']
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  minio:
+    image: ai-image-search/minio:2025-09-07
+    pull_policy: never
+    build: {context: ., dockerfile: infra/docker/minio.Dockerfile}
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:?Missing secret}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:?Missing secret}
+      MINIO_BROWSER: "off"
+    volumes: [minio_data:/data]
+    networks: [data]
+    restart: unless-stopped
+    security_opt: ["no-new-privileges:${DEPLOY_NO_NEW_PRIVILEGES:-true}"]
+    mem_limit: ${DEPLOY_MINIO_MEMORY:-768m}
+    cpus: ${DEPLOY_MINIO_CPUS:-2}
+    logging: *logging
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1:9000/minio/health/live]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  bootstrap:
+    <<: *app
+    command: [python, -m, app.cli.operations, bootstrap]
+    restart: "no"
+    depends_on:
+      postgres: {condition: service_healthy}
+      qdrant: {condition: service_healthy}
+      minio: {condition: service_healthy}
+  backend:
+    <<: *app
+    build:
+      context: .
+      dockerfile: backend/Dockerfile.prod
+      args:
+        INSTALL_ML: ${DEPLOY_INSTALL_ML:-true}
+        RELEASE_VERSION: ${DEPLOY_RELEASE}
+        SOURCE_VERSION: ${DEPLOY_SOURCE_VERSION:-unknown}
+    depends_on:
+      bootstrap: {condition: service_completed_successfully}
+    restart: unless-stopped
+    mem_limit: ${DEPLOY_BACKEND_MEMORY:-3g}
+    cpus: ${DEPLOY_BACKEND_CPUS:-4}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/live', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+      start_period: 30s
+  worker:
+    <<: *app
+    command: [python, -m, app.cli.worker]
+    depends_on:
+      bootstrap: {condition: service_completed_successfully}
+    restart: unless-stopped
+    mem_limit: ${DEPLOY_WORKER_MEMORY:-3g}
+    cpus: ${DEPLOY_WORKER_CPUS:-4}
+    healthcheck:
+      test: [CMD, python, -m, app.cli.worker, --health]
+      interval: 10s
+      timeout: 4s
+      retries: 3
+      start_period: 15s
+  frontend:
+    image: semantic-image-search/frontend:${DEPLOY_RELEASE}
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile.prod
+      args:
+        RELEASE_VERSION: ${DEPLOY_RELEASE}
+        SOURCE_VERSION: ${DEPLOY_SOURCE_VERSION:-unknown}
+    ports: ["${DEPLOY_BIND_ADDRESS:-127.0.0.1}:${DEPLOY_HTTP_PORT:-8080}:8080"]
+    networks: [ingress, egress]
+    depends_on:
+      backend: {condition: service_healthy}
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs: ["/tmp:uid=101,gid=101,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:${DEPLOY_NO_NEW_PRIVILEGES:-true}"]
+    mem_limit: 256m
+    cpus: 1
+    stop_grace_period: 20s
+    logging: *logging
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1:8080/healthz]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  model-preparer:
+    <<: *app
+    profiles: [tools]
+    command: [python, -m, app.cli.download_model, --output, /models/clip]
+    volumes:
+      - ${DEPLOY_MODEL_PATH}:/models/clip
+networks:
+  data: {internal: true}
+  ingress: {}
+  egress: {}
+volumes:
+  postgres_data: {}
+  qdrant_data: {}
+  minio_data: {}
+  evaluation_artifacts: {}

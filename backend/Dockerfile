@@ -16,8 +16,10 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     research_extra=""; if [ "$INSTALL_EVALUATION" = true ]; then research_extra="--extra evaluation"; fi; \
     if [ "$INSTALL_ML" = true ]; then uv sync --project backend --frozen --extra dev --extra ml $research_extra --no-managed-python; else uv sync --project backend --frozen --extra dev $research_extra --no-managed-python; fi
 COPY scripts/ scripts/
+COPY evaluation/annotation/ evaluation/annotation/
+COPY evaluation/agent/ evaluation/agent/
 COPY .env.example .env.example
 COPY ruff.toml ruff.toml
 USER appuser
 EXPOSE 8000
-CMD ["sh", "scripts/start_backend.sh"]
+CMD ["sh", "scripts/runtime/start_backend.sh"]

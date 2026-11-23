@@ -1,0 +1,8 @@
+{
+  "release": "phase12-final",
+  "source_sha256": "a3229228b80269a7a653124f6ec5332133f536fb699d381bd268a31e8e6cc970",
+  "images": {
+    "backend": "sha256:6173f7fb25a1b4f72ffa06005000398dc4e03891c3b654aaca2fd63d427f884b",
+    "frontend": "sha256:a8ecb724149a9d60a2c90e41eb5f526198391babe05b0aae107c3ef242ea6549"
+  }
+}

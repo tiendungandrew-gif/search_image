@@ -1,0 +1,45 @@
+{
+  "dry_run": true,
+  "discovered": 6,
+  "validated": 6,
+  "duplicates": 0,
+  "accepted": 0,
+  "failed": 0,
+  "ignored": 1,
+  "results": [
+    {
+      "filename": "shape-01.png",
+      "sha256": "ff453e1ee76ebdb192ccf0f209de5afcb2748a07a250c152408656f28b57f9c8",
+      "status": "valid"
+    },
+    {
+      "filename": "shape-02.jpg",
+      "sha256": "ba44c82dde5ea139c815f34265aeb95f17a4454dbbfa72264bdb13284d33ff67",
+      "status": "valid"
+    },
+    {
+      "filename": "shape-03.webp",
+      "sha256": "8eda26b7fa2365749a0e8168c99799aab7d7c79afb74c734c36b0cae0dfabaa1",
+      "status": "valid"
+    },
+    {
+      "filename": "shape-04.png",
+      "sha256": "295b2c8f762736275fc88e90631c408c89eb16d450391e3c35c5ddf7d9c55f5d",
+      "status": "valid"
+    },
+    {
+      "filename": "shape-05.jpg",
+      "sha256": "52bc0e31ef22652acd2b13441506a695240cc538f1a8ea5c1f81ed923d808633",
+      "status": "valid"
+    },
+    {
+      "filename": "shape-06.webp",
+      "sha256": "ff8e2b4e9afdcaeacf521c95c0dc68ba74b1635456dbe0d1f74f3ee24c025e4d",
+      "status": "valid"
+    }
+  ],
+  "ingestion_ms": 2406.7787040000894
+}
+ Container image-search-phase12-backend-run-aeadd1ebb010 Creating 
+ Container image-search-phase12-backend-run-aeadd1ebb010 Created 
+

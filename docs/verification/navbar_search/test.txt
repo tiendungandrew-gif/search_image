@@ -1,0 +1,13 @@
+
+> ai-image-search-frontend@0.3.0 test
+> vitest run
+
+
+ RUN  v4.1.12 /home/tts/prj/frontend
+
+
+ Test Files  16 passed (16)
+      Tests  67 passed (67)
+   Start at  15:29:14
+   Duration  4.30s (transform 4.27s, setup 6.79s, import 5.82s, tests 5.67s, environment 17.37s)
+

@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+  ✓  1 [deploy-desktop] › deploy-e2e/accounts.spec.ts:7:1 › deployment · private login, search and admin workspace (3.6s)
+  ✓  2 [deploy-mobile] › deploy-e2e/accounts.spec.ts:7:1 › deployment · private login, search and admin workspace (2.8s)
+
+  2 passed (8.2s)
+(node:1787549) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1788002) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

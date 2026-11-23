@@ -1,0 +1,152 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-e1cb72a76fb8 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-e1cb72a76fb8 Created 
+........F.............F....                                              [100%]
+=================================== FAILURES ===================================
+_____________ test_database_constraints_and_sql_injection_is_data ______________
+
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...ject at 0x7724974c3b00>, token='208f79934f064a798de4f5f6be371ae7', collections={'images_qa_208f79934f06_6c1c72c803d6'})
+
+    async def test_database_constraints_and_sql_injection_is_data(qa_resources):
+        services = qa_resources.services
+        async with services.database.sessions() as session:
+            value = "Paris'); DROP TABLE images; --"
+            assert await session.scalar(text("SELECT :city"), {"city": value}) == value
+            assert await session.scalar(text("SELECT count(*) FROM images")) == 0
+        index, _ = await qa_resources.index(SyntheticEncoder())
+        _, body = await ingest(services, image_bytes(), metadata(), "qa-private-media", index.id)
+        app = create_app(qa_resources.settings)
+        app.state.services = services
+        async with AsyncClient(transport=ASGITransport(app), base_url="http://qa") as client:
+            path = f"/api/v1/images/{body['image_id']}/content?variant=original"
+>           assert (await client.get(path)).status_code == 401
+E           assert 404 == 401
+E            +  where 404 = <Response [404 Not Found]>.status_code
+
+backend/tests/integration/test_qa_services.py:188: AssertionError
+_________ test_new_signup_reads_only_shared_images_search_and_evidence _________
+
+accounts = (<fastapi.applications.FastAPI object at 0x772496c60710>, <httpx.AsyncClient object at 0x772496b36f30>, <httpx.AsyncClient object at 0x772496293cb0>, '0422d2da-242b-4833-833d-75d0d98e18c7', '7f506268-09b0-41ff-952f-d88228b7e828')
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...ject at 0x772496292240>, token='6598c4c03b154790ab179410fd39ceb4', collections={'images_qa_6598c4c03b15_ad1beb28ae22'})
+
+    async def test_new_signup_reads_only_shared_images_search_and_evidence(accounts, qa_resources):
+        app, admin, _, _, _ = accounts
+        runtime, images = await seed_search(qa_resources, app)
+        try:
+            libraries = (await admin.get("/api/v1/admin/datasets")).json()["datasets"]
+            assert all(not d["shared_with_members"] for d in libraries)
+            common = next(d for d in libraries if d["key"] == "private_a")
+            assert (await patch_library(admin, common, True)).status_code == 200
+            # Older clients editing a name cannot silently undo the sharing decision.
+            assert (
+                await admin.patch(
+                    f"/api/v1/admin/datasets/{common['id']}", json={"name": common["name"]}
+                )
+            ).status_code == 200
+            app.state.settings.agent_allow_fixture_knowledge = True
+            async with qa_resources.services.database.sessions() as session, session.begin():
+                for library in libraries:
+                    entity = Entity(
+                        id=uuid4(),
+                        canonical_name=library["key"],
+                        name_key=library["key"],
+                        entity_type="object",
+                        provenance={"source_ref": "fixture://shared", "fixture": True},
+                    )
+                    session.add(entity)
+                    await session.flush()
+                    session.add(EntityDataset(dataset_id=UUID(library["id"]), entity_id=entity.id))
+    
+            @app.get("/qa/shared-evidence", dependencies=[Depends(require_read_access)])
+            async def evidence_probe():
+                evidence, _, _ = await EvidenceRetriever(runtime).retrieve(images)
+                knowledge = KnowledgeRepository(qa_resources.services)
+                return {
+                    "images": [str(e.image_id) for e in evidence],
+                    "common_entities": len((await knowledge.lookup("private_a")).entities),
+                    "private_entities": len((await knowledge.lookup("private_b")).entities),
+                }
+    
+            origin = app.state.settings.cors_origins[0]
+            async with AsyncClient(
+                transport=ASGITransport(app), base_url=origin, headers={"Origin": origin}
+            ) as member:
+                assert (
+                    await member.post(
+                        "/api/v1/auth/register",
+                        json={
+                            "username": "new_member",
+                            "display_name": "New member",
+                            "password": PASSWORD,
+                        },
+                    )
+                ).status_code == 201
+                login = await member.post(
+                    "/api/v1/auth/login", json={"username": "new_member", "password": PASSWORD}
+                )
+                assert login.status_code == 200
+                user = login.json()["user"]
+                assert user["role"] == "user" and user["is_active"]
+                assert [d["id"] for d in user["datasets"]] == [common["id"]]
+                assert user["datasets"][0]["shared_with_members"] is True
+                async with qa_resources.services.database.sessions() as session:
+                    assert (
+                        await session.scalar(
+                            select(func.count())
+                            .select_from(DatasetGrant)
+                            .where(DatasetGrant.user_id == UUID(user["id"]))
+                        )
+                        == 0
+                    )
+                member.headers["X-CSRF-Token"] = member.cookies["lens_csrf"]
+                search = await member.post("/api/v1/search", json={"text": "a shape", "mode": "text"})
+                assert search.status_code == 200, search.text
+                assert [r["image_id"] for r in search.json()["results"]] == [str(images[0])]
+                filtered = await member.post(
+                    "/api/v1/search",
+                    json={
+                        "text": "a shape",
+                        "mode": "text",
+                        "filters": {"source_dataset": "private_b"},
+                    },
+                )
+                assert filtered.status_code == 200 and filtered.json()["total_results"] == 0
+                assert (await member.get(f"/api/v1/images/{images[0]}/content")).status_code == 200
+                assert (await member.get(f"/api/v1/images/{images[1]}/content")).status_code == 404
+                assert (await member.get("/qa/shared-evidence")).json() == {
+                    "images": [str(images[0])],
+                    "common_entities": 1,
+                    "private_entities": 0,
+                }
+                assert (await member.get("/api/v1/admin/datasets")).status_code == 403
+                assert (
+                    await member.patch(f"/api/v1/admin/images/{images[0]}", json={})
+                ).status_code == 403
+                assert (
+                    await member.post(f"/api/v1/admin/users/{user['id']}/sessions/revoke")
+                ).status_code == 403
+                async with AsyncClient(transport=ASGITransport(app), base_url=origin) as anonymous:
+>                   assert (
+                        await anonymous.get(f"/api/v1/images/{images[0]}/content")
+                    ).status_code == 401
+E                   assert 404 == 401
+E                    +  where 404 = <Response [404 Not Found]>.status_code
+
+backend/tests/integration/test_shared_datasets.py:125: AssertionError
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py: 2 warnings
+tests/integration/test_qa_services.py: 7 warnings
+tests/integration/test_qa_worker_process.py: 1 warning
+tests/integration/test_access_control.py: 5 warnings
+tests/integration/test_quick_login.py: 3 warnings
+tests/integration/test_registration.py: 3 warnings
+tests/integration/test_shared_datasets.py: 3 warnings
+tests/integration/test_guest_search.py: 2 warnings
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_qa_services.py::test_database_constraints_and_sql_injection_is_data
+FAILED backend/tests/integration/test_shared_datasets.py::test_new_signup_reads_only_shared_images_search_and_evidence
+2 failed, 25 passed, 26 warnings in 141.84s (0:02:21)
+

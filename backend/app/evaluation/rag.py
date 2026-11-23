@@ -1,11 +1,15 @@
 """R1–R4 real HTTP experiments, labels optional and independent of citation mechanics."""
 
+import base64
+import json
+from pathlib import Path
 from time import perf_counter
+from uuid import UUID
 
 import httpx
 
 from app.evaluation.statistics import describe
-from app.evaluation.tracking import Experiment
+from app.evaluation.tracking import Experiment, digest
 
 
 def audit_citations(response):
@@ -85,13 +89,35 @@ def validate_review(labels, results):
     return {"status": "valid", "reviewed_cases": len(expected), "by_task_and_language": groups}
 
 
-def run_experiments(base_url, token, results, requests=20):
+def run_experiments(base_url, token, results, requests=20, workload=None):
+    if workload:
+        if requests < 4 * len(workload) or requests % 4:
+            raise ValueError("Workload cần đủ 4 cấu hình cho mỗi câu hỏi")
+        for item in workload:
+            if set(item) != {"query", "question", "language"} or item["language"] not in {
+                "vi",
+                "en",
+            }:
+                raise ValueError("Invalid RAG workload")
+            if any(
+                not isinstance(item[k], str) or not 1 <= len(item[k]) <= 2000
+                for k in ["query", "question"]
+            ):
+                raise ValueError("Invalid RAG workload text")
     experiment = Experiment(
-        results, "rag", {"requests": requests, "modes": ["R1", "R2", "R3", "R4"], "seed": 42}
+        results,
+        "rag",
+        {
+            "requests": requests,
+            "modes": ["R1", "R2", "R3", "R4"],
+            "seed": 42,
+            "workload": workload,
+            "workload_sha256": digest(workload),
+        },
     )
     rows = []
     headers = {"Authorization": "Bearer " + token}
-    with httpx.Client(base_url=base_url, headers=headers, timeout=12) as client:
+    with httpx.Client(base_url=base_url, headers=headers, timeout=65) as client:
         status = client.get("/api/v1/rag/status")
         status.raise_for_status()
         for number in range(requests):
@@ -102,15 +128,18 @@ def run_experiments(base_url, token, results, requests=20):
                 if language == "vi"
                 else "What are the image format and dimensions in the metadata?"
             )
+            task = (
+                workload[number // 4 % len(workload)]
+                if workload
+                else {"query": "a cup of coffee", "question": question, "language": language}
+            )
             body = {
-                "query": "a cup of coffee",
-                "question": question,
+                **task,
                 "top_k": 3,
-                "language": language,
                 "max_evidence_items": 1 if kind == "R4" else 3,
             }
             started = perf_counter()
-            row = {"case_id": f"{kind}_{number:03}", "configuration": kind, "language": language}
+            row = {"case_id": f"{kind}_{number:03}", "configuration": kind, **task}
             try:
                 if kind in {"R1", "R2"}:
                     response = client.post(
@@ -171,4 +200,77 @@ def run_experiments(base_url, token, results, requests=20):
         "experiment_id": experiment.identifier,
         "directory": str(experiment.directory),
         "groups": groups,
+    }
+
+
+def build_review_pack(base_url, token, result_path, output, *, transport=None):
+    """Freeze actual answers/evidence and authenticated images into offline review HTML."""
+    result_path, output = Path(result_path), Path(output)
+    result = json.loads(result_path.read_text())
+    rows = [r for r in result["cases"] if r["configuration"] in {"R3", "R4"}]
+    if not rows or len(rows) > 100:
+        raise ValueError("REVIEW_CASE_LIMIT")
+    identities = sorted(
+        {
+            str(UUID(item["image_id"]))
+            for row in rows
+            for item in row.get("result", {}).get("results", [])
+        }
+    )
+    if len(identities) > 50:
+        raise ValueError("REVIEW_IMAGE_LIMIT")
+    images = {}
+    with httpx.Client(
+        base_url=base_url,
+        headers={"Authorization": "Bearer " + token},
+        timeout=15,
+        transport=transport,
+    ) as client:
+        for identity in identities:
+            with client.stream(
+                "GET", f"/api/v1/images/{identity}/content?variant=original"
+            ) as response:
+                response.raise_for_status()
+                mime = response.headers.get("content-type", "").split(";")[0]
+                if mime not in {"image/jpeg", "image/png", "image/webp"}:
+                    raise ValueError("REVIEW_IMAGE_TYPE")
+                raw = bytearray()
+                for chunk in response.iter_bytes():
+                    raw.extend(chunk)
+                    if len(raw) > 20 * 1024**2:
+                        raise ValueError("REVIEW_IMAGE_SIZE")
+            images[identity] = f"data:{mime};base64," + base64.b64encode(raw).decode()
+    labels = {
+        "schema_version": 1,
+        "result_sha256": digest(result),
+        "experiment_id": result_path.parent.name,
+        "label_version": "human-v1",
+        "annotator": "",
+        "human_verified": False,
+        "reviewed_at_utc": None,
+        "cases": {
+            r["case_id"]: {
+                "answer_relevance": None,
+                "faithfulness": None,
+                "claims": None,
+                "unsupported_claims": None,
+            }
+            for r in rows
+        },
+    }
+    payload = json.dumps({"cases": rows, "images": images, "labels": labels}, ensure_ascii=False)
+    template = Path("evaluation/annotation/rag_review.html").read_text()
+    # Never let imported captions terminate the executable script element.
+    html = template.replace("/*__DATA__*/", payload.replace("<", "\\u003c"))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("x") as handle:
+        handle.write(html)
+    output.chmod(0o600)
+    return {
+        "status": "created",
+        "path": str(output),
+        "cases": len(rows),
+        "images": len(images),
+        "result_sha256": digest(result),
+        "human_verified": False,
     }

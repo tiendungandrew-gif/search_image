@@ -1,0 +1,11 @@
+{
+  "name": "phase11_multi_intent",
+  "seed": 42,
+  "profile": "advanced",
+  "query_types": [
+    "multi_intent"
+  ],
+  "requests": 30,
+  "warmup": 4,
+  "sample_resources": true
+}

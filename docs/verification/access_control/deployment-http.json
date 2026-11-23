@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "account_role": "admin",
+  "legacy_enabled": false,
+  "dataset": {
+    "state": "ready",
+    "images": 7,
+    "available_images": 7,
+    "indexed_images": 7,
+    "vectors": 7,
+    "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+    "index_status": "ready",
+    "generation": 2
+  },
+  "libraries": [
+    {
+      "key": "phase12_synthetic@v1",
+      "images": 7
+    }
+  ],
+  "retrieved": 3,
+  "private_image": true
+}

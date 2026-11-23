@@ -104,11 +104,14 @@ async def ingest(services, data, metadata, key, index_id=None):
     digest = fingerprint(
         {
             "sha256": validated.sha256,
-            "metadata": metadata.model_dump(),
+            "metadata": metadata.fingerprint_data(),
             "index": str(index_id or settings.ingestion_index_id),
         }
     )
     async with services.database.sessions() as session, session.begin():
+        from app.services.catalog import ensure_dataset
+
+        await ensure_dataset(session, metadata.source_dataset)
         index = await target(session, index_id or settings.ingestion_index_id)
         record, completed = await idempotency(session, "/images", key, digest)
         if completed:

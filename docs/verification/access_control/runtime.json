@@ -1,0 +1,221 @@
+{
+  "main": {
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "dataset_state": "DATA_PRESENT",
+    "counts": {
+      "images": 513,
+      "objects_receipts": 513,
+      "ready_embeddings": 1054
+    },
+    "jobs": {
+      "succeeded": 1074
+    },
+    "indexes": [
+      {
+        "id": "1552493b-1f80-4dac-9f75-41a8e9896d1d",
+        "status": "building",
+        "collection": "images_test_3e1ae2e5b864_2da3efb764c0"
+      },
+      {
+        "id": "3c7b23e3-4c73-4082-aa09-34df3bc70208",
+        "status": "ready",
+        "collection": "images_siglip2_phase07_v1_7c8f7207b4d1"
+      },
+      {
+        "id": "4cbeea7f-8111-43bc-bc38-4b7c373e1a7b",
+        "status": "ready",
+        "collection": "images_clip_v1_64b85964aaf3"
+      },
+      {
+        "id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+        "status": "ready",
+        "collection": "images_clip_coco_phase08_v1_1ea0b3304d04"
+      },
+      {
+        "id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+        "status": "ready",
+        "collection": "images_clip_v1_da55a7d099fd"
+      },
+      {
+        "id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "status": "ready",
+        "collection": "images_clip_landmarks_phase09_v1_142374e60d29"
+      }
+    ],
+    "active": {
+      "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+      "generation": 3
+    },
+    "collections": [
+      {
+        "name": "images_clip_coco_phase08_v1_1ea0b3304d04",
+        "points": 510
+      },
+      {
+        "name": "images_clip_landmarks_phase09_v1_142374e60d29",
+        "points": 513
+      },
+      {
+        "name": "images_clip_v1_64b85964aaf3",
+        "points": 10
+      },
+      {
+        "name": "images_clip_v1_da55a7d099fd",
+        "points": 10
+      },
+      {
+        "name": "images_siglip2_phase07_v1_7c8f7207b4d1",
+        "points": 10
+      },
+      {
+        "name": "images_test_3e1ae2e5b864_2da3efb764c0",
+        "points": 1
+      }
+    ],
+    "stored_objects": 516,
+    "model_artifacts": "present_unverified"
+  },
+  "main_services": [
+    {
+      "Service": "backend",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ai-image-search-backend",
+      "Ports": "127.0.0.1:8000->8000/tcp"
+    },
+    {
+      "Service": "frontend",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "sha256:73edf2ef007aab8d0bd5e672eac7025a230c0b1b75c8ec1a55792c0cfcaa2424",
+      "Ports": "127.0.0.1:5173->5173/tcp"
+    },
+    {
+      "Service": "indexing-worker",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ai-image-search-indexing-worker",
+      "Ports": "8000/tcp"
+    },
+    {
+      "Service": "minio",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "sha256:a7693e3576edac4dfb8e53f123dbce30dff6287842ca5d45ae0c68ce051f446b",
+      "Ports": "9000/tcp"
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "postgres:16.15-bookworm",
+      "Ports": "5432/tcp"
+    },
+    {
+      "Service": "qdrant",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "qdrant/qdrant:v1.20.0",
+      "Ports": "6333-6334/tcp"
+    }
+  ],
+  "deployment": {
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "dataset_state": "DATA_PRESENT",
+    "counts": {
+      "images": 7,
+      "objects_receipts": 7,
+      "ready_embeddings": 13
+    },
+    "jobs": {
+      "succeeded": 13
+    },
+    "indexes": [
+      {
+        "id": "7fac2290-1410-4843-a5fb-0a966ca0f1f7",
+        "status": "ready",
+        "collection": "images_phase12_shapes_v1_865d29f7f68b"
+      },
+      {
+        "id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+        "status": "ready",
+        "collection": "images_phase12_incremental_v1_0d9cdb44a9fb"
+      }
+    ],
+    "active": {
+      "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+      "generation": 2
+    },
+    "collections": [
+      {
+        "name": "images_phase12_incremental_v1_0d9cdb44a9fb",
+        "points": 7
+      },
+      {
+        "name": "images_phase12_shapes_v1_865d29f7f68b",
+        "points": 6
+      }
+    ],
+    "stored_objects": 9,
+    "model_artifacts": "present_unverified"
+  },
+  "deployment_services": [
+    {
+      "Service": "backend",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "semantic-image-search/backend:access-control-v3",
+      "Ports": "8000/tcp"
+    },
+    {
+      "Service": "frontend",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "semantic-image-search/frontend:access-control-v3",
+      "Ports": "80/tcp, 8443/tcp, 127.0.0.1:8088->8080/tcp"
+    },
+    {
+      "Service": "minio",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "sha256:ee52ba8b4875e48396787bb50b514920e18158fd19e07faca4a0c3cbbefc1dbb",
+      "Ports": "9000/tcp"
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "postgres:16.15-bookworm",
+      "Ports": "5432/tcp"
+    },
+    {
+      "Service": "qdrant",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "qdrant/qdrant:v1.20.0",
+      "Ports": "6333-6334/tcp"
+    },
+    {
+      "Service": "worker",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "semantic-image-search/backend:access-control-v3",
+      "Ports": "8000/tcp"
+    }
+  ],
+  "release": "access-control-v3",
+  "worker_health": "passed_both_environments",
+  "preservation": {
+    "images_originals_active_preserved": true,
+    "historical_job_recovered": 1
+  },
+  "qa_cleanup": "completed_isolated_stack_removed"
+}

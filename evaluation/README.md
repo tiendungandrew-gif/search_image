@@ -1,5 +1,9 @@
 # Đánh giá retrieval — Prompt07
 
+## Đánh giá Agent Prompt09
+
+Experiment Agent dùng framework Phase07 tại `backend/app/evaluation/agent.py`; CLI `app.cli.agent`, fixture test và raw artifacts giữ riêng trong `results/phase09`. [Phương pháp](../docs/research/AGENT_EVALUATION.md), [hiệu năng](../docs/research/AGENT_PERFORMANCE.md), [báo cáo nghiệm thu](../docs/archive/PHASE09_TEST_REPORT.md). Các facts `evaluation/agent/fixtures` đều hư cấu và chỉ nhập vào DB test cô lập. Không có ground truth quan hệ thực hoặc nhãn relevance do người xác nhận; không báo real-world accuracy từ fixture. Human quality review RAG Phase08 vẫn chờ theo lựa chọn người dùng.
+
 Đây là hướng dẫn hiện hành; công cụ Prompt05–06 được giữ bên dưới để bảo toàn khả năng tái lập. Source evaluation dùng chung tại `backend/app/evaluation/`, không tạo framework song song. Chưa có human relevance labels; không đổi templates thành verified để lấy điểm.
 
 ## Chuẩn bị và gán nhãn
@@ -33,9 +37,9 @@ A0…A4 lọc cùng multi-intent queries; A5_text/A5_rrf/A5_score lọc cùng pa
 backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/bin/python -m app.cli.evaluation benchmark --config evaluation/experiments/phase07/fast_default.json
 backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/bin/python -m app.cli.evaluation benchmark --config evaluation/experiments/phase07/load20.json
 backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/bin/python -m app.cli.evaluation benchmark --config evaluation/experiments/phase07/load_mixed.json
-sg docker -c 'backend/.venv/bin/python scripts/run_evaluation_suite.py --optimization --matrix'
+sg docker -c 'backend/.venv/bin/python scripts/evaluation/run_evaluation_suite.py --optimization --matrix'
 backend/.venv/bin/python -m app.cli.evaluation analyze-optimization --suite docs/verification/phase07/suites/20261104T093924_4026c284.json
-bash scripts/run_evaluation_container.sh profile
+bash scripts/evaluation/run_evaluation_container.sh profile
 ```
 
 Suite thay width1/2 và recreate API khi so ABBA; đợi search-ready, khôi phục width ban đầu rồi chạy matrix. Không chạy tests/inference khác đồng thời với phép đo. `--only NAME...` chọn configs cho matrix; file config chứa requests/concurrency/rate/duration/warmup/timeouts/candidates/fusion/rerank/seed. Kết quả ghi cả lỗi, warmup và sample coverage; successful latency không thay error-rate. Suite mới sinh ID mới, dùng đường dẫn suite mới khi phân tích; `--results PATH` toàn cục đặt trước subcommand để tách nhóm experiments. Fast target chỉ áp fast workload đủ mẫu/không lỗi, không áp advanced/mixed.
@@ -44,17 +48,17 @@ Suite thay width1/2 và recreate API khi so ABBA; đợi search-ready, khôi ph�
 
 ```bash
 backend/.venv/bin/python -m app.cli.download_evaluation_model --output .cache/siglip2
-bash scripts/run_evaluation_container.sh clip
-bash scripts/run_evaluation_container.sh siglip2
+bash scripts/evaluation/run_evaluation_container.sh clip
+bash scripts/evaluation/run_evaluation_container.sh siglip2
 # Khi có nhãn thật:
-# bash scripts/run_evaluation_container.sh siglip2 --labels evaluation/relevance_labels/reviewed.json
+# bash scripts/evaluation/run_evaluation_container.sh siglip2 --labels evaluation/relevance_labels/reviewed.json
 MPLCONFIGDIR=.cache/matplotlib backend/.venv/bin/python -m app.cli.evaluation report --output evaluation/reports/new_run
-bash scripts/verify_evaluation.sh
+bash scripts/evaluation/verify_evaluation.sh
 ```
 
 Docker runner cần quyền socket, current stack và image worker đã build; mount cache model read-only/results writable với UID hiện tại, không expose data ports hoặc đổi active index. SigLIP2 có download receipt pin revision/SHA. Nếu snapshot tham chiếu file `.cache/evaluation/images`, runner mount cùng đường dẫn tương đối dưới `/srv`.
 
-Mỗi experiment có experiment.json/result.json, raw samples/per-query records/source hash/archive và config; không ghi đè run trước. Report tạo summary.json/summary.csv/queries.csv/REPORT.md, PNG/SVG latency/load/model resources. Semantic quality chart chỉ tạo từ human-labeled aggregates; thiếu labels không sinh cột giả. Output directory phải mới. [Báo cáo thực tế](reports/phase07/REPORT.md), [phương pháp](../docs/EVALUATION_METHODOLOGY.md), [nghiệm thu A–M](../docs/PHASE07_TEST_REPORT.md).
+Mỗi experiment có experiment.json/result.json, raw samples/per-query records/source hash/archive và config; không ghi đè run trước. Report tạo summary.json/summary.csv/queries.csv/REPORT.md, PNG/SVG latency/load/model resources. Semantic quality chart chỉ tạo từ human-labeled aggregates; thiếu labels không sinh cột giả. Output directory phải mới. [Báo cáo thực tế](reports/phase07/REPORT.md), [phương pháp](../docs/research/EVALUATION_METHODOLOGY.md), [nghiệm thu A–M](../docs/archive/PHASE07_TEST_REPORT.md).
 
 ---
 
@@ -78,15 +82,15 @@ verified.json phải do người dùng/annotator cung cấp; repo không giả t
 
 ## Latency
 
-[benchmark_search.py](scripts/benchmark_search.py) hỗ trợ text/image, request count, warmup, concurrency, per-request records và nearest-rank P50/P90/P95. Join full ASGI samples qua request ID; client duration tách server processing/full response. Token chỉ qua environment, không log query text hoặc headers. Xem [SEARCH_PERFORMANCE](../docs/SEARCH_PERFORMANCE.md) cho commands, boundaries, resource và interpretation; results lưu actual JSON tại evaluation/results.
+[benchmark_search.py](scripts/benchmark_search.py) hỗ trợ text/image, request count, warmup, concurrency, per-request records và nearest-rank P50/P90/P95. Join full ASGI samples qua request ID; client duration tách server processing/full response. Token chỉ qua environment, không log query text hoặc headers. Xem [SEARCH_PERFORMANCE](../docs/research/SEARCH_PERFORMANCE.md) cho commands, boundaries, resource và interpretation; results lưu actual JSON tại evaluation/results.
 
 ## Advanced retrieval — Prompt06
 
 [phase06.json](experiments/phase06.json) định nghĩa E1 whole-query, E2 multi-query/whole rescore, E3 RRF hoặc weighted score, E4 constraint rerank, E5 paired fusion. Benchmark hỗ trợ thêm --mode multi_intent|multimodal, --fusion rrf|weighted_score, --rerank và --retrieval-strategy whole_query|multi_query|fused. Advanced workload luân phiên English/Vietnamese AND/OR, giữ subgroup latencies. --mode text/image vẫn giữ workload Prompt05, không gộp advanced latency vào fast latency.
 
 ```bash
-bash scripts/benchmark_search.sh multi_intent --requests 100 --rerank
-bash scripts/benchmark_search.sh multimodal --requests 100 --fusion weighted_score --rerank
+bash scripts/evaluation/benchmark_search.sh multi_intent --requests 100 --rerank
+bash scripts/evaluation/benchmark_search.sh multimodal --requests 100 --fusion weighted_score --rerank
 uv run --project backend python scripts/run_local.py --env-file .env -- backend/.venv/bin/python evaluation/scripts/evaluate_advanced.py --labels evaluation/relevance_labels/advanced_verified.json --output evaluation/results/advanced_quality.json
 ```
 
@@ -98,4 +102,6 @@ Advanced metrics tại backend/app/evaluation/advanced_metrics.py: constraint ac
 
 ## RAG Prompt08
 
-Các run mới ghi riêng evaluation/results/phase08. `python -m app.cli.rag --requests 20` qua run_local/.env chạy R1 search-only/R2 metadata baseline/R3 selected context/R4 cap1, dùng API thật. `python -m app.cli.evaluation --results evaluation/results/phase08 report --output evaluation/reports/new_phase08_run` sinh CSV/Markdown/JSON/PNG/SVG từ raw RAG/fast measurements. `python -m app.cli.rag --review REVIEW.json --experiment RESULT.json` validate human review/hash và tổng hợp answer relevance/faithfulness0…2/unsupported claim rate theo VI/EN. Review phải human_verified/annotator/result_sha256 và exhaustive case IDs, không tự tạo nhãn. Citation-ID/exact quote audits không thay visual faithfulness hoặc answer relevance. [Protocol](../docs/RAG_EVALUATION.md), [nghiệm thu](../docs/PHASE08_TEST_REPORT.md).
+Các run mới ghi riêng evaluation/results/phase08. `python -m app.cli.rag --requests 20` qua run_local/.env chạy R1 search-only/R2 metadata baseline/R3 selected context/R4 cap1, dùng API thật. `python -m app.cli.evaluation --results evaluation/results/phase08 report --output evaluation/reports/new_phase08_run` sinh CSV/Markdown/JSON/PNG/SVG từ raw RAG/fast measurements. `python -m app.cli.rag --review REVIEW.json --experiment RESULT.json` validate human review/hash và tổng hợp answer relevance/faithfulness0…2/unsupported claim rate theo VI/EN. Review phải human_verified/annotator/result_sha256 và exhaustive case IDs, không tự tạo nhãn. Citation-ID/exact quote audits không thay visual faithfulness hoặc answer relevance. [Protocol](../docs/research/RAG_EVALUATION.md), [nghiệm thu](../docs/archive/PHASE08_TEST_REPORT.md).
+
+Prompt08 ngày06/11: [corpus510 ảnh và offline human review](../docs/research/RAG_DATASET.md), [report hiện hành](reports/phase08_20261106/REPORT.md). `app.cli.rag --workload evaluation/rag/test_cases/coco_v1.jsonl --requests 32` chạy R1–R4; `--review-pack RESULT.json --output .cache/evaluation/rag_review_v2.html` tạo trang offline. Người dùng giữ human review pending, không tự điền scores.

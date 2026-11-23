@@ -1,0 +1,75 @@
+{
+  "completed_at_utc": "2026-11-08T03:40:52.950627+00:00",
+  "status": "READY_WITH_LIMITATIONS",
+  "deployment": "http://127.0.0.1:8088",
+  "release": {
+    "release": "phase12-final",
+    "source_sha256": "a3229228b80269a7a653124f6ec5332133f536fb699d381bd268a31e8e6cc970",
+    "images": {
+      "backend": "sha256:6173f7fb25a1b4f72ffa06005000398dc4e03891c3b654aaca2fd63d427f884b",
+      "frontend": "sha256:a8ecb724149a9d60a2c90e41eb5f526198391babe05b0aae107c3ef242ea6549"
+    }
+  },
+  "backend_selected_tests": {
+    "passed": 258,
+    "failed": 0,
+    "split": {
+      "unit": 214,
+      "security": 28,
+      "reliability": 4,
+      "services": 11,
+      "real_clip_pipeline": 1
+    }
+  },
+  "frontend_unit": {
+    "passed": 44,
+    "failed": 0
+  },
+  "browser_empty": {
+    "startTime": "2026-11-08T02:15:57.717Z",
+    "duration": 24245.807,
+    "expected": 4,
+    "skipped": 4,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_indexed": {
+    "startTime": "2026-11-08T03:26:15.351Z",
+    "duration": 39919.919,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "serving_dataset_preserved": {
+    "images": 513,
+    "generation": 3,
+    "knowledge_counts": [
+      4,
+      3,
+      3
+    ]
+  },
+  "deployment_dataset": {
+    "classification": "SYNTHETIC",
+    "images": 7,
+    "active_vectors": 7,
+    "all_ready_embeddings": 13,
+    "collections": 2,
+    "stored_objects": 9
+  },
+  "quality_checks": "lint/type/build passed; compileall is not backend static typing",
+  "backup_restore": "verified in distinct namespace; destination stopped with volumes retained",
+  "qa_teardown": "completed; only QA-owned volumes removed",
+  "secret_scan": "passed; exact known values including all private root envs and Phase12 source archives",
+  "unverified": [
+    "public host/domain/trusted TLS/exposure",
+    "least privilege PG/MinIO runtime roles for public use",
+    "no-new-privileges on a compatible production host",
+    "human relevance/faithfulness labels and representative corpus quality",
+    "GPU/production SigLIP",
+    "remote GitHub CI and registry publishing",
+    "off-host encrypted backup and production recovery SLA",
+    "production capacity and physical device matrix"
+  ]
+}

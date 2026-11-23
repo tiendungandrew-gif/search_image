@@ -1,0 +1,280 @@
+{
+  "verification": "VERIFIED_WITH_REAL_DATA",
+  "project": "desktop",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "chromium",
+  "runtime": "Vite development / local CPU / sequential / no network throttling",
+  "warmup": 2,
+  "samples": [
+    {
+      "api_ms": 119.6,
+      "first_card_ms": 187,
+      "post_api_frame_ms": 67.4,
+      "react_ms": 12.3,
+      "image_fetch_ms": 55.3,
+      "image_fetch_decode_ms": 75.8,
+      "server_ms": 109.46324900032778,
+      "browser_observed_image_ms": 374.5
+    },
+    {
+      "api_ms": 127.4,
+      "first_card_ms": 211.3,
+      "post_api_frame_ms": 83.9,
+      "react_ms": 15.4,
+      "image_fetch_ms": 63.8,
+      "image_fetch_decode_ms": 85.2,
+      "server_ms": 114.8195260002467,
+      "browser_observed_image_ms": 449.59999999962747
+    },
+    {
+      "api_ms": 138.3,
+      "first_card_ms": 215.1,
+      "post_api_frame_ms": 76.8,
+      "react_ms": 13.3,
+      "image_fetch_ms": 58.3,
+      "image_fetch_decode_ms": 78.5,
+      "server_ms": 126.28845700055535,
+      "browser_observed_image_ms": 424.30000000074506
+    },
+    {
+      "api_ms": 130.9,
+      "first_card_ms": 202.5,
+      "post_api_frame_ms": 71.6,
+      "react_ms": 11.4,
+      "image_fetch_ms": 60.4,
+      "image_fetch_decode_ms": 82.1,
+      "server_ms": 121.13159099953918,
+      "browser_observed_image_ms": 468.59999999962747
+    },
+    {
+      "api_ms": 118.8,
+      "first_card_ms": 195,
+      "post_api_frame_ms": 76.2,
+      "react_ms": 11.9,
+      "image_fetch_ms": 71.1,
+      "image_fetch_decode_ms": 99.7,
+      "server_ms": 108.61908399965614,
+      "browser_observed_image_ms": 493.5
+    },
+    {
+      "api_ms": 116.9,
+      "first_card_ms": 199,
+      "post_api_frame_ms": 82.1,
+      "react_ms": 11.9,
+      "image_fetch_ms": 67.9,
+      "image_fetch_decode_ms": 92.1,
+      "server_ms": 107.98252499989758,
+      "browser_observed_image_ms": 480.3999999994412
+    },
+    {
+      "api_ms": 153.3,
+      "first_card_ms": 230,
+      "post_api_frame_ms": 76.7,
+      "react_ms": 11.8,
+      "image_fetch_ms": 71.4,
+      "image_fetch_decode_ms": 92.5,
+      "server_ms": 140.89703999979974,
+      "browser_observed_image_ms": 446.40000000037253
+    },
+    {
+      "api_ms": 156.8,
+      "first_card_ms": 235.2,
+      "post_api_frame_ms": 78.4,
+      "react_ms": 12.2,
+      "image_fetch_ms": 58.4,
+      "image_fetch_decode_ms": 77.9,
+      "server_ms": 145.1810309999928,
+      "browser_observed_image_ms": 429.20000000018626
+    },
+    {
+      "api_ms": 125.5,
+      "first_card_ms": 198.4,
+      "post_api_frame_ms": 72.9,
+      "react_ms": 11.9,
+      "image_fetch_ms": 57.1,
+      "image_fetch_decode_ms": 71.5,
+      "server_ms": 116.02623399994627,
+      "browser_observed_image_ms": 417.8999999994412
+    },
+    {
+      "api_ms": 130.5,
+      "first_card_ms": 200.7,
+      "post_api_frame_ms": 70.2,
+      "react_ms": 10.7,
+      "image_fetch_ms": 61.5,
+      "image_fetch_decode_ms": 69.7,
+      "server_ms": 119.47370899997622,
+      "browser_observed_image_ms": 431.70000000018626
+    },
+    {
+      "api_ms": 132.7,
+      "first_card_ms": 205.7,
+      "post_api_frame_ms": 73,
+      "react_ms": 13,
+      "image_fetch_ms": 70.2,
+      "image_fetch_decode_ms": 91.7,
+      "server_ms": 122.20291100038594,
+      "browser_observed_image_ms": 407.29999999981374
+    },
+    {
+      "api_ms": 125.8,
+      "first_card_ms": 186.5,
+      "post_api_frame_ms": 60.7,
+      "react_ms": 10.6,
+      "image_fetch_ms": 54.9,
+      "image_fetch_decode_ms": 72.7,
+      "server_ms": 115.178771000501,
+      "browser_observed_image_ms": 373.29999999981374
+    },
+    {
+      "api_ms": 126.6,
+      "first_card_ms": 193.2,
+      "post_api_frame_ms": 66.6,
+      "react_ms": 10.6,
+      "image_fetch_ms": 64.2,
+      "image_fetch_decode_ms": 82.5,
+      "server_ms": 116.24517499967624,
+      "browser_observed_image_ms": 385.59999999962747
+    },
+    {
+      "api_ms": 127.3,
+      "first_card_ms": 188.8,
+      "post_api_frame_ms": 61.5,
+      "react_ms": 11.1,
+      "image_fetch_ms": 61.2,
+      "image_fetch_decode_ms": 92.5,
+      "server_ms": 117.80691999956616,
+      "browser_observed_image_ms": 461.40000000037253
+    },
+    {
+      "api_ms": 115.4,
+      "first_card_ms": 171.1,
+      "post_api_frame_ms": 55.7,
+      "react_ms": 8.8,
+      "image_fetch_ms": 75.1,
+      "image_fetch_decode_ms": 94.5,
+      "server_ms": 107.28952299996308,
+      "browser_observed_image_ms": 441.79999999981374
+    },
+    {
+      "api_ms": 117.8,
+      "first_card_ms": 186.5,
+      "post_api_frame_ms": 68.7,
+      "react_ms": 10.6,
+      "image_fetch_ms": 58.8,
+      "image_fetch_decode_ms": 72.1,
+      "server_ms": 107.52671699992788,
+      "browser_observed_image_ms": 384.8999999994412
+    },
+    {
+      "api_ms": 121.7,
+      "first_card_ms": 187.8,
+      "post_api_frame_ms": 66.1,
+      "react_ms": 11.3,
+      "image_fetch_ms": 70.1,
+      "image_fetch_decode_ms": 88.4,
+      "server_ms": 111.28239400022721,
+      "browser_observed_image_ms": 463.90000000037253
+    },
+    {
+      "api_ms": 140.2,
+      "first_card_ms": 197,
+      "post_api_frame_ms": 56.8,
+      "react_ms": 10,
+      "image_fetch_ms": 52.3,
+      "image_fetch_decode_ms": 67.8,
+      "server_ms": 129.80062899987388,
+      "browser_observed_image_ms": 421.20000000018626
+    },
+    {
+      "api_ms": 125.4,
+      "first_card_ms": 201.5,
+      "post_api_frame_ms": 76.1,
+      "react_ms": 9.8,
+      "image_fetch_ms": 72.8,
+      "image_fetch_decode_ms": 90.9,
+      "server_ms": 115.04983299982996,
+      "browser_observed_image_ms": 431
+    },
+    {
+      "api_ms": 140.5,
+      "first_card_ms": 213.1,
+      "post_api_frame_ms": 72.6,
+      "react_ms": 10.4,
+      "image_fetch_ms": 63.9,
+      "image_fetch_decode_ms": 84.8,
+      "server_ms": 128.31451000056404,
+      "browser_observed_image_ms": 493.20000000018626
+    }
+  ],
+  "metrics": {
+    "api_ms": {
+      "count": 20,
+      "p50": 126.94999999999999,
+      "p90": 141.78000000000003,
+      "p95": 153.47500000000002,
+      "min": 115.4,
+      "max": 156.8
+    },
+    "first_card_ms": {
+      "count": 20,
+      "p50": 198.7,
+      "p90": 216.59,
+      "p95": 230.26,
+      "min": 171.1,
+      "max": 235.2
+    },
+    "post_api_frame_ms": {
+      "count": 20,
+      "p50": 72.1,
+      "p90": 78.77000000000001,
+      "p95": 82.19,
+      "min": 55.7,
+      "max": 83.9
+    },
+    "react_ms": {
+      "count": 20,
+      "p50": 11.350000000000001,
+      "p90": 13.030000000000001,
+      "p95": 13.405000000000003,
+      "min": 8.8,
+      "max": 15.4
+    },
+    "image_fetch_ms": {
+      "count": 20,
+      "p50": 62.65,
+      "p90": 71.54,
+      "p95": 72.91499999999999,
+      "min": 52.3,
+      "max": 75.1
+    },
+    "image_fetch_decode_ms": {
+      "count": 20,
+      "p50": 83.65,
+      "p90": 92.7,
+      "p95": 94.76,
+      "min": 67.8,
+      "max": 99.7
+    },
+    "server_ms": {
+      "count": 20,
+      "p50": 116.13570449981125,
+      "p90": 130.9102700998665,
+      "p95": 141.1112395498094,
+      "min": 107.28952299996308,
+      "max": 145.1810309999928
+    },
+    "browser_observed_image_ms": {
+      "count": 20,
+      "p50": 431.35000000009313,
+      "p90": 481.67999999951576,
+      "p95": 493.21500000017693,
+      "min": 373.29999999981374,
+      "max": 493.5
+    }
+  },
+  "top_50_initial_media_requests": 8
+}

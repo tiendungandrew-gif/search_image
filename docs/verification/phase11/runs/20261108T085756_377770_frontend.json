@@ -1,0 +1,52 @@
+{
+  "profile": "frontend",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "typecheck"
+      ],
+      "started_utc": "2026-11-08T08:57:56.377816+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "lint"
+      ],
+      "started_utc": "2026-11-08T08:57:59.098618+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "test"
+      ],
+      "started_utc": "2026-11-08T08:58:01.825899+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "started_utc": "2026-11-08T08:58:04.053651+00:00",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed"
+}

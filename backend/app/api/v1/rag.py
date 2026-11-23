@@ -4,7 +4,7 @@ import json
 from fastapi import APIRouter, Depends, Request
 from starlette.responses import StreamingResponse
 
-from app.core.auth import require_read_access
+from app.core.auth import charge_usage, require_diagnostics_access, require_read_access
 from app.core.exceptions import AppError
 from app.schemas.rag import RagRequest, RagResponse
 from app.services.rag.rag_service import RagService
@@ -41,12 +41,13 @@ def record(request, result):
 
 @router.post("/explain", response_model=RagResponse)
 async def explain(body: RagRequest, request: Request):
+    await charge_usage(request, "rag")
     result = await service(request).execute(body, request.state.request_id)
     record(request, result)
     return result
 
 
-@router.get("/status")
+@router.get("/status", dependencies=[Depends(require_diagnostics_access)])
 async def status(request: Request):
     generator = request.app.state.rag_generator
     return {
@@ -64,6 +65,7 @@ async def status(request: Request):
                 "max_context_tokens",
                 "max_output_tokens",
                 "timeout_seconds",
+                "request_timeout_seconds",
                 "provider_retries",
                 "reasoning_effort",
                 "gemini_api_style",
@@ -73,7 +75,7 @@ async def status(request: Request):
     }
 
 
-@router.get("/samples")
+@router.get("/samples", dependencies=[Depends(require_diagnostics_access)])
 async def samples(request: Request):
     return {"samples": list(request.app.state.rag_metrics)}
 
@@ -84,6 +86,7 @@ async def samples(request: Request):
     responses={200: {"content": {"text/event-stream": {"schema": {"type": "string"}}}}},
 )
 async def stream(body: RagRequest, request: Request):
+    await charge_usage(request, "rag")
     rag = service(request)
     if not request.app.state.settings.rag_streaming_enabled:
         raise AppError(409, "FEATURE_DISABLED", "RAG streaming đang tắt")

@@ -1,0 +1,190 @@
+tests/unit/test_advanced_search.py::test_supported_languages_and_complete_original[Find images containing a red motorcycle, a person wearing a helmet, and rainy weather.-en-3]
+tests/unit/test_advanced_search.py::test_supported_languages_and_complete_original[T\xecm \u1ea3nh c\xf3 xe m\xe1y m\xe0u \u0111\u1ecf v\xe0 ng\u01b0\u1eddi \u0111\u1ed9i m\u0169 b\u1ea3o hi\u1ec3m-vi-2]
+tests/unit/test_advanced_search.py::test_supported_languages_and_complete_original[coffee or cat-en-2]
+tests/unit/test_advanced_search.py::test_supported_languages_and_complete_original[T\xecm \u1ea3nh c\xf3 m\xe8o ho\u1eb7c c\xe0 ph\xea-vi-2]
+tests/unit/test_advanced_search.py::test_supported_languages_and_complete_original[cat and coffee and rocket and stars-en-4]
+tests/unit/test_advanced_search.py::test_boolean_precedence_and_phrase_preservation
+tests/unit/test_advanced_search.py::test_ambiguous_query_retains_whole_signal[black and white cat]
+tests/unit/test_advanced_search.py::test_ambiguous_query_retains_whole_signal[cat and]
+tests/unit/test_advanced_search.py::test_ambiguous_query_retains_whole_signal["cat and coffee"]
+tests/unit/test_advanced_search.py::test_ambiguous_query_retains_whole_signal[cat (coffee]
+tests/unit/test_advanced_search.py::test_optional_negative_and_no_agent_fabrication
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs0]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs1]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs2]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs3]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs4]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs5]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs6]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs7]
+tests/unit/test_advanced_search.py::test_advanced_request_validation[kwargs8]
+tests/unit/test_advanced_search.py::test_constraint_count_depth_and_unicode
+tests/unit/test_advanced_search.py::test_metadata_expression_limit_is_input_error
+tests/unit/test_advanced_search.py::test_rrf_formula_duplicate_tie_and_weighted_missing_branch
+tests/unit/test_advanced_search.py::test_metadata_unknown_negative_and_optional_gate
+tests/unit/test_advanced_search.py::test_and_or_semantic_ranking_different_from_verified_evidence
+tests/unit/test_advanced_search.py::test_advanced_metrics_abstention_does_not_become_success
+tests/unit/test_agent.py::test_router_finite_patterns_preserve_query[Find a red motorcycle.-semantic]
+tests/unit/test_agent.py::test_router_finite_patterns_preserve_query[a cat and a dog-multi_intent]
+tests/unit/test_agent.py::test_router_finite_patterns_preserve_query[Find landmarks in the city where Fixture Lake Alpha is located.-agentic_multi_hop]
+tests/unit/test_agent.py::test_router_finite_patterns_preserve_query[T\xecm \u1ea3nh \u0111\u1ecba danh \u1edf th\xe0nh ph\u1ed1 n\u01a1i H\u1ed3 H\u01b0 C\u1ea5u t\u1ecda l\u1ea1c.-agentic_multi_hop]
+tests/unit/test_agent.py::test_router_finite_patterns_preserve_query[What is the city where someone was born?-unsupported_relation]
+tests/unit/test_agent.py::test_registry_has_nine_readonly_typed_tools
+tests/unit/test_agent.py::test_plans_fail_closed_before_execution[unknown-UNKNOWN_TOOL]
+tests/unit/test_agent.py::test_plans_fail_closed_before_execution[arguments-INVALID_TOOL_ARGUMENTS]
+tests/unit/test_agent.py::test_plans_fail_closed_before_execution[reference-UNDECLARED_STATE_REFERENCE]
+tests/unit/test_agent.py::test_plans_fail_closed_before_execution[hops-HOP_LIMIT_EXCEEDED]
+tests/unit/test_agent.py::test_plans_fail_closed_before_execution[budget-PLAN_BUDGET_OR_QUERY_MISMATCH]
+tests/unit/test_agent.py::test_plans_fail_closed_before_execution[weaken-UNSUPPORTED_RELATIONAL_PLAN]
+tests/unit/test_agent.py::test_dag_cycles_and_wrong_reference_types_are_rejected
+tests/unit/test_agent.py::test_dependent_steps_consume_actual_ids_and_deduplicate
+tests/unit/test_agent.py::test_missing_evidence_stops_dependent_steps_without_broad_fallback[entity_lookup-1]
+tests/unit/test_agent.py::test_missing_evidence_stops_dependent_steps_without_broad_fallback[relationship_lookup-2]
+tests/unit/test_agent.py::test_missing_evidence_stops_dependent_steps_without_broad_fallback[get_related_entities-3]
+tests/unit/test_agent.py::test_missing_evidence_stops_dependent_steps_without_broad_fallback[semantic_image_search-4]
+tests/unit/test_agent.py::test_empty_dataset_initializes_plan_but_does_not_invent_results
+tests/unit/test_agent.py::test_optional_rag_failure_keeps_real_adapter_results
+tests/unit/test_agent.py::test_timeout_and_cancel_release_admission
+tests/unit/test_agent.py::test_duplicate_tool_call_is_not_executed_twice
+tests/unit/test_agent.py::test_planning_provider_unavailable_does_not_bypass_relation
+tests/unit/test_agent.py::test_request_state_isolation_and_invalid_evidence_rejection
+tests/unit/test_agent.py::test_overall_deadline_during_rag_preserves_validated_images
+tests/unit/test_agent.py::test_fabricated_image_ids_are_excluded
+tests/unit/test_agent.py::test_fixture_import_rejects_serving_database[payload0]
+tests/unit/test_agent.py::test_fixture_import_rejects_serving_database[payload1]
+tests/unit/test_agent.py::test_invalid_llm_plans_stop_at_replanning_limit
+tests/unit/test_agent.py::test_planning_timeout_is_traced_even_when_replan_recovers
+tests/unit/test_agent.py::test_permanent_planning_error_is_not_retried
+tests/unit/test_agent.py::test_permanent_provider_error_does_not_replan[LLM_AUTH_FAILED]
+tests/unit/test_agent.py::test_permanent_provider_error_does_not_replan[LLM_RATE_LIMITED]
+tests/unit/test_agent.py::test_concurrent_admission_is_bounded_and_request_states_are_separate
+tests/unit/test_agent.py::test_explicit_modes_precede_automatic_relational_detection
+tests/unit/test_agent.py::test_generation_is_always_augmented_and_requested_mode_is_retained
+tests/unit/test_agent_evaluation.py::test_fixture_metric_denominators_and_scope_do_not_become_real_accuracy
+tests/unit/test_agent_evaluation.py::test_fixture_coverage_is_required_and_zero_denominator_stays_unknown
+tests/unit/test_agent_evaluation.py::test_source_attestation_does_not_become_human_relevance_labels
+tests/unit/test_agent_evaluation.py::test_recovered_planner_and_transport_timeouts_remain_in_metrics
+tests/unit/test_api.py::test_liveness_never_probes_dependencies
+tests/unit/test_api.py::test_health_summary_has_no_fake_search_capability
+tests/unit/test_api.py::test_readiness_authenticated_and_real_status_aggregation
+tests/unit/test_api.py::test_system_info_safe_and_protected
+tests/unit/test_api.py::test_request_id_validated_and_errors_share_envelope
+tests/unit/test_api.py::test_safe_exceptions_and_database_outage
+tests/unit/test_api.py::test_request_timeout_before_headers
+tests/unit/test_api.py::test_structured_logs_redact_query_headers_and_sdk_exception
+tests/unit/test_api.py::test_cors_is_restricted
+tests/unit/test_coco.py::test_subset_is_reproducible_and_keeps_only_declared_license_ids
+tests/unit/test_coco.py::test_range_download_provenance_resume_and_corruption_rejection
+tests/unit/test_coco.py::test_range_reader_rejects_server_ignoring_range
+tests/unit/test_coco.py::test_optional_caption_source_keeps_legacy_idempotency_fingerprint
+tests/unit/test_config.py::test_invalid_settings_rejected[change0]
+tests/unit/test_config.py::test_invalid_settings_rejected[change1]
+tests/unit/test_config.py::test_invalid_settings_rejected[change2]
+tests/unit/test_config.py::test_invalid_settings_rejected[change3]
+tests/unit/test_config.py::test_invalid_settings_rejected[change4]
+tests/unit/test_config.py::test_invalid_settings_rejected[change5]
+tests/unit/test_config.py::test_invalid_settings_rejected[change6]
+tests/unit/test_config.py::test_invalid_settings_rejected[change7]
+tests/unit/test_config.py::test_invalid_settings_rejected[change8]
+tests/unit/test_config.py::test_invalid_settings_rejected[change9]
+tests/unit/test_config.py::test_invalid_settings_rejected[change10]
+tests/unit/test_config.py::test_invalid_settings_rejected[change11]
+tests/unit/test_config.py::test_invalid_settings_rejected[change12]
+tests/unit/test_config.py::test_empty_optional_qdrant_key_and_secret_repr
+tests/unit/test_evaluation.py::test_metrics_numeric_threshold_discount_and_duplicate_positions
+tests/unit/test_evaluation.py::test_invalid_grades[grades0]
+tests/unit/test_evaluation.py::test_invalid_grades[grades1]
+tests/unit/test_evaluation.py::test_invalid_grades[grades2]
+tests/unit/test_evaluation.py::test_invalid_grades[grades3]
+tests/unit/test_evaluation.py::test_unjudged_results_not_silently_negative
+tests/unit/test_evaluation.py::test_latency_and_seeded_paired_uncertainty
+tests/unit/test_evaluation.py::test_experiment_config_bounds[config0]
+tests/unit/test_evaluation.py::test_experiment_config_bounds[config1]
+tests/unit/test_evaluation.py::test_experiment_config_bounds[config2]
+tests/unit/test_evaluation.py::test_experiment_config_bounds[config3]
+tests/unit/test_evaluation.py::test_experiment_config_bounds[config4]
+tests/unit/test_evaluation.py::test_experiment_config_bounds[config5]
+tests/unit/test_evaluation.py::test_grouped_metrics_keep_task_language_and_denominators
+tests/unit/test_evaluation.py::test_snapshot_bound_human_review_and_split_leakage
+tests/unit/test_evaluation.py::test_immutable_experiment_artifacts_and_finite_serialization
+tests/unit/test_evaluation.py::test_abba_pools_samples_and_checks_rank_parity
+tests/unit/test_evaluation.py::test_quality_ablation_keeps_query_scope_and_human_label_denominators
+tests/unit/test_evaluation.py::test_benchmark_warmup_failures_timeout_and_server_join
+tests/unit/test_evaluation.py::test_object_checks_preserve_rank_and_bound_speculation
+tests/unit/test_evaluation.py::test_report_csv_and_charts_use_actual_input_artifact
+tests/unit/test_evaluation.py::test_open_loop_capacity_drop_accounting_and_bound
+tests/unit/test_ingestion.py::test_real_decode_and_hash[JPEG]
+tests/unit/test_ingestion.py::test_real_decode_and_hash[PNG]
+tests/unit/test_ingestion.py::test_real_decode_and_hash[WEBP]
+tests/unit/test_ingestion.py::test_corrupt_content_rejected[garbage]
+tests/unit/test_ingestion.py::test_corrupt_content_rejected[\x89PNG\r\n\x1a\n]
+tests/unit/test_ingestion.py::test_corrupt_content_rejected[<svg>not an image</svg>]
+tests/unit/test_ingestion.py::test_unsupported_format_and_limits
+tests/unit/test_ingestion.py::test_exif_orientation_rgb_and_alpha
+tests/unit/test_ingestion.py::test_invalid_vectors[values0]
+tests/unit/test_ingestion.py::test_invalid_vectors[values1]
+tests/unit/test_ingestion.py::test_invalid_vectors[values2]
+tests/unit/test_ingestion.py::test_invalid_vectors[values3]
+tests/unit/test_ingestion.py::test_invalid_vectors[values4]
+tests/unit/test_ingestion.py::test_real_normalization_and_retry_bounds
+tests/unit/test_ingestion.py::test_metadata_and_model_config_validation
+tests/unit/test_landmark_download.py::test_public_source_allowlist_rejects_untrusted_targets
+tests/unit/test_landmark_download.py::test_download_preserves_author_credit_and_exact_bytes
+tests/unit/test_landmark_download.py::test_missing_source_credit_blocks_download
+tests/unit/test_rag.py::test_context_limits_and_missing_metadata_not_visual_evidence
+tests/unit/test_rag.py::test_real_citation_identity_mapping_and_extractive_no_paraphrase
+tests/unit/test_rag.py::test_compact_context_keeps_full_citation_provenance_on_server
+tests/unit/test_rag.py::test_prompt_injection_and_oversize_fields_are_excluded
+tests/unit/test_rag.py::test_request_language_and_client_metadata_rejected
+tests/unit/test_rag.py::test_provider_invalid_config_keeps_search_module_independent
+tests/unit/test_rag.py::test_review_task_and_unknown_denominators
+tests/unit/test_rag.py::test_provider_actual_http_contract_stream_and_usage_with_mock_transport
+tests/unit/test_rag.py::test_native_gemini_sse_contract_filters_thoughts_and_tracks_usage
+tests/unit/test_rag.py::test_provider_errors_redacted[401-LLM_AUTH_FAILED]
+tests/unit/test_rag.py::test_provider_errors_redacted[404-LLM_MODEL_UNAVAILABLE]
+tests/unit/test_rag.py::test_provider_errors_redacted[429-LLM_RATE_LIMITED]
+tests/unit/test_rag.py::test_provider_errors_redacted[500-LLM_PROVIDER_ERROR]
+tests/unit/test_rag.py::test_rate_limit_does_not_trigger_immediate_provider_retry[ChatProvider]
+tests/unit/test_rag.py::test_rate_limit_does_not_trigger_immediate_provider_retry[NativeGeminiProvider]
+tests/unit/test_rag.py::test_generation_outcomes_and_actual_delta_events[success]
+tests/unit/test_rag.py::test_generation_outcomes_and_actual_delta_events[invalid_citation]
+tests/unit/test_rag.py::test_generation_outcomes_and_actual_delta_events[timeout]
+tests/unit/test_rag.py::test_generation_outcomes_and_actual_delta_events[disabled]
+tests/unit/test_rag.py::test_generation_outcomes_and_actual_delta_events[insufficient]
+tests/unit/test_rag.py::test_cancel_closes_upstream_generator_and_releases_admission
+tests/unit/test_rag.py::test_native_stop_event_finishes_without_waiting_for_connection_eof
+tests/unit/test_rag.py::test_review_pack_escapes_untrusted_evidence_and_never_embeds_credentials
+tests/unit/test_rag.py::test_request_deadline_reserves_time_after_generation
+tests/unit/test_schema.py::test_foundation_schema_has_required_relations_and_no_arbitrary_dimension
+tests/unit/test_schema.py::test_migration_offline_upgrade_and_rollback_compile
+tests/unit/test_scripts.py::test_generated_secrets_are_private_and_existing_env_is_never_overwritten
+tests/unit/test_scripts.py::test_local_env_helper_overrides_only_child_without_shell_evaluation
+tests/unit/test_search.py::test_invalid_text[]
+tests/unit/test_search.py::test_invalid_text[   ]
+tests/unit/test_search.py::test_invalid_text[\x00hello]
+tests/unit/test_search.py::test_unicode_whitespace_and_aliases
+tests/unit/test_search.py::test_topk_bounds_and_type[0]
+tests/unit/test_search.py::test_topk_bounds_and_type[101]
+tests/unit/test_search.py::test_topk_bounds_and_type[True]
+tests/unit/test_search.py::test_topk_bounds_and_type[10]
+tests/unit/test_search.py::test_filters_and_invalid_options
+tests/unit/test_search.py::test_rank_dedup_ties_and_authoritative_filter
+tests/unit/test_search.py::test_metric_formulas_explicit_numeric_fixtures
+tests/unit/test_search.py::test_cancelled_inference_keeps_capacity_until_thread_finishes
+tests/unit/test_search.py::test_api_validation_is_safe[body0]
+tests/unit/test_search.py::test_api_validation_is_safe[body1]
+tests/unit/test_search.py::test_api_validation_is_safe[body2]
+tests/unit/test_search.py::test_api_validation_is_safe[body3]
+tests/unit/test_search.py::test_query_decoder_preserves_pixels_and_restarts
+tests/unit/test_services.py::test_probes_are_bounded_and_isolated
+tests/unit/test_services.py::test_shutdown_closes_all_adapters_even_when_one_fails
+tests/unit/test_services.py::test_minio_creates_private_bucket_without_policy_mutation
+tests/unit/test_services.py::test_existing_public_bucket_is_rejected_without_mutating_policy
+tests/unit/test_timing.py::test_full_timer_ends_after_final_send_and_excludes_post_response_work
+tests/unit/test_upload_api.py::test_write_token_required_and_read_token_cannot_mutate
+tests/unit/test_upload_api.py::test_upload_metadata_and_request_body_limits
+tests/unit/test_upload_api.py::test_unknown_or_malformed_metadata_rejected[not json]
+tests/unit/test_upload_api.py::test_unknown_or_malformed_metadata_rejected[[]]
+tests/unit/test_upload_api.py::test_unknown_or_malformed_metadata_rejected[{"source_dataset":"fixture","license":"CC0","rights_ref":"ok","status":"ready"}]
+
+188 tests collected in 0.25s

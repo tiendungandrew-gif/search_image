@@ -1,0 +1,46 @@
+[
+  {
+    "name": "desktop",
+    "signupImmediate": true,
+    "sharedRead": 200,
+    "privateDenied": 404,
+    "adminDenied": 403,
+    "liveUnshare": true,
+    "automaticAccessDisplay": true,
+    "sessionRevoked": true,
+    "axeViolations": 0
+  },
+  {
+    "name": "mobile",
+    "signupImmediate": true,
+    "sharedRead": 200,
+    "privateDenied": 404,
+    "adminDenied": 403,
+    "liveUnshare": true,
+    "automaticAccessDisplay": true,
+    "sessionRevoked": true,
+    "axeViolations": 0
+  },
+  {
+    "name": "narrow",
+    "signupImmediate": true,
+    "sharedRead": 200,
+    "privateDenied": 404,
+    "adminDenied": 403,
+    "liveUnshare": true,
+    "automaticAccessDisplay": true,
+    "sessionRevoked": true,
+    "axeViolations": 0
+  },
+  {
+    "name": "firefox",
+    "signupImmediate": true,
+    "sharedRead": 200,
+    "privateDenied": 404,
+    "adminDenied": 403,
+    "liveUnshare": true,
+    "automaticAccessDisplay": true,
+    "sessionRevoked": true,
+    "axeViolations": 0
+  }
+]

@@ -1,0 +1,4 @@
+desktop PASS
+mobile PASS
+narrow PASS
+firefox PASS

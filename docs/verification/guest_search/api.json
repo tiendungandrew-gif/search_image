@@ -1,0 +1,29 @@
+{
+  "scope": "Serving API, no anonymous session or user credentials",
+  "public_images": 10,
+  "queries": [
+    {
+      "query": "con meo",
+      "top1_image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "top1_sha_matches_sample_cat": true,
+      "warnings": [
+        {
+          "code": "QUERY_ACCENTS_RESTORED",
+          "message": "Đã tìm theo “con mèo” (thêm dấu từ “con meo”)."
+        }
+      ]
+    },
+    {
+      "query": "a cat",
+      "top1_image_id": "57ac376b-090d-499e-aed8-97368b32a5d2",
+      "top1_sha_matches_sample_cat": true,
+      "warnings": []
+    }
+  ],
+  "private_metadata_original_thumbnail": "404",
+  "private_source_filter": "empty",
+  "privileged_routes": "401",
+  "guest_top_k_limit": "422",
+  "cross_origin": "403",
+  "quota_and_revocation": "covered separately by isolated integration tests"
+}

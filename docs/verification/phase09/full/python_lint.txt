@@ -1,0 +1,35 @@
+E501 Line too long (102 > 100)
+   --> backend/app/evaluation/agent.py:261:101
+    |
+259 |         "## Agent: thời gian thực thi và abstention, chưa có real-world quality labels",
+260 |         "",
+261 |         "| Nhóm | N / HTTP errors / insufficient | Client P90 ms | Plan P90 ms | Mean hops / calls |",
+    |                                                                                                     ^^
+262 |         "| --- | --- | --- | --- | --- |",
+263 |     ]
+    |
+
+E501 Line too long (254 > 100)
+   --> backend/app/evaluation/agent.py:267:101
+    |
+265 | …
+266 | …
+267 | …sufficient_evidence']} | {row['client_latency']['p90_ms']:.2f} | {plan if plan is not None else '—'} | {row['mean_hops']:.2f} / {row['mean_tool_calls']:.2f} |"
+    |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+268 | …
+269 | …
+    |
+
+E501 Line too long (242 > 100)
+   --> backend/app/evaluation/agent.py:272:101
+    |
+270 | …
+271 | …
+272 | …A1/A4 dùng cùng image query, khác task với A2/A3. Xem agent_cases.csv và raw JSON để giữ mọi failure. Không có human quality bars khi thiếu nhãn.",
+    |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+273 | …
+274 | …
+    |
+
+Found 3 errors.
+

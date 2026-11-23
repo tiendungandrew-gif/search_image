@@ -1,0 +1,18 @@
+{
+  "profile": "services",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file .env.qa -f compose.qa.yaml -p phase11-qa-2c8ad1b9345d --profile tools run --rm --no-deps -T -e RUN_INTEGRATION=1 qa-tests timeout 240 pytest backend/tests/integration/test_real_services.py backend/tests/integration/test_qa_services.py backend/tests/integration/test_qa_worker_process.py backend/tests/integration/test_access_control.py backend/tests/integration/test_quick_login.py -q -p no:cacheprovider"
+      ],
+      "started_utc": "2026-11-08T10:15:10.489070+00:00",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed"
+}

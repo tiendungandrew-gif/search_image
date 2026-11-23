@@ -1,0 +1,35 @@
+{
+  "completed_at_utc": "2026-11-08T05:28:25.953411+00:00",
+  "status": "VERIFIED",
+  "scope": "Repository organization; no new feature phase",
+  "moved_documents": 85,
+  "moved_scripts": 32,
+  "moved_private_envs": 4,
+  "private_envs_preserved": 6,
+  "backend_tests": {
+    "unit_security_reliability": 249,
+    "service_integration": 11,
+    "real_clip_integration": 1,
+    "total_selected": 261
+  },
+  "frontend_unit": 44,
+  "browser_smoke": 2,
+  "cli_shell_checks": 28,
+  "lint": "pass",
+  "format": "pass;194 files",
+  "compileall": "pass;not static typing",
+  "compose_development": "validated",
+  "compose_deployment": "validated using legacy env alias",
+  "actionlint": "pass local",
+  "make": "dry_run_pass",
+  "runtime": "read_only_preservation_pass",
+  "secret_scan": "exact_known_values_pass",
+  "model_decoder_fingerprints": "preserved",
+  "qa_teardown": "completed",
+  "failed_attempts": [
+    "Interrupted host pytest,exit130,not counted",
+    "AI fixture import path after move,fixed and rerun pass"
+  ],
+  "production_like_image": "Existing immutable phase12-final retained; new source verified in rebuilt QA image",
+  "sources": "source.json"
+}

@@ -1,0 +1,15 @@
+ Network phase11-qa-2c8ad1b9345d_qa-web Creating 
+ Network phase11-qa-2c8ad1b9345d_qa-data Creating 
+ Network phase11-qa-2c8ad1b9345d_qa-data Creating 
+ Network phase11-qa-2c8ad1b9345d_qa-web Creating 
+ Network phase11-qa-2c8ad1b9345d_qa-data Created 
+ Network phase11-qa-2c8ad1b9345d_qa-data Created 
+ Network phase11-qa-2c8ad1b9345d_qa-web Created 
+ Network phase11-qa-2c8ad1b9345d_qa-web Created 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-e14feb58cf64 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-e14feb58cf64 Created 
+........................................................................ [ 29%]
+........................................................................ [ 58%]
+........................................................................ [ 88%]
+.............................                                            [100%]
+245 passed in 14.02s

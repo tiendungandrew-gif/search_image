@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "completed_on": "2026-11-07",
+  "measurement_date": "2026-11-06",
+  "required_documents": 9,
+  "report_sections": "A-O",
+  "local_links": "pass",
+  "backend_tests": 200,
+  "frontend_unit_tests": 21,
+  "full_browser_tests": 24,
+  "final_targeted_browser_tests": 6,
+  "source_sha256": "66ffd026326c79dc9c2c82018df37bb5aca9d671a0797d582761e05f0ddf187e",
+  "dataset": {
+    "images": 513,
+    "entities": 4,
+    "entity_relationships": 3,
+    "image_entities": 3,
+    "captions": 503
+  },
+  "old_indexes_preserved": {
+    "active": 513,
+    "previous510": 510,
+    "baseline10": 10
+  },
+  "agent_paced_attempts": 40,
+  "generation_target_3s": {
+    "observed_generated": 10,
+    "within_target": 10,
+    "exceeded_target": 0,
+    "missing_timing": 0
+  },
+  "human_semantic_quality": "PENDING_BY_USER_CHOICE",
+  "real_relational_workflow": "VERIFIED_WITH_REAL_DATA_SOURCE_ATTESTED",
+  "phase10": "NOT_STARTED"
+}

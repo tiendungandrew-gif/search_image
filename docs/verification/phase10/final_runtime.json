@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "postgresql": "healthy",
+    "qdrant": "healthy",
+    "minio": "healthy"
+  },
+  "available_images": 513,
+  "active_index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+  "generation": 3,
+  "entities": 4,
+  "relations": 3,
+  "image_links": 3,
+  "temporary_databases": 0,
+  "temporary_collections": [],
+  "temporary_buckets": []
+}

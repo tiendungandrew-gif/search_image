@@ -1,0 +1,8 @@
+{
+  "release": "access-control-v3",
+  "source_sha256": "d3da6efd1a3522ad7390592dbe1e4ccb8229e5681267cd1eec5926929b2c551a",
+  "images": {
+    "backend": "sha256:b584bab52803e300a3391b0ef87f7f2809c79c311ac49c0bf75d7148e5c4fb1c",
+    "frontend": "sha256:ca0e84c996b7b55e6633beda19fc7d8550b2ba1b627640e753f38a3cbfdfeca2"
+  }
+}

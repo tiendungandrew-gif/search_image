@@ -1,0 +1,46 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-862d17ca954b Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-862d17ca954b Created 
+...........FF.                                                           [100%]
+=================================== FAILURES ===================================
+_____________ test_account_sessions_csrf_last_admin_and_revocation _____________
+
+accounts = (<fastapi.applications.FastAPI object at 0x7ff8f506a0f0>, <httpx.AsyncClient object at 0x7ff8ef108500>, <httpx.AsyncClient object at 0x7ff8f429bc20>, 'dddaaba8-5e32-4132-92c9-078411bdf6f7', 'a8797919-36e4-44f8-89ab-2c3df28b9f37')
+
+    async def test_account_sessions_csrf_last_admin_and_revocation(accounts):
+        app, admin, user, aid, uid = accounts
+        for path in ["/admin/users", "/admin/datasets", "/admin/images", "/admin/indexes", "/admin/audit", "/system/evaluation", "/rag/status", "/agent/status"]:
+            response = await user.get("/api/v1" + path)
+>           assert response.status_code == 403, (path, response.text)
+E           AssertionError: ('/agent/status', '{"error":{"code":"NOT_FOUND","message":"Yêu cầu không được xử lý","request_id":"2ee1395f-35a6-4ec9-bf39-1362ab704cee","retryable":false,"details":[]}}')
+E           assert 404 == 403
+E            +  where 404 = <Response [404 Not Found]>.status_code
+
+backend/tests/integration/test_access_control.py:58: AssertionError
+_________ test_dataset_scope_search_media_rag_grants_hide_and_metadata _________
+
+accounts = (<fastapi.applications.FastAPI object at 0x7ff8ef108980>, <httpx.AsyncClient object at 0x7ff8ef077bf0>, <httpx.AsyncClient object at 0x7ff8eeed2840>, '160a2d2e-0fa1-458b-8a5d-b7f81e081e55', 'c18a99fb-de16-4f39-9227-de23f2355f8e')
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...ject at 0x7ff8ef0a7080>, token='51059ad782244598b5b6c0525093d8eb', collections={'images_qa_51059ad78224_a933d6fe51f1'})
+
+    async def test_dataset_scope_search_media_rag_grants_hide_and_metadata(accounts, qa_resources):
+        app, admin, user, _, uid = accounts
+        runtime, ids = await seed_search(qa_resources, app)
+        try:
+>           datasets = (await admin.get("/api/v1/admin/datasets")).json()["datasets"]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'datasets'
+
+backend/tests/integration/test_access_control.py:110: KeyError
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py: 2 warnings
+tests/integration/test_qa_services.py: 7 warnings
+tests/integration/test_qa_worker_process.py: 1 warning
+tests/integration/test_access_control.py: 3 warnings
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_access_control.py::test_account_sessions_csrf_last_admin_and_revocation
+FAILED backend/tests/integration/test_access_control.py::test_dataset_scope_search_media_rag_grants_hide_and_metadata
+2 failed, 12 passed, 13 warnings in 17.22s
+

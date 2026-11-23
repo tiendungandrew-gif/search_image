@@ -1,0 +1,54 @@
+{
+  "generated_at_utc": "2026-11-06T07:13:43.718293+00:00",
+  "experiments": [
+    {
+      "experiment_id": "20261106T051238_agent_62f3a5e779",
+      "name": "agent",
+      "status": "measured",
+      "profile": null,
+      "concurrency": 1,
+      "attempted": 16,
+      "successful": 16,
+      "failed": 0,
+      "p50_ms": null,
+      "p90_ms": null,
+      "p95_ms": null,
+      "requests_per_second": null,
+      "error_rate": null,
+      "artifact": "evaluation/results/phase09/20261106T051238_agent_62f3a5e779/result.json"
+    },
+    {
+      "experiment_id": "20261106T071208_agent_ff7910da71",
+      "name": "agent",
+      "status": "measured",
+      "profile": null,
+      "concurrency": 1,
+      "attempted": 16,
+      "successful": 16,
+      "failed": 0,
+      "p50_ms": null,
+      "p90_ms": null,
+      "p95_ms": null,
+      "requests_per_second": null,
+      "error_rate": null,
+      "artifact": "evaluation/results/phase09/20261106T071208_agent_ff7910da71/result.json"
+    },
+    {
+      "experiment_id": "20261106T071236_benchmark_7f9efe9e00",
+      "name": "phase08_coco_fast",
+      "status": "measured",
+      "profile": "fast",
+      "concurrency": 1,
+      "attempted": 500,
+      "successful": 500,
+      "failed": 0,
+      "p50_ms": 118.42669299994668,
+      "p90_ms": 135.03121100006865,
+      "p95_ms": 140.9790879999946,
+      "requests_per_second": 7.928088425018527,
+      "error_rate": 0.0,
+      "artifact": "evaluation/results/phase09/20261106T071236_benchmark_7f9efe9e00/result.json"
+    }
+  ],
+  "semantic_quality": "not_measured_unless_human_verified_result_present"
+}

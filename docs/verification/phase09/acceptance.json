@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "required_documents": 9,
+  "report_sections": "A-O",
+  "local_links": "pass",
+  "backend_tests": 186,
+  "frontend_unit_tests": 17,
+  "browser_tests": 22,
+  "fast_benchmark_requests": 500,
+  "fast_benchmark_failures": 0,
+  "dataset": {
+    "images": 510,
+    "vectors": 510,
+    "captions": 500,
+    "knowledge_entities": 0,
+    "knowledge_relationships": 0,
+    "knowledge_links": 0
+  },
+  "generation_target_3s": "NOT_MET_IN_FINAL_RUN",
+  "real_world_multihop_quality": "NOT_VERIFIED",
+  "phase08_human_review": "PENDING_BY_USER_CHOICE",
+  "phase10": "NOT_STARTED",
+  "actual_service_class_generation": "augmented",
+  "source_sha256": "5b736cd531eacc1cdec2e7968ce54747a6fe4cb138c7c778e96d52b40c137266"
+}

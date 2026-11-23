@@ -1,0 +1,21 @@
+
+Running 8 tests using 1 worker
+
+  ✓  1 [deploy-desktop] › deploy-e2e/deployment.spec.ts:5:1 › DEPLOYMENT · static frontend, API, deep link and empty benchmark (3.8s)
+  ✓  2 [deploy-desktop] › deploy-e2e/deployment.spec.ts:45:1 › DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout (2.4s)
+  ✓  3 [deploy-mobile] › deploy-e2e/deployment.spec.ts:5:1 › DEPLOYMENT · static frontend, API, deep link and empty benchmark (3.9s)
+  ✓  4 [deploy-mobile] › deploy-e2e/deployment.spec.ts:45:1 › DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout (2.4s)
+  ✓  5 [deploy-firefox] › deploy-e2e/deployment.spec.ts:5:1 › DEPLOYMENT · static frontend, API, deep link and empty benchmark (5.7s)
+  ✓  6 [deploy-firefox] › deploy-e2e/deployment.spec.ts:45:1 › DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout (3.2s)
+  ✓  7 [deploy-webkit] › deploy-e2e/deployment.spec.ts:5:1 › DEPLOYMENT · static frontend, API, deep link and empty benchmark (6.3s)
+  ✓  8 [deploy-webkit] › deploy-e2e/deployment.spec.ts:45:1 › DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout (4.2s)
+
+  8 passed (38.8s)
+(node:113779) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:114275) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:114717) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:115513) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

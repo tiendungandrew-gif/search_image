@@ -1,0 +1,6 @@
+{
+  "sha256": "d3da6efd1a3522ad7390592dbe1e4ccb8229e5681267cd1eec5926929b2c551a",
+  "files": 378,
+  "archive": "/home/tts/prj/.cache/deployment/access_control_source/_sources/d3da6efd1a3522ad7390592dbe1e4ccb8229e5681267cd1eec5926929b2c551a.tar.gz",
+  "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+}

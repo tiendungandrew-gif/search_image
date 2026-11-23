@@ -9,7 +9,7 @@ from app.core.exceptions import AppError
 from app.schemas.constraints import leaves
 from app.schemas.search import FusionOptions
 from app.services.embeddings.clip_encoder import normalized_vectors
-from app.services.indexing.worker import vector_hash
+from app.services.embeddings.vector_utils import vector_hash
 from app.services.query.query_decomposer import retrieval_clauses
 from app.services.search.evidence import UNKNOWN, VIOLATED, assessments, evaluate_required
 from app.services.search.fusion import fuse

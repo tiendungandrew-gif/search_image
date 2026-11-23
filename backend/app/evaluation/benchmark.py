@@ -92,135 +92,143 @@ async def run_benchmark(config, cases, snapshot, base_url, token):
                     pass
 
     monitor_task = asyncio.create_task(monitor()) if config.sample_resources else None
-    async with httpx.AsyncClient(
-        base_url=base_url,
-        timeout=config.client_timeout,
-        limits=httpx.Limits(
-            max_connections=config.concurrency, max_keepalive_connections=config.concurrency
-        ),
-    ) as client:
-        headers = {"Authorization": "Bearer " + token}
-        health = await client.get("/api/v1/health?check=search", headers=headers)
-        health.raise_for_status()
+    try:
+        async with httpx.AsyncClient(
+            base_url=base_url,
+            timeout=config.client_timeout,
+            limits=httpx.Limits(
+                max_connections=config.concurrency, max_keepalive_connections=config.concurrency
+            ),
+        ) as client:
+            headers = {"Authorization": "Bearer " + token}
+            health = await client.get("/api/v1/health?check=search", headers=headers)
+            health.raise_for_status()
 
-        async def send(case, scheduled=None):
-            identity = str(uuid4())
-            started = perf_counter()
-            row = {
-                "request_id": identity,
-                "query_id": case.query_id,
-                "query_type": case.query_type,
-                "language": case.language,
-                "group_id": case.group_id,
-                "client_started_monotonic": started,
-                "scheduling_lag_ms": max(0, (started - scheduled) * 1000) if scheduled else 0,
-            }
-            try:
-                options = request_options(case, config)
-                if (
-                    case.query_type == "image"
-                    or case.query_type == "multimodal"
-                    and not config.paired_text_only
-                ):
-                    data = (
-                        await asyncio.to_thread(Path(case.image_file).read_bytes)
-                        if case.image_file
-                        else files[options.pop("image_id")]
-                    )
-                    response = await client.post(
-                        "/api/v1/search/multimodal",
-                        headers=headers | {"X-Request-ID": identity},
-                        files={"image": ("reference", data, "application/octet-stream")},
-                        data={"options": json.dumps(options)},
-                    )
-                else:
-                    response = await client.post(
-                        "/api/v1/search", headers=headers | {"X-Request-ID": identity}, json=options
-                    )
-                row.update(
-                    {"http_status": response.status_code, "success": response.status_code == 200}
-                )
-                value = response.json()
-                if response.status_code == 200:
+            async def send(case, scheduled=None):
+                identity = str(uuid4())
+                started = perf_counter()
+                row = {
+                    "request_id": identity,
+                    "query_id": case.query_id,
+                    "query_type": case.query_type,
+                    "language": case.language,
+                    "group_id": case.group_id,
+                    "client_started_monotonic": started,
+                    "scheduling_lag_ms": max(0, (started - scheduled) * 1000) if scheduled else 0,
+                }
+                try:
+                    options = request_options(case, config)
+                    if (
+                        case.query_type == "image"
+                        or case.query_type == "multimodal"
+                        and not config.paired_text_only
+                    ):
+                        data = (
+                            await asyncio.to_thread(Path(case.image_file).read_bytes)
+                            if case.image_file
+                            else files[options.pop("image_id")]
+                        )
+                        response = await client.post(
+                            "/api/v1/search/multimodal",
+                            headers=headers | {"X-Request-ID": identity},
+                            files={"image": ("reference", data, "application/octet-stream")},
+                            data={"options": json.dumps(options)},
+                        )
+                    else:
+                        response = await client.post(
+                            "/api/v1/search",
+                            headers=headers | {"X-Request-ID": identity},
+                            json=options,
+                        )
                     row.update(
                         {
-                            "result_ids": [r["image_id"] for r in value["results"]],
-                            "scores": [r["score"] for r in value["results"]],
-                            "effective_settings": value["effective_settings"],
-                            "processing_ms": value["latency"]["processing_ms"],
-                            "model_id": value["model_id"],
-                            "index_id": value["index_id"],
-                            "executed_search_mode": value.get("search_mode"),
+                            "http_status": response.status_code,
+                            "success": response.status_code == 200,
                         }
                     )
-                    if any(
-                        value[key] != snapshot["active"][key]
-                        for key in ["model_id", "index_id", "manifest_sha256"]
-                    ):
-                        row.update(success=False, error_code="INDEX_DRIFT")
-                else:
-                    row["error_code"] = value.get("error", {}).get("code", "HTTP_ERROR")
-            except Exception as exc:
-                row.update(
-                    {"http_status": None, "success": False, "error_code": type(exc).__name__}
-                )
-            row["client_ms"] = (perf_counter() - started) * 1000
-            return row
+                    value = response.json()
+                    if response.status_code == 200:
+                        row.update(
+                            {
+                                "result_ids": [r["image_id"] for r in value["results"]],
+                                "scores": [r["score"] for r in value["results"]],
+                                "effective_settings": value["effective_settings"],
+                                "processing_ms": value["latency"]["processing_ms"],
+                                "model_id": value["model_id"],
+                                "index_id": value["index_id"],
+                                "executed_search_mode": value.get("search_mode"),
+                            }
+                        )
+                        if any(
+                            value[key] != snapshot["active"][key]
+                            for key in ["model_id", "index_id", "manifest_sha256"]
+                        ):
+                            row.update(success=False, error_code="INDEX_DRIFT")
+                    else:
+                        row["error_code"] = value.get("error", {}).get("code", "HTTP_ERROR")
+                except Exception as exc:
+                    row.update(
+                        {"http_status": None, "success": False, "error_code": type(exc).__name__}
+                    )
+                row["client_ms"] = (perf_counter() - started) * 1000
+                return row
 
-        for case in sequence[: config.warmup]:
-            warmups.append(await send(case))
-        measured = sequence[config.warmup :]
-        started = perf_counter()
-        if config.rate is None:
-            counter = iter(measured)
+            for case in sequence[: config.warmup]:
+                warmups.append(await send(case))
+            measured = sequence[config.warmup :]
+            started = perf_counter()
+            if config.rate is None:
+                counter = iter(measured)
 
-            async def worker():
-                for case in counter:
-                    if config.duration and perf_counter() - started >= config.duration:
+                async def worker():
+                    for case in counter:
+                        if config.duration and perf_counter() - started >= config.duration:
+                            break
+                        samples.append(await send(case))
+
+                await asyncio.gather(*(worker() for _ in range(config.concurrency)))
+            else:
+                tasks = set()
+                for number, case in enumerate(measured):
+                    scheduled = started + number / config.rate
+                    if config.duration and scheduled >= started + config.duration:
                         break
-                    samples.append(await send(case))
+                    await asyncio.sleep(max(0, scheduled - perf_counter()))
+                    tasks = {task for task in tasks if not task.done()}
+                    if len(tasks) >= config.concurrency:
+                        samples.append(
+                            {
+                                "request_id": str(uuid4()),
+                                "query_id": case.query_id,
+                                "query_type": case.query_type,
+                                "language": case.language,
+                                "http_status": None,
+                                "success": False,
+                                "error_code": "CLIENT_CAPACITY_DROP",
+                                "client_ms": 0,
+                                "client_started_monotonic": perf_counter(),
+                                "scheduling_lag_ms": max(0, (perf_counter() - scheduled) * 1000),
+                            }
+                        )
+                        continue
 
-            await asyncio.gather(*(worker() for _ in range(config.concurrency)))
-        else:
-            tasks = set()
-            for number, case in enumerate(measured):
-                scheduled = started + number / config.rate
-                if config.duration and scheduled >= started + config.duration:
-                    break
-                await asyncio.sleep(max(0, scheduled - perf_counter()))
-                tasks = {task for task in tasks if not task.done()}
-                if len(tasks) >= config.concurrency:
-                    samples.append(
-                        {
-                            "request_id": str(uuid4()),
-                            "query_id": case.query_id,
-                            "query_type": case.query_type,
-                            "language": case.language,
-                            "http_status": None,
-                            "success": False,
-                            "error_code": "CLIENT_CAPACITY_DROP",
-                            "client_ms": 0,
-                            "client_started_monotonic": perf_counter(),
-                            "scheduling_lag_ms": max(0, (perf_counter() - scheduled) * 1000),
-                        }
-                    )
-                    continue
+                    async def attempt(case=case, scheduled=scheduled):
+                        samples.append(await send(case, scheduled))
 
-                async def attempt(case=case, scheduled=scheduled):
-                    samples.append(await send(case, scheduled))
-
-                tasks.add(asyncio.create_task(attempt()))
-            if tasks:
-                await asyncio.gather(*tasks)
-        elapsed = perf_counter() - started
-        metric_response = await client.get(
-            "/api/v1/system/search-metrics?limit=10000", headers=headers
-        )
-        metric_response.raise_for_status()
-        server = {row["request_id"]: row for row in metric_response.json()["samples"]}
-    stop_monitor.set()
-    if monitor_task:
-        await monitor_task
+                    tasks.add(asyncio.create_task(attempt()))
+                if tasks:
+                    await asyncio.gather(*tasks)
+            elapsed = perf_counter() - started
+            metric_response = await client.get(
+                "/api/v1/system/search-metrics?limit=10000", headers=headers
+            )
+            metric_response.raise_for_status()
+            server = {row["request_id"]: row for row in metric_response.json()["samples"]}
+    finally:
+        stop_monitor.set()
+        if monitor_task:
+            monitor_task.cancel()
+            await asyncio.gather(monitor_task, return_exceptions=True)
     samples.sort(key=lambda r: r["client_started_monotonic"])
     for row in samples:
         span = server.get(row["request_id"])

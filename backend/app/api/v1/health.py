@@ -2,7 +2,7 @@ from typing import Literal
 
 from fastapi import APIRouter, Depends, Request, Response
 
-from app.core.auth import bearer, require_read_access
+from app.core.auth import bearer, require_operator_probe
 from app.schemas.health import (
     Capabilities,
     HealthSummary,
@@ -22,7 +22,7 @@ async def live(request: Request) -> LivenessResponse:
 @router.get(
     "/ready",
     response_model=ReadinessResponse,
-    dependencies=[Depends(require_read_access)],
+    dependencies=[Depends(require_operator_probe)],
     responses={503: {"model": ReadinessResponse}},
     summary="Readiness hạ tầng, chưa bao gồm search encoder/index",
 )
@@ -52,7 +52,7 @@ async def summary(
     if check != "live":
         # Dependency có điều kiện: public liveness, private readiness theo contract Prompt 02.
         credentials = await bearer(request)
-        require_read_access(request, credentials)
+        await require_operator_probe(request, credentials)
         actual = await request.app.state.services.readiness()
         dependencies = {"metadata": actual["postgresql"], "objects": actual["minio"]}
         if check == "search":
@@ -82,6 +82,7 @@ async def summary(
             multi_intent=search_available and request.app.state.settings.multi_intent_enabled,
             rerank=search_available and request.app.state.settings.reranking_enabled,
             explanations=search_available and request.app.state.settings.rag_enabled,
+            agent=request.app.state.settings.agent_enabled,
         ),
         worker=WorkerState(),
         dependencies=dependencies,

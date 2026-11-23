@@ -6,9 +6,9 @@ import json
 from uuid import UUID
 
 from app.core.config import Settings
+from app.core.container import Services
 from app.db.models import SearchIndex
 from app.db.models.indexing import ActiveSearchIndex
-from app.services.health import Services
 from app.services.indexing.consistency import verify_index
 from app.services.indexing.jobs import lock, now
 from app.services.search.runtime import SearchRuntime

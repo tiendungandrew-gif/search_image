@@ -1,0 +1,83 @@
+{
+  "status": "software_verified_quality_pending",
+  "phase08_fully_accepted": false,
+  "software_verification": "pass",
+  "backend_tests": 152,
+  "frontend_unit_tests": 13,
+  "browser_tests": 16,
+  "lint_format_type_build": "pass",
+  "runtime": "pass",
+  "corpus": {
+    "images": 510,
+    "captions": 500,
+    "vectors": 510,
+    "generation": 2,
+    "baseline_preserved": true
+  },
+  "fast_search": {
+    "attempted": 500,
+    "successful": 500,
+    "failed": 0,
+    "server_success_latency": {
+      "count": 500,
+      "median_ms": 123.68090449990632,
+      "min_ms": 102.73525200045697,
+      "mean_ms": 127.06333977801296,
+      "p50_ms": 123.63651899977413,
+      "p90_ms": 142.88863599995238,
+      "p95_ms": 153.56567399976484,
+      "p99_ms": 174.03392800042639,
+      "max_ms": 591.0964739996416,
+      "stddev_ms": 26.60461559529774
+    },
+    "successful_requests_per_second": 7.591321217402684,
+    "fast_targets_observed": true
+  },
+  "rag": {
+    "api_attempts": 32,
+    "generation_attempts": 16,
+    "generated": 16,
+    "generation_failures": 0,
+    "citations": 22,
+    "exact_quotes": 22,
+    "ttlast_three_second_objective": "observed_on_this_small_workload_only",
+    "semantic_quality": "pending_human_review"
+  },
+  "human_review": {
+    "status": "pending_human_review",
+    "user_decision_date": "2026-11-06",
+    "user_decision": "Chưa đánh giá được; giữ mục chất lượng chờ xác nhận",
+    "human_verified": false,
+    "answer_relevance": null,
+    "faithfulness": null,
+    "unsupported_claim_rate": null,
+    "review_pack": ".cache/evaluation/rag_phase08_coco_review.html"
+  },
+  "fallback_cases": 3,
+  "original_config_restored": true,
+  "review_ui": {
+    "status": "pass",
+    "cases": 16,
+    "human_verified": false,
+    "images_loaded": true,
+    "verified_export_without_review": "rejected",
+    "javascript_errors": 0,
+    "remote_requests": 0,
+    "draft_grades": "all null"
+  },
+  "source_audit": "source_audit.json",
+  "first_full_run_failures": "2 preserved in full/backend_tests.txt; fixed in full_v2",
+  "phase09": "not_started",
+  "documents": {
+    "status": "pass",
+    "required_documents": 7,
+    "supplemental_documents": 2,
+    "report_sections": "A-L",
+    "relative_links": "pass",
+    "json_artifacts": 42,
+    "rag_csv_rows": 32,
+    "charts": "2 PNG + 2 SVG from actual measurements",
+    "core_design_validator": "pass: files/links/IDs/traceability/JSON/ER/ADR/structural Mermaid",
+    "core_json_examples": 17
+  }
+}

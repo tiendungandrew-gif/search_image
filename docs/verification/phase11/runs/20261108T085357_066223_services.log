@@ -1,0 +1,93 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-b6791a856889 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-b6791a856889 Created 
+............F.                                                           [100%]
+=================================== FAILURES ===================================
+_________ test_dataset_scope_search_media_rag_grants_hide_and_metadata _________
+
+accounts = (<fastapi.applications.FastAPI object at 0x7b55f58a2810>, <httpx.AsyncClient object at 0x7b55f599ad20>, <httpx.AsyncClient object at 0x7b55f58c1190>, 'cbfc242e-08d9-4651-ac8c-4b054046e431', '275bc161-a89c-407b-843c-80fcb4d2d96b')
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...ject at 0x7b55f5be9490>, token='f0dd27c2ce64498daa43c49f130b83de', collections={'images_qa_f0dd27c2ce64_d1bec6cf12f6'})
+
+    async def test_dataset_scope_search_media_rag_grants_hide_and_metadata(accounts, qa_resources):
+        app, admin, user, _, uid = accounts
+        runtime, ids = await seed_search(qa_resources, app)
+        try:
+            response = await admin.get("/api/v1/admin/datasets")
+            assert response.status_code == 200, response.text
+            datasets = response.json()["datasets"]
+            dataset = next(d for d in datasets if d["key"] == "private_a")
+            assert (await user.get(f"/api/v1/images/{ids[0]}")).status_code == 404
+            empty = await user.post("/api/v1/search", json={"mode": "text", "text": "a shape"})
+            assert empty.status_code == 200 and empty.json()["total_results"] == 0, empty.text
+            assert (
+                await admin.put(
+                    f"/api/v1/admin/users/{uid}/datasets", json={"dataset_ids": [dataset["id"]]}
+                )
+            ).status_code == 200
+            response = await user.post("/api/v1/search", json={"mode": "text", "text": "a shape"})
+            assert response.status_code == 200, response.text
+            assert [r["image_id"] for r in response.json()["results"]] == [str(ids[0])]
+            assert (await user.get(f"/api/v1/images/{ids[1]}/content")).status_code == 404
+            assert (await user.get(f"/api/v1/images/{ids[0]}/content")).status_code == 200
+            scope = current_principal.set(
+                Principal(UUID(uid), "reader", "user", (UUID(dataset["id"]),), ("private_a",))
+            )
+            try:
+                evidence, _, excluded = await EvidenceRetriever(runtime).retrieve(ids)
+                assert [e.image_id for e in evidence] == [ids[0]] and str(ids[1]) in excluded
+                candidates = await VectorRetriever(qa_resources.services, runtime.registry).search(
+                    np.ones(8), 10, Filters()
+                )
+                assert [c.image_id for c in candidates] == [ids[0]]
+            finally:
+                current_principal.reset(scope)
+            # User requests are denied before parsing mutation bodies.
+            for method, path in [
+                ("POST", "/admin/images/upload"),
+                ("PATCH", f"/admin/images/{ids[0]}"),
+                ("DELETE", f"/admin/images/{ids[0]}"),
+                ("PUT", f"/admin/users/{uid}/datasets"),
+                ("POST", "/admin/knowledge"),
+                ("POST", "/admin/indexes/activate"),
+            ]:
+                assert (await user.request(method, "/api/v1" + path, json={})).status_code == 403
+            assert (await admin.delete(f"/api/v1/admin/images/{ids[0]}")).status_code == 200
+            assert (await user.get(f"/api/v1/images/{ids[0]}/content")).status_code == 404
+            assert (await user.post("/api/v1/search", json={"mode": "text", "text": "a shape"})).json()[
+                "total_results"
+            ] == 0
+            assert (await admin.post(f"/api/v1/admin/images/{ids[0]}/restore")).status_code == 200
+            edit = await admin.patch(
+                f"/api/v1/admin/images/{ids[0]}",
+                json={
+                    "title": "Updated title",
+                    "caption": "Updated caption",
+                    "dataset_id": dataset["id"],
+                    "tags": ["updated"],
+                },
+            )
+            assert edit.status_code == 200, edit.text
+            assert (await user.post("/api/v1/search", json={"mode": "text", "text": "a shape"})).json()[
+                "total_results"
+            ] == 0
+            await Worker(qa_resources.services, runtime.encoder, runtime.registry.index.id).run(
+                once=True
+            )
+>           assert (await user.post("/api/v1/search", json={"mode": "text", "text": "a shape"})).json()[
+                "total_results"
+            ] == 1
+E           assert 0 == 1
+
+backend/tests/integration/test_access_control.py:234: AssertionError
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py: 2 warnings
+tests/integration/test_qa_services.py: 7 warnings
+tests/integration/test_qa_worker_process.py: 1 warning
+tests/integration/test_access_control.py: 3 warnings
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_access_control.py::test_dataset_scope_search_media_rag_grants_hide_and_metadata
+1 failed, 13 passed, 13 warnings in 19.55s
+

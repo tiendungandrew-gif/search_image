@@ -1,0 +1,8 @@
+{
+  "sha256": {
+    ".env": "697baa74e0baa5de2e9e742236a2cd7a2683b0a447b8bfda507baafc181720ab",
+    "config/environments/deployment.env": "d17584b3f9e5a070a54d563ef75f92aa71f7b8938516d38471f4832a51f349dc",
+    "backend/app/services/embeddings/clip_encoder.py": "20d9c0b1dcb9f8d35ccf1ea38e330ff505cca9dae52a6f6324e38dcd1c8c8daf",
+    "backend/app/services/ingestion/decoder.py": "2edfdf8f0ff24e95fa506b908c828b310abbdbc5f7da84d96e731ccb87cdb32e"
+  }
+}

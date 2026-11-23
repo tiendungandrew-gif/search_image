@@ -1,0 +1,113 @@
+
+Running 4 tests using 1 worker
+
+  ✘  1 [desktop] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (20.6s)
+  ✘  2 [mobile] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (32.6s)
+  ✘  3 [narrow] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (21.2s)
+  ✘  4 [firefox] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (21.7s)
+
+
+  1) [desktop] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+
+    TimeoutError: locator.focus: Timeout 8000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: /Vào nhanh User/ })
+
+
+      70 |   await page.keyboard.press("Tab");
+      71 |   await expect(page.locator("#login-username")).toBeFocused();
+    > 72 |   await page.getByRole("button", { name: /Vào nhanh User/ }).focus();
+         |                                                              ^
+      73 |   const discoveryResponse = page.waitForResponse(
+      74 |     (r) =>
+      75 |       r.request().method() === "POST" &&
+        at /home/tts/prj/frontend/consumer-e2e/search.spec.ts:72:62
+
+    Error Context: test-results/search-consumer-gallery-·--36124-tion-and-accessible-details-desktop/error-context.md
+
+  2) [mobile] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+
+    Error: expect(locator).toHaveCSS(expected) failed
+
+    Locator:  locator('.app-header .brand > span').last()
+    Expected: "rgb(237, 241, 231)"
+    Received: "rgb(237, 245, 239)"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCSS" locator('.app-header .brand > span').last() with timeout 5000ms
+      - waiting for locator('.app-header .brand > span').last()
+        14 × locator resolved to <span>…</span>
+           - unexpected value "rgb(237, 245, 239)"
+
+
+      266 |     .click();
+      267 |   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    > 268 |   await expect(page.locator(".app-header .brand > span").last()).toHaveCSS(
+          |                                                                  ^
+      269 |     "color",
+      270 |     "rgb(237, 241, 231)",
+      271 |   );
+        at /home/tts/prj/frontend/consumer-e2e/search.spec.ts:268:66
+
+    Error Context: test-results/search-consumer-gallery-·--36124-tion-and-accessible-details-mobile/error-context.md
+
+  3) [narrow] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('.result-card').nth(2).locator('img')
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" locator('.result-card').nth(2).locator('img') with timeout 5000ms
+      - waiting for locator('.result-card').nth(2).locator('img')
+        13 × locator resolved to <img hidden="" loading="lazy" decoding="async" alt="Blurry image of men in living room playing a stand-up video game."/>
+           - unexpected value "hidden"
+
+
+      44 |   for (const card of await page.locator(".result-card").all()) {
+      45 |     await card.scrollIntoViewIfNeeded();
+    > 46 |     await expect(card.locator("img")).toBeVisible();
+         |                                       ^
+      47 |   }
+      48 |   await page.evaluate(() => window.scrollTo(0, 0));
+      49 | }
+        at revealGallery (/home/tts/prj/frontend/consumer-e2e/search.spec.ts:46:39)
+        at /home/tts/prj/frontend/consumer-e2e/search.spec.ts:183:3
+
+    Error Context: test-results/search-consumer-gallery-·--36124-tion-and-accessible-details-narrow/error-context.md
+
+  4) [firefox] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+
+    TimeoutError: locator.focus: Timeout 8000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: /Vào nhanh User/ })
+
+
+      70 |   await page.keyboard.press("Tab");
+      71 |   await expect(page.locator("#login-username")).toBeFocused();
+    > 72 |   await page.getByRole("button", { name: /Vào nhanh User/ }).focus();
+         |                                                              ^
+      73 |   const discoveryResponse = page.waitForResponse(
+      74 |     (r) =>
+      75 |       r.request().method() === "POST" &&
+        at /home/tts/prj/frontend/consumer-e2e/search.spec.ts:72:62
+
+    Error Context: test-results/search-consumer-gallery-·--36124-tion-and-accessible-details-firefox/error-context.md
+
+  4 failed
+    [desktop] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+    [mobile] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+    [narrow] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+    [firefox] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details 
+(node:1886671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1887305) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1888557) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1889069) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

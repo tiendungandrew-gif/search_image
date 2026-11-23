@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-20",
+  "status": "passed",
+  "scope": "development localhost:5173",
+  "backend_fast": 275,
+  "backend_services": 27,
+  "frontend_unit": 78,
+  "frontend_files": 19,
+  "browser_full": 12,
+  "browser_guest_lazy_load": 4,
+  "public_library": "scikit-image-v0.25.2",
+  "public_images": 10,
+  "images_before_after": 513,
+  "users_before_after": 5,
+  "grants_before_after": 6,
+  "libraries_before_after": 3,
+  "active_index_unchanged": "b4597021-4b91-491d-99ae-0617a6ca389c",
+  "backend_fast_report": "docs/verification/phase11/runs/20261120T082808_474603_fast.json",
+  "backend_services_report": "docs/verification/phase11/runs/20261120T080915_253724_services.json",
+  "committed": false
+}

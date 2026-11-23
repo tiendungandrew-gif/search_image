@@ -1,0 +1,60 @@
+
+Running 12 tests using 1 worker
+
+(node:520815) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   1 [qa-desktop] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility
+  ✓   2 [qa-desktop] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (3.1s)
+  ✓   3 [qa-desktop] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (2.0s)
+(node:521395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   4 [qa-mobile] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility
+  ✘   5 [qa-mobile] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (7.5s)
+(node:522205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [qa-mobile] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (1.8s)
+(node:522509) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   7 [qa-firefox] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility
+  ✓   8 [qa-firefox] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (3.6s)
+  ✓   9 [qa-firefox] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (2.1s)
+(node:523368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  10 [qa-webkit] › frontend/qa-e2e/real.spec.ts:12:1 › REAL SERVICES / EMPTY · startup, navigation, data state and accessibility
+  ✓  11 [qa-webkit] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details (4.1s)
+  ✓  12 [qa-webkit] › frontend/qa-e2e/real.spec.ts:104:1 › REAL SERVICES / FICTIONAL KB · bounded Agent and disabled RAG (2.5s)
+
+
+  1) [qa-mobile] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('query-analysis')
+    Expected substring: "AND"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByTestId('query-analysis') with timeout 5000ms
+      - waiting for getByTestId('query-analysis')
+
+
+      80 |   await page.locator("#query").fill("a rectangle and colored shapes");
+      81 |   await page.getByRole("button", { name: "Tìm kiếm ảnh", exact: true }).click();
+    > 82 |   await expect(page.getByTestId("query-analysis")).toContainText("AND");
+         |                                                    ^
+      83 |   await expect(page.locator(".constraint-evidence").first()).toContainText(
+      84 |     "Chưa xác minh",
+      85 |   );
+        at /home/tts/prj/frontend/qa-e2e/real.spec.ts:82:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    frontend/test-results/real-REAL-CLIP-SYNTHETIC-·-93a14-ed-multi-intent-and-details-qa-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: frontend/test-results/real-REAL-CLIP-SYNTHETIC-·-93a14-ed-multi-intent-and-details-qa-mobile/error-context.md
+
+  1 failed
+    [qa-mobile] › frontend/qa-e2e/real.spec.ts:47:1 › REAL CLIP / SYNTHETIC · text, image, combined, multi-intent and details 
+  4 skipped
+  7 passed (32.8s)

@@ -1,0 +1,188 @@
+{
+  "project": "image-search-phase12",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 stop backend worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.2474586739999722
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 run --rm --no-deps -T backend python -m app.cli.operations inventory"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.227549695000107
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        "/home/tts/prj/.env.phase12",
+        "-f",
+        "/home/tts/prj/compose.prod.yaml",
+        "-p",
+        "image-search-phase12",
+        "exec",
+        "-T",
+        "postgres",
+        "pg_dump",
+        "-U",
+        "image_search",
+        "-d",
+        "image_search",
+        "--format=custom",
+        "--no-owner",
+        "--no-privileges"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4032152180002413
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 stop qdrant minio"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.47003742400011106
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect alpine:3.22.2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.23200681899970732
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker pull alpine:3.22.2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.346274368000195
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker volume inspect image-search-phase12_qdrant_data"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.181392563999907
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--read-only",
+        "--user",
+        "0:0",
+        "--cap-drop",
+        "ALL",
+        "--cap-add",
+        "DAC_OVERRIDE",
+        "--security-opt",
+        "no-new-privileges:false",
+        "--mount",
+        "type=volume,src=image-search-phase12_qdrant_data,dst=/data,readonly",
+        "alpine:3.22.2",
+        "tar",
+        "-czf",
+        "-",
+        "-C",
+        "/data",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.199281110999891
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker volume inspect image-search-phase12_minio_data"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.20552803499958827
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--read-only",
+        "--user",
+        "0:0",
+        "--cap-drop",
+        "ALL",
+        "--cap-add",
+        "DAC_OVERRIDE",
+        "--security-opt",
+        "no-new-privileges:false",
+        "--mount",
+        "type=volume,src=image-search-phase12_minio_data,dst=/data,readonly",
+        "alpine:3.22.2",
+        "tar",
+        "-czf",
+        "-",
+        "-C",
+        "/data",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4392649760002314
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 up -d --no-build --wait --wait-timeout 60 qdrant minio"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.009480232999977
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 start backend worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.432135289999678
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 exec -T worker python -m app.cli.worker --health"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.897553913999673
+    }
+  ]
+}

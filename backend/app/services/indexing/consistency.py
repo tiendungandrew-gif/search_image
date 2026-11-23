@@ -6,9 +6,9 @@ from sqlalchemy import select
 
 from app.db.models import EmbeddingModel, Image, SearchIndex
 from app.db.models.indexing import ImageEmbedding, ImageObject, JobItem
+from app.services.embeddings.vector_utils import vector_hash
 from app.services.indexing.collection_manager import CollectionManager
 from app.services.indexing.jobs import lock, new_item, new_job, now
-from app.services.indexing.worker import vector_hash
 from app.services.ingestion.storage import get_original, object_key
 
 

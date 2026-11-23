@@ -1,0 +1,13 @@
+{
+  "unchanged_files": {
+    "backend/app/core/auth.py": true,
+    "backend/app/core/access.py": true,
+    ".env": true,
+    "config/environments/deployment.env": true,
+    "frontend/src/styles/discovery.css": true
+  },
+  "secret_scan": {
+    "checked_files": 1759,
+    "matched_files": []
+  }
+}

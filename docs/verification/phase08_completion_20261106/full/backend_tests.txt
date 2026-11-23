@@ -1,0 +1,190 @@
+........................................................................ [ 47%]
+.....................................F.................................F [ 94%]
+........                                                                 [100%]
+=================================== FAILURES ===================================
+___ test_review_pack_escapes_untrusted_evidence_and_never_embeds_credentials ___
+
+tmp_path = PosixPath('/tmp/pytest-of-appuser/pytest-0/test_review_pack_escapes_untru0')
+
+    def test_review_pack_escapes_untrusted_evidence_and_never_embeds_credentials(tmp_path):
+        identity = str(uuid4())
+        result = {
+            "cases": [
+                {
+                    "case_id": "R3_unit",
+                    "configuration": "R3",
+                    "language": "vi",
+                    "question": "Unit fixture?",
+                    "result": {
+                        "results": [{"image_id": identity}],
+                        "rag": {"answer": "</script><script>malicious()</script>"},
+                    },
+                }
+            ]
+        }
+        source, output = tmp_path / "result.json", tmp_path / "review.html"
+        source.write_text(json.dumps(result))
+        seen = []
+    
+        def respond(request):
+            seen.append(request)
+            return httpx.Response(
+                200, content=b"unit-image-bytes", headers={"content-type": "image/png"}
+            )
+    
+>       report = build_review_pack(
+            "http://fixture",
+            "private-review-token",
+            source,
+            output,
+            transport=httpx.MockTransport(respond),
+        )
+
+backend/tests/unit/test_rag.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/app/evaluation/rag.py:262: in build_review_pack
+    template = Path("evaluation/annotation/rag_review.html").read_text()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('evaluation/annotation/rag_review.html'), mode = 'r'
+buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'evaluation/annotation/rag_review.html'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+__________ test_real_multimodal_multi_intent_constraints_and_baseline __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7da978cc3320>
+
+    async def test_real_multimodal_multi_intent_constraints_and_baseline(monkeypatch):
+        settings = Settings(search_enabled=True)
+        app = create_app(settings)
+        async with app.router.lifespan_context(app):
+            runtime = app.state.search_runtime
+            assert runtime.available
+            data = await asyncio.to_thread(
+                Path(settings.dataset_root, "sample", "coffee.png").read_bytes
+            )
+            async with runtime.services.database.sessions() as session:
+                identity = await session.scalar(
+                    select(Image.id).where(Image.sha256 == hashlib.sha256(data).hexdigest())
+                )
+                before = (
+                    await session.scalar(select(func.count()).select_from(Image)),
+                    await session.scalar(select(func.count()).select_from(IndexingJob)),
+                )
+            headers = {"Authorization": "Bearer " + settings.api_token.get_secret_value()}
+            async with AsyncClient(
+                transport=ASGITransport(app=app), base_url="http://test", headers=headers
+            ) as client:
+                baseline = await client.post(
+                    "/api/v1/search", json={"mode": "text", "text": "a cup of coffee", "top_k": 10}
+                )
+                assert (
+                    baseline.status_code == 200
+                    and baseline.json()["effective_settings"]["channels"] == 1
+                )
+                assert baseline.json()["effective_settings"]["rerank_applied"] is False
+                for query in [
+                    "coffee and a brown cat",
+                    "coffee or a brown cat",
+                    "cà phê và mèo màu nâu",
+                    "cà phê hoặc mèo màu nâu",
+                    "(coffee and a cat) or a rocket",
+                ]:
+                    reply = await client.post(
+                        "/api/v1/search",
+                        json={
+                            "query": query,
+                            "search_mode": "multi_intent",
+                            "rerank": True,
+                            "top_k": 5,
+                        },
+                    )
+                    assert reply.status_code == 200, reply.json()
+                    value = reply.json()
+                    assert value["results"] and value["effective_settings"]["rerank_applied"]
+                    assert 2 <= value["effective_settings"]["channels"] <= 4
+                    assert all(
+                        a["status"] == "unknown"
+                        for row in value["results"]
+                        for a in row["constraint_assessments"]
+                    )
+                    assert all(
+                        a["semantic_score"] is not None
+                        for row in value["results"]
+                        for a in row["constraint_assessments"]
+                    )
+                    assert all(row["score_type"] == "reranker" for row in value["results"])
+                    assert [r["score"] for r in value["results"]] == sorted(
+                        [r["score"] for r in value["results"]], reverse=True
+                    )
+                for method in ["rrf", "weighted_score"]:
+                    reply = await client.post(
+                        "/api/v1/search/multimodal",
+                        files={"image": ("arbitrary-name.webp", data, "image/webp")},
+                        data={
+                            "query": "a cup of coffee",
+                            "search_mode": "multimodal",
+                            "top_k": "5",
+                            "fusion_strategy": method,
+                            "text_weight": "0.4",
+                            "image_weight": "0.6",
+                            "rerank": "true",
+                        },
+                    )
+                    assert reply.status_code == 200, reply.json()
+                    value = reply.json()
+                    assert (
+                        value["search_mode"] == "multimodal"
+                        and value["effective_settings"]["fusion_version"] == method + "-v1"
+                    )
+>                   assert all(
+                        {c["branch"] for c in row["contributing_branches"]} >= {"whole", "image"}
+                        for row in value["results"]
+                    )
+E                   assert False
+E                    +  where False = all(<generator object test_real_multimodal_multi_intent_constraints_and_baseline.<locals>.<genexpr> at 0x7da952e39030>)
+
+backend/tests/integration/test_real_advanced_search.py:109: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"timestamp": "2026-11-06T03:59:32.319637+00:00", "level": "INFO", "logger": "app.access", "request_id": "7bd83ab4-9c40-467b-ae89-7910c9edc8fa", "event": "http_request", "method": "POST", "path": "/search", "status_code": 200, "duration_ms": 187.177, "error_category": null}
+{"timestamp": "2026-11-06T03:59:32.480991+00:00", "level": "INFO", "logger": "app.access", "request_id": "d3e4f87f-07e6-41f1-b706-1e5de2dd1a9a", "event": "http_request", "method": "POST", "path": "/search", "status_code": 200, "duration_ms": 159.622, "error_category": null}
+{"timestamp": "2026-11-06T03:59:32.637005+00:00", "level": "INFO", "logger": "app.access", "request_id": "c7db8dfe-5b2b-489c-aeb2-7ab92d96897a", "event": "http_request", "method": "POST", "path": "/search", "status_code": 200, "duration_ms": 153.099, "error_category": null}
+{"timestamp": "2026-11-06T03:59:32.821934+00:00", "level": "INFO", "logger": "app.access", "request_id": "f1f0c76a-b2d2-4e5d-8b59-035dc1f088ce", "event": "http_request", "method": "POST", "path": "/search", "status_code": 200, "duration_ms": 183.2, "error_category": null}
+{"timestamp": "2026-11-06T03:59:33.021362+00:00", "level": "INFO", "logger": "app.access", "request_id": "d4ba087f-fa8c-45fc-b248-2a711426e9c6", "event": "http_request", "method": "POST", "path": "/search", "status_code": 200, "duration_ms": 197.713, "error_category": null}
+{"timestamp": "2026-11-06T03:59:33.210419+00:00", "level": "INFO", "logger": "app.access", "request_id": "cd7b7f47-3390-4cb2-8bd3-0cbbe5795301", "event": "http_request", "method": "POST", "path": "/search", "status_code": 200, "duration_ms": 187.589, "error_category": null}
+{"timestamp": "2026-11-06T03:59:33.575613+00:00", "level": "INFO", "logger": "app.access", "request_id": "c4224235-c96a-4bbd-b3c4-17d111cae8d4", "event": "http_request", "method": "POST", "path": "/search/multimodal", "status_code": 200, "duration_ms": 363.716, "error_category": null}
+=============================== warnings summary ===============================
+tests/integration/test_indexing.py::test_real_model_batch_retry_recovery_idempotency_and_repair
+tests/integration/test_real_advanced_search.py::test_real_multimodal_multi_intent_constraints_and_baseline
+tests/integration/test_real_evaluation.py::test_real_profiling_and_identity_receipts
+tests/integration/test_real_search.py::test_real_text_image_search_and_failure_paths
+tests/integration/test_real_services.py::test_real_dependency_connections
+tests/integration/test_real_services.py::test_real_backend_readiness
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/unit/test_rag.py::test_review_pack_escapes_untrusted_evidence_and_never_embeds_credentials
+FAILED backend/tests/integration/test_real_advanced_search.py::test_real_multimodal_multi_intent_constraints_and_baseline
+2 failed, 150 passed, 6 warnings in 53.42s
+
+ Container ai-image-search-indexing-worker-run-272dec59e650 Creating 
+ Container ai-image-search-indexing-worker-run-272dec59e650 Created 
+

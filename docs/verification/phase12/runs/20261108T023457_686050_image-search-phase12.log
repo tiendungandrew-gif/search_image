@@ -1,0 +1,134 @@
+ Container image-search-phase12-backend-1 Stopping 
+ Container image-search-phase12-worker-1 Stopping 
+ Container image-search-phase12-backend-1 Stopped 
+ Container image-search-phase12-worker-1 Stopped 
+
+{"dependencies": {"postgresql": "healthy", "qdrant": "healthy", "minio": "healthy"}, "dataset_state": "DATA_PRESENT", "counts": {"images": 7, "objects_receipts": 7, "ready_embeddings": 13}, "jobs": {"succeeded": 13}, "indexes": [{"id": "7fac2290-1410-4843-a5fb-0a966ca0f1f7", "status": "ready", "collection": "images_phase12_shapes_v1_865d29f7f68b"}, {"id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a", "status": "ready", "collection": "images_phase12_incremental_v1_0d9cdb44a9fb"}], "active": {"index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a", "generation": 2}, "collections": [{"name": "images_phase12_incremental_v1_0d9cdb44a9fb", "points": 7}, {"name": "images_phase12_shapes_v1_865d29f7f68b", "points": 6}], "stored_objects": 9, "model_artifacts": "present_unverified"}
+ Container image-search-phase12-backend-run-fb8a44e17539 Creating 
+ Container image-search-phase12-backend-run-fb8a44e17539 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+
+ Container image-search-phase12-minio-1 Stopping 
+ Container image-search-phase12-qdrant-1 Stopping 
+ Container image-search-phase12-qdrant-1 Stopped 
+ Container image-search-phase12-minio-1 Stopped 
+
+[
+    {
+        "Id": "sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412",
+        "RepoTags": [
+            "alpine:3.22.2"
+        ],
+        "RepoDigests": [
+            "alpine@sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2025-10-08T11:04:56Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/sh"
+            ],
+            "WorkingDir": "/"
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 12794775,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:256f393e029fa2063d8c93720da36a74a032bed3355a2bc3e313ad12f8bde9d1"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-08T02:28:29.964969444Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412",
+            "size": 9218
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/library/alpine"
+                }
+            ]
+        }
+    }
+]
+
+3.22.2: Pulling from library/alpine
+Digest: sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412
+Status: Image is up to date for alpine:3.22.2
+docker.io/library/alpine:3.22.2
+
+[
+    {
+        "CreatedAt": "2026-11-08T09:00:26+07:00",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "218e1c7d8a0623b82b2f499f139056dd7f1cf4b5c3b350e87e304125290fbc33",
+            "com.docker.compose.project": "image-search-phase12",
+            "com.docker.compose.version": "5.5.1",
+            "com.docker.compose.volume": "qdrant_data"
+        },
+        "Mountpoint": "/var/snap/docker/common/var-lib-docker/volumes/image-search-phase12_qdrant_data/_data",
+        "Name": "image-search-phase12_qdrant_data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+
+[
+    {
+        "CreatedAt": "2026-11-08T09:00:26+07:00",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "b7bbab8f2e1d13ff4955e224e928e78638d38c57639a5e28d536419be1f4a956",
+            "com.docker.compose.project": "image-search-phase12",
+            "com.docker.compose.version": "5.5.1",
+            "com.docker.compose.volume": "minio_data"
+        },
+        "Mountpoint": "/var/snap/docker/common/var-lib-docker/volumes/image-search-phase12_minio_data/_data",
+        "Name": "image-search-phase12_minio_data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+
+ Container image-search-phase12-minio-1 Recreate 
+ Container image-search-phase12-minio-1 Recreated 
+ Container image-search-phase12-qdrant-1 Starting 
+ Container image-search-phase12-minio-1 Starting 
+ Container image-search-phase12-qdrant-1 Started 
+ Container image-search-phase12-minio-1 Started 
+ Container image-search-phase12-minio-1 Waiting 
+ Container image-search-phase12-qdrant-1 Waiting 
+ Container image-search-phase12-qdrant-1 Healthy 
+ Container image-search-phase12-minio-1 Healthy 
+
+ Container image-search-phase12-postgres-1 Waiting 
+ Container image-search-phase12-qdrant-1 Waiting 
+ Container image-search-phase12-minio-1 Waiting 
+ Container image-search-phase12-qdrant-1 Healthy 
+ Container image-search-phase12-minio-1 Healthy 
+ Container image-search-phase12-postgres-1 Healthy 
+ Container image-search-phase12-bootstrap-1 Starting 
+ Container image-search-phase12-bootstrap-1 Started 
+ Container image-search-phase12-bootstrap-1 Waiting 
+ Container image-search-phase12-bootstrap-1 Waiting 
+ Container image-search-phase12-bootstrap-1 Exited 
+ Container image-search-phase12-worker-1 Starting 
+ Container image-search-phase12-bootstrap-1 Exited 
+ Container image-search-phase12-backend-1 Starting 
+ Container image-search-phase12-worker-1 Started 
+ Container image-search-phase12-backend-1 Started 
+
+

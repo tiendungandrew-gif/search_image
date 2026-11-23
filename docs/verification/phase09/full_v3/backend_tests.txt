@@ -1,0 +1,274 @@
+........................................................................ [ 38%]
+........................................................................ [ 77%]
+................................F.........                               [100%]
+=================================== FAILURES ===================================
+_____________ test_isolated_empty_services_and_fictional_multihop ______________
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+>           yield
+
+backend/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:394: in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py:256: in handle_async_request
+    raise exc from None
+backend/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py:236: in handle_async_request
+    response = await connection.handle_async_request(
+backend/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py:103: in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:136: in handle_async_request
+    raise exc
+backend/.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:106: in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:177: in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:217: in _receive_event
+    data = await self._network_stream.read(
+backend/.venv/lib/python3.12/site-packages/httpcore/_backends/anyio.py:32: in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+map = {<class 'TimeoutError'>: <class 'httpcore.ReadTimeout'>, <class 'anyio.BrokenResourceError'>: <class 'httpcore.ReadErr... 'anyio.ClosedResourceError'>: <class 'httpcore.ReadError'>, <class 'anyio.EndOfStream'>: <class 'httpcore.ReadError'>}
+
+    @contextlib.contextmanager
+    def map_exceptions(map: ExceptionMapping) -> typing.Iterator[None]:
+        try:
+            yield
+        except Exception as exc:  # noqa: PIE786
+            for from_exc, to_exc in map.items():
+                if isinstance(exc, from_exc):
+>                   raise to_exc(exc) from exc
+E                   httpcore.ReadTimeout
+
+backend/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py:14: ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+self = <qdrant_client.http.api_client.AsyncApiClient object at 0x73f0c20f5160>
+request = <Request('PUT', 'http://qdrant:6333/collections/images_agent_test_87e51f81_2480f0fff0a9')>
+
+    async def send_inner(self, request: Request) -> Response:
+        try:
+>           response = await self._async_client.send(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api_client.py:213: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+backend/.venv/lib/python3.12/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+backend/.venv/lib/python3.12/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:393: in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+            yield
+        except Exception as exc:
+            mapped_exc = None
+    
+            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():
+                if not isinstance(exc, from_exc):
+                    continue
+                # We want to map to the most specific exception we can find.
+                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to
+                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.
+                if mapped_exc is None or issubclass(to_exc, mapped_exc):
+                    mapped_exc = to_exc
+    
+            if mapped_exc is None:  # pragma: no cover
+                raise
+    
+            message = str(exc)
+>           raise mapped_exc(message) from exc
+E           httpx.ReadTimeout
+
+backend/.venv/lib/python3.12/site-packages/httpx/_transports/default.py:118: ReadTimeout
+
+During handling of the above exception, another exception occurred:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x73f0c1959a30>
+
+    async def test_isolated_empty_services_and_fictional_multihop(monkeypatch):
+        base = Settings()
+        token = uuid4().hex
+        dbname = "agent_test_" + token
+        bucket = "agent-test-" + token
+        probe_collection = "agent_empty_" + token
+        url = make_url(base.database_url.get_secret_value())
+        test_url = url.set(database=dbname)
+    
+        def create_database():
+            with psycopg.connect(
+                url.set(database="postgres", drivername="postgresql").render_as_string(
+                    hide_password=False
+                ),
+                autocommit=True,
+            ) as admin:
+                admin.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(dbname)))
+    
+        await asyncio.to_thread(create_database)
+        monkeypatch.setenv("DATABASE_URL", test_url.render_as_string(hide_password=False))
+        get_settings.cache_clear()
+        cfg = base.model_copy(
+            update={
+                "app_env": "test",
+                "database_url": type(base.database_url)(test_url.render_as_string(hide_password=False)),
+                "minio_bucket": bucket,
+                "minio_auto_create_bucket": True,
+                "search_enabled": False,
+                "agent_enabled": True,
+                "agent_allow_fixture_knowledge": True,
+                "rag_enabled": False,
+                "agent_llm_planning_enabled": os.getenv("RUN_AGENT_LLM_FIXTURE") == "1",
+            }
+        )
+        services = Services(cfg)
+        index = None
+        measurements = {
+            "classification": "FICTIONAL_FIXTURE_ON_REAL_INFRASTRUCTURE",
+            "real_world_accuracy": None,
+        }
+        try:
+            await asyncio.to_thread(command.upgrade, Config("backend/alembic.ini"), "head")
+            await services.initialize()
+            await services.qdrant.client.create_collection(
+                probe_collection, vectors_config=qm.VectorParams(size=512, distance=qm.Distance.COSINE)
+            )
+            empty = await services.qdrant.client.query_points(
+                probe_collection, query=[1.0] + [0.0] * 511, limit=1
+            )
+            assert not empty.points
+            objects = await services.minio.run(
+                lambda: list(services.minio.client.list_objects(bucket, recursive=True))
+            )
+            assert objects == []
+            app = create_app(cfg)
+            headers = {"Authorization": "Bearer " + cfg.api_token.get_secret_value()}
+            query = "Find landmarks in the city where Fixture Lake Alpha is located"
+            async with (
+                app.router.lifespan_context(app),
+                AsyncClient(
+                    transport=ASGITransport(app=app), base_url="http://test", headers=headers
+                ) as client,
+            ):
+                assert (await client.get("/api/v1/health/live")).status_code == 200
+                status = await client.get("/api/v1/search/agent/status")
+                assert status.json()["initialized"] and len(status.json()["tools"]) == 9
+                response = await client.post("/api/v1/search/agent", json={"query": query})
+                assert response.status_code == 200
+                value = response.json()
+                assert (
+                    value["dataset_status"] == "empty_dataset"
+                    and value["results"] == []
+                    and value["status"] == "insufficient_evidence"
+                )
+                measurements["empty_dataset"] = value
+            encoder = await asyncio.to_thread(ClipEncoder, cfg)
+>           index, _ = await CollectionManager(services).register(encoder, "agent_test_" + token[:8])
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/integration/test_real_agent.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/app/services/indexing/collection_manager.py:96: in register
+    await self.ensure(index, model)
+backend/app/services/indexing/collection_manager.py:17: in ensure
+    await self.client.create_collection(
+backend/.venv/lib/python3.12/site-packages/qdrant_client/async_qdrant_client.py:1701: in create_collection
+    return await self._client.create_collection(
+backend/.venv/lib/python3.12/site-packages/qdrant_client/async_qdrant_remote.py:1984: in create_collection
+    await self.http.collections_api.create_collection(
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api/collections_api.py:321: in create_collection
+    return await self._build_for_create_collection(
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api_client.py:188: in request
+    return await self.send(request, type_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api_client.py:191: in send
+    response = await self.middleware(request, self.send_inner)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api_client.py:228: in new_middleware
+    return await middleware(request, inner_send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/qdrant_client/context_headers.py:47: in async_rest_headers_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api_client.py:226: in inner_send
+    return await current_middleware(request, call_next)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api_client.py:235: in __call__
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <qdrant_client.http.api_client.AsyncApiClient object at 0x73f0c20f5160>
+request = <Request('PUT', 'http://qdrant:6333/collections/images_agent_test_87e51f81_2480f0fff0a9')>
+
+    async def send_inner(self, request: Request) -> Response:
+        try:
+            response = await self._async_client.send(request)
+        except Exception as e:
+>           raise ResponseHandlingException(e)
+E           qdrant_client.http.exceptions.ResponseHandlingException
+
+backend/.venv/lib/python3.12/site-packages/qdrant_client/http/api_client.py:215: ResponseHandlingException
+----------------------------- Captured stderr call -----------------------------
+{"timestamp": "2026-11-06T05:17:10.138216+00:00", "level": "INFO", "logger": "alembic.runtime.migration", "request_id": null, "event": "Context impl PostgresqlImpl."}
+{"timestamp": "2026-11-06T05:17:10.138433+00:00", "level": "INFO", "logger": "alembic.runtime.migration", "request_id": null, "event": "Will assume transactional DDL."}
+{"timestamp": "2026-11-06T05:17:10.159600+00:00", "level": "INFO", "logger": "alembic.runtime.migration", "request_id": null, "event": "Running upgrade  -> 0001_foundation, Foundation: sáu bảng, chưa có ingestion hoặc embeddings."}
+{"timestamp": "2026-11-06T05:17:10.245086+00:00", "level": "INFO", "logger": "alembic.runtime.migration", "request_id": null, "event": "Running upgrade 0001_foundation -> 928b88dc3f68, indexing_pipeline"}
+{"timestamp": "2026-11-06T05:17:10.337613+00:00", "level": "INFO", "logger": "alembic.runtime.migration", "request_id": null, "event": "Running upgrade 928b88dc3f68 -> 20261106_agent_knowledge, Add the three planned knowledge tables; no image/index mutations or seeded facts."}
+{"timestamp": "2026-11-06T05:17:10.512761+00:00", "level": "INFO", "logger": "app.access", "request_id": "24b3d81c-2425-4134-b24e-cb894dffe583", "event": "http_request", "method": "GET", "path": "/health/live", "status_code": 200, "duration_ms": 6.069, "error_category": null}
+{"timestamp": "2026-11-06T05:17:10.674294+00:00", "level": "INFO", "logger": "app.access", "request_id": "fd3782b2-e926-4560-ad25-0a0d122f255c", "event": "http_request", "method": "GET", "path": "/search/agent/status", "status_code": 200, "duration_ms": 160.606, "error_category": null}
+{"timestamp": "2026-11-06T05:17:10.683373+00:00", "level": "INFO", "logger": "app.access", "request_id": "4771cd18-476b-430a-a801-091e69912cc1", "event": "http_request", "method": "POST", "path": "/search/agent", "status_code": 200, "duration_ms": 5.094, "error_category": null}
+------------------------------ Captured log call -------------------------------
+INFO     alembic.runtime.migration:migration.py:205 Context impl PostgresqlImpl.
+INFO     alembic.runtime.migration:migration.py:208 Will assume transactional DDL.
+INFO     alembic.runtime.migration:migration.py:611 Running upgrade  -> 0001_foundation, Foundation: sáu bảng, chưa có ingestion hoặc embeddings.
+INFO     alembic.runtime.migration:migration.py:611 Running upgrade 0001_foundation -> 928b88dc3f68, indexing_pipeline
+INFO     alembic.runtime.migration:migration.py:611 Running upgrade 928b88dc3f68 -> 20261106_agent_knowledge, Add the three planned knowledge tables; no image/index mutations or seeded facts.
+=============================== warnings summary ===============================
+tests/integration/test_indexing.py::test_real_model_batch_retry_recovery_idempotency_and_repair
+tests/integration/test_real_advanced_search.py::test_real_multimodal_multi_intent_constraints_and_baseline
+tests/integration/test_real_agent.py::test_isolated_empty_services_and_fictional_multihop
+tests/integration/test_real_evaluation.py::test_real_profiling_and_identity_receipts
+tests/integration/test_real_search.py::test_real_text_image_search_and_failure_paths
+tests/integration/test_real_services.py::test_real_dependency_connections
+tests/integration/test_real_services.py::test_real_backend_readiness
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_real_agent.py::test_isolated_empty_services_and_fictional_multihop
+1 failed, 185 passed, 7 warnings in 57.68s
+
+ Container ai-image-search-indexing-worker-run-1e21c76a9e5d Creating 
+ Container ai-image-search-indexing-worker-run-1e21c76a9e5d Created 
+

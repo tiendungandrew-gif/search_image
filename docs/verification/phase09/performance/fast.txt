@@ -1,0 +1,2 @@
+{"experiment_id": "20261106T071236_benchmark_7f9efe9e00", "directory": "evaluation/results/phase09/20261106T071236_benchmark_7f9efe9e00", "status": "measured"}
+

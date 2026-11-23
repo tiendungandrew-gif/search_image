@@ -1,0 +1,7 @@
+[OK] liveness
+[OK] readiness
+[OK] OpenAPI
+[OK] API docs
+[OK] frontend
+[OK] frontend API proxy
+

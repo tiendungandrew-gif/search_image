@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, Mock
 import pytest
 from minio.error import S3Error
 
+from app.core.container import Services
 from app.integrations.minio import MinioStorage
-from app.services.health import Services
 
 
 async def test_probes_are_bounded_and_isolated(settings):

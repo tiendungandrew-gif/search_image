@@ -1,0 +1,36 @@
+
+> ai-image-search-frontend@0.3.0 test:e2e
+> playwright test
+
+
+Running 22 tests using 1 worker
+
+  ✓   1 [desktop] › e2e/agent.spec.ts:3:1 › agent missing relation uses live API and does not fabricate landmark images (885ms)
+  ✓   2 [desktop] › e2e/agent.spec.ts:31:1 › agent returns live indexed images and real optional Gemini citations (2.7s)
+  ✓   3 [desktop] › e2e/agent.spec.ts:58:1 › empty-dataset Agent UI is exercised with an explicitly mocked SSE response (698ms)
+  ✓   4 [desktop] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (771ms)
+  ✓   5 [desktop] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (1.3s)
+  ✓   6 [desktop] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (1.0s)
+  ✓   7 [desktop] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (635ms)
+  ✓   8 [desktop] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (1.8s)
+  ✓   9 [desktop] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (3.3s)
+  ✓  10 [desktop] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (592ms)
+  ✓  11 [desktop] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (2.8s)
+  ✓  12 [mobile] › e2e/agent.spec.ts:3:1 › agent missing relation uses live API and does not fabricate landmark images (698ms)
+  ✓  13 [mobile] › e2e/agent.spec.ts:31:1 › agent returns live indexed images and real optional Gemini citations (2.1s)
+  ✓  14 [mobile] › e2e/agent.spec.ts:58:1 › empty-dataset Agent UI is exercised with an explicitly mocked SSE response (560ms)
+  ✓  15 [mobile] › e2e/evaluation.spec.ts:6:1 › annotation pack hiển thị ảnh thật và không tự xác nhận nhãn (648ms)
+  ✓  16 [mobile] › e2e/foundation.spec.ts:12:1 › text search thật trả ảnh có metadata, preview và không tràn viewport (1.2s)
+  ✓  17 [mobile] › e2e/foundation.spec.ts:46:1 › image search thật không ingest query ảnh vào corpus (960ms)
+  ✓  18 [mobile] › e2e/foundation.spec.ts:71:1 › invalid token báo lỗi; advanced mode đã bật (558ms)
+  ✓  19 [mobile] › e2e/foundation.spec.ts:84:1 › multi-intent AND OR và tiếng Việt có evidence chưa xác minh (1.7s)
+  ✓  20 [mobile] › e2e/foundation.spec.ts:116:1 › combined text image chạy cả RRF và weighted score (3.1s)
+  ✓  21 [mobile] › e2e/foundation.spec.ts:186:1 › unsupported relational query báo rõ không có multi-hop (581ms)
+  ✓  22 [mobile] › e2e/rag.spec.ts:3:1 › optional explanation uses real API and preserves indexed image results (3.2s)
+
+  22 passed (34.5s)
+
+(node:52390) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:53113) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

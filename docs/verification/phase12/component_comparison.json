@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "scope": "Backend app/alembic file bytes and frontend static file bytes; excludes image labels/runtime configuration",
+  "sha256": {
+    "backend": {
+      "phase12-verify-v4": "c3c5a914513226473e6644f7aeb8f82d8704109ee542774292334ccd2e9a910a",
+      "phase12-final": "c3c5a914513226473e6644f7aeb8f82d8704109ee542774292334ccd2e9a910a"
+    },
+    "frontend": {
+      "phase12-verify-v4": "62b941efbdfcf66b27f49c1d835a685c060476fdaab0fc2d53e60caec3c848f9",
+      "phase12-final": "62b941efbdfcf66b27f49c1d835a685c060476fdaab0fc2d53e60caec3c848f9"
+    }
+  }
+}

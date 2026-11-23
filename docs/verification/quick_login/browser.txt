@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+  ✓  1 [quick-desktop] › quick-login-e2e/roles.spec.ts:3:1 › quick Admin/User · real sessions, role landing pages, scoped search and logout (2.5s)
+  ✓  2 [quick-mobile] › quick-login-e2e/roles.spec.ts:3:1 › quick Admin/User · real sessions, role landing pages, scoped search and logout (2.5s)
+
+  2 passed (6.9s)
+(node:2036485) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2036887) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

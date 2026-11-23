@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "required_documents": 7,
+  "supplemental_documents": 2,
+  "report_sections": "A-L",
+  "relative_links": "pass",
+  "json_artifacts": 42,
+  "rag_csv_rows": 32,
+  "charts": "2 PNG + 2 SVG from actual measurements",
+  "core_design_validator": "pass: files/links/IDs/traceability/JSON/ER/ADR/structural Mermaid",
+  "core_json_examples": 17
+}

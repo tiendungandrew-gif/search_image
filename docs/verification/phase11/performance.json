@@ -1,0 +1,543 @@
+[
+  {
+    "experiment": "20261107T143422_benchmark_5578dfc6d7",
+    "config": {
+      "name": "phase08_coco_fast",
+      "profile": "fast",
+      "requests": 500,
+      "concurrency": 1,
+      "warmup": 12,
+      "rate": null,
+      "duration": null,
+      "client_timeout": 5,
+      "seed": 42,
+      "top_k": 10,
+      "candidate_count": 50,
+      "rerank": false,
+      "fusion": "rrf",
+      "strategy": "fused",
+      "filters": {},
+      "sample_resources": true,
+      "query_types": [],
+      "paired_text_only": false
+    },
+    "attempted": 500,
+    "successful": 500,
+    "failed": 0,
+    "server_latency": {
+      "count": 500,
+      "median_ms": 87.39664399945468,
+      "min_ms": 36.18111299874727,
+      "mean_ms": 87.5738722859569,
+      "p50_ms": 87.33029199902376,
+      "p90_ms": 128.54971399974602,
+      "p95_ms": 135.44565600022906,
+      "p99_ms": 144.21373999903153,
+      "max_ms": 267.5989879990084,
+      "stddev_ms": 29.770054341140256
+    },
+    "client_latency": {
+      "count": 500,
+      "median_ms": 89.46651850055787,
+      "min_ms": 38.264107000941294,
+      "mean_ms": 90.07837422197917,
+      "p50_ms": 89.39815899975656,
+      "p90_ms": 131.83933199979947,
+      "p95_ms": 138.11408600122377,
+      "p99_ms": 146.19017400036682,
+      "max_ms": 269.8544960003346,
+      "stddev_ms": 29.83543414801496
+    },
+    "rps": 11.097037386168092,
+    "errors": {},
+    "source": {
+      "sha256": "6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11",
+      "files": 313,
+      "archive": "evaluation/results/phase11/_sources/6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11.tar.gz",
+      "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+    },
+    "provenance": {
+      "dataset_sha256": "780aa0b608938c0e1724dc28a370807f0ec47200183d22e0d32756631945b93a",
+      "dataset_images": 513,
+      "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+      "label_sha256": null,
+      "active": {
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+      },
+      "server_environment": {
+        "status": "ready",
+        "pid": 1,
+        "python": "3.12.12",
+        "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+        "logical_cpus": 16,
+        "cpu_user_seconds": 6.620975,
+        "cpu_system_seconds": 1.1559,
+        "process_memory_kib": {
+          "VmHWM": 1186312,
+          "VmRSS": 1186312
+        },
+        "process_threads": 41,
+        "model_initialization_ms": 4598.940239999138,
+        "settings": {
+          "embedding_cpu_threads": 4,
+          "embedding_device": "auto",
+          "search_max_top_k": 50,
+          "search_default_candidates": 50,
+          "search_queue_capacity": 8,
+          "search_queue_wait_seconds": 0.05,
+          "search_object_check_concurrency": 1,
+          "reranking_max_candidates": 50,
+          "reranking_timeout_ms": 200
+        },
+        "gpu_measurements": null,
+        "model": {
+          "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+          "name": "openai/clip-vit-base-patch32",
+          "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+          "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+          "dimension": 512,
+          "device": "cpu",
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "collection": "images_clip_landmarks_phase09_v1_142374e60d29",
+          "generation": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment": "20261107T143509_benchmark_8e2a2506be",
+    "config": {
+      "name": "phase11_image",
+      "profile": "image",
+      "requests": 24,
+      "concurrency": 1,
+      "warmup": 4,
+      "rate": null,
+      "duration": null,
+      "client_timeout": 5,
+      "seed": 42,
+      "top_k": 10,
+      "candidate_count": 50,
+      "rerank": false,
+      "fusion": "rrf",
+      "strategy": "fused",
+      "filters": {},
+      "sample_resources": true,
+      "query_types": [],
+      "paired_text_only": false
+    },
+    "attempted": 24,
+    "successful": 24,
+    "failed": 0,
+    "server_latency": {
+      "count": 24,
+      "median_ms": 129.70696900083567,
+      "min_ms": 112.7860349988623,
+      "mean_ms": 131.4113376666531,
+      "p50_ms": 129.3781399999716,
+      "p90_ms": 139.1939179993642,
+      "p95_ms": 141.28409799923247,
+      "p99_ms": 202.14072099952318,
+      "max_ms": 202.14072099952318,
+      "stddev_ms": 16.46944942519085
+    },
+    "client_latency": {
+      "count": 24,
+      "median_ms": 131.80977649972192,
+      "min_ms": 114.4110430013825,
+      "mean_ms": 133.27806308340465,
+      "p50_ms": 131.59302399981243,
+      "p90_ms": 141.1799979996431,
+      "p95_ms": 142.84147400030633,
+      "p99_ms": 203.80037799986894,
+      "max_ms": 203.80037799986894,
+      "stddev_ms": 16.42530987671604
+    },
+    "rps": 7.501456353834087,
+    "errors": {},
+    "source": {
+      "sha256": "6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11",
+      "files": 313,
+      "archive": "evaluation/results/phase11/_sources/6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11.tar.gz",
+      "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+    },
+    "provenance": {
+      "dataset_sha256": "780aa0b608938c0e1724dc28a370807f0ec47200183d22e0d32756631945b93a",
+      "dataset_images": 513,
+      "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+      "label_sha256": null,
+      "active": {
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+      },
+      "server_environment": {
+        "status": "ready",
+        "pid": 1,
+        "python": "3.12.12",
+        "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+        "logical_cpus": 16,
+        "cpu_user_seconds": 100.447622,
+        "cpu_system_seconds": 3.452724,
+        "process_memory_kib": {
+          "VmHWM": 1194356,
+          "VmRSS": 1194356
+        },
+        "process_threads": 43,
+        "model_initialization_ms": 4598.940239999138,
+        "settings": {
+          "embedding_cpu_threads": 4,
+          "embedding_device": "auto",
+          "search_max_top_k": 50,
+          "search_default_candidates": 50,
+          "search_queue_capacity": 8,
+          "search_queue_wait_seconds": 0.05,
+          "search_object_check_concurrency": 1,
+          "reranking_max_candidates": 50,
+          "reranking_timeout_ms": 200
+        },
+        "gpu_measurements": null,
+        "model": {
+          "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+          "name": "openai/clip-vit-base-patch32",
+          "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+          "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+          "dimension": 512,
+          "device": "cpu",
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "collection": "images_clip_landmarks_phase09_v1_142374e60d29",
+          "generation": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment": "20261107T143514_benchmark_679e3ee7df",
+    "config": {
+      "name": "phase11_multi_intent",
+      "profile": "advanced",
+      "requests": 30,
+      "concurrency": 1,
+      "warmup": 4,
+      "rate": null,
+      "duration": null,
+      "client_timeout": 5,
+      "seed": 42,
+      "top_k": 10,
+      "candidate_count": 50,
+      "rerank": false,
+      "fusion": "rrf",
+      "strategy": "fused",
+      "filters": {},
+      "sample_resources": true,
+      "query_types": [
+        "multi_intent"
+      ],
+      "paired_text_only": false
+    },
+    "attempted": 30,
+    "successful": 30,
+    "failed": 0,
+    "server_latency": {
+      "count": 30,
+      "median_ms": 96.97719099949609,
+      "min_ms": 53.818587000932894,
+      "mean_ms": 104.6414843999931,
+      "p50_ms": 94.62255499965977,
+      "p90_ms": 144.88753200021165,
+      "p95_ms": 180.469754999649,
+      "p99_ms": 195.72896499994386,
+      "max_ms": 195.72896499994386,
+      "stddev_ms": 32.25378759788823
+    },
+    "client_latency": {
+      "count": 30,
+      "median_ms": 99.44641000038246,
+      "min_ms": 55.24661399977049,
+      "mean_ms": 106.8426105330218,
+      "p50_ms": 97.94845699980215,
+      "p90_ms": 146.63944999847445,
+      "p95_ms": 182.12180199952854,
+      "p99_ms": 197.93790699986857,
+      "max_ms": 197.93790699986857,
+      "stddev_ms": 32.209285060563424
+    },
+    "rps": 9.356009228017802,
+    "errors": {},
+    "source": {
+      "sha256": "6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11",
+      "files": 313,
+      "archive": "evaluation/results/phase11/_sources/6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11.tar.gz",
+      "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+    },
+    "provenance": {
+      "dataset_sha256": "780aa0b608938c0e1724dc28a370807f0ec47200183d22e0d32756631945b93a",
+      "dataset_images": 513,
+      "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+      "label_sha256": null,
+      "active": {
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+      },
+      "server_environment": {
+        "status": "ready",
+        "pid": 1,
+        "python": "3.12.12",
+        "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+        "logical_cpus": 16,
+        "cpu_user_seconds": 107.592589,
+        "cpu_system_seconds": 3.567789,
+        "process_memory_kib": {
+          "VmHWM": 1195096,
+          "VmRSS": 1195096
+        },
+        "process_threads": 43,
+        "model_initialization_ms": 4598.940239999138,
+        "settings": {
+          "embedding_cpu_threads": 4,
+          "embedding_device": "auto",
+          "search_max_top_k": 50,
+          "search_default_candidates": 50,
+          "search_queue_capacity": 8,
+          "search_queue_wait_seconds": 0.05,
+          "search_object_check_concurrency": 1,
+          "reranking_max_candidates": 50,
+          "reranking_timeout_ms": 200
+        },
+        "gpu_measurements": null,
+        "model": {
+          "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+          "name": "openai/clip-vit-base-patch32",
+          "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+          "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+          "dimension": 512,
+          "device": "cpu",
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "collection": "images_clip_landmarks_phase09_v1_142374e60d29",
+          "generation": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment": "20261107T143519_benchmark_85589eb25d",
+    "config": {
+      "name": "phase11_multimodal",
+      "profile": "advanced",
+      "requests": 24,
+      "concurrency": 1,
+      "warmup": 4,
+      "rate": null,
+      "duration": null,
+      "client_timeout": 5,
+      "seed": 42,
+      "top_k": 10,
+      "candidate_count": 50,
+      "rerank": false,
+      "fusion": "rrf",
+      "strategy": "fused",
+      "filters": {},
+      "sample_resources": true,
+      "query_types": [
+        "multimodal"
+      ],
+      "paired_text_only": false
+    },
+    "attempted": 24,
+    "successful": 24,
+    "failed": 0,
+    "server_latency": {
+      "count": 24,
+      "median_ms": 151.09024999946996,
+      "min_ms": 87.23672199994326,
+      "mean_ms": 153.83443183312315,
+      "p50_ms": 146.30697299980966,
+      "p90_ms": 184.8098909995315,
+      "p95_ms": 216.3034549994336,
+      "p99_ms": 267.01682500060997,
+      "max_ms": 267.01682500060997,
+      "stddev_ms": 35.13064491871064
+    },
+    "client_latency": {
+      "count": 24,
+      "median_ms": 152.8690684990579,
+      "min_ms": 89.49193999978888,
+      "mean_ms": 155.76308937488648,
+      "p50_ms": 148.26484699915454,
+      "p90_ms": 186.32710200108704,
+      "p95_ms": 218.03838699997868,
+      "p99_ms": 268.81274200059124,
+      "max_ms": 268.81274200059124,
+      "stddev_ms": 35.0561497271671
+    },
+    "rps": 6.418588349963598,
+    "errors": {},
+    "source": {
+      "sha256": "6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11",
+      "files": 313,
+      "archive": "evaluation/results/phase11/_sources/6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11.tar.gz",
+      "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+    },
+    "provenance": {
+      "dataset_sha256": "780aa0b608938c0e1724dc28a370807f0ec47200183d22e0d32756631945b93a",
+      "dataset_images": 513,
+      "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+      "label_sha256": null,
+      "active": {
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+      },
+      "server_environment": {
+        "status": "ready",
+        "pid": 1,
+        "python": "3.12.12",
+        "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+        "logical_cpus": 16,
+        "cpu_user_seconds": 115.558049,
+        "cpu_system_seconds": 3.780577,
+        "process_memory_kib": {
+          "VmHWM": 1198240,
+          "VmRSS": 1198240
+        },
+        "process_threads": 44,
+        "model_initialization_ms": 4598.940239999138,
+        "settings": {
+          "embedding_cpu_threads": 4,
+          "embedding_device": "auto",
+          "search_max_top_k": 50,
+          "search_default_candidates": 50,
+          "search_queue_capacity": 8,
+          "search_queue_wait_seconds": 0.05,
+          "search_object_check_concurrency": 1,
+          "reranking_max_candidates": 50,
+          "reranking_timeout_ms": 200
+        },
+        "gpu_measurements": null,
+        "model": {
+          "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+          "name": "openai/clip-vit-base-patch32",
+          "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+          "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+          "dimension": 512,
+          "device": "cpu",
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "collection": "images_clip_landmarks_phase09_v1_142374e60d29",
+          "generation": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment": "20261107T143524_benchmark_9540ea069c",
+    "config": {
+      "name": "phase11_fast_c4",
+      "profile": "fast",
+      "requests": 100,
+      "concurrency": 4,
+      "warmup": 8,
+      "rate": null,
+      "duration": null,
+      "client_timeout": 5,
+      "seed": 42,
+      "top_k": 10,
+      "candidate_count": 50,
+      "rerank": false,
+      "fusion": "rrf",
+      "strategy": "fused",
+      "filters": {},
+      "sample_resources": true,
+      "query_types": [],
+      "paired_text_only": false
+    },
+    "attempted": 100,
+    "successful": 97,
+    "failed": 3,
+    "server_latency": {
+      "count": 97,
+      "median_ms": 122.65226999988954,
+      "min_ms": 71.02137400033826,
+      "mean_ms": 124.1621477422705,
+      "p50_ms": 122.65226999988954,
+      "p90_ms": 150.67324899973755,
+      "p95_ms": 159.2175240002689,
+      "p99_ms": 179.8261759995512,
+      "max_ms": 179.8261759995512,
+      "stddev_ms": 20.47227388618533
+    },
+    "client_latency": {
+      "count": 97,
+      "median_ms": 125.70054400021036,
+      "min_ms": 74.2723860003025,
+      "mean_ms": 126.7611246391997,
+      "p50_ms": 125.70054400021036,
+      "p90_ms": 154.21895899999072,
+      "p95_ms": 160.68380199976673,
+      "p99_ms": 183.28147899956093,
+      "max_ms": 183.28147899956093,
+      "stddev_ms": 20.36473721174521
+    },
+    "rps": 30.338887446447128,
+    "errors": {
+      "INFERENCE_BUSY": 3
+    },
+    "source": {
+      "sha256": "6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11",
+      "files": 313,
+      "archive": "evaluation/results/phase11/_sources/6884c5b61b42f23af85802c06429e6536d3c3edebbdfb0a6b80d95a89ff6ba11.tar.gz",
+      "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+    },
+    "provenance": {
+      "dataset_sha256": "780aa0b608938c0e1724dc28a370807f0ec47200183d22e0d32756631945b93a",
+      "dataset_images": 513,
+      "query_set_sha256": "fcbc3c2ac9979f7db8222b28dbe314d75ab8f50c6ee138d466a23785eb3b5dfe",
+      "label_sha256": null,
+      "active": {
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc"
+      },
+      "server_environment": {
+        "status": "ready",
+        "pid": 1,
+        "python": "3.12.12",
+        "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.36",
+        "logical_cpus": 16,
+        "cpu_user_seconds": 126.258749,
+        "cpu_system_seconds": 3.899725,
+        "process_memory_kib": {
+          "VmHWM": 1198972,
+          "VmRSS": 1198972
+        },
+        "process_threads": 44,
+        "model_initialization_ms": 4598.940239999138,
+        "settings": {
+          "embedding_cpu_threads": 4,
+          "embedding_device": "auto",
+          "search_max_top_k": 50,
+          "search_default_candidates": 50,
+          "search_queue_capacity": 8,
+          "search_queue_wait_seconds": 0.05,
+          "search_object_check_concurrency": 1,
+          "reranking_max_candidates": 50,
+          "reranking_timeout_ms": 200
+        },
+        "gpu_measurements": null,
+        "model": {
+          "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+          "name": "openai/clip-vit-base-patch32",
+          "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+          "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+          "dimension": 512,
+          "device": "cpu",
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "collection": "images_clip_landmarks_phase09_v1_142374e60d29",
+          "generation": 3
+        }
+      }
+    }
+  }
+]

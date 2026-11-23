@@ -11,15 +11,43 @@ class ImageMetadataInput(BaseModel):
     title: str | None = Field(default=None, max_length=256)
     description: str | None = Field(default=None, max_length=4000)
     caption: str | None = Field(default=None, max_length=4000)
+    caption_source: str | None = Field(default=None, max_length=160)
     tags: list[str] = Field(default_factory=list, max_length=20)
     source_dataset: str = Field(min_length=1, max_length=128)
     source_uri: str | None = Field(default=None, max_length=2048)
     license: str = Field(min_length=1, max_length=256)
     rights_ref: str = Field(min_length=1, max_length=2048)
 
+    @field_validator(
+        "title",
+        "description",
+        "caption",
+        "caption_source",
+        "source_dataset",
+        "source_uri",
+        "license",
+        "rights_ref",
+    )
+    @classmethod
+    def validate_stored_text(cls, value):
+        if value is not None and any(
+            unicodedata.category(char) in {"Cc", "Cs"} and char not in "\n\r\t" for char in value
+        ):
+            raise ValueError("invalid_metadata_character")
+        return value
+
+    def fingerprint_data(self):
+        values = self.model_dump()
+        # Preserve idempotency hashes from before optional caption attribution existed.
+        if self.caption_source is None:
+            values.pop("caption_source")
+        return values
+
     @field_validator("tags")
     @classmethod
     def normalize_tags(cls, tags):
+        if any(unicodedata.category(char) in {"Cc", "Cs"} for tag in tags for char in tag):
+            raise ValueError("invalid_tag_character")
         tags = sorted({unicodedata.normalize("NFC", x).strip().lower() for x in tags})
         if any(not 1 <= len(x) <= 64 for x in tags):
             raise ValueError("invalid_tag")

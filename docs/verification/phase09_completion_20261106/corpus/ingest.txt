@@ -1,0 +1,41 @@
+{
+  "discovered": 3,
+  "validated": 3,
+  "duplicates": 0,
+  "accepted": 3,
+  "failed": 0,
+  "ignored": 2,
+  "results": [
+    {
+      "filename": "jefferson-memorial.jpg",
+      "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+      "duplicate": false,
+      "job_id": "a86aad63-7809-4c84-915b-5f4745b13eb1",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/a86aad63-7809-4c84-915b-5f4745b13eb1"
+    },
+    {
+      "filename": "lincoln-memorial.jpg",
+      "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+      "duplicate": false,
+      "job_id": "bb2b8110-c030-407e-93ea-44f797ee4808",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/bb2b8110-c030-407e-93ea-44f797ee4808"
+    },
+    {
+      "filename": "washington-monument.jpg",
+      "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+      "duplicate": false,
+      "job_id": "48f0c4dd-b292-409f-92a6-74a139f9048a",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/48f0c4dd-b292-409f-92a6-74a139f9048a"
+    }
+  ],
+  "ingestion_ms": 1236.7953689999922,
+  "source_id": "bb23c57b-919f-46dd-a9f5-fa4c551f4641"
+}
+
+ Container ai-image-search-indexing-worker-run-4c8edbac7bc1 Creating 
+ Container ai-image-search-indexing-worker-run-4c8edbac7bc1 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(

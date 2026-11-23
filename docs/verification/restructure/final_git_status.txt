@@ -1,0 +1,278 @@
+ M .dockerignore
+ M .env.example
+ M .gitignore
+ M Makefile
+ M README.md
+ M backend/Dockerfile
+ M backend/app/api/router.py
+ M backend/app/api/v1/health.py
+ M backend/app/api/v1/images.py
+ M backend/app/api/v1/rag.py
+ M backend/app/api/v1/system.py
+ M backend/app/cli/evaluation.py
+ M backend/app/cli/indexing.py
+ M backend/app/cli/rag.py
+ M backend/app/cli/search.py
+ M backend/app/core/config.py
+ M backend/app/core/logging.py
+ M backend/app/core/middleware.py
+ M backend/app/db/models/__init__.py
+ M backend/app/evaluation/benchmark.py
+ M backend/app/evaluation/dataset.py
+ M backend/app/evaluation/models.py
+ M backend/app/evaluation/profiling.py
+ M backend/app/evaluation/rag.py
+ M backend/app/evaluation/reporting.py
+ M backend/app/evaluation/tracking.py
+ M backend/app/main.py
+ M backend/app/schemas/filters.py
+ M backend/app/schemas/ingestion.py
+ M backend/app/schemas/rag.py
+ M backend/app/services/health.py
+ M backend/app/services/indexing/collection_manager.py
+ M backend/app/services/indexing/consistency.py
+ M backend/app/services/indexing/jobs.py
+ M backend/app/services/indexing/worker.py
+ M backend/app/services/rag/context_builder.py
+ M backend/app/services/rag/generator.py
+ M backend/app/services/rag/llm_provider.py
+ M backend/app/services/search/multi_intent.py
+ M backend/app/services/search/ranking.py
+ M backend/app/services/search/search_service.py
+ M backend/app/services/search/vector_retriever.py
+ M backend/tests/conftest.py
+ M backend/tests/integration/test_indexing.py
+ M backend/tests/integration/test_real_advanced_search.py
+ M backend/tests/integration/test_real_rag.py
+ M backend/tests/integration/test_real_services.py
+ M backend/tests/unit/test_rag.py
+ M backend/tests/unit/test_schema.py
+ M backend/tests/unit/test_scripts.py
+ M backend/tests/unit/test_services.py
+ M compose.yaml
+ M datasets/README.md
+ D docs/ABLATION_STUDY.md
+ D docs/ADVANCED_SEARCH_API.md
+ D docs/ADVANCED_SEARCH_TEST_REPORT.md
+ D docs/API_SPECIFICATION.md
+ D docs/DATABASE_DESIGN.md
+ D docs/DATASET_AND_GROUND_TRUTH.md
+ D docs/DECISIONS.md
+ D docs/DESIGN_REVIEW.md
+ D docs/DEVELOPMENT.md
+ D docs/EMBEDDING_MODELS.md
+ D docs/ENGINEERING_STANDARDS.md
+ D docs/EVALUATION_METHODOLOGY.md
+ D docs/EXPERIMENT_RESULTS.md
+ D docs/IMAGE_INDEXING.md
+ D docs/INDEXING_TEST_REPORT.md
+ D docs/LATENCY_BENCHMARK.md
+ D docs/MASTER_SPEC.md
+ D docs/MODEL_COMPARISON.md
+ D docs/MULTIMODAL_SEARCH.md
+ D docs/MULTI_INTENT_SEARCH.md
+ D docs/PERFORMANCE_DESIGN.md
+ D docs/PERFORMANCE_OPTIMIZATION.md
+ D docs/PHASE03_REPORT.md
+ D docs/PHASE06_EVALUATION.md
+ D docs/PHASE06_TEST_REPORT.md
+ D docs/PHASE07_TEST_REPORT.md
+ D docs/PHASE08_TEST_REPORT.md
+ D docs/PRD.md
+ D docs/RAG_API.md
+ D docs/RAG_ARCHITECTURE.md
+ D docs/RAG_EVALUATION.md
+ D docs/RAG_IMPLEMENTATION.md
+ D docs/RAG_PERFORMANCE.md
+ D docs/RAG_PROMPT_DESIGN.md
+ D docs/REQUIREMENTS.md
+ D docs/RERANKING_DESIGN.md
+ D docs/ROADMAP.md
+ D docs/SAD.md
+ D docs/SEARCH_API.md
+ D docs/SEARCH_PERFORMANCE.md
+ D docs/SEARCH_TEST_REPORT.md
+ D docs/SEMANTIC_SEARCH.md
+ D docs/SETUP.md
+ D docs/SYSTEM_ARCHITECTURE.md
+ D docs/VECTOR_INDEX_DESIGN.md
+ M docs/adr/ADR-001.md
+ M docs/adr/ADR-002.md
+ M docs/adr/ADR-003.md
+ M docs/adr/ADR-004.md
+ M docs/adr/ADR-005.md
+ M docs/adr/ADR-006.md
+ M docs/adr/ADR-007.md
+ M docs/adr/ADR-008.md
+ M evaluation/README.md
+ M frontend/e2e/foundation.spec.ts
+ M frontend/e2e/rag.spec.ts
+ M frontend/package-lock.json
+ M frontend/package.json
+ M frontend/playwright.config.ts
+ M frontend/src/app/App.tsx
+ M frontend/src/features/rag/ExplanationPanel.tsx
+ M frontend/src/features/search/ResultImage.tsx
+ M frontend/src/features/search/SearchWorkspace.tsx
+ M frontend/src/hooks/useHealth.ts
+ M frontend/src/main.tsx
+ M frontend/src/services/api/client.test.ts
+ M frontend/src/services/api/client.ts
+ M frontend/src/styles/index.css
+ M frontend/src/types/api.ts
+ M frontend/tsconfig.node.json
+ D scripts/benchmark_search.sh
+ D scripts/check_environment.sh
+ D scripts/download_sample_dataset.py
+ D scripts/index_sample_dataset.sh
+ D scripts/run_evaluation_container.sh
+ D scripts/run_evaluation_suite.py
+ M scripts/run_local.py
+ D scripts/start_backend.sh
+ D scripts/verify_advanced_search.sh
+ D scripts/verify_containers.py
+ D scripts/verify_evaluation.sh
+ D scripts/verify_index.sh
+ D scripts/verify_indexing.py
+ D scripts/verify_rag.sh
+ D scripts/verify_rag_fallback.py
+ D scripts/verify_search.py
+ D scripts/verify_search.sh
+ D scripts/verify_services.py
+ D scripts/verify_services.sh
+ M workers/README.md
+?? .env.deploy.example
+?? .github/
+?? backend/Dockerfile.prod
+?? backend/alembic/versions/20261106_agent_knowledge.py
+?? backend/app/api/v1/agent.py
+?? backend/app/cli/agent.py
+?? backend/app/cli/download_coco.py
+?? backend/app/cli/download_landmarks.py
+?? backend/app/cli/knowledge.py
+?? backend/app/cli/operations.py
+?? backend/app/cli/prepare_landmark_knowledge.py
+?? backend/app/cli/worker.py
+?? backend/app/core/container.py
+?? backend/app/db/models/knowledge.py
+?? backend/app/evaluation/agent.py
+?? backend/app/repositories/knowledge_import.py
+?? backend/app/repositories/knowledge_repository.py
+?? backend/app/schemas/agent.py
+?? backend/app/schemas/workspace.py
+?? backend/app/services/agent/
+?? backend/app/services/embeddings/vector_utils.py
+?? backend/app/services/workspace.py
+?? backend/tests/__init__.py
+?? backend/tests/fixtures/
+?? backend/tests/integration/conftest.py
+?? backend/tests/integration/test_qa_ai.py
+?? backend/tests/integration/test_qa_services.py
+?? backend/tests/integration/test_qa_worker_process.py
+?? backend/tests/integration/test_real_agent.py
+?? backend/tests/reliability/
+?? backend/tests/security/
+?? backend/tests/unit/test_agent.py
+?? backend/tests/unit/test_agent_evaluation.py
+?? backend/tests/unit/test_coco.py
+?? backend/tests/unit/test_deployment.py
+?? backend/tests/unit/test_landmark_download.py
+?? backend/tests/unit/test_workspace.py
+?? compose.prod.yaml
+?? compose.qa.yaml
+?? compose.tls.yaml
+?? config/
+?? docs/FINAL_HANDOVER.md
+?? docs/FINAL_PROJECT_REPORT.md
+?? docs/README.md
+?? docs/REPOSITORY_STRUCTURE.md
+?? docs/architecture/
+?? docs/archive/
+?? docs/features/
+?? docs/operations/
+?? docs/research/
+?? docs/testing/
+?? docs/verification/phase08_completion_20261106/
+?? docs/verification/phase09/
+?? docs/verification/phase09_completion_20261106/
+?? docs/verification/phase10/
+?? docs/verification/phase11/
+?? docs/verification/phase12/
+?? docs/verification/restructure/
+?? "emantic image search\""
+?? evaluation/agent/
+?? evaluation/annotation/rag_review.html
+?? evaluation/datasets/manifests/phase08_coco_v1.json
+?? evaluation/datasets/manifests/phase08_coco_v2.json
+?? evaluation/datasets/manifests/phase09_public_v1.json
+?? evaluation/datasets/manifests/phase12_synthetic_v1.json
+?? evaluation/experiments/phase08_coco_fast.json
+?? evaluation/experiments/phase11_fast_c4.json
+?? evaluation/experiments/phase11_image.json
+?? evaluation/experiments/phase11_multi_intent.json
+?? evaluation/experiments/phase11_multimodal.json
+?? evaluation/experiments/phase12_proxy_fast.json
+?? evaluation/queries/phase08_coco_v1.jsonl
+?? evaluation/queries/phase08_coco_v2.jsonl
+?? evaluation/queries/phase09_public_v1.jsonl
+?? evaluation/queries/phase12_synthetic_v1.jsonl
+?? evaluation/rag/test_cases/
+?? evaluation/reports/phase08_20261106/
+?? evaluation/reports/phase09_20261106/
+?? evaluation/reports/phase09_completion_20261106/
+?? evaluation/reports/phase09_completion_20261106_final/
+?? evaluation/results/phase08_completion/
+?? evaluation/results/phase09/
+?? evaluation/results/phase09_completion/
+?? evaluation/results/phase10/
+?? evaluation/results/phase11/
+?? evaluation/results/phase12/
+?? evaluation/results/restructure/
+?? frontend/Dockerfile.prod
+?? frontend/deploy-e2e/
+?? frontend/e2e/agent.spec.ts
+?? frontend/e2e/phase10-empty.spec.ts
+?? frontend/e2e/phase10-performance.spec.ts
+?? frontend/e2e/phase10.spec.ts
+?? frontend/playwright.deploy.config.ts
+?? frontend/playwright.mock.config.ts
+?? frontend/playwright.qa.config.ts
+?? frontend/qa-e2e/
+?? frontend/src/components/ErrorBoundary.test.tsx
+?? frontend/src/components/ErrorBoundary.tsx
+?? frontend/src/features/agent/
+?? frontend/src/features/evaluation/
+?? frontend/src/features/rag/ExplanationPanel.test.tsx
+?? frontend/src/features/search/AdvancedControls.tsx
+?? frontend/src/features/search/ImageDetailDialog.tsx
+?? frontend/src/features/search/ImageUpload.test.tsx
+?? frontend/src/features/search/ImageUpload.tsx
+?? frontend/src/features/search/QueryAnalysis.tsx
+?? frontend/src/features/search/ResultGallery.tsx
+?? frontend/src/features/search/ResultImage.test.tsx
+?? frontend/src/features/search/SearchForm.tsx
+?? frontend/src/features/search/SearchSkeleton.tsx
+?? frontend/src/features/search/useSearchSession.test.tsx
+?? frontend/src/features/search/useSearchSession.ts
+?? frontend/src/features/search/validation.test.ts
+?? frontend/src/features/search/validation.ts
+?? frontend/src/features/system/
+?? frontend/src/hooks/useHealth.test.tsx
+?? frontend/src/hooks/useWorkspaceStatus.ts
+?? frontend/src/services/api/decoders.ts
+?? frontend/src/services/api/media.ts
+?? frontend/src/services/api/stream.ts
+?? infra/nginx/
+?? scripts/README.md
+?? scripts/archive/
+?? scripts/browser_environment.py
+?? scripts/checks/
+?? scripts/data/
+?? scripts/deploy.py
+?? scripts/deployment/
+?? scripts/environment_paths.py
+?? scripts/evaluation/
+?? scripts/qa.py
+?? scripts/qa_tools/
+?? scripts/runtime/
+?? scripts/verification/

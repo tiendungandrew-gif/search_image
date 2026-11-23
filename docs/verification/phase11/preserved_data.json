@@ -1,0 +1,10 @@
+{
+  "serving_counts": {
+    "images": 513,
+    "entities": 4,
+    "entity_relationships": 3,
+    "image_entities": 3
+  },
+  "workspace_before_after_equal": true,
+  "mutations_on_serving_data": false
+}

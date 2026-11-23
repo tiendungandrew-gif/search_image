@@ -1,0 +1,69 @@
+{
+  "health/live": {
+    "status": "alive",
+    "service": "image-search-api"
+  },
+  "health/ready": {
+    "status": "ready",
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    }
+  },
+  "system/workspace": {
+    "dataset": {
+      "state": "empty_dataset",
+      "images": 0,
+      "available_images": 0,
+      "indexed_images": 0,
+      "vectors": null,
+      "index_id": null,
+      "index_status": "absent",
+      "generation": null
+    },
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "capabilities": {
+      "text_search": false,
+      "image_search": false,
+      "multimodal": false,
+      "multi_intent": false,
+      "rerank": false,
+      "explanations": false,
+      "agent": false
+    },
+    "rag": {
+      "enabled": false,
+      "configured": false,
+      "streaming": true
+    },
+    "agent": {
+      "enabled": false,
+      "llm_planning": false
+    },
+    "limits": {
+      "top_k": 50,
+      "image_bytes": 20971520
+    }
+  },
+  "system/evaluation": {
+    "state": "not_available",
+    "experiments": [],
+    "skipped": 0
+  },
+  "direct_service_verification": {
+    "table_counts": {
+      "images": 0,
+      "entities": 0,
+      "entity_relationships": 0,
+      "image_entities": 0
+    },
+    "qdrant_collections": [],
+    "minio_objects": 0,
+    "migration_head": "20261106_agent_knowledge"
+  }
+}

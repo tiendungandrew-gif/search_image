@@ -1,0 +1,182 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-bdee4bcfcba9 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-bdee4bcfcba9 Created 
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_real_clip_empty_to_indexed_search_agent_and_rag_fixture _________
+
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...s=<app.services.health.Services object at 0x7d7243ff2c60>, token='20a7545bbf4a46b58d0364e0a927f0ff', collections=set())
+
+    async def test_real_clip_empty_to_indexed_search_agent_and_rag_fixture(qa_resources):
+        cfg = qa_resources.settings
+        result = await seed(qa_resources.services)
+        assert result["images_before"] == 0 and result["dimension"] == 512
+        cfg.search_enabled = True
+        cfg.agent_enabled = True
+        cfg.agent_allow_fixture_knowledge = True
+        headers = {"Authorization":"Bearer " + cfg.api_token.get_secret_value()}
+        app = create_app(cfg)
+        async with app.router.lifespan_context(app), AsyncClient(transport=ASGITransport(app), base_url="http://qa", headers=headers) as client:
+            status = (await client.get("/api/v1/system/workspace")).json()
+            assert status["dataset"]["state"] == "ready" and status["dataset"]["vectors"] == 6
+            for mode, query in [("text","colored shapes"),("multi_intent","colored shapes and a rectangle"),("multi_intent","a rectangle or a circle")]:
+                response = await client.post("/api/v1/search", json={"mode":mode, "text":query, "top_k":3, "rerank":{"enabled":True,"on_failure":"error"}})
+                assert response.status_code == 200
+                body = response.json()
+                assert len(body["results"]) == 3
+                assert len({image["image_id"] for image in body["results"]}) == 3
+                assert all(np.isfinite(image["score"]) for image in body["results"])
+                if mode == "multi_intent":
+                    assert any(a["status"] == "unknown" for image in body["results"] for a in image["constraint_assessments"])
+            for method in ["rrf","weighted_rrf","weighted_score"]:
+                response = await client.post("/api/v1/search/multimodal", files={"image":("fixture.png",image_bytes(),"image/png")}, data={"options":'{"mode":"multimodal","text":"colored shapes","top_k":3,"fusion":{"method":"'+method+'","text_weight":0.4,"image_weight":0.6}}'})
+                assert response.status_code == 200 and response.json()["search_mode"] == "multimodal"
+            exact = await client.post("/api/v1/search/multimodal", files={"image":("fixture.png",image_bytes(),"image/png")}, data={"options":'{"mode":"image","top_k":1,"exclude_self":false}'})
+            assert exact.status_code == 200 and exact.json()["results"][0]["image_id"] == result["image_ids"][0]
+            assert exact.json()["results"][0]["score"] > .99
+            # SQL-like text is a value, never an executable filter expression.
+            empty = await client.post("/api/v1/search", json={"text":"shapes", "filters":{"city":"Paris'); DROP TABLE images; --"}})
+            assert empty.status_code == 200 and empty.json()["results"] == []
+            agent = await client.post("/api/v1/search/agent", json={"query":"Find landmarks in the city where Fixture Lake Alpha is located", "top_k":3})
+            assert agent.status_code == 200
+            assert agent.json()["status"] == "completed" and agent.json()["tool_calls"] == 4
+            assert [image["image_id"] for image in agent.json()["results"]] == [result["image_ids"][0]]
+            # No real LLM is required: validate context/citations with an explicit provider double.
+            class FixtureProvider:
+                async def stream(self, messages, **kwargs):
+                    import json
+                    message = messages[-1]["content"]
+                    data = json.loads(message[message.index('{"QUESTION_DATA":'):])
+                    yield ProviderChunk(json.dumps({"fact_ids":[fact["fact_id"] for fact in data["EVIDENCE_DATA"]][:2]}), returned_model="fixture-selector")
+    
+            generator = app.state.rag_generator
+            generator.provider, generator.error_code = FixtureProvider(), None
+            try:
+>               explained = await RagService(app.state.search_runtime, generator).execute(RagRequest(image_ids=result["image_ids"][:2], expected_index_id=result["index_id"], question="What is the metadata format?"), "qa-rag-fixture")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/integration/test_qa_ai.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <app.services.rag.rag_service.RagService object at 0x7d71ff6d0860>
+request = RagRequest(query=None, question='What is the metadata format?', top_k=10, search_mode='semantic', language='auto', sea...7fa3d08'), max_evidence_items=None, max_context_tokens=None, context_policy='descriptive_first', context_format='full')
+request_id = 'qa-rag-fixture', emit = <function silent_emit at 0x7d72496579c0>
+
+    async def execute(self, request, request_id, emit=silent_emit):
+        started = perf_counter()
+        latency = {
+            "retrieval_ms": 0.0,
+            "evidence_ms": 0.0,
+            "context_ms": 0.0,
+            "generation_ms": 0.0,
+            "validation_ms": 0.0,
+            "provider_ttft_ms": None,
+            "provider_ttlast_ms": None,
+        }
+        if (
+            request.expected_index_id
+            and request.expected_index_id != self.runtime.registry.index.id
+        ):
+            raise AppError(409, "INDEX_SWITCHING", "Chỉ mục đã đổi; hãy tìm kiếm lại")
+        await emit(
+            "retrieval_started",
+            {"operation": "explain_existing" if request.image_ids else "search_and_explain"},
+        )
+        mark = perf_counter()
+        search_result = None
+        if request.image_ids is None:
+            options = request.search or SearchRequest(
+                query=request.query, search_mode=request.search_mode, top_k=request.top_k
+            )
+            async with asyncio.timeout(self.runtime.settings.request_timeout_seconds):
+                search_result = await SearchService(self.runtime).execute(options, request_id)
+            ids = [r.image_id for r in search_result.results]
+        else:
+            ids = request.image_ids
+        latency["retrieval_ms"] = (perf_counter() - mark) * 1000
+        mark = perf_counter()
+        evidence, results, excluded = await EvidenceRetriever(self.runtime).retrieve(
+            ids, search_result.results if search_result else None
+        )
+        latency["evidence_ms"] = (perf_counter() - mark) * 1000
+        await emit(
+            "retrieval_completed",
+            {
+                "results": [r.model_dump(mode="json") for r in results],
+                "excluded_image_count": len(excluded),
+            },
+        )
+        language = select_language(request)
+        question = (
+            request.question
+            or request.query
+            or (request.search.text if request.search else None)
+            or (
+                "Tóm tắt bằng chứng hiện có."
+                if language == "vi"
+                else "Summarize available evidence."
+            )
+        )
+        mark = perf_counter()
+        context = build_context(evidence, question, language, self.runtime.settings, request)
+        latency["context_ms"] = (perf_counter() - mark) * 1000
+        answer = RagAnswer(
+            answer=(
+                "Chưa tạo được giải thích lúc này. Kết quả ảnh vẫn có sẵn."
+                if language == "vi"
+                else "Explanation generation is unavailable. Image results remain available."
+            ),
+            grounding_status="generation_unavailable",
+            evidence=(
+                [e for e in evidence if str(e.image_id) in context.summary["included_image_ids"]]
+                if context.facts
+                else evidence[: self.runtime.settings.rag_max_evidence_items]
+            ),
+            language=language,
+            limitations=["Text-only metadata explanation; no direct visual verification."],
+        )
+        await self.generator.run(context, language, answer, latency, emit)
+        latency["total_ms"] = (perf_counter() - started) * 1000
+        latency["time_to_last_token_from_request_ms"] = (
+            latency["retrieval_ms"]
+            + latency["evidence_ms"]
+            + latency["context_ms"]
+            + latency["provider_ttlast_ms"]
+            if latency["provider_ttlast_ms"] is not None
+            else None
+        )
+        warnings = list(search_result.warnings) if search_result else []
+        if excluded:
+            warnings.append(
+                {
+                    "code": "EVIDENCE_EXCLUDED",
+                    "message": "Một số ảnh không còn đủ điều kiện truy xuất",
+                }
+            )
+>       return RagResponse(
+            query_id=search_result.query_id if search_result else uuid4(),
+            request_id=request_id,
+            operation="search_and_explain" if search_result else "explain_existing",
+            index_id=self.runtime.registry.index.id,
+            model_id=self.runtime.registry.model.id,
+            results=results,
+            rag=answer,
+            latency=latency,
+            warnings=warnings,
+        )
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RagResponse
+E       request_id
+E         Input should be a valid UUID, invalid character: found `q` at 0 [type=uuid_parsing, input_value='qa-rag-fixture', input_type=str]
+E           For further information visit https://errors.pydantic.dev/2.14/v/uuid_parsing
+
+backend/app/services/rag/rag_service.py:113: ValidationError
+=============================== warnings summary ===============================
+tests/integration/test_qa_ai.py::test_real_clip_empty_to_indexed_search_agent_and_rag_fixture
+tests/integration/test_qa_ai.py::test_real_clip_empty_to_indexed_search_agent_and_rag_fixture
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_qa_ai.py::test_real_clip_empty_to_indexed_search_agent_and_rag_fixture
+1 failed, 2 warnings in 12.17s
+

@@ -1,0 +1,6 @@
+{
+  "sha256": "5b736cd531eacc1cdec2e7968ce54747a6fe4cb138c7c778e96d52b40c137266",
+  "files": 247,
+  "archive": "evaluation/results/phase09_completion/_sources/5b736cd531eacc1cdec2e7968ce54747a6fe4cb138c7c778e96d52b40c137266.tar.gz",
+  "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+}

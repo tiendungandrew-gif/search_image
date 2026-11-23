@@ -1,0 +1,11 @@
+{
+  "main_images": 513,
+  "main_inventory_preserved": true,
+  "existing_development_values_preserved": true,
+  "production_env_and_encoder_decoder_preserved": true,
+  "quick_login_roles": [
+    "admin",
+    "user"
+  ],
+  "production_quick_login_status": 404
+}

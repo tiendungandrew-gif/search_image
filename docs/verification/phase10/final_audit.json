@@ -1,0 +1,55 @@
+{
+  "phase": 10,
+  "date": "2026-11-07",
+  "source_manifest_sha256": "d657b0348dc99e8e33749dfa6cd6163347bf007ea5fae5740149abd259c2a5c0",
+  "source_file_count": 258,
+  "preserved_ai_module_count": 47,
+  "preserved_ai_modules_unchanged": true,
+  "secret_scan": {
+    "scanned_file_count": 142,
+    "secret_value_count": 7,
+    "findings": []
+  },
+  "env_mode": "0o600",
+  "checks": {
+    "frontend_unit_passed": 40,
+    "backend_tests_passed": 211,
+    "functional_e2e_passed": 72,
+    "performance_e2e_passed": 2,
+    "functional_matrix_perf_skips": 2,
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "diff_check": "passed"
+  },
+  "human_relevance_and_faithfulness": "NOT_VERIFIED: deferred by user",
+  "phase11": "not_started",
+  "deployment": "not_performed",
+  "git_commit_push": "not_performed",
+  "source_snapshot": {
+    "sha256": "1aff5be1c8ac65bdc122e4775f88df8d3c20087496c5be4c1f72f9966441a27b",
+    "files": 280,
+    "archive": "evaluation/results/phase10/_sources/1aff5be1c8ac65bdc122e4775f88df8d3c20087496c5be4c1f72f9966441a27b.tar.gz",
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "source_archive_secret_scan": "passed",
+  "main_runtime_after_cleanup": {
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "available_images": 513,
+    "active_index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+    "generation": 3,
+    "entities": 4,
+    "relations": 3,
+    "image_links": 3,
+    "temporary_databases": 0,
+    "temporary_collections": [],
+    "temporary_buckets": []
+  },
+  "temporary_test_resources_cleaned": true,
+  "documentation_links": "passed",
+  "final_evidence_secret_scan": "passed"
+}

@@ -1,198 +1,284 @@
-import { useEffect, useRef, useState } from "react";
+import { CurrentAccountContext } from "../features/auth/CurrentAccountContext";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { Sidebar } from "../features/chat/Sidebar";
+import { FavoritesProvider } from "../features/profile/FavoritesProvider";
 import { Icon } from "../components/Icon";
 import { SearchWorkspace } from "../features/search/SearchWorkspace";
+import { AccountMenu } from "../features/auth/AccountMenu";
+import { LoginPage } from "../features/auth/LoginPage";
+import { useAuth } from "../features/auth/useAuth";
 import { useHealth } from "../hooks/useHealth";
-import { api } from "../services/api/client";
-import type { Readiness } from "../types/api";
+import { useWorkspaceStatus } from "../hooks/useWorkspaceStatus";
+const AdminWorkspace = lazy(() => import("../features/admin/AdminWorkspace"));
+const ProfilePage = lazy(() => import("../features/profile/ProfilePage"));
+const FavoritesPage = lazy(() => import("../features/profile/FavoritesPage"));
+const AccountPage = lazy(() => import("../features/auth/AccountPage"));
+const OperatorWorkspace = lazy(() =>
+  import("../features/operator/OperatorWorkspace").then((m) => ({
+    default: m.OperatorWorkspace,
+  })),
+);
 
 export function App() {
-  const { health, loading, error, refresh } = useHealth();
-  const [token, setToken] = useState("");
-  const [readiness, setReadiness] = useState<Readiness | null>(null);
-  const [checking, setChecking] = useState(false);
-  const [readinessError, setReadinessError] = useState<string | null>(null);
-  const checkController = useRef<AbortController | null>(null);
-  useEffect(() => () => checkController.current?.abort(), []);
-  async function checkInfrastructure() {
-    checkController.current?.abort();
-    const controller = new AbortController();
-    checkController.current = controller;
-    setChecking(true);
-    setReadinessError(null);
-    setReadiness(null);
+  const auth = useAuth();
+  const { health } = useHealth();
+  const [path, setPath] = useState(location.pathname);
+  const [dark, setDark] = useState(() => {
     try {
-      const data = await api.readiness(token, controller.signal);
-      if (!controller.signal.aborted) setReadiness(data);
-    } catch (err) {
-      if (!controller.signal.aborted)
-        setReadinessError(
-          err instanceof Error ? err.message : "Lỗi kiểm tra dịch vụ",
-        );
-    } finally {
-      if (!controller.signal.aborted) setChecking(false);
+      return localStorage.getItem("lens.theme") === "dark";
+    } catch {
+      return false;
     }
+  });
+  const [passwordChanged, setPasswordChanged] = useState(false);
+  const [logoutError, setLogoutError] = useState<string | null>(null);
+  const [searchHost, setSearchHost] = useState<HTMLDivElement | null>(null);
+  const workspace = useWorkspaceStatus(
+    "",
+    Boolean(auth.user),
+    auth.user
+      ? `${auth.user.id}:${auth.user.role}:${auth.user.datasets.map((d) => d.id).join(",")}`
+      : "",
+    !auth.loading && !auth.user && path === "/",
+  );
+  useEffect(() => {
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+  }, [dark]);
+  useEffect(() => {
+    const pop = () => setPath(location.pathname);
+    window.addEventListener("popstate", pop);
+    return () => window.removeEventListener("popstate", pop);
+  }, []);
+  function navigate(
+    event: React.MouseEvent<HTMLAnchorElement>,
+    target: string,
+  ) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+      return;
+    event.preventDefault();
+    history.pushState(null, "", target);
+    setPath(target);
+    window.scrollTo({ top: 0 });
   }
+  const userId = auth.user?.id;
+  useEffect(() => {
+    if (!userId) return;
+    const frame = requestAnimationFrame(() => {
+      const heading = document.querySelector<HTMLElement>("#main-content h1");
+      heading?.setAttribute("tabindex", "-1");
+      heading?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [path, userId]);
+  if (auth.loading)
+    return (
+      <main className="session-loading" role="status">
+        <span className="spinner" />
+        Đang mở không gian của bạn…
+      </main>
+    );
+  if (path.startsWith("/operator") && auth.legacy_enabled)
+    return (
+      <Suspense fallback={<p role="status">Đang mở công cụ vận hành…</p>}>
+        <OperatorWorkspace />
+      </Suspense>
+    );
+  if (!auth.user && path !== "/")
+    return (
+      <LoginPage
+        successNotice={
+          passwordChanged
+            ? "Đổi mật khẩu thành công. Vui lòng đăng nhập lại bằng mật khẩu mới."
+            : undefined
+        }
+        login={async (username, password) => {
+          await auth.login(username, password);
+          setPasswordChanged(false);
+          history.replaceState(null, "", "/");
+          setPath("/");
+        }}
+        error={auth.error}
+        retry={() => void auth.refresh()}
+        operatorEnabled={auth.legacy_enabled}
+        quickRoles={auth.quick_login_roles}
+        quickLogin={async (role) => {
+          await auth.quickLogin(role);
+          const target = role === "admin" ? "/admin" : "/";
+          history.replaceState(null, "", target);
+          setPath(target);
+          window.scrollTo({ top: 0 });
+        }}
+      />
+    );
+  const user = auth.user;
+  const guest = !user;
+  const identity = user
+    ? `${user.id}:${user.role}:${user.datasets
+        .map((d) => d.id)
+        .sort()
+        .join(",")}`
+    : "guest";
+  const admin = path.startsWith("/admin");
   return (
-    <div className="app-shell">
-      <header className="app-header">
-        <a className="brand" href="/" aria-label="Lens trang chủ">
-          <span className="brand-mark">
-            <Icon kind="search" />
-          </span>
-          <span>
-            lens<span className="brand-period">.</span>
-          </span>
-        </a>
-        <span className="header-caption">TÌM KIẾM ẢNH ĐA PHƯƠNG THỨC</span>
-        <span className="version-badge">
-          Multimodal Search <span>v0.6</span>
-        </span>
-      </header>
-      <main>
-        <section className="hero">
-          <div className="hero-eyebrow">
-            <span /> MỘT CÁCH KHÁC ĐỂ KHÁM PHÁ
-          </div>
-          <h1>
-            Đi từ ý tưởng
-            <br />
-            đến <span>hình ảnh.</span>
-          </h1>
-          <p>
-            Tìm bằng lời mô tả hoặc bằng hình ảnh.
-            <br />
-            Một không gian tìm kiếm được xây dựng trên sự thấu hiểu ngữ nghĩa.
-          </p>
-        </section>
-        <div className="workspace-layout">
-          <div className="min-w-0">
-            <SearchWorkspace
-              token={token}
-              onTokenChange={setToken}
-              available={health?.capabilities.text_search ?? false}
-            />
-          </div>
-          <aside className="sidebar" aria-label="Trạng thái ứng dụng">
-            <section className="connection-card">
-              <div className="sidebar-title">
-                <h2>Kết nối hệ thống</h2>
-                <button
-                  className="icon-button"
-                  onClick={() => void refresh()}
-                  disabled={loading}
-                  aria-label="Kiểm tra lại kết nối"
-                >
-                  <Icon kind="refresh" />
-                </button>
-              </div>
-              <div
-                className={`connection-status ${health ? "connected" : ""}`}
-                role="status"
+    <FavoritesProvider
+      key={user?.id ?? "guest"}
+      enabled={Boolean(user && !user.is_demo)}
+      onSignIn={() => {
+        const target = user ? "/profile" : "/login";
+        history.pushState(null, "", target);
+        setPath(target);
+      }}
+    >
+      <CurrentAccountContext.Provider value={user}>
+        <div
+          className={`app-shell signed-in with-sidebar${["/", "/profile", "/favorites"].includes(path) ? " consumer-site travel-site" : ""}`}
+        >
+          <a className="skip-link" href="#main-content">
+            Đến nội dung chính
+          </a>
+          <Sidebar
+            user={user}
+            path={path}
+            datasets={
+              user?.datasets ?? workspace.workspace?.public_datasets ?? []
+            }
+            onNavigate={navigate}
+          />
+          <header className={`app-header${path === "/" ? " has-search" : ""}`}>
+            {path === "/" && (
+              <div id="header-search-root" ref={setSearchHost} />
+            )}
+            <div className="account-menu">
+              <button
+                className="theme-button"
+                aria-label={dark ? "Giao diện sáng" : "Giao diện tối"}
+                title={
+                  dark
+                    ? "Chuyển sang giao diện sáng"
+                    : "Chuyển sang giao diện tối"
+                }
+                type="button"
+                aria-pressed={dark}
+                onClick={() => {
+                  setDark(!dark);
+                  try {
+                    localStorage.setItem("lens.theme", dark ? "light" : "dark");
+                  } catch {
+                    /* Optional preference. */
+                  }
+                }}
               >
-                {loading ? (
-                  <>
-                    <span className="spinner" />
-                    Đang kiểm tra API…
-                  </>
-                ) : (
-                  <>
-                    <span className="status-dot" />
-                    {health ? "API đang hoạt động" : "Chưa kết nối API"}
-                  </>
-                )}
-              </div>
-              {error && (
-                <p role="alert" className="error-message">
-                  {error}
-                </p>
-              )}
-              <p className="sidebar-description">
-                Trạng thái API được lấy trực tiếp từ backend. Chọn văn bản hoặc
-                ảnh để tìm kiếm.
-              </p>
-              <details className="diagnostics">
-                <summary>Kiểm tra hạ tầng</summary>
-                <p>
-                  Nhập token của phiên vận hành để kiểm tra các dịch vụ. Token
-                  chỉ giữ trong memory, không lưu trên trình duyệt.
-                </p>
-                <label className="field-label" htmlFor="api-token">
-                  Bearer token
-                </label>
-                <input
-                  id="api-token"
-                  type="password"
-                  autoComplete="off"
-                  value={token}
-                  onChange={(e) => {
-                    checkController.current?.abort();
-                    setChecking(false);
-                    setToken(e.target.value);
-                    setReadiness(null);
-                    setReadinessError(null);
+                <Icon kind={dark ? "sun" : "moon"} />
+                <span>{dark ? "Giao diện sáng" : "Giao diện tối"}</span>
+              </button>
+              {user ? (
+                <AccountMenu
+                  user={user}
+                  onNavigate={navigate}
+                  onLogout={() => {
+                    setLogoutError(null);
+                    void auth
+                      .logout()
+                      .catch(() =>
+                        setLogoutError(
+                          "Chưa đăng xuất được. Vui lòng thử lại.",
+                        ),
+                      );
                   }}
                 />
-                <button
-                  className="diagnostic-button"
-                  disabled={!token || checking}
-                  onClick={() => void checkInfrastructure()}
+              ) : (
+                <a
+                  className="guest-signin"
+                  href="/login"
+                  onClick={(e) => navigate(e, "/login")}
                 >
-                  {checking ? "Đang kiểm tra…" : "Kiểm tra dịch vụ"}
-                </button>
-                {readinessError && (
-                  <p className="error-message" role="alert">
-                    {readinessError}
-                  </p>
-                )}
-                {readiness && (
-                  <ul className="service-list">
-                    {Object.entries(readiness.dependencies).map(
-                      ([name, value]) => (
-                        <li key={name}>
-                          <span>{name}</span>
-                          <span
-                            className={
-                              value === "healthy" ? "service-ok" : "service-bad"
-                            }
-                          >
-                            {value === "healthy"
-                              ? "Sẵn sàng"
-                              : value === "timeout"
-                                ? "Hết thời gian"
-                                : "Không khả dụng"}
-                          </span>
-                        </li>
-                      ),
-                    )}
-                  </ul>
-                )}
-              </details>
-            </section>
-            <section className="guide-card">
-              <span className="guide-icon">
-                <Icon kind="image" />
-              </span>
-              <h2>
-                Để hình ảnh
-                <br />
-                kể câu chuyện.
-              </h2>
-              <p>
-                Một khung cảnh, một màu sắc, một cảm giác. Bắt đầu từ những chi
-                tiết bạn nhớ.
+                  Đăng nhập
+                </a>
+              )}
+            </div>
+          </header>
+          <main id="main-content" tabIndex={-1} key={identity}>
+            {logoutError && (
+              <p role="alert" className="form-alert">
+                {logoutError}
               </p>
-              <div className="guide-divider" />
-              <span className="guide-caption">
-                VĂN BẢN · HÌNH ẢNH · NGỮ NGHĨA
-              </span>
-            </section>
-          </aside>
+            )}
+            <Suspense fallback={<p role="status">Đang mở trang…</p>}>
+              {admin ? (
+                user?.role === "admin" ? (
+                  <AdminWorkspace path={path} navigate={navigate} />
+                ) : (
+                  <section className="empty-results">
+                    <h1>Bạn không có quyền quản trị</h1>
+                    <p>
+                      Liên hệ quản trị viên để được hỗ trợ về tài khoản hoặc thư
+                      viện.
+                    </p>
+                    <a href="/" onClick={(e) => navigate(e, "/")}>
+                      Trở về tìm kiếm
+                    </a>
+                  </section>
+                )
+              ) : path === "/profile" && user ? (
+                <ProfilePage user={user} onSaved={() => void auth.refresh()} />
+              ) : path === "/favorites" && user ? (
+                <FavoritesPage user={user} />
+              ) : path === "/account" && user ? (
+                <AccountPage
+                  user={user}
+                  onChanged={() => {
+                    setPasswordChanged(true);
+                    window.dispatchEvent(new Event("lens:auth-expired"));
+                  }}
+                />
+              ) : path === "/" ? (
+                <SearchWorkspace
+                  searchHost={searchHost}
+                  token=""
+                  onTokenChange={() => undefined}
+                  authenticated={Boolean(user)}
+                  guest={guest}
+                  onRequestLogin={() => {
+                    history.pushState(null, "", "/login");
+                    setPath("/login");
+                    window.scrollTo({ top: 0 });
+                  }}
+                  showDiagnostics={false}
+                  datasets={
+                    user?.datasets ?? workspace.workspace?.public_datasets ?? []
+                  }
+                  available={health?.capabilities.text_search ?? false}
+                  agentAvailable={health?.capabilities.agent ?? false}
+                  capabilities={
+                    guest && health
+                      ? {
+                          ...health.capabilities,
+                          text_search:
+                            workspace.workspace?.capabilities.text_search ??
+                            false,
+                          image_search: false,
+                          multimodal: false,
+                          multi_intent: false,
+                          rerank: false,
+                          explanations: false,
+                          agent: false,
+                        }
+                      : health?.capabilities
+                  }
+                  workspace={workspace.workspace}
+                />
+              ) : (
+                <section className="empty-results">
+                  <h1>Không tìm thấy trang</h1>
+                  <a href="/" onClick={(e) => navigate(e, "/")}>
+                    Trở về tìm kiếm
+                  </a>
+                </section>
+              )}
+            </Suspense>
+          </main>
         </div>
-      </main>
-      <footer>
-        <span>AI Multimodal Image Search System</span>
-        <span>Semantic retrieval · Nền tảng phát triển</span>
-      </footer>
-    </div>
+      </CurrentAccountContext.Provider>
+    </FavoritesProvider>
   );
 }

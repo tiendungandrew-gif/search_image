@@ -1,0 +1,236 @@
+/* Decorative motion stays local to sign-in and never changes form layout. */
+.travel-login .login-story {
+  isolation: isolate;
+}
+.travel-login .login-story > :not(.login-ambient) {
+  position: relative;
+  z-index: 1;
+}
+.login-ambient {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.login-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  opacity: 0.55;
+  background: radial-gradient(circle, #65b9ad66, transparent 68%);
+}
+.glow-one {
+  top: -150px;
+  right: -180px;
+  animation: login-drift 14s ease-in-out infinite alternate;
+}
+.glow-two {
+  bottom: -180px;
+  left: -240px;
+  background: radial-gradient(circle, #e5bb7360, transparent 68%);
+  animation: login-drift 18s ease-in-out -6s infinite alternate-reverse;
+}
+.login-orbit {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #ffffff14;
+  border-radius: 42%;
+  top: 18%;
+  left: 25%;
+  animation: login-orbit 45s linear infinite;
+}
+.orbit-two {
+  width: 420px;
+  height: 420px;
+  top: 43%;
+  left: -40%;
+  animation-direction: reverse;
+  animation-duration: 55s;
+}
+.travel-login .login-art {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: 215px;
+  margin: 20px 0 30px;
+  flex-shrink: 0;
+}
+.travel-login .art-card {
+  border: 6px solid #f9f5e9;
+  border-bottom-width: 24px;
+  width: 145px;
+  height: 165px;
+  border-radius: 12px;
+  box-shadow: 0 18px 34px #041f3740;
+}
+.travel-login .card-one {
+  left: 3%;
+  top: 12px;
+  animation: login-float-left 8s ease-in-out infinite;
+}
+.travel-login .card-two {
+  left: 43%;
+  top: 26px;
+  animation: login-float-right 10s ease-in-out -3s infinite;
+}
+.travel-login .card-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  left: 27%;
+  top: 80px;
+  width: 128px;
+  height: 112px;
+  border: 1px solid #ffffff70;
+  padding: 16px;
+  color: #fff;
+  background: #2e6670;
+  transform: rotate(-3deg);
+  animation: login-float-center 9s ease-in-out -4s infinite;
+}
+.card-three svg {
+  width: 30px;
+  height: 30px;
+}
+.card-three > span {
+  font-size: 10px;
+  white-space: nowrap;
+}
+.travel-login .art-note {
+  display: none;
+}
+.travel-login .login-story .brand {
+  margin-bottom: 34px;
+}
+.travel-login .login-form-wrap {
+  animation: login-reveal 0.65s ease-out both;
+}
+.travel-login .login-story h1 {
+  animation: login-reveal 0.8s ease-out both;
+}
+.travel-login .login-submit,
+.travel-login .quick-role-button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+@media (hover: hover) {
+  .travel-login .login-submit:hover:not(:disabled),
+  .travel-login .quick-role-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px #163f4318;
+  }
+}
+.travel-login .login-submit:active:not(:disabled),
+.travel-login .quick-role-button:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+}
+.travel-login .login-submit svg {
+  transition: transform 0.2s ease;
+}
+.travel-login .login-submit:hover:not(:disabled) svg {
+  transform: translateX(3px);
+}
+.login-motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  color: var(--muted);
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+}
+.login-motion-toggle > span {
+  width: 16px;
+  text-align: center;
+}
+.login-page[data-motion="paused"] *,
+.login-page[data-motion="paused"] *::before,
+.login-page[data-motion="paused"] *::after {
+  animation-play-state: paused !important;
+}
+@keyframes login-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-65px, 75px, 0) scale(1.2);
+  }
+}
+@keyframes login-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes login-float-left {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-6deg);
+  }
+}
+@keyframes login-float-right {
+  0%,
+  100% {
+    transform: translateY(0) rotate(10deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(6deg);
+  }
+}
+@keyframes login-float-center {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+@keyframes login-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 760px) {
+  .travel-login .login-art {
+    display: none;
+  }
+  .travel-login .login-story .brand {
+    margin-bottom: 25px;
+  }
+  .login-orbit {
+    width: 350px;
+    height: 350px;
+  }
+  .login-glow {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .login-page *,
+  .login-page *::before,
+  .login-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .login-motion-toggle {
+    display: none;
+  }
+}

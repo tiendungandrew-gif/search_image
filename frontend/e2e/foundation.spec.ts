@@ -148,8 +148,9 @@ test("combined text image chạy cả RRF và weighted score", async ({
     await expect(page.locator(".result-card")).toHaveCount(10);
     await expect(page.locator(".result-card img")).toHaveCount(10);
     // Native lazy images ngoài viewport chưa decode; kiểm tra theo thao tác cuộn thật.
-    for (const image of await page.locator(".result-card img").all()) {
-      await image.scrollIntoViewIfNeeded();
+    for (const card of await page.locator(".result-card").all()) {
+      await card.scrollIntoViewIfNeeded();
+      const image = card.locator("img");
       await expect
         .poll(() =>
           image.evaluate((node) => (node as HTMLImageElement).naturalWidth),

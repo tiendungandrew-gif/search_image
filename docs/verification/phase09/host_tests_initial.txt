@@ -1,0 +1,96 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+_____________ test_isolated_empty_services_and_fictional_multihop ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c93eb7c92b0>
+
+    async def test_isolated_empty_services_and_fictional_multihop(monkeypatch):
+        base = Settings()
+        token = uuid4().hex
+        dbname = "agent_test_" + token
+        bucket = "agent-test-" + token
+        probe_collection = "agent_empty_" + token
+        url = make_url(base.database_url.get_secret_value())
+        test_url = url.set(database=dbname)
+    
+        def create_database():
+            with psycopg.connect(
+                url.set(database="postgres", drivername="postgresql").render_as_string(
+                    hide_password=False
+                ),
+                autocommit=True,
+            ) as admin:
+                admin.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(dbname)))
+    
+>       await asyncio.to_thread(create_database)
+
+backend/tests/integration/test_real_agent.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/asyncio/threads.py:25: in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/concurrent/futures/thread.py:58: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/integration/test_real_agent.py:49: in create_database
+    with psycopg.connect(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'psycopg.Connection'>
+conninfo = 'user=image_search password=[REDACTED] dbname=postgres host=127.0.0.1 port=5432 hostaddr=127.0.0.1'
+autocommit = True, prepare_threshold = 5, context = None, row_factory = None
+cursor_factory = None, kwargs = {}
+
+    @classmethod
+    def connect(
+        cls,
+        conninfo: str = "",
+        *,
+        autocommit: bool = False,
+        prepare_threshold: int | None = 5,
+        context: AdaptContext | None = None,
+        row_factory: RowFactory[Row] | None = None,
+        cursor_factory: type[Cursor[Row]] | None = None,
+        **kwargs: ConnParam,
+    ) -> Self:
+        """
+        Connect to a database server and return a new `Connection` instance.
+        """
+    
+        params = cls._get_connection_params(conninfo, **kwargs)
+        timeout = timeout_from_conninfo(params)
+        rv = None
+        attempts = conninfo_attempts(params)
+        conn_errors: list[tuple[e.Error, str]] = []
+        for attempt in attempts:
+            tdescr = (attempt.get("host"), attempt.get("port"), attempt.get("hostaddr"))
+            descr = "host: %r, port: %r, hostaddr: %r" % tdescr
+            logger.debug("connection attempt: %s", descr)
+            try:
+                conninfo = make_conninfo("", **attempt)
+                gen = cls._connect_gen(conninfo)
+                rv = waiting.wait_conn(gen, interval=_WAIT_INTERVAL, timeout=timeout)
+            except e._WaitTimeout:
+                tex = e.ConnectionTimeout("connection timeout expired")
+                logger.debug("connection failed: %s: %s", descr, str(tex))
+                conn_errors.append((tex, descr))
+            except e.Error as ex:
+                logger.debug("connection failed: %s: %s", descr, str(ex))
+                conn_errors.append((ex, descr))
+            except e._NO_TRACEBACK as ex:
+                raise ex.with_traceback(None)
+            else:
+                logger.debug("connection succeeded: %s", descr)
+                break
+    
+        if not rv:
+            last_ex = conn_errors[-1][0]
+            if len(conn_errors) == 1:
+>               raise last_ex.with_traceback(None)
+E               psycopg.OperationalError: connection failed: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+E               	Is the server running on that host and accepting TCP/IP connections?
+
+backend/.venv/lib/python3.12/site-packages/psycopg/connection.py:126: OperationalError
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_real_agent.py::test_isolated_empty_services_and_fictional_multihop
+1 failed, 1 passed in 4.50s

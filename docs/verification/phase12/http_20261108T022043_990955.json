@@ -1,0 +1,99 @@
+{
+  "classification": "REAL_DEPLOYMENT_SYNTHETIC_DATA",
+  "project": "image-search-phase12",
+  "expected_images": 6,
+  "tls": false,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "static_spa": true
+    },
+    {
+      "path": "/evaluation",
+      "status": 200,
+      "static_spa": true
+    }
+  ],
+  "workspace": {
+    "dataset": {
+      "state": "ready",
+      "images": 6,
+      "available_images": 6,
+      "indexed_images": 6,
+      "vectors": 6,
+      "index_id": "7fac2290-1410-4843-a5fb-0a966ca0f1f7",
+      "index_status": "ready",
+      "generation": 1
+    },
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "capabilities": {
+      "text_search": true,
+      "image_search": true,
+      "multimodal": true,
+      "multi_intent": true,
+      "rerank": true,
+      "explanations": false,
+      "agent": false
+    },
+    "rag": {
+      "enabled": false,
+      "configured": false,
+      "streaming": true
+    },
+    "agent": {
+      "enabled": false,
+      "llm_planning": false
+    },
+    "limits": {
+      "top_k": 50,
+      "image_bytes": 20971520
+    }
+  },
+  "retrieved_ids": [
+    "98d5c68d-e965-4d0f-a692-73cb51ab228d",
+    "8c34a36f-4a34-4eab-b8e8-3bc6d79bf642",
+    "96fbee6c-7600-455d-b9cb-f23a8eed89b5"
+  ],
+  "rag": "disabled_verified; live LLM NOT_CONFIGURED",
+  "agent": "disabled_verified",
+  "inventory": {
+    "dependencies": {
+      "postgresql": "healthy",
+      "qdrant": "healthy",
+      "minio": "healthy"
+    },
+    "dataset_state": "DATA_PRESENT",
+    "counts": {
+      "images": 6,
+      "objects_receipts": 6,
+      "ready_embeddings": 6
+    },
+    "jobs": {
+      "succeeded": 6
+    },
+    "indexes": [
+      {
+        "id": "7fac2290-1410-4843-a5fb-0a966ca0f1f7",
+        "status": "ready",
+        "collection": "images_phase12_shapes_v1_865d29f7f68b"
+      }
+    ],
+    "active": {
+      "index_id": "7fac2290-1410-4843-a5fb-0a966ca0f1f7",
+      "generation": 1
+    },
+    "collections": [
+      {
+        "name": "images_phase12_shapes_v1_865d29f7f68b",
+        "points": 6
+      }
+    ],
+    "stored_objects": 7,
+    "model_artifacts": "present_unverified"
+  }
+}

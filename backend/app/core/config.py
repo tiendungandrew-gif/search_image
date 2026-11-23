@@ -8,6 +8,7 @@ from sqlalchemy.engine import make_url
 
 
 class Settings(BaseSettings):
+    evaluation_results_dir: str = "evaluation/results"
     model_config = SettingsConfigDict(env_file=".env", extra="ignore", case_sensitive=False)
 
     app_name: str = Field(default="image-search-api", min_length=1, max_length=80)
@@ -32,6 +33,17 @@ class Settings(BaseSettings):
     database_max_overflow: int = Field(default=5, ge=0, le=50)
     database_pool_timeout_seconds: float = Field(default=0.5, gt=0, le=10)
     write_api_token: SecretStr | None = None
+    auth_legacy_tokens_enabled: bool = False
+    auth_quick_login_enabled: bool = False
+    auth_cookie_secure: bool = False
+    auth_session_hours: int = Field(default=12, ge=1, le=168)
+    auth_login_attempts_per_minute: int = Field(default=10, ge=3, le=30)
+    user_search_per_minute: int = Field(default=60, ge=1, le=600)
+    guest_search_enabled: bool = True
+    guest_search_per_minute: int = Field(default=20, ge=1, le=120)
+    guest_max_top_k: int = Field(default=50, ge=1, le=50)
+    user_rag_per_day: int = Field(default=20, ge=0, le=1000)
+    user_agent_per_day: int = Field(default=20, ge=0, le=1000)
     embedding_model_id: str = "openai/clip-vit-base-patch32"
     embedding_model_revision: str = Field(
         default="3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268", pattern=r"^[0-9a-f]{40}$"
@@ -79,6 +91,23 @@ class Settings(BaseSettings):
     rerank_required_penalty: float = Field(default=0.25, ge=0, le=1, allow_inf_nan=False)
     rerank_optional_weight: float = Field(default=0.1, ge=0, le=1, allow_inf_nan=False)
     rag_enabled: bool = False
+    agent_enabled: bool = False
+    agent_router_enabled: bool = True
+    agent_planner_mode: Literal["deterministic", "llm"] = "deterministic"
+    agent_llm_planning_enabled: bool = False
+    agent_max_hops: int = Field(default=3, ge=1, le=3)
+    agent_max_tool_calls: int = Field(default=6, ge=1, le=6)
+    agent_max_replans: int = Field(default=1, ge=0, le=1)
+    agent_timeout_seconds: float = Field(default=15, ge=1, le=30)
+    agent_tool_timeout_seconds: float = Field(default=2, ge=0.01, le=5)
+    agent_planning_timeout_seconds: float = Field(default=4, ge=0.1, le=8)
+    agent_max_concurrency: int = Field(default=2, ge=1, le=4)
+    agent_rag_enabled: bool = False
+    agent_streaming_enabled: bool = True
+    agent_allow_empty_dataset: bool = True
+    agent_enable_fallback: bool = True
+    agent_allow_fixture_knowledge: bool = False
+    agent_log_trace: bool = True
     rag_model_provider: Literal["openai", "gemini", "openai_compatible"] = "gemini"
     rag_model_id: str = Field(default="", max_length=160)
     rag_model_revision: str = Field(default="provider_managed", max_length=160)
@@ -92,8 +121,8 @@ class Settings(BaseSettings):
     rag_max_input_tokens: int = Field(default=4096, ge=512, le=16384)
     rag_max_output_tokens: int = Field(default=128, ge=16, le=512)
     rag_temperature: float = Field(default=0.1, ge=0, le=1, allow_inf_nan=False)
-    rag_timeout_seconds: float = Field(default=5, ge=0.1, le=30)
-    rag_request_timeout_seconds: float = Field(default=8, ge=1, le=60)
+    rag_timeout_seconds: float = Field(default=8, ge=0.1, le=30)
+    rag_request_timeout_seconds: float = Field(default=12, ge=1, le=60)
     rag_max_concurrency: int = Field(default=2, ge=1, le=4)
     rag_provider_retries: int = Field(default=0, ge=0, le=1)
     rag_streaming_enabled: bool = True
@@ -102,6 +131,10 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def advanced_weights(self):
+        if self.agent_allow_fixture_knowledge and self.app_env != "test":
+            raise ValueError("Fixture knowledge chỉ được phép trong APP_ENV=test")
+        if self.rag_enabled and self.rag_request_timeout_seconds < self.rag_timeout_seconds + 1:
+            raise ValueError("RAG request timeout phải lớn hơn generation timeout ít nhất 1 giây")
         if not self.rag_api_key or not self.rag_api_key.get_secret_value().strip():
             self.rag_api_key = (
                 self.gemini_api_key
@@ -110,6 +143,8 @@ class Settings(BaseSettings):
                 if self.rag_model_provider == "openai"
                 else None
             )
+        if self.agent_llm_planning_enabled and (not self.rag_api_key or not self.rag_model_id):
+            raise ValueError("LLM planner cần model/provider credentials được cấu hình")
         if self.multimodal_text_weight + self.multimodal_image_weight <= 0:
             raise ValueError("Fusion weights không được đồng thời zero")
         if (
@@ -199,6 +234,19 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def validate_environment(self) -> "Settings":
+        if self.auth_quick_login_enabled:
+            from app.core.quick_login import quick_login_enabled
+
+            if not quick_login_enabled(self):
+                raise ValueError("Quick login requires local development/test origins")
+        if any(
+            urlsplit(origin).hostname not in {"localhost", "127.0.0.1", "::1"}
+            for origin in self.cors_origins
+        ):
+            if not self.auth_cookie_secure or any(
+                urlsplit(origin).scheme != "https" for origin in self.cors_origins
+            ):
+                raise ValueError("Public account origins require HTTPS and AUTH_COOKIE_SECURE=true")
         if self.write_api_token is not None and len(self.write_api_token.get_secret_value()) < 24:
             raise ValueError("WRITE_API_TOKEN cần ít nhất 24 ký tự")
         if self.dependency_timeout_seconds >= self.request_timeout_seconds:
@@ -214,4 +262,6 @@ def get_settings() -> Settings:
         return Settings()
     except ValidationError as exc:
         fields = ", ".join(".".join(map(str, item["loc"])) for item in exc.errors())
-        raise RuntimeError(f"Cấu hình không hợp lệ ở fields: {fields}; xem docs/SETUP.md") from None
+        raise RuntimeError(
+            f"Cấu hình không hợp lệ ở fields: {fields}; xem docs/operations/SETUP.md"
+        ) from None

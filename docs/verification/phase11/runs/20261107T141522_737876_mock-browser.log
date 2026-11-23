@@ -1,0 +1,13 @@
+[WebServer] (node:460668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:460736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 frontend/qa-e2e/mock.spec.ts:42:1 › MOCK · cancellation discards a late response and retry stays functional (1.8s)
+  ✓  2 frontend/qa-e2e/mock.spec.ts:67:1 › MOCK · recoverable RAG SSE failure preserves final state and image cards (2.0s)
+  ✓  3 frontend/qa-e2e/mock.spec.ts:91:1 › MOCK · metadata text is inert and foreign media is rejected (1.7s)
+  ✓  4 frontend/qa-e2e/mock.spec.ts:122:1 › MOCK · lazy module failure has a recoverable application fallback (1.8s)
+
+  4 passed (8.4s)

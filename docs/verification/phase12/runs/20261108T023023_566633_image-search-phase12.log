@@ -1,0 +1,111 @@
+{
+  "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+  "model_id": "439ba70d-a331-4ee2-aa85-92b4f9eca1af",
+  "collection": "images_phase12_incremental_v1_0d9cdb44a9fb",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "dimension": 512,
+  "device": "cpu",
+  "model_initialization_ms": 2817.022167000232
+}
+ Container image-search-phase12-backend-run-176fd00e9a46 Creating 
+ Container image-search-phase12-backend-run-176fd00e9a46 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+{"inherited_images": 6, "jobs": [{"job_id": "e5c77207-0511-47ac-9b39-fc60c9500c91", "status": "queued", "status_url": "/api/v1/index/jobs/e5c77207-0511-47ac-9b39-fc60c9500c91"}]}
+ Container image-search-phase12-backend-run-1bccfa834eaf Creating 
+ Container image-search-phase12-backend-run-1bccfa834eaf Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+ Container image-search-phase12-worker-1 Running 
+ Container image-search-phase12-worker-1 Waiting 
+ Container image-search-phase12-worker-1 Healthy 
+
+{
+  "dry_run": false,
+  "discovered": 1,
+  "validated": 1,
+  "duplicates": 0,
+  "accepted": 1,
+  "failed": 0,
+  "ignored": 1,
+  "results": [
+    {
+      "filename": "shape-07.png",
+      "image_id": "79be5590-2667-4916-8d05-db683b465bcf",
+      "duplicate": false,
+      "job_id": "74af8890-9611-48cf-82fb-15c3095955d8",
+      "status": "queued",
+      "status_url": "/api/v1/index/jobs/74af8890-9611-48cf-82fb-15c3095955d8"
+    }
+  ],
+  "ingestion_ms": 689.4043749998673,
+  "source_id": "7b11b8c6-e1fd-4028-b8e0-0ffc070f7c87"
+}
+ Container image-search-phase12-backend-run-3364f99829fa Creating 
+ Container image-search-phase12-backend-run-3364f99829fa Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+{"counts": {"processing": 4, "queued": 3}}
+ Container image-search-phase12-backend-run-a2639417b789 Creating 
+ Container image-search-phase12-backend-run-a2639417b789 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+{"counts": {"succeeded": 7}}
+ Container image-search-phase12-backend-run-f00efaa6786a Creating 
+ Container image-search-phase12-backend-run-f00efaa6786a Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+{
+  "status": "pass",
+  "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+  "collection": "images_phase12_incremental_v1_0d9cdb44a9fb",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "dimension": 512,
+  "verified_images": 7,
+  "exact_vector_count": 7,
+  "image_ids": [
+    "0aa5b049-f137-4a70-937f-d1e41e1e2eb0",
+    "34ee095d-dd9c-42c7-9326-bc54894e4b58",
+    "79be5590-2667-4916-8d05-db683b465bcf",
+    "8c34a36f-4a34-4eab-b8e8-3bc6d79bf642",
+    "96fbee6c-7600-455d-b9cb-f23a8eed89b5",
+    "98d5c68d-e965-4d0f-a692-73cb51ab228d",
+    "bb0cb6b4-7be2-49c5-bb08-aec647ba080b"
+  ],
+  "problems": [],
+  "orphan_point_ids": [],
+  "live_items": false,
+  "missing_embedding_image_ids": [],
+  "verification_ms": 346.896416999698,
+  "index_status": "ready"
+}
+ Container image-search-phase12-backend-run-39c2e1b2b342 Creating 
+ Container image-search-phase12-backend-run-39c2e1b2b342 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+{"status": "pass", "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a", "model_id": "439ba70d-a331-4ee2-aa85-92b4f9eca1af", "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc", "generation": 2, "model_initialization_ms": 10846.227667000221, "verified_images": 7}
+ Container image-search-phase12-backend-run-f8b084a34cde Creating 
+ Container image-search-phase12-backend-run-f8b084a34cde Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+ Container image-search-phase12-worker-1 Recreate 
+ Container image-search-phase12-backend-1 Recreate 
+ Container image-search-phase12-backend-1 Recreated 
+ Container image-search-phase12-worker-1 Recreated 
+ Container image-search-phase12-worker-1 Starting 
+ Container image-search-phase12-backend-1 Starting 
+ Container image-search-phase12-worker-1 Started 
+ Container image-search-phase12-backend-1 Started 
+ Container image-search-phase12-backend-1 Waiting 
+ Container image-search-phase12-worker-1 Waiting 
+ Container image-search-phase12-backend-1 Healthy 
+ Container image-search-phase12-worker-1 Healthy 
+
+

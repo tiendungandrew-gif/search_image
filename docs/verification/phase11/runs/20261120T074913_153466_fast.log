@@ -1,0 +1,33 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-b4a42afdb134 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-b4a42afdb134 Created 
+........................................................................ [ 26%]
+.......F................................................................ [ 52%]
+........................................................................ [ 78%]
+...........................................................              [100%]
+=================================== FAILURES ===================================
+______________ test_health_summary_has_no_fake_search_capability _______________
+
+app = <fastapi.applications.FastAPI object at 0x796385bcadb0>
+fake_services = <tests.conftest.fake_services.<locals>.FakeServices object at 0x796385a23f20>
+
+    async def test_health_summary_has_no_fake_search_capability(app, fake_services):
+        async with async_client(app) as client:
+            result = (await client.get("/api/v1/health")).json()
+            assert (await client.get("/api/v1/search")).status_code == 405
+>           assert (await client.post("/api/v1/search", json={"text": "test"})).status_code == 401
+E           assert 403 == 401
+E            +  where 403 = <Response [403 Forbidden]>.status_code
+
+backend/tests/unit/test_api.py:38: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"timestamp": "2026-11-20T07:49:41.617589+00:00", "level": "INFO", "logger": "app.access", "request_id": "29188e28-3b33-4041-8539-3a35704db072", "event": "http_request", "method": "GET", "path": "/health", "status_code": 200, "duration_ms": 7.537, "error_category": null, "index_id": null, "search_mode": null, "model_id": null, "route": null}
+{"timestamp": "2026-11-20T07:49:41.846903+00:00", "level": "INFO", "logger": "app.access", "request_id": "d669008f-9446-48a8-bdb5-f746dd1e28a7", "event": "http_request", "method": "GET", "path": "/search", "status_code": 405, "duration_ms": 228.077, "error_category": "METHOD_NOT_ALLOWED", "index_id": null, "search_mode": null, "model_id": null, "route": null}
+{"timestamp": "2026-11-20T07:49:41.851084+00:00", "level": "INFO", "logger": "app.access", "request_id": "f23cbdb0-adcb-47e1-9fba-c6b0f8cb74a4", "event": "http_request", "method": "POST", "path": "/search", "status_code": 403, "duration_ms": 2.606, "error_category": "CSRF_REJECTED", "index_id": null, "search_mode": null, "model_id": null, "route": null}
+------------------------------ Captured log call -------------------------------
+INFO     app.access:middleware.py:173 http_request
+INFO     app.access:middleware.py:173 http_request
+INFO     app.access:middleware.py:173 http_request
+=========================== short test summary info ============================
+FAILED backend/tests/unit/test_api.py::test_health_summary_has_no_fake_search_capability
+1 failed, 274 passed in 19.11s
+

@@ -1,0 +1,65 @@
+{
+  "project": "image-search-phase12",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect semantic-image-search/backend:phase12-verify-v1"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 1.7696949659999746
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect semantic-image-search/frontend:phase12-verify-v1"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.16363249799996993
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 config --quiet"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.90400364300001
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12 -f /home/tts/prj/compose.prod.yaml -p image-search-phase12 build backend frontend minio"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 139.434707542
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect semantic-image-search/backend:phase12-verify-v1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.334436783000001
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker image inspect semantic-image-search/frontend:phase12-verify-v1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.20900903500000823
+    }
+  ]
+}

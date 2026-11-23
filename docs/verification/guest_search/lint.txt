@@ -1,0 +1,4 @@
+npm --prefix frontend run lint
+ESLint --max-warnings 0
+exit_code: 0
+Ruff: all checks passed

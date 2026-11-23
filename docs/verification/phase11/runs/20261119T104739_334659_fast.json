@@ -1,0 +1,18 @@
+{
+  "profile": "fast",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file .env.qa -f compose.qa.yaml -p phase11-qa-2c8ad1b9345d --profile tools run --rm --no-deps -T qa-tests timeout 240 pytest backend/tests/unit backend/tests/security backend/tests/reliability -q -p no:cacheprovider"
+      ],
+      "started_utc": "2026-11-19T10:47:39.335106+00:00",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed"
+}

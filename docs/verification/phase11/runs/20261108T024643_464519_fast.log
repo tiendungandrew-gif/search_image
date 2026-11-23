@@ -1,0 +1,12 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-cb37f59e72d8 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-cb37f59e72d8 Created 
+........................................................................ [ 29%]
+........................................................................ [ 58%]
+........................................................................ [ 87%]
+..............................                                           [100%]
+=============================== warnings summary ===============================
+tests/unit/test_deployment.py::test_worker_health_command_does_not_import_data_services
+  <frozen runpy>:128: RuntimeWarning: 'app.cli.worker' found in sys.modules after import of package 'app.cli', but prior to execution of 'app.cli.worker'; this may result in unpredictable behaviour
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+246 passed, 1 warning in 21.04s

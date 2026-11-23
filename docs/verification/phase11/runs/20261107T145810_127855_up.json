@@ -1,0 +1,28 @@
+{
+  "profile": "up",
+  "classification": "isolated_qa",
+  "project": "phase11-qa-2c8ad1b9345d",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file .env.qa -f compose.qa.yaml -p phase11-qa-2c8ad1b9345d config --quiet"
+      ],
+      "started_utc": "2026-11-07T14:58:10.127946+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file .env.qa -f compose.qa.yaml -p phase11-qa-2c8ad1b9345d up -d --build --wait --wait-timeout 180 qa-api qa-frontend"
+      ],
+      "started_utc": "2026-11-07T14:58:10.397535+00:00",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed"
+}

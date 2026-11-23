@@ -1,0 +1,60 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-0c6423bf7ec7 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-0c6423bf7ec7 Created 
+.........F.                                                              [100%]
+=================================== FAILURES ===================================
+______ test_worker_cancellation_keeps_images_alive_until_encoder_finishes ______
+
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...ject at 0x721b015b5e20>, token='42b202eeccac44eabca794215ecaa0cc', collections={'images_qa_42b202eeccac_677611dddbc9'})
+
+    async def test_worker_cancellation_keeps_images_alive_until_encoder_finishes(qa_resources):
+        import threading
+    
+        entered = threading.Event()
+        release = threading.Event()
+        finished = threading.Event()
+        failures = []
+    
+        class BlockingEncoder(SyntheticEncoder):
+            def encode_images(self, images):
+                entered.set()
+                try:
+                    assert release.wait(3)
+                    return super().encode_images(images)
+                except Exception as error:
+                    failures.append(type(error).__name__)
+                    raise
+                finally:
+                    finished.set()
+    
+        services = qa_resources.services
+        encoder = BlockingEncoder()
+        index, _ = await qa_resources.index(encoder)
+        await ingest(services, image_bytes(), metadata(), "qa-cancel-encoder", index.id)
+        worker = Worker(services, encoder, index.id)
+        await worker.configuration()
+        process = asyncio.create_task(worker.process(await worker.claim()))
+        try:
+            assert await asyncio.to_thread(entered.wait, 2)
+            process.cancel()
+            with pytest.raises(asyncio.CancelledError):
+                await process
+        finally:
+            release.set()
+            assert await asyncio.to_thread(finished.wait, 2)
+>       assert not failures, "Cancellation closed PIL images while the real thread still used them"
+E       AssertionError: Cancellation closed PIL images while the real thread still used them
+E       assert not ['ValueError']
+
+backend/tests/integration/test_qa_services.py:230: AssertionError
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py: 2 warnings
+tests/integration/test_qa_services.py: 7 warnings
+tests/integration/test_qa_worker_process.py: 1 warning
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_qa_services.py::test_worker_cancellation_keeps_images_alive_until_encoder_finishes
+1 failed, 10 passed, 10 warnings in 10.66s
+

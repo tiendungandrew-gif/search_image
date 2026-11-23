@@ -1,0 +1,9 @@
+{
+  "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "collection": "images_clip_landmarks_phase09_v1_142374e60d29",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "dimension": 512,
+  "device": "cpu",
+  "model_initialization_ms": 2583.0936530001054
+}

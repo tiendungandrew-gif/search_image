@@ -32,6 +32,11 @@ class Generator:
     async def run(self, context, language, answer, latency, emit):
         answer.context = context.summary
         answer.prompt_sha256 = context.prompt_sha256
+        answer.prompt_version = (
+            "extractive-facts-compact-v1"
+            if context.summary.get("format") == "compact"
+            else "extractive-facts-v1"
+        )
         answer.provider = self.settings.rag_model_provider
         answer.model_id = self.settings.rag_model_id or None
         answer.model_revision = self.settings.rag_model_revision

@@ -1,0 +1,4 @@
+npm --prefix frontend run build
+tsc -b && vite build
+90 modules transformed; built in 3.21s
+exit_code: 0

@@ -1,0 +1,17 @@
+
+Running 4 tests using 1 worker
+
+  ✓  1 [desktop] › travel-e2e/search.spec.ts:57:1 › travel theme · hotel vocabulary, topics, real scoped search and roles (26.0s)
+  ✓  2 [mobile] › travel-e2e/search.spec.ts:57:1 › travel theme · hotel vocabulary, topics, real scoped search and roles (21.7s)
+  ✓  3 [narrow] › travel-e2e/search.spec.ts:57:1 › travel theme · hotel vocabulary, topics, real scoped search and roles (20.9s)
+  ✓  4 [firefox] › travel-e2e/search.spec.ts:57:1 › travel theme · hotel vocabulary, topics, real scoped search and roles (33.9s)
+
+  4 passed (1.8m)
+(node:1957870) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1959477) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1960783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1962104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,0 +1,144 @@
+# Báo cáo kiểm thử Prompt 09 — AI Agent và Multi-hop Search
+
+Ngày 06/11/2026. Phạm vi dừng ở Phase 09/12. Đã triển khai framework Agent bounded, dataset-independent và kiểm thử execution với hạ tầng/dữ liệu ảnh thật. **Chưa nghiệm thu chất lượng multi-hop trên tri thức thực hoặc nhãn người đánh giá.** Human review RAG Phase 08 tiếp tục chờ theo lựa chọn người dùng.
+
+## A. Tổng hợp hiện thực
+
+Đã có router, planner deterministic/LLM JSON tùy chọn, plan validator,9 typed read-only tools, executor, state, knowledge repository/import, evidence aggregator, optional RAG, JSON/SSE API và React. Core Search không cần Agent/LLM. Custom DAG state machine dùng asyncio/Pydantic sẵn có, không thêm dependency/microservice. [AGENT_ARCHITECTURE](AGENT_ARCHITECTURE.md).
+
+| Năng lực | Trạng thái / bằng chứng |
+| --- | --- |
+| Modules, schemas, budgets, API/UI | IMPLEMENTED; full lint/type/build và automated tests |
+| Routing/DAG/ref/cycles/loops/replanning/timeout/cancel | TESTED_WITH_MOCKS; unit doubles ghi rõ |
+| Positive relational chain | TESTED_WITH_MOCKS về facts hư cấu; VERIFIED_WITH_REAL_DATA chỉ ở layer hạ tầng/ảnh/CLIP |
+| Empty PG/Qdrant/MinIO và app khởi tạo | VERIFIED_WITH_REAL_DATA ở layer hạ tầng; actual empty DB/bucket/collection riêng |
+| Retrieval trên510 ảnh, metadata và citations RAG | VERIFIED_WITH_REAL_DATA về execution, chưa là semantic quality |
+| Real Gemini structured plan, optional RAG | VERIFIED_WITH_REAL_DATA về provider integration; không chứng minh domain reasoning accuracy |
+| Entity/relation resolution và multi-hop relevance thực | NOT_VERIFIED; serving knowledge0/0/0, chưa có labels |
+| Human faithfulness/relevance/unsupported-claim scores | NOT_VERIFIED; không tự chấm thay người dùng |
+
+## B. Files tạo mới hoặc sửa
+
+Source snapshot trước Prompt 09 có 212 files. Bản source cuối có247 files: 19 files cũ sửa, 35 source files mới, không xóa file baseline. [Danh sách path và SHA đầy đủ](verification/phase09/source_changes.json) tách thay đổi Prompt 09 khỏi các sửa Prompt08 đã có sẵn trong working tree.
+
+| Nhóm | Files/phạm vi thực tế |
+| --- | --- |
+| Agent modules | backend/app/services/agent/*.py, schemas/agent.py, api/v1/agent.py |
+| Knowledge | db/models/knowledge.py, repositories/knowledge_repository.py, knowledge_import.py, cli/knowledge.py, migration20261106_agent_knowledge.py |
+| Integration hiện có | main/router/health/config/middleware; filters.image_ids; ranking/vector_retriever; model export và Dockerfile |
+| Frontend | features/agent/*, SearchWorkspace.tsx, App.tsx; agent.spec.ts và RAG schema-based browser assertions |
+| Evaluation | evaluation/agent.py, cli/agent.py, tracking/reporting; fictional fixture/test-case guide |
+| Verification | unit/test_agent.py, test_agent_evaluation.py; integration/test_real_agent.py; verify_agent.sh, verify_agent_fixtures.py, verify_search.py |
+| Tài liệu |8 tài liệu Agent được liên kết trong báo cáo này và PHASE09_TEST_REPORT.md; README/MASTER_SPEC/ROADMAP/SAD/SYSTEM_ARCHITECTURE/DATABASE_DESIGN/API_SPECIFICATION/DECISIONS/SETUP/evaluation README |
+
+Private `.env` chỉ thêm flags, không đưa secrets vào artifacts. CLIP encoder, ingestion/query decoders và hai lockfiles so với snapshot đầu Prompt 09 giữ byte-identical; [audit](verification/phase09/final_audit.json). Không commit/push trong phase này.
+
+## C. Kiến trúc Agent
+
+Explicit Agent API → lightweight finite router → deterministic hoặc bounded JSON LLM planner → validate toàn DAG → execute → aggregate/revalidate → optional RagService → final response. Fast API vẫn gọi SearchService độc lập. Explicit text/metadata/explain/multimodal được ưu tiên trước auto-detection; chế độ thực trả trong response. [Kiến trúc/sơ đồ](AGENT_ARCHITECTURE.md).
+
+LLM planner hiện chỉ diễn đạt template đã nhận diện, guard kiểm tra anchor/relationships/dependencies/filters. Không là general natural-language planner. Structured output sai bị reject, không thực thi code từ model. Không dùng internal model knowledge làm facts.
+
+## D. Tool Registry
+
+9 tools: semantic_image_search, multimodal_image_search, metadata_search, entity_lookup, relationship_lookup, get_related_entities, retrieve_image_details, rerank_images, rag_explain. Input/output JSON Schema, read permission, caps/timeouts và capability được công bố qua status. Search/rerank/RAG đều là adapters sang code hiện có. Không shell/SQL tùy ý/URL fetch/mutation/import tool. [Contract](AGENT_TOOL_DESIGN.md).
+
+## E. Thực thi nhiều bước
+
+Fixture chain anchor lookup → located_in city → inverse located_in landmarks → image search với verified association gate.4 tool calls, 3 logical hops. Safe references dùng step_id và entity_ids/image_ids có kiểu; từng input được kiểm tra lấy từ output trước. Tập UUID ảnh mong đợi được lấy từ upload receipt trước request. Actual result trùng receipt, không broad direct-search fallback.
+
+Fixture deterministic completed 160.90ms; Gemini JSON plan + cùng chain completed 2221.68ms. Missing relation và conflict đều insufficient_evidence. [Sequence và semantics](MULTI_HOP_SEARCH.md), [raw fixture](verification/phase09/fixture_v3/fixture.json).
+
+## F. Knowledge Base
+
+Migration additive `20261106_agent_knowledge` đã chạy thành công, schema 16 bảng. entities có normalized canonical/aliases/provenance; entity_relationships có FK/predicate/source/evidence/verified_at; image_entities có FK/source/verified. Repository parameterized, aliases ambiguous và conflicting city không tự đoán.
+
+Serving DB: **510 ảnh, 500 captions,0 entities,0 relationships,0 image links**. Facts hư cấu chỉ test DB `agent_test_<uuid>`, bucket/collection riêng; CLI kiểm tra env/flag/DB prefix. Dry-run import mặc định, transaction apply/idempotent replay và identity conflict guard. Không crawl/import facts địa lý thật trong phase này. [Schema/import/sync](KNOWLEDGE_BASE_DESIGN.md).
+
+## G. State và phục hồi
+
+Mỗi request có IDs, plan, typed outputs, traces, warnings/errors, deadline monotonic và budget riêng. planned → running → completed/partial/insufficient_evidence/timeout/failed/cancelled, terminal không chạy lại.3 hops,6 calls,1 replan,15s deadline,2s tools,4s planning attempt,2 concurrent Agent requests. Request chỉ giảm limits server. Không durable checkpoint hoặc personal memory.
+
+Lặp tool fingerprint/cyclic DAG/traversal/no-progress bị chặn. Dependency thất bại không được tạo ID giả. Optional generation lỗi giữ ảnh đã revalidate, status partial. Cancellation nhả admission; SSE disconnect hủy child task. Trace không chứa private reasoning/query raw/API credentials. [State](AGENT_STATE_MANAGEMENT.md).
+
+## H. Evidence aggregation
+
+Dedup theo stable image/entity/evidence IDs; giữ thứ tự retrieval hoặc rerank đã chạy; lưu source step/tool. Image IDs được đọc lại qua EvidenceRetriever đối chiếu PG/Qdrant/MinIO; entities/relations/associations đối chiếu PG. Relational images bắt buộc link verified tới target entities. Stale/fabricated IDs bị loại; citations chỉ thuộc final images.
+
+`relationship_summary` chỉ từ cạnh có nguồn; score cosine không chứng minh quan hệ. Thiếu evidence không là phủ định thế giới thực. `query_success` là execution structure, không phải chất lượng thông tin.
+
+## I. RAG integration
+
+Reuse provider/context/citation validator Phase 08. Agent có thể trả images khi generation disabled/unavailable. Native Gemini thật đã chạy trong integration/browser và benchmark; latest A4 generated **4/4**. Citation identity checks không thay người đánh giá semantic faithfulness. RAG chỉ giải thích caption/metadata thực có, không xác nhận địa lý bằng model memory.
+
+Một lượt browser RAG cũ trả abstention hợp lệ; failure được giữ nguyên và test UI đã chuyển từ đòi câu chữ cố định sang validate structured outcome/citations/giữ ảnh. Không đổi prompt để che lỗi hoặc tự điền quality labels.
+
+## J. API và frontend
+
+POST /api/v1/search/agent JSON, POST /stream SSE; GET /status và /samples, read auth. Request aliases tương thích query/text/search_mode/max_hops, bounded budgets và optional explanation. Execution trả status/query_success riêng; HTTP200 không đủ kết luận thành công. API Agent có response root riêng; cập nhật contract so với phần reserved Prompt 02. [AGENT_API](AGENT_API.md).
+
+React có lựa chọn Agent, deterministic/LLM, optional explanation, cancel, actual public progress, images/citations và empty/partial/timeout states. SSE parser xử lý chunk UTF-8/CRLF, bounded output; tokens chưa validate không render. UI Agent hiện text input; stored-image multimodal hỗ trợ qua API. Desktop/mobile browser kiểm tra actual Agent images và missing knowledge; empty UI dùng mocked SSE được ghi rõ.
+
+## K. Empty Dataset Mode
+
+Test thực tạo PG DB trống sau migration, Qdrant collection512 cosine trống và MinIO bucket trống. App khởi tạo với search off/RAG off, status có 9 tools; planner hợp lệ, Agent trả empty_dataset/insufficient_evidence, results rỗng,0 calls; no fabricated facts. Sau đó cùng kiến trúc nhận ảnh coffee/embedding CLIP thật và fixture knowledge, không redesign repository.
+
+Serving dataset vẫn 510 ảnh, không xóa để thử empty mode. Test cleanup dọn namespaces riêng. Frontend empty-state screenshot/test không được xem là chứng minh backend stores rỗng; bằng chứng backend nằm integration fixture. Missing captions/metadata không là prerequisite tìm ảnh; RAG thiếu evidence được phép abstain.
+
+## L. Hiệu năng
+
+500 lượt, 500 thành công, 0 lỗi; complete-server P90 **135.03 ms**, P95 **140.98 ms**; client P90 139.62 ms.
+
+| Nhóm | N | Planning P90 ms | Tools P90 ms | Mean hops / calls | Client P90 / P95 ms | Timeout / HTTP lỗi |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| A1 | 4 | — | — | 0.0 / 0.0 | 127.59 / 127.59 | 0 / 0 |
+| A2 | 4 | 0.59 | 6.68 | 0.0 / 1.0 | 28.55 / 28.55 | 0 / 0 |
+| A3 | 4 | 6521.36 | 4.22 | 0.0 / 1.0 | 6540.66 / 6540.66 | 0 / 0 |
+| A4 | 4 | 0.11 | 4340.44 | 1.0 / 2.0 | 4513.13 / 4513.13 | 0 / 0 |
+
+A4 provider TTFT P90 4075.90ms, Agent-request TTLast P90 4371.83ms (N=4). Không áp dụng TTFT/TTLast cho query không sinh answer. A2/A3 là abstention trên KB thật trống, không là positive multi-hop benchmark; fixture N=1 chỉ raw latency, không percentile.
+
+[AGENT_PERFORMANCE](AGENT_PERFORMANCE.md) ghi workload/source/limitations; [CSV và charts](../evaluation/reports/phase09_20261106/REPORT.md). Target 3s: 2/4 generated samples đạt, 2 vượt 3s; không suy cho mọi multi-hop, query dài hoặc provider load khác.
+
+## M. Kết quả kiểm thử
+
+| Nhóm | Kết quả cuối / bằng chứng |
+| --- | --- |
+| Backend unit |174 passed trong full suite, gồm32 Agent/evaluator cases |
+| Backend integration |12 passed với real services; tổng backend 186 passed |
+| Frontend unit |17 passed |
+| Browser |22 passed, desktop/mobile;6 Agent cases, gồm2 empty-state mocks |
+| Static/build | Python lint/format, ESLint, TypeScript và production Vite build đạt |
+| Fixture + optional real Gemini planner |2 integration tests passed trong fixture_v3; source ghi rõ facts hư cấu |
+| Full acceptance |[summary cuối](verification/phase09/final/summary.json), trạng thái `pass` |
+| Preservation/security |[final_audit.json](verification/phase09/final_audit.json): active gen2,510 vectors/receipts, knowledge0, protected source giữ nguyên, không secret matches |
+
+### Các lượt lỗi được giữ để audit
+
+- `full`: backend 178 passed; dừng lint vì ba dòng dài trong module evaluation lúc đang bổ sung, đã sửa.
+- `host_tests_initial.txt`: một fixture test kết nối nhầm host DB port không publish; live API case qua. Đã dùng helper đọc Docker private-network IP, không mở DB port.
+- `full_v2`: backend 184/frontend 17/browser 22 passed trước hai sửa mode/service_class.
+- `full_v3`:185 passed/1 failed do administrative Qdrant create_collection vượt dependency probe timeout. Chỉ nâng setup timeout fixture lên10s và cleanup collection tạo dở; production tool/deadline giữ nguyên.
+- `full_v4`: backend 186/static đạt; browser 21 passed/1 failed do Gemini trả insufficient_evidence khác câu chữ cố định. Test hiện validate API outcome và citation/giữ ảnh, attach generated/status metrics, không chấm chất lượng bằng UI test.
+- Lượt cuối giữ raw logs riêng, không ghi đè các lượt trên. Warnings Qdrant API key qua HTTP trên private Docker network và NO_COLOR/FORCE_COLOR được lưu; không có lint/type failures chưa xử lý.
+
+Unit doubles không chứng minh real service behavior. Fixture một positive case có exact-ID workflow metrics 1/1; nhãn được lấy từ import payload/receipt trước execution. **Không báo tỷ lệ này là real-world accuracy.** Execution actual Gemini không là nhãn chất lượng câu trả lời.
+
+## N. Vấn đề và giới hạn còn mở
+
+- [ ] Nhập bộ tri thức thật có nguồn được duyệt và image associations được xác nhận; hiện KB0/0/0.
+- [ ] Human labels cho relevance/entity/relation/task correctness và faithfulness; Phase 08 review vẫn chờ, không tự chấm.
+- [ ] Đánh giá Recall@10/MRR/nDCG và multi-hop success thực sau khi có labels; không dùng synthetic identity match thay relevance.
+- [ ] Mở rộng finite grammar/domain/language có tests và labels; planner LLM hiện chỉ constrained template, chưa hỗ trợ tùy ý mọi complex query/qualifier.
+- [ ] Tải Agent lớn/concurrency cao, provider failures dài hạn và stable tail latency chưa đo;16 requests/run là exploratory. Chưa có error/duration trace riêng mỗi planning attempt; planner_attempts và tổng planning_ms có trong raw.
+- [ ] Target TTLast3s chưa đạt ổn định: lượt cuối chỉ 2/4 generated samples đạt, P90 4371.83ms.
+- [ ] Import CLI chưa có update/delete/revision workflow, external knowledge connector hoặc tự crawl facts.
+- [ ] Không durable checkpoint/long-term memory/tenant isolation/public hardening; không mở rộng thành autonomous actions.
+
+Giới hạn trên được tách khỏi phần mềm đã kiểm thử, không tuyên bố fully verified real-world Agent. Các nhãn IMPLEMENTED/TESTED_WITH_MOCKS/VERIFIED_WITH_REAL_DATA/NOT_VERIFIED ở mục A là ranh giới nghiệm thu.
+
+## O. Sẵn sàng cho Prompt 10
+
+API/UI nền và hợp đồng Agent đã sẵn để tiếp tục cải thiện end-to-end workflows ở Prompt 10 khi người dùng yêu cầu. Core text/image/multimodal/multi-intent, optional RAG và Agent dùng cùng content/auth contracts; không cần reindex để bật Agent. Muốn nghiệm thu quan hệ thực cần facts+image links+human labels có nguồn; muốn nghiệm thu chất lượng RAG cần hoàn thành review đã hoãn.
+
+**Dừng ở Phase 09. Không tự triển khai Prompt 10.**

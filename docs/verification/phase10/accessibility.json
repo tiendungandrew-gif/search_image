@@ -1,0 +1,107 @@
+[
+  {
+    "project": "tablet",
+    "screens": [
+      {
+        "view": "search-light",
+        "violations": []
+      },
+      {
+        "view": "dialog",
+        "violations": []
+      },
+      {
+        "view": "search-dark",
+        "violations": []
+      },
+      {
+        "view": "evaluation-dark",
+        "violations": []
+      }
+    ]
+  },
+  {
+    "project": "firefox",
+    "screens": [
+      {
+        "view": "search-light",
+        "violations": []
+      },
+      {
+        "view": "dialog",
+        "violations": []
+      },
+      {
+        "view": "search-dark",
+        "violations": []
+      },
+      {
+        "view": "evaluation-dark",
+        "violations": []
+      }
+    ]
+  },
+  {
+    "project": "webkit",
+    "screens": [
+      {
+        "view": "search-light",
+        "violations": []
+      },
+      {
+        "view": "dialog",
+        "violations": []
+      },
+      {
+        "view": "search-dark",
+        "violations": []
+      },
+      {
+        "view": "evaluation-dark",
+        "violations": []
+      }
+    ]
+  },
+  {
+    "project": "desktop",
+    "screens": [
+      {
+        "view": "search-light",
+        "violations": []
+      },
+      {
+        "view": "dialog",
+        "violations": []
+      },
+      {
+        "view": "search-dark",
+        "violations": []
+      },
+      {
+        "view": "evaluation-dark",
+        "violations": []
+      }
+    ]
+  },
+  {
+    "project": "mobile",
+    "screens": [
+      {
+        "view": "search-light",
+        "violations": []
+      },
+      {
+        "view": "dialog",
+        "violations": []
+      },
+      {
+        "view": "search-dark",
+        "violations": []
+      },
+      {
+        "view": "evaluation-dark",
+        "violations": []
+      }
+    ]
+  }
+]

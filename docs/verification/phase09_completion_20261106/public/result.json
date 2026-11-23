@@ -1,0 +1,2149 @@
+{
+  "status": "pass",
+  "classification": "source_verified_real_workflow",
+  "human_quality_verified": false,
+  "cases": [
+    {
+      "case_id": "english",
+      "result": {
+        "query_id": "ad44a157-fb7e-4178-b537-9cfd4db768d1",
+        "request_id": "1cd15001-76ba-4446-88db-ae6727c11a37",
+        "execution_id": "832c450a-3616-43c2-a444-9b5908a111f6",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "service_class": "augmented",
+        "requested_mode": "agent",
+        "search_mode": "agent",
+        "status": "completed",
+        "query_success": true,
+        "dataset_status": "available",
+        "results": [
+          {
+            "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+            "rank": 1,
+            "score": 0.22741984,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=original",
+            "thumbnail_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=thumbnail",
+            "metadata": {
+              "title": "Washington Monument",
+              "caption": "Washington Monument at dusk.",
+              "width": 1200,
+              "height": 794,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+            "rank": 2,
+            "score": 0.21915121,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=thumbnail",
+            "metadata": {
+              "title": "Lincoln Memorial",
+              "caption": "Lincoln Memorial at dusk.",
+              "width": 1200,
+              "height": 800,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+            "rank": 3,
+            "score": 0.21665122,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=original",
+            "thumbnail_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=thumbnail",
+            "metadata": {
+              "title": "Thomas Jefferson Memorial",
+              "caption": "Thomas Jefferson Memorial with flowering trees.",
+              "width": 500,
+              "height": 375,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "resolved_entities": [
+          {
+            "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "canonical_name": "Washington Monument",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/wamo/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "canonical_name": "Washington, D.C.",
+            "entity_type": "city",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/wamo/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "canonical_name": "Thomas Jefferson Memorial",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/thje/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/thje/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "canonical_name": "Lincoln Memorial",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/linc/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/linc/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          }
+        ],
+        "steps": [
+          {
+            "step_id": "anchor",
+            "tool": "entity_lookup",
+            "status": "completed",
+            "duration_ms": 11.121635000108654,
+            "logical_hop": 0,
+            "result_count": 1,
+            "error_code": null,
+            "evidence_ids": []
+          },
+          {
+            "step_id": "city",
+            "tool": "relationship_lookup",
+            "status": "completed",
+            "duration_ms": 9.075125999970624,
+            "logical_hop": 1,
+            "result_count": 1,
+            "error_code": null,
+            "evidence_ids": [
+              "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+            ]
+          },
+          {
+            "step_id": "targets",
+            "tool": "get_related_entities",
+            "status": "completed",
+            "duration_ms": 6.3272369998230715,
+            "logical_hop": 2,
+            "result_count": 3,
+            "error_code": null,
+            "evidence_ids": [
+              "1835978d-4dd4-584c-a159-7e2f8820e471",
+              "8c5899e1-c980-5743-a5b3-9e200654cda8",
+              "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+            ]
+          },
+          {
+            "step_id": "images",
+            "tool": "semantic_image_search",
+            "status": "completed",
+            "duration_ms": 138.43336799982353,
+            "logical_hop": 3,
+            "result_count": 3,
+            "error_code": null,
+            "evidence_ids": []
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b9a69833-4fdc-54f4-8188-0003cfd3aa0d",
+            "subject_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          },
+          {
+            "evidence_id": "1835978d-4dd4-584c-a159-7e2f8820e471",
+            "subject_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          },
+          {
+            "evidence_id": "8c5899e1-c980-5743-a5b3-9e200654cda8",
+            "subject_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          }
+        ],
+        "image_associations": [
+          {
+            "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+            "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          },
+          {
+            "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+            "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          },
+          {
+            "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+            "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          }
+        ],
+        "image_sources": {
+          "762150a5-9f94-4ded-9c9c-bfb4fd9dd530": [
+            "images:semantic_image_search"
+          ],
+          "c2aa6031-da93-4287-aeaa-89360acd41b0": [
+            "images:semantic_image_search"
+          ],
+          "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f": [
+            "images:semantic_image_search"
+          ]
+        },
+        "answer": null,
+        "rag": null,
+        "relationship_summary": "Washington Monument — located_in → Washington, D.C.; Thomas Jefferson Memorial — located_in → Washington, D.C.; Lincoln Memorial — located_in → Washington, D.C.",
+        "planner_mode": "deterministic",
+        "planner_attempts": 0,
+        "plan_validated": true,
+        "planner_version": "agent-template-plan-v2",
+        "planner_trace": [],
+        "planner_usage": [],
+        "planner_model_id": null,
+        "planner_prompt_sha256": null,
+        "plan_id": "8d0410d6-1782-41b0-97de-839e59f254d1",
+        "logical_hops": 3,
+        "tool_calls": 4,
+        "latency_ms": 265.56070800006637,
+        "latency": {
+          "routing_ms": 0.8395929999096552,
+          "planning_ms": 0.4014090000055148,
+          "aggregation_ms": 90.5229390000386,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "request_ttlast_ms": null,
+          "total_ms": 265.56070800006637,
+          "tools_ms": 164.95736599972588
+        },
+        "warnings": [],
+        "error_code": null,
+        "verification_state": "VERIFIED_WITH_REAL_DATA"
+      }
+    },
+    {
+      "case_id": "vietnamese",
+      "result": {
+        "query_id": "1968f4df-b3e0-4f6c-be82-23a3e9cbaa11",
+        "request_id": "f7cd323c-e02f-4a67-8e89-8853c966a01d",
+        "execution_id": "3d9c5082-83e3-4a9e-893c-b68d7af02ed0",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "service_class": "augmented",
+        "requested_mode": "agent",
+        "search_mode": "agent",
+        "status": "completed",
+        "query_success": true,
+        "dataset_status": "available",
+        "results": [
+          {
+            "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+            "rank": 1,
+            "score": 0.22741984,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=original",
+            "thumbnail_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=thumbnail",
+            "metadata": {
+              "title": "Washington Monument",
+              "caption": "Washington Monument at dusk.",
+              "width": 1200,
+              "height": 794,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+            "rank": 2,
+            "score": 0.21915121,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=thumbnail",
+            "metadata": {
+              "title": "Lincoln Memorial",
+              "caption": "Lincoln Memorial at dusk.",
+              "width": 1200,
+              "height": 800,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+            "rank": 3,
+            "score": 0.21665122,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=original",
+            "thumbnail_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=thumbnail",
+            "metadata": {
+              "title": "Thomas Jefferson Memorial",
+              "caption": "Thomas Jefferson Memorial with flowering trees.",
+              "width": 500,
+              "height": 375,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "resolved_entities": [
+          {
+            "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "canonical_name": "Washington Monument",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/wamo/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "canonical_name": "Washington, D.C.",
+            "entity_type": "city",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/wamo/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "canonical_name": "Thomas Jefferson Memorial",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/thje/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/thje/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "canonical_name": "Lincoln Memorial",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/linc/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/linc/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          }
+        ],
+        "steps": [
+          {
+            "step_id": "anchor",
+            "tool": "entity_lookup",
+            "status": "completed",
+            "duration_ms": 4.419283999595791,
+            "logical_hop": 0,
+            "result_count": 1,
+            "error_code": null,
+            "evidence_ids": []
+          },
+          {
+            "step_id": "city",
+            "tool": "relationship_lookup",
+            "status": "completed",
+            "duration_ms": 5.24111400000038,
+            "logical_hop": 1,
+            "result_count": 1,
+            "error_code": null,
+            "evidence_ids": [
+              "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+            ]
+          },
+          {
+            "step_id": "targets",
+            "tool": "get_related_entities",
+            "status": "completed",
+            "duration_ms": 4.936669000016991,
+            "logical_hop": 2,
+            "result_count": 3,
+            "error_code": null,
+            "evidence_ids": [
+              "1835978d-4dd4-584c-a159-7e2f8820e471",
+              "8c5899e1-c980-5743-a5b3-9e200654cda8",
+              "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+            ]
+          },
+          {
+            "step_id": "images",
+            "tool": "semantic_image_search",
+            "status": "completed",
+            "duration_ms": 102.35553799975605,
+            "logical_hop": 3,
+            "result_count": 3,
+            "error_code": null,
+            "evidence_ids": []
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b9a69833-4fdc-54f4-8188-0003cfd3aa0d",
+            "subject_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          },
+          {
+            "evidence_id": "1835978d-4dd4-584c-a159-7e2f8820e471",
+            "subject_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          },
+          {
+            "evidence_id": "8c5899e1-c980-5743-a5b3-9e200654cda8",
+            "subject_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          }
+        ],
+        "image_associations": [
+          {
+            "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+            "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          },
+          {
+            "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+            "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          },
+          {
+            "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+            "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          }
+        ],
+        "image_sources": {
+          "762150a5-9f94-4ded-9c9c-bfb4fd9dd530": [
+            "images:semantic_image_search"
+          ],
+          "c2aa6031-da93-4287-aeaa-89360acd41b0": [
+            "images:semantic_image_search"
+          ],
+          "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f": [
+            "images:semantic_image_search"
+          ]
+        },
+        "answer": null,
+        "rag": null,
+        "relationship_summary": "Washington Monument — located_in → Washington, D.C.; Thomas Jefferson Memorial — located_in → Washington, D.C.; Lincoln Memorial — located_in → Washington, D.C.",
+        "planner_mode": "deterministic",
+        "planner_attempts": 0,
+        "plan_validated": true,
+        "planner_version": "agent-template-plan-v2",
+        "planner_trace": [],
+        "planner_usage": [],
+        "planner_model_id": null,
+        "planner_prompt_sha256": null,
+        "plan_id": "aff4f320-6868-4033-a504-752ebace4820",
+        "logical_hops": 3,
+        "tool_calls": 4,
+        "latency_ms": 256.8584790001296,
+        "latency": {
+          "routing_ms": 0.6605200001104095,
+          "planning_ms": 0.3578860000743589,
+          "aggregation_ms": 132.83278000017162,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "request_ttlast_ms": null,
+          "total_ms": 256.8584790001296,
+          "tools_ms": 116.95260499936921
+        },
+        "warnings": [],
+        "error_code": null,
+        "verification_state": "VERIFIED_WITH_REAL_DATA"
+      }
+    },
+    {
+      "case_id": "alias",
+      "result": {
+        "query_id": "95791b34-2905-4181-8552-1b6ce2c85824",
+        "request_id": "fb7f6cef-0578-43da-99e7-95c913026122",
+        "execution_id": "403b8b28-ad88-4b32-ad42-dba8bf7fbd9b",
+        "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+        "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+        "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+        "service_class": "augmented",
+        "requested_mode": "agent",
+        "search_mode": "agent",
+        "status": "completed",
+        "query_success": true,
+        "dataset_status": "available",
+        "results": [
+          {
+            "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+            "rank": 1,
+            "score": 0.22741984,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=original",
+            "thumbnail_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=thumbnail",
+            "metadata": {
+              "title": "Washington Monument",
+              "caption": "Washington Monument at dusk.",
+              "width": 1200,
+              "height": 794,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+            "rank": 2,
+            "score": 0.21915121,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=original",
+            "thumbnail_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=thumbnail",
+            "metadata": {
+              "title": "Lincoln Memorial",
+              "caption": "Lincoln Memorial at dusk.",
+              "width": 1200,
+              "height": 800,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          },
+          {
+            "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+            "rank": 3,
+            "score": 0.21665122,
+            "score_type": "cosine",
+            "image_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=original",
+            "thumbnail_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=thumbnail",
+            "metadata": {
+              "title": "Thomas Jefferson Memorial",
+              "caption": "Thomas Jefferson Memorial with flowering trees.",
+              "width": 500,
+              "height": 375,
+              "media_type": "image/jpeg",
+              "tags": [
+                "landmark",
+                "nps",
+                "washington-dc"
+              ],
+              "source_dataset": "nps-landmarks-phase09-v1",
+              "city": null,
+              "license": "Public domain (NPS U.S. Government work)"
+            },
+            "constraint_assessments": []
+          }
+        ],
+        "resolved_entities": [
+          {
+            "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "canonical_name": "Thomas Jefferson Memorial",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/thje/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/thje/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "canonical_name": "Washington, D.C.",
+            "entity_type": "city",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/wamo/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "canonical_name": "Lincoln Memorial",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/linc/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/linc/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          },
+          {
+            "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "canonical_name": "Washington Monument",
+            "entity_type": "landmark",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "source_ref": "https://www.nps.gov/wamo/index.htm",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false
+            },
+            "fixture": false
+          }
+        ],
+        "steps": [
+          {
+            "step_id": "anchor",
+            "tool": "entity_lookup",
+            "status": "completed",
+            "duration_ms": 6.072528999993665,
+            "logical_hop": 0,
+            "result_count": 1,
+            "error_code": null,
+            "evidence_ids": []
+          },
+          {
+            "step_id": "city",
+            "tool": "relationship_lookup",
+            "status": "completed",
+            "duration_ms": 6.332793999717978,
+            "logical_hop": 1,
+            "result_count": 1,
+            "error_code": null,
+            "evidence_ids": [
+              "1835978d-4dd4-584c-a159-7e2f8820e471"
+            ]
+          },
+          {
+            "step_id": "targets",
+            "tool": "get_related_entities",
+            "status": "completed",
+            "duration_ms": 8.075573000041913,
+            "logical_hop": 2,
+            "result_count": 3,
+            "error_code": null,
+            "evidence_ids": [
+              "1835978d-4dd4-584c-a159-7e2f8820e471",
+              "8c5899e1-c980-5743-a5b3-9e200654cda8",
+              "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+            ]
+          },
+          {
+            "step_id": "images",
+            "tool": "semantic_image_search",
+            "status": "completed",
+            "duration_ms": 109.80521200008297,
+            "logical_hop": 3,
+            "result_count": 3,
+            "error_code": null,
+            "evidence_ids": []
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "1835978d-4dd4-584c-a159-7e2f8820e471",
+            "subject_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          },
+          {
+            "evidence_id": "8c5899e1-c980-5743-a5b3-9e200654cda8",
+            "subject_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          },
+          {
+            "evidence_id": "b9a69833-4fdc-54f4-8188-0003cfd3aa0d",
+            "subject_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "predicate": "located_in",
+            "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+            "source_ref": "https://www.nps.gov/wamo/index.htm",
+            "verified": true,
+            "provenance": {
+              "dataset_id": "nps-landmarks-phase09-v1",
+              "verification": "official_source_metadata",
+              "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+              "human_relevance_verified": false,
+              "verified_at": "2026-11-06T14:25:17.008093+00:00"
+            }
+          }
+        ],
+        "image_associations": [
+          {
+            "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+            "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          },
+          {
+            "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+            "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          },
+          {
+            "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+            "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+            "relation": "depicts",
+            "source_ref": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+            "verified": true
+          }
+        ],
+        "image_sources": {
+          "762150a5-9f94-4ded-9c9c-bfb4fd9dd530": [
+            "images:semantic_image_search"
+          ],
+          "c2aa6031-da93-4287-aeaa-89360acd41b0": [
+            "images:semantic_image_search"
+          ],
+          "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f": [
+            "images:semantic_image_search"
+          ]
+        },
+        "answer": null,
+        "rag": null,
+        "relationship_summary": "Thomas Jefferson Memorial — located_in → Washington, D.C.; Lincoln Memorial — located_in → Washington, D.C.; Washington Monument — located_in → Washington, D.C.",
+        "planner_mode": "deterministic",
+        "planner_attempts": 0,
+        "plan_validated": true,
+        "planner_version": "agent-template-plan-v2",
+        "planner_trace": [],
+        "planner_usage": [],
+        "planner_model_id": null,
+        "planner_prompt_sha256": null,
+        "plan_id": "2455d3c6-e90f-4f81-9e10-9f3f2f4ea51f",
+        "logical_hops": 3,
+        "tool_calls": 4,
+        "latency_ms": 279.0457159999278,
+        "latency": {
+          "routing_ms": 0.060598999880312476,
+          "planning_ms": 0.6217850000211911,
+          "aggregation_ms": 139.4498280001244,
+          "provider_ttft_ms": null,
+          "provider_ttlast_ms": null,
+          "request_ttlast_ms": null,
+          "total_ms": 279.0457159999278,
+          "tools_ms": 130.28610799983653
+        },
+        "warnings": [],
+        "error_code": null,
+        "verification_state": "VERIFIED_WITH_REAL_DATA"
+      }
+    }
+  ],
+  "workflow_metrics": {
+    "classification": "source_verified_workflow",
+    "cases": 3,
+    "metrics": {
+      "routing_accuracy": 1.0,
+      "tool_selection_accuracy": 1.0,
+      "entity_resolution_accuracy": 1.0,
+      "relationship_resolution_accuracy": 1.0,
+      "expected_image_identity_match": 1.0,
+      "workflow_success": 1.0
+    },
+    "real_world_retrieval_accuracy": null
+  },
+  "missing": {
+    "query_id": "12012f31-1b9f-4d5f-a6e1-c6c39ca348f2",
+    "request_id": "ebc47517-6666-42cf-976c-ffa76f6a05fe",
+    "execution_id": "168452fb-d0de-4c48-8f0c-ee7b53f1ef7d",
+    "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "service_class": "augmented",
+    "requested_mode": "agent",
+    "search_mode": "agent",
+    "status": "insufficient_evidence",
+    "query_success": false,
+    "dataset_status": "available",
+    "results": [],
+    "resolved_entities": [],
+    "steps": [
+      {
+        "step_id": "anchor",
+        "tool": "entity_lookup",
+        "status": "insufficient_evidence",
+        "duration_ms": 4.852611999922374,
+        "logical_hop": 0,
+        "result_count": 0,
+        "error_code": "INSUFFICIENT_EVIDENCE",
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [],
+    "image_associations": [],
+    "image_sources": {},
+    "answer": null,
+    "rag": null,
+    "relationship_summary": null,
+    "planner_mode": "deterministic",
+    "planner_attempts": 0,
+    "plan_validated": true,
+    "planner_version": "agent-template-plan-v2",
+    "planner_trace": [],
+    "planner_usage": [],
+    "planner_model_id": null,
+    "planner_prompt_sha256": null,
+    "plan_id": "3ee64811-ccf8-457b-8f26-bb2c00c666ee",
+    "logical_hops": 0,
+    "tool_calls": 1,
+    "latency_ms": 18.549412999618653,
+    "latency": {
+      "routing_ms": 0.05702999987988733,
+      "planning_ms": 0.4183089999969525,
+      "aggregation_ms": 0.0,
+      "provider_ttft_ms": null,
+      "provider_ttlast_ms": null,
+      "request_ttlast_ms": null,
+      "total_ms": 18.549412999618653,
+      "tools_ms": 4.852611999922374
+    },
+    "warnings": [
+      "INSUFFICIENT_EVIDENCE"
+    ],
+    "error_code": "INSUFFICIENT_EVIDENCE",
+    "verification_state": "NOT_VERIFIED"
+  },
+  "hard_filter": {
+    "query_id": "a60f40dd-cd93-433a-8f25-4068888a0e56",
+    "request_id": "da46743a-452c-4574-870a-857af211f5ab",
+    "execution_id": "aa06dd1d-405c-4c02-8d9c-1d3a991bdb28",
+    "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "service_class": "augmented",
+    "requested_mode": "agent",
+    "search_mode": "agent",
+    "status": "insufficient_evidence",
+    "query_success": false,
+    "dataset_status": "available",
+    "results": [],
+    "resolved_entities": [
+      {
+        "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "canonical_name": "Washington Monument",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/wamo/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "canonical_name": "Washington, D.C.",
+        "entity_type": "city",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/wamo/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "canonical_name": "Thomas Jefferson Memorial",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/thje/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/thje/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "canonical_name": "Lincoln Memorial",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/linc/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/linc/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      }
+    ],
+    "steps": [
+      {
+        "step_id": "anchor",
+        "tool": "entity_lookup",
+        "status": "completed",
+        "duration_ms": 4.570488999888767,
+        "logical_hop": 0,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": []
+      },
+      {
+        "step_id": "city",
+        "tool": "relationship_lookup",
+        "status": "completed",
+        "duration_ms": 8.004500999959419,
+        "logical_hop": 1,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": [
+          "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+        ]
+      },
+      {
+        "step_id": "targets",
+        "tool": "get_related_entities",
+        "status": "completed",
+        "duration_ms": 7.539328999882855,
+        "logical_hop": 2,
+        "result_count": 3,
+        "error_code": null,
+        "evidence_ids": [
+          "1835978d-4dd4-584c-a159-7e2f8820e471",
+          "8c5899e1-c980-5743-a5b3-9e200654cda8",
+          "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+        ]
+      },
+      {
+        "step_id": "images",
+        "tool": "semantic_image_search",
+        "status": "insufficient_evidence",
+        "duration_ms": 56.41535299992029,
+        "logical_hop": 3,
+        "result_count": 0,
+        "error_code": "INSUFFICIENT_EVIDENCE",
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "b9a69833-4fdc-54f4-8188-0003cfd3aa0d",
+        "subject_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      },
+      {
+        "evidence_id": "1835978d-4dd4-584c-a159-7e2f8820e471",
+        "subject_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      },
+      {
+        "evidence_id": "8c5899e1-c980-5743-a5b3-9e200654cda8",
+        "subject_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      }
+    ],
+    "image_associations": [],
+    "image_sources": {},
+    "answer": null,
+    "rag": null,
+    "relationship_summary": "Washington Monument — located_in → Washington, D.C.; Thomas Jefferson Memorial — located_in → Washington, D.C.; Lincoln Memorial — located_in → Washington, D.C.",
+    "planner_mode": "deterministic",
+    "planner_attempts": 0,
+    "plan_validated": true,
+    "planner_version": "agent-template-plan-v2",
+    "planner_trace": [],
+    "planner_usage": [],
+    "planner_model_id": null,
+    "planner_prompt_sha256": null,
+    "plan_id": "ef9807a4-8aa6-4a75-8eb9-34844b518436",
+    "logical_hops": 3,
+    "tool_calls": 4,
+    "latency_ms": 96.48008800013486,
+    "latency": {
+      "routing_ms": 0.04421899984663469,
+      "planning_ms": 0.3682960000332969,
+      "aggregation_ms": 0.0,
+      "provider_ttft_ms": null,
+      "provider_ttlast_ms": null,
+      "request_ttlast_ms": null,
+      "total_ms": 96.48008800013486,
+      "tools_ms": 76.52967199965133
+    },
+    "warnings": [
+      "INSUFFICIENT_EVIDENCE"
+    ],
+    "error_code": "INSUFFICIENT_EVIDENCE",
+    "verification_state": "NOT_VERIFIED"
+  },
+  "real_llm": {
+    "query_id": "f62fa377-2864-4707-8568-93197b761fbf",
+    "request_id": "f4c41cf8-cb24-424c-bca2-ae602c1b0df6",
+    "execution_id": "81015d0c-3667-46a1-8f32-d41314ee6067",
+    "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "service_class": "augmented",
+    "requested_mode": "agent",
+    "search_mode": "agent",
+    "status": "completed",
+    "query_success": true,
+    "dataset_status": "available",
+    "results": [
+      {
+        "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+        "rank": 1,
+        "score": 0.22741984,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=original",
+        "thumbnail_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=thumbnail",
+        "metadata": {
+          "title": "Washington Monument",
+          "caption": "Washington Monument at dusk.",
+          "width": 1200,
+          "height": 794,
+          "media_type": "image/jpeg",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "source_dataset": "nps-landmarks-phase09-v1",
+          "city": null,
+          "license": "Public domain (NPS U.S. Government work)"
+        },
+        "constraint_assessments": []
+      },
+      {
+        "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+        "rank": 2,
+        "score": 0.21915121,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=original",
+        "thumbnail_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=thumbnail",
+        "metadata": {
+          "title": "Lincoln Memorial",
+          "caption": "Lincoln Memorial at dusk.",
+          "width": 1200,
+          "height": 800,
+          "media_type": "image/jpeg",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "source_dataset": "nps-landmarks-phase09-v1",
+          "city": null,
+          "license": "Public domain (NPS U.S. Government work)"
+        },
+        "constraint_assessments": []
+      },
+      {
+        "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+        "rank": 3,
+        "score": 0.21665122,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=original",
+        "thumbnail_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=thumbnail",
+        "metadata": {
+          "title": "Thomas Jefferson Memorial",
+          "caption": "Thomas Jefferson Memorial with flowering trees.",
+          "width": 500,
+          "height": 375,
+          "media_type": "image/jpeg",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "source_dataset": "nps-landmarks-phase09-v1",
+          "city": null,
+          "license": "Public domain (NPS U.S. Government work)"
+        },
+        "constraint_assessments": []
+      }
+    ],
+    "resolved_entities": [
+      {
+        "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "canonical_name": "Washington Monument",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/wamo/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "canonical_name": "Washington, D.C.",
+        "entity_type": "city",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/wamo/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "canonical_name": "Thomas Jefferson Memorial",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/thje/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/thje/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "canonical_name": "Lincoln Memorial",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/linc/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/linc/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      }
+    ],
+    "steps": [
+      {
+        "step_id": "anchor",
+        "tool": "entity_lookup",
+        "status": "completed",
+        "duration_ms": 3.7593769998238713,
+        "logical_hop": 0,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": []
+      },
+      {
+        "step_id": "city",
+        "tool": "relationship_lookup",
+        "status": "completed",
+        "duration_ms": 4.556662000140932,
+        "logical_hop": 1,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": [
+          "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+        ]
+      },
+      {
+        "step_id": "targets",
+        "tool": "get_related_entities",
+        "status": "completed",
+        "duration_ms": 4.719210999610368,
+        "logical_hop": 2,
+        "result_count": 3,
+        "error_code": null,
+        "evidence_ids": [
+          "1835978d-4dd4-584c-a159-7e2f8820e471",
+          "8c5899e1-c980-5743-a5b3-9e200654cda8",
+          "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+        ]
+      },
+      {
+        "step_id": "images",
+        "tool": "semantic_image_search",
+        "status": "completed",
+        "duration_ms": 96.01263099966673,
+        "logical_hop": 3,
+        "result_count": 3,
+        "error_code": null,
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "b9a69833-4fdc-54f4-8188-0003cfd3aa0d",
+        "subject_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      },
+      {
+        "evidence_id": "1835978d-4dd4-584c-a159-7e2f8820e471",
+        "subject_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      },
+      {
+        "evidence_id": "8c5899e1-c980-5743-a5b3-9e200654cda8",
+        "subject_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      }
+    ],
+    "image_associations": [
+      {
+        "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+        "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "relation": "depicts",
+        "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+        "verified": true
+      },
+      {
+        "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+        "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "relation": "depicts",
+        "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+        "verified": true
+      },
+      {
+        "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+        "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "relation": "depicts",
+        "source_ref": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+        "verified": true
+      }
+    ],
+    "image_sources": {
+      "762150a5-9f94-4ded-9c9c-bfb4fd9dd530": [
+        "images:semantic_image_search"
+      ],
+      "c2aa6031-da93-4287-aeaa-89360acd41b0": [
+        "images:semantic_image_search"
+      ],
+      "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f": [
+        "images:semantic_image_search"
+      ]
+    },
+    "answer": null,
+    "rag": null,
+    "relationship_summary": "Washington Monument — located_in → Washington, D.C.; Thomas Jefferson Memorial — located_in → Washington, D.C.; Lincoln Memorial — located_in → Washington, D.C.",
+    "planner_mode": "llm",
+    "planner_attempts": 1,
+    "plan_validated": true,
+    "planner_version": "agent-template-plan-v2",
+    "planner_trace": [
+      {
+        "attempt": 1,
+        "status": "completed",
+        "duration_ms": 1302.7999259998069,
+        "error_code": null,
+        "input_bytes": 1881
+      }
+    ],
+    "planner_usage": [
+      {
+        "prompt_tokens": 540,
+        "completion_tokens": 276,
+        "total_tokens": 816,
+        "provider_metadata": {
+          "promptTokenCount": 540,
+          "candidatesTokenCount": 276,
+          "totalTokenCount": 816,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 540
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      }
+    ],
+    "planner_model_id": "gemini-3.5-flash-lite",
+    "planner_prompt_sha256": "23db43dbde4b715eb31c0c308b8ad4a4a1c6cbdad0a578c55218481bad794dd0",
+    "plan_id": "019e6bf9-6e09-4539-bb05-408a32312e2b",
+    "logical_hops": 3,
+    "tool_calls": 4,
+    "latency_ms": 1540.0219840003047,
+    "latency": {
+      "routing_ms": 0.0851519998832373,
+      "planning_ms": 1302.829765000297,
+      "aggregation_ms": 122.0287510000162,
+      "provider_ttft_ms": null,
+      "provider_ttlast_ms": null,
+      "request_ttlast_ms": null,
+      "total_ms": 1540.0219840003047,
+      "tools_ms": 109.0478809992419
+    },
+    "warnings": [],
+    "error_code": null,
+    "verification_state": "VERIFIED_WITH_REAL_DATA"
+  },
+  "real_rag": {
+    "query_id": "3aa0f757-eac8-4b03-a824-85705768f222",
+    "request_id": "1a546680-a86a-4deb-ac0f-4fbc46c3e153",
+    "execution_id": "52e9898c-92bc-44c6-ba4b-bf42d1eaa8b6",
+    "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+    "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+    "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+    "service_class": "augmented",
+    "requested_mode": "agent",
+    "search_mode": "agent",
+    "status": "completed",
+    "query_success": true,
+    "dataset_status": "available",
+    "results": [
+      {
+        "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+        "rank": 1,
+        "score": 0.22741984,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=original",
+        "thumbnail_url": "/api/v1/images/762150a5-9f94-4ded-9c9c-bfb4fd9dd530/content?variant=thumbnail",
+        "metadata": {
+          "title": "Washington Monument",
+          "caption": "Washington Monument at dusk.",
+          "width": 1200,
+          "height": 794,
+          "media_type": "image/jpeg",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "source_dataset": "nps-landmarks-phase09-v1",
+          "city": null,
+          "license": "Public domain (NPS U.S. Government work)"
+        },
+        "constraint_assessments": []
+      },
+      {
+        "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+        "rank": 2,
+        "score": 0.21915121,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=original",
+        "thumbnail_url": "/api/v1/images/c2aa6031-da93-4287-aeaa-89360acd41b0/content?variant=thumbnail",
+        "metadata": {
+          "title": "Lincoln Memorial",
+          "caption": "Lincoln Memorial at dusk.",
+          "width": 1200,
+          "height": 800,
+          "media_type": "image/jpeg",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "source_dataset": "nps-landmarks-phase09-v1",
+          "city": null,
+          "license": "Public domain (NPS U.S. Government work)"
+        },
+        "constraint_assessments": []
+      },
+      {
+        "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+        "rank": 3,
+        "score": 0.21665122,
+        "score_type": "cosine",
+        "image_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=original",
+        "thumbnail_url": "/api/v1/images/e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f/content?variant=thumbnail",
+        "metadata": {
+          "title": "Thomas Jefferson Memorial",
+          "caption": "Thomas Jefferson Memorial with flowering trees.",
+          "width": 500,
+          "height": 375,
+          "media_type": "image/jpeg",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "source_dataset": "nps-landmarks-phase09-v1",
+          "city": null,
+          "license": "Public domain (NPS U.S. Government work)"
+        },
+        "constraint_assessments": []
+      }
+    ],
+    "resolved_entities": [
+      {
+        "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "canonical_name": "Washington Monument",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/wamo/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "canonical_name": "Washington, D.C.",
+        "entity_type": "city",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/wamo/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "canonical_name": "Thomas Jefferson Memorial",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/thje/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/thje/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      },
+      {
+        "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "canonical_name": "Lincoln Memorial",
+        "entity_type": "landmark",
+        "source_ref": "https://www.nps.gov/linc/index.htm",
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "source_ref": "https://www.nps.gov/linc/index.htm",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false
+        },
+        "fixture": false
+      }
+    ],
+    "steps": [
+      {
+        "step_id": "anchor",
+        "tool": "entity_lookup",
+        "status": "completed",
+        "duration_ms": 4.4071209999856364,
+        "logical_hop": 0,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": []
+      },
+      {
+        "step_id": "city",
+        "tool": "relationship_lookup",
+        "status": "completed",
+        "duration_ms": 4.507528999965871,
+        "logical_hop": 1,
+        "result_count": 1,
+        "error_code": null,
+        "evidence_ids": [
+          "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+        ]
+      },
+      {
+        "step_id": "targets",
+        "tool": "get_related_entities",
+        "status": "completed",
+        "duration_ms": 4.86258099999759,
+        "logical_hop": 2,
+        "result_count": 3,
+        "error_code": null,
+        "evidence_ids": [
+          "1835978d-4dd4-584c-a159-7e2f8820e471",
+          "8c5899e1-c980-5743-a5b3-9e200654cda8",
+          "b9a69833-4fdc-54f4-8188-0003cfd3aa0d"
+        ]
+      },
+      {
+        "step_id": "images",
+        "tool": "semantic_image_search",
+        "status": "completed",
+        "duration_ms": 101.67018099991765,
+        "logical_hop": 3,
+        "result_count": 3,
+        "error_code": null,
+        "evidence_ids": []
+      },
+      {
+        "step_id": "answer",
+        "tool": "rag_explain",
+        "status": "completed",
+        "duration_ms": 925.0623650000307,
+        "logical_hop": 3,
+        "result_count": 3,
+        "error_code": null,
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "b9a69833-4fdc-54f4-8188-0003cfd3aa0d",
+        "subject_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/wamo/index.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      },
+      {
+        "evidence_id": "1835978d-4dd4-584c-a159-7e2f8820e471",
+        "subject_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      },
+      {
+        "evidence_id": "8c5899e1-c980-5743-a5b3-9e200654cda8",
+        "subject_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "predicate": "located_in",
+        "object_id": "a7e945f9-2f9b-5bc7-ba5e-f721dc9174da",
+        "source_ref": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+        "verified": true,
+        "provenance": {
+          "dataset_id": "nps-landmarks-phase09-v1",
+          "verification": "official_source_metadata",
+          "source_manifest_sha256": "aa028c5a6569d0994558b302ab0fb7d01ffba87c4ec0f4452fed992f63120a55",
+          "human_relevance_verified": false,
+          "verified_at": "2026-11-06T14:25:17.008093+00:00"
+        }
+      }
+    ],
+    "image_associations": [
+      {
+        "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+        "entity_id": "2d194c88-c46f-5825-a8ba-f734da238b41",
+        "relation": "depicts",
+        "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+        "verified": true
+      },
+      {
+        "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+        "entity_id": "e6a72379-6adf-5998-851b-f94984316a1e",
+        "relation": "depicts",
+        "source_ref": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+        "verified": true
+      },
+      {
+        "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+        "entity_id": "f979880e-1be1-5402-89c4-f24f85aec143",
+        "relation": "depicts",
+        "source_ref": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+        "verified": true
+      }
+    ],
+    "image_sources": {
+      "762150a5-9f94-4ded-9c9c-bfb4fd9dd530": [
+        "images:semantic_image_search",
+        "answer:rag_explain"
+      ],
+      "c2aa6031-da93-4287-aeaa-89360acd41b0": [
+        "images:semantic_image_search",
+        "answer:rag_explain"
+      ],
+      "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f": [
+        "images:semantic_image_search",
+        "answer:rag_explain"
+      ]
+    },
+    "answer": "Theo metadata [762150a5-9f94-4ded-9c9c-bfb4fd9dd530], tags: “landmark, nps, washington-dc”.\nTheo metadata [c2aa6031-da93-4287-aeaa-89360acd41b0], caption: “Lincoln Memorial at dusk.”.\nTheo metadata [c2aa6031-da93-4287-aeaa-89360acd41b0], tags: “landmark, nps, washington-dc”.\nTheo metadata [e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f], caption: “Thomas Jefferson Memorial with flowering trees.”.\nTheo metadata [e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f], tags: “landmark, nps, washington-dc”.",
+    "rag": {
+      "answer": "Theo metadata [762150a5-9f94-4ded-9c9c-bfb4fd9dd530], tags: “landmark, nps, washington-dc”.\nTheo metadata [c2aa6031-da93-4287-aeaa-89360acd41b0], caption: “Lincoln Memorial at dusk.”.\nTheo metadata [c2aa6031-da93-4287-aeaa-89360acd41b0], tags: “landmark, nps, washington-dc”.\nTheo metadata [e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f], caption: “Thomas Jefferson Memorial with flowering trees.”.\nTheo metadata [e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f], tags: “landmark, nps, washington-dc”.",
+      "grounding_status": "partially_supported",
+      "citations": [
+        {
+          "fact_id": "E1.tags",
+          "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+          "evidence_field": "tags",
+          "quote": "landmark, nps, washington-dc",
+          "provenance": {
+            "landmark": {
+              "source": "provided",
+              "verified": false
+            },
+            "nps": {
+              "source": "provided",
+              "verified": false
+            },
+            "washington-dc": {
+              "source": "provided",
+              "verified": false
+            }
+          },
+          "support_check": "exact_metadata_value"
+        },
+        {
+          "fact_id": "E2.caption",
+          "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+          "evidence_field": "caption",
+          "quote": "Lincoln Memorial at dusk.",
+          "provenance": {
+            "source": "https://www.nps.gov/linc/index.htm",
+            "verified": false,
+            "policy": "stored attribution; not visual verification"
+          },
+          "support_check": "exact_metadata_value"
+        },
+        {
+          "fact_id": "E2.tags",
+          "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+          "evidence_field": "tags",
+          "quote": "landmark, nps, washington-dc",
+          "provenance": {
+            "landmark": {
+              "source": "provided",
+              "verified": false
+            },
+            "nps": {
+              "source": "provided",
+              "verified": false
+            },
+            "washington-dc": {
+              "source": "provided",
+              "verified": false
+            }
+          },
+          "support_check": "exact_metadata_value"
+        },
+        {
+          "fact_id": "E3.caption",
+          "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+          "evidence_field": "caption",
+          "quote": "Thomas Jefferson Memorial with flowering trees.",
+          "provenance": {
+            "source": "https://www.nps.gov/thje/index.htm",
+            "verified": false,
+            "policy": "stored attribution; not visual verification"
+          },
+          "support_check": "exact_metadata_value"
+        },
+        {
+          "fact_id": "E3.tags",
+          "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+          "evidence_field": "tags",
+          "quote": "landmark, nps, washington-dc",
+          "provenance": {
+            "landmark": {
+              "source": "provided",
+              "verified": false
+            },
+            "nps": {
+              "source": "provided",
+              "verified": false
+            },
+            "washington-dc": {
+              "source": "provided",
+              "verified": false
+            }
+          },
+          "support_check": "exact_metadata_value"
+        }
+      ],
+      "evidence": [
+        {
+          "image_id": "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+          "retrieval_rank": 1,
+          "retrieval_score": null,
+          "caption": "Washington Monument at dusk.",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "metadata": {
+            "width": 1200,
+            "height": 794,
+            "media_type": "image/jpeg",
+            "title": "Washington Monument",
+            "description": "NPS Photo. NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits",
+            "source_dataset": "nps-landmarks-phase09-v1",
+            "license": "Public domain (NPS U.S. Government work)"
+          },
+          "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+          "provenance": {
+            "metadata_revision": 1,
+            "source_sha256": "8bb408a5732032884aa1ecd079e095a39022b5f4c9bbfad363da4e9537e414ef",
+            "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+            "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+            "caption": {
+              "source": "https://www.nps.gov/wamo/index.htm",
+              "verified": false,
+              "policy": "stored attribution; not visual verification"
+            },
+            "tags": {
+              "landmark": {
+                "source": "provided",
+                "verified": false
+              },
+              "nps": {
+                "source": "provided",
+                "verified": false
+              },
+              "washington-dc": {
+                "source": "provided",
+                "verified": false
+              }
+            },
+            "metadata": {
+              "source": "stored_postgresql",
+              "verified_visual_content": false
+            }
+          },
+          "incomplete": false
+        },
+        {
+          "image_id": "c2aa6031-da93-4287-aeaa-89360acd41b0",
+          "retrieval_rank": 2,
+          "retrieval_score": null,
+          "caption": "Lincoln Memorial at dusk.",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "metadata": {
+            "width": 1200,
+            "height": 800,
+            "media_type": "image/jpeg",
+            "title": "Lincoln Memorial",
+            "description": "NPS Photo. NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits",
+            "source_dataset": "nps-landmarks-phase09-v1",
+            "license": "Public domain (NPS U.S. Government work)"
+          },
+          "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+          "provenance": {
+            "metadata_revision": 1,
+            "source_sha256": "26a8d69cb62bb78903c9b41d09af87406e91f782dc0808b3f2d1b4429d40e343",
+            "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+            "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+            "caption": {
+              "source": "https://www.nps.gov/linc/index.htm",
+              "verified": false,
+              "policy": "stored attribution; not visual verification"
+            },
+            "tags": {
+              "landmark": {
+                "source": "provided",
+                "verified": false
+              },
+              "nps": {
+                "source": "provided",
+                "verified": false
+              },
+              "washington-dc": {
+                "source": "provided",
+                "verified": false
+              }
+            },
+            "metadata": {
+              "source": "stored_postgresql",
+              "verified_visual_content": false
+            }
+          },
+          "incomplete": false
+        },
+        {
+          "image_id": "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f",
+          "retrieval_rank": 3,
+          "retrieval_score": null,
+          "caption": "Thomas Jefferson Memorial with flowering trees.",
+          "tags": [
+            "landmark",
+            "nps",
+            "washington-dc"
+          ],
+          "metadata": {
+            "width": 500,
+            "height": 375,
+            "media_type": "image/jpeg",
+            "title": "Thomas Jefferson Memorial",
+            "description": "NPS/ Mike Litterst. NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits",
+            "source_dataset": "nps-landmarks-phase09-v1",
+            "license": "Public domain (NPS U.S. Government work)"
+          },
+          "evidence_source": "postgresql_ready_receipt+qdrant_payload+minio_stat",
+          "provenance": {
+            "metadata_revision": 1,
+            "source_sha256": "2c674f52234fa6f8a4ecf558517c5bf5e58b51216490dadde770251f8845478b",
+            "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+            "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+            "caption": {
+              "source": "https://www.nps.gov/thje/index.htm",
+              "verified": false,
+              "policy": "stored attribution; not visual verification"
+            },
+            "tags": {
+              "landmark": {
+                "source": "provided",
+                "verified": false
+              },
+              "nps": {
+                "source": "provided",
+                "verified": false
+              },
+              "washington-dc": {
+                "source": "provided",
+                "verified": false
+              }
+            },
+            "metadata": {
+              "source": "stored_postgresql",
+              "verified_visual_content": false
+            }
+          },
+          "incomplete": false
+        }
+      ],
+      "language": "vi",
+      "generated": true,
+      "provider": "gemini",
+      "model_id": "gemini-3.5-flash-lite",
+      "model_revision": "provider_managed",
+      "returned_model": "gemini-3.5-flash-lite",
+      "prompt_version": "extractive-facts-v1",
+      "prompt_sha256": "7f461eb2c6fad9cb3a717ff346ddd0a676a634f955fb716bc0887e711260ef7e",
+      "context": {
+        "included_image_ids": [
+          "762150a5-9f94-4ded-9c9c-bfb4fd9dd530",
+          "c2aa6031-da93-4287-aeaa-89360acd41b0",
+          "e1aae8eb-4e79-4baa-8ebf-1f48d791ba1f"
+        ],
+        "available_images": 3,
+        "fact_count": 9,
+        "context_budget_upper_bound_tokens": 2048,
+        "input_token_upper_bound": 2713,
+        "token_count_policy": "UTF-8 byte upper bound + 128 message overhead; not exact tokens",
+        "policy": "descriptive_first",
+        "format": "compact",
+        "technical_question": false
+      },
+      "generation_config": {
+        "temperature": 0.1,
+        "max_input_tokens": 4096,
+        "max_context_tokens": 2048,
+        "max_output_tokens": 128,
+        "timeout_seconds": 8.0,
+        "provider_retries": 1,
+        "streaming_enabled": true,
+        "reasoning_effort": "minimal",
+        "token_parameter": "max_tokens",
+        "max_concurrency": 2,
+        "gemini_api_style": "native"
+      },
+      "usage": {
+        "prompt_tokens": 648,
+        "completion_tokens": 35,
+        "total_tokens": 683,
+        "provider_metadata": {
+          "promptTokenCount": 648,
+          "candidatesTokenCount": 35,
+          "totalTokenCount": 683,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 648
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      },
+      "error_code": null,
+      "limitations": [
+        "Text-only metadata explanation; no direct visual verification.",
+        "Exact metadata quotations are validated; visual truth and answer relevance are not independently verified."
+      ]
+    },
+    "relationship_summary": "Washington Monument — located_in → Washington, D.C.; Thomas Jefferson Memorial — located_in → Washington, D.C.; Lincoln Memorial — located_in → Washington, D.C.",
+    "planner_mode": "deterministic",
+    "planner_attempts": 0,
+    "plan_validated": true,
+    "planner_version": "agent-template-plan-v2",
+    "planner_trace": [],
+    "planner_usage": [],
+    "planner_model_id": null,
+    "planner_prompt_sha256": null,
+    "plan_id": "0cf86177-4751-49c8-ac68-01b2baee6174",
+    "logical_hops": 3,
+    "tool_calls": 5,
+    "latency_ms": 1250.6802620000599,
+    "latency": {
+      "routing_ms": 0.03391600012037088,
+      "planning_ms": 0.299051000183681,
+      "aggregation_ms": 203.56403999994654,
+      "provider_ttft_ms": 675.0221249999413,
+      "provider_ttlast_ms": 759.0873939998346,
+      "request_ttlast_ms": 1121.1525730000176,
+      "total_ms": 1250.6802620000599,
+      "tools_ms": 1040.5097769998974
+    },
+    "warnings": [],
+    "error_code": null,
+    "verification_state": "VERIFIED_WITH_REAL_DATA"
+  }
+}

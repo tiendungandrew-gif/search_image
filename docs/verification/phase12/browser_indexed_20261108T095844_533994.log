@@ -1,0 +1,17 @@
+
+Running 4 tests using 1 worker
+
+  ✓  1 [deploy-desktop] › deploy-e2e/accounts.spec.ts:7:1 › deployment · private login, search and admin workspace (3.4s)
+  ✓  2 [deploy-mobile] › deploy-e2e/accounts.spec.ts:7:1 › deployment · private login, search and admin workspace (2.5s)
+  ✓  3 [deploy-firefox] › deploy-e2e/accounts.spec.ts:7:1 › deployment · private login, search and admin workspace (4.3s)
+  ✓  4 [deploy-webkit] › deploy-e2e/accounts.spec.ts:7:1 › deployment · private login, search and admin workspace (4.4s)
+
+  4 passed (19.0s)
+(node:1919694) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1920003) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1920301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1920856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

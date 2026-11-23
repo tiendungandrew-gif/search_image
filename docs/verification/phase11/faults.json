@@ -1,0 +1,62 @@
+{
+  "classification": "REAL_SERVICE_TERMINATION_ON_ISOLATED_QA",
+  "production_data_modified": false,
+  "scenarios": [
+    {
+      "service": "qa-postgres",
+      "fault": "SIGKILL",
+      "readiness_status": 503,
+      "readiness_ms": 6.731989999025245,
+      "search_status": 503,
+      "search_ms": 4.443601999810198,
+      "recovery_ms": 883.4965389996796,
+      "status": "passed"
+    },
+    {
+      "service": "qa-qdrant",
+      "fault": "SIGKILL",
+      "readiness_status": 503,
+      "readiness_ms": 10.914538999713841,
+      "search_status": 503,
+      "search_ms": 10.197540001172456,
+      "recovery_ms": 878.639149999799,
+      "status": "passed"
+    },
+    {
+      "service": "qa-minio",
+      "fault": "SIGKILL",
+      "readiness_status": 503,
+      "readiness_ms": 6.1902449997433,
+      "search_status": 503,
+      "search_ms": 127.03930899988336,
+      "recovery_ms": 840.3308790002484,
+      "status": "passed"
+    },
+    {
+      "service": "qa-api",
+      "fault": "SIGKILL",
+      "frontend_shell_available": true,
+      "status": "passed"
+    }
+  ],
+  "initial_dataset": {
+    "state": "ready",
+    "images": 6,
+    "available_images": 6,
+    "indexed_images": 6,
+    "vectors": 6,
+    "index_id": "436ed5e7-92cc-467b-9013-446d86745cd4",
+    "index_status": "ready",
+    "generation": 1
+  },
+  "final_dataset": {
+    "state": "ready",
+    "images": 6,
+    "available_images": 6,
+    "indexed_images": 6,
+    "vectors": 6,
+    "index_id": "436ed5e7-92cc-467b-9013-446d86745cd4",
+    "index_status": "ready",
+    "generation": 1
+  }
+}

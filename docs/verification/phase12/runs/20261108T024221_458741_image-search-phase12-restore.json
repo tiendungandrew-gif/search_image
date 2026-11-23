@@ -1,0 +1,15 @@
+{
+  "project": "image-search-phase12-restore",
+  "commands": [
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker compose --env-file /home/tts/prj/.env.phase12-restore -f /home/tts/prj/compose.prod.yaml -p image-search-phase12-restore logs --no-color --tail 60 worker"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3364473769997858
+    }
+  ]
+}

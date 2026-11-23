@@ -1,0 +1,137 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-c193d6f66d54 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-c193d6f66d54 Created 
+........................................................................ [ 32%]
+FFF..................................................................... [ 64%]
+........................................................................ [ 96%]
+.......                                                                  [100%]
+=================================== FAILURES ===================================
+_____________________ test_request_timeout_before_headers ______________________
+
+settings = Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env='test', debug=False,...ncy=2, rag_provider_retries=0, rag_streaming_enabled=True, rag_token_parameter='max_tokens', rag_reasoning_effort=None)
+fake_services = <conftest.fake_services.<locals>.FakeServices object at 0x7fd4195abb90>
+
+    async def test_request_timeout_before_headers(settings, fake_services):
+        settings.request_timeout_seconds = 0.05
+        settings.dependency_timeout_seconds = 0.02
+        app = create_app(settings, lambda _: fake_services)
+    
+        @app.get("/test/slow")
+        async def slow():
+            await asyncio.sleep(0.5)
+            return {"status": "late"}
+    
+        async with async_client(app) as client:
+            response = await client.get("/test/slow", headers={"Origin": "http://localhost:5173"})
+        assert response.status_code == 504
+        assert response.json()["error"]["code"] == "DEADLINE_EXCEEDED"
+>       assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/unit/test_api.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Headers({'content-length': '175', 'content-type': 'application/json', 'x-request-id': '13a0e56c-fd91-41fc-9a8f-30082d895fdc'})
+key = 'access-control-allow-origin'
+
+    def __getitem__(self, key: str) -> str:
+        """
+        Return a single header value.
+    
+        If there are multiple headers with the same key, then we concatenate
+        them with commas. See: https://tools.ietf.org/html/rfc7230#section-3.2.2
+        """
+        normalized_key = key.lower().encode(self.encoding)
+    
+        items = [
+            header_value.decode(self.encoding)
+            for _, header_key, header_value in self._list
+            if header_key == normalized_key
+        ]
+    
+        if items:
+            return ", ".join(items)
+    
+>       raise KeyError(key)
+E       KeyError: 'access-control-allow-origin'
+
+backend/.venv/lib/python3.12/site-packages/httpx/_models.py:302: KeyError
+_________ test_structured_logs_redact_query_headers_and_sdk_exception __________
+
+app = <fastapi.applications.FastAPI object at 0x7fd4195a9850>
+settings = Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env='test', debug=False,...ncy=2, rag_provider_retries=0, rag_streaming_enabled=True, rag_token_parameter='max_tokens', rag_reasoning_effort=None)
+
+    async def test_structured_logs_redact_query_headers_and_sdk_exception(app, settings):
+        stream = StringIO()
+        handler = logging.StreamHandler(stream)
+        handler.setFormatter(JSONFormatter())
+        logger = logging.getLogger("app.access")
+        logger.addHandler(handler)
+    
+        @app.get("/test/log")
+        async def endpoint(text: str = Query()):
+            return {"ok": True}
+    
+        try:
+            async with async_client(app) as client:
+                response = await client.get(
+                    "/test/log?text=PRIVATE_QUERY",
+                    headers={"Authorization": f"Bearer {settings.api_token.get_secret_value()}"},
+                )
+        finally:
+            logger.removeHandler(handler)
+>       event = json.loads(stream.getvalue().splitlines()[-1])
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+backend/tests/unit/test_api.py:152: IndexError
+___________________________ test_cors_is_restricted ____________________________
+
+app = <fastapi.applications.FastAPI object at 0x7fd4196f2300>
+
+    async def test_cors_is_restricted(app):
+        async with async_client(app) as client:
+            allowed = await client.options(
+                "/api/v1/health",
+                headers={"Origin": "http://localhost:5173", "Access-Control-Request-Method": "GET"},
+            )
+            denied = await client.options(
+                "/api/v1/health",
+                headers={"Origin": "https://untrusted.invalid", "Access-Control-Request-Method": "GET"},
+            )
+>       assert allowed.headers["access-control-allow-origin"] == "http://localhost:5173"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/unit/test_api.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Headers({'vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Request-Privat...nt-length': '22', 'content-type': 'text/plain; charset=utf-8', 'x-request-id': '4b439539-e8f4-4c4d-b52e-ff14164f329c'})
+key = 'access-control-allow-origin'
+
+    def __getitem__(self, key: str) -> str:
+        """
+        Return a single header value.
+    
+        If there are multiple headers with the same key, then we concatenate
+        them with commas. See: https://tools.ietf.org/html/rfc7230#section-3.2.2
+        """
+        normalized_key = key.lower().encode(self.encoding)
+    
+        items = [
+            header_value.decode(self.encoding)
+            for _, header_key, header_value in self._list
+            if header_key == normalized_key
+        ]
+    
+        if items:
+            return ", ".join(items)
+    
+>       raise KeyError(key)
+E       KeyError: 'access-control-allow-origin'
+
+backend/.venv/lib/python3.12/site-packages/httpx/_models.py:302: KeyError
+=========================== short test summary info ============================
+FAILED backend/tests/unit/test_api.py::test_request_timeout_before_headers - ...
+FAILED backend/tests/unit/test_api.py::test_structured_logs_redact_query_headers_and_sdk_exception
+FAILED backend/tests/unit/test_api.py::test_cors_is_restricted - KeyError: 'a...
+3 failed, 220 passed in 5.71s
+

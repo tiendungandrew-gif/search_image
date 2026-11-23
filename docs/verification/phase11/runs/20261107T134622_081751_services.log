@@ -1,0 +1,43 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-3f279e6164f5 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-3f279e6164f5 Created 
+.....F...                                                                [100%]
+=================================== FAILURES ===================================
+____________ test_zero_encoder_cannot_publish_a_successful_receipt _____________
+
+qa_resources = QAResources(settings=Settings(evaluation_results_dir='/qa-results/no-benchmarks', app_name='image-search-api', app_env...ject at 0x789b185bd5b0>, token='7fffdfc63ecc4518a305776c8559c35f', collections={'images_qa_7fffdfc63ecc_87b6e3f8b672'})
+
+    async def test_zero_encoder_cannot_publish_a_successful_receipt(qa_resources):
+        class ZeroEncoder(SyntheticEncoder):
+            def encode_images(self, images):
+                return np.zeros((len(images), self.dimension), dtype=np.float32)
+    
+        services = qa_resources.services
+        encoder = ZeroEncoder()
+        index, _ = await qa_resources.index(encoder)
+        _, body = await ingest(services, image_bytes(), metadata(), "qa-zero-vector", index.id)
+        await Worker(services, encoder, index.id).run(once=True)
+        job = await job_response(services, UUID(body["job_id"]))
+>       assert job["status"] == "failed"
+E       AssertionError: assert 'succeeded' == 'failed'
+E         
+E         - failed
+E         + succeeded
+
+backend/tests/integration/test_qa_services.py:81: AssertionError
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py::test_real_dependency_connections
+tests/integration/test_real_services.py::test_real_backend_readiness
+tests/integration/test_qa_services.py::test_empty_real_services_api_contract_and_private_access
+tests/integration/test_qa_services.py::test_ingestion_three_formats_duplicates_and_real_vectors
+tests/integration/test_qa_services.py::test_zero_encoder_cannot_publish_a_successful_receipt
+tests/integration/test_qa_services.py::test_worker_lease_fencing_retry_and_consistency_repair
+tests/integration/test_qa_services.py::test_orphan_storage_detection_private_bucket_and_missing_object
+tests/integration/test_qa_services.py::test_database_constraints_and_sql_injection_is_data
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/integration/test_qa_services.py::test_zero_encoder_cannot_publish_a_successful_receipt
+1 failed, 8 passed, 8 warnings in 7.19s
+

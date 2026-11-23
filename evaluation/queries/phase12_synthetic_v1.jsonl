@@ -1,0 +1,3 @@
+{"query_id":"phase12_text_1","query_type":"single_intent","language":"en","group_id":"shape_1","split":"dev","request":{"mode":"text","text":"a red circle","top_k":7},"image_file":null,"task":"semantic_relevance"}
+{"query_id":"phase12_text_2","query_type":"single_intent","language":"en","group_id":"shape_2","split":"dev","request":{"mode":"text","text":"a blue rectangle","top_k":7},"image_file":null,"task":"semantic_relevance"}
+{"query_id":"phase12_text_3","query_type":"single_intent","language":"en","group_id":"shape_3","split":"dev","request":{"mode":"text","text":"colored geometric shapes","top_k":7},"image_file":null,"task":"semantic_relevance"}

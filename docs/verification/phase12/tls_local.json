@@ -1,0 +1,8 @@
+{
+  "verification": "SELF_SIGNED_LOCAL_TLS_WITH_EXPLICIT_CA_AND_HOSTNAME_VALIDATION",
+  "https_status": 200,
+  "search_status": 200,
+  "tls_url": "https://127.0.0.1:8448",
+  "public_certificate": "NOT_CONFIGURED",
+  "private_key_permissions": "0600; uid101"
+}

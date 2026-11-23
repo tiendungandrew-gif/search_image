@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "activation_requested": true,
+  "baseline_index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+  "download_manifest_sha256": "b986f84a24e60e38498a774e5e2b6d2a15a211bbf177ed892f6691c2410300c2",
+  "target_index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+  "verified_images": 513,
+  "baseline_preserved": true,
+  "activated": true
+}

@@ -1,0 +1,10 @@
+..                                                                       [100%]
+=============================== warnings summary ===============================
+tests/integration/test_real_agent.py::test_isolated_empty_services_and_fictional_multihop
+tests/integration/test_real_agent.py::test_isolated_empty_services_and_fictional_multihop
+  /home/tts/prj/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 2 warnings in 18.55s
+

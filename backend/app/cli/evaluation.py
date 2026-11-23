@@ -36,6 +36,7 @@ def main():
     prepare.add_argument("--cache", default=".cache/evaluation/images")
     prepare.add_argument("--output", default="evaluation/datasets/manifests/phase07_v1.json")
     prepare.add_argument("--queries", default="evaluation/queries/phase07_v1.jsonl")
+    prepare.add_argument("--dataset-id", default="phase07_current_index")
     for name in [
         "validate-dataset",
         "annotation-pack",
@@ -73,7 +74,9 @@ def main():
         print(json.dumps(analyze_optimization(args.results, args.suite)))
         return
     if args.command == "prepare":
-        snapshot = validate_dataset(args.base_url, token, args.index_report, args.cache)
+        snapshot = validate_dataset(
+            args.base_url, token, args.index_report, args.cache, args.dataset_id
+        )
         cases = prepare_queries(snapshot)
         write_new(args.output, snapshot)
         target = Path(args.queries)

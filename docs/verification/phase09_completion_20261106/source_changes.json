@@ -1,0 +1,47 @@
+{
+  "source": {
+    "sha256": "66ffd026326c79dc9c2c82018df37bb5aca9d671a0797d582761e05f0ddf187e",
+    "files": 253,
+    "archive": "evaluation/results/phase09_completion/_sources/66ffd026326c79dc9c2c82018df37bb5aca9d671a0797d582761e05f0ddf187e.tar.gz",
+    "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+  },
+  "changed": [
+    ".dockerignore",
+    ".gitignore",
+    "backend/app/api/v1/agent.py",
+    "backend/app/cli/agent.py",
+    "backend/app/evaluation/agent.py",
+    "backend/app/repositories/knowledge_import.py",
+    "backend/app/repositories/knowledge_repository.py",
+    "backend/app/schemas/agent.py",
+    "backend/app/schemas/rag.py",
+    "backend/app/services/agent/agent_service.py",
+    "backend/app/services/agent/planner.py",
+    "backend/app/services/agent/response_builder.py",
+    "backend/app/services/agent/state.py",
+    "backend/app/services/agent/tool_registry.py",
+    "backend/app/services/agent/tools.py",
+    "backend/app/services/rag/context_builder.py",
+    "backend/app/services/rag/generator.py",
+    "backend/app/services/rag/llm_provider.py",
+    "backend/tests/unit/test_agent.py",
+    "backend/tests/unit/test_agent_evaluation.py",
+    "backend/tests/unit/test_rag.py",
+    "frontend/e2e/agent.spec.ts",
+    "frontend/e2e/rag.spec.ts",
+    "frontend/src/features/agent/AgentResults.test.tsx",
+    "frontend/src/features/agent/AgentResults.tsx",
+    "frontend/src/features/agent/api.test.ts",
+    "frontend/src/features/agent/api.ts",
+    "scripts/prepare_rag_corpus.py"
+  ],
+  "created": [
+    "backend/app/cli/download_landmarks.py",
+    "backend/app/cli/prepare_landmark_knowledge.py",
+    "backend/tests/unit/test_landmark_download.py",
+    "evaluation/agent/datasets/nps_v1.json",
+    "evaluation/agent/datasets/nps_v1_knowledge.json",
+    "scripts/verify_public_agent.py"
+  ],
+  "removed": []
+}

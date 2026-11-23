@@ -1,0 +1,36 @@
+{
+  "added": [
+    ".env.deploy.example",
+    "backend/Dockerfile.prod",
+    "backend/app/cli/operations.py",
+    "backend/app/cli/worker.py",
+    "backend/tests/unit/test_deployment.py",
+    "compose.prod.yaml",
+    "compose.tls.yaml",
+    "evaluation/experiments/phase12_proxy_fast.json",
+    "frontend/Dockerfile.prod",
+    "frontend/deploy-e2e/deployment.spec.ts",
+    "frontend/playwright.deploy.config.ts",
+    "infra/nginx/http.conf",
+    "infra/nginx/nginx.conf",
+    "infra/nginx/routes.conf",
+    "infra/nginx/tls.conf",
+    "scripts/check_deployment_browser.py",
+    "scripts/create_deployment_fixtures.py",
+    "scripts/deploy.py",
+    "scripts/deployment/__init__.py",
+    "scripts/deployment/backup.py",
+    "scripts/deployment/common.py",
+    "scripts/verify_deployment.py"
+  ],
+  "removed": [],
+  "changed": [
+    ".dockerignore",
+    ".github/workflows/quality.yml",
+    ".gitignore",
+    "Makefile",
+    "backend/app/cli/indexing.py",
+    "backend/app/evaluation/tracking.py",
+    "frontend/tsconfig.node.json"
+  ]
+}

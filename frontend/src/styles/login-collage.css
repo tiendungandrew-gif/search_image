@@ -1,0 +1,608 @@
+/* Centered sign-in over a moving wall of public sample photographs. */
+.collage-login {
+  display: flex;
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  background: #183334;
+  padding: 40px 20px;
+}
+.login-collage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+.collage-columns {
+  position: absolute;
+  inset: -120px -50px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 18px;
+  transform: rotate(-5deg) scale(1.08);
+}
+.collage-column {
+  min-width: 0;
+}
+.collage-track {
+  animation: collage-scroll 70s linear infinite;
+}
+.collage-column:nth-child(even) .collage-track {
+  animation-direction: reverse;
+  animation-duration: 85s;
+}
+.collage-column:nth-child(3n) .collage-track {
+  animation-delay: -24s;
+  animation-duration: 95s;
+}
+.collage-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 18px;
+}
+.collage-group img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 22px;
+  background: #345557;
+}
+.collage-group img:nth-child(2n) {
+  height: 350px;
+}
+.collage-group img:nth-child(3n) {
+  height: 220px;
+}
+.collage-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, #102a2c70, #102a2c35 50%, #102a2c80);
+}
+.collage-login .login-panel {
+  width: 100%;
+  padding: 0;
+  background: transparent;
+}
+.collage-login .login-form-wrap {
+  max-width: 440px;
+  padding: 32px 36px 24px;
+  border: 1px solid #ffffffc0;
+  border-radius: 28px;
+  background: var(--bg);
+  box-shadow: 0 24px 90px #061e3645;
+}
+.collage-login .login-form-wrap > .brand {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto 18px;
+  color: var(--ink);
+}
+.collage-login .brand-mark {
+  background: var(--soft);
+  color: var(--accent);
+}
+.collage-login .section-eyebrow {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+.collage-login #login-heading {
+  color: var(--ink);
+  text-align: center;
+  font:
+    600 28px/1.25 Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  letter-spacing: -0.04em;
+  margin: 12px 0;
+}
+.collage-login .login-form-wrap > .muted {
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.collage-login .login-form-wrap form {
+  margin: 24px 0 0;
+  gap: 12px;
+}
+.collage-login .login-form-wrap label {
+  font-size: 13px;
+}
+.collage-login .login-form-wrap label:not(:first-child) {
+  margin-top: 4px;
+}
+.collage-login input {
+  min-height: 48px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.collage-login .login-submit {
+  border-radius: 24px;
+  min-height: 48px;
+  margin-top: 6px;
+}
+.collage-login .quick-login {
+  margin-top: 22px;
+}
+.collage-login .quick-login-heading,
+.collage-login .quick-login > p {
+  display: none;
+}
+.collage-login .quick-login-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.collage-login .quick-role-button {
+  padding: 12px;
+  min-height: 64px;
+  border-radius: 14px;
+}
+.collage-login .quick-role-button strong {
+  font-size: 12px;
+}
+.collage-login .quick-role-button small {
+  font-size: 10px;
+  line-height: 1.5;
+}
+.collage-login .quick-role-button > svg {
+  display: none;
+}
+.collage-login .login-divider {
+  font-size: 10px;
+  margin: 0 0 16px;
+}
+.collage-login .login-help {
+  text-align: center;
+  margin-top: 22px;
+  padding-top: 18px;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.collage-login .login-motion-toggle {
+  display: flex;
+  margin: 0 auto;
+  font-size: 11px;
+}
+.collage-login .operator-link {
+  display: block;
+  text-align: center;
+}
+:root[data-theme="dark"] .collage-login .login-form-wrap {
+  border-color: var(--border);
+}
+@keyframes collage-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+@media (max-width: 1000px) {
+  .collage-columns {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .collage-column:nth-child(n + 6) {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .collage-login {
+    padding: 24px 16px;
+  }
+  .collage-columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    inset: -80px -35px;
+  }
+  .collage-column:nth-child(n + 4) {
+    display: none;
+  }
+  .collage-group {
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .collage-group img {
+    border-radius: 16px;
+  }
+  .collage-login .login-form-wrap {
+    padding: 26px 24px 18px;
+    border-radius: 24px;
+  }
+  .collage-login #login-heading {
+    font-size: 25px;
+  }
+}
+@media (max-width: 360px) {
+  .collage-login {
+    padding-inline: 12px;
+  }
+  .collage-login .login-form-wrap {
+    padding-inline: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collage-login .login-motion-toggle {
+    display: none;
+  }
+  .collage-login .collage-track {
+    animation: none !important;
+  }
+}
+
+.collage-login .registration-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.collage-login .auth-switch {
+  text-align: center;
+  font-size: 13px;
+  margin: 20px 0 0;
+  color: var(--muted);
+}
+.collage-login .auth-switch button {
+  background: transparent;
+  border: 0;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.registration-success {
+  color: var(--ink);
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* A quieter card and grouped signup fields keep the photo wall in the background. */
+.collage-login .login-form-wrap {
+  position: relative;
+  border-color: #ffffffa8;
+  box-shadow:
+    0 28px 100px #041e3670,
+    0 1px 0 #ffffff70 inset;
+}
+.collage-login .login-form-wrap::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #3e9d91,
+    #e4c894,
+    transparent
+  );
+}
+.collage-shade {
+  background: radial-gradient(ellipse at center, #123a3e30, #0c292b94);
+}
+.collage-login.is-registering .login-form-wrap {
+  max-width: 520px;
+  padding: 28px 36px 18px;
+}
+.collage-login.is-registering .login-form-wrap > .brand {
+  margin-bottom: 22px;
+}
+.signup-heading {
+  text-align: center;
+}
+.signup-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.signup-badge > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.collage-login .signup-heading #login-heading {
+  margin: 10px 0;
+  font-size: 30px;
+  letter-spacing: -0.045em;
+}
+.signup-heading > .muted {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+.collage-login .registration-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 26px;
+}
+.collage-login .signup-section {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.collage-login .signup-section legend {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+  color: var(--ink);
+}
+.signup-section-marker {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.signup-identity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.signup-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.collage-login .signup-field label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.collage-login .signup-field input {
+  padding: 12px 14px;
+  background: var(--surface);
+  border-color: var(--border);
+  font-size: 13px;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.collage-login .signup-field input::placeholder {
+  color: var(--muted);
+  opacity: 0.85;
+}
+.collage-login .signup-field .password-field input {
+  padding-right: 64px;
+}
+.collage-login .signup-field input:focus-visible {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.collage-login .signup-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.signup-checks > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.collage-login .signup-checks .is-valid {
+  color: var(--accent);
+}
+.signup-access-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 14px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--ink);
+}
+.signup-access-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent);
+}
+.signup-access-note p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+.signup-access-note small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+}
+.collage-login.is-registering .login-submit {
+  margin-top: 0;
+  box-shadow: 0 5px 14px #123d3c18;
+  font-size: 14px;
+}
+.collage-login.is-registering .auth-switch {
+  margin-top: 14px;
+  font-size: 12px;
+}
+.collage-login.is-registering .login-motion-toggle {
+  min-height: 32px;
+  font-size: 10px;
+}
+@media (max-width: 600px) {
+  .collage-login.is-registering .login-form-wrap {
+    padding: 25px 24px 16px;
+  }
+  .collage-login .signup-heading #login-heading {
+    font-size: 26px;
+  }
+  .signup-identity-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .collage-login .registration-form {
+    gap: 18px;
+    margin-top: 24px;
+  }
+}
+@media (max-width: 360px) {
+  .collage-login.is-registering .login-form-wrap {
+    padding-inline: 18px;
+  }
+  .signup-badge {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collage-login .signup-field input {
+    transition: none;
+  }
+}
+
+/* Primary action and alternate account action form one visual button family. */
+.collage-login .login-submit,
+.collage-login .auth-switch button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  padding: 11px 18px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.collage-login .login-submit {
+  color: #fff;
+  background: linear-gradient(135deg, #147c7d, #0b505b);
+  border: 1px solid #0c6165;
+  box-shadow:
+    0 5px 12px #0c616522,
+    inset 0 1px 0 #ffffff30;
+}
+.collage-login.is-registering .login-submit {
+  box-shadow:
+    0 5px 12px #0c616522,
+    inset 0 1px 0 #ffffff30;
+}
+.collage-login .login-submit > svg,
+.collage-login .auth-switch button > svg {
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  padding: 5px;
+  border-radius: 50%;
+  background: #ffffff20;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+.collage-login .auth-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.collage-login .auth-switch button {
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px #163f4305;
+}
+.collage-login .auth-switch button > svg {
+  background: var(--soft);
+}
+@media (hover: hover) {
+  .collage-login .login-submit:hover:not(:disabled) {
+    background: linear-gradient(135deg, #106d70, #093e49);
+    box-shadow:
+      0 8px 18px #0c61652b,
+      inset 0 1px 0 #ffffff30;
+    transform: translateY(-1px);
+  }
+  .collage-login .auth-switch button:hover:not(:disabled) {
+    background: var(--soft);
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px #0c616512;
+    transform: translateY(-1px);
+  }
+  .collage-login .auth-switch button:hover:not(:disabled) > svg {
+    transform: translateX(3px);
+  }
+}
+.collage-login .login-submit:focus-visible,
+.collage-login .auth-switch button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.collage-login .login-submit:active:not(:disabled),
+.collage-login .auth-switch button:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+  box-shadow: none;
+}
+.collage-login .login-submit:disabled {
+  opacity: 1;
+  color: #fff;
+  background: #62888c;
+  border-color: #62888c;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.collage-login .auth-switch button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+:root[data-theme="dark"] .collage-login .login-submit:not(:disabled) {
+  background: linear-gradient(135deg, #9adbd0, #6bbeb7);
+  color: #10373b;
+  border-color: #9adbd0;
+}
+:root[data-theme="dark"] .collage-login .login-submit > svg {
+  background: #10373b12;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collage-login .login-submit,
+  .collage-login .auth-switch button,
+  .collage-login .login-submit > svg,
+  .collage-login .auth-switch button > svg {
+    transition: none;
+  }
+}

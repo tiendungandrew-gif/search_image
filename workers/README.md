@@ -1,5 +1,9 @@
 # Indexing worker
 
-Worker Prompt 04 chạy trong process riêng, dùng cùng package backend; durable queue là PostgreSQL. Logic tại `backend/app/services/indexing/worker.py`, CLI `python -m app.cli.indexing worker --index UUID`. Launcher `workers/indexing_worker.py --index UUID` gọi cùng CLI, không là implementation thứ hai.
+Worker chạy trong process riêng, tái sử dụng package backend và durable PostgreSQL jobs/leases. Logic pipeline tại `backend/app/services/indexing/worker.py`.
 
-Compose profile `indexing` thêm service `indexing-worker`; backend API không tải Torch/model. Worker dùng image có optional extra ml, đọc cache pretrained weights qua mount read-only và load một lần/process. Xem [IMAGE_INDEXING](../docs/IMAGE_INDEXING.md) để tải model, register index, nạp dataset, chạy/retry/reconcile và thêm worker replicas. Không dùng FastAPI BackgroundTasks làm queue.
+- Production daemon: `python -m app.cli.worker`, tự chờ jobs và idle khi chưa có index/model/data. Compose production quản lý process này.
+- CLI xử lý một index: `python -m app.cli.indexing worker --index UUID`.
+- `workers/indexing_worker.py --index UUID` là compatibility launcher cho CLI một index, không chứa bản sao logic.
+
+Worker dùng ML image và model cache read-only. API nạp query encoder khi search được bật; worker nạp encoder để indexing theo vòng đời riêng. [IMAGE_INDEXING](../docs/features/IMAGE_INDEXING.md), [MODEL_MANAGEMENT](../docs/operations/MODEL_MANAGEMENT.md) và [DEPLOYMENT_GUIDE](../docs/operations/DEPLOYMENT_GUIDE.md) mô tả các luồng hiện hành.

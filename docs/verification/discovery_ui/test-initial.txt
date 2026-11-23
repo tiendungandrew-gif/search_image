@@ -1,0 +1,865 @@
+
+> ai-image-search-frontend@0.3.0 test
+> vitest run
+
+
+ RUN  v4.1.12 /home/tts/prj/frontend
+
+ ❯ src/features/search/SearchForm.test.tsx (7 tests | 1 failed) 6542ms
+   × suggestions fill and focus the description without submitting a request 1340ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/search/SearchForm.test.tsx > suggestions fill and focus the description without submitting a request
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Khách sạn"
+
+Here are the accessible roles:
+
+  region:
+
+  Name "Tìm kiếm theo cách của bạn":
+  [36m<section[39m
+    [33maria-labelledby[39m=[32m"search-heading"[39m
+    [33mclass[39m=[32m"search-card simple-search-card"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Tìm kiếm theo cách của bạn":
+  [36m<h2[39m
+    [33mid[39m=[32m"search-heading"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"muted"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"muted"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"muted"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"availability-note"[39m
+    [33mid[39m=[32m"search-unavailable"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  form:
+
+  Name "Tìm kiếm hình ảnh":
+  [36m<form[39m
+    [33maria-busy[39m=[32m"false"[39m
+    [33maria-label[39m=[32m"Tìm kiếm hình ảnh"[39m
+    [33mclass[39m=[32m"consumer-search-form"[39m
+    [33mdata-input-mode[39m=[32m"auto"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "Cách tìm ảnh":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Cách tìm ảnh"[39m
+    [33mclass[39m=[32m"search-methods"[39m
+    [33mrole[39m=[32m"group"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<details[39m
+    [33mclass[39m=[32m"search-preferences"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<details[39m
+    [33mclass[39m=[32m"advanced-controls"[39m
+  [36m/>[39m
+
+  Name "Giới hạn ảnh bạn muốn tìm":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Mô tả":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Dùng ảnh":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Kết hợp":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Thiên nhiên":
+  [36m<button[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Động vật":
+  [36m<button[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Kiến trúc":
+  [36m<button[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Tìm kiếm ảnh":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"search-unavailable"[39m
+    [33maria-label[39m=[32m"Tìm kiếm ảnh"[39m
+    [33mclass[39m=[32m"search-button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  Name "Xóa bộ lọc":
+  [36m<button[39m
+    [33mclass[39m=[32m"text-button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Bắt đầu lại":
+  [36m<button[39m
+    [33mclass[39m=[32m"text-button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Bạn đang tìm hình ảnh nào?":
+  [36m<input[39m
+    [33maria-autocomplete[39m=[32m"list"[39m
+    [33maria-describedby[39m=[32m"query-hint"[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33mautocomplete[39m=[32m"off"[39m
+    [33mid[39m=[32m"query"[39m
+    [33mmaxlength[39m=[32m"2000"[39m
+    [33mplaceholder[39m=[32m"Tìm ảnh về thiên nhiên, con người, đồ vật…"[39m
+    [33mrole[39m=[32m"combobox"[39m
+    [33mspellcheck[39m=[32m"false"[39m
+    [33mtype[39m=[32m"search"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Cách xử lý yêu cầu":
+  [36m<select[39m
+    [33mid[39m=[32m"mode"[39m
+  [36m/>[39m
+
+  Name "Thư viện ảnh":
+  [36m<select[39m
+    [33mid[39m=[32m"filter-source"[39m
+  [36m/>[39m
+
+  Name "Định dạng":
+  [36m<select[39m
+    [33mid[39m=[32m"filter-format"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  option:
+
+  Name "Tự động chọn cách tìm":
+  [36m<option[39m
+    [33mvalue[39m=[32m"auto"[39m
+  [36m/>[39m
+
+  Name "Tìm bằng mô tả":
+  [36m<option[39m
+    [33mvalue[39m=[32m"text"[39m
+  [36m/>[39m
+
+  Name "Tìm ảnh tương tự":
+  [36m<option[39m
+    [33mvalue[39m=[32m"image"[39m
+  [36m/>[39m
+
+  Name "Kết hợp ảnh và mô tả":
+  [36m<option[39m
+    [33mvalue[39m=[32m"multimodal"[39m
+  [36m/>[39m
+
+  Name "Tìm theo nhiều điều kiện":
+  [36m<option[39m
+    [33mvalue[39m=[32m"multi_intent"[39m
+  [36m/>[39m
+
+  Name "Tìm theo mối liên hệ":
+  [36m<option[39m
+    [33mvalue[39m=[32m"agent"[39m
+  [36m/>[39m
+
+  Name "Tất cả thư viện được cấp quyền":
+  [36m<option[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Thư viện riêng":
+  [36m<option[39m
+    [33mvalue[39m=[32m"private"[39m
+  [36m/>[39m
+
+  Name "Tất cả":
+  [36m<option[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "JPEG":
+  [36m<option[39m
+    [33mvalue[39m=[32m"image/jpeg"[39m
+  [36m/>[39m
+
+  Name "PNG":
+  [36m<option[39m
+    [33mvalue[39m=[32m"image/png"[39m
+  [36m/>[39m
+
+  Name "WebP":
+  [36m<option[39m
+    [33mvalue[39m=[32m"image/webp"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  spinbutton:
+
+  Name "Số kết quả":
+  [36m<input[39m
+    [33mid[39m=[32m"top-k"[39m
+    [33mmax[39m=[32m"50"[39m
+    [33mmin[39m=[32m"1"[39m
+    [33mstep[39m=[32m"1"[39m
+    [33mtype[39m=[32m"number"[39m
+    [33mvalue[39m=[32m"10"[39m
+  [36m/>[39m
+
+  Name "Chiều rộng tối thiểu":
+  [36m<input[39m
+    [33mid[39m=[32m"filter-min_width"[39m
+    [33mmin[39m=[32m"1"[39m
+    [33mstep[39m=[32m"1"[39m
+    [33mtype[39m=[32m"number"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Chiều rộng tối đa":
+  [36m<input[39m
+    [33mid[39m=[32m"filter-max_width"[39m
+    [33mmin[39m=[32m"1"[39m
+    [33mstep[39m=[32m"1"[39m
+    [33mtype[39m=[32m"number"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Chiều cao tối thiểu":
+  [36m<input[39m
+    [33mid[39m=[32m"filter-min_height"[39m
+    [33mmin[39m=[32m"1"[39m
+    [33mstep[39m=[32m"1"[39m
+    [33mtype[39m=[32m"number"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Chiều cao tối đa":
+  [36m<input[39m
+    [33mid[39m=[32m"filter-max_height"[39m
+    [33mmin[39m=[32m"1"[39m
+    [33mstep[39m=[32m"1"[39m
+    [33mtype[39m=[32m"number"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Thành phố":
+  [36m<input[39m
+    [33mid[39m=[32m"filter-city"[39m
+    [33mmaxlength[39m=[32m"128"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Thẻ ảnh (cách nhau bằng dấu phẩy)":
+  [36m<input[39m
+    [33mid[39m=[32m"filter-tags-any"[39m
+    [33mplaceholder[39m=[32m"coffee, outdoor"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  checkbox:
+
+  Name "Ưu tiên ảnh đáp ứng đủ yêu cầu":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-labelledby[39m=[32m"search-heading"[39m
+      [33mclass[39m=[32m"search-card simple-search-card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"card-kicker"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"accent-dot"[39m
+        [36m/>[39m
+        [0mBẮT ĐẦU TỪ ĐIỀU BẠN NHỚ[0m
+        [36m<span[39m
+          [33mclass[39m=[32m"soon-badge"[39m
+        [36m>[39m
+          [0mSẵn sàng[0m
+        [36m</span>[39m
+      [36m</div>[39m
+      [36m<h2[39m
+        [33mid[39m=[32m"search-heading"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [0mTìm kiếm theo cách của bạn[0m
+      [36m</h2>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"muted"[39m
+      [36m>[39m
+        [0mMột mô tả ngắn hoặc một bức ảnh là đủ để bắt đầu.[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33maria-busy[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Tìm kiếm hình ảnh"[39m
+        [33mclass[39m=[32m"consumer-search-form"[39m
+        [33mdata-input-mode[39m=[32m"auto"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"search-fields"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Cách tìm ảnh"[39m
+            [33mclass[39m=[32m"search-methods"[39m
+            [33mrole[39m=[32m"group"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-pressed[39m=[32m"true"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"10.5"[39m
+                  [33mcy[39m=[32m"10.5"[39m
+                  [33mr[39m=[32m"6.5"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m16 16 4 4"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mMô tả[0m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-pressed[39m=[32m"false"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [36m>[39m
+                [36m<rect[39m
+                  [33mheight[39m=[32m"18"[39m
+                  [33mrx[39m=[32m"4"[39m
+                  [33mwidth[39m=[32m"18"[39m
+                  [33mx[39m=[32m"3"[39m
+                  [33my[39m=[32m"3"[39m
+                [36m/>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"8"[39m
+                  [33mcy[39m=[32m"8"[39m
+                  [33mr[39m=[32m"1.5"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m3 17 5-5 4 4 3-6 6 8"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mDùng ảnh[0m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-pressed[39m=[32m"false"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m12 3 10 6-10 6L2 9l10-6Zm-9 11 9 5 9-5M3 18l9 5 9-5"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mKết hợp[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"query-entry"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"field-label"[39m
+              [33mfor[39m=[32m"query"[39m
+            [36m>[39m
+              [0mBạn đang tìm hình ảnh nào?[0m
+            [36m</label>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"search-autocomplete"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33maria-autocomplete[39m=[32m"list"[39m
+                [33maria-describedby[39m=[32m"query-hint"[39m
+                [33maria-expanded[39m=[32m"false"[39m
+                [33mautocomplete[39m=[32m"off"[39m
+                [33mid[39m=[32m"query"[39m
+                [33mmaxlength[39m=[32m"2000"[39m
+                [33mplaceholder[39m=[32m"Tìm ảnh về thiên nhiên, con người, đồ vật…"[39m
+                [33mrole[39m=[32m"combobox"[39m
+                [33mspellcheck[39m=[32m"false"[39m
+                [33mtype[39m=[32m"search"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"input-caption"[39m
+              [33mid[39m=[32m"query-hint"[39m
+            [36m>[39m
+              [36m<span>[39m
+                [0mDùng mô tả tiếng Anh để tìm ảnh phù hợp hơn.[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33maria-label[39m=[32m"0 trên 2000 ký tự"[39m
+              [36m>[39m
+                [0m0[0m
+                [0m / 2000[0m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"query-suggestions"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0mGợi ý:[0m
+            [36m</span>[39m
+            [36m<button[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mThiên nhiên[0m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+              [36m>[39m
+                [0m ↗[0m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mĐộng vật[0m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+              [36m>[39m
+                [0m ↗[0m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mKiến trúc[0m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+              [36m>[39m
+                [0m ↗[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"primary-search-actions"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-describedby[39m=[32m"search-unavailable"[39m
+              [33maria-label[39m=[32m"Tìm kiếm ảnh"[39m
+              [33mclass[39m=[32m"search-button"[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"10.5"[39m
+                  [33mcy[39m=[32m"10.5"[39m
+                  [33mr[39m=[32m"6.5"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m16 16 4 4"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"search-button-label"[39m
+              [36m>[39m
+                [0mTìm kiếm ảnh[0m
+              [36m</span>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M5 12h14m-6-6 6 6-6 6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"search-refinements"[39m
+          [36m>[39m
+            [36m<details[39m
+              [33mclass[39m=[32m"search-preferences"[39m
+            [36m>[39m
+              [36m<summary>[39m
+                [0mTùy chọn kết quả[0m
+              [36m</summary>[39m
+              [36m<p>[39m
+                [0mĐiều chỉnh số ảnh hoặc chọn cách tìm phù hợp với yêu cầu phức tạp hơn.[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"mode-field"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"mode"[39m
+                  [36m>[39m
+                    [0mCách xử lý yêu cầu[0m
+                  [36m</label>[39m
+                  [36m<select[39m
+                    [33mid[39m=[32m"mode"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"auto"[39m
+                    [36m>[39m
+                      [0mTự động chọn cách tìm[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"text"[39m
+                    [36m>[39m
+                      [0mTìm bằng mô tả[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"image"[39m
+                    [36m>[39m
+                      [0mTìm ảnh tương tự[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"multimodal"[39m
+                    [36m>[39m
+                      [0mKết hợp ảnh và mô tả[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"multi_intent"[39m
+                    [36m>[39m
+                      [0mTìm theo nhiều điều kiện[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"agent"[39m
+                    [36m>[39m
+                      [0mTìm theo mối liên hệ[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"top-k-field"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"top-k"[39m
+                  [36m>[39m
+                    [0mSố kết quả[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"top-k"[39m
+                    [33mmax[39m=[32m"50"[39m
+                    [33mmin[39m=[32m"1"[39m
+                    [33mstep[39m=[32m"1"[39m
+                    [33mtype[39m=[32m"number"[39m
+                    [33mvalue[39m=[32m"10"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</details>[39m
+            [36m<details[39m
+              [33mclass[39m=[32m"advanced-controls"[39m
+            [36m>[39m
+              [36m<summary>[39m
+                [0mThư viện và bộ lọc[0m
+              [36m</summary>[39m
+              [36m<fieldset>[39m
+                [36m<legend>[39m
+                  [0mGiới hạn ảnh bạn muốn tìm[0m
+                [36m</legend>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"muted"[39m
+                [36m>[39m
+                  [0mChọn thông tin đã được lưu cho ảnh. Bạn có thể để trống để tìm trong tất cả thư viện được chia sẻ.[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"filter-grid"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-source"[39m
+                  [36m>[39m
+                    [0mThư viện ảnh[0m
+                    [36m<select[39m
+                      [33mid[39m=[32m"filter-source"[39m
+                    [36m>[39m
+                      [36m<option[39m
+                        [33mvalue[39m=[32m""[39m
+                      [36m>[39m
+                        [0mTất cả thư viện được cấp quyền[0m
+                      [36m</option>[39m
+                      [36m<option[39m
+                        [33mvalue[39m=[32m"private"[39m
+                      [36m>[39m
+                        [0mThư viện riêng[0m
+                      [36m</option>[39m
+                    [36m</select>[39m
+                  [36m</label>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-city"[39m
+                  [36m>[39m
+                    [0mThành phố[0m
+                    [36m<input[39m
+                      [33mid[39m=[32m"filter-city"[39m
+                      [33mmaxlength[39m=[32m"128"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                  [36m</label>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-tags-any"[39m
+                  [36m>[39m
+                    [0mThẻ ảnh (cách nhau bằng dấu phẩy)[0m
+                    [36m<input[39m
+                      [33mid[39m=[32m"filter-tags-any"[39m
+                      [33mplaceholder[39m=[32m"coffee, outdoor"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                  [36m</label>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-format"[39m
+                  [36m>[39m
+                    [0mĐịnh dạng[0m
+                    [36m<select[39m
+                      [33mid[39m=[32m"filter-format"[39m
+                    [36m>[39m
+                      [36m<option[39m
+                        [33mvalue[39m=[32m""[39m
+                      [36m>[39m
+                        [0mTất cả[0m
+                      [36m</option>[39m
+                      [36m<option[39m
+                        [33mvalue[39m=[32m"image/jpeg"[39m
+                      [36m>[39m
+                        [0mJPEG[0m
+                      [36m</option>[39m
+                      [36m<option[39m
+                        [33mvalue[39m=[32m"image/png"[39m
+                      [36m>[39m
+                        [0mPNG[0m
+                      [36m</option>[39m
+                      [36m<option[39m
+                        [33mvalue[39m=[32m"image/webp"[39m
+                      [36m>[39m
+                        [0mWebP[0m
+                      [36m</option>[39m
+                    [36m</select>[39m
+                  [36m</label>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-min_width"[39m
+                  [36m>[39m
+                    [0mChiều rộng tối thiểu[0m
+                    [36m<input[39m
+                      [33mid[39m=[32m"filter-min_width"[39m
+                      [33mmin[39m=[32m"1"[39m
+                      [33mstep[39m=[32m"1"[39m
+                      [33mtype[39m=[32m"number"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                  [36m</label>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-max_width"[39m
+                  [36m>[39m
+                    [0mChiều rộng tối đa[0m
+                    [36m<input[39m
+                      [33mid[39m=[32m"filter-max_width"[39m
+                      [33mmin[39m=[32m"1"[39m
+                      [33mstep[39m=[32m"1"[39m
+                      [33mtype[39m=[32m"number"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                  [36m</label>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-min_height"[39m
+                  [36m>[39m
+                    [0mChiều cao tối thiểu[0m
+                    [36m<input[39m
+                      [33mid[39m=[32m"filter-min_height"[39m
+                      [33mmin[39m=[32m"1"[39m
+                      [33mstep[39m=[32m"1"[39m
+                      [33mtype[39m=[32m"number"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                  [36m</label>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"filter-max_height"[39m
+                  [36m>[39m
+                    [0mChiều cao tối đa[0m
+                    [36m<input[39m
+                      [33mid[39m=[32m"filter-max_height"[39m
+                      [33mmin[39m=[32m"1"[39m
+                      [33mstep[39m=[32m"1"[39m
+                      [33mtype[39m=[32m"number"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"text-button"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mXóa bộ lọc[0m
+                [36m</button>[39m
+              [36m</fieldset>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"rerank-control"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [0m [0m
+                [0mƯu tiên ảnh đáp ứng đủ yêu cầu[0m
+              [36m</label>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"muted"[39m
+              [36m>[39m
+                [0mBạn có thể bỏ bớt bộ lọc nếu chưa tìm thấy ảnh phù hợp.[0m
+              [36m</p>[39m
+            [36m</details>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"search-actions"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"text-button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mBắt đầu lại[0m
+              [36m</button>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"keyboard-hint"[39m
+              [36m>[39m
+                [0mEnter để tìm · Shift + Enter để xuống dòng[0m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</form>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"availability-note"[39m
+        [33mid[39m=[32m"search-unavailable"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"note-symbol"[39m
+        [36m>[39m
+          [0mi[0m
+        [36m</span>[39m
+        [0mKết quả chỉ lấy từ những thư viện bạn được chia sẻ.[0m
+      [36m</p>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/search/SearchForm.test.tsx:70:32
+     68| test("suggestions fill and focus the description without submitting a …
+     69|   const session = setup();
+     70|   await userEvent.click(screen.getByRole("button", { name: "Khách sạn"…
+       |                                ^
+     71|   const query = screen.getByLabelText("Bạn đang tìm hình ảnh nào?");
+     72|   expect(query).toHaveValue("a hotel room with an ocean view");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 15 passed (16)
+      Tests  1 failed | 66 passed (67)
+   Start at  14:36:57
+   Duration  14.18s (transform 15.25s, setup 23.00s, import 19.78s, tests 18.25s, environment 51.97s)
+

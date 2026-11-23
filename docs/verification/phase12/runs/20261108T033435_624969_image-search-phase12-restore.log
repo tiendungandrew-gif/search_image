@@ -1,0 +1,17 @@
+ Container image-search-phase12-restore-postgres-1 Running 
+ Container image-search-phase12-restore-qdrant-1 Running 
+ Container image-search-phase12-restore-minio-1 Running 
+ Container image-search-phase12-restore-qdrant-1 Waiting 
+ Container image-search-phase12-restore-minio-1 Waiting 
+ Container image-search-phase12-restore-postgres-1 Waiting 
+ Container image-search-phase12-restore-minio-1 Healthy 
+ Container image-search-phase12-restore-qdrant-1 Healthy 
+ Container image-search-phase12-restore-postgres-1 Healthy 
+
+{"status": "failed", "error_type": "ValueError", "error_code": "RESTORE_REQUIRES_EMPTY_DESTINATION"}
+ Container image-search-phase12-restore-backend-run-b3ef73ee95a3 Creating 
+ Container image-search-phase12-restore-backend-run-b3ef73ee95a3 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(
+
+

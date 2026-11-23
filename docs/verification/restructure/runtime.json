@@ -1,0 +1,100 @@
+{
+  "status": "pass",
+  "scope": "Read-only checks after reorganization; serving containers/data untouched by test setup",
+  "checks": [
+    {
+      "env_file": ".env",
+      "port": 8000,
+      "workspace": {
+        "dataset": {
+          "state": "ready",
+          "images": 513,
+          "available_images": 513,
+          "indexed_images": 513,
+          "vectors": 513,
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "index_status": "ready",
+          "generation": 3
+        },
+        "dependencies": {
+          "postgresql": "healthy",
+          "qdrant": "healthy",
+          "minio": "healthy"
+        },
+        "capabilities": {
+          "text_search": true,
+          "image_search": true,
+          "multimodal": true,
+          "multi_intent": true,
+          "rerank": true,
+          "explanations": true,
+          "agent": true
+        },
+        "rag": {
+          "enabled": true,
+          "configured": true,
+          "streaming": true
+        },
+        "agent": {
+          "enabled": true,
+          "llm_planning": true
+        },
+        "limits": {
+          "top_k": 50,
+          "image_bytes": 20971520
+        }
+      }
+    },
+    {
+      "env_file": "config/environments/deployment.env",
+      "port": 8088,
+      "workspace": {
+        "dataset": {
+          "state": "ready",
+          "images": 7,
+          "available_images": 7,
+          "indexed_images": 7,
+          "vectors": 7,
+          "index_id": "bb8bd6b1-efff-4910-b99a-97ab1938d63a",
+          "index_status": "ready",
+          "generation": 2
+        },
+        "dependencies": {
+          "postgresql": "healthy",
+          "qdrant": "healthy",
+          "minio": "healthy"
+        },
+        "capabilities": {
+          "text_search": true,
+          "image_search": true,
+          "multimodal": true,
+          "multi_intent": true,
+          "rerank": true,
+          "explanations": false,
+          "agent": true
+        },
+        "rag": {
+          "enabled": false,
+          "configured": false,
+          "streaming": true
+        },
+        "agent": {
+          "enabled": true,
+          "llm_planning": false
+        },
+        "limits": {
+          "top_k": 50,
+          "image_bytes": 20971520
+        }
+      }
+    },
+    {
+      "frontend_port": 5173,
+      "status": 200
+    },
+    {
+      "frontend_port": 8088,
+      "status": 200
+    }
+  ]
+}

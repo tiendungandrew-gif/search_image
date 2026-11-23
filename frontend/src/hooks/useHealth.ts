@@ -35,7 +35,10 @@ export function useHealth() {
     const controller = new AbortController();
     request.current = controller;
     void load(controller);
-    return () => controller.abort();
+    return () => {
+      request.current?.abort();
+      request.current = null;
+    };
   }, [load]);
   return { health, loading, error, refresh };
 }

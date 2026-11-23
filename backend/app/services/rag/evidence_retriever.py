@@ -40,11 +40,11 @@ class EvidenceRetriever:
         points = (
             await self.services.qdrant.client.retrieve(
                 index.collection_name,
-                ids=[str(i) for i in unique],
+                ids=[str(i) for i in rows],
                 with_payload=True,
                 with_vectors=False,
             )
-            if unique
+            if rows
             else []
         )
         payloads = {str(p.id): p.payload or {} for p in points}

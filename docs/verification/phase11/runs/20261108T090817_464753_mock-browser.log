@@ -1,0 +1,140 @@
+[WebServer] (node:1667012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:1667088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 frontend/qa-e2e/mock.spec.ts:44:1 › MOCK · cancellation discards a late response and retry stays functional (20.0s)
+(node:1668847) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 frontend/qa-e2e/mock.spec.ts:69:1 › MOCK · recoverable RAG SSE failure preserves final state and image cards (20.0s)
+(node:1670532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 frontend/qa-e2e/mock.spec.ts:93:1 › MOCK · metadata text is inert and foreign media is rejected (20.0s)
+(node:1672272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 frontend/qa-e2e/mock.spec.ts:124:1 › MOCK · lazy module failure has a recoverable application fallback (20.0s)
+
+
+  1) frontend/qa-e2e/mock.spec.ts:44:1 › MOCK · cancellation discards a late response and retry stays functional 
+
+    Test timeout of 20000ms exceeded while running "beforeEach" hook.
+
+      2 | import { capabilities, id, image, png, search, workspace } from "./fixtures";
+      3 |
+    > 4 | test.beforeEach(async ({ page }) => {
+        |      ^
+      5 |   await page.route("**/api/v1/**", async (route) => {
+      6 |     const url = new URL(route.request().url());
+      7 |     if (url.pathname.endsWith("/auth/me"))
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:4:6
+
+    Error: locator.fill: Test timeout of 20000ms exceeded.
+    Call log:
+      - waiting for locator('#search-token')
+
+
+      36 |   });
+      37 |   await page.goto("/operator");
+    > 38 |   await page.locator("#search-token").fill("mock-only-not-a-real-key");
+         |                                       ^
+      39 |   await expect(page.getByTestId("dataset-status")).toContainText(
+      40 |     "Dataset sẵn sàng",
+      41 |   );
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:38:39
+
+    Error Context: frontend/test-results/mock-MOCK-·-cancellation-d-eeddc--and-retry-stays-functional/error-context.md
+
+  2) frontend/qa-e2e/mock.spec.ts:69:1 › MOCK · recoverable RAG SSE failure preserves final state and image cards 
+
+    Test timeout of 20000ms exceeded while running "beforeEach" hook.
+
+      2 | import { capabilities, id, image, png, search, workspace } from "./fixtures";
+      3 |
+    > 4 | test.beforeEach(async ({ page }) => {
+        |      ^
+      5 |   await page.route("**/api/v1/**", async (route) => {
+      6 |     const url = new URL(route.request().url());
+      7 |     if (url.pathname.endsWith("/auth/me"))
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:4:6
+
+    Error: locator.fill: Test timeout of 20000ms exceeded.
+    Call log:
+      - waiting for locator('#search-token')
+
+
+      36 |   });
+      37 |   await page.goto("/operator");
+    > 38 |   await page.locator("#search-token").fill("mock-only-not-a-real-key");
+         |                                       ^
+      39 |   await expect(page.getByTestId("dataset-status")).toContainText(
+      40 |     "Dataset sẵn sàng",
+      41 |   );
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:38:39
+
+    Error Context: frontend/test-results/mock-MOCK-·-recoverable-RA-2a8a3-final-state-and-image-cards/error-context.md
+
+  3) frontend/qa-e2e/mock.spec.ts:93:1 › MOCK · metadata text is inert and foreign media is rejected 
+
+    Test timeout of 20000ms exceeded while running "beforeEach" hook.
+
+      2 | import { capabilities, id, image, png, search, workspace } from "./fixtures";
+      3 |
+    > 4 | test.beforeEach(async ({ page }) => {
+        |      ^
+      5 |   await page.route("**/api/v1/**", async (route) => {
+      6 |     const url = new URL(route.request().url());
+      7 |     if (url.pathname.endsWith("/auth/me"))
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:4:6
+
+    Error: locator.fill: Test timeout of 20000ms exceeded.
+    Call log:
+      - waiting for locator('#search-token')
+
+
+      36 |   });
+      37 |   await page.goto("/operator");
+    > 38 |   await page.locator("#search-token").fill("mock-only-not-a-real-key");
+         |                                       ^
+      39 |   await expect(page.getByTestId("dataset-status")).toContainText(
+      40 |     "Dataset sẵn sàng",
+      41 |   );
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:38:39
+
+    Error Context: frontend/test-results/mock-MOCK-·-metadata-text--db07f-d-foreign-media-is-rejected/error-context.md
+
+  4) frontend/qa-e2e/mock.spec.ts:124:1 › MOCK · lazy module failure has a recoverable application fallback 
+
+    Test timeout of 20000ms exceeded while running "beforeEach" hook.
+
+      2 | import { capabilities, id, image, png, search, workspace } from "./fixtures";
+      3 |
+    > 4 | test.beforeEach(async ({ page }) => {
+        |      ^
+      5 |   await page.route("**/api/v1/**", async (route) => {
+      6 |     const url = new URL(route.request().url());
+      7 |     if (url.pathname.endsWith("/auth/me"))
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:4:6
+
+    Error: locator.fill: Test timeout of 20000ms exceeded.
+    Call log:
+      - waiting for locator('#search-token')
+
+
+      36 |   });
+      37 |   await page.goto("/operator");
+    > 38 |   await page.locator("#search-token").fill("mock-only-not-a-real-key");
+         |                                       ^
+      39 |   await expect(page.getByTestId("dataset-status")).toContainText(
+      40 |     "Dataset sẵn sàng",
+      41 |   );
+        at /home/tts/prj/frontend/qa-e2e/mock.spec.ts:38:39
+
+    Error Context: frontend/test-results/mock-MOCK-·-lazy-module-fa-d80d3-erable-application-fallback/error-context.md
+
+  4 failed
+    frontend/qa-e2e/mock.spec.ts:44:1 › MOCK · cancellation discards a late response and retry stays functional 
+    frontend/qa-e2e/mock.spec.ts:69:1 › MOCK · recoverable RAG SSE failure preserves final state and image cards 
+    frontend/qa-e2e/mock.spec.ts:93:1 › MOCK · metadata text is inert and foreign media is rejected 
+    frontend/qa-e2e/mock.spec.ts:124:1 › MOCK · lazy module failure has a recoverable application fallback 

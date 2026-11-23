@@ -1,0 +1,34 @@
+[
+  {
+    "name": "desktop",
+    "primaryEnabledDisabled": true,
+    "secondaryButton": true,
+    "navigation": true,
+    "axeViolations": 0,
+    "layout": true
+  },
+  {
+    "name": "mobile",
+    "primaryEnabledDisabled": true,
+    "secondaryButton": true,
+    "navigation": true,
+    "axeViolations": 0,
+    "layout": true
+  },
+  {
+    "name": "narrow",
+    "primaryEnabledDisabled": true,
+    "secondaryButton": true,
+    "navigation": true,
+    "axeViolations": 0,
+    "layout": true
+  },
+  {
+    "name": "firefox",
+    "primaryEnabledDisabled": true,
+    "secondaryButton": true,
+    "navigation": true,
+    "axeViolations": 0,
+    "layout": true
+  }
+]

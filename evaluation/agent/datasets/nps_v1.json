@@ -1,0 +1,59 @@
+{
+  "dataset_id": "nps-landmarks-phase09-v1",
+  "version": 1,
+  "fixture": false,
+  "city": {
+    "name": "Washington, D.C.",
+    "aliases": [
+      "Washington DC",
+      "Washington, DC",
+      "Washington D.C."
+    ],
+    "source_ref": "https://www.nps.gov/wamo/index.htm"
+  },
+  "rights_ref": "https://www.nps.gov/aboutus/disclaimer.htm",
+  "source_checked_at": "2026-11-06",
+  "verification_policy": "NPS source attribution and official location pages; not human relevance judgments",
+  "images": [
+    {
+      "slug": "washington-monument",
+      "canonical_name": "Washington Monument",
+      "aliases": [
+        "Washington monument"
+      ],
+      "source_page": "https://www.nps.gov/wamo/index.htm",
+      "relation_source": "https://www.nps.gov/wamo/index.htm",
+      "download_url": "https://www.nps.gov/common/uploads/structured_data/3C815A59-1DD8-B71B-0B153A3989783B78.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "credit": "NPS Photo",
+      "license": "Public domain (NPS U.S. Government work)",
+      "caption": "Washington Monument at dusk.",
+      "modifications": "NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits"
+    },
+    {
+      "slug": "lincoln-memorial",
+      "canonical_name": "Lincoln Memorial",
+      "aliases": [],
+      "source_page": "https://www.nps.gov/linc/index.htm",
+      "relation_source": "https://www.nps.gov/linc/planyourvisit/directions.htm",
+      "download_url": "https://www.nps.gov/common/uploads/structured_data/3C816F5A-1DD8-B71B-0B6D38F175B60A23.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "credit": "NPS Photo",
+      "license": "Public domain (NPS U.S. Government work)",
+      "caption": "Lincoln Memorial at dusk.",
+      "modifications": "NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits"
+    },
+    {
+      "slug": "jefferson-memorial",
+      "canonical_name": "Thomas Jefferson Memorial",
+      "aliases": [
+        "Jefferson Memorial"
+      ],
+      "source_page": "https://www.nps.gov/thje/index.htm",
+      "relation_source": "https://www.nps.gov/thje/planyourvisit/directions.htm",
+      "download_url": "https://www.nps.gov/common/uploads/structured_data/5C73FE40-F6DF-34E1-C8354610AD6E1230.jpg?maxWidth=1200&maxHeight=800&quality=90",
+      "credit": "NPS/ Mike Litterst",
+      "license": "Public domain (NPS U.S. Government work)",
+      "caption": "Thomas Jefferson Memorial with flowering trees.",
+      "modifications": "NPS-supplied JPEG rendition, maxWidth=1200/maxHeight=800; no local image edits"
+    }
+  ]
+}

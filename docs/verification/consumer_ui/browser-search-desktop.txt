@@ -1,0 +1,8 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [desktop] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (26.2s)
+
+  1 passed (28.1s)
+(node:238199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

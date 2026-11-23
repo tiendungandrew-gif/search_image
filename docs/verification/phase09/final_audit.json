@@ -1,0 +1,100 @@
+{
+  "status": "pass",
+  "time_utc": "2026-11-06T07:18:52.080663+00:00",
+  "counts": {
+    "images": 510,
+    "entities": 0,
+    "entity_relationships": 0,
+    "image_entities": 0,
+    "captions": 500,
+    "original_receipts": 510
+  },
+  "active_index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+  "generation": 2,
+  "ready_embedding_receipts": 510,
+  "old_baseline_ready_receipts": 10,
+  "qdrant_points": 510,
+  "migration_revision": "20261106_agent_knowledge",
+  "indexes": [
+    [
+      "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+      "images_clip_coco_phase08_v1_1ea0b3304d04",
+      "ready"
+    ],
+    [
+      "4cbeea7f-8111-43bc-bc38-4b7c373e1a7b",
+      "images_clip_v1_64b85964aaf3",
+      "ready"
+    ],
+    [
+      "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+      "images_clip_v1_da55a7d099fd",
+      "ready"
+    ],
+    [
+      "3c7b23e3-4c73-4082-aa09-34df3bc70208",
+      "images_siglip2_phase07_v1_7c8f7207b4d1",
+      "ready"
+    ],
+    [
+      "1552493b-1f80-4dac-9f75-41a8e9896d1d",
+      "images_test_3e1ae2e5b864_2da3efb764c0",
+      "building"
+    ]
+  ],
+  "remaining_fixture_databases": 0,
+  "remaining_fixture_collections": [],
+  "protected_source_identical": {
+    "backend/app/services/embeddings/clip_encoder.py": true,
+    "backend/app/services/ingestion/decoder.py": true,
+    "backend/app/services/search/query_decoder.py": true,
+    "backend/app/services/search/decoder_process.py": true,
+    "backend/uv.lock": true,
+    "frontend/package-lock.json": true
+  },
+  "changed_baseline_files": [
+    ".env.example",
+    "backend/Dockerfile",
+    "backend/app/api/router.py",
+    "backend/app/api/v1/health.py",
+    "backend/app/core/config.py",
+    "backend/app/core/middleware.py",
+    "backend/app/db/models/__init__.py",
+    "backend/app/evaluation/reporting.py",
+    "backend/app/evaluation/tracking.py",
+    "backend/app/main.py",
+    "backend/app/schemas/filters.py",
+    "backend/app/services/search/ranking.py",
+    "backend/app/services/search/vector_retriever.py",
+    "backend/tests/conftest.py",
+    "backend/tests/unit/test_schema.py",
+    "frontend/e2e/rag.spec.ts",
+    "frontend/src/app/App.tsx",
+    "frontend/src/features/search/SearchWorkspace.tsx",
+    "scripts/verify_search.py"
+  ],
+  "secret_scan": {
+    "files_scanned": 120,
+    "archives": [
+      {
+        "path": "evaluation/results/phase09/_sources/0467cb94628a8cc398ec7ee2c6648d1e18e3340c32050bce8b7491662d8fa77c.tar.gz",
+        "files": 246
+      },
+      {
+        "path": "evaluation/results/phase09/_sources/5b736cd531eacc1cdec2e7968ce54747a6fe4cb138c7c778e96d52b40c137266.tar.gz",
+        "files": 247
+      },
+      {
+        "path": "evaluation/results/phase09/_sources/d96f983090b509b83c31a6e3bc9bc57043467418e1a6bff3016f8313e405dfda.tar.gz",
+        "files": 212
+      },
+      {
+        "path": "evaluation/results/phase09/_sources/68a6b7a367ce480c97c4c65c755729977e5f3150d57bdafd9585b5bbc54232c3.tar.gz",
+        "files": 247
+      }
+    ],
+    "leaks": []
+  },
+  "private_env_mode": "0o600",
+  "real_world_quality": "NOT_VERIFIED"
+}

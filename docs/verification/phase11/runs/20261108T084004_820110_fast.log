@@ -1,0 +1,44 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-7fd1567e7826 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-7fd1567e7826 Created 
+........................................................................ [ 28%]
+........................................................................ [ 57%]
+...........................F............................................ [ 86%]
+.................................                                        [100%]
+=================================== FAILURES ===================================
+___ test_foundation_schema_has_required_relations_and_no_arbitrary_dimension ___
+
+    def test_foundation_schema_has_required_relations_and_no_arbitrary_dimension():
+>       assert set(Base.metadata.tables) == {
+            "images",
+            "image_metadata",
+            "embedding_models",
+            "indexing_jobs",
+            "search_indexes",
+            "dataset_sources",
+            "image_tags",
+            "image_objects",
+            "image_embeddings",
+            "indexing_job_items",
+            "job_item_attempts",
+            "idempotency_records",
+            "active_search_index",
+            "entities",
+            "entity_relationships",
+            "image_entities",
+        }
+E       AssertionError: assert {'access_data..._grants', ...} == {'active_sear...records', ...}
+E         
+E         Extra items in the left set:
+E         'entity_datasets'
+E         'users'
+E         'relation_datasets'
+E         'auth_sessions'
+E         'access_datasets'...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+backend/tests/unit/test_schema.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/unit/test_schema.py::test_foundation_schema_has_required_relations_and_no_arbitrary_dimension
+1 failed, 248 passed in 7.22s
+

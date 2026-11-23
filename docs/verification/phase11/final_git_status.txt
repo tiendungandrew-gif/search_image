@@ -1,0 +1,213 @@
+ M .dockerignore
+ M .env.example
+ M .gitignore
+ M Makefile
+ M README.md
+ M backend/Dockerfile
+ M backend/app/api/router.py
+ M backend/app/api/v1/health.py
+ M backend/app/api/v1/images.py
+ M backend/app/api/v1/rag.py
+ M backend/app/api/v1/system.py
+ M backend/app/cli/evaluation.py
+ M backend/app/cli/indexing.py
+ M backend/app/cli/rag.py
+ M backend/app/core/config.py
+ M backend/app/core/logging.py
+ M backend/app/core/middleware.py
+ M backend/app/db/models/__init__.py
+ M backend/app/evaluation/benchmark.py
+ M backend/app/evaluation/dataset.py
+ M backend/app/evaluation/rag.py
+ M backend/app/evaluation/reporting.py
+ M backend/app/evaluation/tracking.py
+ M backend/app/main.py
+ M backend/app/schemas/filters.py
+ M backend/app/schemas/ingestion.py
+ M backend/app/schemas/rag.py
+ M backend/app/services/indexing/collection_manager.py
+ M backend/app/services/indexing/jobs.py
+ M backend/app/services/indexing/worker.py
+ M backend/app/services/rag/context_builder.py
+ M backend/app/services/rag/generator.py
+ M backend/app/services/rag/llm_provider.py
+ M backend/app/services/search/ranking.py
+ M backend/app/services/search/vector_retriever.py
+ M backend/tests/conftest.py
+ M backend/tests/integration/test_real_advanced_search.py
+ M backend/tests/integration/test_real_rag.py
+ M backend/tests/unit/test_rag.py
+ M backend/tests/unit/test_schema.py
+ M compose.yaml
+ M datasets/README.md
+ M docs/API_SPECIFICATION.md
+ M docs/DATABASE_DESIGN.md
+ M docs/DATASET_AND_GROUND_TRUTH.md
+ M docs/DECISIONS.md
+ M docs/DEVELOPMENT.md
+ M docs/IMAGE_INDEXING.md
+ M docs/MASTER_SPEC.md
+ M docs/PHASE08_TEST_REPORT.md
+ M docs/RAG_API.md
+ M docs/RAG_ARCHITECTURE.md
+ M docs/RAG_EVALUATION.md
+ M docs/RAG_IMPLEMENTATION.md
+ M docs/RAG_PERFORMANCE.md
+ M docs/RAG_PROMPT_DESIGN.md
+ M docs/ROADMAP.md
+ M docs/SAD.md
+ M docs/SETUP.md
+ M docs/SYSTEM_ARCHITECTURE.md
+ M evaluation/README.md
+ M frontend/e2e/foundation.spec.ts
+ M frontend/e2e/rag.spec.ts
+ M frontend/package-lock.json
+ M frontend/package.json
+ M frontend/playwright.config.ts
+ M frontend/src/app/App.tsx
+ M frontend/src/features/rag/ExplanationPanel.tsx
+ M frontend/src/features/search/ResultImage.tsx
+ M frontend/src/features/search/SearchWorkspace.tsx
+ M frontend/src/hooks/useHealth.ts
+ M frontend/src/main.tsx
+ M frontend/src/services/api/client.test.ts
+ M frontend/src/services/api/client.ts
+ M frontend/src/styles/index.css
+ M frontend/src/types/api.ts
+ M frontend/tsconfig.node.json
+ M scripts/verify_rag_fallback.py
+ M scripts/verify_search.py
+?? .github/
+?? backend/alembic/versions/20261106_agent_knowledge.py
+?? backend/app/api/v1/agent.py
+?? backend/app/cli/agent.py
+?? backend/app/cli/download_coco.py
+?? backend/app/cli/download_landmarks.py
+?? backend/app/cli/knowledge.py
+?? backend/app/cli/prepare_landmark_knowledge.py
+?? backend/app/db/models/knowledge.py
+?? backend/app/evaluation/agent.py
+?? backend/app/repositories/knowledge_import.py
+?? backend/app/repositories/knowledge_repository.py
+?? backend/app/schemas/agent.py
+?? backend/app/schemas/workspace.py
+?? backend/app/services/agent/
+?? backend/app/services/workspace.py
+?? backend/tests/__init__.py
+?? backend/tests/fixtures/
+?? backend/tests/integration/conftest.py
+?? backend/tests/integration/test_qa_ai.py
+?? backend/tests/integration/test_qa_services.py
+?? backend/tests/integration/test_qa_worker_process.py
+?? backend/tests/integration/test_real_agent.py
+?? backend/tests/reliability/
+?? backend/tests/security/
+?? backend/tests/unit/test_agent.py
+?? backend/tests/unit/test_agent_evaluation.py
+?? backend/tests/unit/test_coco.py
+?? backend/tests/unit/test_landmark_download.py
+?? backend/tests/unit/test_workspace.py
+?? compose.qa.yaml
+?? docs/AGENT_API.md
+?? docs/AGENT_ARCHITECTURE.md
+?? docs/AGENT_EVALUATION.md
+?? docs/AGENT_PERFORMANCE.md
+?? docs/AGENT_STATE_MANAGEMENT.md
+?? docs/AGENT_TOOL_DESIGN.md
+?? docs/BUG_FIX_REPORT.md
+?? docs/EMPTY_DATASET_TEST_REPORT.md
+?? docs/END_TO_END_TEST_REPORT.md
+?? docs/FRONTEND_API_INTEGRATION.md
+?? docs/FRONTEND_ARCHITECTURE.md
+?? docs/FRONTEND_EMPTY_DATASET_MODE.md
+?? docs/FRONTEND_PERFORMANCE.md
+?? docs/FRONTEND_TESTING.md
+?? docs/INTEGRATION_TEST_REPORT.md
+?? docs/KNOWLEDGE_BASE_DESIGN.md
+?? docs/MULTI_HOP_SEARCH.md
+?? docs/PERFORMANCE_REGRESSION.md
+?? docs/PHASE08_COMPLETION_REPORT.md
+?? docs/PHASE09_TEST_REPORT.md
+?? docs/PHASE10_TEST_REPORT.md
+?? docs/PHASE11_TEST_REPORT.md
+?? docs/PUBLIC_LANDMARK_DATASET.md
+?? docs/RAG_DATASET.md
+?? docs/RELIABILITY_TEST_REPORT.md
+?? docs/SECURITY_AUDIT.md
+?? docs/SYSTEM_AUDIT.md
+?? docs/TEST_COVERAGE.md
+?? docs/TEST_STRATEGY.md
+?? docs/UI_UX_DESIGN.md
+?? docs/verification/phase08_completion_20261106/
+?? docs/verification/phase09/
+?? docs/verification/phase09_completion_20261106/
+?? docs/verification/phase10/
+?? docs/verification/phase11/
+?? "emantic image search\""
+?? evaluation/agent/
+?? evaluation/annotation/rag_review.html
+?? evaluation/datasets/manifests/phase08_coco_v1.json
+?? evaluation/datasets/manifests/phase08_coco_v2.json
+?? evaluation/datasets/manifests/phase09_public_v1.json
+?? evaluation/experiments/phase08_coco_fast.json
+?? evaluation/experiments/phase11_fast_c4.json
+?? evaluation/experiments/phase11_image.json
+?? evaluation/experiments/phase11_multi_intent.json
+?? evaluation/experiments/phase11_multimodal.json
+?? evaluation/queries/phase08_coco_v1.jsonl
+?? evaluation/queries/phase08_coco_v2.jsonl
+?? evaluation/queries/phase09_public_v1.jsonl
+?? evaluation/rag/test_cases/
+?? evaluation/reports/phase08_20261106/
+?? evaluation/reports/phase09_20261106/
+?? evaluation/reports/phase09_completion_20261106/
+?? evaluation/reports/phase09_completion_20261106_final/
+?? evaluation/results/phase08_completion/
+?? evaluation/results/phase09/
+?? evaluation/results/phase09_completion/
+?? evaluation/results/phase10/
+?? evaluation/results/phase11/
+?? frontend/e2e/agent.spec.ts
+?? frontend/e2e/phase10-empty.spec.ts
+?? frontend/e2e/phase10-performance.spec.ts
+?? frontend/e2e/phase10.spec.ts
+?? frontend/playwright.mock.config.ts
+?? frontend/playwright.qa.config.ts
+?? frontend/qa-e2e/
+?? frontend/src/components/ErrorBoundary.test.tsx
+?? frontend/src/components/ErrorBoundary.tsx
+?? frontend/src/features/agent/
+?? frontend/src/features/evaluation/
+?? frontend/src/features/rag/ExplanationPanel.test.tsx
+?? frontend/src/features/search/AdvancedControls.tsx
+?? frontend/src/features/search/ImageDetailDialog.tsx
+?? frontend/src/features/search/ImageUpload.test.tsx
+?? frontend/src/features/search/ImageUpload.tsx
+?? frontend/src/features/search/QueryAnalysis.tsx
+?? frontend/src/features/search/ResultGallery.tsx
+?? frontend/src/features/search/ResultImage.test.tsx
+?? frontend/src/features/search/SearchForm.tsx
+?? frontend/src/features/search/SearchSkeleton.tsx
+?? frontend/src/features/search/useSearchSession.test.tsx
+?? frontend/src/features/search/useSearchSession.ts
+?? frontend/src/features/search/validation.test.ts
+?? frontend/src/features/search/validation.ts
+?? frontend/src/features/system/
+?? frontend/src/hooks/useHealth.test.tsx
+?? frontend/src/hooks/useWorkspaceStatus.ts
+?? frontend/src/services/api/decoders.ts
+?? frontend/src/services/api/media.ts
+?? frontend/src/services/api/stream.ts
+?? scripts/browser_environment.py
+?? scripts/capture_phase10_evidence.py
+?? scripts/check_frontend.py
+?? scripts/check_rag_review.mjs
+?? scripts/init_qa_env.py
+?? scripts/phase10_empty_server.py
+?? scripts/prepare_rag_corpus.py
+?? scripts/qa.py
+?? scripts/qa_faults.py
+?? scripts/seed_qa.py
+?? scripts/verify_agent.sh
+?? scripts/verify_agent_fixtures.py
+?? scripts/verify_public_agent.py

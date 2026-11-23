@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "index_id": "3d66a126-2b72-4e6e-bc6d-739c716d5712",
+  "collection": "images_approved_csv_live_20261122_1528c6cbeb72",
+  "source_ingestion_index": "245a3b0b-33b4-4123-acf5-ac29f7e87564",
+  "model_id": "02593ce4-5531-49eb-8b46-89e6ecaef50c",
+  "manifest_sha256": "7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc",
+  "images": 24023,
+  "successful_urls": 24104,
+  "csv_rows": 27029,
+  "unique_source_urls": 24345,
+  "unserved_urls": 241,
+  "unserved_rows": 262,
+  "backup": "backups/before_approved_csv_20261122",
+  "generation": 4,
+  "old_images_archived": 513,
+  "http_verified": true,
+  "worker_verified": true,
+  "normalized_images": 56,
+  "completed_at": "2026-11-22 17:31:21"
+}

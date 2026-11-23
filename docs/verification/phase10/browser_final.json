@@ -1,0 +1,3055 @@
+{
+  "config": {
+    "argv": [
+      "/home/tts/prj/.tools/node/bin/node",
+      "/home/tts/prj/frontend/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/tts/prj/frontend/playwright.config.ts",
+    "rootDir": "/home/tts/prj/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 360000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "empty-desktop",
+        "name": "empty-desktop",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "phase10-empty.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "empty-mobile",
+        "name": "empty-mobile",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "phase10-empty.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "phase10.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "/(?:foundation|phase10)\\.spec\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "/(?:foundation|phase10)\\.spec\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [
+          "phase10-empty.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [
+          "phase10-empty.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "empty-desktop",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "snapshotDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": "phase10-empty.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5174",
+          "browserName": "chromium",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "empty-desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "empty-mobile",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "snapshotDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": "phase10-empty.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5174",
+          "browserName": "chromium",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "empty-mobile"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "tablet",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "snapshotDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": "phase10.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "browserName": "chromium",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 820,
+            "height": 1180
+          },
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "tablet"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "snapshotDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "browserName": "firefox",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "snapshotDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "browserName": "webkit",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "snapshotDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": "phase10-empty.spec.ts",
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "browserName": "chromium",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "mobile",
+        "testDir": "/home/tts/prj/frontend/e2e",
+        "snapshotDir": "/home/tts/prj/frontend/e2e",
+        "testIgnore": "phase10-empty.spec.ts",
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "browserName": "chromium",
+          "trace": "off",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "phase10-empty.spec.ts",
+      "file": "phase10-empty.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL EMPTY · isolated PostgreSQL/Qdrant/MinIO and disabled AI features",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "empty-desktop",
+              "projectName": "empty-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2810,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:20.302Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-empty-workspace",
+                      "contentType": "application/json",
+                      "body": "eyJkYXRhc2V0Ijp7InN0YXRlIjoiZW1wdHlfZGF0YXNldCIsImltYWdlcyI6MCwiYXZhaWxhYmxlX2ltYWdlcyI6MCwiaW5kZXhlZF9pbWFnZXMiOjAsInZlY3RvcnMiOm51bGwsImluZGV4X2lkIjpudWxsLCJpbmRleF9zdGF0dXMiOiJhYnNlbnQiLCJnZW5lcmF0aW9uIjpudWxsfSwiZGVwZW5kZW5jaWVzIjp7InBvc3RncmVzcWwiOiJoZWFsdGh5IiwicWRyYW50IjoiaGVhbHRoeSIsIm1pbmlvIjoiaGVhbHRoeSJ9LCJjYXBhYmlsaXRpZXMiOnsidGV4dF9zZWFyY2giOmZhbHNlLCJpbWFnZV9zZWFyY2giOmZhbHNlLCJtdWx0aW1vZGFsIjpmYWxzZSwibXVsdGlfaW50ZW50IjpmYWxzZSwicmVyYW5rIjpmYWxzZSwiZXhwbGFuYXRpb25zIjpmYWxzZSwiYWdlbnQiOmZhbHNlfSwicmFnIjp7ImVuYWJsZWQiOmZhbHNlLCJjb25maWd1cmVkIjpmYWxzZSwic3RyZWFtaW5nIjp0cnVlfSwiYWdlbnQiOnsiZW5hYmxlZCI6ZmFsc2UsImxsbV9wbGFubmluZyI6ZmFsc2V9LCJsaW1pdHMiOnsidG9wX2siOjUwLCJpbWFnZV9ieXRlcyI6MjA5NzE1MjB9fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baea05584ddc7f96a0a4-b05201bdf01fd10c8416",
+          "file": "phase10-empty.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "REAL EMPTY · evaluation remains navigable without benchmark artifacts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "empty-desktop",
+              "projectName": "empty-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1474,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:23.327Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baea05584ddc7f96a0a4-80c98edc218d913f2989",
+          "file": "phase10-empty.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "REAL EMPTY · isolated PostgreSQL/Qdrant/MinIO and disabled AI features",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "empty-mobile",
+              "projectName": "empty-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2615,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:25.589Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-empty-workspace",
+                      "contentType": "application/json",
+                      "body": "eyJkYXRhc2V0Ijp7InN0YXRlIjoiZW1wdHlfZGF0YXNldCIsImltYWdlcyI6MCwiYXZhaWxhYmxlX2ltYWdlcyI6MCwiaW5kZXhlZF9pbWFnZXMiOjAsInZlY3RvcnMiOm51bGwsImluZGV4X2lkIjpudWxsLCJpbmRleF9zdGF0dXMiOiJhYnNlbnQiLCJnZW5lcmF0aW9uIjpudWxsfSwiZGVwZW5kZW5jaWVzIjp7InBvc3RncmVzcWwiOiJoZWFsdGh5IiwicWRyYW50IjoiaGVhbHRoeSIsIm1pbmlvIjoiaGVhbHRoeSJ9LCJjYXBhYmlsaXRpZXMiOnsidGV4dF9zZWFyY2giOmZhbHNlLCJpbWFnZV9zZWFyY2giOmZhbHNlLCJtdWx0aW1vZGFsIjpmYWxzZSwibXVsdGlfaW50ZW50IjpmYWxzZSwicmVyYW5rIjpmYWxzZSwiZXhwbGFuYXRpb25zIjpmYWxzZSwiYWdlbnQiOmZhbHNlfSwicmFnIjp7ImVuYWJsZWQiOmZhbHNlLCJjb25maWd1cmVkIjpmYWxzZSwic3RyZWFtaW5nIjp0cnVlfSwiYWdlbnQiOnsiZW5hYmxlZCI6ZmFsc2UsImxsbV9wbGFubmluZyI6ZmFsc2V9LCJsaW1pdHMiOnsidG9wX2siOjUwLCJpbWFnZV9ieXRlcyI6MjA5NzE1MjB9fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baea05584ddc7f96a0a4-c9d1f03261129bdf6848",
+          "file": "phase10-empty.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "REAL EMPTY · evaluation remains navigable without benchmark artifacts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "empty-mobile",
+              "projectName": "empty-mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1420,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:28.351Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baea05584ddc7f96a0a4-0ac291ef8d3429aaa578",
+          "file": "phase10-empty.spec.ts",
+          "line": 65,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "phase10.spec.ts",
+      "file": "phase10.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL · dataset, gallery, metadata dialog and keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:30.541Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-42149abb1077269c4db9",
+          "file": "phase10.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "REAL · metadata filters distinguish no matches from an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:34.093Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-f91776833c34a9e3b7b7",
+          "file": "phase10.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "REAL · benchmark navigation uses authenticated aggregate API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3350,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:36.171Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-60771c852bc45e52a0ca",
+          "file": "phase10.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "REAL · accessibility checks on search, dialog, dark theme and evaluation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8440,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:39.544Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "axe-results",
+                      "contentType": "application/json",
+                      "body": "W3sidmlldyI6InNlYXJjaC1saWdodCIsInZpb2xhdGlvbnMiOltdfSx7InZpZXciOiJkaWFsb2ciLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3Ijoic2VhcmNoLWRhcmsiLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3IjoiZXZhbHVhdGlvbi1kYXJrIiwidmlvbGF0aW9ucyI6W119XQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-1077aed6578969feb0d5",
+          "file": "phase10.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "MOCK · empty dataset, disabled features and a later import refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2049,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:48.003Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-a7873745cdc26ecf69e2",
+          "file": "phase10.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "MOCK · backend unavailable is never reported as an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 867,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:50.066Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-11491c0f4c4193de38b0",
+          "file": "phase10.spec.ts",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "REAL · dataset, gallery, metadata dialog and keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3665,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:07.288Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-5e4ce493254a22a8e182",
+          "file": "phase10.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "REAL · metadata filters distinguish no matches from an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2499,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:10.972Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-ff3c02bdbbb50b85ee3e",
+          "file": "phase10.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "REAL · benchmark navigation uses authenticated aggregate API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3770,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:13.490Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-47349458980051ab63f9",
+          "file": "phase10.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "REAL · accessibility checks on search, dialog, dark theme and evaluation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:17.283Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "axe-results",
+                      "contentType": "application/json",
+                      "body": "W3sidmlldyI6InNlYXJjaC1saWdodCIsInZpb2xhdGlvbnMiOltdfSx7InZpZXciOiJkaWFsb2ciLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3Ijoic2VhcmNoLWRhcmsiLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3IjoiZXZhbHVhdGlvbi1kYXJrIiwidmlvbGF0aW9ucyI6W119XQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-2bd92e5e3df4c1d99f1b",
+          "file": "phase10.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "MOCK · empty dataset, disabled features and a later import refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2338,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:31.022Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-565831c1bb9a2ae26112",
+          "file": "phase10.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "MOCK · backend unavailable is never reported as an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1649,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:33.389Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-50eb9313931f1cfd22dc",
+          "file": "phase10.spec.ts",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "REAL · dataset, gallery, metadata dialog and keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4801,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:55.608Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-9c973a47ea5decc9d95a",
+          "file": "phase10.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "REAL · metadata filters distinguish no matches from an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3320,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:00.425Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-8dab951116dffd897bd8",
+          "file": "phase10.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "REAL · benchmark navigation uses authenticated aggregate API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4871,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:03.761Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-dbeb226c8fb088afbcef",
+          "file": "phase10.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "REAL · accessibility checks on search, dialog, dark theme and evaluation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12312,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:08.653Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "axe-results",
+                      "contentType": "application/json",
+                      "body": "W3sidmlldyI6InNlYXJjaC1saWdodCIsInZpb2xhdGlvbnMiOltdfSx7InZpZXciOiJkaWFsb2ciLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3Ijoic2VhcmNoLWRhcmsiLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3IjoiZXZhbHVhdGlvbi1kYXJrIiwidmlvbGF0aW9ucyI6W119XQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-f5a2a05397e9fa118deb",
+          "file": "phase10.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "MOCK · empty dataset, disabled features and a later import refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2540,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:20.980Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-34f53db50a78f7aaa666",
+          "file": "phase10.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "MOCK · backend unavailable is never reported as an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2055,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:23.537Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-bb5d797600c42af68086",
+          "file": "phase10.spec.ts",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "REAL · dataset, gallery, metadata dialog and keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3564,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:45.046Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-3f9b67e2fb8a82e27fdd",
+          "file": "phase10.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "REAL · metadata filters distinguish no matches from an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2097,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:48.626Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-a3221808d2e5db06a33c",
+          "file": "phase10.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "REAL · benchmark navigation uses authenticated aggregate API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3332,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:50.745Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-01c6f64b65e9936a7ee2",
+          "file": "phase10.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "REAL · accessibility checks on search, dialog, dark theme and evaluation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8887,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:54.098Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "axe-results",
+                      "contentType": "application/json",
+                      "body": "W3sidmlldyI6InNlYXJjaC1saWdodCIsInZpb2xhdGlvbnMiOltdfSx7InZpZXciOiJkaWFsb2ciLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3Ijoic2VhcmNoLWRhcmsiLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3IjoiZXZhbHVhdGlvbi1kYXJrIiwidmlvbGF0aW9ucyI6W119XQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-76e3ff91f369ed48e380",
+          "file": "phase10.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "MOCK · empty dataset, disabled features and a later import refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1993,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:03.005Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-cfc84f1e5a600068354e",
+          "file": "phase10.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "MOCK · backend unavailable is never reported as an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 980,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:05.019Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-ffe6ab7c1bba08b8a0b7",
+          "file": "phase10.spec.ts",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "REAL · dataset, gallery, metadata dialog and keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:27.000Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-5be9303567319bd66354",
+          "file": "phase10.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "REAL · metadata filters distinguish no matches from an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1978,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:30.242Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-aa2fb5eb50a6559dcf4f",
+          "file": "phase10.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "REAL · benchmark navigation uses authenticated aggregate API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3233,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:32.242Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-b813b64788b1d84999cb",
+          "file": "phase10.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "REAL · accessibility checks on search, dialog, dark theme and evaluation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8293,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:35.494Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "axe-results",
+                      "contentType": "application/json",
+                      "body": "W3sidmlldyI6InNlYXJjaC1saWdodCIsInZpb2xhdGlvbnMiOltdfSx7InZpZXciOiJkaWFsb2ciLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3Ijoic2VhcmNoLWRhcmsiLCJ2aW9sYXRpb25zIjpbXX0seyJ2aWV3IjoiZXZhbHVhdGlvbi1kYXJrIiwidmlvbGF0aW9ucyI6W119XQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-e89c63f69c33c14c099e",
+          "file": "phase10.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "MOCK · empty dataset, disabled features and a later import refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2036,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:43.802Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-ec982a92ecce05570f86",
+          "file": "phase10.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "MOCK · backend unavailable is never reported as an empty dataset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 963,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:45.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a06ab2457cd11fd94135-e0c3f8216c4786f89625",
+          "file": "phase10.spec.ts",
+          "line": 216,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "foundation.spec.ts",
+      "file": "foundation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "text search thật trả ảnh có metadata, preview và không tràn viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3776,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:51.594Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-378692c313e2171cf281",
+          "file": "foundation.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "image search thật không ingest query ảnh vào corpus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1585,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:56.264Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-796138e161a447665efc",
+          "file": "foundation.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "invalid token báo lỗi; advanced mode đã bật",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1091,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:57.873Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-511af30c4812e68f5510",
+          "file": "foundation.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "multi-intent AND OR và tiếng Việt có evidence chưa xác minh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2767,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:13:58.992Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-533578c42dc39c866d7b",
+          "file": "foundation.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "combined text image chạy cả RRF và weighted score",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4172,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:01.777Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-97d08c486d6477deb3e0",
+          "file": "foundation.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "unsupported relational query báo rõ không có multi-hop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1137,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:05.970Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-328c9cb81b9dcc829ec1",
+          "file": "foundation.spec.ts",
+          "line": 187,
+          "column": 1
+        },
+        {
+          "title": "text search thật trả ảnh có metadata, preview và không tràn viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2856,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:36.186Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-56aa6523b47e66eeeb5f",
+          "file": "foundation.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "image search thật không ingest query ảnh vào corpus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2540,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:39.257Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-fcb155a664e3423d6fff",
+          "file": "foundation.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "invalid token báo lỗi; advanced mode đã bật",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1713,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:41.831Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-ea8cb1151f38fe713fc1",
+          "file": "foundation.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "multi-intent AND OR và tiếng Việt có evidence chưa xác minh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:43.569Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-5ea7443464f70b268532",
+          "file": "foundation.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "combined text image chạy cả RRF và weighted score",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6244,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:47.293Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-76ed17d642fb6e824915",
+          "file": "foundation.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "unsupported relational query báo rõ không có multi-hop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1856,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:14:53.555Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-cf9f2daf9f47059cd5b0",
+          "file": "foundation.spec.ts",
+          "line": 187,
+          "column": 1
+        },
+        {
+          "title": "text search thật trả ảnh có metadata, preview và không tràn viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1544,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:34.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-fdf8f584ba787c34cc0b",
+          "file": "foundation.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "image search thật không ingest query ảnh vào corpus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1278,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:36.114Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-4d6e958314cc8e2a9fb3",
+          "file": "foundation.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "invalid token báo lỗi; advanced mode đã bật",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 642,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:37.425Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-c282261ab8536c03627e",
+          "file": "foundation.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "multi-intent AND OR và tiếng Việt có evidence chưa xác minh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2059,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:38.093Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-e633aff91a2eaa40ad73",
+          "file": "foundation.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "combined text image chạy cả RRF và weighted score",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:40.181Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-d25df2aade41741214a0",
+          "file": "foundation.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "unsupported relational query báo rõ không có multi-hop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 701,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:44.026Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-af0f96d153932e9d0732",
+          "file": "foundation.spec.ts",
+          "line": 187,
+          "column": 1
+        },
+        {
+          "title": "text search thật trả ảnh có metadata, preview và không tràn viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:16.745Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-14c75f876515f5cda603",
+          "file": "foundation.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "image search thật không ingest query ảnh vào corpus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1259,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:18.188Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-e82b091ca435aac4e159",
+          "file": "foundation.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "invalid token báo lỗi; advanced mode đã bật",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 631,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:19.469Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-8ddb3afe6216763dd6d7",
+          "file": "foundation.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "multi-intent AND OR và tiếng Việt có evidence chưa xác minh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1976,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:20.120Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-ba42d9171a269da5456b",
+          "file": "foundation.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "combined text image chạy cả RRF và weighted score",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3858,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:22.119Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-8c3c5affead8b7807eea",
+          "file": "foundation.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "unsupported relational query báo rõ không có multi-hop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:25.996Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-f934f9b2e6da8ce60774",
+          "file": "foundation.spec.ts",
+          "line": 187,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "agent.spec.ts",
+      "file": "agent.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "public landmark workflow shows real photos and relationship sources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1183,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:26.342Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-00caddeef698521c9e04",
+          "file": "agent.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "mocked optional RAG quota warning preserves real public images in SSE UI",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:27.687Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-2c35e2fb5505184be685",
+          "file": "agent.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "agent missing relation uses live API and does not fabricate landmark images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 801,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:28.975Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-1dbf375c988be9dabafc",
+          "file": "agent.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "agent returns live indexed images and real optional Gemini citations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3172,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:29.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-6365d2aeff95bf338e3a",
+          "file": "agent.spec.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "empty-dataset Agent UI is exercised with an explicitly mocked SSE response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 715,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:32.995Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-8da79e14f01f9ee26ecd",
+          "file": "agent.spec.ts",
+          "line": 132,
+          "column": 1
+        },
+        {
+          "title": "public landmark workflow shows real photos and relationship sources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1203,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:09.924Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-5c42155559e23d0b37ec",
+          "file": "agent.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "mocked optional RAG quota warning preserves real public images in SSE UI",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1078,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:11.312Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-12ee62a01a19f9fa3d4a",
+          "file": "agent.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "agent missing relation uses live API and does not fabricate landmark images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 686,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:12.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-71d3a21d3d5b2510e14a",
+          "file": "agent.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "agent returns live indexed images and real optional Gemini citations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2096,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:13.133Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-99ff689df3e9fc298127",
+          "file": "agent.spec.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "empty-dataset Agent UI is exercised with an explicitly mocked SSE response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 629,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:15.247Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00574607846d83245288-ba50829ca1cad0fac0fc",
+          "file": "agent.spec.ts",
+          "line": 132,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "evaluation.spec.ts",
+      "file": "evaluation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "annotation pack hiển thị ảnh thật và không tự xác nhận nhãn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 758,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:33.741Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abe5193fc16f84d6a11e-f6fa9bf268e12d26b8bb",
+          "file": "evaluation.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "annotation pack hiển thị ảnh thật và không tự xác nhận nhãn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 799,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:15.910Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abe5193fc16f84d6a11e-e3b0a36cf16a1b0c93ee",
+          "file": "evaluation.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "phase10-performance.spec.ts",
+      "file": "phase10-performance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL PERF · measured UI timing and lazy network requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Chạy riêng để đo, không trộn với functional QA",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/e2e/phase10-performance.spec.ts",
+                    "line": 8,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 117,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:15:44.761Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chạy riêng để đo, không trộn với functional QA",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/e2e/phase10-performance.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "d0adbc5cf3a429187db5-3f3bc5d35124281fd8ea",
+          "file": "phase10-performance.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "REAL PERF · measured UI timing and lazy network requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Chạy riêng để đo, không trộn với functional QA",
+                  "location": {
+                    "file": "/home/tts/prj/frontend/e2e/phase10-performance.spec.ts",
+                    "line": 8,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 92,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:26.740Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chạy riêng để đo, không trộn với functional QA",
+                      "location": {
+                        "file": "/home/tts/prj/frontend/e2e/phase10-performance.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "d0adbc5cf3a429187db5-2996942374fe59522061",
+          "file": "phase10-performance.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "rag.spec.ts",
+      "file": "rag.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "optional explanation uses real API and preserves indexed image results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3114,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:06.037Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-rag-outcome",
+                      "contentType": "application/json",
+                      "body": "eyJnZW5lcmF0ZWQiOnRydWUsImdyb3VuZGluZ19zdGF0dXMiOiJzdXBwb3J0ZWQiLCJlcnJvcl9jb2RlIjpudWxsLCJjaXRhdGlvbl9jb3VudCI6Nn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a5d46242f1b05ca2c8ca-bc5c656169adf8a9a05f",
+          "file": "rag.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "optional explanation uses real API and preserves indexed image results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4673,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T05:16:46.870Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-rag-outcome",
+                      "contentType": "application/json",
+                      "body": "eyJnZW5lcmF0ZWQiOnRydWUsImdyb3VuZGluZ19zdGF0dXMiOiJzdXBwb3J0ZWQiLCJlcnJvcl9jb2RlIjpudWxsLCJjaXRhdGlvbl9jb3VudCI6Nn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a5d46242f1b05ca2c8ca-363647b902e12daef15f",
+          "file": "rag.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T05:13:19.047Z",
+    "duration": 212665.73799999998,
+    "expected": 72,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

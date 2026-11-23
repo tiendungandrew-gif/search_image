@@ -1,0 +1,735 @@
+{
+  "verification": "VERIFIED_WITH_REAL_DATA",
+  "requests": {
+    "health/live": {
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "service": "image-search-api"
+      }
+    },
+    "health/ready": {
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "dependencies": {
+          "postgresql": "healthy",
+          "qdrant": "healthy",
+          "minio": "healthy"
+        }
+      }
+    },
+    "system/workspace": {
+      "status": 200,
+      "body": {
+        "dataset": {
+          "state": "ready",
+          "images": 513,
+          "available_images": 513,
+          "indexed_images": 513,
+          "vectors": 513,
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "index_status": "ready",
+          "generation": 3
+        },
+        "dependencies": {
+          "postgresql": "healthy",
+          "qdrant": "healthy",
+          "minio": "healthy"
+        },
+        "capabilities": {
+          "text_search": true,
+          "image_search": true,
+          "multimodal": true,
+          "multi_intent": true,
+          "rerank": true,
+          "explanations": true,
+          "agent": true
+        },
+        "rag": {
+          "enabled": true,
+          "configured": true,
+          "streaming": true
+        },
+        "agent": {
+          "enabled": true,
+          "llm_planning": true
+        },
+        "limits": {
+          "top_k": 50,
+          "image_bytes": 20971520
+        }
+      }
+    },
+    "system/evaluation": {
+      "status": 200,
+      "body": {
+        "state": "available",
+        "experiments": [
+          {
+            "id": "20261106T163330_agent_e4900bc334",
+            "phase": "phase09_completion",
+            "kind": "agent",
+            "status": "measured",
+            "attempted": 40,
+            "successful": 40,
+            "failed": 0,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261106T151820_benchmark_5b73a0ef43",
+            "phase": "phase09_completion",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 500,
+            "failed": 0,
+            "p90_ms": 136.61342799969134,
+            "p95_ms": 142.12908200079255,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261106T151742_agent_081d6bdb0d",
+            "phase": "phase09_completion",
+            "kind": "agent",
+            "status": "measured",
+            "attempted": 40,
+            "successful": 40,
+            "failed": 0,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261106T071236_benchmark_7f9efe9e00",
+            "phase": "phase09",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 500,
+            "failed": 0,
+            "p90_ms": 139.6199280000019,
+            "p95_ms": 145.68507800004227,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261106T071208_agent_ff7910da71",
+            "phase": "phase09",
+            "kind": "agent",
+            "status": "measured",
+            "attempted": 16,
+            "successful": 16,
+            "failed": 0,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261106T051238_agent_62f3a5e779",
+            "phase": "phase09",
+            "kind": "agent",
+            "status": "measured",
+            "attempted": 16,
+            "successful": 16,
+            "failed": 0,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261106T040458_benchmark_2dc80f5824",
+            "phase": "phase08_completion",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 500,
+            "failed": 0,
+            "p90_ms": 147.5101910000376,
+            "p95_ms": 158.46166299979814,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261106T035619_rag_f1012fd73b",
+            "phase": "phase08_completion",
+            "kind": "rag",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261105T050046_rag_4b6c513c95",
+            "phase": "phase08",
+            "kind": "rag",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261105T043305_benchmark_38092a56a4",
+            "phase": "phase08",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 500,
+            "failed": 0,
+            "p90_ms": 147.08757800008243,
+            "p95_ms": 155.59373999985837,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261105T042632_rag_37780e9449",
+            "phase": "phase08",
+            "kind": "rag",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101840_evaluate_aea01ea3c5",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "partial_semantic_labels_unavailable",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101633_optimization-analysis_8b0e4c6291",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101345_validate-dataset_e9b865b57c",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "valid",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101319_profile_344aa63687",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101307_model-comparison_4c67e77ccf",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101257_model-comparison_ace1b38e21",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101019_benchmark_c505f295d7",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 500,
+            "failed": 0,
+            "p90_ms": 148.35225699971488,
+            "p95_ms": 153.0869320013153,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T101005_evaluate_f6a6877b9f",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "partial_semantic_labels_unavailable",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T100945_optimization-analysis_358dbd0c6f",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T100817_profile_d086c7b75d",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T100731_model-comparison_60ac9facaa",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T100605_model-comparison_71387ec40e",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": null,
+            "successful": null,
+            "failed": null,
+            "p90_ms": null,
+            "p95_ms": null,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T095205_benchmark_ddf52692ff",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 160,
+            "successful": 160,
+            "failed": 0,
+            "p90_ms": 143.76202499988722,
+            "p95_ms": 153.99136899941368,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T095159_benchmark_1bff5d5b0d",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 68,
+            "failed": 432,
+            "p90_ms": 315.2064719997725,
+            "p95_ms": 377.4909470012062,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T095149_benchmark_f713978774",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 217,
+            "failed": 283,
+            "p90_ms": 231.03229000116698,
+            "p95_ms": 248.12515300072846,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T095132_benchmark_6fe8167b67",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 478,
+            "failed": 22,
+            "p90_ms": 187.92214899985993,
+            "p95_ms": 197.67464899996412,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T095051_benchmark_09d9264c9f",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 150.55764399949112,
+            "p95_ms": 151.85325099992042,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T095004_benchmark_3cec04222f",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 157.98210899993137,
+            "p95_ms": 169.57973500029766,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094916_benchmark_eaee1c2363",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 169.27255399969,
+            "p95_ms": 182.12923600003705,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094834_benchmark_e060438714",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 150.94797600067977,
+            "p95_ms": 153.13933600009477,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094747_benchmark_53a3137b7f",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 164.99487399960344,
+            "p95_ms": 168.15937100000156,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094703_benchmark_ff869c8d80",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 156.66363099990122,
+            "p95_ms": 159.75686400088307,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094620_benchmark_01151f1a21",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 156.27005900023505,
+            "p95_ms": 158.7347469994711,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094533_benchmark_833ec7552e",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 163.4574130002875,
+            "p95_ms": 166.39962299996114,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094452_benchmark_bb696f814c",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 151.1983609998424,
+            "p95_ms": 156.00603699931526,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094413_benchmark_016c347034",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 132.49066800017317,
+            "p95_ms": 139.97385800030315,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094305_benchmark_17af8a9c27",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 500,
+            "failed": 0,
+            "p90_ms": 149.1353010005696,
+            "p95_ms": 151.78964999904565,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094214_benchmark_5dcd341f50",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 149.77293300034944,
+            "p95_ms": 154.54160300032527,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094121_benchmark_85202e75a0",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 149.9180940008955,
+            "p95_ms": 152.51922599964018,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T094027_benchmark_c337f7cf84",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 152.15811999951256,
+            "p95_ms": 155.27061300053902,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T093937_benchmark_97b3d12a34",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 300,
+            "successful": 300,
+            "failed": 0,
+            "p90_ms": 151.7974359994696,
+            "p95_ms": 157.370857999922,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          },
+          {
+            "id": "20261104T084629_benchmark_0255e8a3fd",
+            "phase": "phase07",
+            "kind": "retrieval",
+            "status": "measured",
+            "attempted": 500,
+            "successful": 500,
+            "failed": 0,
+            "p90_ms": 146.05321399994864,
+            "p95_ms": 148.5631290006495,
+            "recall_at_10": null,
+            "quality_status": "not_published"
+          }
+        ],
+        "skipped": 0
+      }
+    }
+  },
+  "image_roundtrip": {
+    "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+    "detail": {
+      "image_id": "785c1ac8-6017-4c02-84d4-5d4f67ef4142",
+      "status": "available",
+      "metadata": {
+        "title": null,
+        "caption": null,
+        "width": 600,
+        "height": 400,
+        "media_type": "image/png",
+        "tags": [],
+        "source_dataset": "scikit-image-v0.25.2",
+        "city": null,
+        "license": "CC0-1.0"
+      },
+      "created_at": "2026-11-03T08:47:51.168483+00:00",
+      "indexing": [
+        {
+          "index_id": "4cbeea7f-8111-43bc-bc38-4b7c373e1a7b",
+          "status": "ready"
+        },
+        {
+          "index_id": "6c3a8404-2971-46bf-ac9c-5c09bdec42b5",
+          "status": "ready"
+        },
+        {
+          "index_id": "3c7b23e3-4c73-4082-aa09-34df3bc70208",
+          "status": "ready"
+        },
+        {
+          "index_id": "1552493b-1f80-4dac-9f75-41a8e9896d1d",
+          "status": "processing"
+        },
+        {
+          "index_id": "69ac9c03-d218-40de-97bd-e6ba595e27f1",
+          "status": "ready"
+        },
+        {
+          "index_id": "b4597021-4b91-491d-99ae-0617a6ca389c",
+          "status": "ready"
+        }
+      ],
+      "image_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=original",
+      "thumbnail_url": "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail"
+    },
+    "content_status": 200,
+    "media_type": "image/png",
+    "byte_size": 466706
+  },
+  "unauthorized": {
+    "system/workspace": 401,
+    "system/evaluation": 401,
+    "images/785c1ac8-6017-4c02-84d4-5d4f67ef4142": 401,
+    "/api/v1/images/785c1ac8-6017-4c02-84d4-5d4f67ef4142/content?variant=thumbnail": 401
+  },
+  "real_empty": {
+    "workspace": {
+      "dataset": {
+        "state": "empty_dataset",
+        "images": 0,
+        "available_images": 0,
+        "indexed_images": 0,
+        "vectors": null,
+        "index_id": null,
+        "index_status": "absent",
+        "generation": null
+      },
+      "dependencies": {
+        "postgresql": "healthy",
+        "qdrant": "healthy",
+        "minio": "healthy"
+      },
+      "capabilities": {
+        "text_search": false,
+        "image_search": false,
+        "multimodal": false,
+        "multi_intent": false,
+        "rerank": false,
+        "explanations": false,
+        "agent": false
+      },
+      "rag": {
+        "enabled": false,
+        "configured": false,
+        "streaming": true
+      },
+      "agent": {
+        "enabled": false,
+        "llm_planning": false
+      },
+      "limits": {
+        "top_k": 50,
+        "image_bytes": 20971520
+      }
+    },
+    "evaluation": {
+      "state": "empty",
+      "experiments": [],
+      "skipped": 0
+    }
+  }
+}

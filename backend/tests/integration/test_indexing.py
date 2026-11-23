@@ -12,6 +12,7 @@ from httpx import ASGITransport, AsyncClient
 from sqlalchemy import delete, select
 
 from app.core.config import Settings
+from app.core.container import Services
 from app.db.models import Image, ImageMetadata, IndexingJob, SearchIndex
 from app.db.models.indexing import (
     IdempotencyRecord,
@@ -24,7 +25,6 @@ from app.db.models.indexing import (
 from app.main import create_app
 from app.schemas.ingestion import ImageMetadataInput, JobInput
 from app.services.embeddings.clip_encoder import ClipEncoder
-from app.services.health import Services
 from app.services.indexing.collection_manager import CollectionManager
 from app.services.indexing.consistency import verify_index
 from app.services.indexing.jobs import ingest, job_response, now

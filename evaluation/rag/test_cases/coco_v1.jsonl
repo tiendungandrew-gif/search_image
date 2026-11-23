@@ -1,0 +1,8 @@
+{"query":"a dog outdoors","question":"Những caption nào mô tả chó? Chỉ trích dẫn mô tả có nhắc tới chó; nếu thiếu bằng chứng hãy nói rõ.","language":"vi"}
+{"query":"a dog outdoors","question":"Which captions describe dogs? Quote only evidence mentioning dogs; acknowledge missing evidence.","language":"en"}
+{"query":"people riding bicycles","question":"Những ảnh nào có caption mô tả người đi xe đạp? Trích dẫn bằng chứng liên quan.","language":"vi"}
+{"query":"people riding bicycles","question":"Which images have caption evidence of people riding bicycles? Quote relevant evidence.","language":"en"}
+{"query":"food on a table","question":"Tóm tắt các caption về đồ ăn trên bàn và chỉ rõ ảnh được trích dẫn.","language":"vi"}
+{"query":"food on a table","question":"Summarize caption evidence about food on a table and cite the supporting images.","language":"en"}
+{"query":"a train at a station","question":"Theo caption, các ảnh này mô tả điều gì về tàu hỏa? Nêu rõ khi caption không hỗ trợ.","language":"vi"}
+{"query":"a train at a station","question":"What do the captions say about trains in these images? Acknowledge captions that do not support the question.","language":"en"}

@@ -21,12 +21,14 @@ class RequestContextMiddleware:
         cors_origins: list[str],
         ingestion_timeout: float = 30,
         rag_timeout: float = 6,
+        agent_timeout: float = 16,
     ):
         self.app = app
         self.timeout = timeout
         self.cors_origins = cors_origins
         self.ingestion_timeout = ingestion_timeout
         self.rag_timeout = rag_timeout
+        self.agent_timeout = agent_timeout
 
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if scope["type"] != "http":
@@ -69,11 +71,45 @@ class RequestContextMiddleware:
             await response(scope, receive, tracked_send)
 
         body_size = 0
-        is_upload = scope["path"] == "/api/v1/images" and scope["method"] == "POST"
-        is_search = scope["path"] in {"/api/v1/search", "/api/v1/search/multimodal"}
-        is_rag = scope["path"] in {"/api/v1/rag/explain", "/api/v1/rag/explain/stream"}
+        is_upload = (
+            scope["path"] in {"/api/v1/images", "/api/v1/admin/images/upload"}
+            and scope["method"] == "POST"
+        )
+        is_admin_work = scope["path"].startswith("/api/v1/admin/") and scope["method"] in {
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE",
+        }
+        is_search = scope["path"] in {
+            "/api/v1/search",
+            "/api/v1/search/multimodal",
+            "/api/v1/search/voice",
+        }
+        is_rag = scope["path"] in {
+            "/api/v1/rag/explain",
+            "/api/v1/rag/explain/stream",
+            "/api/v1/search/voice",
+        }
+        is_agent = scope["path"] in {"/api/v1/search/agent", "/api/v1/search/agent/stream"}
         multipart = Headers(scope=scope).get("content-type", "").startswith("multipart/form-data")
-        max_body = 21 * 1024**2 if is_upload or (is_search and multipart) else 65536
+        is_chat_upload = (
+            scope["path"].startswith("/api/v1/chat/conversations/")
+            and scope["path"].endswith("/messages")
+            and scope["method"] == "POST"
+        )
+        is_avatar_upload = scope["path"] == "/api/v1/profile/avatar" and scope["method"] == "POST"
+        max_body = (
+            6 * 1024**2
+            if is_avatar_upload
+            else 11 * 1024**2
+            if is_chat_upload
+            else 21 * 1024**2
+            if is_upload or (is_search and multipart)
+            else 1024**2
+            if scope["path"] == "/api/v1/admin/knowledge"
+            else 65536
+        )
 
         async def bounded_receive():
             nonlocal body_size
@@ -86,13 +122,20 @@ class RequestContextMiddleware:
         try:
             with anyio.fail_after(
                 self.ingestion_timeout
-                if is_upload
+                if is_upload or is_admin_work or is_chat_upload or is_avatar_upload
                 else self.rag_timeout
                 if is_rag
+                else self.agent_timeout
+                if is_agent
                 else self.timeout
             ):
                 length = Headers(scope=scope).get("content-length")
-                if length and (not length.isdigit() or int(length) > max_body):
+                if length is not None and (
+                    len(length) > 20
+                    or not length.isascii()
+                    or not length.isdecimal()
+                    or int(length) > max_body
+                ):
                     raise AppError(413, "PAYLOAD_TOO_LARGE", "Request vượt giới hạn dung lượng")
                 await self.app(scope, bounded_receive, tracked_send)
         except AppError as exc:
@@ -113,6 +156,19 @@ class RequestContextMiddleware:
             elif not complete:
                 raise RuntimeError("response_failed_after_headers") from None
         finally:
+            if is_agent:
+                app = scope.get("app")
+                sink = getattr(getattr(app, "state", None), "agent_http_metrics", None)
+                if sink is not None:
+                    sink.append(
+                        {
+                            "request_id": request_id,
+                            "status_code": status,
+                            "complete": complete,
+                            "complete_response_ms": ((completed_at or perf_counter()) - start)
+                            * 1000,
+                        }
+                    )
             if is_search:
                 app = scope.get("app")
                 sink = getattr(getattr(app, "state", None), "search_metrics", None)
@@ -145,6 +201,10 @@ class RequestContextMiddleware:
                     ),
                     "error_category": state.get("error_category")
                     or (None if complete else "INCOMPLETE"),
+                    "search_mode": state.get("search_trace", {}).get("modality"),
+                    "model_id": state.get("search_trace", {}).get("model_id"),
+                    "index_id": state.get("search_trace", {}).get("index_id"),
+                    "route": state.get("search_trace", {}).get("route"),
                 },
             )
             request_id_context.reset(token)

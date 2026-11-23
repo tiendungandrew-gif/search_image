@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+(node:170807) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [desktop] › e2e/phase10-performance.spec.ts:5:1 › REAL PERF · measured UI timing and lazy network requests (13.2s)
+(node:171442) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [mobile] › e2e/phase10-performance.spec.ts:5:1 › REAL PERF · measured UI timing and lazy network requests (11.2s)
+
+  2 passed (26.4s)

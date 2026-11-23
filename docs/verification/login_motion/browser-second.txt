@@ -1,0 +1,23 @@
+desktop PASS
+mobile PASS
+narrow PASS
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'matrix(0.987728, -0.156187, 0.156187, 0.987728, 0, -3.04311)'
+- 'matrix(0.987641, -0.156735, 0.156735, 0.987641, 0, -2.94774)'
+
+    at file:///home/tts/prj/frontend/test-results/login-motion-check.mjs:23:9 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'matrix(0.987728, -0.156187, 0.156187, 0.987728, 0, -3.04311)',
+  expected: 'matrix(0.987641, -0.156735, 0.156735, 0.987641, 0, -2.94774)',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.4

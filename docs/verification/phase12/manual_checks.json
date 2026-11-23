@@ -1,0 +1,147 @@
+{
+  "scope": "Observed manual checks; commands below were executed, unlike installation examples in the guides",
+  "checks": [
+    {
+      "command": [
+        "backend/.venv/bin/ruff",
+        "check",
+        "backend",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "result": "All checks passed"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/ruff",
+        "format",
+        "--check",
+        "backend",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "result": "189 files already formatted"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "backend/app",
+        "backend/tests",
+        "scripts"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker run --rm --network none --read-only -v /home/tts/prj:/repo:ro -w /repo rhysd/actionlint:1.7.9 -color .github/workflows/quality.yml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "sg",
+        "docker",
+        "-c",
+        "docker run --rm --network none --read-only -v /home/tts/prj:/workspace:ro -w /workspace golang:1.25.3-bookworm make -n deploy-init deploy-build deploy-up deploy-check deploy-status deploy-backup deploy-down"
+      ],
+      "exit_code": 0,
+      "classification": "DRY_RUN_ONLY"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "/tmp/phase12_prepare_benchmark.py"
+      ],
+      "exit_code": 0,
+      "result": "7 actual private images frozen; synthetic classification"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "/tmp/phase12_runtime_audit.py"
+      ],
+      "exit_code": 0,
+      "artifact": "runtime_audit.json",
+      "historical_failed_attempt": "Initial harness used wrong knowledge table names, fixed to entities/entity_relationships; no writes"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "/tmp/phase12_missing_model.py"
+      ],
+      "exit_code": 0,
+      "artifact": "missing_model.json"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "/tmp/phase12_tls_check.py"
+      ],
+      "exit_code": 0,
+      "artifact": "tls_local.json"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "/tmp/phase12_secret_audit.py"
+      ],
+      "exit_code": 0,
+      "artifact": "secret_audit.json"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "scripts/run_local.py",
+        "--env-file",
+        ".env.phase12",
+        "--",
+        "backend/.venv/bin/python",
+        "-m",
+        "app.cli.evaluation",
+        "--base-url",
+        "http://127.0.0.1:8088",
+        "--results",
+        "evaluation/results/phase12",
+        "benchmark",
+        "--snapshot",
+        "evaluation/datasets/manifests/phase12_synthetic_v1.json",
+        "--queries",
+        "evaluation/queries/phase12_synthetic_v1.jsonl",
+        "--config",
+        "evaluation/experiments/phase12_proxy_fast.json"
+      ],
+      "exit_code": 0,
+      "experiment_id": "20261108T032218_benchmark_d385b66936"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "/tmp/phase12_restore_guards.py"
+      ],
+      "exit_code": 0,
+      "artifact": "restore_guards.json"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "/tmp/phase12_component_comparison.py"
+      ],
+      "exit_code": 0,
+      "artifact": "component_comparison.json"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

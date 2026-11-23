@@ -13,7 +13,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.3,<10", "pytest-asyncio>=0.26,<2", "ruff>=0.11,<1"]
-ml = ["torch>=2.6,<3", "transformers>=4.57,<5", "safetensors>=0.6,<1"]
+ml = ["torch>=2.6,<3", "transformers>=4.57,<5", "safetensors>=0.6,<1", "py3langid==0.4.0"]
 evaluation = ["matplotlib>=3.10,<4"]
 
 [tool.uv.sources]

@@ -1,0 +1,9 @@
+{
+  "host_platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",
+  "host_python": "3.12.3",
+  "node": "v22.23.4",
+  "docker_server": "29.8.0",
+  "compose": "5.5.1",
+  "backend_pip_check": "",
+  "main_container_images": "[{\"ID\":\"sha256:73edf2ef007aab8d0bd5e672eac7025a230c0b1b75c8ec1a55792c0cfcaa2424\",\"ContainerName\":\"ai-image-search-frontend-1\",\"Repository\":\"\",\"Tag\":\"\",\"Platform\":\"unknown\",\"Size\":0},{\"ID\":\"sha256:fec00cc671fceeff5f66bcd5613635dda045cea43d778355ee09678eb4540215\",\"ContainerName\":\"ai-image-search-backend-1\",\"Repository\":\"ai-image-search-backend\",\"Tag\":\"latest\",\"Platform\":\"linux/amd64\",\"Size\":2016566236,\"Created\":\"2026-11-06T22:57:06.333287002+07:00\",\"LastTagTime\":\"2026-11-06T15:57:06.514473117Z\"},{\"ID\":\"sha256:9bfc89f9914fc14876a88c05270685921a55b8877b254a98bcc1cc2f0a424cd2\",\"ContainerName\":\"ai-image-search-qdrant-1\",\"Repository\":\"qdrant/qdrant\",\"Tag\":\"v1.20.0\",\"Platform\":\"linux/amd64\",\"Size\":276371084,\"Created\":\"2026-10-21T19:12:49.138458511Z\",\"LastTagTime\":\"2026-11-03T05:23:38.856954159Z\"},{\"ID\":\"sha256:e8a07d2c7579b038938cdba6c539e580e5001caf9ea203d397b5cc83e76bd938\",\"ContainerName\":\"ai-image-search-postgres-1\",\"Repository\":\"postgres\",\"Tag\":\"16.15-bookworm\",\"Platform\":\"linux/amd64\",\"Size\":616065695,\"Created\":\"2026-10-28T01:31:27.096067881Z\",\"LastTagTime\":\"2026-11-03T05:23:50.748083988Z\"},{\"ID\":\"sha256:a743c649fc9485f8daf80f07fa3ec01a2f3d5fbeccb858f09e7ef383bd04c372\",\"ContainerName\":\"ai-image-search-minio-1\",\"Repository\":\"\",\"Tag\":\"\",\"Platform\":\"unknown\",\"Size\":0},{\"ID\":\"sha256:59376596e65bfac90ff602de9628c00380b9d5859571604238e5ae53915c3933\",\"ContainerName\":\"ai-image-search-indexing-worker-1\",\"Repository\":\"\",\"Tag\":\"\",\"Platform\":\"unknown\",\"Size\":0}]"
+}

@@ -1,0 +1,110 @@
+name: ${QA_PROJECT_NAME:?Run python3 scripts/qa_tools/init_qa_env.py}
+x-qa: &qa
+  image: image-search-qa/backend:local
+  env_file: .env.qa
+  environment:
+    DEBUG: "false"
+    AUTH_LEGACY_TOKENS_ENABLED: "true"
+    PYTHONPATH: /srv/backend:/srv/scripts
+  networks: [qa-data, qa-web]
+  volumes:
+    - ./backend/app:/srv/backend/app:ro
+    - ./backend/alembic:/srv/backend/alembic:ro
+    - ./backend/tests:/srv/backend/tests:ro
+    - ./scripts:/srv/scripts:ro
+    - ./evaluation:/srv/evaluation:ro
+    - ./.cache/clip:/models/clip:ro
+    - ./.cache/qa/fixtures:/qa-fixtures
+    - ./.cache/qa/results:/qa-results
+services:
+  qa-postgres:
+    image: postgres:16.15-bookworm
+    environment:
+      POSTGRES_DB: image_search_qa
+      POSTGRES_USER: image_search_qa
+      POSTGRES_PASSWORD: ${QA_POSTGRES_PASSWORD:?Initialize QA credentials}
+    volumes: [qa_pg:/var/lib/postgresql/data]
+    networks: [qa-data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U image_search_qa -d image_search_qa']
+      interval: 2s
+      timeout: 2s
+      retries: 30
+  qa-qdrant:
+    image: qdrant/qdrant:v1.20.0
+    environment:
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:?Initialize QA credentials}
+      QDRANT__TELEMETRY_DISABLED: "true"
+    volumes: [qa_vectors:/qdrant/storage]
+    networks: [qa-data]
+    healthcheck:
+      test: [CMD, /bin/bash, -ec, 'exec 3<>/dev/tcp/127.0.0.1/6333; printf "GET /healthz HTTP/1.0\r\n\r\n" >&3; IFS= read -r line <&3; [[ "$$line" == *"200"* ]]']
+      interval: 2s
+      timeout: 2s
+      retries: 30
+  qa-minio:
+    image: ai-image-search/minio:2025-09-07
+    build:
+      context: .
+      dockerfile: infra/docker/minio.Dockerfile
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:?Initialize QA credentials}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:?Initialize QA credentials}
+      MINIO_BROWSER: "off"
+    volumes: [qa_objects:/data]
+    networks: [qa-data]
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1:9000/minio/health/live]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+  qa-api:
+    <<: *qa
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      args:
+        INSTALL_ML: ${QA_INSTALL_ML:-false}
+        INSTALL_EVALUATION: "true"
+    environment:
+      DEBUG: "false"
+      AUTH_LEGACY_TOKENS_ENABLED: "true"
+      PYTHONPATH: /srv/backend:/srv/scripts
+      SEARCH_ENABLED: ${QA_SEARCH_ENABLED:-false}
+      AGENT_ENABLED: ${QA_AGENT_ENABLED:-false}
+    ports: ["127.0.0.1:8011:8000"]
+    depends_on:
+      qa-postgres: {condition: service_healthy}
+      qa-qdrant: {condition: service_healthy}
+      qa-minio: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/live', timeout=2)"]
+      interval: 2s
+      timeout: 2s
+      retries: 45
+      start_period: 30s
+  qa-tests:
+    <<: *qa
+    profiles: [tools]
+    command: [pytest, backend/tests/unit, backend/tests/security, backend/tests/reliability, -q]
+  qa-frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    environment:
+      VITE_API_BASE_URL: /api/v1
+      VITE_PROXY_TARGET: http://qa-api:8000
+    ports: ["127.0.0.1:5175:5173"]
+    networks: [qa-web]
+    volumes:
+      - ./frontend/src:/srv/frontend/src:ro
+      - ./frontend/index.html:/srv/frontend/index.html:ro
+    depends_on:
+      qa-api: {condition: service_healthy}
+networks:
+  qa-data: {internal: true}
+  qa-web: {}
+volumes:
+  qa_pg: {}
+  qa_vectors: {}
+  qa_objects: {}

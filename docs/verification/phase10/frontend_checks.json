@@ -1,0 +1,46 @@
+{
+  "recorded_from": "completed tool execution 94009; no frontend source changes after passing",
+  "unit_tests": 40,
+  "unit_files": 9,
+  "typecheck_exit": 0,
+  "lint_exit": 0,
+  "build_exit": 0,
+  "build_modules": 54,
+  "bundle_sizes": [
+    {
+      "file": "index.html",
+      "bytes": 601,
+      "gzip_9_bytes": 377
+    },
+    {
+      "file": "assets/index-C2LTrKi0.css",
+      "bytes": 22234,
+      "gzip_9_bytes": 5795
+    },
+    {
+      "file": "assets/ImageDetailDialog-DXYA89Mr.js",
+      "bytes": 3010,
+      "gzip_9_bytes": 1413
+    },
+    {
+      "file": "assets/ExplanationPanel-xCswIIse.js",
+      "bytes": 3590,
+      "gzip_9_bytes": 1777
+    },
+    {
+      "file": "assets/AgentResults-2edwNj25.js",
+      "bytes": 3497,
+      "gzip_9_bytes": 1672
+    },
+    {
+      "file": "assets/index-BkVVmcKr.js",
+      "bytes": 272417,
+      "gzip_9_bytes": 84982
+    },
+    {
+      "file": "assets/EvaluationPage-DTQ8D9Sj.js",
+      "bytes": 3151,
+      "gzip_9_bytes": 1548
+    }
+  ]
+}

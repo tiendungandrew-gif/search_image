@@ -1,0 +1,4 @@
+experiment_id,name,status,profile,concurrency,attempted,successful,failed,p50_ms,p90_ms,p95_ms,requests_per_second,error_rate,artifact
+20261106T051238_agent_62f3a5e779,agent,measured,,1,16,16,0,,,,,,evaluation/results/phase09/20261106T051238_agent_62f3a5e779/result.json
+20261106T071208_agent_ff7910da71,agent,measured,,1,16,16,0,,,,,,evaluation/results/phase09/20261106T071208_agent_ff7910da71/result.json
+20261106T071236_benchmark_7f9efe9e00,phase08_coco_fast,measured,fast,1,500,500,0,118.42669299994668,135.03121100006865,140.9790879999946,7.928088425018527,0.0,evaluation/results/phase09/20261106T071236_benchmark_7f9efe9e00/result.json

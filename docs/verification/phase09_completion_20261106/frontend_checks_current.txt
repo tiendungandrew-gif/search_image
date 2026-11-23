@@ -1,0 +1,35 @@
+e2e/agent.spec.ts 66ms
+
+> ai-image-search-frontend@0.3.0 test
+> vitest run --run
+
+
+ RUN  v4.1.12 /home/tts/prj/frontend
+
+
+ Test Files  5 passed (5)
+      Tests  21 passed (21)
+   Start at  23:41:18
+   Duration  3.20s (transform 1.06s, setup 2.06s, import 1.22s, tests 1.83s, environment 4.98s)
+
+
+> ai-image-search-frontend@0.3.0 typecheck
+> tsc -b
+
+
+> ai-image-search-frontend@0.3.0 lint
+> eslint . --max-warnings 0
+
+
+> ai-image-search-frontend@0.3.0 build
+> tsc -b && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 38 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.60 kB │ gzip:  0.38 kB
+dist/assets/index-DFaqx88H.css   15.55 kB │ gzip:  4.50 kB
+dist/assets/index-D42vHxVu.js   253.78 kB │ gzip: 79.41 kB
+✓ built in 1.66s

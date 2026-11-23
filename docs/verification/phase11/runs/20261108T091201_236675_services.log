@@ -1,0 +1,13 @@
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-97c15fe5fd48 Creating 
+ Container phase11-qa-2c8ad1b9345d-qa-tests-run-97c15fe5fd48 Created 
+...............                                                          [100%]
+=============================== warnings summary ===============================
+tests/integration/test_real_services.py: 2 warnings
+tests/integration/test_qa_services.py: 7 warnings
+tests/integration/test_qa_worker_process.py: 1 warning
+tests/integration/test_access_control.py: 4 warnings
+  /srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+    self.client = AsyncQdrantClient(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+15 passed, 14 warnings in 39.63s

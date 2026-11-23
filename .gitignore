@@ -1,6 +1,10 @@
 .env
 .env.*
 !.env.example
+!.env.deploy.example
+backups/
+config/environments/*.env
+config/environments/archive/*.env
 .venv/
 backend/.venv/
 __pycache__/
@@ -15,8 +19,13 @@ coverage/
 frontend/test-results/
 frontend/playwright-report/
 *.log
+!docs/verification/phase11/**/*.log
+!docs/verification/phase12/**/*.log
+!docs/verification/restructure/**/*.log
 .tools/
 .DS_Store
 .cache/
 datasets/sample/*
 !datasets/sample/.gitkeep
+datasets/coco_phase08_*/
+datasets/landmarks_phase09_*/

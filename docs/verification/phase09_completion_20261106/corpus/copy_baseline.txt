@@ -1,0 +1,10 @@
+{
+  "job_id": "3f92489a-c5ca-410e-a06d-d6499f32685e",
+  "status": "queued",
+  "status_url": "/api/v1/index/jobs/3f92489a-c5ca-410e-a06d-d6499f32685e"
+}
+
+ Container ai-image-search-indexing-worker-run-6e2a412ce0b9 Creating 
+ Container ai-image-search-indexing-worker-run-6e2a412ce0b9 Created 
+/srv/backend/app/integrations/qdrant.py:8: UserWarning: Api key is used with an insecure connection.
+  self.client = AsyncQdrantClient(

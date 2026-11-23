@@ -1,0 +1,29 @@
+
+Running 8 tests using 1 worker
+
+  ✓  1 [desktop] › consumer-e2e/motion.spec.ts:5:1 › motion: gallery, density, image navigation and reduced motion (10.5s)
+  ✓  2 [desktop] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (28.4s)
+  ✓  3 [mobile] › consumer-e2e/motion.spec.ts:5:1 › motion: gallery, density, image navigation and reduced motion (6.1s)
+  ✓  4 [mobile] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (24.3s)
+  ✓  5 [narrow] › consumer-e2e/motion.spec.ts:5:1 › motion: gallery, density, image navigation and reduced motion (6.6s)
+  ✓  6 [narrow] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (23.8s)
+  ✓  7 [firefox] › consumer-e2e/motion.spec.ts:5:1 › motion: gallery, density, image navigation and reduced motion (11.3s)
+  ✓  8 [firefox] › consumer-e2e/search.spec.ts:57:1 › consumer gallery · real scoped search, topic selection and accessible details (37.0s)
+
+  8 passed (2.7m)
+(node:472274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:473234) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:475143) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:475853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:477431) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:478062) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:479605) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:480629) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

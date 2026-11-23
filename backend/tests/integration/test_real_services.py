@@ -14,9 +14,9 @@ from sqlalchemy import create_engine, inspect
 
 from alembic import command
 from app.core.config import Settings
+from app.core.container import Services
 from app.db.base import Base
 from app.main import create_app
-from app.services.health import Services
 
 
 @asynccontextmanager

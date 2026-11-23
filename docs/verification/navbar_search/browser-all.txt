@@ -1,0 +1,17 @@
+
+Running 4 tests using 1 worker
+
+  ✓  1 [desktop] › navbar-e2e/search.spec.ts:57:1 › navbar search · autocomplete, keyboard, photos, filters and roles (17.9s)
+  ✓  2 [mobile] › navbar-e2e/search.spec.ts:57:1 › navbar search · autocomplete, keyboard, photos, filters and roles (16.5s)
+  ✓  3 [narrow] › navbar-e2e/search.spec.ts:57:1 › navbar search · autocomplete, keyboard, photos, filters and roles (16.4s)
+  ✓  4 [firefox] › navbar-e2e/search.spec.ts:57:1 › navbar search · autocomplete, keyboard, photos, filters and roles (21.6s)
+
+  4 passed (1.3m)
+(node:246828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:248026) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:249038) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:250018) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

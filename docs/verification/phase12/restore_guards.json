@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "cases": [
+    {
+      "command": [
+        "python3",
+        "scripts/deploy.py",
+        "--env-file",
+        ".env.phase12",
+        "--evidence-dir",
+        "docs/verification/phase12/runs",
+        "restore",
+        "--backup",
+        "backups/20261108T023457_05fd3337"
+      ],
+      "exit_code": 1,
+      "expected_error_code": "RESTORE_IN_PLACE_NOT_ALLOWED_USE_NEW_PROJECT",
+      "status": "EXPECTED_REJECTION_VERIFIED",
+      "output": "{\"status\": \"failed\", \"error_type\": \"ValueError\", \"error_code\": \"RESTORE_IN_PLACE_NOT_ALLOWED_USE_NEW_PROJECT\", \"action\": \"Check private deployment operation logs\"}",
+      "private_operation_log": null
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/deploy.py",
+        "--env-file",
+        ".env.phase12-restore",
+        "--evidence-dir",
+        "docs/verification/phase12/runs",
+        "restore",
+        "--backup",
+        "backups/20261108T023457_05fd3337"
+      ],
+      "exit_code": 1,
+      "expected_error_code": "RESTORE_REQUIRES_EMPTY_DESTINATION",
+      "status": "EXPECTED_REJECTION_VERIFIED",
+      "output": "Container image-search-phase12-restore-postgres-1 Running \n Container image-search-phase12-restore-minio-1 Running \n Container image-search-phase12-restore-qdrant-1 Running \n Container image-search-phase12-restore-postgres-1 Waiting \n Container image-search-phase12-restore-minio-1 Waiting \n Container image-search-phase12-restore-qdrant-1 Waiting \n Container image-search-phase12-restore-minio-1 Healthy \n Container image-search-phase12-restore-postgres-1 Healthy \n Container image-search-phase12-restore-qdrant-1 Healthy \n{\"status\": \"failed\", \"error_type\": \"RuntimeError\", \"error_code\": \"COMMAND_FAILED_SEE_OPERATION_LOG\", \"action\": \"Check private deployment operation logs\"}",
+      "private_operation_log": "docs/verification/phase12/runs/20261108T033557_892496_image-search-phase12-restore.log"
+    }
+  ]
+}

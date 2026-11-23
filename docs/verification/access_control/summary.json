@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "release": "access-control-v3",
+  "backend": {
+    "unit_security_reliability_passed": 254,
+    "service_integration_passed": 16,
+    "real_clip_passed": 1
+  },
+  "frontend": {
+    "unit_passed": 48,
+    "typecheck": "passed",
+    "eslint": "passed",
+    "build": "passed"
+  },
+  "browser": {
+    "isolated_accounts_desktop_mobile_passed": 2,
+    "main_readonly_desktop_mobile_passed": 2,
+    "deployment_four_projects_passed": 4,
+    "mock_error_cases_passed": 4,
+    "axe_included": true
+  },
+  "main_images": 513,
+  "deployment_images": 7,
+  "qa_removed": true,
+  "human_quality_labels": "pending_as_previously_requested",
+  "urls": {
+    "main": "http://localhost:5173",
+    "deployment": "http://127.0.0.1:8088"
+  },
+  "private_login_files": [
+    ".cache/auth/admin-login.json",
+    ".cache/auth/deployment-admin-login.json"
+  ]
+}

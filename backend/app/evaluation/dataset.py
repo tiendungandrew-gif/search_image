@@ -44,7 +44,7 @@ def case_tree(case):
     ).constraints
 
 
-def validate_dataset(base_url, token, index_report, cache):
+def validate_dataset(base_url, token, index_report, cache, dataset_id="phase07_current_index"):
     ids = json.loads(Path(index_report).read_text())["image_ids"]
     if not ids or len(ids) != len(set(ids)):
         raise ValueError("invalid_corpus_ids")
@@ -106,7 +106,7 @@ def validate_dataset(base_url, token, index_report, cache):
     if len({row["sha256"] for row in images}) != len(images):
         raise ValueError("duplicate_logical_images")
     result = {
-        "dataset_id": "phase07_current_index",
+        "dataset_id": dataset_id,
         "version": "1",
         "active": active,
         "images": images,

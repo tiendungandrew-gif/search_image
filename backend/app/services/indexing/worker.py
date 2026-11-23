@@ -1,19 +1,19 @@
 import asyncio
 import contextlib
-import hashlib
 import logging
 import random
+from collections import deque
 from datetime import timedelta
 from time import perf_counter
 from uuid import uuid4
 
-import numpy as np
 from sqlalchemy import or_, select, update
 
 from app.core.exceptions import AppError
 from app.db.models import EmbeddingModel, Image, ImageMetadata, SearchIndex
 from app.db.models.indexing import ImageEmbedding, ImageTag, JobAttempt, JobItem
 from app.services.embeddings.base import ImageEncoder
+from app.services.embeddings.vector_utils import vector_hash as vector_hash
 from app.services.indexing.collection_manager import CollectionManager
 from app.services.indexing.jobs import accept_original, now, summarize
 from app.services.ingestion.storage import get_original
@@ -26,10 +26,6 @@ def retry_delay(attempt):
     return min(60, 2**attempt) + random.uniform(0, 1)
 
 
-def vector_hash(value):
-    return hashlib.sha256(np.asarray(value, dtype="<f4").tobytes()).hexdigest()
-
-
 class Worker:
     def __init__(self, services, encoder: ImageEncoder, index_id):
         self.services = services
@@ -38,7 +34,9 @@ class Worker:
         self.owner = str(uuid4())
         self.settings = services.settings
         self.manager = CollectionManager(services)
-        self.batch_metrics = []
+        self.batch_metrics = deque(maxlen=10000)
+        self.total_batch_images = 0
+        self.total_batches = 0
 
     async def configuration(self):
         async with self.services.database.sessions() as session:
@@ -216,6 +214,8 @@ class Worker:
                         metadata_revision=image.metadata_revision,
                     )
                     session.add(embedding)
+                embedding.source_sha256 = receipt["source_sha256"]
+                embedding.metadata_revision = receipt["metadata_revision"]
                 embedding.status = "ready"
                 embedding.vector_sha256 = receipt["vector_sha256"]
                 embedding.verified_at = now()
@@ -265,6 +265,7 @@ class Worker:
         images = []
         payloads = []
         prep_ms = 0
+        encoding = None
         task = asyncio.create_task(self.heartbeat(items))
         try:
             for item in items:
@@ -318,7 +319,20 @@ class Worker:
             for item in valid:
                 await self.stage(item, "embed")
             mark = perf_counter()
-            vectors = await asyncio.to_thread(self.encoder.encode_images, images)
+
+            def encode_and_close():
+                try:
+                    return self.encoder.encode_images(images)
+                finally:
+                    # The thread owns its inputs even during event-loop shutdown.
+                    for image in images:
+                        image.close()
+
+            encoding = asyncio.create_task(asyncio.to_thread(encode_and_close))
+            encoding.add_done_callback(
+                lambda completed: None if completed.cancelled() else completed.exception()
+            )
+            vectors = await asyncio.shield(encoding)
             embed_ms = (perf_counter() - mark) * 1000
             for item in valid:
                 await self.stage(item, "vector")
@@ -346,6 +360,8 @@ class Worker:
                 }
                 await self.finish(item, receipt=receipt, metrics=metrics)
             self.batch_metrics.append(metrics)
+            self.total_batch_images += metrics["batch_size"]
+            self.total_batches += 1
             logger.info(
                 "index_batch_complete",
                 extra={
@@ -366,8 +382,10 @@ class Worker:
             task.cancel()
             with contextlib.suppress(asyncio.CancelledError):
                 await task
-            for image in images:
-                image.close()
+
+            if encoding is None:
+                for image in images:
+                    image.close()
 
     async def run(self, once=False):
         await self.configuration()

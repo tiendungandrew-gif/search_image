@@ -1,8 +1,9 @@
 from fastapi import APIRouter, Depends, Request
 
 from app import __version__
-from app.core.auth import require_read_access
+from app.core.auth import require_diagnostics_access, require_read_access
 from app.schemas.health import SystemInfo
+from app.schemas.workspace import EvaluationSummary, WorkspaceSnapshot
 
 router = APIRouter(prefix="/system", tags=["System"], dependencies=[Depends(require_read_access)])
 
@@ -15,7 +16,39 @@ async def system_info(request: Request) -> SystemInfo:
     )
 
 
-@router.get("/search-runtime", summary="Private research profiling; no credentials or query data")
+@router.get(
+    "/workspace",
+    response_model=WorkspaceSnapshot,
+    summary="Read-only dataset, capabilities and limits for the UI",
+)
+async def workspace(request: Request):
+    from app.services.workspace import workspace_snapshot
+
+    return await workspace_snapshot(request)
+
+
+@router.get(
+    "/evaluation",
+    dependencies=[Depends(require_diagnostics_access)],
+    response_model=EvaluationSummary,
+    summary="Private, allowlisted evaluation aggregates",
+)
+async def evaluation(request: Request):
+    import asyncio
+    from pathlib import Path
+
+    from app.services.workspace import evaluation_summaries
+
+    return await asyncio.to_thread(
+        evaluation_summaries, Path(request.app.state.settings.evaluation_results_dir)
+    )
+
+
+@router.get(
+    "/search-runtime",
+    dependencies=[Depends(require_diagnostics_access)],
+    summary="Private research profiling; no credentials or query data",
+)
 async def search_runtime(request: Request):
     import asyncio
     import os

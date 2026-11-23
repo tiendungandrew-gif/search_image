@@ -1,0 +1,226 @@
+[
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/checks/check_deployment_browser.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/checks/verify_deployment.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/checks/verify_services.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/data/create_deployment_fixtures.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/data/prepare_rag_corpus.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/deploy.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/evaluation/run_evaluation_suite.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/init_env.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/qa.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/run_local.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/verification/verify_agent_fixtures.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/verification/verify_containers.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/verification/verify_indexing.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/verification/verify_public_agent.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/verification/verify_rag_fallback.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "backend/.venv/bin/python",
+      "scripts/verification/verify_search.py",
+      "--help"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/checks/check_environment.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/checks/verify_services.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/data/index_sample_dataset.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/evaluation/benchmark_search.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/evaluation/run_evaluation_container.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/evaluation/verify_evaluation.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/runtime/start_backend.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/verification/verify_advanced_search.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/verification/verify_agent.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/verification/verify_index.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/verification/verify_rag.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "bash",
+      "-n",
+      "scripts/verification/verify_search.sh"
+    ],
+    "exit_code": 0
+  }
+]

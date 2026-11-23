@@ -29,6 +29,9 @@ class JSONFormatter(logging.Formatter):
             "stage",
             "attempt_no",
             "batch_size",
+            "search_mode",
+            "model_id",
+            "route",
         ):
             if hasattr(record, key):
                 payload[key] = getattr(record, key)

@@ -1,0 +1,6 @@
+{
+  "sha256": "0b5756f59e5f664967b3e9d6c2a5129ae6f452f8fc237a9f89e1ec8d9dfc4b1c",
+  "files": 341,
+  "archive": "evaluation/results/restructure/_sources/0b5756f59e5f664967b3e9d6c2a5129ae6f452f8fc237a9f89e1ec8d9dfc4b1c.tar.gz",
+  "scope": "backend/frontend/scripts/workers/infra/evaluation source and locks; excludes results/caches/private env"
+}

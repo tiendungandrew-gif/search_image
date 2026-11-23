@@ -1,0 +1,21 @@
+
+> ai-image-search-frontend@0.3.0 build
+> tsc -b && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 84 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.60 kB │ gzip:  0.39 kB
+dist/assets/index-CAO1DncZ.css              87.24 kB │ gzip: 17.32 kB
+dist/assets/AccountPage-Vp17K6oX.js          2.02 kB │ gzip:  0.95 kB
+dist/assets/DatasetStatus-CyjAkxGu.js        2.73 kB │ gzip:  1.12 kB
+dist/assets/EvaluationPage-DT5cWEpu.js       3.22 kB │ gzip:  1.59 kB
+dist/assets/ImageDetailDialog-Bto-bZML.js    3.33 kB │ gzip:  1.62 kB
+dist/assets/AgentResults-DP-lDQq8.js         3.61 kB │ gzip:  1.74 kB
+dist/assets/ExplanationPanel-BhC_t-8E.js     3.65 kB │ gzip:  1.83 kB
+dist/assets/OperatorWorkspace-D2v4s56u.js    6.55 kB │ gzip:  2.73 kB
+dist/assets/AdminWorkspace-Cf8eV-Yo.js      27.91 kB │ gzip:  7.73 kB
+dist/assets/index-uT6mOap3.js              304.28 kB │ gzip: 95.14 kB
+✓ built in 2.84s

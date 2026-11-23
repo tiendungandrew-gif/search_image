@@ -1,0 +1,36 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [desktop] › travel-e2e/search.spec.ts:57:1 › travel theme · hotel vocabulary, topics, real scoped search and roles (12.6s)
+
+
+  1) [desktop] › travel-e2e/search.spec.ts:57:1 › travel theme · hotel vocabulary, topics, real scoped search and roles 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      174 |         .evaluate((img) => (img as HTMLImageElement).naturalWidth),
+      175 |     )
+    > 176 |     .toBeGreaterThan(0);
+          |      ^
+      177 |   await expect(
+      178 |     page.getByText("Ảnh resort minh họa · tạo bằng AI", { exact: true }),
+      179 |   ).toBeVisible();
+        at /home/tts/prj/frontend/travel-e2e/search.spec.ts:176:6
+
+    Error Context: test-results/search-travel-theme-·-hote-22114-eal-scoped-search-and-roles-desktop/error-context.md
+
+  1 failed
+    [desktop] › travel-e2e/search.spec.ts:57:1 › travel theme · hotel vocabulary, topics, real scoped search and roles 
+(node:500761) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+npm notice
+npm notice New major version of npm available! 11.21.1 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
