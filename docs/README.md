@@ -18,6 +18,8 @@ Bắt đầu từ [bàn giao hiện tại](bao_cao_nghiem_thu/FINAL_HANDOVER.md)
 
 ## Điểm vào thường dùng
 
+- [PRD — yêu cầu sản phẩm](architecture/PRD.md) và [SAD — thiết kế kiến trúc](architecture/SAD.md): bản 2.0 đối chiếu source, có tiêu chí nghiệm thu và truy vết yêu cầu.
+
 - [Chạy development trên Linux](operations/SETUP.md), [workflow phát triển](operations/DEVELOPMENT.md).
 - [Triển khai](operations/DEPLOYMENT_GUIDE.md), [cấu hình](operations/CONFIGURATION_REFERENCE.md), [thêm ảnh](operations/DATASET_IMPORT_GUIDE.md).
 - [Kiến trúc cuối](architecture/FINAL_SYSTEM_ARCHITECTURE.md), [API](architecture/API_SPECIFICATION.md), [database](architecture/DATABASE_DESIGN.md).
