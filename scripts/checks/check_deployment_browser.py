@@ -29,7 +29,15 @@ def main():
     )
     if d.cfg.get("AUTH_LEGACY_TOKENS_ENABLED", "false") != "true":
         env["DEPLOY_LOGIN_FILE"] = str((ROOT / args.login_file).resolve())
-    command = ["npm", "exec", "playwright", "--", "test", "--config", "playwright.deploy.config.ts"]
+    command = [
+        "npm",
+        "exec",
+        "playwright",
+        "--",
+        "test",
+        "--config",
+        "tests/e2e/config/deploy.config.ts",
+    ]
     if args.project:
         command += ["--project", args.project]
     result = subprocess.run(

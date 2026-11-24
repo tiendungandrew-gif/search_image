@@ -1,4 +1,4 @@
-"""Private framed decoder process; reuse đúng decode function của Prompt04."""
+"""Private framed decoder process; reuse đúng decode function của Phase 04."""
 
 import json
 import math

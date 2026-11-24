@@ -1,6 +1,6 @@
 # Kho tri thức quan hệ
 
-Prompt 02 đã thiết kế ba bảng nhưng runtime trước Prompt 09 chưa tạo chúng. Migration cộng thêm `20261106_agent_knowledge` (parent `928b88dc3f68`) hiện thực ba bảng, không sửa/xóa dữ liệu ảnh hoặc active index. Tổng schema runtime sau migration: 16 bảng; thiết kế đầy đủ các phase sau vẫn là mục tiêu.
+Phase 02 đã thiết kế ba bảng nhưng runtime trước Phase 09 chưa tạo chúng. Migration cộng thêm `20261106_agent_knowledge` (parent `928b88dc3f68`) hiện thực ba bảng, không sửa/xóa dữ liệu ảnh hoặc active index. Tổng schema runtime sau migration: 16 bảng; thiết kế đầy đủ các phase sau vẫn là mục tiêu.
 
 ## Schema runtime
 

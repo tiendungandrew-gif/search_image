@@ -1,4 +1,4 @@
-# Kết quả thí nghiệm Prompt07
+# Kết quả thí nghiệm Phase 07
 
 Các số liệu được tổng hợp từ immutable experiments tại `evaluation/results/phase07/`, mỗi experiment có config/provenance/source archive và raw result. Không ghi đè Phase05/06 outputs. JSON/CSV/Markdown/PNG/SVG đã được sinh từ các lượt chạy thực.
 

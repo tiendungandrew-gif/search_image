@@ -29,3 +29,6 @@ datasets/sample/*
 !datasets/sample/.gitkeep
 datasets/coco_phase08_*/
 datasets/landmarks_phase09_*/
+
+# Local imported corpus and generated import artifacts
+datasets/approved_csv_v1/

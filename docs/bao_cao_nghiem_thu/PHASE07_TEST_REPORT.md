@@ -1,8 +1,8 @@
-# Báo cáo Prompt07 — Evaluation, benchmarking và optimization
+# Báo cáo Phase 07 — Evaluation, benchmarking và optimization
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-Ngày thực hiện: 04/11/2026. Phase07 có framework/annotation/measurement deliverables; **semantic quality gate chưa được nghiệm thu khi chưa có human labels**. Người dùng đã yêu cầu tạo công cụ gán nhãn trước. Không bắt đầu Prompt08.
+Ngày thực hiện: 04/11/2026. Phase07 có framework/annotation/measurement deliverables; **semantic quality gate chưa được nghiệm thu khi chưa có human labels**. Người dùng đã yêu cầu tạo công cụ gán nhãn trước. Không bắt đầu Phase 08.
 
 ## A. Tóm tắt triển khai
 
@@ -89,9 +89,9 @@ Không có bằng chứng quality-versus-latency winner khi chưa có human qrel
 
 Human semantic labels/quality gates, relevant large corpus, parser/translation accuracy, repeated representative stress, CUDA và cache-cold working set còn mở. Public samples có thể overlap pretraining, chưa audit.28 cases ít và same family translations có correlation, không đủ generalization. Exact hash dedup không bảo đảm loại near duplicates. Không claim toàn Phase07 research quality complete khi thiếu labels; tool/workflow đã chuẩn bị để người dùng tiếp tục annotation.
 
-## M. Prompt08 readiness
+## M. Phase 08 readiness
 
-Core có stable image IDs, private content URLs, source/license/dimension metadata, optional captions/tags và typed assessments. Profiling xác nhận0/10 captions và0/10 tagged images, chưa đủ evidence mô tả cho grounded explanations; semantic relevance/constraint verification còn giới hạn. RAG phải dùng evidence thật, không invent captions hoặc coi UNKNOWN là truth; latency budget cần đo riêng generation. Chưa triển khai RAG/Agent/multi-hop, không tự sang Prompt08.
+Core có stable image IDs, private content URLs, source/license/dimension metadata, optional captions/tags và typed assessments. Profiling xác nhận0/10 captions và0/10 tagged images, chưa đủ evidence mô tả cho grounded explanations; semantic relevance/constraint verification còn giới hạn. RAG phải dùng evidence thật, không invent captions hoặc coi UNKNOWN là truth; latency budget cần đo riêng generation. Chưa triển khai RAG/Agent/multi-hop, không tự sang Phase 08.
 
 ## Checklist nghiệm thu cuối
 
@@ -106,7 +106,7 @@ Core có stable image IDs, private content URLs, source/license/dimension metada
 - [ ] Semantic Recall/Precision/MRR/nDCG, constraint quality và VI/EN comparisons trên nhãn đã review.
 - [ ] Quality ablation/paired confidence intervals, quality–latency/model selection và corpus đủ đại diện.
 
-**Kết luận:** đã bàn giao phần triển khai và thực nghiệm khả thi của Prompt07; toàn bộ research quality gate chưa được nghiệm thu khi chưa có human labels. Không bắt đầu Prompt08. Báo cáo chi tiết và artifact links tại [EXPERIMENT_RESULTS](../research/EXPERIMENT_RESULTS.md); bước tiếp theo thuộc Prompt07 là dùng công cụ gán nhãn rồi chạy lại quality evaluation.
+**Kết luận:** đã bàn giao phần triển khai và thực nghiệm khả thi của Phase 07; toàn bộ research quality gate chưa được nghiệm thu khi chưa có human labels. Không bắt đầu Phase 08. Báo cáo chi tiết và artifact links tại [EXPERIMENT_RESULTS](../research/EXPERIMENT_RESULTS.md); bước tiếp theo thuộc Phase 07 là dùng công cụ gán nhãn rồi chạy lại quality evaluation.
 
 [Kiểm tra bàn giao cuối](../verification/phase07/final_checks.json) ghi counts, readiness, source fingerprint/archive và kiểm tra secrets. [Danh sách source thay đổi so với Phase06](../verification/phase07/source_changes.json):42 tệp thêm,16 tệp sửa,không tệp nào bị xóa; fingerprint194 source/config files, CLIP encoder/ingestion decoder giữ nguyên. Tài liệu và results được giữ riêng; Git chưa có commit. Link/JSON/traceability/11 structural Mermaid checks đã qua, không có tuyên bố render mới vì diagrams không đổi ở Phase07.
 

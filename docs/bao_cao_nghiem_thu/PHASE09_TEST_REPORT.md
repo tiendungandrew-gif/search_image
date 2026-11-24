@@ -1,8 +1,8 @@
-# Báo cáo nghiệm thu Prompt 09 — lần hoàn thiện
+# Báo cáo nghiệm thu Phase 09 — lần hoàn thiện
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-Chốt báo cáo ngày 07/11/2026; các số đo ngày 06/11/2026. Đã hoàn thiện phần mềm, dữ liệu công khai nhỏ có nguồn và kiểm chứng workflow thật của Phase 09. **Human relevance/faithfulness vẫn chờ theo lựa chọn của người dùng; không tự gán nhãn.** Phạm vi dừng ở Prompt 09. [Snapshot báo cáo ban đầu](../verification/phase09/PHASE09_TEST_REPORT_initial.txt) và toàn bộ raw lỗi cũ giữ nguyên.
+Chốt báo cáo ngày 07/11/2026; các số đo ngày 06/11/2026. Đã hoàn thiện phần mềm, dữ liệu công khai nhỏ có nguồn và kiểm chứng workflow thật của Phase 09. **Human relevance/faithfulness vẫn chờ theo lựa chọn của người dùng; không tự gán nhãn.** Phạm vi dừng ở Phase 09. [Snapshot báo cáo ban đầu](../verification/phase09/PHASE09_TEST_REPORT_initial.txt) và toàn bộ raw lỗi cũ giữ nguyên.
 
 ## A. Tổng hợp hiện thực
 
@@ -19,7 +19,7 @@ Agent optional có router, structured planner,9 tools, validated DAG, bounded ex
 
 ## B. Files tạo mới hoặc sửa
 
-Source bắt đầu lần hoàn thiện:247 files. Bản hiện tại có253 files; 28 files cũ thay đổi, 6 files mới, không xóa baseline. [Danh sách đầy đủ và source archive](../verification/phase09_completion_20261106/source_changes.json). Những sửa Prompt08 đã có sẵn được giữ nguyên.
+Source bắt đầu lần hoàn thiện:247 files. Bản hiện tại có253 files; 28 files cũ thay đổi, 6 files mới, không xóa baseline. [Danh sách đầy đủ và source archive](../verification/phase09_completion_20261106/source_changes.json). Những sửa Phase 08 đã có sẵn được giữ nguyên.
 
 Các thay đổi chính: agent schemas/state/planner/service/response/API metrics; RAG context_format và provider429 policy; evaluation/agent và CLI pacing; typed UUID tool arguments; knowledge import/revalidation guards; CLI download_landmarks/prepare_landmark_knowledge; scripts/verify_public_agent; frontend Agent source links/quota/partial SSE; tests; NPS catalog/import receipts; tài liệu và ignore raw dataset. Không đổi ClipEncoder, ingestion/query decoders hoặc hai package lockfiles; [audit](../verification/phase09_completion_20261106/final_audit.json). Không commit/push tự động.
 
@@ -112,8 +112,8 @@ Benchmark paced source `c23876c8b1bf9cf54ee299e268ff412eddae0af0c8e21c8008a7067a
 
 Finite grammar và LLM template guard là giới hạn có chủ đích. External connector chỉ là bounded NPS administrative CLI; không crawling tùy ý trong Agent. Import CLI chưa có CRUD/revision workflow; durable memory/tenant/public hardening không thuộc phần hiện thực này. Không tuyên bố fully verified real-world quality từ ba ảnh hoặc các fixtures.
 
-## O. Sẵn sàng Prompt 10
+## O. Sẵn sàng Phase 10
 
-Phần mềm và real workflow của Prompt 09 đã sẵn để phát triển end-to-end UX khi người dùng yêu cầu Prompt 10. Thử tại http://localhost:5173 → Agent → Washington Monument relational query. Nếu LLM quota, dùng planner theo mẫu hoặc tắt explanation; vẫn giữ retrieval/facts có nguồn. Muốn nghiệm thu chất lượng cần người đánh giá hoàn tất labels đã hoãn, không cần thêm kiến trúc để nạp dữ liệu thật.
+Phần mềm và real workflow của Phase 09 đã sẵn để phát triển end-to-end UX khi người dùng yêu cầu Phase 10. Thử tại http://localhost:5173 → Agent → Washington Monument relational query. Nếu LLM quota, dùng planner theo mẫu hoặc tắt explanation; vẫn giữ retrieval/facts có nguồn. Muốn nghiệm thu chất lượng cần người đánh giá hoàn tất labels đã hoãn, không cần thêm kiến trúc để nạp dữ liệu thật.
 
-**Dừng ở Prompt 09; không tự triển khai Prompt 10.**
+**Dừng ở Phase 09; không tự triển khai Phase 10.**

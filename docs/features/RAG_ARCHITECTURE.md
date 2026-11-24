@@ -1,6 +1,6 @@
-# Kiến trúc RAG tùy chọn — Prompt08
+# Kiến trúc RAG tùy chọn — Phase 08
 
-Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Prompt09.
+Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Phase 09.
 
 React tìm kiếm bình thường → SearchService hiện hành → PostgreSQL/Qdrant/MinIO → kết quả ảnh. Người dùng chủ động yêu cầu giải thích; không có LLM call trong Fast Search.
 

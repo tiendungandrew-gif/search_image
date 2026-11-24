@@ -16,7 +16,7 @@ PRD xác định người dùng cần gì, quy tắc nghiệp vụ và cách ngh
 
 Quy ước: **P0** bắt buộc cho luồng cốt lõi; **P1** mở rộng trải nghiệm/quản trị; **P2** tùy chọn có điều kiện. Ưu tiên không biểu thị tiến độ. “Có trong source” chỉ xác nhận có mã xử lý; kết quả chạy thực phải có báo cáo tương ứng. Mọi ngưỡng hiệu năng đề xuất cần workload, phần cứng và phê duyệt trước khi trở thành điều kiện phát hành.
 
-Giữ ID `FR-001…024`, `NFR-001…012` từ [baseline](PRD_BASELINE_20261103.md) để truy vết. Các quy tắc token của baseline được thay bằng tài khoản/session trong bản này; các mục tiêu cũ vẫn là mục tiêu, không được chuyển thành số đo thực tế.
+Giữ ID `FR-001…024`, `NFR-001…012` từ [baseline](archive/PRD_BASELINE_20261103.md) để truy vết. Các quy tắc token của baseline được thay bằng tài khoản/session trong bản này; các mục tiêu cũ vẫn là mục tiêu, không được chuyển thành số đo thực tế.
 
 ## 2. Bài toán và giá trị sản phẩm
 

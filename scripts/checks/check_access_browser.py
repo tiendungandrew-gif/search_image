@@ -26,7 +26,15 @@ def main():
         ACCESS_LOGIN_FILE=str((ROOT / args.login_file).resolve()),
         ACCESS_INDEXED="1" if args.indexed else "0",
     )
-    command = ["npm", "exec", "--", "playwright", "test", "--config", "playwright.access.config.ts"]
+    command = [
+        "npm",
+        "exec",
+        "--",
+        "playwright",
+        "test",
+        "--config",
+        "tests/e2e/config/access.config.ts",
+    ]
     if args.project:
         command += ["--project", args.project]
     result = subprocess.run(

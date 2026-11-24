@@ -214,22 +214,23 @@ Các bước cleanup/upload artifacts dùng `if: always()` để vẫn chạy sa
 
 ```text
 backend/              FastAPI, services, CLI, migrations và tests
-frontend/             React, TypeScript, Vite và tests
+frontend/             React, TypeScript, Vite; browser suites ở tests/e2e/
 infra/                Docker infrastructure và Nginx
 config/environments/  Cấu hình các môi trường
 scripts/              Công cụ khởi tạo, quản trị, triển khai và QA
-datasets/             Hướng dẫn và đầu vào dataset
+datasets/             Hướng dẫn/catalogs; corpus ảnh lưu local, không commit
 evaluation/           Cấu hình, dữ liệu và kết quả đánh giá
 docs/                 Tài liệu kỹ thuật và báo cáo kiểm chứng
 workers/              Entry point tương thích cho worker
 ```
 
-Xem [cấu trúc chi tiết](docs/REPOSITORY_STRUCTURE.md) và [danh mục scripts](scripts/README.md).
+Xem [cấu trúc chi tiết](docs/REPOSITORY_STRUCTURE.md), [danh mục scripts](scripts/README.md), [browser suites](frontend/tests/e2e/README.md) và [quy tắc dữ liệu](datasets/README.md).
 
 ## Tài liệu và trạng thái kiểm chứng
 
 - [Mục lục tài liệu](docs/README.md).
-- [PRD — yêu cầu sản phẩm](docs/architecture/PRD.md) và [SAD — thiết kế kiến trúc](docs/architecture/SAD.md).
+- [PRD — yêu cầu sản phẩm](docs/architecture/PRD.md) và [SAD — thiết kế kiến trúc](docs/architecture/SAD.md); [thiết kế lịch sử](docs/architecture/archive/README.md).
+- [Lộ trình 12 giai đoạn — Phase 01–12](docs/architecture/ROADMAP.md).
 - [Kiến trúc hệ thống](docs/architecture/FINAL_SYSTEM_ARCHITECTURE.md), [API](docs/architecture/API_SPECIFICATION.md), [database](docs/architecture/DATABASE_DESIGN.md).
 - [Vận hành](docs/operations/OPERATIONS_RUNBOOK.md), [workflow phát triển](docs/operations/DEVELOPMENT.md).
 - [Báo cáo nghiệm thu Phase12](docs/bao_cao_nghiem_thu/FINAL_PROJECT_REPORT.md) và [bàn giao](docs/bao_cao_nghiem_thu/FINAL_HANDOVER.md).

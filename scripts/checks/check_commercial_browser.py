@@ -16,7 +16,15 @@ def main():
     parser.add_argument("--project")
     args = parser.parse_args()
     env = browser_environment(ROOT)
-    cmd = ["npm", "exec", "--", "playwright", "test", "--config", "playwright.commercial.config.ts"]
+    cmd = [
+        "npm",
+        "exec",
+        "--",
+        "playwright",
+        "test",
+        "--config",
+        "tests/e2e/config/commercial.config.ts",
+    ]
     if args.project:
         cmd += ["--project", args.project]
     result = subprocess.run(

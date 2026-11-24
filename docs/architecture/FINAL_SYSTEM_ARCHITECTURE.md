@@ -47,4 +47,4 @@ Không dataset hoặc model không làm frontend biến mất. Empty dataset kh�
 
 ## Chưa triển khai hoặc chưa nghiệm thu
 
-Production adapter được kiểm chứng là CLIP CPU; SigLIP thuộc evaluation, GPU chưa nghiệm thu. Không native mobile apps, crawler ngầm, unrestricted Agent shell, multi-tenant account system, distributed cluster hoặc public hosting được provision. Signed URLs không dùng: private authenticated media proxy là kiến trúc đã chọn. Chi tiết contracts và sequence diagrams trước vẫn tại [SYSTEM_ARCHITECTURE](SYSTEM_ARCHITECTURE.md), [SAD](SAD.md) và docs/diagrams; tài liệu này phản ánh packaging hiện hành.
+Production adapter được kiểm chứng là CLIP CPU; SigLIP thuộc evaluation, GPU chưa nghiệm thu. Không native mobile apps, crawler ngầm, unrestricted Agent shell, multi-tenant account system, distributed cluster hoặc public hosting được provision. Signed URLs không dùng: private authenticated media proxy là kiến trúc đã chọn. Chi tiết contracts và sequence diagrams trước vẫn tại [SYSTEM_ARCHITECTURE](archive/SYSTEM_ARCHITECTURE.md), [SAD](SAD.md) và docs/diagrams; tài liệu này phản ánh packaging hiện hành.

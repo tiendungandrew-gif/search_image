@@ -1,4 +1,4 @@
-# Báo cáo advanced retrieval — Prompt06
+# Báo cáo advanced retrieval — Phase 06
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 

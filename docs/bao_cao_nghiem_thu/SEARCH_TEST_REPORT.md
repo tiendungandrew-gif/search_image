@@ -1,8 +1,8 @@
-# Báo cáo nghiệm thu Prompt 05 — Core Semantic Search
+# Báo cáo nghiệm thu Phase 05 — Core Semantic Search
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-Ngày thực thi: 2026-11-03. Kết luận: hoàn thành chức năng core text-to-image và image-to-image trên model, index và ảnh thật của Prompt04; các kiểm tra cuối đã qua. Không triển khai Prompt06. [Tổng kết verifier](../verification/phase05/summary.json) ghi build, browser và benchmark đều đã chạy. Đây là baseline trên corpus mẫu nhỏ, chưa phải kết luận chất lượng retrieval hoặc SLA production.
+Ngày thực thi: 2026-11-03. Kết luận: hoàn thành chức năng core text-to-image và image-to-image trên model, index và ảnh thật của Phase 04; các kiểm tra cuối đã qua. Không triển khai Phase 06. [Tổng kết verifier](../verification/phase05/summary.json) ghi build, browser và benchmark đều đã chạy. Đây là baseline trên corpus mẫu nhỏ, chưa phải kết luận chất lượng retrieval hoặc SLA production.
 
 ## A. Tóm tắt triển khai
 
@@ -24,13 +24,13 @@ Có basic metadata filters, deterministic ranking/dedup, encoder/index compatibi
 | Chạy/kiểm tra | `scripts/verify_search.py`, `verify_search.sh`, `benchmark_search.sh`, `.env.example`, `compose.yaml`, `Makefile` |
 | Tài liệu | [SEMANTIC_SEARCH](../features/SEMANTIC_SEARCH.md), [SEARCH_API](../features/SEARCH_API.md), [SEARCH_PERFORMANCE](../research/SEARCH_PERFORMANCE.md), báo cáo này; cập nhật README, MASTER_SPEC, ROADMAP, SAD, SYSTEM_ARCHITECTURE, API_SPECIFICATION, DATABASE_DESIGN, DECISIONS, SETUP, DEVELOPMENT và PERFORMANCE_DESIGN |
 
-Danh mục và SHA256 của source bàn giao: [source_snapshot.json](../verification/phase05/source_snapshot.json). Giữ nguyên source fingerprint của CLIP image encoder và ingestion decoder thuộc manifest Prompt04; không migration, không reindex hoặc xóa collection có dữ liệu. Không tạo commit trong lượt triển khai này.
+Danh mục và SHA256 của source bàn giao: [source_snapshot.json](../verification/phase05/source_snapshot.json). Giữ nguyên source fingerprint của CLIP image encoder và ingestion decoder thuộc manifest Phase 04; không migration, không reindex hoặc xóa collection có dữ liệu. Không tạo commit trong lượt triển khai này.
 
 ## C. Kiến trúc Semantic Search đã chạy
 
 Text: auth/body/schema → NFC/whitespace/token limit → CLIP text tower → float32/L2/finite/dimension checks → Qdrant query_points → dedup/ranking → batch PG metadata và authoritative eligibility/filter recheck → private object HEAD/URLs → response → serialization/final send.
 
-Ảnh upload: multipart bounds → cùng hàm decode/RGB/EXIF/alpha của Prompt04 trong decoder process → cùng image processor/tower → đường retrieval/enrichment chung. JPEG/PNG/WebP pixel-equivalence và decoder restart đã có tests. Bytes upload chỉ phục vụ query, không tạo image/object/index-job rows. Existing image_id lấy stored vector đã xác minh cùng index; exclude_self mặc định bật.
+Ảnh upload: multipart bounds → cùng hàm decode/RGB/EXIF/alpha của Phase 04 trong decoder process → cùng image processor/tower → đường retrieval/enrichment chung. JPEG/PNG/WebP pixel-equivalence và decoder restart đã có tests. Bytes upload chỉ phục vụ query, không tạo image/object/index-job rows. Existing image_id lấy stored vector đã xác minh cùng index; exclude_self mặc định bật.
 
 Model/tokenizer preload một lần/API process. Một inference slot, queue tối đa8 và chờ50ms; cancel request giữ slot tới khi computation thật hoàn tất. Outer request deadline2s, Qdrant timeout1s. Khi active generation đổi, runtime cũ trả INDEX_SWITCHING tới khi reload. Search không tự tạo collection hoặc chọn model khác để vượt compatibility checks.
 
@@ -47,7 +47,7 @@ Basic filters dựa trên dữ liệu có thật: source_dataset, media_types, t
 | Manifest SHA256 | `7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc` |
 | Collection | `images_clip_v1_da55a7d099fd` |
 | Embedding / metric | 512 dimensions, float32, L2 normalized / Cosine |
-| Corpus / exact vector count | 10 ảnh / 10 points, license/provenance tại dataset manifest Prompt04 |
+| Corpus / exact vector count | 10 ảnh / 10 points, license/provenance tại dataset manifest Phase 04 |
 | Device / CPU threads | CPU / 4 Torch threads; chưa chạy CUDA benchmark |
 | CPU / RAM | Intel Core 7 240H, 16 logical CPUs / 15.11GiB tổng RAM theo MemTotal |
 | OS / Python | Linux 6.17.0-1033-oem x86_64; container Python3.12.12 |
@@ -110,9 +110,9 @@ Bottleneck đầu là decoder process startup/Pillow import và encode PNG IPC; 
 | Benchmark | 100 text +100 image sau tối ưu, 0 lỗi, server coverage100/100 mỗi run | Raw samples ở mụcG |
 | Data/index preservation |10 ảnh/10 vectors verified, không thiếu receipt/embedding hoặc orphan point | [index verify](../verification/phase05/index_preserved.txt) |
 
-Unit mocks chỉ dùng kiểm module/validation/metrics/lifecycle; integration và browser dùng CLIP, PostgreSQL, Qdrant và MinIO thật. Regression indexing Prompt04 gồm batch/retry/idempotency/recovery/repair vẫn qua. Image search test kiểm không tăng corpus/jobs. Test queue cancellation kiểm slot không nhả sớm. CUDA execution, mất model cache giữa runtime và mọi tổ hợp dependency outage chưa được thực thi riêng trong môi trường này.
+Unit mocks chỉ dùng kiểm module/validation/metrics/lifecycle; integration và browser dùng CLIP, PostgreSQL, Qdrant và MinIO thật. Regression indexing Phase 04 gồm batch/retry/idempotency/recovery/repair vẫn qua. Image search test kiểm không tăng corpus/jobs. Test queue cancellation kiểm slot không nhả sớm. CUDA execution, mất model cache giữa runtime và mọi tổ hợp dependency outage chưa được thực thi riêng trong môi trường này.
 
-[Final checks](../verification/phase05/final_checks.json) ghi Ruff mở rộng cho backend/scripts/workers/evaluation, shell syntax, source fingerprint, JSON artifact consistency, relative links/requirement IDs/14 JSON examples, secret scan và immutable encoder/decoder checks. Structural checks11 Mermaid sources không được ghi nhận thành render mới; bằng chứng render Prompt03 vẫn giữ nguyên.
+[Final checks](../verification/phase05/final_checks.json) ghi Ruff mở rộng cho backend/scripts/workers/evaluation, shell syntax, source fingerprint, JSON artifact consistency, relative links/requirement IDs/14 JSON examples, secret scan và immutable encoder/decoder checks. Structural checks11 Mermaid sources không được ghi nhận thành render mới; bằng chứng render Phase 03 vẫn giữ nguyên.
 
 Lượt pytest đầu bị collection error vì hai file unit/integration cùng basename `test_search.py`; đã đổi tên integration thành `test_real_search.py` và full run sau qua74 tests. [Log lỗi đầu đã redact](../verification/phase05/backend_tests_initial_collection_failure.txt) được giữ; đây là lỗi đã giải quyết. Còn warning SDK Qdrant về API key trên HTTP local/private Docker network; không có failed test do warning này. Chưa cấu hình public TLS trong phạm vi local MVP.
 
@@ -133,15 +133,15 @@ Các script đọc secret qua env/child environment, không truyền token qua C
 Không còn lỗi test chưa giải quyết trong các suite đã thực thi. Các giới hạn còn lại:
 
 - Corpus10 quá nhỏ để kết luận HNSW scalability, accuracy hoặc quality gates; chưa có human judgments, multilingual/Vietnamese evaluation hay train/dev/test split.
-- Baseline chỉ CPU warm/concurrency1; cần cold-start, corpus lớn, tải hỗn hợp, nhiều clients và CUDA measurements ở Prompt07 trước cam kết SLA.
+- Baseline chỉ CPU warm/concurrency1; cần cold-start, corpus lớn, tải hỗn hợp, nhiều clients và CUDA measurements ở Phase 07 trước cam kết SLA.
 - Fixture thiếu captions/tags/category và thumbnails; UI có fallback original và nullable metadata. Chưa tối ưu ảnh preview cho corpus lớn.
 - Bounded candidate pool có thể trả ít hơnK sau eligibility/post-filter; không đảm bảo full-corpus recall khi pool bị giới hạn. Object HEAD checks còn tạo network overhead có chủ đích.
 - Decoder/model mỗi API process và worker indexing riêng cần profiling khi scale; chưa có scheduler chia GPU giữa processes. Runtime phải reload khi active generation đổi.
 - Auth local static tokens/in-memory rate limits chưa thay thế public multi-tenant auth/TLS. Bounded telemetry không persist query text/images hoặc lịch sử search mặc định.
 - Chưa có calibrated cosine threshold; chưa có combined fusion, semantic constraint verification, reranking, RAG hoặc Agent.
 
-## J. Sẵn sàng cho Prompt 06
+## J. Sẵn sàng cho Phase 06
 
 Core đã có paired text/image encoders cùng manifest, typed request/options, candidate retrieval/ranking dùng chung, metadata filters/eligibility, disabled advanced capability flags, instrumentation và regression suite. Có thể tiếp tục xây combined text+image, multi-intent/query decomposition, candidate fusion và constraint-aware reranking trên các extension points này khi được yêu cầu.
 
-Các chức năng trên **chưa được triển khai hoặc nghiệm thu** trong Phase05. Trước khi bật cần bổ sung API semantics, fusion/ranking versions, labels/constraint evidence và tests tương ứng; không đưa LLM vào fast path hiện tại. Dừng tại Prompt05.
+Các chức năng trên **chưa được triển khai hoặc nghiệm thu** trong Phase05. Trước khi bật cần bổ sung API semantics, fusion/ranking versions, labels/constraint evidence và tests tương ứng; không đưa LLM vào fast path hiện tại. Dừng tại Phase 05.

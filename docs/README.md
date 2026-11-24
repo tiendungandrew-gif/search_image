@@ -11,10 +11,12 @@ Bắt đầu từ [bàn giao hiện tại](bao_cao_nghiem_thu/FINAL_HANDOVER.md)
 | [features/](features/) | Search/indexing/multimodal, RAG, Agent và frontend |
 | [research/](research/) | Phương pháp đánh giá, datasets, benchmark, model comparison và các giới hạn |
 | [testing/](testing/) | Chiến lược/lớp kiểm thử và browser workflow |
-| [bao_cao_nghiem_thu/](bao_cao_nghiem_thu/) | Toàn bộ báo cáo nghiệm thu theo Phase/Prompt, kiểm toán và đánh giá |
+| [bao_cao_nghiem_thu/](bao_cao_nghiem_thu/) | Toàn bộ báo cáo nghiệm thu theo Phase, kiểm toán và đánh giá |
 | [verification/](verification/) | Bằng chứng gốc, commands, JSON/logs và snapshots thực thi |
 | [diagrams/](diagrams/) | Mermaid diagrams |
 | [adr/](adr/) | Architecture decision records |
+
+Tài liệu hiện hành: [PRD](architecture/PRD.md), [SAD](architecture/SAD.md), [API](architecture/API_SPECIFICATION.md), [database](architecture/DATABASE_DESIGN.md). Baseline/spec qua các phase được giữ tại [kho thiết kế lịch sử](architecture/archive/README.md); `FINAL_SYSTEM_ARCHITECTURE` là snapshot bàn giao, không thay SAD hiện hành.
 
 ## Điểm vào thường dùng
 

@@ -1,4 +1,4 @@
-"""Real CLIP/Qdrant/PG/MinIO tests trên corpus Prompt04; không qrels/accuracy claim."""
+"""Real CLIP/Qdrant/PG/MinIO tests trên corpus Phase 04; không qrels/accuracy claim."""
 
 import asyncio
 import hashlib

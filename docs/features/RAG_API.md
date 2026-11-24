@@ -1,6 +1,6 @@
-# API RAG — Prompt08
+# API RAG — Phase 08
 
-Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Prompt09.
+Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Phase 09.
 
 Base /api/v1, Bearer read token. LLM key chỉ backend. POST /search và /search/multimodal giữ nguyên contracts; explain.enabled cũ không âm thầm gọi LLM.
 
@@ -28,6 +28,6 @@ GET /rag/status trả enabled/configured/error_code/provider/model/streaming/gro
 
 Cấu hình status hiện trả cả request_timeout_seconds. Generation8s/request12s; frontend chờ tối đa65s để bao phủ server cap60s, có hủy/retry thủ công. GET /images/{id} có caption optional từ database, cùng giá trị với search/evidence.
 
-## Bổ sung tương thích từ Prompt09
+## Bổ sung tương thích từ Phase 09
 
 RagRequest có context_format full(default)/compact. Compact gửi provider các fact_id/evidence_field/quote, vẫn giữ toàn bộ UUID/provenance ở context server để validate/render citation. Direct RAG giữ default full; Agent adapter chọn compact. Response rag.context.format và prompt_version extractive-facts-compact-v1 phân biệt run, prompt SHA bao gồm format. Không mở quyền đọc/ghi metadata từ client và không cho client tự cung cấp facts.

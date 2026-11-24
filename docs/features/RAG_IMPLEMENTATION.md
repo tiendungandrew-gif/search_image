@@ -1,4 +1,4 @@
-# Triển khai RAG — Prompt08
+# Triển khai RAG — Phase 08
 
 ## Evidence thực
 

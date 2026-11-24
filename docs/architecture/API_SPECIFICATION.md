@@ -9,15 +9,15 @@ Contracts FastAPI giữ nguyên. Nginx production phục vụ `/api/v1` cùng or
 
 `GET /system/workspace` và `/system/evaluation` có response DTO/OpenAPI (`WorkspaceSnapshot`, `EvaluationSummary`), JSON shape không đổi. Metrics không finite hoặc count âm trong artifacts không được công bố. Content-Length malformed/quá giới hạn trả413 theo envelope; filter/ingestion metadata chứa control characters không hợp lệ trả422 trước database. Caption multiline hợp lệ và idempotency hash được giữ nguyên. Xem [BUG_FIX_REPORT](../archive/BUG_FIX_REPORT.md), [nghiệm thu](../archive/PHASE11_TEST_REPORT.md). Không đổi public search request/ranking contracts.
 
-## Hoàn thiện Prompt 09 — 06/11/2026
+## Hoàn thiện Phase 09 — 06/11/2026
 
-Đã bổ sung bộ địa danh NPS có nguồn:3 ảnh thật,4 entities,3 quan hệ và3 liên kết ảnh. Index phục vụ hiện513 ảnh, generation3; index510 ảnh cũ giữ nguyên. Workflow Anh/Việt/alias, Gemini planner và RAG thật đã được kiểm tra. Planner có trace từng attempt; prompt tools và RAG context đã rút gọn, citation provenance vẫn giữ đầy đủ trên server. Bộ kiểm tra mới đạt200 backend,21 frontend unit và24 browser full tests cùng6 ca browser nhánh cuối. Chất lượng do người đánh giá vẫn chờ; số đo latency và trạng thái target3s xem [báo cáo Prompt09](../archive/PHASE09_TEST_REPORT.md), dữ liệu/nguồn tại [PUBLIC_LANDMARK_DATASET](../research/PUBLIC_LANDMARK_DATASET.md).
+Đã bổ sung bộ địa danh NPS có nguồn:3 ảnh thật,4 entities,3 quan hệ và3 liên kết ảnh. Index phục vụ hiện513 ảnh, generation3; index510 ảnh cũ giữ nguyên. Workflow Anh/Việt/alias, Gemini planner và RAG thật đã được kiểm tra. Planner có trace từng attempt; prompt tools và RAG context đã rút gọn, citation provenance vẫn giữ đầy đủ trên server. Bộ kiểm tra mới đạt200 backend,21 frontend unit và24 browser full tests cùng6 ca browser nhánh cuối. Chất lượng do người đánh giá vẫn chờ; số đo latency và trạng thái target3s xem [báo cáo Phase 09](../archive/PHASE09_TEST_REPORT.md), dữ liệu/nguồn tại [PUBLIC_LANDMARK_DATASET](../research/PUBLIC_LANDMARK_DATASET.md).
 
-## Hợp đồng Agent hiện hành Prompt09
+## Hợp đồng Agent hiện hành Phase 09
 
-`POST /search/agent` JSON và `POST /search/agent/stream` SSE đã được triển khai, cùng GET status/samples có read auth. Request nhận query hoặc text, alias search_mode/max_hops, budgets giới hạn và explanation tùy chọn; AgentResponse nằm ở root với status/query_success riêng. [AGENT_API](../features/AGENT_API.md) và OpenAPI runtime mô tả schema đầy đủ. Các đoạn reserved/không hỗ trợ SSE/AgentSummary ở thiết kế Prompt02 bên dưới được thay thế cho riêng Agent bởi hợp đồng runtime này. Core Search API không đổi entrypoint hoặc tự bật Agent.
+`POST /search/agent` JSON và `POST /search/agent/stream` SSE đã được triển khai, cùng GET status/samples có read auth. Request nhận query hoặc text, alias search_mode/max_hops, budgets giới hạn và explanation tùy chọn; AgentResponse nằm ở root với status/query_success riêng. [AGENT_API](../features/AGENT_API.md) và OpenAPI runtime mô tả schema đầy đủ. Các đoạn reserved/không hỗ trợ SSE/AgentSummary ở thiết kế Phase 02 bên dưới được thay thế cho riêng Agent bởi hợp đồng runtime này. Core Search API không đổi entrypoint hoặc tự bật Agent.
 
-Phiên bản 1.1.0 · 2026-11-03 · Contract thiết kế Prompt02; trạng thái routes đã triển khai xem mục12–14. Đã đối chiếu [PRD](PRD.md), [DATABASE_DESIGN](DATABASE_DESIGN.md) và [SAD](SAD.md). Các UUID, scores và timing trong ví dụ chỉ minh họa schema, không là dữ liệu tìm kiếm hay kết quả benchmark.
+Phiên bản 1.1.0 · 2026-11-03 · Contract thiết kế Phase 02; trạng thái routes đã triển khai xem mục12–14. Đã đối chiếu [PRD](PRD.md), [DATABASE_DESIGN](DATABASE_DESIGN.md) và [SAD](SAD.md). Các UUID, scores và timing trong ví dụ chỉ minh họa schema, không là dữ liệu tìm kiếm hay kết quả benchmark.
 
 ## 1. Quy ước chung
 
@@ -342,9 +342,9 @@ Lỗi schema chung cho query sai422/auth401/403; readiness503 có body HealthRes
 
 ## 11. Compatibility và validation kế tiếp
 
-API v1 không thay field type/semantics âm thầm; additions optional được document. Không gọi token stream marker là TTFirst nếu chỉ là status message. API examples là shape minh họa, không dùng làm application fixtures trả cứng. Prompt 03 tạo skeleton/OpenAPI với routes theo phase; FR-001/002 thuộc Prompt 05, optional endpoints báo disabled trước khi triển khai. Kiểm chứng runtime auth/upload/deadline/content proxy và generated OpenAPI ở Prompt 03–11, chưa thực hiện tại Prompt 02.
+API v1 không thay field type/semantics âm thầm; additions optional được document. Không gọi token stream marker là TTFirst nếu chỉ là status message. API examples là shape minh họa, không dùng làm application fixtures trả cứng. Phase 03 tạo skeleton/OpenAPI với routes theo phase; FR-001/002 thuộc Phase 05, optional endpoints báo disabled trước khi triển khai. Kiểm chứng runtime auth/upload/deadline/content proxy và generated OpenAPI ở Phase 03–11, chưa thực hiện tại Phase 02.
 
-## 12. Trạng thái implementation Prompt 03
+## 12. Trạng thái implementation Phase 03
 
 Mục1–11 là contract mục tiêu theo phase. Hiện chỉ đăng ký bốn foundation endpoints dưới đây cùng `/docs` và `/openapi.json`; search/images/index jobs/content chưa đăng ký, trả404 NOT_FOUND theo error envelope, không trả empty results giả. Feature-disabled409 chỉ áp dụng sau khi route tương ứng được triển khai/gated.
 
@@ -355,13 +355,13 @@ Mục1–11 là contract mục tiêu theo phase. Hiện chỉ đăng ký bốn f
 | GET /api/v1/health | Public khi check=live; Bearer khi ingest/search | Giữ HealthSummary contract; mọi capability search=false; check=search503 với encoder=not_implemented/index=not_initialized; worker unknown |
 | GET /api/v1/system/info | Bearer local | 200 app_name/app_version/environment/api_version; không URL/credentials/config dump |
 
-Liveness/readiness routes mới chi tiết hóa yêu cầu Prompt03, không thay `/health` cũ. Request ID UUID hợp lệ được echo, ID không hợp lệ được thay; errors có code/message/request_id/retryable/details. OpenAPI định nghĩa ErrorEnvelope cho validation/auth/generic timeout; health503 là readiness model đã document. Trong phase này token local được cấu hình bởi API_TOKEN và chỉ có read diagnostics, chưa user/scope administration. CORS chỉ GET/OPTIONS vì chưa có write/search endpoints.
+Liveness/readiness routes mới chi tiết hóa yêu cầu Phase 03, không thay `/health` cũ. Request ID UUID hợp lệ được echo, ID không hợp lệ được thay; errors có code/message/request_id/retryable/details. OpenAPI định nghĩa ErrorEnvelope cho validation/auth/generic timeout; health503 là readiness model đã document. Trong phase này token local được cấu hình bởi API_TOKEN và chỉ có read diagnostics, chưa user/scope administration. CORS chỉ GET/OPTIONS vì chưa có write/search endpoints.
 
 REQUEST_TIMEOUT_SECONDS mặc định2s, ba dependency probes chạy song song với deadline0,75s mỗi probe. MinIO SDK blocking I/O có HTTP bounds và giữ executor slot tới khi I/O xong dù caller timeout. Duration chốt tại final response send, không bao gồm công việc sau body. Test/runtime evidence và các phần chưa kiểm chứng tại [PHASE03_REPORT](../archive/PHASE03_REPORT.md).
 
-## 13. Trạng thái implementation Prompt 04
+## 13. Trạng thái implementation Phase 04
 
-Đã đăng ký POST /images, GET /images/{image_id}, GET /images/{image_id}/content, POST /index/jobs và GET /index/jobs/{job_id}. Health/system routes Prompt03 giữ tương thích. Swagger có multipart upload và typed upload/job responses; chưa có /search routes.
+Đã đăng ký POST /images, GET /images/{image_id}, GET /images/{image_id}/content, POST /index/jobs và GET /index/jobs/{job_id}. Health/system routes Phase 03 giữ tương thích. Swagger có multipart upload và typed upload/job responses; chưa có /search routes.
 
 Local auth dùng hai opaque operator tokens: API_TOKEN chỉ read; WRITE_API_TOKEN cấp read + images:write/index:manage, mutations fail closed khi chưa cấu hình. Chưa có multi-user/tenant/scoped token database. Nonfixture metadata yêu cầu source_dataset/license/rights_ref; bổ sung caption optional được cung cấp bởi operator, không tự sinh. Upload total deadline30s, core/health vẫn2s; file/body/JSON/pixel limits theo IMAGE_INDEXING. Content proxy buffer bounded bởi20MiB, thumbnail fallback original; chưa Range hoặc thumbnail generation.
 
@@ -369,25 +369,25 @@ Idempotency lưu body fingerprint, reserved image/job identities và acceptance 
 
 Job response bổ sung started_at/finished_at và error_summary; counts là aggregate toàn job, item cursor theo(created_at,id), bound job và total-items watermark. Không reset attempt history của job cũ khi retry. Body/fields/limits/errors được kiểm tra runtime; commands và evidence tại [IMAGE_INDEXING](../features/IMAGE_INDEXING.md) / [INDEXING_TEST_REPORT](../archive/INDEXING_TEST_REPORT.md). Mô tả đầy đủ các phase khác ở trên vẫn là contract thiết kế, không là claim implementation.
 
-## 14. Implementation Prompt05
+## 14. Implementation Phase 05
 
-POST /search thực thi canonical text/image-only; POST /search/multimodal nhận image-only compatibility route theo Prompt05, text+image fusion vẫn409 FEATURE_DISABLED. Query/search_mode legacy aliases normalize sang text/mode canonical; response vẫn search_mode=text|image. Top-K mặc định10, runtime max50/config≤100; basic filters được bật với PG authoritative recheck. Thêm exclude_self, total_results và latency_ms processing alias; không đổi semantics canonical fields. Chi tiết actual contracts và errors tại [SEARCH_API](../features/SEARCH_API.md).
+POST /search thực thi canonical text/image-only; POST /search/multimodal nhận image-only compatibility route theo Phase 05, text+image fusion vẫn409 FEATURE_DISABLED. Query/search_mode legacy aliases normalize sang text/mode canonical; response vẫn search_mode=text|image. Top-K mặc định10, runtime max50/config≤100; basic filters được bật với PG authoritative recheck. Thêm exclude_self, total_results và latency_ms processing alias; không đổi semantics canonical fields. Chi tiết actual contracts và errors tại [SEARCH_API](../features/SEARCH_API.md).
 
 Private GET /system/search-metrics là diagnostic addition để join full-response samples sau final send; không query text/images/credentials. Ring10.000/process, không durable history. Search health text/image flags từ loaded runtime, advanced flags false. Active pointer publish qua CLI sau full verify/model preload; query không nhận arbitrary model/collection. Query uploads không tạo image/jobs/index records. API image nay chứa paired CLIP runtime; không cần phụ thuộc Agent/LLM.
 
-## 15. Cập nhật implementation Prompt06
+## 15. Cập nhật implementation Phase 06
 
-POST search giữ core text/image contracts, thêm search_mode aliases auto/multi_intent và rerank boolean alias. Text+image paired dùng multimodal route, không core. POST search/multimodal hiện nhận text-only/image-only hoặc combined; đây là compatible extension của image-only Prompt05 và paired design Prompt02. Fusion có RRF/weighted_rrf alias/weighted_score, request weights có bounds và được normalize, no all-zero. Typed recursive constraint AST giữ depth2/leaves8/unique IDs, thêm negated/weight. Required semantics không được verify chỉ bằng CLIP; strict required semantic leaf trả409 VERIFIER_UNAVAILABLE.
+POST search giữ core text/image contracts, thêm search_mode aliases auto/multi_intent và rerank boolean alias. Text+image paired dùng multimodal route, không core. POST search/multimodal hiện nhận text-only/image-only hoặc combined; đây là compatible extension của image-only Phase 05 và paired design Phase 02. Fusion có RRF/weighted_rrf alias/weighted_score, request weights có bounds và được normalize, no all-zero. Typed recursive constraint AST giữ depth2/leaves8/unique IDs, thêm negated/weight. Required semantics không được verify chỉ bằng CLIP; strict required semantic leaf trả409 VERIFIER_UNAVAILABLE.
 
 Response bổ sung query_analysis, contributing_branches, score_components và constraint_evidence uppercase alias; canonical constraint_assessments satisfied/violated/unknown giữ nguyên. Score_type thêm weighted_score, service_class advanced cho advanced paths. Actual validation/error/limits, optional failure policy và complete-response telemetry tại [ADVANCED_SEARCH_API](../features/ADVANCED_SEARCH_API.md), evidence tại [ADVANCED_SEARCH_TEST_REPORT](../archive/ADVANCED_SEARCH_TEST_REPORT.md). Baseline examples/capability flags trong phần thiết kế trước giữ lịch sử, không mô tả đầy đủ trạng thái hiện tại.
 
-## 15. Runtime profiling Prompt07
+## 15. Runtime profiling Phase 07
 
 `GET /api/v1/system/search-runtime` cần read Bearer token như diagnostic search endpoints. Không nhận query/body. Response200 có status, pid/python/platform/logical_cpus, CPU user/system seconds, process_memory_kib(VmRSS/VmHWM), process_threads, model_initialization_ms, safe settings, model/index/revision/dimension/device/generation khi sẵn sàng và gpu_measurements=null ở máy CPU hiện tại. Không trả secret, query data hoặc storage keys. Thiếu/sai token trả401 theo error envelope. Các counters là snapshot, không là per-query memory allocation. Benchmark join full ASGI timing vẫn qua search samples; endpoint này chỉ lấy tài nguyên/runtime. OpenAPI hiện hành tại `/openapi.json`; contract và integration test nằm trong `api/v1/system.py` và `test_real_evaluation.py`.
 
-## Cập nhật triển khai Prompt08
+## Cập nhật triển khai Phase 08
 
-Đã có RAG metadata tùy chọn, tái sử dụng SearchService/active CLIP, batch evidence validation/current IDs, bounded context/prompts, Gemini/OpenAI-compatible adapter, citation validation, JSON/SSE và React explanation panel. Không gửi ảnh sang provider hoặc thay Fast Search/ranking. Gemini key ở backend; generator tắt/lỗi giữ ảnh. Với corpus10 ảnh không caption/tags, chưa thể xác minh nội dung thị giác. [Kiến trúc](../features/RAG_ARCHITECTURE.md), [API hiện hành](../features/RAG_API.md), [cấu hình](../features/RAG_IMPLEMENTATION.md), [đánh giá](../research/RAG_EVALUATION.md), [nghiệm thu A–L](../archive/PHASE08_TEST_REPORT.md). Không triển khai Prompt09.
+Đã có RAG metadata tùy chọn, tái sử dụng SearchService/active CLIP, batch evidence validation/current IDs, bounded context/prompts, Gemini/OpenAI-compatible adapter, citation validation, JSON/SSE và React explanation panel. Không gửi ảnh sang provider hoặc thay Fast Search/ranking. Gemini key ở backend; generator tắt/lỗi giữ ảnh. Với corpus10 ảnh không caption/tags, chưa thể xác minh nội dung thị giác. [Kiến trúc](../features/RAG_ARCHITECTURE.md), [API hiện hành](../features/RAG_API.md), [cấu hình](../features/RAG_IMPLEMENTATION.md), [đánh giá](../research/RAG_EVALUATION.md), [nghiệm thu A–L](../archive/PHASE08_TEST_REPORT.md). Không triển khai Phase 09.
 
 
 ## Bổ sung tương thích Phase10 — 07/11/2026

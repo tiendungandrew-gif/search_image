@@ -8,7 +8,7 @@ CLIP active baseline là `openai/clip-vit-base-patch32`, revision `3d74acf9a28c6
 
 Adapter dùng official AutoModel/AutoProcessor, local_files_only/safetensors, eval/inference mode, kiểm finite/shape/L2 và paired text/image dimensions từ actual warmup, không mặc định dimension từ tên model. Checkpoint này có model_type=siglip trong config; không giả mọi SigLIP2 checkpoint là NaFlex hoặc có cùng interface. Text padding=max_length64/truncation=false theo checkpoint; CLIP dùng tokenizer77 positions. Không coi sigmoid/classification logits và cosine hai models là calibrated relevance probabilities.
 
-Encoder manifest ghi source/decoder/processor/tokenizer/weights hashes, package versions, precision/device/dimension và license. Dedicated registry/index/collection dùng lại CollectionManager/durable reindex worker Prompt04; giữ originals, source metadata và prior CLIP collection. Không activate SigLIP2 qua production API hoặc trộn SigLIP text với CLIP vectors. CLIP active generation phải được kiểm không đổi sau research job.
+Encoder manifest ghi source/decoder/processor/tokenizer/weights hashes, package versions, precision/device/dimension và license. Dedicated registry/index/collection dùng lại CollectionManager/durable reindex worker Phase 04; giữ originals, source metadata và prior CLIP collection. Không activate SigLIP2 qua production API hoặc trộn SigLIP text với CLIP vectors. CLIP active generation phải được kiểm không đổi sau research job.
 
 ## Protocol
 

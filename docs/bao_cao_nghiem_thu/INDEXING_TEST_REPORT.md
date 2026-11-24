@@ -1,8 +1,8 @@
-# Báo cáo triển khai và nghiệm thu Prompt 04
+# Báo cáo triển khai và nghiệm thu Phase 04
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-Ngày 2026-11-03 · **Hoàn thành pipeline ingestion/CLIP/vector indexing và nghiệm thu bằng Docker/model thật.** Full verifier có status pass: [summary.json](../verification/phase04/summary.json); [runtime cuối](../verification/phase04/runtime_state.json), [HTTP ingestion thực](../verification/phase04/http_ingestion.json) và [final review](../verification/phase04/final_review.json). Prompt 05 chưa bắt đầu.
+Ngày 2026-11-03 · **Hoàn thành pipeline ingestion/CLIP/vector indexing và nghiệm thu bằng Docker/model thật.** Full verifier có status pass: [summary.json](../verification/phase04/summary.json); [runtime cuối](../verification/phase04/runtime_state.json), [HTTP ingestion thực](../verification/phase04/http_ingestion.json) và [final review](../verification/phase04/final_review.json). Phase 05 chưa bắt đầu.
 
 ## Checklist nghiệm thu Phase 04 — 9/9 đạt
 
@@ -39,7 +39,7 @@ Bộ nghiệm thu Docker hiện đã build API/worker, chạy unit/integration v
 | Verification | [verify_indexing.py](../../scripts/verification/verify_indexing.py), [index_sample_dataset.sh](../../scripts/data/index_sample_dataset.sh), [verify_index.sh](../../scripts/verification/verify_index.sh), ingestion/upload unit tests và [real-model integration test](../../backend/tests/integration/test_indexing.py) |
 | Docs | [IMAGE_INDEXING](../features/IMAGE_INDEXING.md), [EMBEDDING_MODELS](../features/EMBEDDING_MODELS.md), [VECTOR_INDEX_DESIGN](../features/VECTOR_INDEX_DESIGN.md), report này và cập nhật README/SETUP/DEVELOPMENT/API/DATABASE/SAD/MASTER_SPEC/ROADMAP/DECISIONS |
 
-Git nhánh main đã có từ Prompt03, source chưa commit. Không overwrite history, volumes, passwords hoặc collections ứng dụng. Source snapshot cuối nằm [source_snapshot.json](../verification/phase04/source_snapshot.json), không phải commit hash.
+Git nhánh main đã có từ Phase 03, source chưa commit. Không overwrite history, volumes, passwords hoặc collections ứng dụng. Source snapshot cuối nằm [source_snapshot.json](../verification/phase04/source_snapshot.json), không phải commit hash.
 
 ## C. Pipeline nhập ảnh thực tế
 
@@ -72,7 +72,7 @@ Nguồn và giới hạn model tại [EMBEDDING_MODELS](../features/EMBEDDING_MO
 - Qdrant: collection `images_clip_v1_da55a7d099fd`,512 dimensions/Cosine, manifest/index/config metadata khớp, exact point count10. Applied writes, vectors/payloads/ID readback và exact queryability đã kiểm chứng.
 - Index UUID `6c3a8404-2971-46bf-ac9c-5c09bdec42b5`, model UUID `02593ce4-5531-49eb-8b46-89e6ecaef50c`. Index đã ready sau validation. Active_search_index chưa được set; chưa có online encoder/search runtime.
 
-Collection trước `images_clip_v1_64b85964aaf3` giữ nguyên10 vectors để đối chiếu reindex, không bị overwrite. Con số10 trong báo cáo là collection đích, không phải tổng points cộng mọi collection. Rollback/activation cần matching manifest/runtime ở Prompt05; chưa tự đổi active pointer.
+Collection trước `images_clip_v1_64b85964aaf3` giữ nguyên10 vectors để đối chiếu reindex, không bị overwrite. Con số10 trong báo cáo là collection đích, không phải tổng points cộng mọi collection. Rollback/activation cần matching manifest/runtime ở Phase 05; chưa tự đổi active pointer.
 
 ## F. Kết quả indexing
 
@@ -153,8 +153,8 @@ Có Qdrant SDK warnings vì API key qua HTTP local; Compose data network private
 - CUDA, large corpus, process SIGKILL/concurrent live ingest stress và cross-browser matrix đầy đủ chưa được đo. Lease fencing/recovery được kiểm tra bằng state/nonce thật, không suy ra production reliability SLA.
 - Cần review model trong-domain/language/domain bias và corpus/qrels/quality gates trước đánh giá retrieval. Chưa có online search, RAG hoặc Agent.
 
-## J. Sẵn sàng cho Prompt 05
+## J. Sẵn sàng cho Phase 05
 
 **Có nền tảng indexing sẵn sàng để triển khai Semantic Search khi người dùng yêu cầu.** Đã có10 image embeddings thật trong collection manifest cuối, verified metadata/originals, compatible CLIP text branch/tokenizer cache, model/index registry và private image content endpoints. Ingestion index cấu hình trong .env là UUID ở mụcE; write token riêng không được công bố trong report.
 
-Prompt05 cần text/image query encoder ở online process, matching loaded-model capability và explicit active pointer activation, metadata eligibility/hydration/filter contracts, retrieval endpoint, genuine relevance tests và instrumentation latency. Không tự bật search-ready hoặc dùng worker như synchronous search engine. Prompt04 dừng tại đây.
+Phase 05 cần text/image query encoder ở online process, matching loaded-model capability và explicit active pointer activation, metadata eligibility/hydration/filter contracts, retrieval endpoint, genuine relevance tests và instrumentation latency. Không tự bật search-ready hoặc dùng worker như synchronous search engine. Phase 04 dừng tại đây.

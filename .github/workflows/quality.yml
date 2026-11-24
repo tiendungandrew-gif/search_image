@@ -70,7 +70,7 @@ jobs:
         working-directory: frontend
       - run: npx playwright install --with-deps chromium
         working-directory: frontend
-      - run: npx playwright test --config playwright.mock.config.ts
+      - run: npx playwright test --config tests/e2e/config/mock.config.ts
         working-directory: frontend
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         if: always()

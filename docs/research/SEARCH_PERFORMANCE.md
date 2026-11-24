@@ -1,6 +1,6 @@
 # Search latency và baseline benchmark
 
-Cập nhật Prompt06: advanced latency đo tách single-intent baseline; [ADVANCED_SEARCH_TEST_REPORT](../archive/ADVANCED_SEARCH_TEST_REPORT.md) là evidence hiện hành cho E1–E5, before/after và quality chưa đo. Các số đo Prompt05 dưới đây giữ làm historical baseline.
+Cập nhật Phase 06: advanced latency đo tách single-intent baseline; [ADVANCED_SEARCH_TEST_REPORT](../archive/ADVANCED_SEARCH_TEST_REPORT.md) là evidence hiện hành cho E1–E5, before/after và quality chưa đo. Các số đo Phase 05 dưới đây giữ làm historical baseline.
 
 Mục tiêu nghiên cứu fast Semantic Search: P90≤300ms, secondary P95≤500ms. Targets chưa được coi đạt nếu chỉ có component timings hoặc mẫu smoke; [SEARCH_TEST_REPORT](../archive/SEARCH_TEST_REPORT.md) ghi actual results và giới hạn.
 
@@ -27,7 +27,7 @@ Wrapper: `bash scripts/evaluation/benchmark_search.sh text` hoặc `image`, thê
 
 Report giữ per-request IDs/outcomes/actual result IDs/stages/client+server timings, P50/P90/P95 nearest-rank sorted index ceil(p*n), throughput, error rate và counts. Warmup không vào measurement window. Generator dùng số workers cố định, drain hết outstanding, không trộn local generator queue wait vào HTTP start. Failed samples giữ riêng, gồm transport/client timeout; error rate=unsuccessful/all attempted, không chỉ HTTP5xx. Percentiles successful-only phải kèm success/error counts và server join coverage.
 
-Hardware/runtime provenance, collection exact count, active model/revision, dataset size, cache state, concurrency và source snapshot được ghi kèm artifacts. Lượt100 requests/modality một concurrency chỉ là Phase05 baseline, chưa phải full stress/steady-state confidence intervals của Prompt07. Corpus10 ảnh không đại diện large HNSW/index working set. Quality metrics cần human qrels, không suy ra từ latency hoặc image self-match.
+Hardware/runtime provenance, collection exact count, active model/revision, dataset size, cache state, concurrency và source snapshot được ghi kèm artifacts. Lượt100 requests/modality một concurrency chỉ là Phase05 baseline, chưa phải full stress/steady-state confidence intervals của Phase 07. Corpus10 ảnh không đại diện large HNSW/index working set. Quality metrics cần human qrels, không suy ra từ latency hoặc image self-match.
 
 ## 3. Resource và tối ưu hiện có
 
@@ -35,4 +35,4 @@ Preload/warmup model trước ready, reuse SDK/pools, batch PG metadata/tags, qu
 
 Qdrant transport timeout từ SEARCH_VECTOR_TIMEOUT_SECONDS, default1s; outer REQUEST_TIMEOUT_SECONDS default2s vẫn cap toàn request. Body/image/decode bounds giữ nguyên. Metadata HEAD checks và decoder subprocess có overhead thực, không bỏ privacy/eligibility checks để làm số đẹp. Sau baseline đã tối ưu decoder process reuse và RGB IPC, giữ chính hàm decode/memory/CPU/deadline bounds. Files *_before_decoder_reuse.json giữ số đo trước; *_baseline.json là số đo sau trong lượt final verifier đã pass. Thumbnail path/payload indexes chưa được tối ưu. Chỉ kết luận improvement trong đúng workload/corpus/hardware đã đo, không suy ra large-corpus gain.
 
-CUDA và mixed search+indexing load chưa có số đo. CPU inference threads/device/model copies theo process cần profiling khi scale Uvicorn hoặc worker. Nếu một modality không đạt target, ghi rõ và dùng breakdown để lên kế hoạch Prompt07; không thay target hoặc chỉ báo mode nhanh hơn.
+CUDA và mixed search+indexing load chưa có số đo. CPU inference threads/device/model copies theo process cần profiling khi scale Uvicorn hoặc worker. Nếu một modality không đạt target, ghi rõ và dùng breakdown để lên kế hoạch Phase 07; không thay target hoặc chỉ báo mode nhanh hơn.

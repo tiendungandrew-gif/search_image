@@ -4,7 +4,7 @@ Framework tái sử dụng Experiment, immutable source archive, hardware/config
 
 ## Phân loại bằng chứng
 
-| Trạng thái | Cách dùng trong Prompt 09 |
+| Trạng thái | Cách dùng trong Phase 09 |
 | --- | --- |
 | IMPLEMENTED | Code/schema/UI đã có; không tự suy ra đã chạy trên dữ liệu thật |
 | TESTED_WITH_MOCKS | Unit doubles hoặc facts hư cấu; fixture chạy real stores vẫn không chứng minh facts/relevance thật |

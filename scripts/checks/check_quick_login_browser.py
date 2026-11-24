@@ -19,7 +19,7 @@ def main():
         "playwright",
         "test",
         "--config",
-        "playwright.quick-login.config.ts",
+        "tests/e2e/config/quick-login.config.ts",
     ]
     result = subprocess.run(
         command, cwd=ROOT / "frontend", env=env, text=True, capture_output=True, timeout=210

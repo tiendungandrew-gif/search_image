@@ -1,4 +1,4 @@
-# Nghiệm thu Prompt11 — kiểm thử, debugging và chất lượng hệ thống
+# Nghiệm thu Phase 11 — kiểm thử, debugging và chất lượng hệ thống
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
@@ -12,7 +12,7 @@ Backend244 tests được chọn pass, frontend44 unit/component tests pass, bro
 
 ## B. Kiểm toán repository
 
-Đã kiểm tra frontend/backend, migrations/DB models, Compose, ingestion/jobs/worker, CLIP, search/fusion/constraints/reranker, RAG/provider, Agent/planner/tools/knowledge, evaluation/tracking, config/logging/auth và tài liệu. [SYSTEM_AUDIT](SYSTEM_AUDIT.md) có module status matrix đúng enum của Prompt11. 15 tài liệu tối thiểu đều hiện hữu; không dùng sự hiện hữu thay execution evidence.
+Đã kiểm tra frontend/backend, migrations/DB models, Compose, ingestion/jobs/worker, CLIP, search/fusion/constraints/reranker, RAG/provider, Agent/planner/tools/knowledge, evaluation/tracking, config/logging/auth và tài liệu. [SYSTEM_AUDIT](SYSTEM_AUDIT.md) có module status matrix đúng enum của Phase 11. 15 tài liệu tối thiểu đều hiện hữu; không dùng sự hiện hữu thay execution evidence.
 
 Working tree có thay đổi trước lượt này; baseline status/source đã lưu tại [baseline](../verification/phase11/baseline). Các source snapshots của experiments có archive/hash; `.git` không bị reset/commit/push. Không áp dụng architecture rewrite.
 

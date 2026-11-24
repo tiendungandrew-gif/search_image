@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-24",
+  "scope": "Repository layout only; no database/index/volume changes",
+  "data_preservation": {
+    "original_dataset_files": 48294,
+    "missing_files": [],
+    "dataset_files_in_index": 0,
+    "tracked_index_files": 2229,
+    "quarantined_bytes": 32768
+  },
+  "playwright_discovery": {
+    "playwright.access.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 2 tests in 1 file"
+    },
+    "playwright.commercial.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 4 tests in 1 file"
+    },
+    "playwright.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 74 tests in 7 files"
+    },
+    "playwright.consumer.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 12 tests in 3 files"
+    },
+    "playwright.deploy.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 8 tests in 1 file"
+    },
+    "playwright.mock.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 4 tests in 1 file"
+    },
+    "playwright.navbar.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 4 tests in 1 file"
+    },
+    "playwright.qa.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 12 tests in 1 file"
+    },
+    "playwright.quick-login.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 2 tests in 1 file"
+    },
+    "playwright.travel.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 4 tests in 1 file"
+    },
+    "playwright.usability.config.ts": {
+      "exit_code": 0,
+      "same_tests_and_projects": true,
+      "summary": "Total: 4 tests in 1 file"
+    }
+  },
+  "checks": {
+    "frontend_typecheck": "pass",
+    "frontend_eslint": "pass",
+    "scripts_ruff": "pass",
+    "changed_python_format": "pass",
+    "python_compileall": "pass",
+    "mock_browser": "4 passed (13.2s)",
+    "markdown_new_broken_targets": [],
+    "git_diff_check": "pass"
+  },
+  "not_run": [
+    "live backend/browser acceptance",
+    "real-model benchmark",
+    "production deployment"
+  ],
+  "git": "Generated corpus deletions staged via git rm --cached; code/doc moves remain unstaged until git add. No commit/push/history rewrite."
+}

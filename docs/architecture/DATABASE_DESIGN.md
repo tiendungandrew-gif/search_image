@@ -1,15 +1,15 @@
 # Thiết kế PostgreSQL, Qdrant và MinIO
 
 Cập nhật tài khoản/UI 08/11/2026: xem [thiết kế quyền](../architecture/ACCESS_CONTROL.md) và [hướng dẫn đăng nhập](../operations/ACCOUNTS.md). Các hướng dẫn dùng data token trước đây chỉ áp dụng khi bật legacy; mặc định mới dùng session tài khoản.
-## Hoàn thiện Prompt 09 — 06/11/2026
+## Hoàn thiện Phase 09 — 06/11/2026
 
-Đã bổ sung bộ địa danh NPS có nguồn:3 ảnh thật,4 entities,3 quan hệ và3 liên kết ảnh. Index phục vụ hiện513 ảnh, generation3; index510 ảnh cũ giữ nguyên. Workflow Anh/Việt/alias, Gemini planner và RAG thật đã được kiểm tra. Planner có trace từng attempt; prompt tools và RAG context đã rút gọn, citation provenance vẫn giữ đầy đủ trên server. Bộ kiểm tra mới đạt200 backend,21 frontend unit và24 browser full tests cùng6 ca browser nhánh cuối. Chất lượng do người đánh giá vẫn chờ; số đo latency và trạng thái target3s xem [báo cáo Prompt09](../archive/PHASE09_TEST_REPORT.md), dữ liệu/nguồn tại [PUBLIC_LANDMARK_DATASET](../research/PUBLIC_LANDMARK_DATASET.md).
+Đã bổ sung bộ địa danh NPS có nguồn:3 ảnh thật,4 entities,3 quan hệ và3 liên kết ảnh. Index phục vụ hiện513 ảnh, generation3; index510 ảnh cũ giữ nguyên. Workflow Anh/Việt/alias, Gemini planner và RAG thật đã được kiểm tra. Planner có trace từng attempt; prompt tools và RAG context đã rút gọn, citation provenance vẫn giữ đầy đủ trên server. Bộ kiểm tra mới đạt200 backend,21 frontend unit và24 browser full tests cùng6 ca browser nhánh cuối. Chất lượng do người đánh giá vẫn chờ; số đo latency và trạng thái target3s xem [báo cáo Phase 09](../archive/PHASE09_TEST_REPORT.md), dữ liệu/nguồn tại [PUBLIC_LANDMARK_DATASET](../research/PUBLIC_LANDMARK_DATASET.md).
 
-## Schema runtime Prompt09 — 06/11/2026
+## Schema runtime Phase 09 — 06/11/2026
 
-Migration `20261106_agent_knowledge` cộng thêm entities/entity_relationships/image_entities, khớp nhu cầu đã thiết kế ở Prompt02. Không sửa dữ liệu ảnh/embedding/index; tổng runtime hiện16 bảng. [KNOWLEDGE_BASE_DESIGN](../features/KNOWLEDGE_BASE_DESIGN.md) ghi chính xác fields/indexes/provenance/import guard và chiến lược đồng bộ PG–Qdrant–MinIO. Serving DB có510 ảnh, knowledge vẫn0 entities/0 relationships/0 links. Thiết kế ER đầy đủ bên dưới gồm cả phạm vi các phase sau.
+Migration `20261106_agent_knowledge` cộng thêm entities/entity_relationships/image_entities, khớp nhu cầu đã thiết kế ở Phase 02. Không sửa dữ liệu ảnh/embedding/index; tổng runtime hiện16 bảng. [KNOWLEDGE_BASE_DESIGN](../features/KNOWLEDGE_BASE_DESIGN.md) ghi chính xác fields/indexes/provenance/import guard và chiến lược đồng bộ PG–Qdrant–MinIO. Serving DB có510 ảnh, knowledge vẫn0 entities/0 relationships/0 links. Thiết kế ER đầy đủ bên dưới gồm cả phạm vi các phase sau.
 
-Phiên bản 1.1.0 · 2026-11-03 · Logical schema Prompt02; migration/implementation hiện hành xem mục8/9. Đã đối chiếu data contracts tại [SAD](SAD.md) và luồng tại [SYSTEM_ARCHITECTURE](SYSTEM_ARCHITECTURE.md).
+Phiên bản 1.1.0 · 2026-11-03 · Logical schema Phase 02; migration/implementation hiện hành xem mục8/9. Đã đối chiếu data contracts tại [SAD](SAD.md) và luồng tại [SYSTEM_ARCHITECTURE](archive/SYSTEM_ARCHITECTURE.md).
 
 ## 1. Quy ước và nguồn sự thật
 
@@ -140,7 +140,7 @@ Cột: `principal_id text !`; `endpoint text !`; `key text !`; `request_sha256 c
 
 ER nguồn đầy đủ: [database_erd.mmd](../diagrams/database_erd.mmd), chứa cả 24 tables (mục 2.8 có hai bảng). Relationships trong diagram bám FK trên, không dùng diagram thay thế nullability/CHECK/UQ. Các bảng optional history/entities/evaluation có thể migration theo phase; chúng không trở thành dependency LLM của core.
 
-Logical design chưa được chạy qua PostgreSQL hoặc Alembic. Prompt 03 pin version và migration test; Prompt 04 kiểm tra uniqueness/leases. Dùng application validation cho cross-table invariants không biểu đạt được bằng CHECK; bắt buộc transaction/row locking cho publish/activate. Publish-ready lock image và item theo cùng thứ tự, kiểm tra claim token/lease còn hiệu lực, image không deleting/deleted, digest/metadata_revision/manifest vẫn khớp rồi mới commit. Worker không được chuyển deleting/deleted về available. Delete transaction dùng cùng image lock để serialize với publish. GIN/partitioning chỉ thêm theo query plan thực tế.
+Logical design chưa được chạy qua PostgreSQL hoặc Alembic. Phase 03 pin version và migration test; Phase 04 kiểm tra uniqueness/leases. Dùng application validation cho cross-table invariants không biểu đạt được bằng CHECK; bắt buộc transaction/row locking cho publish/activate. Publish-ready lock image và item theo cùng thứ tự, kiểm tra claim token/lease còn hiệu lực, image không deleting/deleted, digest/metadata_revision/manifest vẫn khớp rồi mới commit. Worker không được chuyển deleting/deleted về available. Delete transaction dùng cùng image lock để serialize với publish. GIN/partitioning chỉ thêm theo query plan thực tế.
 
 ## 4. Qdrant collection và payload
 
@@ -193,32 +193,32 @@ Item transitions: awaiting_input → queued → processing → succeeded; proces
 | Delete nửa chừng | Tombstone tiếp tục chặn đọc; replay delete idempotent, xóa đủ mọi index/object rồi mới finalized |
 | Activate model/index lỗi | Pointer cũ giữ nguyên hoặc trả INDEX_SWITCHING; không dùng encoder/index khác space |
 
-Reconciliation scheduled khởi đầu mỗi 15 phút, cộng repair theo event; full corpus scan chia page và giới hạn I/O. Grace orphan khởi đầu 24 giờ nhưng không xóa object/index còn job/run/reference hoặc writer sống. Hai pass sau quiescence và reference recheck trước destructive cleanup. Đây là đề xuất cấu hình, không phải RPO/SLA. Dataset snapshot/reindex không giữ metadata sửa/xóa vô hạn: watermark/catch-up và mutation fencing được kiểm tra ở Prompt 04/11.
+Reconciliation scheduled khởi đầu mỗi 15 phút, cộng repair theo event; full corpus scan chia page và giới hạn I/O. Grace orphan khởi đầu 24 giờ nhưng không xóa object/index còn job/run/reference hoặc writer sống. Hai pass sau quiescence và reference recheck trước destructive cleanup. Đây là đề xuất cấu hình, không phải RPO/SLA. Dataset snapshot/reindex không giữ metadata sửa/xóa vô hạn: watermark/catch-up và mutation fencing được kiểm tra ở Phase 04/11.
 
 ## 7. Handoff sang API
 
 Schema cung cấp image/job/query IDs, metadata allowlist, claims, index/model versions, error/status và benchmark manifests cần cho contracts. Job status có cursor theo `(created_at,id)` trong items; API không nhận bucket key/server path. Các object/evaluation refs là server-internal. Retention lịch sử và experiments cần owner chốt trước nonfixture data; schema giữ nullability/opt-in để không thu dữ liệu nhạy cảm mặc định.
 
-## 8. Phạm vi migration Prompt 03
+## 8. Phạm vi migration Phase 03
 
 Revision `0001_foundation` hiện tạo sáu bảng: images, image_metadata, embedding_models, indexing_jobs, search_indexes và dataset_sources. Bốn bảng đầu là scope ưu tiên; hai bảng cuối cần để giữ foreign keys đã thiết kế. Không tạo toàn bộ24 bảng sớm, không seed model/image, không gọi SDK tạo vector collection. Model dimension bắt buộc nhập thật khi có model được chọn, không default placeholder.
 
-ORM và migration dùng CHAR(64) cho hashes, CHAR(2) cho country_code, PostgreSQL JSONB/UUID/timestamptz, constraints/indexes có tên; transactions và migration rollback đã có. Integration test tạo database ngẫu nhiên, upgrade, compare_metadata với ORM rồi downgrade/drop; không downgrade DB ứng dụng. `updated_at` tự cập nhật bởi ORM, chưa có DB trigger. Schema24 bảng bên trên vẫn là target xuyên các phase;18 bảng còn lại bổ sung khi implementation cần, chủ yếu Prompt04 và evaluation/entities sau đó.
+ORM và migration dùng CHAR(64) cho hashes, CHAR(2) cho country_code, PostgreSQL JSONB/UUID/timestamptz, constraints/indexes có tên; transactions và migration rollback đã có. Integration test tạo database ngẫu nhiên, upgrade, compare_metadata với ORM rồi downgrade/drop; không downgrade DB ứng dụng. `updated_at` tự cập nhật bởi ORM, chưa có DB trigger. Schema24 bảng bên trên vẫn là target xuyên các phase;18 bảng còn lại bổ sung khi implementation cần, chủ yếu Phase 04 và evaluation/entities sau đó.
 
 Real PostgreSQL verification, migration upgrade/compare/downgrade và dependency connectivity đã qua cả native lẫn Docker. Năm containers khởi động healthy; PG/MinIO markers và Qdrant volume file còn nguyên sau force-recreate, sau đó được dọn đúng namespace lượt test. Không tạo vector collection hoặc dữ liệu semantic. Xem [PHASE03_REPORT](../archive/PHASE03_REPORT.md).
 
-## 9. Migration và storage implementation Prompt 04
+## 9. Migration và storage implementation Phase 04
 
-Revision `928b88dc3f68_indexing_pipeline` bổ sung image_tags, image_objects, image_embeddings, indexing_job_items, job_item_attempts, idempotency_records và active_search_index, tổng13 bảng ORM. Giữ nguyên revision0001 và dữ liệu có sẵn. Upgrade/ORM compare/downgrade chỉ kiểm tra rollback trên disposable DB. Active pointer chưa tự set; online activation thuộc Prompt05.
+Revision `928b88dc3f68_indexing_pipeline` bổ sung image_tags, image_objects, image_embeddings, indexing_job_items, job_item_attempts, idempotency_records và active_search_index, tổng13 bảng ORM. Giữ nguyên revision0001 và dữ liệu có sẵn. Upgrade/ORM compare/downgrade chỉ kiểm tra rollback trên disposable DB. Active pointer chưa tự set; online activation thuộc Phase 05.
 
 Acceptance upload dùng final original key xác định thay vì staging copy riêng: PG awaiting_input reserve trước PUT → GET/hash verify → receipt và queued cùng transaction. Crash có thể phục hồi từ key UUID/hash, không tạo identity khác. Bản gốc chưa durable không được trả202. SHA uniqueness, live image/index partial unique, SKIP LOCKED, claim nonce/lease và publication source revision checks đã có. Metadata duplicate không overwrite. File upload gốc giữ nguyên bytes; filename chỉ ở CLI report, không là storage path hoặc identity.
 
 Model/collection manifest được đăng ký từ loaded CLIP projection dimension thật. Qdrant wait applied, ID/vector/payload retrieval và exact query kiểm tra trước PG ready. Reindex không thay collection cũ. Reconcile/repair là CLI có chủ đích; orphan scans report-only, chưa scheduled garbage collection/deletion. Chi tiết trạng thái hiện hành tại [VECTOR_INDEX_DESIGN](../features/VECTOR_INDEX_DESIGN.md) và [INDEXING_TEST_REPORT](../archive/INDEXING_TEST_REPORT.md).
 
-## 10. Query/activation Prompt05
+## 10. Query/activation Phase 05
 
-Không thêm hoặc âm thầm sửa schema/migration. Dùng active_search_index đã tạo ở Prompt04; CLI lock/validate ready/model trước create/swap generation. Search batch join image/object/embedding receipts, filter lại source hash/metadata revision/status và payload compatibility. Query images và text không persist vào PG/MinIO; full-response telemetry nằm bounded memory rồi benchmark xuất artifact không có raw user inputs. Dữ liệu/index collections có sẵn giữ nguyên.
+Không thêm hoặc âm thầm sửa schema/migration. Dùng active_search_index đã tạo ở Phase 04; CLI lock/validate ready/model trước create/swap generation. Search batch join image/object/embedding receipts, filter lại source hash/metadata revision/status và payload compatibility. Query images và text không persist vào PG/MinIO; full-response telemetry nằm bounded memory rồi benchmark xuất artifact không có raw user inputs. Dữ liệu/index collections có sẵn giữ nguyên.
 
-## 11. Prompt06 — không thay đổi schema/index
+## 11. Phase 06 — không thay đổi schema/index
 
-Advanced retrieval reuse immutable model/search index/active pointer và image metadata/embedding/object receipts Prompt04–05. Không migration mới, không thêm captions/tags/license hoặc object labels suy đoán. Multi-query candidates/fusion/reranking/query analysis là dữ liệu request-scoped; không ghi search history/query image hoặc evaluation labels vào các store. Query telemetry bounded trong API memory, artifacts nghiên cứu ghi vào evaluation/results bằng CLI. Actual tri-state metadata evidence và missing-data policy tại [MULTI_INTENT_SEARCH](../features/MULTI_INTENT_SEARCH.md).
+Advanced retrieval reuse immutable model/search index/active pointer và image metadata/embedding/object receipts Phase 04–05. Không migration mới, không thêm captions/tags/license hoặc object labels suy đoán. Multi-query candidates/fusion/reranking/query analysis là dữ liệu request-scoped; không ghi search history/query image hoặc evaluation labels vào các store. Query telemetry bounded trong API memory, artifacts nghiên cứu ghi vào evaluation/results bằng CLI. Actual tri-state metadata evidence và missing-data policy tại [MULTI_INTENT_SEARCH](../features/MULTI_INTENT_SEARCH.md).

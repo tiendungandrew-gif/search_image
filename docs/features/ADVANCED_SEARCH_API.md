@@ -1,6 +1,6 @@
-# Advanced Search API — Prompt 06
+# Advanced Search API — Phase 06
 
-Base `/api/v1`, Bearer read/operator token, common ErrorEnvelope và request IDs giữ nguyên. Prompt05 text/image clients tiếp tục hoạt động. Search không persist history/query image hoặc yêu cầu idempotency key. [SEARCH_API](SEARCH_API.md) giữ chi tiết baseline; tài liệu này là phần mở rộng hiện hành.
+Base `/api/v1`, Bearer read/operator token, common ErrorEnvelope và request IDs giữ nguyên. Phase 05 text/image clients tiếp tục hoạt động. Search không persist history/query image hoặc yêu cầu idempotency key. [SEARCH_API](SEARCH_API.md) giữ chi tiết baseline; tài liệu này là phần mở rộng hiện hành.
 
 ## Endpoints và requests
 
@@ -10,7 +10,7 @@ Base `/api/v1`, Bearer read/operator token, common ErrorEnvelope và request IDs
 {"query":"coffee and a brown cat","search_mode":"multi_intent","top_k":10,"rerank":{"enabled":true,"on_failure":"skip"}}
 ```
 
-`POST /search/multimodal`: hỗ trợ text-only, image-only giữ compatibility Prompt05, hoặc paired text+image. JSON khi dùng existing image_id; multipart khi có upload. Tối thiểu một input, không đồng thời file và image_id; explicit mode phải khớp input. auto tự chọn text/image/paired hoặc supported multi-intent; không chọn agent. File validation/bounds/proxy access như Prompt05.
+`POST /search/multimodal`: hỗ trợ text-only, image-only giữ compatibility Phase 05, hoặc paired text+image. JSON khi dùng existing image_id; multipart khi có upload. Tối thiểu một input, không đồng thời file và image_id; explicit mode phải khớp input. auto tự chọn text/image/paired hoặc supported multi-intent; không chọn agent. File validation/bounds/proxy access như Phase 05.
 
 Multipart canonical: image file(optional nếu có text), options JSON SearchRequest. Flat aliases: query/text, top_k, search_mode, fusion_strategy, text_weight, image_weight, rerank(JSON boolean). Không trộn options với flat fields, không duplicate/unknown field, tối đa1 file/12 fields; malformed boolean/numeric/JSON trả422.
 
@@ -25,7 +25,7 @@ Top-K default10/runtime1…50(config≤100), candidate_count≥K≤1.000. Server
 
 ## Constraints
 
-Canonical group/semantic/metadata leaf trong OpenAPI; tối đa8 leaves/depth2, unique IDs; `whole`/`image` là IDs dành cho nhánh nội bộ, không được dùng làm clause ID. Metadata filters giữ schema Prompt05, unknown fields/category hoặc metadata expression vượt bounds bị422. Leaf thêm negated(defaultfalse) và weight(default1,>0≤10). Explicit AST là authoritative conditions, text giữ retrieval context.
+Canonical group/semantic/metadata leaf trong OpenAPI; tối đa8 leaves/depth2, unique IDs; `whole`/`image` là IDs dành cho nhánh nội bộ, không được dùng làm clause ID. Metadata filters giữ schema Phase 05, unknown fields/category hoặc metadata expression vượt bounds bị422. Leaf thêm negated(defaultfalse) và weight(default1,>0≤10). Explicit AST là authoritative conditions, text giữ retrieval context.
 
 ```json
 {"text":"a cup of coffee","constraints":{"op":"and","clauses":[{"id":"dimensions","kind":"metadata","filter":{"min_width":500},"required":true},{"id":"preference","kind":"semantic","text":"warm light","required":false,"weight":0.5}]},"rerank":true,"top_k":5}

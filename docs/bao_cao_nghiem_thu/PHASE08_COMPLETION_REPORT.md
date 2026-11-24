@@ -1,8 +1,8 @@
-# Nghiệm thu bổ sung Prompt08 — 06/11/2026
+# Nghiệm thu bổ sung Phase 08 — 06/11/2026
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-**Triển khai và kiểm thử phần mềm đã đạt trên corpus510 ảnh. Human quality review tiếp tục chờ theo lựa chọn của người dùng. Không đánh dấu chất lượng ngữ nghĩa đã nghiệm thu; không bắt đầu Prompt09.** Báo cáo05/11 và các lượt thất bại được giữ nguyên tại [báo cáo ban đầu](PHASE08_TEST_REPORT.md).
+**Triển khai và kiểm thử phần mềm đã đạt trên corpus510 ảnh. Human quality review tiếp tục chờ theo lựa chọn của người dùng. Không đánh dấu chất lượng ngữ nghĩa đã nghiệm thu; không bắt đầu Phase 09.** Báo cáo05/11 và các lượt thất bại được giữ nguyên tại [báo cáo ban đầu](PHASE08_TEST_REPORT.md).
 
 ## A. Tóm tắt triển khai
 
@@ -83,8 +83,8 @@ Lượt full đầu150 pass/2 fail do thiếu template trong Docker image và as
 
 Human review còn pending theo người dùng; chưa có semantic Recall@10/nDCG/answer quality/visual unsupported-claim rate. Corpus500 có caption không thay bộ nhãn benchmark. Chưa kiểm large-scale/cold-cache/high-concurrency/GPU, không có bằng chứng OpenAI live integration từ Gemini tests. API quản trị sửa/xóa metadata chưa thuộc phần hoàn thiện này. Provider outages/quota vẫn có thể xảy ra dù lượt mới pass.
 
-## L. Sẵn sàng Prompt09 và bàn giao
+## L. Sẵn sàng Phase 09 và bàn giao
 
-Đã có retrieval/evidence/context/generation/citations/JSON/SSE/telemetry và corpus caption để tích hợp sau. Mã nguồn, tests, measurement artifacts và công cụ human review được bàn giao; **chưa xác nhận nghiệm thu chất lượng ngữ nghĩa**. Không có Agent Planner/tool calling/multi-hop hoặc thay đổi tự động sang Prompt09.
+Đã có retrieval/evidence/context/generation/citations/JSON/SSE/telemetry và corpus caption để tích hợp sau. Mã nguồn, tests, measurement artifacts và công cụ human review được bàn giao; **chưa xác nhận nghiệm thu chất lượng ngữ nghĩa**. Không có Agent Planner/tool calling/multi-hop hoặc thay đổi tự động sang Phase 09.
 
 [Kiểm tra bàn giao cuối](../verification/phase08_completion_20261106/final_checks.json). Người dùng có thể tiếp tục đánh giá offline và nạp verified labels bằng CLI theo [hướng dẫn](../research/RAG_DATASET.md).

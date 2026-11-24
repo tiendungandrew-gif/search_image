@@ -1,6 +1,6 @@
-# Hiệu năng và timeout RAG — Prompt08
+# Hiệu năng và timeout RAG — Phase 08
 
-Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Prompt09.
+Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Phase 09.
 
 Mục tiêu Fast Semantic Search P90≤300ms và mục tiêu RAG time-to-last-token≤3s là hai mục tiêu riêng. Không cộng các component percentile để chứng minh end-to-end percentile. Provider TTFT tính đến delta nội dung đầu tiên; TTLast đến delta cuối của selection JSON. Câu trả lời đã validate đến sau bước validation/server render; frontend không coi token chưa kiểm là answer.
 

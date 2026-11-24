@@ -1,8 +1,8 @@
-# Search API — Prompt 05
+# Search API — Phase 05
 
-Tài liệu baseline Prompt05. Phần text/image core vẫn áp dụng; advanced fusion/multi-intent/reranking đã được triển khai ở Prompt06 theo [ADVANCED_SEARCH_API](ADVANCED_SEARCH_API.md), [MULTIMODAL_SEARCH](MULTIMODAL_SEARCH.md) và [báo cáo](../archive/ADVANCED_SEARCH_TEST_REPORT.md). Các đoạn “chưa triển khai Prompt06” bên dưới mô tả thời điểm bàn giao Prompt05.
+Tài liệu baseline Phase 05. Phần text/image core vẫn áp dụng; advanced fusion/multi-intent/reranking đã được triển khai ở Phase 06 theo [ADVANCED_SEARCH_API](ADVANCED_SEARCH_API.md), [MULTIMODAL_SEARCH](MULTIMODAL_SEARCH.md) và [báo cáo](../archive/ADVANCED_SEARCH_TEST_REPORT.md). Các đoạn “chưa triển khai Phase 06” bên dưới mô tả thời điểm bàn giao Phase 05.
 
-Base `/api/v1`, Bearer API_TOKEN read hoặc operator write token. Canonical schemas giữ API_SPECIFICATION; các alias Prompt05 dưới là additions, không đổi field types v1. Search không yêu cầu Idempotency-Key và không tạo ingestion jobs.
+Base `/api/v1`, Bearer API_TOKEN read hoặc operator write token. Canonical schemas giữ API_SPECIFICATION; các alias Phase 05 dưới là additions, không đổi field types v1. Search không yêu cầu Idempotency-Key và không tạo ingestion jobs.
 
 ## 1. Text search
 
@@ -26,7 +26,7 @@ vector ảnh và model hiện có được giữ nguyên.
 {"text":"a cup of coffee","mode":"text","top_k":10,"candidate_count":50,"filters":{}}
 ```
 
-Alias tương thích ví dụ Prompt05: `{query,search_mode:"semantic"}` được normalize thành `{text,mode:"text"}`; không gửi đồng thời text và query hoặc contradictory modes. Whitespace/NFC normalize, không lowercase semantic text. Empty/control-character/too-long input →422; vượt77 token positions CLIP →422 TEXT_TOKEN_LIMIT, không truncate. Top-K1…50 mặc định server, schema hard cap100 khi operator cấu hình; candidates1…1.000 và≥K. Không nhận arbitrary model/collection/path/URL.
+Alias tương thích ví dụ Phase 05: `{query,search_mode:"semantic"}` được normalize thành `{text,mode:"text"}`; không gửi đồng thời text và query hoặc contradictory modes. Whitespace/NFC normalize, không lowercase semantic text. Empty/control-character/too-long input →422; vượt77 token positions CLIP →422 TEXT_TOKEN_LIMIT, không truncate. Top-K1…50 mặc định server, schema hard cap100 khi operator cấu hình; candidates1…1.000 và≥K. Không nhận arbitrary model/collection/path/URL.
 
 ## 2. Image search
 
@@ -37,13 +37,13 @@ image: <JPEG/PNG/WebP binary>
 options: {"mode":"image","top_k":10,"exclude_self":false}
 ```
 
-Legacy multipart thay options bằng `top_k` và `search_mode=image_similarity` được hỗ trợ. Không trộn options với legacy fields; chỉ một file và known fields. `/search/multimodal` image-only là compatibility addition theo Prompt05; text+image fusion vẫn FEATURE_DISABLED409. Core JSON existing-image input:
+Legacy multipart thay options bằng `top_k` và `search_mode=image_similarity` được hỗ trợ. Không trộn options với legacy fields; chỉ một file và known fields. `/search/multimodal` image-only là compatibility addition theo Phase 05; text+image fusion vẫn FEATURE_DISABLED409. Core JSON existing-image input:
 
 ```json
 {"image_id":"00000000-0000-4000-8000-000000000040","mode":"image","top_k":5,"exclude_self":true}
 ```
 
-UUID trên chỉ minh họa shape, phải thay bằng actual image_id. Existing-image query lấy verified stored vector. exclude_self defaulttrue, áp dụng image_id hoặc SHA match của query upload; UI gửi false để hiển thị exact self match. Query uploads không tự index/persist; multipart spool được đóng khi parse xong. Raw filenames/MIME không thay content validation. File20MiB/body21MiB, one frame,25M pixels/side10.000, decoder process bounds dùng lại Prompt04.
+UUID trên chỉ minh họa shape, phải thay bằng actual image_id. Existing-image query lấy verified stored vector. exclude_self defaulttrue, áp dụng image_id hoặc SHA match của query upload; UI gửi false để hiển thị exact self match. Query uploads không tự index/persist; multipart spool được đóng khi parse xong. Raw filenames/MIME không thay content validation. File20MiB/body21MiB, one frame,25M pixels/side10.000, decoder process bounds dùng lại Phase 04.
 
 ## 3. Filters và advanced fields
 

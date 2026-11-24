@@ -1,4 +1,4 @@
-# Phương pháp đánh giá retrieval — Prompt07
+# Phương pháp đánh giá retrieval — Phase 07
 
 Tách năm câu hỏi: relevance của ảnh, chất lượng thứ hạng, thỏa điều kiện, latency và reliability. Một response200, self-match hoặc ANN overlap không chứng minh semantic relevance. [Dataset/labels](DATASET_AND_GROUND_TRUTH.md), [load/latency](LATENCY_BENCHMARK.md), [ablation](ABLATION_STUDY.md) và [test report](../archive/PHASE07_TEST_REPORT.md) ghi scope/evidence.
 
@@ -14,7 +14,7 @@ Strict evaluation reject unjudged IDs, invalid grades/bools/NaN và mismatched c
 
 Per-constraint human true/false/null và overall Boolean-query satisfaction là ground truth độc lập model. Model satisfied/violated/unknown được đối chiếu human truth; UNKNOWN là abstention, không success/mismatch. Accuracy trên verified predictions phải kèm verification coverage. Human UNKNOWN cũng không được coi là false: satisfaction denominator chỉ gồm known judgments và phải báo coverage. Top-K clause coverage dùng các clause có human labels; overall success cần một returned image được human xác nhận thỏa logic required. Optional preferences không tự thành mandatory.
 
-Baseline không trả assessments vẫn có thể chấm human satisfaction từ returned IDs; thiếu assessments chỉ làm verification coverage unavailable. Strict semantic queries thiếu verifier vẫn409 theo Prompt06. Không suy điều kiện màu/vị trí/absence từ cosine hoặc parser.
+Baseline không trả assessments vẫn có thể chấm human satisfaction từ returned IDs; thiếu assessments chỉ làm verification coverage unavailable. Strict semantic queries thiếu verifier vẫn409 theo Phase 06. Không suy điều kiện màu/vị trí/absence từ cosine hoặc parser.
 
 ## Identity và ANN là tasks riêng
 

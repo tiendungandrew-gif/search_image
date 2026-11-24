@@ -1,6 +1,6 @@
-# Prompt và kiểm tra grounding — Prompt08
+# Prompt và kiểm tra grounding — Phase 08
 
-Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Prompt09.
+Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Phase 09.
 
 Bốn template thực tại backend/app/services/rag/prompts: system_prompt.txt, answer_generation.txt, evidence_explanation.txt, insufficient_evidence.txt. Version extractive-facts-v1; SHA256 trên toàn bộ template được ghi ở mỗi response/experiment. Không sửa template bằng query parameter.
 

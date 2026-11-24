@@ -1,4 +1,4 @@
-# Bộ địa danh công khai — hoàn thiện Prompt 09
+# Bộ địa danh công khai — hoàn thiện Phase 09
 
 Ngày 06/11/2026. Người dùng chọn chuẩn bị bộ địa danh có trích nguồn. Bộ đầu tiên gồm ba ảnh NPS và các facts vị trí tại Washington, D.C.; dùng để kiểm chứng workflow quan hệ trên dữ liệu thật. Không dùng bộ này thay cho nhãn relevance/faithfulness của người đánh giá.
 

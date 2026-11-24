@@ -1,6 +1,6 @@
-# Đánh giá RAG — Prompt08
+# Đánh giá RAG — Phase 08
 
-Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Prompt09.
+Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Phase 09.
 
 R1: API Semantic Search thật không gọi LLM. R2: metadata baseline hiển thị thông tin có thật, không giả thành câu do LLM tạo. R3: Gemini chọn facts trên context bounded. R4: cùng query/task/language nhưng evidence cap1 thay3. R5 vision-grounded chưa triển khai, không có số giả.
 
@@ -13,7 +13,7 @@ backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/b
 bash scripts/verification/verify_rag.sh
 ```
 
-CLI dùng Experiment Prompt07, immutable UTC/UUID dirs/source archive; không ghi đè phase trước. Chỉ gọi API backend, không đọc key LLM ở CLI benchmark. Kết quả có raw responses, settings/model/prompt versions, counts và grouped timing. Sample20 là exploratory, không production confidence/SLA proof; lỗi/timeout đầu và model probes được giữ riêng tại docs/verification/phase08. RAG không thay Recall/MRR/nDCG retrieval; bộ nhãn relevance Prompt07 vẫn chưa có.
+CLI dùng Experiment Phase 07, immutable UTC/UUID dirs/source archive; không ghi đè phase trước. Chỉ gọi API backend, không đọc key LLM ở CLI benchmark. Kết quả có raw responses, settings/model/prompt versions, counts và grouped timing. Sample20 là exploratory, không production confidence/SLA proof; lỗi/timeout đầu và model probes được giữ riêng tại docs/verification/phase08. RAG không thay Recall/MRR/nDCG retrieval; bộ nhãn relevance Phase 07 vẫn chưa có.
 
 Human review chỉ chấm R3/R4, tách theo configuration/language, không gộp search-only R1 hoặc metadata-only R2 vào answer quality. Grade null là chưa có đánh giá, được loại khỏi mean với evaluated_cases riêng; claims/unsupported_claims phải là counts do reviewer kiểm. CLI yêu cầu result_sha256 của frozen output trước validate.
 

@@ -1,4 +1,4 @@
-# Báo cáo nghiệm thu Prompt10 — A–P
+# Báo cáo nghiệm thu Phase 10 — A–P
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
@@ -14,7 +14,7 @@ Các nhóm source chính:
 
 - `frontend/src/features/search`: `SearchForm`, `SearchWorkspace`, `useSearchSession`, `AdvancedControls`, `validation`, `ImageUpload`, `ResultGallery`, `ResultImage`, `ImageDetailDialog`, `QueryAnalysis`, `SearchSkeleton` và unit tests tương ứng.
 - `frontend/src/features/system/DatasetStatus.tsx`, `hooks/useWorkspaceStatus.ts`; `features/evaluation/EvaluationPage.tsx`.
-- `features/rag/ExplanationPanel.tsx`, `features/agent/api.ts`, `features/agent/AgentResults.tsx`: nối SSE chung, giữ partial/validated citations và gallery dùng chung. Giữ các thay đổi Prompt08/09 đã có, không revert working tree của người dùng.
+- `features/rag/ExplanationPanel.tsx`, `features/agent/api.ts`, `features/agent/AgentResults.tsx`: nối SSE chung, giữ partial/validated citations và gallery dùng chung. Giữ các thay đổi Phase 08/09 đã có, không revert working tree của người dùng.
 - `services/api/client.ts`, `decoders.ts`, `stream.ts`, `media.ts`, `types/api.ts`, App và CSS design tokens.
 - E2E `phase10.spec.ts`, `phase10-empty.spec.ts`, `phase10-performance.spec.ts`; cập nhật regression foundation/RAG và Playwright projects. Chỉ thêm axe-core ở dev dependency/lockfile.
 - Backend bổ sung `services/workspace.py`, hai read-only routes trong `api/v1/system.py`, config evaluation root, nullable metadata detail fix, 11 unit tests; Compose thêm evaluation mount read-only. Không migration.
@@ -124,7 +124,7 @@ Các lỗi tìm được đã sửa: aria-label trên generic placeholder, Agent
 
 Không bổ sung hạng mục ngoài scope để gọi hệ thống production ready. Secrets/browser storage và raw artifacts được kiểm tra trong final audit; trace vẫn tắt.
 
-## P. Prompt11 Readiness
+## P. Phase 11 Readiness
 
 **Sẵn sàng bàn giao sang Phase11 khi người dùng yêu cầu**, với source UI/API, contracts, typed decoders, fixtures real-empty, regression matrix, source manifest và số đo thực làm baseline cho integration/reliability/security/performance/debugging sâu. Infrastructure và dữ liệu thực đủ cho các luồng chức năng đã kiểm tra; không bị chặn bởi thiếu corpus cho functional QA. Nghiệm thu chất lượng AI vẫn thiếu nhãn human, QA thiết bị thật cần môi trường tương ứng.
 

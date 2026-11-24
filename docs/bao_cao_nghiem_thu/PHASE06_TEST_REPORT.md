@@ -1,12 +1,12 @@
-# Báo cáo nghiệm thu Prompt 06 — Multimodal và Multi-intent Search
+# Báo cáo nghiệm thu Phase 06 — Multimodal và Multi-intent Search
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-Ngày bàn giao: 04/11/2026. Timestamps từng lượt chạy giữ trong artifacts. Báo cáo cuối được đối chiếu với [verifier summary](../verification/phase06/summary.json), [runtime](../verification/phase06/final_runtime.json) và [source snapshot](../verification/phase06/source_snapshot.json). Chỉ nghiệm thu Prompt06; không tự triển khai Prompt07.
+Ngày bàn giao: 04/11/2026. Timestamps từng lượt chạy giữ trong artifacts. Báo cáo cuối được đối chiếu với [verifier summary](../verification/phase06/summary.json), [runtime](../verification/phase06/final_runtime.json) và [source snapshot](../verification/phase06/source_snapshot.json). Chỉ nghiệm thu Phase 06; không tự triển khai Phase 07.
 
 ## A. Tóm tắt triển khai
 
-Đã có combined text+image late fusion, multi-intent query analysis/decomposition tiếng Việt/Anh theo mẫu, typed AND/OR constraint AST, required/optional/negated conditions, bounded multi-query candidates và optional lightweight reranking. Core CLIP/Qdrant/PG/MinIO và fast single-vector path Prompt05 được giữ. UI dùng APIs thật, có mode/fusion/weights/rerank controls, real image previews và hiển thị điều kiện chưa xác minh.
+Đã có combined text+image late fusion, multi-intent query analysis/decomposition tiếng Việt/Anh theo mẫu, typed AND/OR constraint AST, required/optional/negated conditions, bounded multi-query candidates và optional lightweight reranking. Core CLIP/Qdrant/PG/MinIO và fast single-vector path Phase 05 được giữ. UI dùng APIs thật, có mode/fusion/weights/rerank controls, real image previews và hiển thị điều kiện chưa xác minh.
 
 Đây là baseline retrieval hoạt động trên corpus10 ảnh, không phải hệ thống hiểu ngôn ngữ hoặc xác minh thị giác tổng quát. Không có human relevance judgments, vì vậy chưa nghiệm thu quality improvement. Không có LLM/RAG/Agent/multi-hop trong search path. Functional smoke, tests và latency không thay thế quality labels.
 
@@ -39,7 +39,7 @@ Combined input dùng `/api/v1/search/multimodal`, JSON existing image_id hoặc 
 
 Model thật: `openai/clip-vit-base-patch32`, registry ID `02593ce4-5531-49eb-8b46-89e6ecaef50c`, revision `3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268`,512 float32/L2/Cosine. Active index `6c3a8404-2971-46bf-ac9c-5c09bdec42b5`, generation1, collection `images_clip_v1_da55a7d099fd`, manifest SHA `7f843c0bf81c571eee3b12621fc41811cea174113e6802684e9063b447e707dc`. [Environment/model](../verification/phase06/environment_model.json) ghi actual runtime/config.
 
-Ảnh query dùng decoder/image tower Prompt04–05, JPEG/PNG/WebP/byte/pixel/frame/resource bounds giữ nguyên; temporary bytes không được publish. UI gọi authenticated content proxy và tạo blob previews, token chỉ trong memory. [Desktop](../verification/phase06/desktop.png) và [mobile](../verification/phase06/mobile.png) được chụp sau khi cuộn và xác nhận cả10 previews đã giải mã; không dùng hardcoded result images.
+Ảnh query dùng decoder/image tower Phase 04–05, JPEG/PNG/WebP/byte/pixel/frame/resource bounds giữ nguyên; temporary bytes không được publish. UI gọi authenticated content proxy và tạo blob previews, token chỉ trong memory. [Desktop](../verification/phase06/desktop.png) và [mobile](../verification/phase06/mobile.png) được chụp sau khi cuộn và xác nhận cả10 previews đã giải mã; không dùng hardcoded result images.
 
 ## E. Candidate fusion
 
@@ -115,7 +115,7 @@ Mục tiêu fast P90≤300ms/P95≤500ms chỉ được đánh giá trong worklo
 | Benchmarks |8×100=**800 requests thành công**,0 lỗi, full server coverage100/100 mỗi cấu hình; raw samples tại mụcJ |
 | Preservation |10 images/10 points, same index/manifest, không orphan/missing embedding; [verify](../verification/phase06/index_preserved.txt) |
 
-Unit mocks chỉ kiểm logic/errors/scoring/metric formulas; integration dùng CLIP/Qdrant/PG/MinIO thật. Rerank failure và timeout cases monkeypatch riêng reranker/timing trong actual app, không được gọi là real dependency outage. Có regression batch/retry/idempotency/recovery indexing Prompt04, Phase05 text/image/invalid/missing collection/index mismatch và no query-ingest writes.
+Unit mocks chỉ kiểm logic/errors/scoring/metric formulas; integration dùng CLIP/Qdrant/PG/MinIO thật. Rerank failure và timeout cases monkeypatch riêng reranker/timing trong actual app, không được gọi là real dependency outage. Có regression batch/retry/idempotency/recovery indexing Phase 04, Phase05 text/image/invalid/missing collection/index mismatch và no query-ingest writes.
 
 Một lượt verifier sau khi phiên làm việc đổi bị dừng ở browser vì Node/npm/Chromium đặt trong /tmp đã bị dọn; [environment failure](../verification/phase06/verifier_missing_node.json) giữ trạng thái đó. Đã khôi phục đúng Node22.23.4/npm11.21.1 từ image frontend và Chromium156.0.8078.4 vào project tools/cache, rồi chạy lại verifier. Đây là dependency của môi trường kiểm thử, không được coi là browser tests đã pass ở lượt bị dừng.
 
@@ -142,8 +142,8 @@ Prerequisites host backend venv/HTTPX, Docker access, Node/npm/Playwright Chromi
 
 Các hạn chế trên được công bố, không thay bằng số liệu hoặc metadata giả. Mọi test failure còn tồn tại phải được giải quyết trước final acceptance; xem counts/status ở mụcK và verifier summary.
 
-## M. Sẵn sàng cho Prompt 07
+## M. Sẵn sàng cho Phase 07
 
 Đã có paired encoders/index manifest, whole-query/multi-query/fusion/rerank configurations E1–E5, metrics với abstention, human-label schema, raw full-server/client samples, stable IDs và source/model/environment artifacts. Có thể mở rộng benchmark corpus/query groups, so multilingual encoder/model variants, statistical repeated runs và quality-versus-latency/ablation sau khi freeze actual labels/corpus/dev-test split và hardware/load.
 
-Những nghiên cứu đó chưa được thực hiện trong Prompt06. Không tự tải/chọn model khác, gán qrels hoặc bắt đầu Prompt07. Bàn giao advanced retrieval hoạt động và các giới hạn chất lượng/hiệu năng được ghi rõ.
+Những nghiên cứu đó chưa được thực hiện trong Phase 06. Không tự tải/chọn model khác, gán qrels hoặc bắt đầu Phase 07. Bàn giao advanced retrieval hoạt động và các giới hạn chất lượng/hiệu năng được ghi rõ.

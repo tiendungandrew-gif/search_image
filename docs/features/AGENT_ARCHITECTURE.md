@@ -1,4 +1,4 @@
-# Kiến trúc Agent — Prompt 09
+# Kiến trúc Agent — Phase 09
 
 Ngày 06/11/2026. Agent là khả năng tùy chọn của modular monolith. Fast Search vẫn dùng trực tiếp SearchService, không cần planner hoặc LLM. Báo cáo thực thi và giới hạn nghiệm thu tại [PHASE09_TEST_REPORT](../archive/PHASE09_TEST_REPORT.md).
 

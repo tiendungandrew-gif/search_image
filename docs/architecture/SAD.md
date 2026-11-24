@@ -7,7 +7,7 @@
 | Đầu vào | [PRD 2.0](PRD.md), source backend/frontend và Compose tại workspace |
 | Trạng thái | Thiết kế hiện hành và hướng củng cố; chưa phải chứng nhận chạy production |
 | Phạm vi triển khai | Modular monolith; API và worker là process riêng; một hệ thống với ACL theo thư viện |
-| Bản trước | [SAD baseline](SAD_BASELINE_20261103.md) |
+| Bản trước | [SAD baseline](archive/SAD_BASELINE_20261103.md) |
 
 ## 1. Mục đích, phạm vi và nguyên tắc
 

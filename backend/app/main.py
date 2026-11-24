@@ -64,7 +64,7 @@ def create_app(
         title="AI Multimodal Image Search — Foundation",
         version=__version__,
         description=(
-            "Prompt 09: Semantic Search, RAG và bounded Agent Search tùy chọn; "
+            "Phase 09: Semantic Search, RAG và bounded Agent Search tùy chọn; "
             "quan hệ cần evidence trong database, không dùng kiến thức model thay dữ liệu."
         ),
         debug=False,

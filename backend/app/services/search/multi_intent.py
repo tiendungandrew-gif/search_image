@@ -1,4 +1,4 @@
-"""Candidate generation có giới hạn; share encoder/metadata/result path với Prompt05."""
+"""Candidate generation có giới hạn; share encoder/metadata/result path với Phase 05."""
 
 import asyncio
 from time import perf_counter

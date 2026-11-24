@@ -1,4 +1,4 @@
-# Đánh giá Prompt06 — dataset, ground truth và E1–E5
+# Đánh giá Phase 06 — dataset, ground truth và E1–E5
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
@@ -36,7 +36,7 @@ DefaultK10/C50, fan-out≤4/tổng requested entries≤1.000, union cap100, rera
 
 ## 4. Kết quả latency đã đo
 
-Mỗi cấu hình100 measured requests/warmup5 riêng/concurrency1, CPU warm model/pools, không query-result cache, full ASGI final-send duration join đủ100 samples. Advanced workload luân phiên EN/VI AND/OR,25 samples/group. Text baseline dùng đúng4 queries Prompt05; image reference là coffee.png, decode/inference thật mỗi request. Client duration/processing duration/full server duration tách trong artifacts.
+Mỗi cấu hình100 measured requests/warmup5 riêng/concurrency1, CPU warm model/pools, không query-result cache, full ASGI final-send duration join đủ100 samples. Advanced workload luân phiên EN/VI AND/OR,25 samples/group. Text baseline dùng đúng4 queries Phase 05; image reference là coffee.png, decode/inference thật mỗi request. Client duration/processing duration/full server duration tách trong artifacts.
 
 | Cấu hình | P50 ms | P90 ms | P95 ms | Requests/s | Errors |
 | --- | --- | --- | --- | --- | --- |
@@ -57,4 +57,4 @@ Single-intent before P90 143.85ms, after145.30ms;100/100 requests giữ nguyên 
 
 Fast text/image quan sát P90≤300ms/P95≤500ms trong điều kiện này; advanced paths được đo riêng. Không suy SLA từ corpus10/warm/concurrency1. Chưa đo cold-start, sustained/mixed indexing load, large HNSW working set, CUDA hoặc nhiều clients. Whole/clause/image forwards, metadata/object checks và JSON serialization có chi phí thật; không bỏ privacy/eligibility để làm benchmark đẹp.
 
-Không có vision verifier, nên semantic color/object/spatial/absence constraints vẫn UNKNOWN. Metadata evidence chỉ xác nhận predicate metadata. Strict semantic requests trả409 thay vì claim verified; best effort có thể trả incomplete matches với warning. Label coverage, parser accuracy và calibrated fusion/rerank weights còn mở. Prompt07 có thể mở rộng corpus/labels/model comparison/statistical runs khi được yêu cầu, chưa tự thực hiện.
+Không có vision verifier, nên semantic color/object/spatial/absence constraints vẫn UNKNOWN. Metadata evidence chỉ xác nhận predicate metadata. Strict semantic requests trả409 thay vì claim verified; best effort có thể trả incomplete matches với warning. Label coverage, parser accuracy và calibrated fusion/rerank weights còn mở. Phase 07 có thể mở rộng corpus/labels/model comparison/statistical runs khi được yêu cầu, chưa tự thực hiện.

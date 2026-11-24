@@ -1,12 +1,12 @@
-# Multimodal Search — Prompt 06
+# Multimodal Search — Phase 06
 
-Đã triển khai late fusion của text và reference image trên cùng paired CLIP/model manifest/index Prompt04. Không cộng embeddings để giả lập chỉnh sửa hình ảnh; không gọi LLM hoặc ingest query image. [API](ADVANCED_SEARCH_API.md), [multi-intent](MULTI_INTENT_SEARCH.md), [reranker](RERANKING_DESIGN.md) và [báo cáo nghiệm thu](../archive/ADVANCED_SEARCH_TEST_REPORT.md) là tài liệu triển khai hiện tại.
+Đã triển khai late fusion của text và reference image trên cùng paired CLIP/model manifest/index Phase 04. Không cộng embeddings để giả lập chỉnh sửa hình ảnh; không gọi LLM hoặc ingest query image. [API](ADVANCED_SEARCH_API.md), [multi-intent](MULTI_INTENT_SEARCH.md), [reranker](RERANKING_DESIGN.md) và [báo cáo nghiệm thu](../archive/ADVANCED_SEARCH_TEST_REPORT.md) là tài liệu triển khai hiện tại.
 
 ## Luồng đã triển khai
 
-Validation/auth → lightweight analysis → batch whole-query/constraint text encoding → cùng image decoder/processor/encoder Prompt04–05 → independent Qdrant query_points → UUID union/fusion → batch PG eligibility/metadata → required-condition evidence gate → optional reranking → private MinIO content URLs → Top-K response. Mọi nhánh pin cùng registry/model/index; fingerprint, revision,512 dimensions, float32/L2/Cosine giữ nguyên. Không tạo collection hoặc migration mới.
+Validation/auth → lightweight analysis → batch whole-query/constraint text encoding → cùng image decoder/processor/encoder Phase 04–05 → independent Qdrant query_points → UUID union/fusion → batch PG eligibility/metadata → required-condition evidence gate → optional reranking → private MinIO content URLs → Top-K response. Mọi nhánh pin cùng registry/model/index; fingerprint, revision,512 dimensions, float32/L2/Cosine giữ nguyên. Không tạo collection hoặc migration mới.
 
-Encoder được preload một lần/API process; executor một slot và queue/cancel bounds của Prompt05 vẫn áp dụng. Independent vector calls có bounded fan-out, default tối đa4 channels, tổng requested entries≤1.000, union pool≤100 mặc định. Whole query và image là hai nhánh ưu tiên; tối đa2 per-constraint branches còn lại khi paired. Encode mọi semantic clause trong một batch để dùng lại khi rerank; không một inference call cho từng leaf. Các nhánh Qdrant chạy concurrent, model inference dùng chung slot nên text và image forward không chạy đồng thời trên cùng model.
+Encoder được preload một lần/API process; executor một slot và queue/cancel bounds của Phase 05 vẫn áp dụng. Independent vector calls có bounded fan-out, default tối đa4 channels, tổng requested entries≤1.000, union pool≤100 mặc định. Whole query và image là hai nhánh ưu tiên; tối đa2 per-constraint branches còn lại khi paired. Encode mọi semantic clause trong một batch để dùng lại khi rerank; không một inference call cho từng leaf. Các nhánh Qdrant chạy concurrent, model inference dùng chung slot nên text và image forward không chạy đồng thời trên cùng model.
 
 ## Fusion thực tế
 
@@ -19,7 +19,7 @@ Hai weights mặc định0.5/0.5, có thể bằng0 nhưng không đồng thời
 
 ## Query image và delivery
 
-JPEG/PNG/WebP qua đúng resource-limited decoder/RGB/EXIF/alpha processing Prompt04 và decoder process reuse Prompt05. File≤20MiB/body≤21MiB, single frame,25M pixels/side≤10.000, parent decode deadline2s. Query bytes không được đưa vào MinIO/corpus/jobs/history; multipart temp spool đóng sau đọc, decoded image đóng sau inference. Không có public query URL.
+JPEG/PNG/WebP qua đúng resource-limited decoder/RGB/EXIF/alpha processing Phase 04 và decoder process reuse Phase 05. File≤20MiB/body≤21MiB, single frame,25M pixels/side≤10.000, parent decode deadline2s. Query bytes không được đưa vào MinIO/corpus/jobs/history; multipart temp spool đóng sau đọc, decoded image đóng sau inference. Không có public query URL.
 
 Existing image_id dùng stored vector đã đối chiếu PG receipt/vector SHA. exclude_self mặc địnhtrue, UI dùngfalse. Kết quả sử dụng authenticated relative content proxy; frontend Authorization→blob preview, không gắn token vào URL hoặc lưu local/sessionStorage. Fixture chưa có thumbnail thì proxy fallback original.
 

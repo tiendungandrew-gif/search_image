@@ -22,3 +22,6 @@ backups
 config/environments
 docs/verification
 evaluation/results
+
+# Local imported corpus and generated import artifacts
+datasets/approved_csv_v1/

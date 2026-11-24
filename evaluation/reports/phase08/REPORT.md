@@ -1,4 +1,4 @@
-# Kết quả thí nghiệm Prompt07
+# Kết quả thí nghiệm Phase 07
 
 Số đo từ raw artifacts; latency successful-only đi kèm số lỗi. Không cộng component percentiles hoặc suy SLA từ corpus nhỏ.
 

@@ -1,10 +1,10 @@
 # Nhập ảnh và vận hành indexing
 
-Prompt 04 dùng PostgreSQL durable queue và worker process riêng trong modular monolith. API chỉ validate/decode có giới hạn và lưu original; không chạy CLIP trong HTTP request. Xem [model](EMBEDDING_MODELS.md), [vector](VECTOR_INDEX_DESIGN.md) và [kết quả nghiệm thu](../archive/INDEXING_TEST_REPORT.md).
+Phase 04 dùng PostgreSQL durable queue và worker process riêng trong modular monolith. API chỉ validate/decode có giới hạn và lưu original; không chạy CLIP trong HTTP request. Xem [model](EMBEDDING_MODELS.md), [vector](VECTOR_INDEX_DESIGN.md) và [kết quả nghiệm thu](../archive/INDEXING_TEST_REPORT.md).
 
 ## 1. Cài đặt và khởi động
 
-Từ project root, cài Docker và prerequisites theo [SETUP](../operations/SETUP.md). Giữ `.env` hiện có; không chạy lại generator để đổi passwords của volumes. Project mới dùng `python3 scripts/init_env.py`; generator sinh read/write tokens riêng. Project từ Prompt 03 cần thêm `WRITE_API_TOKEN` ngẫu nhiên >=24 ký tự trong `.env`, không dùng read token cho mutations. Không in token ra log/chat.
+Từ project root, cài Docker và prerequisites theo [SETUP](../operations/SETUP.md). Giữ `.env` hiện có; không chạy lại generator để đổi passwords của volumes. Project mới dùng `python3 scripts/init_env.py`; generator sinh read/write tokens riêng. Project từ Phase 03 cần thêm `WRITE_API_TOKEN` ngẫu nhiên >=24 ký tự trong `.env`, không dùng read token cho mutations. Không in token ra log/chat.
 
 ```bash
 uv sync --project backend --extra dev --extra ml --frozen
@@ -39,7 +39,7 @@ Lệnh `verify` trả nonzero khi chưa đạt: còn task sống, image embeddin
 - 202 chỉ sau original bytes đã PUT rồi GET/hash verify, PG receipt và queued job durable.
 - Cùng key/body replay identity/response đã lưu; khác body trả409.
 - SHA-256 toàn bytes gốc xác định một image UUID trong corpus. Duplicate không ghi đè metadata; target embedding ready trả200 available, live task trả cùng job, chưa indexed tạo task mới.
-- Original available chưa có nghĩa searchable: cần embedding ready ở đúng index. Không có semantic search API trong Prompt 04.
+- Original available chưa có nghĩa searchable: cần embedding ready ở đúng index. Không có semantic search API trong Phase 04.
 - GET image detail và authenticated content proxy trả private/no-store/nosniff. Thumbnail optional chưa tạo; variant thumbnail fallback original với đúng MIME. Không trả presigned/bearer URL hoặc bucket credentials.
 
 `POST /api/v1/index/jobs` hỗ trợ registered source snapshot (`ingest_dataset`), `reindex` và `retry`. API không nhận filesystem path. Delete contract được giữ như feature disabled409; không enqueue hoặc xóa dữ liệu. GET job có aggregate counts toàn job, item page/cursor gắn job+watermark, started/finished times và safe error summary. Không lộ object paths hoặc claim tokens.
@@ -92,4 +92,4 @@ Worker logs JSON ở stderr, CLI result JSON ở stdout: job_id/item_id/image_id
 
 Verifier full dùng collection fixture đúng10 ảnh; với corpus riêng lớn hơn, dùng `verify --index UUID` để kiểm chứng theo receipts/IDs thực tế, không xóa dữ liệu để khớp count10. Khi dừng toàn bộ stack có worker, dùng `docker compose --profile indexing down`; named volumes vẫn được giữ. `docker compose --profile indexing stop indexing-worker` chỉ dừng worker, jobs vẫn durable trong PostgreSQL.
 
-Prompt08 bổ sung caption_source optional≤160 ký tự và GET image detail trả caption. Attribution không có nghĩa verified. Fingerprint upload cũ giữ nguyên khi không có caption_source. [Corpus COCO và index mới](../research/RAG_DATASET.md).
+Phase 08 bổ sung caption_source optional≤160 ký tự và GET image detail trả caption. Attribution không có nghĩa verified. Fingerprint upload cũ giữ nguyên khi không có caption_source. [Corpus COCO và index mới](../research/RAG_DATASET.md).

@@ -17,18 +17,18 @@ def main():
     parser.add_argument("--skip-browser", action="store_true")
     parser.add_argument("--skip-benchmark", action="store_true")
     parser.add_argument("--requests", type=int, default=100)
-    parser.add_argument("--advanced", action="store_true", help="Nghiệm thu Prompt06 và E1–E5")
-    parser.add_argument("--rag", action="store_true", help="Nghiệm thu Prompt08/Gemini thật")
+    parser.add_argument("--advanced", action="store_true", help="Nghiệm thu Phase 06 và E1–E5")
+    parser.add_argument("--rag", action="store_true", help="Nghiệm thu Phase 08/Gemini thật")
     parser.add_argument(
         "--agent",
         action="store_true",
-        help="Nghiệm thu Prompt09; fixture tri thức chỉ trong DB tách biệt",
+        help="Nghiệm thu Phase 09; fixture tri thức chỉ trong DB tách biệt",
     )
     parser.add_argument("--output", help="Thư mục report riêng, giữ các lượt kiểm thử trước")
     parser.add_argument(
         "--evaluation",
         action="store_true",
-        help="Functional regression Prompt07; research runs ghi riêng",
+        help="Functional regression Phase 07; research runs ghi riêng",
     )
     args = parser.parse_args()
     args.rag = args.rag or args.agent

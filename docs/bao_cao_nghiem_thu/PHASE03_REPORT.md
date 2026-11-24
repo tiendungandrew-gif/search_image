@@ -1,8 +1,8 @@
-# Báo cáo triển khai và nghiệm thu Prompt 03
+# Báo cáo triển khai và nghiệm thu Phase 03
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-Ngày 2026-11-03 · Application version 0.3.0 · **Hoàn thành foundation Prompt 03 và nghiệm thu trên Docker thật.** Năm services đang chạy healthy. Prompt 04 chưa bắt đầu.
+Ngày 2026-11-03 · Application version 0.3.0 · **Hoàn thành foundation Phase 03 và nghiệm thu trên Docker thật.** Năm services đang chạy healthy. Phase 04 chưa bắt đầu.
 
 ## 1. Phạm vi đã triển khai
 
@@ -79,9 +79,9 @@ Các integration tests có 2 Qdrant SDK warnings do API key qua HTTP local; khô
 5. Khắc phục 12 moderate dev advisories trước đó bằng minimatch 11.0.1. So sánh 7 glob patterns × 9 paths qua functional/class APIs với 10.2.6, rồi chạy TypeScript/ESLint/unit/build. Theo dõi và gỡ override khi upstream phù hợp; fixture project không chứng minh mọi use case của thư viện.
 6. Render toàn bộ Mermaid bằng engine; khởi tạo Git main sau khi kiểm tra host .git thực tế rỗng/writable, không overwrite history. Chưa tạo commit.
 
-Các nhận định Docker/Git/browser/audit còn thiếu trong snapshot Prompt 01/02 và quyết định ban đầu là lịch sử; kết quả hiện hành là báo cáo này.
+Các nhận định Docker/Git/browser/audit còn thiếu trong snapshot Phase 01/02 và quyết định ban đầu là lịch sử; kết quả hiện hành là báo cáo này.
 
-## 6. Checklist nghiệm thu Prompt 03
+## 6. Checklist nghiệm thu Phase 03
 
 **Tiến độ: 8/8 mục đạt.** Container/HTTP/migration được kiểm tra lại khi đối chiếu checklist; browser và unit/static results dùng evidence đã lưu ở mục 2–4.
 
@@ -111,12 +111,12 @@ make test-e2e
 
 Stack Docker được giữ chạy cho nghiệm thu: UI tại http://localhost:5173 và Swagger tại http://localhost:8000/docs. `docker compose down` giữ volumes. Native processes dùng cho lượt kiểm chứng trước đã được dừng; dữ liệu tạm giữ nguyên. Actual .env/.env.native private/ignored, không chứa trong artifacts.
 
-## 8. Giới hạn và bàn giao Prompt 04
+## 8. Giới hạn và bàn giao Phase 04
 
 - Profile local chưa tách PG/MinIO bootstrap credentials thành least-privilege application accounts; chưa public user/tenant auth, TLS, shared quotas/rate limits hoặc backup hardening. Chưa nghiệm thu public production.
 - Browser kiểm tra Chromium ở hai viewport; full cross-browser matrix thuộc phase kiểm thử sau. Chưa kiểm chứng trên máy sạch thứ hai; versions/locks và lệnh tái lập được cung cấp.
 - Dataset/rights/privacy, pinned AI checkpoint/license/processor/dimension, hardware/resource envelope và numeric quality gates còn cần chốt trước ingestion/model phases.
 - Chưa có Recall@10/P90/P95/TTLast kết quả. Không suy ra retrieval performance từ health/test timings.
-- Prompt 04 cần migrations cho items/attempts/objects/embeddings/active-index, durable worker và recovery tests theo DATABASE_DESIGN. Chỉ bắt đầu khi người dùng yêu cầu.
+- Phase 04 cần migrations cho items/attempts/objects/embeddings/active-index, durable worker và recovery tests theo DATABASE_DESIGN. Chỉ bắt đầu khi người dùng yêu cầu.
 
 Source/config snapshot và kiểm tra tài liệu cuối được ghi tại [source_snapshot.json](../verification/source_snapshot.json). Snapshot không phải Git commit hash hoặc bằng chứng clean worktree; source hiện chưa commit.

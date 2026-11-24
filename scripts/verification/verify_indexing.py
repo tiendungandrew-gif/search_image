@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Nghiệm thu Prompt 04 bằng Docker, CLIP và sample dataset thật; không fake vectors."""
+"""Nghiệm thu Phase 04 bằng Docker, CLIP và sample dataset thật; không fake vectors."""
 
 import argparse
 import json

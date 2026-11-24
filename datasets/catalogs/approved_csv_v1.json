@@ -1,0 +1,22 @@
+{
+  "dataset": "approved_csv_v1",
+  "scope": "Địa điểm, công trình và cơ sở dịch vụ tại Việt Nam",
+  "local_path": "datasets/approved_csv_v1",
+  "source_label_field": "leaf_label",
+  "source_label_count": 182,
+  "snapshot": {
+    "status": "complete",
+    "images": 24023,
+    "successful_urls": 24104,
+    "csv_rows": 27029,
+    "unique_source_urls": 24345,
+    "unserved_urls": 241,
+    "unserved_rows": 262,
+    "generation": 4,
+    "old_images_archived": 513,
+    "http_verified": true,
+    "worker_verified": true,
+    "completed_at": "2026-11-22 17:31:21"
+  },
+  "note": "Snapshot nhập liệu, không phải số liệu database thời gian thực; không kèm ảnh, URL nguồn hoặc receipts cá nhân."
+}

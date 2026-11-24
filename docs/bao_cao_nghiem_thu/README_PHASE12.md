@@ -6,9 +6,9 @@ Các lệnh dưới đây giữ lịch sử. Hướng dẫn hiện hành tại [
 
 # AI Multimodal Image Search System
 
-Nền tảng tìm kiếm ảnh bằng văn bản, ảnh tham chiếu và kết hợp hai modality. Đã triển khai indexing, CLIP search, multimodal/multi-intent, framework đánh giá, RAG qua Gemini và Agent multi-hop có nguồn. **Prompt10 đã tích hợp giao diện Lens:** upload kéo thả, bộ lọc, gallery/chi tiết ảnh private, giải thích streaming, tiến độ Agent, dataset status và dashboard benchmark. Giao diện xử lý cả dữ liệu thật lẫn dataset rỗng. Snapshot nghiệm thu 07/11/2026 có 513 ảnh/vector, 4 thực thể và 3 quan hệ địa danh có nguồn; **chất lượng ngữ nghĩa/faithfulness vẫn chờ nhãn người đánh giá**.
+Nền tảng tìm kiếm ảnh bằng văn bản, ảnh tham chiếu và kết hợp hai modality. Đã triển khai indexing, CLIP search, multimodal/multi-intent, framework đánh giá, RAG qua Gemini và Agent multi-hop có nguồn. **Phase 10 đã tích hợp giao diện Lens:** upload kéo thả, bộ lọc, gallery/chi tiết ảnh private, giải thích streaming, tiến độ Agent, dataset status và dashboard benchmark. Giao diện xử lý cả dữ liệu thật lẫn dataset rỗng. Snapshot nghiệm thu 07/11/2026 có 513 ảnh/vector, 4 thực thể và 3 quan hệ địa danh có nguồn; **chất lượng ngữ nghĩa/faithfulness vẫn chờ nhãn người đánh giá**.
 
-**Prompt12 — bàn giao cuối:** đã có Docker images production, frontend static/Nginx, Compose riêng, bootstrap/worker, import sau triển khai, backup/restore và update/rollback. Trạng thái `READY_WITH_LIMITATIONS`, phạm vi kiểm chứng local với dữ liệu tổng hợp và CLIP CPU thật. Xem [báo cáo A–T](../../docs/FINAL_PROJECT_REPORT.md), [bàn giao](../../docs/FINAL_HANDOVER.md), [kiến trúc cuối](../../docs/architecture/FINAL_SYSTEM_ARCHITECTURE.md). Dữ liệu chính513 ảnh vẫn được giữ riêng; chưa triển khai máy chủ public, chưa có nhãn chất lượng do người đánh giá xác nhận.
+**Phase 12 — bàn giao cuối:** đã có Docker images production, frontend static/Nginx, Compose riêng, bootstrap/worker, import sau triển khai, backup/restore và update/rollback. Trạng thái `READY_WITH_LIMITATIONS`, phạm vi kiểm chứng local với dữ liệu tổng hợp và CLIP CPU thật. Xem [báo cáo A–T](../../docs/FINAL_PROJECT_REPORT.md), [bàn giao](../../docs/FINAL_HANDOVER.md), [kiến trúc cuối](../../docs/architecture/FINAL_SYSTEM_ARCHITECTURE.md). Dữ liệu chính513 ảnh vẫn được giữ riêng; chưa triển khai máy chủ public, chưa có nhãn chất lượng do người đánh giá xác nhận.
 
 ## Triển khai bản bàn giao
 
@@ -28,7 +28,7 @@ Mở http://127.0.0.1:8080; nhập read token từ `.env.deploy` tại máy qu�
 - [Vận hành](../../docs/operations/OPERATIONS_RUNBOOK.md), [backup/restore](../../docs/operations/BACKUP_AND_RECOVERY.md), [bảo mật/public TLS](../../docs/operations/SECURITY_DEPLOYMENT.md).
 - [Kiểm thử bản bàn giao](../../docs/operations/TESTING_AND_VERIFICATION.md), [kiểm toán thay đổi](../../docs/archive/DEPLOYMENT_AUDIT.md).
 
-Các hướng dẫn theo Prompt03–11 bên dưới giữ làm lịch sử và development. Bản triển khai mới dùng `scripts/deploy.py` cùng `compose.prod.yaml`, không dùng Vite development server làm ingress production. [Báo cáo Phase11](../../docs/archive/PHASE11_TEST_REPORT.md) lưu nguyên các bằng chứng QA và benchmark trước bàn giao.
+Các hướng dẫn theo Phase 03–11 bên dưới giữ làm lịch sử và development. Bản triển khai mới dùng `scripts/deploy.py` cùng `compose.prod.yaml`, không dùng Vite development server làm ingress production. [Báo cáo Phase11](../../docs/archive/PHASE11_TEST_REPORT.md) lưu nguyên các bằng chứng QA và benchmark trước bàn giao.
 
 ## Kiểm thử QA cô lập
 
@@ -45,14 +45,14 @@ QA dùng `.env.qa`, database/collections/buckets/volumes riêng và ports8011/51
 
 ## Kiến trúc
 
-Modular monolith: React → FastAPI → application services/adapters → PostgreSQL, Qdrant, MinIO private. Worker cùng codebase đã triển khai ở Prompt 04, semantic search đã triển khai ở Prompt05. CLIP weights tải có chủ đích và dimension được xác minh từ model thật; không dùng placeholder vectors.
+Modular monolith: React → FastAPI → application services/adapters → PostgreSQL, Qdrant, MinIO private. Worker cùng codebase đã triển khai ở Phase 04, semantic search đã triển khai ở Phase 05. CLIP weights tải có chủ đích và dimension được xác minh từ model thật; không dùng placeholder vectors.
 
 - [Thiết kế hệ thống](../../docs/architecture/SYSTEM_ARCHITECTURE.md), [database](../../docs/architecture/DATABASE_DESIGN.md), [API](../../docs/architecture/API_SPECIFICATION.md).
 - [Hướng dẫn Linux và cài prerequisites](../../docs/operations/SETUP.md).
 - [Commands, kiểm thử và quy ước phát triển](../../docs/operations/DEVELOPMENT.md).
-- [Kết quả kiểm chứng Prompt 03 và giới hạn](../../docs/archive/PHASE03_REPORT.md).
-- [Nghiệm thu Prompt 07 và báo cáo A–M](../../docs/archive/PHASE07_TEST_REPORT.md), [số liệu thực nghiệm](../../docs/research/EXPERIMENT_RESULTS.md).
-- [Nghiệm thu Prompt10 A–P](../../docs/archive/PHASE10_TEST_REPORT.md), [kiến trúc frontend](../../docs/features/FRONTEND_ARCHITECTURE.md), [UI/UX](../../docs/features/UI_UX_DESIGN.md), [kiểm thử](../../docs/testing/FRONTEND_TESTING.md).
+- [Kết quả kiểm chứng Phase 03 và giới hạn](../../docs/archive/PHASE03_REPORT.md).
+- [Nghiệm thu Phase 07 và báo cáo A–M](../../docs/archive/PHASE07_TEST_REPORT.md), [số liệu thực nghiệm](../../docs/research/EXPERIMENT_RESULTS.md).
+- [Nghiệm thu Phase 10 A–P](../../docs/archive/PHASE10_TEST_REPORT.md), [kiến trúc frontend](../../docs/features/FRONTEND_ARCHITECTURE.md), [UI/UX](../../docs/features/UI_UX_DESIGN.md), [kiểm thử](../../docs/testing/FRONTEND_TESTING.md).
 
 ## Chạy nhanh với Docker
 
@@ -113,19 +113,19 @@ make test-e2e
 
 Report máy đọc được: `docs/verification/docker.json`. Browser tests có desktop1440px/mobile390px, preview local, readiness thật và không gửi search chưa triển khai. `make test-containers` chạy riêng tests/static/build trong images hiện tại. Bộ outage/recreate dành cho local development: test markers có namespace UUID riêng và được dọn sau lượt kiểm tra; không thêm image/vector giả.
 
-## Nhập ảnh và lập chỉ mục — Prompt 04
+## Nhập ảnh và lập chỉ mục — Phase 04
 
 Xem [IMAGE_INDEXING](../../docs/features/IMAGE_INDEXING.md) cho toàn bộ lệnh tải model/sample dataset, register index, chạy worker, upload API, inspect/retry/reindex/verify. [EMBEDDING_MODELS](../../docs/features/EMBEDDING_MODELS.md) ghi pinned CLIP revision và preprocessing; [VECTOR_INDEX_DESIGN](../../docs/features/VECTOR_INDEX_DESIGN.md) ghi compatibility/consistency; [INDEXING_TEST_REPORT](../../docs/archive/INDEXING_TEST_REPORT.md) ghi kết quả thực tế.
 
 Profile Compose `indexing` thêm worker process dùng cùng backend package. Mutation APIs yêu cầu WRITE_API_TOKEN riêng và Idempotency-Key; read token không cấp quyền ghi. API không nạp Torch/model và không thực hiện embedding trong request. Model/sample downloads có chủ đích; tests không tự download. Không dùng dữ liệu chưa có quyền/privacy approval.
 
-## Semantic Search — Prompt 05
+## Semantic Search — Phase 05
 
 Sau khi có index ready, thực hiện activation/model preload theo [SEMANTIC_SEARCH](../../docs/features/SEMANTIC_SEARCH.md), đặt SEARCH_ENABLED=true và khởi động lại backend. Mở http://localhost:5173, nhập read token trong Token truy cập rồi tìm bằng text hoặc reference image. Query uploads không vào dataset; kết quả/ảnh đọc từ PG/Qdrant/MinIO thật. Không đưa token vào VITE_* hoặc image URLs.
 
 [SEARCH_API](../../docs/features/SEARCH_API.md) ghi JSON/multipart canonical + aliases; [SEARCH_PERFORMANCE](../../docs/research/SEARCH_PERFORMANCE.md) ghi full-server/client latency boundaries và benchmark commands; [SEARCH_TEST_REPORT](../../docs/archive/SEARCH_TEST_REPORT.md) ghi actual tests/quality/performance limits. `bash scripts/verify_search.sh` chạy full acceptance, `bash scripts/benchmark_search.sh text` hoặc `image` chạy baseline. Chưa có human-verified qrels; không suy ra Recall@10 từ smoke queries.
 
-## Multimodal và multi-intent — Prompt 06
+## Multimodal và multi-intent — Phase 06
 
 Trong UI chọn Tự động, Văn bản + Hình ảnh hoặc Nhiều điều kiện; mở Tùy chọn tìm kiếm nâng cao để chọn RRF/weighted score, trọng số văn bản/ảnh và reranking. Điểm không là xác suất; điều kiện thị giác chưa được xác minh sẽ ghi rõ. Không tự ingest ảnh query.
 
@@ -135,11 +135,11 @@ bash scripts/benchmark_search.sh multi_intent --requests 100 --rerank
 bash scripts/benchmark_search.sh multimodal --requests 100 --fusion weighted_score --rerank
 ```
 
-Verifier cần host backend venv, Docker access, Node/npm/Playwright Chromium theo SETUP; script đọc token từ .env vào child environment, không yêu cầu dán token vào CLI. Core đã active từ Prompt05 thì không cần reindex/migration. Các flags MULTIMODAL_ENABLED/MULTI_INTENT_ENABLED/RERANKING_ENABLED mặc địnhtrue khi SEARCH_ENABLED bật; request rerank vẫn off mặc định. [Multimodal](../../docs/features/MULTIMODAL_SEARCH.md), [Multi-intent](../../docs/features/MULTI_INTENT_SEARCH.md), [Reranking](../../docs/features/RERANKING_DESIGN.md), [API](../../docs/features/ADVANCED_SEARCH_API.md), [Test report](../../docs/archive/ADVANCED_SEARCH_TEST_REPORT.md).
+Verifier cần host backend venv, Docker access, Node/npm/Playwright Chromium theo SETUP; script đọc token từ .env vào child environment, không yêu cầu dán token vào CLI. Core đã active từ Phase 05 thì không cần reindex/migration. Các flags MULTIMODAL_ENABLED/MULTI_INTENT_ENABLED/RERANKING_ENABLED mặc địnhtrue khi SEARCH_ENABLED bật; request rerank vẫn off mặc định. [Multimodal](../../docs/features/MULTIMODAL_SEARCH.md), [Multi-intent](../../docs/features/MULTI_INTENT_SEARCH.md), [Reranking](../../docs/features/RERANKING_DESIGN.md), [API](../../docs/features/ADVANCED_SEARCH_API.md), [Test report](../../docs/archive/ADVANCED_SEARCH_TEST_REPORT.md).
 
-## Đánh giá và benchmark Prompt 07
+## Đánh giá và benchmark Phase 07
 
-Cần stack/index CLIP đã sẵn sàng theo Prompt04–06; dùng cùng snapshot10 ảnh và28 query. Kết quả được ghi vào thư mục experiment mới, không ghi đè các phase trước.
+Cần stack/index CLIP đã sẵn sàng theo Phase 04–06; dùng cùng snapshot10 ảnh và28 query. Kết quả được ghi vào thư mục experiment mới, không ghi đè các phase trước.
 
 ```bash
 uv sync --project backend --extra dev --extra ml --extra evaluation --frozen
@@ -155,9 +155,9 @@ MPLCONFIGDIR=.cache/matplotlib backend/.venv/bin/python -m app.cli.evaluation re
 
 Tải SigLIP một lần bằng `backend/.venv/bin/python -m app.cli.download_evaluation_model --output .cache/siglip2` trước model comparison; không đổi active index. Các lệnh container cần quyền Docker. Nếu shell chưa nhận nhóm, dùng `sg docker -c 'LỆNH'`. Trang `.cache/evaluation/annotation.html` mở offline để gán nhãn24 query; xuất bản nháp trước khi đóng. Không có nhãn thì chỉ chấm4 ca exact identity, giữ các điểm relevance ở trạng thái chưa đo.
 
-Xem [hướng dẫn CLI](../../evaluation/README.md), [protocol gán nhãn](../../docs/research/DATASET_AND_GROUND_TRUTH.md), [report tự sinh](../../evaluation/reports/phase07/REPORT.md). Mục tiêu P90≤300ms đã quan sát ở tải một client/corpus10; lỗi quá tải ở5–20 clients vẫn được báo. Chưa tự chuyển Prompt08.
+Xem [hướng dẫn CLI](../../evaluation/README.md), [protocol gán nhãn](../../docs/research/DATASET_AND_GROUND_TRUTH.md), [report tự sinh](../../evaluation/reports/phase07/REPORT.md). Mục tiêu P90≤300ms đã quan sát ở tải một client/corpus10; lỗi quá tải ở5–20 clients vẫn được báo. Chưa tự chuyển Phase 08.
 
-## RAG tùy chọn — Prompt08
+## RAG tùy chọn — Phase 08
 
 Sau khi tìm ảnh, nút **Giải thích bằng AI** gọi backend để đọc lại evidence thật; không tự gọi LLM mỗi lần search. Corpus hiện có510 ảnh, gồm500 ảnh COCO có caption gốc và10 ảnh mẫu cũ. RAG trích dẫn mô tả đã lưu; câu hỏi không có evidence vẫn báo thiếu thông tin. Khi AI lỗi có thể chọn **Thử lại giải thích**; kết quả ảnh vẫn được giữ. [Tải/nhập dữ liệu và trang đánh giá offline](../../docs/research/RAG_DATASET.md).
 
@@ -181,13 +181,13 @@ backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/b
 backend/.venv/bin/python scripts/verify_rag_fallback.py
 ```
 
-Lệnh fallback recreate API ngắn để thử RAG disabled/connection failure/timeout, rồi khôi phục cấu hình RAG ban đầu. Báo cáo A–L: [PHASE08_TEST_REPORT](../../docs/archive/PHASE08_TEST_REPORT.md); [API](../../docs/features/RAG_API.md), [phương pháp](../../docs/research/RAG_EVALUATION.md), [hiệu năng](../../docs/research/RAG_PERFORMANCE.md). Không tự bắt đầu Prompt09.
+Lệnh fallback recreate API ngắn để thử RAG disabled/connection failure/timeout, rồi khôi phục cấu hình RAG ban đầu. Báo cáo A–L: [PHASE08_TEST_REPORT](../../docs/archive/PHASE08_TEST_REPORT.md); [API](../../docs/features/RAG_API.md), [phương pháp](../../docs/research/RAG_EVALUATION.md), [hiệu năng](../../docs/research/RAG_PERFORMANCE.md). Không tự bắt đầu Phase 09.
 
-[Báo cáo RAG ngày05/11 và CSV/biểu đồ](../../evaluation/reports/phase08_20261105/REPORT.md) giữ nguyên lịch sử timeout và corpus10 ảnh. Ngày06/11 đã bổ sung corpus caption, retry UI và kiểm thử trên510 ảnh; kết quả hiện hành nằm trong [báo cáo Prompt08](../../docs/archive/PHASE08_TEST_REPORT.md). Người dùng chọn giữ mục human quality review chờ xác nhận; không coi citation checks là chất lượng ngữ nghĩa đã được đánh giá.
+[Báo cáo RAG ngày05/11 và CSV/biểu đồ](../../evaluation/reports/phase08_20261105/REPORT.md) giữ nguyên lịch sử timeout và corpus10 ảnh. Ngày06/11 đã bổ sung corpus caption, retry UI và kiểm thử trên510 ảnh; kết quả hiện hành nằm trong [báo cáo Phase 08](../../docs/archive/PHASE08_TEST_REPORT.md). Người dùng chọn giữ mục human quality review chờ xác nhận; không coi citation checks là chất lượng ngữ nghĩa đã được đánh giá.
 
 [Báo cáo nghiệm thu06/11](../../docs/archive/PHASE08_COMPLETION_REPORT.md), [CSV/biểu đồ hiện hành](../../evaluation/reports/phase08_20261106/REPORT.md).
 
-## Agent và tìm kiếm nhiều bước — Prompt09
+## Agent và tìm kiếm nhiều bước — Phase 09
 
 Chọn **Agent** tại http://localhost:5173, nhập read token, thử `a dog outdoors`; có thể bật giải thích hoặc chọn LLM planning khi backend cấu hình. Truy vấn địa danh theo quan hệ sẽ trả thiếu bằng chứng cho tới khi nhập facts và image associations có nguồn. Có510 ảnh thực indexed,500 captions; fixture knowledge không được nhập vào serving DB.
 
@@ -198,16 +198,16 @@ docker compose up -d --build backend frontend
 bash scripts/verify_agent.sh --output docs/verification/phase09/new_run
 ```
 
-Flags và cách chạy empty dataset tại [SETUP](../../docs/operations/SETUP.md); [kiến trúc](../../docs/features/AGENT_ARCHITECTURE.md), [API](../../docs/features/AGENT_API.md), [knowledge/import](../../docs/features/KNOWLEDGE_BASE_DESIGN.md), [benchmark](../../docs/research/AGENT_PERFORMANCE.md), [nghiệm thu](../../docs/archive/PHASE09_TEST_REPORT.md). Agent mặc định tắt trong template, deterministic không cần LLM; full verification dùng cấu hình/corpus local mô tả trong báo cáo. Human relevance/faithfulness và multi-hop chất lượng thực chưa được nghiệm thu. Đây là snapshot nghiệm thu Prompt09; cập nhật hiện hành ở phần Prompt10.
+Flags và cách chạy empty dataset tại [SETUP](../../docs/operations/SETUP.md); [kiến trúc](../../docs/features/AGENT_ARCHITECTURE.md), [API](../../docs/features/AGENT_API.md), [knowledge/import](../../docs/features/KNOWLEDGE_BASE_DESIGN.md), [benchmark](../../docs/research/AGENT_PERFORMANCE.md), [nghiệm thu](../../docs/archive/PHASE09_TEST_REPORT.md). Agent mặc định tắt trong template, deterministic không cần LLM; full verification dùng cấu hình/corpus local mô tả trong báo cáo. Human relevance/faithfulness và multi-hop chất lượng thực chưa được nghiệm thu. Đây là snapshot nghiệm thu Phase 09; cập nhật hiện hành ở phần Phase 10.
 
-## Hoàn thiện Prompt09 với dữ liệu địa danh thật
+## Hoàn thiện Phase 09 với dữ liệu địa danh thật
 
 Hiện có **513 ảnh**, gồm510 ảnh trước đó và3 ảnh NPS public-domain có nguồn; knowledge4 entities/3 relations/3 image links. Index510 ảnh cũ vẫn giữ nguyên. Chọn Agent và thử `Find landmarks in the city where Washington Monument is located`, hoặc `Tìm ảnh địa danh ở thành phố nơi Washington Monument tọa lạc`. Mở “Nguồn quan hệ” để đối chiếu NPS; optional Gemini planning/RAG vẫn theo flags trong .env.
 
-[Nguồn và cách nhập dataset](../../docs/research/PUBLIC_LANDMARK_DATASET.md), [báo cáo nghiệm thu hiện hành](../../docs/archive/PHASE09_TEST_REPORT.md). Kiểm tra mới200 backend/21 frontend unit,24 browser full và6 ca browser nhánh cuối đạt; human relevance/faithfulness vẫn chờ, latency3s phải đọc số đo thay vì suy từ timeout. Số liệu trên thuộc mốc Prompt09; xem cập nhật Prompt10 bên dưới.
+[Nguồn và cách nhập dataset](../../docs/research/PUBLIC_LANDMARK_DATASET.md), [báo cáo nghiệm thu hiện hành](../../docs/archive/PHASE09_TEST_REPORT.md). Kiểm tra mới200 backend/21 frontend unit,24 browser full và6 ca browser nhánh cuối đạt; human relevance/faithfulness vẫn chờ, latency3s phải đọc số đo thay vì suy từ timeout. Số liệu trên thuộc mốc Phase 09; xem cập nhật Phase 10 bên dưới.
 
 
-## Frontend tích hợp — Prompt10
+## Frontend tích hợp — Phase 10
 
 Mở `http://127.0.0.1:5173`, nhập read token từ `.env` vào ô “Token truy cập” (không gửi key vào chat hoặc VITE env). Chọn phương thức, tìm bằng Enter/nút tìm; Shift+Enter xuống dòng. Ảnh query không được thêm vào dataset. Bấm tiêu đề thẻ để xem chi tiết, dùng mũi tên/Escape trong dialog. RAG là thao tác tùy chọn sau khi có kết quả; Agent có chế độ theo mẫu hoặc LLM khi được cấu hình.
 

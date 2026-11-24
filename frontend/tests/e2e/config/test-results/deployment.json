@@ -1,0 +1,400 @@
+{
+  "config": {
+    "argv": [
+      "/home/tts/prj/.tools/node/bin/node",
+      "/home/tts/prj/frontend/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/e2e/config/deploy.config.ts",
+      "--list"
+    ],
+    "configFile": "/home/tts/prj/frontend/tests/e2e/config/deploy.config.ts",
+    "rootDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 180000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "deploy-desktop",
+        "name": "deploy-desktop",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": [
+          "deployment.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "deploy-mobile",
+        "name": "deploy-mobile",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": [
+          "deployment.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "deploy-firefox",
+        "name": "deploy-firefox",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": [
+          "deployment.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "deploy-webkit",
+        "name": "deploy-webkit",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": [
+          "deployment.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "deploy-desktop",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "snapshotDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": "deployment.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8088",
+          "screenshot": "off",
+          "trace": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "deploy-desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "deploy-mobile",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "snapshotDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": "deployment.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8088",
+          "screenshot": "off",
+          "trace": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "deploy-mobile"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "deploy-firefox",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "snapshotDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": "deployment.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8088",
+          "screenshot": "off",
+          "trace": "off",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "deploy-firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "deploy-webkit",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "snapshotDir": "/home/tts/prj/frontend/tests/e2e/deploy",
+        "testIgnore": [],
+        "testMatch": "deployment.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8088",
+          "screenshot": "off",
+          "trace": "off",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "deploy-webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/deployment.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "deployment.spec.ts",
+      "file": "deployment.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "DEPLOYMENT · static frontend, API, deep link and empty benchmark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-desktop",
+              "projectName": "deploy-desktop",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-c01016f2b780aba448b4",
+          "file": "deployment.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-desktop",
+              "projectName": "deploy-desktop",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-275cc9d587a50d8abb44",
+          "file": "deployment.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "DEPLOYMENT · static frontend, API, deep link and empty benchmark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-mobile",
+              "projectName": "deploy-mobile",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-6271dfb4f6192fd0f385",
+          "file": "deployment.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-mobile",
+              "projectName": "deploy-mobile",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-6017eac4c26ba08d47c5",
+          "file": "deployment.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "DEPLOYMENT · static frontend, API, deep link and empty benchmark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-firefox",
+              "projectName": "deploy-firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-b45d3f1763a356d4c711",
+          "file": "deployment.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-firefox",
+              "projectName": "deploy-firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-518310481360feb8b90c",
+          "file": "deployment.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "DEPLOYMENT · static frontend, API, deep link and empty benchmark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-webkit",
+              "projectName": "deploy-webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-da4b91232e10809ca2ad",
+          "file": "deployment.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "DEPLOYMENT / SYNTHETIC · search, private media, details and mobile layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "deploy-webkit",
+              "projectName": "deploy-webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3e554c6199c48d65fc5-f62fce50ad516d9cbf21",
+          "file": "deployment.spec.ts",
+          "line": 45,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-24T05:38:11.208Z",
+    "duration": 93.47399999999999,
+    "expected": 0,
+    "skipped": 8,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

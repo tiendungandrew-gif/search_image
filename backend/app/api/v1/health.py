@@ -50,7 +50,7 @@ async def summary(
     runtime = getattr(request.app.state, "search_runtime", None)
     search_available = bool(runtime and runtime.available)
     if check != "live":
-        # Dependency có điều kiện: public liveness, private readiness theo contract Prompt 02.
+        # Dependency có điều kiện: public liveness, private readiness theo contract Phase 02.
         credentials = await bearer(request)
         await require_operator_probe(request, credentials)
         actual = await request.app.state.services.readiness()

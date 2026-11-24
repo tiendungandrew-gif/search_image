@@ -1,6 +1,6 @@
-# Agent API và frontend — hợp đồng runtime Prompt 09
+# Agent API và frontend — hợp đồng runtime Phase 09
 
-Base `/api/v1`; Bearer read token với `search:read`. OpenAPI `/openapi.json` và `schemas/agent.py` là schema thực thi đầy đủ. Document này thay phần Agent reserved của thiết kế Prompt 02: có JSON endpoint và SSE endpoint riêng, hỗ trợ alias tương thích và response Agent riêng ở root, không bọc trong SearchResponse.agent.
+Base `/api/v1`; Bearer read token với `search:read`. OpenAPI `/openapi.json` và `schemas/agent.py` là schema thực thi đầy đủ. Document này thay phần Agent reserved của thiết kế Phase 02: có JSON endpoint và SSE endpoint riêng, hỗ trợ alias tương thích và response Agent riêng ở root, không bọc trong SearchResponse.agent.
 
 ## Endpoints
 

@@ -6,7 +6,7 @@ flowchart TD
     Advanced --> Search
     Search --> Registry["Pinned active index/generation/manifest checks"]
     Search --> Encoder["Preloaded paired CLIP runtime, bounded inference slot"]
-    Encoder --> Decoder["Query decoder process: same Prompt04 preprocessing"]
+    Encoder --> Decoder["Query decoder process: same Phase 04 preprocessing"]
     Search --> Vector["Qdrant adapter: bounded query_points"]
     Vector --> Fusion["UUID union, RRF / weighted score"]
     Fusion --> Metadata["Batch PG ready receipts, metadata và tags"]

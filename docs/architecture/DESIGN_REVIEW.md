@@ -1,23 +1,23 @@
-# Review thiết kế và bàn giao Prompt 02
+# Review thiết kế và bàn giao Phase 02
 
-Phiên bản 1.1.0 · Ngày: 2026-11-03 · Phạm vi: tài liệu thiết kế tiếng Việt; không application source, model download, container deployment hoặc benchmark. Các tài liệu Prompt 01 giữ nguyên bản gốc ngoài phần cập nhật cần cho consistency.
+Phiên bản 1.1.0 · Ngày: 2026-11-03 · Phạm vi: tài liệu thiết kế tiếng Việt; không application source, model download, container deployment hoặc benchmark. Các tài liệu Phase 01 giữ nguyên bản gốc ngoài phần cập nhật cần cho consistency.
 
-Đây là snapshot nghiệm thu Prompt02. Prompt03 đã nghiệm thu foundation trên Docker; Prompt04 có ingestion/indexing thật với evidence tại [INDEXING_TEST_REPORT](../archive/INDEXING_TEST_REPORT.md); evidence mới và các giới hạn tại [PHASE03_REPORT](../archive/PHASE03_REPORT.md). Các mô tả chưa có runtime/renderer/Git bên dưới là trạng thái lịch sử Prompt02: hiện11 Mermaid sources đã render, Git main đã init, chưa commit/remote/CI. Checklist7/7 ở đây vẫn chỉ xác nhận design artifacts, không nghiệm thu implementation các phase sau.
+Đây là snapshot nghiệm thu Phase 02. Phase 03 đã nghiệm thu foundation trên Docker; Phase 04 có ingestion/indexing thật với evidence tại [INDEXING_TEST_REPORT](../archive/INDEXING_TEST_REPORT.md); evidence mới và các giới hạn tại [PHASE03_REPORT](../archive/PHASE03_REPORT.md). Các mô tả chưa có runtime/renderer/Git bên dưới là trạng thái lịch sử Phase 02: hiện11 Mermaid sources đã render, Git main đã init, chưa commit/remote/CI. Checklist7/7 ở đây vẫn chỉ xác nhận design artifacts, không nghiệm thu implementation các phase sau.
 
 ## 1. Kết luận và mức sẵn sàng
 
-Bộ thiết kế Prompt 02 đủ để bắt đầu **scaffold local Prompt 03 khi được yêu cầu riêng**. P0 semantic search độc lập LLM; indexing durable chạy worker process riêng; model/index manifests thay thế được; API/storage/diagrams dùng cùng identity và lifecycle. Còn dependency phải giải quyết tại đúng phase: writable Git location và package/runtime pins trước repository setup; actual hardware trước cấu hình inference; corpus rights/privacy/model checkpoint trước nonfixture ingestion; labels/quality gates/load trước benchmark; public auth/TLS/backup policy trước public exposure.
+Bộ thiết kế Phase 02 đủ để bắt đầu **scaffold local Phase 03 khi được yêu cầu riêng**. P0 semantic search độc lập LLM; indexing durable chạy worker process riêng; model/index manifests thay thế được; API/storage/diagrams dùng cùng identity và lifecycle. Còn dependency phải giải quyết tại đúng phase: writable Git location và package/runtime pins trước repository setup; actual hardware trước cấu hình inference; corpus rights/privacy/model checkpoint trước nonfixture ingestion; labels/quality gates/load trước benchmark; public auth/TLS/backup policy trước public exposure.
 
-Không còn tài liệu bắt buộc chưa tạo. Chưa có runtime implementation, compiled OpenAPI, executed SQL/migrations, rendered Mermaid, retrieval metrics hoặc performance evidence; đó không phải deliverables đã hoàn thành ở phase này. Readiness cho scaffold không đồng nghĩa production readiness hoặc acceptance của accuracy/latency targets. Không bắt đầu Prompt 03.
+Không còn tài liệu bắt buộc chưa tạo. Chưa có runtime implementation, compiled OpenAPI, executed SQL/migrations, rendered Mermaid, retrieval metrics hoặc performance evidence; đó không phải deliverables đã hoàn thành ở phase này. Readiness cho scaffold không đồng nghĩa production readiness hoặc acceptance của accuracy/latency targets. Không bắt đầu Phase 03.
 
 ## 2. Checklist đầy đủ thiết kế
 
-### Checklist nghiệm thu Prompt 02 — 7/7
+### Checklist nghiệm thu Phase 02 — 7/7
 
 Checklist này xác nhận tài liệu thiết kế đã có và được đối chiếu; không xác nhận runtime hoạt động hoặc benchmark đạt mục tiêu.
 
 - [x] **PRD có yêu cầu chức năng và tiêu chí nghiệm thu rõ ràng.** [PRD](PRD.md) mục 4 có 24 FR với inputs, processing, outputs, dependencies, acceptance và planned test cases; mục 5–7 nêu NFR và gate nghiệm thu.
-- [x] **SAD phân tách Fast Semantic Search và Agentic Search.** [SAD](SAD.md) mục 2, 5–6 và 9 quy định dependency một chiều, router deterministic và core chạy khi LLM/Agent tắt; [SYSTEM_ARCHITECTURE](SYSTEM_ARCHITECTURE.md) mục 2 và 7 mô tả hai đường thực thi.
+- [x] **SAD phân tách Fast Semantic Search và Agentic Search.** [SAD](SAD.md) mục 2, 5–6 và 9 quy định dependency một chiều, router deterministic và core chạy khi LLM/Agent tắt; [SYSTEM_ARCHITECTURE](archive/SYSTEM_ARCHITECTURE.md) mục 2 và 7 mô tả hai đường thực thi.
 - [x] **Có sơ đồ kiến trúc tổng thể và sequence diagrams.** Có 11 Mermaid sources, gồm context/container/component/deployment, ERD và 6 sequence diagrams; danh mục tại mục 3 bên dưới. Mermaid chưa được parse/render bằng engine, giới hạn kiểm chứng được ghi tại mục 7.
 - [x] **PostgreSQL, Qdrant, MinIO có schema và chiến lược đồng bộ.** [DATABASE_DESIGN](DATABASE_DESIGN.md) mục 2–6 định nghĩa 24 bảng, collections/payload, private object keys, shared IDs, retry/idempotency, partial recovery, deletion, reindexing và reconciliation.
 - [x] **API request/response được định nghĩa đầy đủ ở mức thiết kế.** [API_SPECIFICATION](API_SPECIFICATION.md) có 8 core endpoints và content proxy, schemas/validation/auth/errors, JSON/multipart, examples và job pagination; chưa kiểm chứng bằng generated OpenAPI hoặc runtime tests.
@@ -53,16 +53,16 @@ Checklist này xác nhận tài liệu thiết kế đã có và được đối
 
 | Nhóm | Files |
 | --- | --- |
-| Baseline được cập nhật | [MASTER_SPEC.md](MASTER_SPEC.md), [REQUIREMENTS.md](REQUIREMENTS.md), [ROADMAP.md](ROADMAP.md), [DECISIONS.md](DECISIONS.md) |
+| Baseline được cập nhật | [MASTER_SPEC.md](archive/MASTER_SPEC.md), [REQUIREMENTS.md](archive/REQUIREMENTS.md), [ROADMAP.md](ROADMAP.md), [DECISIONS.md](DECISIONS.md) |
 | Baseline giữ nguyên | [ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md) |
-| Tài liệu Prompt 02 | [PRD.md](PRD.md), [SAD.md](SAD.md), [SYSTEM_ARCHITECTURE.md](SYSTEM_ARCHITECTURE.md), [DATABASE_DESIGN.md](DATABASE_DESIGN.md), [API_SPECIFICATION.md](API_SPECIFICATION.md), [PERFORMANCE_DESIGN.md](../research/PERFORMANCE_DESIGN.md), [DESIGN_REVIEW.md](DESIGN_REVIEW.md) |
+| Tài liệu Phase 02 | [PRD.md](PRD.md), [SAD.md](SAD.md), [SYSTEM_ARCHITECTURE.md](archive/SYSTEM_ARCHITECTURE.md), [DATABASE_DESIGN.md](DATABASE_DESIGN.md), [API_SPECIFICATION.md](API_SPECIFICATION.md), [PERFORMANCE_DESIGN.md](../research/PERFORMANCE_DESIGN.md), [DESIGN_REVIEW.md](DESIGN_REVIEW.md) |
 | ADR | [ADR-001.md](../adr/ADR-001.md), [ADR-002.md](../adr/ADR-002.md), [ADR-003.md](../adr/ADR-003.md), [ADR-004.md](../adr/ADR-004.md), [ADR-005.md](../adr/ADR-005.md), [ADR-006.md](../adr/ADR-006.md), [ADR-007.md](../adr/ADR-007.md), [ADR-008.md](../adr/ADR-008.md) |
 | Context/container/component | [system_context.mmd](../diagrams/system_context.mmd), [container_architecture.mmd](../diagrams/container_architecture.mmd), [component_architecture.mmd](../diagrams/component_architecture.mmd) |
 | Ingestion/text/image | [image_ingestion_sequence.mmd](../diagrams/image_ingestion_sequence.mmd), [text_search_sequence.mmd](../diagrams/text_search_sequence.mmd), [image_search_sequence.mmd](../diagrams/image_search_sequence.mmd) |
 | Multimodal/multi-intent/multi-hop | [multimodal_search_sequence.mmd](../diagrams/multimodal_search_sequence.mmd), [multi_intent_sequence.mmd](../diagrams/multi_intent_sequence.mmd), [multi_hop_agent_sequence.mmd](../diagrams/multi_hop_agent_sequence.mmd) |
 | Database/deployment | [database_erd.mmd](../diagrams/database_erd.mmd), [deployment_architecture.mmd](../diagrams/deployment_architecture.mmd) |
 
-Không tạo API_CONTRACTS/EVALUATION_PLAN song song; tên từng đề xuất ở Prompt 01 được cập nhật thành API_SPECIFICATION/PERFORMANCE_DESIGN theo Prompt 02.
+Không tạo API_CONTRACTS/EVALUATION_PLAN song song; tên từng đề xuất ở Phase 01 được cập nhật thành API_SPECIFICATION/PERFORMANCE_DESIGN theo Phase 02.
 
 ## 4. Requirement traceability matrix
 
@@ -135,8 +135,8 @@ Walkthrough thủ công đã đối chiếu thiết kế: (1) text/image-only kh
 | Risk / open input | Ảnh hưởng | Mitigation / deadline |
 | --- | --- | --- |
 | Corpus/rights/language chưa chọn (O-01/03) | Không thể kết luận accuracy/multilingual hoặc public redistribution | Registry/rights manifest; chốt trước nonfixture ingestion/model selection |
-| Hardware/load chưa biết (O-02/04) | Budget300ms có thể không khả thi, memory cho hai model activation chưa đủ | Inspect environment Prompt 03, pin before benchmark; bounded switching503 nếu không dual-load được |
-| Exact model/library/container pins còn mở (O-13) | Không có dependency compatibility proof | Pin và smoke ở Prompt 03/04; dimension/processor assert từ artifact |
+| Hardware/load chưa biết (O-02/04) | Budget300ms có thể không khả thi, memory cho hai model activation chưa đủ | Inspect environment Phase 03, pin before benchmark; bounded switching503 nếu không dual-load được |
+| Exact model/library/container pins còn mở (O-13) | Không có dependency compatibility proof | Pin và smoke ở Phase 03/04; dimension/processor assert từ artifact |
 | Numeric quality gates/labels/annotators chưa xác nhận (O-07) | Không thể pass quality acceptance hoặc claim corpus recall | Freeze guide/dev-test/judgments/gates trước tuning; báo pooled-label limitations |
 | Semantic verification coverage hạn chế | RRF/caption không chứng minh conjunction, negation/edit khó | Tri-state, strict verifier gating, best-effort disclosure, per-condition labels |
 | Multi-store eventual consistency/stale writers | Có thể stale point/object drift sau ready | PG recheck/CAS/receipt/reconcile; deletion tombstone và writer drain; test crash/outage |
@@ -144,8 +144,8 @@ Walkthrough thủ công đã đối chiếu thiết kế: (1) text/image-only kh
 | API/core deadline2s với upload lớn | Slow body/decode có thể timeout dù file dưới byte cap | Báo modality/size separately, đo client latency; bounds/timeout tune minh bạch trước final runs |
 | Public exposure và multi-tenancy chưa thiết kế (O-05/18) | Static local tokens/in-process rate caps không đủ mô hình public phức tạp | Bind loopback, private data ports; public auth/TLS/shared enforcement design trước exposure |
 | Data retention/backup rights (O-09/18) | Deletion live stores không đồng nghĩa backup đã purge | Owner chốt policy trước real user data; publish restore/deletion caveats |
-| Git metadata workspace không hợp lệ (O-20) | Chưa thể commit hoặc assert clean worktree | Dùng source snapshot hashes; chọn writable project repo Prompt 03, không sửa managed .git |
-| Mermaid không có renderer tại môi trường | Chưa có parser/render evidence | Structural checks + manual review; chạy renderer khi toolchain có ở Prompt 03 |
+| Git metadata workspace không hợp lệ (O-20) | Chưa thể commit hoặc assert clean worktree | Dùng source snapshot hashes; chọn writable project repo Phase 03, không sửa managed .git |
+| Mermaid không có renderer tại môi trường | Chưa có parser/render evidence | Structural checks + manual review; chạy renderer khi toolchain có ở Phase 03 |
 
 Register chi tiết và resolution mới tại [DECISIONS](DECISIONS.md), giữ đủ O-01…20. Không thêm technology để che các unknown này; mỗi technology có purpose tại MASTER_SPEC/SAD/ADR. Không phát hiện missing P0 requirement trong desk review; acceptance runtime vẫn chưa được chứng minh.
 
@@ -155,13 +155,13 @@ Các mục dưới còn mở; checklist nghiệm thu tài liệu 7/7 không đó
 
 - [ ] Chốt dataset, license/provenance và ngôn ngữ query trước nonfixture ingestion/model selection — O-01/O-03.
 - [ ] Xác định hardware, corpus size và workload/concurrency trước cấu hình inference và benchmark — O-02/O-04.
-- [ ] Pin và kiểm tra tương thích runtime/packages/container images, checkpoint/processor revisions, precision/dimension/index settings — O-13, Prompt 03–07.
+- [ ] Pin và kiểm tra tương thích runtime/packages/container images, checkpoint/processor revisions, precision/dimension/index settings — O-13, Phase 03–07.
 - [ ] Chốt annotators, judgments, dev/test splits và numeric quality gates trước tuning/held-out evaluation — O-07.
 - [ ] Xác minh semantic-verifier coverage và hành vi strict/best-effort bằng tests/evaluation — O-08.
 - [ ] Chốt quyền riêng tư, retention, deletion/backup policy trước nhận dữ liệu người dùng thật — O-09/O-18.
 - [ ] Chốt auth/TLS, shared rate limiting và tenant isolation nếu mở public hoặc multi-tenant — O-05/O-18; ngoài local MVP hiện tại.
-- [x] Chọn writable Git repository location trước repository initialization — O-20 local đã giải quyết ở Prompt03: host .git rỗng/writable, init main; chưa commit/remote/CI.
-- [x] Parse/render 11 Mermaid sources bằng engine — bổ sung Prompt03: Mermaid CLI11.17.1/Chromium, [kết quả](../verification/mermaid.json) và SVG trong verification/diagrams.
+- [x] Chọn writable Git repository location trước repository initialization — O-20 local đã giải quyết ở Phase 03: host .git rỗng/writable, init main; chưa commit/remote/CI.
+- [x] Parse/render 11 Mermaid sources bằng engine — bổ sung Phase 03: Mermaid CLI11.17.1/Chromium, [kết quả](../verification/mermaid.json) và SVG trong verification/diagrams.
 - [ ] Chốt provider/evidence/entity data và budgets khả thi trước khi bật RAG/Agent — O-14…17; không chặn core scaffold.
 
 ## 7. Validation thực sự đã chạy
@@ -240,12 +240,12 @@ Final pass sau khi tạo report và hoàn thiện full response examples đã ch
 6. API_SPECIFICATION dùng đúng UUID/state/auth/lifecycle; thêm content proxy route để private image URLs có handler cụ thể; health503 body là ngoại lệ đã khai báo.
 7. PERFORMANCE_DESIGN khớp API timing/limits, budgets giả định và E1…E4/labels/metrics; không cộng stage percentiles.
 8. Sinh11 Mermaid sources từ các luồng/schema trên, không thiết kế topology thứ hai.
-9. Tạo8 ADRs; do ADR-002…008 mới không trùng ý nghĩa các label Prompt 01, đổi namespace cũ thành P01-ADR-nnn và giữ full original decisions.
+9. Tạo8 ADRs; do ADR-002…008 mới không trùng ý nghĩa các label Phase 01, đổi namespace cũ thành P01-ADR-nnn và giữ full original decisions.
 10. Review link/inventory/JSON/schema/API/requirements/diagrams và desk walkthrough; sửa hop definition; báo rõ parser/tool limitations.
-11. Tạo report này và final consistency pass. Prompt 02 dừng ở tài liệu, không tự triển khai Prompt 03.
+11. Tạo report này và final consistency pass. Phase 02 dừng ở tài liệu, không tự triển khai Phase 03.
 
-## 9. Bàn giao Prompt 03
+## 9. Bàn giao Phase 03
 
-Khi được yêu cầu: chọn writable repo location, inspect hardware/toolchain, pin compatible Python/Node/packages/service images, tạo backend/frontend scaffolds, Compose private services, config/secrets example, health/auth/error skeleton, migration baseline và verification commands. Search-ready có thể false tới Prompt 04/05, liveness/ingest infrastructure vẫn kiểm tra được. Không cần quyết định agent provider để scaffold core.
+Khi được yêu cầu: chọn writable repo location, inspect hardware/toolchain, pin compatible Python/Node/packages/service images, tạo backend/frontend scaffolds, Compose private services, config/secrets example, health/auth/error skeleton, migration baseline và verification commands. Search-ready có thể false tới Phase 04/05, liveness/ingest infrastructure vẫn kiểm tra được. Không cần quyết định agent provider để scaffold core.
 
 Trước ingestion thật phải chốt rights/privacy/resource limits/model manifest và thực thi tests. Trước quality/performance claims phải có actual labels/hardware/load và raw outputs. Các limitations ở mục6/7 phải đi theo phase handoff. Không có cam kết P90/P95/Recall hoặc grounded multi-hop success đã đạt.

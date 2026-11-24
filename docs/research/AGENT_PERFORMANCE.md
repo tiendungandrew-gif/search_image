@@ -1,4 +1,4 @@
-# Hiệu năng Agent — hoàn thiện Prompt 09
+# Hiệu năng Agent — hoàn thiện Phase 09
 
 Số đo ngày 06/11/2026. Corpus 513 ảnh, CLIP512 CPU, active index `b4597021-4b91-491d-99ae-0617a6ca389c`, generation 3. Có4 entities/3 relations/3 image links nguồn NPS. Index510 trước đó được giữ; manifest CLIP/preprocessing/locks không đổi. [Audit](../verification/phase09_completion_20261106/final_audit.json), [dataset và giấy phép](PUBLIC_LANDMARK_DATASET.md).
 

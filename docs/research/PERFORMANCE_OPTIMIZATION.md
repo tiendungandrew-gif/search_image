@@ -1,4 +1,4 @@
-# Profiling và tối ưu có kiểm chứng — Prompt07
+# Profiling và tối ưu có kiểm chứng — Phase 07
 
 Không đổi model weights, embedding-space manifest, active collection hoặc ranking để làm benchmark nhanh. Không thêm Redis, query-result cache hoặc LLM. Đổi execution order của object checks phải giữ metadata/payload eligibility, private-object access và result order.
 

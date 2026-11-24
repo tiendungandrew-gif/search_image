@@ -15,7 +15,7 @@ Playwright đã kiểm tra Chromium desktop1440px, mobile390px, Firefox1366px v�
 
 Không tính mỗi lần rerun thành test mới. Skip là profile không áp dụng, không phải pass. Các legacy Agent browser specs không chọn ở lượt hồi quy50 ca; Agent được kiểm tra bằng QA browser8 ca, unit, real integration và live benchmark riêng.
 
-## Ma trận Prompt11
+## Ma trận Phase 11
 
 | ID | Hành vi | Bằng chứng |
 | --- | --- | --- |

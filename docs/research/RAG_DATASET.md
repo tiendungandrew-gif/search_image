@@ -1,4 +1,4 @@
-# Corpus có caption cho RAG — Prompt08
+# Corpus có caption cho RAG — Phase 08
 
 Ngày06/11/2026. Dùng pipeline ingestion/indexing hiện có. JPEG và annotations tải về bị Git/Docker ignore, MinIO giữ bucket private.
 

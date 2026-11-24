@@ -17,7 +17,15 @@ def main():
     parser.add_argument("--spec", choices=["guest", "motion", "search"])
     args = parser.parse_args()
     env = browser_environment(ROOT)
-    cmd = ["npm", "exec", "--", "playwright", "test", "--config", "playwright.consumer.config.ts"]
+    cmd = [
+        "npm",
+        "exec",
+        "--",
+        "playwright",
+        "test",
+        "--config",
+        "tests/e2e/config/consumer.config.ts",
+    ]
     if args.spec:
         cmd += [args.spec + ".spec.ts"]
     if args.project:

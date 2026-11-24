@@ -1,4 +1,4 @@
-# Ablation có kiểm soát — Prompt07
+# Ablation có kiểm soát — Phase 07
 
 Các JSON configs thực tại `evaluation/experiments/phase07/`, dùng immutable source/dataset/query manifests và cùng seed/K/candidate budget. CLI không tạo labels từ model. Latency ablation có thể chạy khi chưa có nhãn; quality ablation phải chờ human verified judgments.
 

@@ -1,6 +1,6 @@
-# Multi-intent Search — Prompt 06
+# Multi-intent Search — Phase 06
 
-Core fast search Prompt05 được giữ cho explicit text/image hoặc auto single-intent. Query classifier/decomposer trong `backend/app/services/query/` dùng deterministic bounded rules, không gọi LLM. Đây là parser theo mẫu, chưa phải bộ hiểu ngôn ngữ tổng quát.
+Core fast search Phase 05 được giữ cho explicit text/image hoặc auto single-intent. Query classifier/decomposer trong `backend/app/services/query/` dùng deterministic bounded rules, không gọi LLM. Đây là parser theo mẫu, chưa phải bộ hiểu ngôn ngữ tổng quát.
 
 ## Phân loại và fallback
 
@@ -23,7 +23,7 @@ Mẫu mơ hồ, dangling operator, unmatched grouping hoặc quoted/compound-col
 
 Group `{op:and|or,clauses:[...]}`; leaf có unique id≤64, kind semantic/metadata, required, negated và weight(0,10]. Hai ID whole/image dành cho nhánh nội bộ, bị reject khi dùng cho leaf để không ghi đè whole-query/image signal. Semantic leaf có text; metadata leaf có nonempty filter theo schema hiện có, không vừa text vừa filter. Unicode/control/shape/count/depth được validate tại boundary; metadata expression quá dài trả422. Các leaf IDs dùng trong response/evaluation để liên kết human judgments.
 
-Canonical assessments giữ satisfied/violated/unknown; compatibility constraint_evidence dùng VERIFIED_MATCH/VERIFIED_MISMATCH/UNKNOWN. Metadata numeric dimensions/media/source/city/time chỉ được đánh giá theo giá trị có thật. Missing metadata là UNKNOWN. Tags chưa có exhaustive annotation flag: tag hiện diện chứng minh membership; thiếu tag không chứng minh visual absence, nên là UNKNOWN trong AST evidence. Top-level hard filters vẫn dùng positive-match policy Prompt05: missing field bị loại.
+Canonical assessments giữ satisfied/violated/unknown; compatibility constraint_evidence dùng VERIFIED_MATCH/VERIFIED_MISMATCH/UNKNOWN. Metadata numeric dimensions/media/source/city/time chỉ được đánh giá theo giá trị có thật. Missing metadata là UNKNOWN. Tags chưa có exhaustive annotation flag: tag hiện diện chứng minh membership; thiếu tag không chứng minh visual absence, nên là UNKNOWN trong AST evidence. Top-level hard filters vẫn dùng positive-match policy Phase 05: missing field bị loại.
 
 Required AND: violated nếu có required child violated; unknown nếu không violated nhưng còn unknown. Required OR: satisfied nếu có required child satisfied; unknown nếu không satisfied nhưng còn unknown. Optional leaves được bỏ khỏi hard-gate projection để không dùng optional OR branch bypass mandatory condition. Negation đảo satisfied/violated, giữ nguyên unknown. Có thể verify metadata exclusion trên field có dữ liệu; semantic negation vẫn unknown.
 
@@ -31,6 +31,6 @@ Best effort(default): loại required Boolean VIOLATED, giữ UNKNOWN và cảnh
 
 ## Candidate generation và experiments
 
-Whole-query luôn được retrieve. Per-constraint retrieval chỉ lấy semantic positive leaves trong remaining channel budget; negative leaves vẫn encode để assessment/soft scoring nhưng không tìm “people” rồi coi là absence. Candidate union/fusion, PG authoritative eligibility và metadata logic, optional reranker, private object checks và finalK dùng shared service với Prompt05. Candidate cap có thể làm thiếu eligible images; không bù fake results.
+Whole-query luôn được retrieve. Per-constraint retrieval chỉ lấy semantic positive leaves trong remaining channel budget; negative leaves vẫn encode để assessment/soft scoring nhưng không tìm “people” rồi coi là absence. Candidate union/fusion, PG authoritative eligibility và metadata logic, optional reranker, private object checks và finalK dùng shared service với Phase 05. Candidate cap có thể làm thiếu eligible images; không bù fake results.
 
 E1 explicit text baseline; E2 whole+per-clause union rồi rescore whole cosine; E3 RRF/weighted-score fusion; E4 fusion+constraint rerank; E5 paired fusion với method comparison. E2 không dùng RRF làm final relevance score; RRF chỉ giới hạn preliminary union pool, vì bounded candidate budget vẫn cần tie/order policy. Xem [RERANKING_DESIGN](RERANKING_DESIGN.md), [API](ADVANCED_SEARCH_API.md), [test report](../archive/ADVANCED_SEARCH_TEST_REPORT.md).

@@ -1,14 +1,14 @@
-# Đánh giá retrieval — Prompt07
+# Đánh giá retrieval — Phase 07
 
-## Đánh giá Agent Prompt09
+## Đánh giá Agent Phase 09
 
 Experiment Agent dùng framework Phase07 tại `backend/app/evaluation/agent.py`; CLI `app.cli.agent`, fixture test và raw artifacts giữ riêng trong `results/phase09`. [Phương pháp](../docs/research/AGENT_EVALUATION.md), [hiệu năng](../docs/research/AGENT_PERFORMANCE.md), [báo cáo nghiệm thu](../docs/archive/PHASE09_TEST_REPORT.md). Các facts `evaluation/agent/fixtures` đều hư cấu và chỉ nhập vào DB test cô lập. Không có ground truth quan hệ thực hoặc nhãn relevance do người xác nhận; không báo real-world accuracy từ fixture. Human quality review RAG Phase08 vẫn chờ theo lựa chọn người dùng.
 
-Đây là hướng dẫn hiện hành; công cụ Prompt05–06 được giữ bên dưới để bảo toàn khả năng tái lập. Source evaluation dùng chung tại `backend/app/evaluation/`, không tạo framework song song. Chưa có human relevance labels; không đổi templates thành verified để lấy điểm.
+Đây là hướng dẫn hiện hành; công cụ Phase 05–06 được giữ bên dưới để bảo toàn khả năng tái lập. Source evaluation dùng chung tại `backend/app/evaluation/`, không tạo framework song song. Chưa có human relevance labels; không đổi templates thành verified để lấy điểm.
 
 ## Chuẩn bị và gán nhãn
 
-Cần stack/index/cache thật theo Prompt04–06. Cài `uv sync --project backend --extra dev --extra ml --extra evaluation --frozen`. CLI chạy từ project root; credentials chỉ qua `scripts/run_local.py`, không truyền token trong arguments.
+Cần stack/index/cache thật theo Phase 04–06. Cài `uv sync --project backend --extra dev --extra ml --extra evaluation --frozen`. CLI chạy từ project root; credentials chỉ qua `scripts/run_local.py`, không truyền token trong arguments.
 
 ```bash
 backend/.venv/bin/python scripts/run_local.py --env-file .env -- backend/.venv/bin/python -m app.cli.evaluation validate-dataset
@@ -62,15 +62,15 @@ Mỗi experiment có experiment.json/result.json, raw samples/per-query records/
 
 ---
 
-# Retrieval evaluation và latency — Prompt05–06
+# Retrieval evaluation và latency — Phase 05–06
 
-Đã có corpus fixture10 ảnh từ Prompt04 và search CLIP thật. **Chưa có human-verified qrels**, vì vậy Recall/MRR/nDCG thực chưa đo; không tự gán labels theo tên file, cosine score hoặc kỳ vọng của model.
+Đã có corpus fixture10 ảnh từ Phase 04 và search CLIP thật. **Chưa có human-verified qrels**, vì vậy Recall/MRR/nDCG thực chưa đo; không tự gán labels theo tên file, cosine score hoặc kỳ vọng của model.
 
 ## Metric code và labels
 
 Implementation duy nhất tại `backend/app/evaluation/metrics.py`, tests explicit numeric fixtures trong backend unit. Recall@1/5/10 chia tổng relevant images; Precision@10 luôn chia10 kể cả corpus nhỏ/returned<10; MRR@10 theo first relevant rank trong depth10; nDCG@10 dùng gain2^grade−1/log2(rank+1). Duplicate IDs chỉ tính lần đầu, không compact ranking để tăng metric. Query không có relevant/ideal gain được loại khỏi relevance aggregates và báo riêng.
 
-Bắt đầu từ [template](relevance_labels/template.json). Annotator phải review toàn universe, ghi corpus_image_ids thật, human_verified=true và exhaustive_judgments=true sau khi kiểm duyệt. Mỗi query có query_id/query và grades map mọi corpus UUID→grade0…3, hoặc relevant_image_ids cho binary judgments đã xác nhận exhaustive. Không có label không mặc nhiên là nonrelevant. Dùng frozen corpus/index/model/hash, reviewer/provenance/version và dev/test split trước nghiên cứu Prompt07.
+Bắt đầu từ [template](relevance_labels/template.json). Annotator phải review toàn universe, ghi corpus_image_ids thật, human_verified=true và exhaustive_judgments=true sau khi kiểm duyệt. Mỗi query có query_id/query và grades map mọi corpus UUID→grade0…3, hoặc relevant_image_ids cho binary judgments đã xác nhận exhaustive. Không có label không mặc nhiên là nonrelevant. Dùng frozen corpus/index/model/hash, reviewer/provenance/version và dev/test split trước nghiên cứu Phase 07.
 
 ```bash
 uv run --project backend python scripts/run_local.py --env-file .env -- backend/.venv/bin/python evaluation/scripts/evaluate_search.py --labels evaluation/relevance_labels/verified.json --output evaluation/results/quality.json
@@ -84,9 +84,9 @@ verified.json phải do người dùng/annotator cung cấp; repo không giả t
 
 [benchmark_search.py](scripts/benchmark_search.py) hỗ trợ text/image, request count, warmup, concurrency, per-request records và nearest-rank P50/P90/P95. Join full ASGI samples qua request ID; client duration tách server processing/full response. Token chỉ qua environment, không log query text hoặc headers. Xem [SEARCH_PERFORMANCE](../docs/research/SEARCH_PERFORMANCE.md) cho commands, boundaries, resource và interpretation; results lưu actual JSON tại evaluation/results.
 
-## Advanced retrieval — Prompt06
+## Advanced retrieval — Phase 06
 
-[phase06.json](experiments/phase06.json) định nghĩa E1 whole-query, E2 multi-query/whole rescore, E3 RRF hoặc weighted score, E4 constraint rerank, E5 paired fusion. Benchmark hỗ trợ thêm --mode multi_intent|multimodal, --fusion rrf|weighted_score, --rerank và --retrieval-strategy whole_query|multi_query|fused. Advanced workload luân phiên English/Vietnamese AND/OR, giữ subgroup latencies. --mode text/image vẫn giữ workload Prompt05, không gộp advanced latency vào fast latency.
+[phase06.json](experiments/phase06.json) định nghĩa E1 whole-query, E2 multi-query/whole rescore, E3 RRF hoặc weighted score, E4 constraint rerank, E5 paired fusion. Benchmark hỗ trợ thêm --mode multi_intent|multimodal, --fusion rrf|weighted_score, --rerank và --retrieval-strategy whole_query|multi_query|fused. Advanced workload luân phiên English/Vietnamese AND/OR, giữ subgroup latencies. --mode text/image vẫn giữ workload Phase 05, không gộp advanced latency vào fast latency.
 
 ```bash
 bash scripts/evaluation/benchmark_search.sh multi_intent --requests 100 --rerank
@@ -100,8 +100,8 @@ Các nhóm cần chú thích riêng: hai/ba/bốn+ conditions, AND/OR, required/
 
 Advanced metrics tại backend/app/evaluation/advanced_metrics.py: constraint accuracy chỉ trên verified predictions có human true/false labels, báo verification coverage riêng; UNKNOWN là abstention, không success hoặc mismatch. multi_intent_success@10 là có ít nhất một image trong Top10 nằm trong human overall_satisfied set; no-answer queries tách ra, không nhận điểm thành công giả. constraint_satisfaction@10 là tỷ lệ returned images thỏa overall labels; empty results→null. Không suy correctness từ cosine hoặc metadata match score. E1–E5 quality harness kiểm actual corpus availability/index/universe, báo per-query, macro per experiment và language; nDCG dùng human grades. Chưa có adequate data nên ablation/quality improvement chưa được đo.
 
-## RAG Prompt08
+## RAG Phase 08
 
 Các run mới ghi riêng evaluation/results/phase08. `python -m app.cli.rag --requests 20` qua run_local/.env chạy R1 search-only/R2 metadata baseline/R3 selected context/R4 cap1, dùng API thật. `python -m app.cli.evaluation --results evaluation/results/phase08 report --output evaluation/reports/new_phase08_run` sinh CSV/Markdown/JSON/PNG/SVG từ raw RAG/fast measurements. `python -m app.cli.rag --review REVIEW.json --experiment RESULT.json` validate human review/hash và tổng hợp answer relevance/faithfulness0…2/unsupported claim rate theo VI/EN. Review phải human_verified/annotator/result_sha256 và exhaustive case IDs, không tự tạo nhãn. Citation-ID/exact quote audits không thay visual faithfulness hoặc answer relevance. [Protocol](../docs/research/RAG_EVALUATION.md), [nghiệm thu](../docs/archive/PHASE08_TEST_REPORT.md).
 
-Prompt08 ngày06/11: [corpus510 ảnh và offline human review](../docs/research/RAG_DATASET.md), [report hiện hành](reports/phase08_20261106/REPORT.md). `app.cli.rag --workload evaluation/rag/test_cases/coco_v1.jsonl --requests 32` chạy R1–R4; `--review-pack RESULT.json --output .cache/evaluation/rag_review_v2.html` tạo trang offline. Người dùng giữ human review pending, không tự điền scores.
+Phase 08 ngày06/11: [corpus510 ảnh và offline human review](../docs/research/RAG_DATASET.md), [report hiện hành](reports/phase08_20261106/REPORT.md). `app.cli.rag --workload evaluation/rag/test_cases/coco_v1.jsonl --requests 32` chạy R1–R4; `--review-pack RESULT.json --output .cache/evaluation/rag_review_v2.html` tạo trang offline. Người dùng giữ human review pending, không tự điền scores.

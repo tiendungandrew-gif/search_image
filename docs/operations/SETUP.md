@@ -13,11 +13,11 @@ Triển khai static frontend và services bằng [DEPLOYMENT_GUIDE](DEPLOYMENT_G
 
 Dùng [TEST_STRATEGY](../testing/TEST_STRATEGY.md) và `python3 scripts/qa.py up|fast|services|frontend|browser|down` theo từng lệnh riêng. QA tự sinh `.env.qa` khác `.env`, ports8011/5175, không dùng production credentials. `make test-integration`/`test-e2e` nay trỏ QA. Cấu hình Gemini/model/dataset serving tiếp tục giữ như phần sau, nhưng các verifier mutating của phase cũ không dùng cho regression trên DB phục vụ. [Báo cáo Phase11](../archive/PHASE11_TEST_REPORT.md) nêu số liệu và giới hạn mới nhất; sections dưới giữ lịch sử setup.
 
-## Hoàn thiện Prompt 09 — 06/11/2026
+## Hoàn thiện Phase 09 — 06/11/2026
 
-Đã bổ sung bộ địa danh NPS có nguồn:3 ảnh thật,4 entities,3 quan hệ và3 liên kết ảnh. Index phục vụ hiện513 ảnh, generation3; index510 ảnh cũ giữ nguyên. Workflow Anh/Việt/alias, Gemini planner và RAG thật đã được kiểm tra. Planner có trace từng attempt; prompt tools và RAG context đã rút gọn, citation provenance vẫn giữ đầy đủ trên server. Bộ kiểm tra mới đạt200 backend,21 frontend unit và24 browser full tests cùng6 ca browser nhánh cuối. Chất lượng do người đánh giá vẫn chờ; số đo latency và trạng thái target3s xem [báo cáo Prompt09](../archive/PHASE09_TEST_REPORT.md), dữ liệu/nguồn tại [PUBLIC_LANDMARK_DATASET](../research/PUBLIC_LANDMARK_DATASET.md).
+Đã bổ sung bộ địa danh NPS có nguồn:3 ảnh thật,4 entities,3 quan hệ và3 liên kết ảnh. Index phục vụ hiện513 ảnh, generation3; index510 ảnh cũ giữ nguyên. Workflow Anh/Việt/alias, Gemini planner và RAG thật đã được kiểm tra. Planner có trace từng attempt; prompt tools và RAG context đã rút gọn, citation provenance vẫn giữ đầy đủ trên server. Bộ kiểm tra mới đạt200 backend,21 frontend unit và24 browser full tests cùng6 ca browser nhánh cuối. Chất lượng do người đánh giá vẫn chờ; số đo latency và trạng thái target3s xem [báo cáo Phase 09](../archive/PHASE09_TEST_REPORT.md), dữ liệu/nguồn tại [PUBLIC_LANDMARK_DATASET](../research/PUBLIC_LANDMARK_DATASET.md).
 
-## Chạy Agent tùy chọn Prompt09
+## Chạy Agent tùy chọn Phase 09
 
 Giữ cấu hình PG/Qdrant/MinIO và model/index đã có. Mặc định `.env.example` tắt Agent/LLM/RAG để core không phụ thuộc provider. Để bật trên máy local, chỉnh `.env` (không commit):
 
@@ -38,7 +38,7 @@ bash scripts/verification/verify_agent.sh --output docs/verification/phase09/new
 
 Verifier đầy đủ cần flags RAG/LLM và corpus đáp ứng từng gate; bộ fixtures deterministic có thể chạy riêng. Không bật fixture trong serving DB. Muốn thử Gemini planning/explanation, giữ provider/key Phase08 trong `.env`, bật `AGENT_LLM_PLANNING_ENABLED=true`/`AGENT_RAG_ENABLED=true` và RAG config tương ứng rồi restart backend. Không nhập API key vào trình duyệt. Read token ứng dụng nhập trong UI, chọn Agent và deterministic trước. Không có knowledge thì truy vấn quan hệ trả thiếu bằng chứng; semantic query vẫn tìm510 ảnh hiện có. Máy cài mới hoàn toàn có thể `SEARCH_ENABLED=false`, Agent vẫn khởi tạo và hiển thị empty dataset. Xem [AGENT_API](../features/AGENT_API.md), [AGENT_EVALUATION](../research/AGENT_EVALUATION.md), [PHASE09_TEST_REPORT](../archive/PHASE09_TEST_REPORT.md).
 
-Prompt 03/04 · 2026-11-03. Hướng dẫn foundation sau dùng project root. Prompt04 có model/sample downloads explicit; quy trình tại [IMAGE_INDEXING](../features/IMAGE_INDEXING.md). Versions khóa trong uv.lock/package-lock.json.
+Phase 03/04 · 2026-11-03. Hướng dẫn foundation sau dùng project root. Phase 04 có model/sample downloads explicit; quy trình tại [IMAGE_INDEXING](../features/IMAGE_INDEXING.md). Versions khóa trong uv.lock/package-lock.json.
 
 ## 1. Kiểm tra prerequisites
 
@@ -181,7 +181,7 @@ Migration đầu tạo images, image_metadata, embedding_models, indexing_jobs, 
 | Config invalid | Field name được báo an toàn; kiểm tra secrets trống, URL driver/hostname, JSON CORS và DEBUG boolean |
 | Readiness401 | Bearer token phải khớp API_TOKEN; liveness không cần token |
 | Readiness503 | Xem dependency status healthy/unhealthy/timeout và service logs; kiểm tra credentials/URL/bucket, không fake status |
-| Search health503 | Dự kiến ở Prompt03: encoder not_implemented/index not_initialized |
+| Search health503 | Dự kiến ở Phase 03: encoder not_implemented/index not_initialized |
 | Bucket tồn tại nhưng unhealthy | Credentials thiếu quyền hoặc anonymous policy bị từ chối; không tự đổi policy bucket hiện hữu |
 | Frontend không gọi được API | Vite proxy target phải từ góc nhìn server Vite; browser không resolve hostname backend |
 | npm resolver edgesOut | Dùng npm11.21.1 với lockfile và npm ci; không force dependency upgrades mù quáng |
@@ -203,7 +203,7 @@ make test-e2e
 
 Nếu không có Make: `uv run --project backend python scripts/run_local.py --env-file .env -- npm --prefix frontend run test:e2e`. Browser tests không mock API, dùng backend/UI đang chạy, kiểm tra desktop/mobile và không lưu token; trace tắt để tránh ghi request headers. Không chạy đồng thời một native server khác trên ports8000/5173. Artifacts screenshots/SVG và reports chọn lọc tại `docs/verification/`; raw Playwright test-results được ignore.
 
-## 8. Ingestion và worker Prompt 04
+## 8. Ingestion và worker Phase 04
 
 Thực hiện [IMAGE_INDEXING](../features/IMAGE_INDEXING.md) sau foundation setup: cài ml extra, tải CLIP vào .cache/clip, tải10 licensed fixtures, register index, đặt INGESTION_INDEX_ID và WRITE_API_TOKEN riêng, khởi động profile indexing. Chỉ mount cache public weights/dataset read-only; không đưa backend/data credentials vào VITE_*.
 
@@ -211,17 +211,17 @@ Host override có thêm host_access bridge để loopback port publication hoạ
 
 `python3 scripts/verification/verify_indexing.py` build/start, chạy backend unit + real CLIP integration trong worker, frontend static/unit/build, HTTP smoke, ingest/queue10 ảnh, batch inference, kiểm chứng storage và repeat idempotency; report tại docs/verification/phase04. Đây là fixture acceptance trên index cấu hình, có thêm job và idempotent upserts thật, không xóa volumes hoặc collection ứng dụng. Cần cache/dataset và registry index đã chuẩn bị; tests không tự tải mạng. `--skip-build` dùng images hiện tại và được ghi rõ trong summary.
 
-## 9. Online search Prompt05
+## 9. Online search Phase 05
 
-Backend Compose hiện cài extra ml và mount model cache read-only để preload paired query encoder khi SEARCH_ENABLED=true; các câu API không cài/load Torch trong snapshot Prompt04 mô tả phase trước. Không cần tải model hoặc reindex khi cache/index vẫn matching. Activation CLI `python -m app.cli.search --activate INDEX_UUID` phải verify actual index và load model trước pointer publish; xem [SEMANTIC_SEARCH](../features/SEMANTIC_SEARCH.md).
+Backend Compose hiện cài extra ml và mount model cache read-only để preload paired query encoder khi SEARCH_ENABLED=true; các câu API không cài/load Torch trong snapshot Phase 04 mô tả phase trước. Không cần tải model hoặc reindex khi cache/index vẫn matching. Activation CLI `python -m app.cli.search --activate INDEX_UUID` phải verify actual index và load model trước pointer publish; xem [SEMANTIC_SEARCH](../features/SEMANTIC_SEARCH.md).
 
 Search config thực: SEARCH_ENABLED=false default, SEARCH_MAX_TOP_K=50, SEARCH_DEFAULT_CANDIDATES=50, SEARCH_MAX_TEXT_LENGTH=2000, SEARCH_ENABLE_BASIC_FILTERS=true, SEARCH_QUEUE_CAPACITY=8, SEARCH_QUEUE_WAIT_SECONDS=0.05, SEARCH_VECTOR_TIMEOUT_SECONDS=1. Core timeout vẫn REQUEST_TIMEOUT_SECONDS2s, không tự đổi thành target300ms. Missing/mismatch cache/index: process vẫn live, search not_ready; xem health/check search và safe logs.
 
 Verifier cần host backend venv (HTTPX/app), Node/npm, Playwright Chromium đã install, model/cache/dataset/active pointer. `python3 scripts/verification/verify_search.py` build/start, full tests, browser và100 requests/modality; report docs/verification/phase05 + evaluation/results. --skip-build/--skip-browser/--skip-benchmark được ghi trong summary, không dùng skip để claim phần chưa chạy. Không xóa/recreate collection ứng dụng.
 
-## 10. Chạy Prompt06
+## 10. Chạy Phase 06
 
-Giữ index/model/cache đã verify Prompt05, không cần đổi migration hoặc tạo lại dataset. Build rồi restart backend/frontend để load source/config mới; SEARCH_ENABLED=true và active index ready là prerequisites. MULTI_INTENT_ENABLED, MULTIMODAL_ENABLED, QUERY_DECOMPOSITION_ENABLED và RERANKING_ENABLED mặc địnhtrue; tham số/caps/weights trong .env.example. Request rerank mặc địnhfalse, người dùng bật trên UI hoặc API.
+Giữ index/model/cache đã verify Phase 05, không cần đổi migration hoặc tạo lại dataset. Build rồi restart backend/frontend để load source/config mới; SEARCH_ENABLED=true và active index ready là prerequisites. MULTI_INTENT_ENABLED, MULTIMODAL_ENABLED, QUERY_DECOMPOSITION_ENABLED và RERANKING_ENABLED mặc địnhtrue; tham số/caps/weights trong .env.example. Request rerank mặc địnhfalse, người dùng bật trên UI hoặc API.
 
 ```bash
 docker compose build backend indexing-worker frontend
@@ -242,15 +242,15 @@ bash scripts/verification/verify_advanced_search.sh --requests 100
 
 Fresh clone vẫn phải cài prerequisites theo phần đầu SETUP; .tools/.cache không được đóng gói vào source repository.
 
-## 11. Evaluation Prompt07
+## 11. Evaluation Phase 07
 
 Cài optional extra evaluation để xuất biểu đồ: `uv sync --project backend --extra dev --extra ml --extra evaluation --frozen`. Không nâng core ML dependencies. Sau khi sample index/cache/active CLIP đã sẵn sàng, theo [evaluation/README](../../evaluation/README.md) để xác minh dataset, tạo trang gán nhãn, benchmark và xuất báo cáo. Fresh clone cần tạo snapshot mới từ UUID thật sau ingestion; không dùng snapshot máy khác cho corpus mới. Không tải COCO/Flickr hoặc nhãn giả. Model so sánh cần explicit download SigLIP2 (~1,54GB); worker build có evaluation extra và runner mount read-only model cache. Không cần expose data ports.
 
-## Cập nhật triển khai Prompt08
+## Cập nhật triển khai Phase 08
 
-Đã có RAG metadata tùy chọn, tái sử dụng SearchService/active CLIP, batch evidence validation/current IDs, bounded context/prompts, Gemini/OpenAI-compatible adapter, citation validation, JSON/SSE và React explanation panel. Không gửi ảnh sang provider hoặc thay Fast Search/ranking. Gemini key ở backend; generator tắt/lỗi giữ ảnh. Với corpus10 ảnh không caption/tags, chưa thể xác minh nội dung thị giác. [Kiến trúc](../features/RAG_ARCHITECTURE.md), [API hiện hành](../features/RAG_API.md), [cấu hình](../features/RAG_IMPLEMENTATION.md), [đánh giá](../research/RAG_EVALUATION.md), [nghiệm thu A–L](../archive/PHASE08_TEST_REPORT.md). Không triển khai Prompt09.
+Đã có RAG metadata tùy chọn, tái sử dụng SearchService/active CLIP, batch evidence validation/current IDs, bounded context/prompts, Gemini/OpenAI-compatible adapter, citation validation, JSON/SSE và React explanation panel. Không gửi ảnh sang provider hoặc thay Fast Search/ranking. Gemini key ở backend; generator tắt/lỗi giữ ảnh. Với corpus10 ảnh không caption/tags, chưa thể xác minh nội dung thị giác. [Kiến trúc](../features/RAG_ARCHITECTURE.md), [API hiện hành](../features/RAG_API.md), [cấu hình](../features/RAG_IMPLEMENTATION.md), [đánh giá](../research/RAG_EVALUATION.md), [nghiệm thu A–L](../archive/PHASE08_TEST_REPORT.md). Không triển khai Phase 09.
 
-Ngày06/11, Prompt08 bổ sung [COCO downloader/corpus caption/offline review](../research/RAG_DATASET.md) và [nghiệm thu mới](../archive/PHASE08_COMPLETION_REPORT.md). Default RAG generation8s/request12s. Lượt thực510 ảnh đã verify/activate, baseline được giữ.
+Ngày06/11, Phase 08 bổ sung [COCO downloader/corpus caption/offline review](../research/RAG_DATASET.md) và [nghiệm thu mới](../archive/PHASE08_COMPLETION_REPORT.md). Default RAG generation8s/request12s. Lượt thực510 ảnh đã verify/activate, baseline được giữ.
 
 
 ## Frontend Phase10

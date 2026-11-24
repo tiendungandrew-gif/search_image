@@ -1,0 +1,196 @@
+{
+  "config": {
+    "argv": [
+      "/home/tts/prj/.tools/node/bin/node",
+      "/home/tts/prj/frontend/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/e2e/config/quick-login.config.ts",
+      "--list"
+    ],
+    "configFile": "/home/tts/prj/frontend/tests/e2e/config/quick-login.config.ts",
+    "rootDir": "/home/tts/prj/frontend/tests/e2e/quick-login",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 180000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "quick-desktop",
+        "name": "quick-desktop",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/quick-login",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "quick-mobile",
+        "name": "quick-mobile",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/quick-login",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "quick-desktop",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/quick-login",
+        "snapshotDir": "/home/tts/prj/frontend/tests/e2e/quick-login",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "screenshot": "off",
+          "trace": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "quick-desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/tts/prj/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "quick-mobile",
+        "testDir": "/home/tts/prj/frontend/tests/e2e/quick-login",
+        "snapshotDir": "/home/tts/prj/frontend/tests/e2e/quick-login",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "screenshot": "off",
+          "trace": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "quick-mobile"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/quick-login.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "roles.spec.ts",
+      "file": "roles.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "quick Admin/User · real sessions, role landing pages, scoped search and logout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "quick-desktop",
+              "projectName": "quick-desktop",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "7a25b8aaa0fcc60dba5a-2d31b753b89265cc2cf0",
+          "file": "roles.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "quick Admin/User · real sessions, role landing pages, scoped search and logout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "quick-mobile",
+              "projectName": "quick-mobile",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "7a25b8aaa0fcc60dba5a-6dc26432d6b153c51984",
+          "file": "roles.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-24T05:38:13.297Z",
+    "duration": 101.469,
+    "expected": 0,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

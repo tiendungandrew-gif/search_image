@@ -1,10 +1,10 @@
 # Thiết kế hiệu năng và đánh giá retrieval
 
-Cập nhật Prompt06: advanced latency đo tách single-intent baseline; [ADVANCED_SEARCH_TEST_REPORT](../archive/ADVANCED_SEARCH_TEST_REPORT.md) là evidence hiện hành cho E1–E5, before/after và quality chưa đo. Các số đo Prompt05 dưới đây giữ làm historical baseline.
+Cập nhật Phase 06: advanced latency đo tách single-intent baseline; [ADVANCED_SEARCH_TEST_REPORT](../archive/ADVANCED_SEARCH_TEST_REPORT.md) là evidence hiện hành cho E1–E5, before/after và quality chưa đo. Các số đo Phase 05 dưới đây giữ làm historical baseline.
 
-Phiên bản 1.1.0 · 2026-11-03 · Baseline thiết kế Prompt02: budgets/cấu hình dưới là giả định, không là benchmark. Đầu vào đã đối chiếu PRD, SAD, storage và [API_SPECIFICATION](../architecture/API_SPECIFICATION.md). Chưa có model/corpus/hardware thực được chạy tại thời điểm lập baseline này.
+Phiên bản 1.1.0 · 2026-11-03 · Baseline thiết kế Phase 02: budgets/cấu hình dưới là giả định, không là benchmark. Đầu vào đã đối chiếu PRD, SAD, storage và [API_SPECIFICATION](../architecture/API_SPECIFICATION.md). Chưa có model/corpus/hardware thực được chạy tại thời điểm lập baseline này.
 
-Cập nhật Prompt05: đã chạy CLIP/Qdrant thật, benchmark warm CPU/concurrency1/corpus10 với100 requests mỗi modality. Full server P90 text134.70ms, image205.89ms; P95 text140.78ms, image222.70ms; 0 lỗi. Các target được quan sát trong workload giới hạn này, chưa là SLA. [SEARCH_TEST_REPORT](../archive/SEARCH_TEST_REPORT.md) có raw samples, before/after optimization, hardware và test evidence; [SEARCH_PERFORMANCE](SEARCH_PERFORMANCE.md) là hướng dẫn đo hiện hành. Quality metrics thực vẫn chưa đo do thiếu human judgments. Giữ các mục sau làm thiết kế nghiên cứu và kế hoạch mở rộng, không suy diễn các budgets thành số đo.
+Cập nhật Phase 05: đã chạy CLIP/Qdrant thật, benchmark warm CPU/concurrency1/corpus10 với100 requests mỗi modality. Full server P90 text134.70ms, image205.89ms; P95 text140.78ms, image222.70ms; 0 lỗi. Các target được quan sát trong workload giới hạn này, chưa là SLA. [SEARCH_TEST_REPORT](../archive/SEARCH_TEST_REPORT.md) có raw samples, before/after optimization, hardware và test evidence; [SEARCH_PERFORMANCE](SEARCH_PERFORMANCE.md) là hướng dẫn đo hiện hành. Quality metrics thực vẫn chưa đo do thiếu human judgments. Giữ các mục sau làm thiết kế nghiên cứu và kế hoạch mở rộng, không suy diễn các budgets thành số đo.
 
 ## 1. Objectives và biên đo
 
@@ -64,7 +64,7 @@ Giả định warm fast path trên corpus/hardware sẽ được xác định; k
 | Rate limit | 60 search/phút/principal; 10 mutations/phút/principal ở một API process | Dev protection đề xuất; admission quan trọng hơn số rate; multi-replica cần shared enforcement trước exposure |
 | Reconciliation/staging | 15 phút scan increment; orphan grace24h | Không xóa khi còn reference/active writer; không coi là SLA/RPO |
 
-Fast path không retry online dependency tự động ban đầu; client có thể retry search nếu retryable. Worker retries riêng, agent retries chỉ khi còn budget. 429 là rate cap, 503 INFERENCE_BUSY là queue/admission saturation, 504 là exhausted deadline. DB pool/statement/lock timeouts và SDK cancellation phải được cấu hình thực ở Prompt 03–05. Cancel thread/future không đảm bảo đã dừng GPU/decoder: worker isolation, slot giữ tới compute thật kết thúc hoặc process bị terminate; không release capacity giả.
+Fast path không retry online dependency tự động ban đầu; client có thể retry search nếu retryable. Worker retries riêng, agent retries chỉ khi còn budget. 429 là rate cap, 503 INFERENCE_BUSY là queue/admission saturation, 504 là exhausted deadline. DB pool/statement/lock timeouts và SDK cancellation phải được cấu hình thực ở Phase 03–05. Cancel thread/future không đảm bảo đã dừng GPU/decoder: worker isolation, slot giữ tới compute thật kết thúc hoặc process bị terminate; không release capacity giả.
 
 ## 4. Chiến lược tối ưu và điều kiện adoption
 
@@ -145,8 +145,8 @@ Quantile ban đầu nearest-rank: sorted sample index ceil(p*n), p=.50/.90/.95; 
 
 ## 9. Gate và những gì chưa đo
 
-Chưa có observed latency, quality, throughput hoặc memory. Trước Prompt 07 phải chốt dataset/rights/language/hardware/load/annotation guide/quality acceptance thresholds và freeze dev/test. Metric implementation cần hand-computed fixtures; load harness cần kiểm tra timer/error accounting. Nếu mục tiêu300/500ms không đạt, báo actual distribution, bottleneck và deviation/action; không đổi definition sau khi xem kết quả. Prompt 02 chỉ tạo kế hoạch này, không chạy benchmark hoặc download model.
+Chưa có observed latency, quality, throughput hoặc memory. Trước Phase 07 phải chốt dataset/rights/language/hardware/load/annotation guide/quality acceptance thresholds và freeze dev/test. Metric implementation cần hand-computed fixtures; load harness cần kiểm tra timer/error accounting. Nếu mục tiêu300/500ms không đạt, báo actual distribution, bottleneck và deviation/action; không đổi definition sau khi xem kết quả. Phase 02 chỉ tạo kế hoạch này, không chạy benchmark hoặc download model.
 
-## 12. Evidence offline indexing Prompt04
+## 12. Evidence offline indexing Phase 04
 
 Đã có CPU fixture profile/actual CLIP indexing timings tại [INDEXING_TEST_REPORT](../archive/INDEXING_TEST_REPORT.md), raw artifacts trong verification/phase04. Những số này không thay search P90/P95/Recall@10 targets hoặc evaluation protocols ở trên. Chưa có online retrieval benchmark, relevance judgments hoặc CUDA measurements.

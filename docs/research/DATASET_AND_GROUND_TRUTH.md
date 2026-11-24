@@ -1,6 +1,6 @@
-# Dataset và công cụ gán nhãn — Prompt07
+# Dataset và công cụ gán nhãn — Phase 07
 
-Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Prompt09.
+Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](../archive/PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Phase 09.
 
 Corpus đang dùng10 ảnh scikit-image-v0.25.2, license/provenance tại [sample manifest](../../datasets/sample_manifest.json). Không tải COCO/Flickr hoặc corpus lớn trong phase này. Dataset nhỏ chỉ phù hợp functional/research smoke, không đại diện semantic retrieval thực tế. Exact hash dedup không thay perceptual duplicate review; khả năng public sample images xuất hiện trong pretraining chưa được audit.
 
@@ -24,7 +24,7 @@ backend/.venv/bin/python -m app.cli.evaluation annotation-pack
 backend/.venv/bin/python -m app.cli.evaluation validate-labels --labels PATH_TO_REVIEWED_LABELS.json
 ```
 
-prepare dùng exclusive outputs: khi snapshot/query files đã tồn tại, chọn --output/--queries phiên bản mới thay vì overwrite. Cache images/HTML chứa dữ liệu private nên bị Git/Docker ignore, HTML mode0600. Fresh clone cần tải/index sample theo Prompt04 trước; .cache không được đóng gói vào source. Mở HTML bằng trình duyệt local, gán nhãn và giữ exported file; không gửi secret hoặc API token vào labels.
+prepare dùng exclusive outputs: khi snapshot/query files đã tồn tại, chọn --output/--queries phiên bản mới thay vì overwrite. Cache images/HTML chứa dữ liệu private nên bị Git/Docker ignore, HTML mode0600. Fresh clone cần tải/index sample theo Phase 04 trước; .cache không được đóng gói vào source. Mở HTML bằng trình duyệt local, gán nhãn và giữ exported file; không gửi secret hoặc API token vào labels.
 
 ## Label schema và trạng thái hiện tại
 

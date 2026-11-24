@@ -216,7 +216,9 @@ def main():
         env["QA_API_TOKEN"] = cfg["API_TOKEN"]
         env["PLAYWRIGHT_BROWSERS_PATH"] = str(ROOT / ".cache/playwright")
         config = (
-            "playwright.qa.config.ts" if args.profile == "browser" else "playwright.mock.config.ts"
+            "tests/e2e/config/qa.config.ts"
+            if args.profile == "browser"
+            else "tests/e2e/config/mock.config.ts"
         )
         command = [
             "npm",

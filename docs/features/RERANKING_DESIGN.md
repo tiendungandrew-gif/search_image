@@ -1,4 +1,4 @@
-# Constraint-aware reranking — Prompt 06
+# Constraint-aware reranking — Phase 06
 
 Đã có protocol Reranker và LightweightReranker trong `backend/app/services/search/reranker.py`. Không tải thêm model hoặc gọi vision-language/LLM provider. Rerank off mặc định/request; chỉ chạy khi enabled và server RERANKING_ENABLED=true.
 
@@ -18,7 +18,7 @@ Final ordering score: `max(0,(w_whole*whole + w_constraint*constraint + w_metada
 
 Rerank candidate limit mặc định50, server range1…100; request có thể giảm nhưng không tăng vượt server, và phải≥K. Chỉ selected prefix được rerank rồi trả, không trộn raw RRF và rerank score trong cùng response. Pool/candidate limits và rerank_applied được báo trong effective_settings. Budget mặc định200ms, request1…1.000ms; timeout bao gồm stored vector fetch và local scoring. Full ASGI deadline2s vẫn cao nhất.
 
-Rerank local scoring nhỏ/bounded và có deadline checkpoint trước publish. Successful result chỉ được publish sau complete scoring, không để partial mutation đổi baseline khi fallback. Digest/model mismatch409 không fallback; dependency/runtime/timeout lỗi theo rerank.on_failure: error(default)→503 RERANK_FAILED, skip→baseline fusion/rescore + RERANK_SKIPPED warning. Basic single-vector search không gọi reranker, nên reranker lỗi không làm basic search unavailable. Cancellation/inference slot policy Prompt05 giữ nguyên.
+Rerank local scoring nhỏ/bounded và có deadline checkpoint trước publish. Successful result chỉ được publish sau complete scoring, không để partial mutation đổi baseline khi fallback. Digest/model mismatch409 không fallback; dependency/runtime/timeout lỗi theo rerank.on_failure: error(default)→503 RERANK_FAILED, skip→baseline fusion/rescore + RERANK_SKIPPED warning. Basic single-vector search không gọi reranker, nên reranker lỗi không làm basic search unavailable. Cancellation/inference slot policy Phase 05 giữ nguyên.
 
 ## Evidence và evaluation
 

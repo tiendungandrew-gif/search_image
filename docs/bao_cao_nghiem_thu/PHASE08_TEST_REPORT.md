@@ -1,10 +1,10 @@
-# Báo cáo triển khai và nghiệm thu Prompt08
+# Báo cáo triển khai và nghiệm thu Phase 08
 
 > Tài liệu lịch sử theo phase; lệnh trong nội dung giữ tên đường dẫn cũ. Hướng dẫn hiện hành tại [danh mục tài liệu](../README.md) và [scripts](../../scripts/README.md).
 
-Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Prompt09.
+Cập nhật06/11/2026: đã có corpus510 ảnh/500 captions; phần mềm đạt152 backend tests,13 frontend unit và16 browser cases. Human quality review chờ xác nhận theo lựa chọn của người dùng. [Báo cáo hiện hành](PHASE08_COMPLETION_REPORT.md); các số liệu05/11 bên dưới là lịch sử. Không tự chuyển Phase 09.
 
-Ngày thực hiện05/11/2026. RAG mở rộng retrieval hiện có, dùng Gemini API do người dùng chọn. Chưa triển khai Prompt09.
+Ngày thực hiện05/11/2026. RAG mở rộng retrieval hiện có, dùng Gemini API do người dùng chọn. Chưa triển khai Phase 09.
 
 ## A. Tóm tắt triển khai
 
@@ -83,9 +83,9 @@ Các fallback thực native: RAG_DISABLED, LLM_CONNECTION_FAILED và LLM_TIMEOUT
 
 Không có caption/tag hoặc human qrels, chưa kiểm visual faithfulness/answer relevance trên corpus đại diện. Model-managed weights revision/remote hardware không được công bố cho lượt này; Gemini/network latency biến động, output có thể bị reject hoặc timeout. RAG chỉ trích facts, chưa free-form synthesis/vision verification. Streaming raw fact-selection deltas phải được coi chưa verified. Không có căn cứ claim OpenAI đã tích hợp thật từ Gemini tests. Những gates chưa xác minh phải giữ mở.
 
-## L. Sẵn sàng Prompt09
+## L. Sẵn sàng Phase 09
 
-Đã có typed RAG service/evidence/citations/status/deadlines cho integration tương lai. Planner/tool calling/multi-hop/state/evidence aggregation chưa triển khai. Cần bổ sung chất lượng evidence/nhãn, policies và sustained provider reliability trước Agentic workflows. Dừng ở Prompt08.
+Đã có typed RAG service/evidence/citations/status/deadlines cho integration tương lai. Planner/tool calling/multi-hop/state/evidence aggregation chưa triển khai. Cần bổ sung chất lượng evidence/nhãn, policies và sustained provider reliability trước Agentic workflows. Dừng ở Phase 08.
 
 Lịch sử kiểm thử được giữ: lượt đầu3 failures (một unit fixture chịu ảnh hưởng RAG_ENABLED môi trường và hai Gemini timeout), lượt sau141 pass/16 browser pass, lượt compatible chốt sau đó có2 timeout/141 pass. Unit fixture đã cô lập rag_enabled=false, không đổi assertions để che provider failure. Native adapter được bổ sung và nghiệm thu riêng; không lấy JSON pass cũ cho lần chạy fail.
 
@@ -104,6 +104,6 @@ Nghiệm thu native đã có144 backend tests pass; browser từng có16/16 pass
 - [ ] Mục tiêu3s trên workload đại diện, thay vì chỉ một subset/single successful call.
 - [ ] Human answer-relevance/faithfulness/unsupported-claim review và corpus mô tả đủ tốt.
 
-Đã bàn giao triển khai Prompt08; **chưa đánh dấu nghiệm thu toàn bộ**. Không bắt đầu Prompt09. Provider jitter và data/label gaps được giữ như vấn đề mở, không được thay bằng success giả.
+Đã bàn giao triển khai Phase 08; **chưa đánh dấu nghiệm thu toàn bộ**. Không bắt đầu Phase 09. Provider jitter và data/label gaps được giữ như vấn đề mở, không được thay bằng success giả.
 
 [Kiểm tra bàn giao cuối](../verification/phase08/final_checks.json), [source thay đổi](../verification/phase08/source_changes.json), [source snapshot/archive](../verification/phase08/source_snapshot.json). Có22 source/config files thêm,14 files sửa,không xóa;216 source/config files được fingerprint. CLIP encoder/ingestion decoder giữ nguyên,32 experiments Phase07 và7.360 old benchmark attempts được giữ. Secrets scan không có private matches, .env0600 và private env không nằm trong source archives. Seven required docs/relative links/JSON/examples/traceability/structural diagrams đã qua. Không tạo Git commit; source hashes/archives là provenance fallback.

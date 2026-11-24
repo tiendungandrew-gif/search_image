@@ -1,4 +1,4 @@
-# Latency, load và profiling — Prompt07
+# Latency, load và profiling — Phase 07
 
 Full server latency từ ASGI receipt trước body read tới final body send; client latency từ initiate HTTP tới full response. Endpoint processing_ms trước serialize không là full response. Request IDs join bounded ring sau final send; missing successful server samples làm run incomplete_server_coverage, không im lặng bỏ mẫu. Preview image download/render không nằm trong search-response latency.
 

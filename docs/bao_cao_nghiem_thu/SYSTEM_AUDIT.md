@@ -37,7 +37,7 @@ PostgreSQL sở hữu identity, metadata, job/lease, embedding receipt và activ
 | GitHub Actions | IMPLEMENTED_UNVERIFIED | YAML/actionlint và local equivalents pass; chưa chạy trên GitHub |
 | Deployment production/TLS | NOT_IMPLEMENTED | Thuộc Phase12; không mở rộng phạm vi lượt này |
 
-Các trạng thái dùng đúng tập của Prompt11. `VERIFIED_WITH_REAL_DATA` chỉ mô tả execution trên dữ liệu thật hiện có, không đồng nghĩa AI đạt chất lượng sản phẩm.
+Các trạng thái dùng đúng tập của Phase 11. `VERIFIED_WITH_REAL_DATA` chỉ mô tả execution trên dữ liệu thật hiện có, không đồng nghĩa AI đạt chất lượng sản phẩm.
 
 ## Sai lệch được xử lý
 
